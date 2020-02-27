@@ -77,6 +77,6 @@ def get_tnu_path(dwca_dir):
     path = os.path.join(dwca_dir, name)
     if os.path.exists(path):
       return path
-  raise valueError("cannot find TNU file", dwca_dir)
+  raise ValueError("cannot find TNU file", dwca_dir)
 
 main(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4])

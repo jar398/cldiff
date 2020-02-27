@@ -48,6 +48,7 @@ def emit_dwc(nodes, names, scinames, authorities, merged, outdir):
                 scinames.get(id, None),
                 "accepted", None)
     for (id, text, kind) in names:
+      if kind == "synonym": kind = None    # not a nomenclatural status
       write_row(writer,
                 None, None, None,
                 id, None, text, "synonym", kind)
