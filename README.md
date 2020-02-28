@@ -1,5 +1,4 @@
-# cldiff
-Checklist difference
+# Checklist difference
 
 ## Comparing two checklists: example: NCBI vs. GBIF primates
 

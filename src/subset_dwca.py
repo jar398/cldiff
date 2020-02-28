@@ -14,7 +14,6 @@ import sys, os, csv
 def main(checkdir, taxdir, root_id, outdir):
   assert os.path.exists(checkdir)
   assert os.path.exists(taxdir)
-  assert os.path.exists(outdir)
   topo = read_topology(taxdir)
   print ("Nodes with children:", len(topo))
   all = closure(topo, root_id)
@@ -22,6 +21,8 @@ def main(checkdir, taxdir, root_id, outdir):
   write_subset(checkdir, root_id, all, outdir)
 
 def write_subset(checkdir, root_id, all, outdir):
+  if not os.path.isdir(outdir):
+    os.mkdir(outdir)
   with open(get_tnu_path(checkdir), "r") as infile:
     reader = csv.reader(infile, delimiter="\t", quotechar='\a', quoting=csv.QUOTE_NONE)
     head = next(reader)

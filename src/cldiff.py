@@ -21,8 +21,9 @@ Recur to the children of all three types.
 """
 
 import os, sys, csv
+import argparse
 
-def main(c1, c2):
+def main(c1, c2, out):
   A = read_checklist(c1)
   B = read_checklist(c2)
   print ("counts:", len(A), len(B))
@@ -30,7 +31,7 @@ def main(c1, c2):
   (As_for_Bs, routes) = match_by_name(A, B)
   (grafts, by_topology) = match_by_topology(A, B, As_for_Bs)
 
-  report(A, B, As_for_Bs, routes, grafts, by_topology)
+  report(A, B, As_for_Bs, routes, grafts, by_topology, out)
 
 # TBD: Also match by scientificName
 
@@ -67,8 +68,8 @@ def match_by_name(A, B):
           routes[B_tnu] = (A_accepted, A_candidate, B_candidate)
           # This candidate matched; no need to look for any others.
           break
-  print ("Attempts:", attempts[0])
-  print ("Successes:", len(As_for_Bs))
+  print ("Attempts to match a B:", attempts[0])
+  print ("A's that got B matches:", len(As_for_Bs))
   return (As_for_Bs, routes)
 
 # Place orphaned B nodes according to where their siblings got placed.
@@ -153,8 +154,7 @@ def get_depth(tnu, id_index, depth_cache):
   depth_cache[tnu] = d
   return d
 
-def report(A, B, As_for_Bs, routes, grafts, by_topology):
-  outpath = "diff.csv"
+def report(A, B, As_for_Bs, routes, grafts, by_topology, outpath):
   Bs_for_As = invert_dict(As_for_Bs)
   print ("Bs for As:", len(Bs_for_As))
   B_grafts_for_As = invert_dict(grafts)
@@ -415,4 +415,9 @@ def get_tnu_path(dwca_dir):
 # From command line
 
 if __name__ == '__main__':
-  main(sys.argv[1], sys.argv[2])
+  parser = argparse.ArgumentParser()
+  parser.add_argument('A', help='A checklist')
+  parser.add_argument('B', help='B checklist')
+  parser.add_argument('--out', help='file name for report', default='diff.csv')
+  args = parser.parse_args()
+  main(args.A, args.B, args.out)
