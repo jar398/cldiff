@@ -34,39 +34,35 @@ def main(c1, c2):
   print("A indexed by text:", len(A_text_index))
 
   As_for_Bs = {}
+  routes = {}
 
   attempts = [0]
-  successes = [0]
 
   # Match as many by name as possible
   for B_tnu in B:
     if is_accepted(B_tnu):
-
-      def attempt_match(B_tnu):
+      B_candidates = [B_tnu] + sorted(get_synonyms(B_tnu, B_synonym_index),
+                                      key=badness)
+      for B_candidate in B_candidates:
         # Find all the A-tnus with same name as this B-tnu...
         attempts[0] += 1
-        text = get_value(B_tnu, "canonicalName")
-        A_synonyms = A_text_index.get(text, ())
-        if len(A_synonyms) == 1:
-          A_tnu = A_synonyms[0]
-          A_accepted_id = get_value(A_tnu, "acceptedNameUsageID")
-          if A_accepted_id != None:
-            A_tnu = A_id_index[A_accepted_id]
-          As_for_Bs[B_tnu] = A_tnu
-          successes[0] += 1
-          return True
-        else:
-          return False
-
-      if attempt_match(B_tnu):
-        pass
-      else:
-        for B_synonym in sorted(get_synonyms(B_tnu, B_synonym_index), key=badness):
-          if attempt_match(B_synonym):
-            break
+        text = get_value(B_candidate, "canonicalName")
+        A_candidates = A_text_index.get(text, ())
+        if len(A_candidates) == 1:
+          # Many different ways to design this.  Prioritize etc.
+          A_candidate = A_candidates[0]
+          # TBD: Keep track of nomenclaturalStatus of A_candidate and B_candidate
+          if is_accepted(A_candidate):
+            A_accepted = A_candidate
+          else:
+            A_accepted = A_id_index[get_value(A_candidate, "acceptedNameUsageID")]
+          As_for_Bs[B_tnu] = A_accepted
+          routes[B_tnu] = (A_accepted, A_candidate, B_candidate)
+          # This candidate matched; no need to look for any others.
+          break
 
   print ("Attempts:", attempts[0])
-  print ("Successes:", successes[0])
+  print ("Successes:", len(As_for_Bs))
 
   # TBD: match by topology
   #   (a) those that didn't get assignments previously
@@ -76,9 +72,9 @@ def main(c1, c2):
   print ("Bs for As:", len(Bs_for_As))
 
   # TBD: generate a report
-  report(A, Bs_for_As, As_for_Bs)
+  report(A, Bs_for_As, As_for_Bs, routes)
 
-def report(A, Bs_for_As, As_for_Bs):
+def report(A, Bs_for_As, As_for_Bs, routes):
   outpath = "diff.csv"
   A_id_index = index_unique_by_column(A, "taxonID")
   A_hierarchy = index_hierarchy(A)
@@ -89,24 +85,38 @@ def report(A, Bs_for_As, As_for_Bs):
     writer.writerow(["A_id", "A_name", "B_id", "B_name", "how"])
 
     def write_row(A_tnu, B_tnu, how):
-      writer.writerow([(get_value(A_tnu, "taxonID") if A_tnu  else ""),
+      if B_tnu:
+        (A_accepted, A_candidate, B_candidate) = routes[B_tnu]
+        if A_accepted == A_candidate and B_tnu == B_candidate:
+          mode = "direct"
+        elif A_accepted == A_candidate and B_tnu != B_candidate:
+          mode = "via synonym in B"
+        elif A_accepted != A_candidate and B_tnu == B_candidate:
+          mode = "via synonym in A"
+        else:
+          mode = ("via synonym in both: %s" %
+                  get_value(A_candidate, "canonicalName"))
+      else:
+        mode = None
+      writer.writerow([('A:' + get_value(A_tnu, "taxonID") if A_tnu  else ""),
                        (get_value(A_tnu, "canonicalName") if A_tnu else ""),
-                       (get_value(B_tnu, "taxonID") if B_tnu else ""),
+                       ('B:' + get_value(B_tnu, "taxonID") if B_tnu else ""),
                        (get_value(B_tnu, "canonicalName") if B_tnu else ""),
-                       how])
+                       how,
+                       mode])
 
     def descend(A_tnu):
       A_id = get_value(A_tnu, "taxonID")
       B_tnus = Bs_for_As.get(A_tnu, None)
       if B_tnus:
         if len(B_tnus) == 1:
-          write_row(A_tnu, B_tnus[0], "one-one")
+          B_tnu = B_tnus[0]
+          write_row(A_tnu, B_tnu, "one-one")
         else:
           write_row(A_tnu, None, "one-many")
           # Iterate over A-synonyms ???
-          # sorted(get_synonyms(A_tnu, A_synonym_index), key=badness)
           for B_tnu in B_tnus:
-            write_row(None, B_tnu, "")
+            write_row(None, B_tnu, "one of many")
       else:
         write_row(A_tnu, None, "not in B")
       for child in get_children(A_tnu, A_hierarchy):
