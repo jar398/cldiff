@@ -56,10 +56,13 @@ def match_by_name(A, B):
           # Many different ways to design this.  Prioritize etc.
           A_candidate = A_candidates[0]
           # TBD: Keep track of nomenclaturalStatus of A_candidate and B_candidate
-          if is_accepted(A_candidate):
-            A_accepted = A_candidate
-          else:
-            A_accepted = A_id_index[get_value(A_candidate, "acceptedNameUsageID")]
+          A_accepted = A_candidate
+          if not is_accepted(A_candidate):
+            A_accepted_id = get_value(A_candidate, "acceptedNameUsageID")
+            if A_accepted_id in A_id_index:
+              A_accepted = A_id_index[A_accepted_id]
+            else:
+              print ("accepted but no accepted id", A_candidate)
           As_for_Bs[B_tnu] = A_accepted
           routes[B_tnu] = (A_accepted, A_candidate, B_candidate)
           # This candidate matched; no need to look for any others.
@@ -164,7 +167,7 @@ def report(A, B, As_for_Bs, routes, grafts, by_topology):
     print ("Writing:", outpath)
     writer = csv.writer(outfile)
 
-    writer.writerow(["A_id", "A_name", "B_id", "B_name", "how"])
+    writer.writerow(["nesting", "A_id", "A_name", "B_id", "B_name", "how", "mode"])
 
     def write_row(A_tnu, B_tnu, how, depth):
       if B_tnu:
@@ -225,9 +228,9 @@ def report(A, B, As_for_Bs, routes, grafts, by_topology):
         for B_tnu in B_tnus:
           write_row(A_tnu, B_tnu,
                     tweak_how(B_tnu, "one of many", B_topos, B_textuals),
-                    depth)
+                    subdepth)
       else:
-        write_row(A_tnu, None, "not in B", depth)
+        write_row(A_tnu, None, "no match in B", depth)
         
       for child in get_children(A_tnu, A_hierarchy):
         descend(child, subdepth)
@@ -237,7 +240,7 @@ def report(A, B, As_for_Bs, routes, grafts, by_topology):
     def descend_graft(B_tnu, depth):
       subdepth = depth + 1
       if not B_tnu in seen:
-        write_row(None, B_tnu, "not in A", depth)
+        write_row(None, B_tnu, "no match in A", depth)
         for child in get_children(B_tnu, B_hierarchy):
           descend_graft(child, subdepth)
 
@@ -247,7 +250,7 @@ def report(A, B, As_for_Bs, routes, grafts, by_topology):
     for B_tnu in B:
       if is_accepted(B_tnu):
         if not B_tnu in seen:
-          write_row(None, B_tnu, "lost", 1)
+          write_row(None, B_tnu, "fell through cracks", 1)
 
 # The following is for display purposes
 
