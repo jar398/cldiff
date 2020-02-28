@@ -168,7 +168,7 @@ def report(A, B, As_for_Bs, routes, grafts, by_topology, outpath):
     print ("Writing:", outpath)
     writer = csv.writer(outfile)
 
-    writer.writerow(["nesting", "A_id", "A_name", "B_id", "B_name", "how", "mode"])
+    writer.writerow(["nesting", "A_id", "A_name", "B_id", "B_name", "match mode", "synonymy route"])
 
     def write_row(A_tnu, B_tnu, how, depth):
       if B_tnu:
@@ -179,23 +179,28 @@ def report(A, B, As_for_Bs, routes, grafts, by_topology, outpath):
           if A_accepted == A_candidate and B_tnu == B_candidate:
             mode = "direct"
           elif A_accepted == A_candidate and B_tnu != B_candidate:
-            mode = "via synonym in B"
+            mode = "A name is synonym in B"
           elif A_accepted != A_candidate and B_tnu == B_candidate:
-            mode = "via synonym in A"
+            mode = "B name is synonym in A"
           elif get_name(A_candidate) == get_name(B_candidate):
-            mode = ("via synonym in both: %s" %
+            mode = ("A and B both have synonym %s" %
                     get_name(A_candidate))
           else:
             mode = "not by name"
         else:
-          mode = None           # Not in A
+          mode = None           # Not in A, or no A given
       else:
         mode = None             # Not in B
+      B_name = ''
+      if B_tnu:
+        B_name = get_name(B_tnu)
+        if A_tnu and get_name(A_tnu) == B_name:
+          B_name = '='
       writer.writerow([str(depth),
                        ('A:' + get_value(A_tnu, "taxonID") if A_tnu  else ''),
                        (get_name(A_tnu) if A_tnu else ""),
                        ('B:' + get_value(B_tnu, "taxonID") if B_tnu else ''),
-                       (get_name(B_tnu) if B_tnu else ''),
+                       B_name,
                        how,
                        mode])
 
@@ -229,7 +234,7 @@ def report(A, B, As_for_Bs, routes, grafts, by_topology, outpath):
       elif len(B_tnus) > 1:
         write_row(A_tnu, None, "one-many", depth)
         for B_tnu in B_tnus:
-          write_row(A_tnu, B_tnu,
+          write_row(None, B_tnu,
                     tweak_how(B_tnu, "one of many", B_topos, B_textuals),
                     subdepth)
       else:
@@ -238,14 +243,14 @@ def report(A, B, As_for_Bs, routes, grafts, by_topology, outpath):
       for child in get_children(A_tnu, A_hierarchy):
         descend(child, subdepth)
       for B_tnu in B_grafts_for_As.get(A_tnu, ()):
-        descend_graft(B_tnu, subdepth)
+        descend_graft(B_tnu, subdepth, True)
 
-    def descend_graft(B_tnu, depth):
+    def descend_graft(B_tnu, depth, graftp):
       subdepth = depth + 1
-      if not B_tnu in seen:
-        write_row(None, B_tnu, "no match in A", depth)
-        for child in get_children(B_tnu, B_hierarchy):
-          descend_graft(child, subdepth)
+      # part of graft
+      write_row(None, B_tnu, "placed with sibling or parent" if graftp else "", depth)
+      for child in get_children(B_tnu, B_hierarchy):
+        descend_graft(child, subdepth, False)
 
     for root in get_roots(A, A_id_index):
       descend(root, 1)
@@ -407,6 +412,7 @@ def index_unique_by_column(checklist, label):
 def get_tnu_path(dwca_dir):
   for name in ["taxon.tsv",
                "Taxon.tsv",
+               "taxa.txt",
                "taxon.txt",
                "Taxon.txt"]:
     path = os.path.join(dwca_dir, name)

@@ -1,30 +1,50 @@
 # Checklist difference
 
-## Comparing two checklists: example: NCBI vs. GBIF primates
+The inputs are two checklists (or taxonomies) in Darwin Core Archive
+format, that have been unzipped to directories.  The output is an ad
+hoc report file.  See below for restrictions.
+
+## Example: NCBI Primates vs. GBIF Primates
 
 ### Get NCBI taxonomy from FTP site
+
+We'll put everything related to the February 2020 version of NCBI
+taxonomy under `ncbi/2020-02-01`.  Start with the release (`dump`).
 
     mkdir -p ncbi/2020-02-01/dump
     wget ftp://ftp.ncbi.nlm.nih.gov/pub/taxonomy/taxdump_archive/taxdmp_2020-02-01.zip
     unzip -d ncbi/2020-02-01/dump taxdmp_2020-02-01.zip
 
+Of course you can do this with any version you like, by substituting the date.
+
 ### Get GBIF taxonomy from GBIF site
 
-    mkdir -p gbif/2019-09-16/dwca
-    wget https://files.opentreeoflife.org/gbif/gbif-20190916/gbif-20190916.zip
-    unzip -d gbif/2019-09-16/dwca -q gbif-20190916.zip
+Similarly `gbif/2019-09-16`.  The release is a DwCA file (`dwca`).
 
-The GBIF site doesn't expose the download URL.  You'll have to [go
-there
-yourself](https://www.gbif.org/dataset/d7dddbf4-2cf0-4f39-9b2a-bb099caae36c)
-and figure out what to do.  The downloaded file will be called
-`backbone-current.zip`.
+    mkdir -p gbif/2019-09-16/dwca
+    wget http://rs.gbif.org/datasets/backbone/2019-09-06/backbone.zip
+    unzip -d gbif/2019-09-16/dwca -q backbone.zip
+
+For futher information see [the backbone taxonomy landing
+page](https://www.gbif.org/dataset/d7dddbf4-2cf0-4f39-9b2a-bb099caae36c).
+
+Other archived versions of GBIF are available on their site.
 
 ### Convert NCBI taxonomy to Darwin Core form
 
+NCBI has its own taxonomy dump format, which needs to be converted to
+DwCA.  There's a tool for this purpose:
+
     time python3 src/ncbi_to_dwca.py ncbi/2020-01-01/dump ncbi/2020-01-01/dwca
 
+(The GBIF files are DwCA format already, so they can be used directly.)
+
 ### From each, extract Primates only 
+
+Dealing with the whole taxonomies would be time consuming and painful
+to analyze, so it's best to just look at reasonably sized taxa.
+The `subset_dwca.py` tool extracts just the part we want from the whole
+taxonomy's DwCA.
 
     python3 src/subset_dwca.py gbif/2019-09-16/dwca gbif/2019-09-16/dwca 798 gbif/2019-09-16/primates
     python3 src/subset_dwca.py ncbi/2020-01-01/dwca ncbi/2020-01-01/dwca 9443 ncbi/2020-01-01/primates
@@ -52,7 +72,7 @@ ordered by the other taxonomy:
 
 ## Report file format
 
-This is going to be highly in flux... as of today we have:
+This is highly in flux... as of today we have:
 
  * `nesting` - increases with hierarchical nesting depth, so in
    general (for example) the value in this row will be greater for
@@ -64,9 +84,9 @@ This is going to be highly in flux... as of today we have:
  * `how` - describes matching status, usually via topology
  * `mode` - describes matching via synonymy
 
-The row order follows the hierarchy of A, except where there is a
-graft of a subtree of B, in which case the B subtree follows the B
-hierarchy.
+The row order follows the hierarchy of A.  Where there is a graft of
+an unmatched subtree of B into the A hierarchy, the B grafted subtree
+is shown according to the B hierarchy.
 
 ## DwC fields of interest:
 
