@@ -98,6 +98,7 @@ def match_by_topology(A, B, As_for_Bs):
       if x:
         # B_child has an A-mrca (contains descendants matched to A)
         if m:
+          # TBD: Toss out children that are in incertae sedis/unclassified containers?
           m2 = mrca(m, x, A_id_index, depth_cache)
           if m2 != m and m2 != x:
             clumped = True
@@ -181,9 +182,11 @@ def report(A, B, As_for_Bs, routes, grafts, by_topology, outpath):
             mode = "via synonym in B"
           elif A_accepted != A_candidate and B_tnu == B_candidate:
             mode = "via synonym in A"
-          else:
+          elif get_name(A_candidate) == get_name(B_candidate):
             mode = ("via synonym in both: %s" %
                     get_name(A_candidate))
+          else:
+            mode = "not by name"
         else:
           mode = None           # Not in A
       else:
@@ -317,7 +320,7 @@ def badness(tnu):
 
 badnesses = {
   "authority": 0,
-  "scientific name": 1,        # exactly one per node
+  "scientific name": 1,        # (actually canonical) exactly one per node
   "accepted": 1,
   "equivalent name": 2,        # synonym but not nomenclaturally
   "misspelling": 3,
@@ -335,7 +338,7 @@ badnesses = {
   "genbank anamorph": 9.4,     # at most one per node
   "common name": 10,
   "acronym": 10.5,
-  "unpublished name": 10.7,
+  "unpublished name": 10.7,    # non-code synonym
   "id": 11,
   "merged id": 12,
 }

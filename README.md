@@ -36,13 +36,21 @@ web interface.
 
     python3 src/cldiff.py gbif/2019-09-16/primates ncbi/2020-01-01/primates
 
-The first checklist/taxonomy is the "A checklist" and the second is
+The first checklist (or taxonomy) is the "A checklist" and the second is
 the "B checklist".
 
-The output file name is hardwired as 'diff.csv'.  The file is in CSV
-format with a header row.
+The output file (the comparison report) defaults to 'diff.csv'.  To
+specify the output file name, use the `--out` parameter: `python3
+src/cldiff.py A B --out out.csv`
 
-## Diff file format
+The output file is in CSV format with a header row.
+
+If you put the two in the opposite report you'll get the comparison
+ordered by the other taxonomy:
+
+    python3 src/cldiff.py gbif/2019-09-16/primates ncbi/2020-01-01/primates
+
+## Report file format
 
 This is going to be highly in flux... as of today we have:
 
@@ -53,8 +61,8 @@ This is going to be highly in flux... as of today we have:
  * `A_name` - canonical name of the TNU in the A taxonomy
  * `B_id` - TNU id of the TNU in the B taxonomy
  * `B_name` - canonical name of the TNU in the B taxonomy
- * `how` - describes matching
- * `mode` - describes matching
+ * `how` - describes matching status, usually via topology
+ * `mode` - describes matching via synonymy
 
 The row order follows the hierarchy of A, except where there is a
 graft of a subtree of B, in which case the B subtree follows the B
@@ -76,3 +84,6 @@ following columns/fields are used here:
  * `taxonomicStatus`  - value is `accepted` or something else
  * `nomenclaturalStatus` - for NCBI, gives synonym class
 
+eventually: epithet and a few others
+
+tbd: handle incertae sedis / unclassified containers sensibly
