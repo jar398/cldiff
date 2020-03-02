@@ -28,53 +28,62 @@ def main(c1, c2, out):
   B = read_checklist(c2)
   print ("counts:", len(A), len(B))
 
-  (As_for_Bs, routes) = match_by_name(A, B)
-  (grafts, by_topology) = match_by_topology(A, B, As_for_Bs)
+  (A_by_name_for_B, routes) = match_by_name(A, B)
+  (grafts, A_by_topology_for_B) = match_by_topology(A, B, A_by_name_for_B)
 
-  report(A, B, As_for_Bs, routes, grafts, by_topology, out)
+  report(A, B, A_by_name_for_B, routes, A_by_topology_for_B, grafts, out)
 
 # TBD: Also match by scientificName
 
 def match_by_name(A, B):
-  A_text_index = index_by_column(A, "canonicalName")
-  B_synonym_index = index_by_column(B, "acceptedNameUsageID")
-  A_id_index = index_unique_by_column(A, "taxonID")
+  A_text_index = index_by_column(A, canonical_name_field)
+  B_synonym_index = index_by_column(B, accepted_tnu_id_field)
+  A_id_index = index_unique_by_column(A, tnu_id_field)
   print("A indexed by text:", len(A_text_index))
-  As_for_Bs = {}
+  A_by_name_for_B = {}
   routes = {}
   attempts = [0]
   # Match as many by name as possible
+
+  # Find all B->A exact text matches
+  A_by_text_for_B = {}
+  for B_tnu in B:
+    A_candidates = A_text_index.get(get_name(B_tnu), ())
+    if len(A_candidates) == 1:
+      A_by_text_for_B[B_tnu] = A_candidates[0]
+  print ("B's with at least one A match:", len(A_by_text_for_B))
+
+  A_by_name_for_B = {}
+
+  # Look for synonym - text - synonym routes between accepted TNUs
   for B_tnu in B:
     if is_accepted(B_tnu):
-      B_candidates = [B_tnu] + sorted(get_synonyms(B_tnu, B_synonym_index),
-                                      key=badness)
+      B_accepted = B_tnu
+      B_candidates = [B_accepted] + get_synonyms(B_tnu, B_synonym_index)
       for B_candidate in B_candidates:
         # Find all the A-tnus with same name as this B-tnu...
         attempts[0] += 1
-        text = get_value(B_candidate, "canonicalName")
-        A_candidates = A_text_index.get(text, ())
-        if len(A_candidates) == 1:
-          # Many different ways to design this.  Prioritize etc.
-          A_candidate = A_candidates[0]
-          # TBD: Keep track of nomenclaturalStatus of A_candidate and B_candidate
-          A_accepted = A_candidate
-          if not is_accepted(A_candidate):
-            A_accepted_id = get_value(A_candidate, "acceptedNameUsageID")
-            if A_accepted_id in A_id_index:
-              A_accepted = A_id_index[A_accepted_id]
-            else:
-              print ("accepted but no accepted id", A_candidate)
-          As_for_Bs[B_tnu] = A_accepted
-          routes[B_tnu] = (A_accepted, A_candidate, B_candidate)
+        A_candidate = A_by_text_for_B.get(B_candidate, None)
+        if A_candidate:
+          A_accepted = get_accepted(A_candidate, A_id_index)
+          if False:
+            A_by_name_for_B[B_accepted] = A_candidate
+          else:
+            A_by_name_for_B[B_accepted] = A_accepted
+          routes[B_accepted] = (A_accepted, A_candidate, B_candidate, B_accepted)
           # This candidate matched; no need to look for any others.
           break
-  print ("Attempts to match a B:", attempts[0])
-  print ("A's that got B matches:", len(As_for_Bs))
-  return (As_for_Bs, routes)
+
+  for B_tnu, A_tnu in A_by_name_for_B.items():
+    if B_tnu % 50 == 0: print (B_tnu, A_tnu)
+
+  print ("Attempts to match an accepted B:", attempts[0])
+  print ("A's that got B matches:", len(A_by_name_for_B))
+  return (A_by_name_for_B, routes)
 
 # Place orphaned B nodes according to where their siblings got placed.
 
-def match_by_topology(A, B, As_for_Bs):
+def match_by_topology(A, B, A_by_name_for_B):
   # For each higher taxon in B, find the higher taxon t in A that is the MRCA of 
   # all taxa in A that are matched to descendants of B.
   # That t is then a place to put taxa in B that are unassigned.
@@ -83,11 +92,11 @@ def match_by_topology(A, B, As_for_Bs):
   # so, need to keep track of depths...
 
   B_hierarchy = index_hierarchy(B)
-  A_id_index = index_unique_by_column(A, "taxonID")
+  A_id_index = index_unique_by_column(A, tnu_id_field)
   depth_cache = {}
 
   grafts = {}                   # B -> A (new parent where it gets grafted)
-  by_topology = {}
+  A_by_topology_for_B = {}
 
   def process(B_tnu):
     m = None                    # m will be a node in A
@@ -115,20 +124,20 @@ def match_by_topology(A, B, As_for_Bs):
         A_tnu = m
       else:
         A_tnu = get_parent(m, A_id_index)
-      by_topology[B_tnu] = A_tnu
-    else:
-      # No topological match.  Look for name match.
-      A_tnu = As_for_Bs.get(B_tnu, None)   # might be None
-    if A_tnu:
+      A_by_topology_for_B[B_tnu] = A_tnu
       for p in pending:
         grafts[p] = A_tnu
-    return A_tnu
-  B_id_index = index_unique_by_column(B, "taxonID")
+        # graft_kinds[p] = kind
+      return A_tnu
+    else:
+      # No topological match.  Look for name match.
+      return A_by_name_for_B.get(B_tnu, None)   # might be None
+  B_id_index = index_unique_by_column(B, tnu_id_field)
   for root in get_roots(B, B_id_index):
     process(root)
   print ("Grafts:", len(grafts))
-  print ("By topology:", len(by_topology))
-  return (grafts, by_topology)
+  print ("By topology:", len(A_by_topology_for_B))
+  return (grafts, A_by_topology_for_B)
 
 def mrca(tnu1, tnu2, id_index, depth_cache):
   d1 = get_depth(tnu1, id_index, depth_cache)
@@ -155,129 +164,145 @@ def get_depth(tnu, id_index, depth_cache):
   depth_cache[tnu] = d
   return d
 
-def report(A, B, As_for_Bs, routes, grafts, by_topology, outpath):
-  Bs_for_As = invert_dict(As_for_Bs)
-  print ("Bs for As:", len(Bs_for_As))
-  B_grafts_for_As = invert_dict(grafts)
-  B_topological_for_As = invert_dict(by_topology)
-  A_id_index = index_unique_by_column(A, "taxonID")
+# Write checklist comparison report
+
+def report(A, B, A_by_name_for_B, routes, A_by_topology_for_B, grafts, outpath):
+  A_for_B = {}
+  for B_tnu, A_tnu in A_by_name_for_B.items():
+    A_for_B[B_tnu] = A_tnu
+  for B_tnu, A_tnu in A_by_topology_for_B.items():
+    A_for_B[B_tnu] = A_tnu  # override
+  print ("As for Bs:", len(A_for_B))
+
+  Bs_for_A = invert_dict(A_for_B)
+
+  print ("Bs for As:", len(Bs_for_A))
+
+  A_id_index = index_unique_by_column(A, tnu_id_field)
   A_hierarchy = index_hierarchy(A)
   B_hierarchy = index_hierarchy(B)
+  A_synonym_index = index_by_column(A, accepted_tnu_id_field)
+  B_grafts_for_A = invert_dict(grafts)
   seen = {}
   with open(outpath, "w") as outfile:
     print ("Writing:", outpath)
     writer = csv.writer(outfile)
 
-    writer.writerow(["nesting", "A_id", "A_name", "B_id", "B_name", "match mode", "synonymy route"])
+    writer.writerow(["nesting", "A_id", "A_name", "relationship", "B_id", "B_name", "match mode",
+                     "synonymy route"])
 
-    def write_row(A_tnu, B_tnu, how, depth):
+    # Print in order of A hierarchy
+
+    def descend(A_tnu, depth, mode):
+      show_matches(A_tnu, depth, mode)
+      subdepth = depth + 1
+        
+      # Also show synonym matches here
+      for A_synonym in get_synonyms(A_tnu, A_synonym_index):
+        # Does this synonym match any B?
+        if A_synonym in Bs_for_A:
+          # descend(A_synonym, subdepth, "synonym")
+          show_matches(A_synonym, subdepth, "synonym")
+
+      for child in get_children(A_tnu, A_hierarchy):
+        descend(child, subdepth, "child")
+
+      for B_tnu in B_grafts_for_A.get(A_tnu, ()):
+        descend_graft(B_tnu, subdepth, True)
+
+    def show_matches(A_tnu, depth, mode):
+      B_tnus = Bs_for_A.get(A_tnu, ())
+      if len(B_tnus) == 1:
+        B_tnu = B_tnus[0]
+        write_row(A_tnu, B_tnu, tweak_how(B_tnu, "unique match",
+                                          A_by_topology_for_B, A_by_name_for_B),
+                  mode, depth)
+      elif len(B_tnus) > 1:
+        write_row(A_tnu, None, "%s matches:" % len(B_tnus), mode, depth)
+        subdepth = depth + 1
+        for B_tnu in B_tnus:
+          write_row(None, B_tnu,
+                    tweak_how(B_tnu, "match",
+                              A_by_topology_for_B, A_by_name_for_B),
+                    "match", subdepth)
+      else:
+        write_row(A_tnu, None, "no name match in B", mode, depth)
+
+    def descend_graft(B_tnu, depth, graftp):
+      subdepth = depth + 1
+      # part of graft
+      write_row(None, B_tnu, "placed with sibling(s)" if graftp else "", "graft", depth)
+      for child in get_children(B_tnu, B_hierarchy):
+        descend_graft(child, subdepth, False)
+
+    def write_row(A_tnu, B_tnu, how, mode, depth):
       if B_tnu:
         seen[B_tnu] = True
         route = routes.get(B_tnu, None)
         if route:
-          (A_accepted, A_candidate, B_candidate) = routes[B_tnu]
-          if A_accepted == A_candidate and B_tnu == B_candidate:
-            mode = "direct"
-          elif A_accepted == A_candidate and B_tnu != B_candidate:
-            mode = "A name is synonym in B"
-          elif A_accepted != A_candidate and B_tnu == B_candidate:
-            mode = "B name is synonym in A"
+          (A_accepted, A_candidate, B_candidate, B_accepted) = route
+          A_status = get_value(A_candidate, nomenclatural_status_field)
+          B_status = get_value(B_candidate, nomenclatural_status_field)
+          if A_status: A_status = " (%s)" % A_status
+          else: A_status = ""
+          if B_status: B_status = " (%s)" % B_status
+          else: B_status = ""
+          if A_accepted != A_tnu:
+            path = None
+          elif A_accepted == A_candidate and B_accepted == B_candidate:
+            path = "same name"
+          elif A_accepted == A_candidate and B_accepted != B_candidate:
+            path = "A name is synonym in B" + B_status
+          elif A_accepted != A_candidate and B_accepted == B_candidate:
+            path = "B name is synonym in A" + A_status
           elif get_name(A_candidate) == get_name(B_candidate):
-            mode = ("A and B both have synonym %s" %
-                    get_name(A_candidate))
+            if A_status == B_status: B_status = ""
+            path = ("A and B both have synonym %s%s%s" %
+                    (get_name(A_candidate), A_status, B_status))
           else:
-            mode = "not by name"
+            path = "not by name"
         else:
-          mode = None           # Not in A, or no A given
+          path = None           # Not in A, or no A given
       else:
-        mode = None             # Not in B
+        path = None             # Not in B
       B_name = ''
       if B_tnu:
         B_name = get_name(B_tnu)
         if A_tnu and get_name(A_tnu) == B_name:
           B_name = '='
       writer.writerow([str(depth),
-                       ('A:' + get_value(A_tnu, "taxonID") if A_tnu  else ''),
+                       display_id(A_tnu, "A"),
                        (get_name(A_tnu) if A_tnu else ""),
-                       ('B:' + get_value(B_tnu, "taxonID") if B_tnu else ''),
+                       mode,
+                       display_id(A_tnu, "B"),
                        B_name,
                        how,
-                       mode])
+                       path])
 
-    def tweak_how(B_tnu, how, by_topo, by_text):
+    def display_id(tnu, prefix):
+      if tnu:
+        id = get_value(tnu, tnu_id_field)
+        if id:
+          return "%s:%s" % (prefix, id)
+      return ''
+
+    def tweak_how(B_tnu, how, by_topo, A_by_name_for_B):
       if B_tnu in by_topo:
-        if B_tnu in by_text:
-          return how
+        if how != "": how = how + " "
+        if B_tnu in A_by_name_for_B:
+          return how + "(by topology)"
         else:
-          return how + " (topology only)"
+          return how + "(by topology only)"
       else:
-          return how + " (text only)"
-
-    # Print in order of A hierarchy
-
-    def descend(A_tnu, depth):
-      subdepth = depth + 1
-      A_id = get_value(A_tnu, "taxonID")
-
-      B_tnus = []
-      B_topos = B_topological_for_As.get(A_tnu, ())
-      B_textuals = Bs_for_As.get(A_tnu, ())
-      for B_tnu in B_topos:
-        B_tnus.append(B_tnu)
-      for B_tnu in B_textuals:
-        if not B_tnu in B_tnus:
-          B_tnus.append(B_tnu)
-      if len(B_tnus) == 1:
-        B_tnu = B_tnus[0]
-        write_row(A_tnu, B_tnu, tweak_how(B_tnu, "one-one", B_topos, B_textuals),
-                  depth)
-      elif len(B_tnus) > 1:
-        write_row(A_tnu, None, "one-many", depth)
-        for B_tnu in B_tnus:
-          write_row(None, B_tnu,
-                    tweak_how(B_tnu, "one of many", B_topos, B_textuals),
-                    subdepth)
-      else:
-        write_row(A_tnu, None, "no match in B", depth)
-        
-      for child in get_children(A_tnu, A_hierarchy):
-        descend(child, subdepth)
-      for B_tnu in B_grafts_for_As.get(A_tnu, ()):
-        descend_graft(B_tnu, subdepth, True)
-
-    def descend_graft(B_tnu, depth, graftp):
-      subdepth = depth + 1
-      # part of graft
-      write_row(None, B_tnu, "placed with sibling or parent" if graftp else "", depth)
-      for child in get_children(B_tnu, B_hierarchy):
-        descend_graft(child, subdepth, False)
+          return how
 
     for root in get_roots(A, A_id_index):
-      descend(root, 1)
+      descend(root, 1, "root")
 
     for B_tnu in B:
       if is_accepted(B_tnu):
         if not B_tnu in seen:
-          write_row(None, B_tnu, "fell through cracks", 1)
-
-# The following is for display purposes
-
-def get_name(tnu):
-  name = get_value(tnu, "canonicalName")
-  if name != None:
-    return name
-  return get_value(tnu, "scientificName")
-
-# Before calling this, cache as follows:
-#   synonym_index = index_by_column(tnus, "acceptedNameUsageID").
-
-def get_synonyms(tnu, synonym_index):
-  id = get_value(tnu, "taxonID")
-  if id is None: return ()
-  return synonym_index.get(id, ())
-
-def is_accepted(tnu):
-  return get_value(tnu, "taxonomicStatus") == "accepted"
+          write_row(None, B_tnu, "fell through cracks", "oops", 1)
 
 # Roots - accepted tnus without parents
 
@@ -294,7 +319,7 @@ def get_roots(tnus, id_index):
 # Parent/children
 
 def get_parent(tnu, id_index):
-  id = get_value(tnu, "parentNameUsageID")
+  id = get_value(tnu, parent_tnu_id_field)
   if id != None:
     return id_index.get(id, None)
   else:
@@ -303,18 +328,18 @@ def get_parent(tnu, id_index):
 # List of child tnus, or () if none
 
 def get_children(tnu, hierarchy):
-  parent_id = get_value(tnu, "taxonID")
+  parent_id = get_value(tnu, tnu_id_field)
   return hierarchy.get(parent_id, ())
 
 # For each parent tnu id, all tnus having that id as taxon id
 
 def index_hierarchy(tnus):
-  return index_by_column(tnus, "parentNameUsageID")
+  return index_by_column(tnus, parent_tnu_id_field)
 
 def badness(tnu):
-  status = get_value(tnu, "nomenclaturalStatus")
+  status = get_value(tnu, nomenclatural_status_field)
   if status is None:
-    status = get_value(tnu, "taxonomicStatus")
+    status = get_value(tnu, taxonomic_status_field)
     if status is None:
       return 99
   badness = badnesses.get(status, None)
@@ -373,12 +398,54 @@ def read_checklist(indir):
       uids.append(uid)
   return uids
 
+# The following is for display purposes
+
+def get_name(tnu):
+  name = get_value(tnu, canonical_name_field)
+  if name != None:
+    return name
+  return get_value(tnu, scientific_name_field)
+
+# Before calling this, cache as follows:
+#   synonym_index = index_by_column(tnus, accepted_tnu_id_field).
+
+def get_synonyms(tnu, synonym_index):
+  id = get_value(tnu, tnu_id_field)
+  if id is None: return ()
+  return sorted(synonym_index.get(id, ()),
+                key=badness)
+
+def is_accepted(tnu):
+  return get_value(tnu, taxonomic_status_field) == "accepted"
+
+def get_accepted(A_candidate, A_id_index):
+  if is_accepted(A_candidate):
+    A_accepted = A_candidate
+  else:
+    A_accepted_id = get_value(A_candidate, accepted_tnu_id_field)
+    if A_accepted_id in A_id_index:
+      A_accepted = A_id_index[A_accepted_id]
+    else:
+      print ("accepted but no accepted id", A_candidate)
+      A_accepted = None
+  return A_accepted
+
+# Get the value of a field of a TNU record
+
 def get_value(uid, label):
   (guide, row) = registry[uid]
   text = row[guide.get(label, None)]
   if text == '':
     return None
   return text
+
+tnu_id_field = "taxonID"
+accepted_tnu_id_field = "acceptedNameUsageID"
+taxonomic_status_field = "taxonomicStatus"
+nomenclatural_status_field = "nomenclaturalStatus"
+canonical_name_field = "canonicalName"    # without authority
+scientific_name_field = "scientificName"  # with authority
+parent_tnu_id_field = "parentNameUsageID"
 
 # Create a dict mapping field values to lists of keys (uids, tnus)
 
@@ -392,7 +459,7 @@ def index_by_column(checklist, label):
         have.append(uid)
       else:
         index[value] = [uid]
-  print (label, "entries:", len(index))
+  print (label, "values:", len(index))
   return index
 
 # You could use this for, say, taxonID, or maybe authority (scientificName)
@@ -421,7 +488,7 @@ def get_tnu_path(dwca_dir):
   raise ValueError("cannot find TNU file", dwca_dir)
 
 
-# From command line
+# When invoked from command line:
 
 if __name__ == '__main__':
   parser = argparse.ArgumentParser()

@@ -9,11 +9,11 @@ hoc report file.  See below for restrictions.
 ### Get NCBI taxonomy from FTP site
 
 We'll put everything related to the February 2020 version of NCBI
-taxonomy under `ncbi/2020-02-01`.  Start with the release (`dump`).
+taxonomy under `ncbi/2020-01-01`.  Start with the release (`dump`).
 
-    mkdir -p ncbi/2020-02-01/dump
-    wget ftp://ftp.ncbi.nlm.nih.gov/pub/taxonomy/taxdump_archive/taxdmp_2020-02-01.zip
-    unzip -d ncbi/2020-02-01/dump taxdmp_2020-02-01.zip
+    mkdir -p ncbi/2020-01-01/dump
+    wget ftp://ftp.ncbi.nlm.nih.gov/pub/taxonomy/taxdump_archive/taxdmp_2020-01-01.zip
+    unzip -d ncbi/2020-01-01/dump taxdmp_2020-01-01.zip
 
 Of course you can do this with any version you like, by substituting the date.
 
@@ -35,7 +35,7 @@ Other archived versions of GBIF are available on their site.
 NCBI has its own taxonomy dump format, which needs to be converted to
 DwCA.  There's a tool for this purpose:
 
-    time python3 src/ncbi_to_dwca.py ncbi/2020-01-01/dump ncbi/2020-01-01/dwca
+    python3 src/ncbi_to_dwca.py ncbi/2020-01-01/dump ncbi/2020-01-01/dwca
 
 (The GBIF files are DwCA format already, so they can be used directly.)
 

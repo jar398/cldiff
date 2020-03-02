@@ -68,7 +68,7 @@ def move_names_to_nodes(names, nodes):
     else:
       keep.append(row)
   names = keep
-  print (len(scinames), "scientific (canonical) names")
+  print (len(scinames), "canonicalNames (NCBI scientific names)")
   keep = []
   authorities = {}
   for row in names:
