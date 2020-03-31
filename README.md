@@ -1,5 +1,11 @@
 # Checklist difference
 
+The 'checklist diff' idea developed out of conversations between Nico and Jonathan in Feb 2020.  I thought it might be fun to write a quick and dirty prototype as way to help develop a specification for what we might want eventually.
+
+I think there are probably several use cases, e.g.:
+* General user of checklists (especially from GBIF) who wants to know how they compare
+* Someone interested in taxonomy (or 'taxon concepts') who wants a starting point for developing a an RCC-5 alignment of two checklists or taxonomies
+
 The inputs are two checklists (or taxonomies) in Darwin Core Archive
 format, that have been unzipped to directories.  The output is an ad
 hoc report file.  See below for restrictions.
