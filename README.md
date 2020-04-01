@@ -1,6 +1,6 @@
 # Checklist difference
 
-The 'checklist diff' idea developed out of conversations between Nico and Jonathan in Feb 2020.  I thought it might be fun to write a quick and dirty prototype as way to help develop a specification for what we might want eventually.
+The 'checklist diff' idea developed out of conversations between Nico, Beckett, and Jonathan in Feb 2020.  I thought it might be fun to write a quick and dirty prototype as way to help develop a specification for what we might want eventually.
 
 I think there are probably several use cases, e.g.:
 * General user of checklists (especially from GBIF) who wants to know how they compare
