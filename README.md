@@ -117,10 +117,8 @@ This is highly in flux... as of today we have:
  * `nesting` - increases with hierarchical nesting depth, so in
    general (for example) the value in this row will be greater for
    species than for families.
- * `A_id` - TNU id of the TNU in the A taxonomy
- * `A_name` - canonical name of the TNU in the A taxonomy
- * `B_id` - TNU id of the TNU in the B taxonomy
- * `B_name` - canonical name of the TNU in the B taxonomy
+ * `A_name` - canonical name of the TNU in the A checklist
+ * `B_name` - canonical name of the TNU in the B checklist
  * `how` - describes matching status, usually via topology
  * `mode` - describes matching via synonymy
 
