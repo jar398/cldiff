@@ -11,15 +11,15 @@
   python3 ncbi_to_dwca.py ~/ncbi/2015-01-01/dump ~/ncbi/2015-01-01/dwca
 """
 
-import sys, os, csv
+import sys, os, csv, argparse
 
-def main(indir, outdir):
+def main(indir, outpath):
   assert os.path.exists(indir)
-  nodes = read_nodes(indir)
-  names = read_names(indir)
-  merged = read_merged(indir)
+  nodes = read_nodes(os.path.join(indir, "nodes.dmp"))
+  names = read_names(os.path.join(indir, "names.dmp"))
+  merged = read_merged(os.path.join(indir, "merged.dmp"))
   (names, scinames, authorities) = move_names_to_nodes(names, nodes)
-  emit_dwc(nodes, names, scinames, authorities, merged, outdir)
+  emit_dwc(nodes, names, scinames, authorities, merged, outpath)
 
 def write_row(writer,
               taxonID, parentNameUsageID, taxonRank,
@@ -29,13 +29,13 @@ def write_row(writer,
                    acceptedNameUsageID, scientificName, canonicalName,
                    taxonomicStatus, nomenclaturalStatus])
 
-def emit_dwc(nodes, names, scinames, authorities, merged, outdir):
-  if not os.path.isdir(outdir):
-    os.mkdir(outdir)
-  outpath =  os.path.join(outdir, "taxon.tsv")
+def emit_dwc(nodes, names, scinames, authorities, merged, outpath):
+  outdir = os.path.basename(outpath)
+  if not os.path.isdir(outdir): os.mkdir(outdir)
+  (delimiter, quotechar) = choose_csv_parameters(outpath)
   print ("Writing", outpath)
   with open(outpath, "w") as outfile:
-    writer = csv.writer(outfile, delimiter="\t", quotechar='\a', quoting=csv.QUOTE_NONE)
+    writer = csv.writer(outfile, delimiter=delimiter, quotechar=quotechar)
     write_row(writer,
               "taxonID", "parentNameUsageID", "taxonRank",
               "acceptedNameUsageID", "scientificName", "canonicalName",
@@ -43,26 +43,29 @@ def emit_dwc(nodes, names, scinames, authorities, merged, outdir):
     for (id, parent_id, rank) in nodes:
       write_row(writer,
                 id, parent_id, rank,
-                None,
-                authorities.get(id, None),
-                scinames.get(id, None),
+                None, authorities.get(id, None), scinames.get(id, None),
                 "accepted", None)
-    for (id, text, kind) in names:
-      if kind == "synonym": kind = None    # not a nomenclatural status
+    for (id, text, kind, spin) in names:
+      # synonym is a taxonomic status, not a nomenclatural status
+      if kind == "synonym": kind = None
+      minted = id + "." + str(spin)
       write_row(writer,
-                None, None, None,
-                id, None, text, "synonym", kind)
+                minted, None, None,
+                id, None, text,
+                "synonym", kind)
     for (old_id, new_id) in merged:
+      canonical = "%s merged into %s" % (old_id, new_id)
       write_row(writer,
                 old_id, None, None,
-                new_id, None, None, "synonym", "merged id")
+                new_id, None, canonical,
+                "synonym", "merged id")
 
 
 def move_names_to_nodes(names, nodes):
   keep = []
   scinames = {}
   for row in names:
-    (id, text, kind) = row
+    (id, text, kind, spin) = row
     if kind == "scientific name":
       scinames[id] = text
     else:
@@ -72,7 +75,7 @@ def move_names_to_nodes(names, nodes):
   keep = []
   authorities = {}
   for row in names:
-    (id, text, kind) = row
+    (id, text, kind, spin) = row
     if kind == "authority":
       probe = scinames.get(id, None)
       if probe and text.startswith(probe):
@@ -85,34 +88,55 @@ def move_names_to_nodes(names, nodes):
   print (len(authorities), "authorities")
   return (names, scinames, authorities)
 
-def read_nodes(indir):
+def read_nodes(nodes_path):
   nodes = []
   # Read the nodes file
-  with open(os.path.join(indir, "nodes.dmp"), "r") as infile:
-    for row in csv.reader(infile, delimiter="\t", quotechar='\a', quoting=csv.QUOTE_NONE):
+  with open(nodes_path, "r") as infile:
+    for row in csv.reader(infile, delimiter="\t", quotechar=quotechar_for_tab):
       # tax_id, |, parent tax_id, |, rank, ... other stuff we don't use ...
       nodes.append((row[0], row[2], row[4]))
   print (len(nodes), "nodes")
   return nodes
 
-def read_names(indir):
+def read_names(names_path):
   names = []
   # Read the names file
-  with open(os.path.join(indir, "names.dmp"), "r") as infile:
-    for row in csv.reader(infile, delimiter="\t", quotechar='\a', quoting=csv.QUOTE_NONE):
+  with open(names_path, "r") as infile:
+    # Depends on names being grouped by taxa
+    previous_id = None
+    spin = -1
+    for row in csv.reader(infile, delimiter='\t', quotechar=quotechar_for_tab):
       # tax_id, |, text, |, <unused>, |, name class, ... other stuff we don't use ...
-      names.append((row[0], row[2], row[6]))
+      id = row[0]
+      if str(id) != previous_id:
+        spin = 1
+        previous_id = id
+      else:
+        spin += 1
+      names.append((id, row[2], row[6], spin))
   print (len(names), "names")
   return names
 
-def read_merged(indir):
+def read_merged(merged_path):
   merged = []
   # Read the merged file
-  with open(os.path.join(indir, "merged.dmp"), "r") as infile:
-    for row in csv.reader(infile, delimiter="\t", quotechar='\a', quoting=csv.QUOTE_NONE):
+  with open(merged_path, "r") as infile:
+    for row in csv.reader(infile, delimiter="\t", quotechar=quotechar_for_tab):
       # old_tax_id, |, new_tax_id
       merged.append((row[0], row[2]))
   print (len(merged), "merged")
   return merged
 
-main(sys.argv[1], sys.argv[2])
+def choose_csv_parameters(outpath):
+  _, extension = os.path.splitext(outpath)
+  return (',', '"') if extension == "csv" else ('\t', quotechar_for_tab)
+quotechar_for_tab = '\a'
+
+# When invoked from command line:
+
+if __name__ == '__main__':
+  parser = argparse.ArgumentParser()
+  parser.add_argument('dump', help='directory containing taxdump files')
+  parser.add_argument('--out', help='where to store the DwC version')
+  args = parser.parse_args()
+  main(args.dump, args.out)

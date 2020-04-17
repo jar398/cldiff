@@ -73,8 +73,10 @@ class Checklist:
             index[value] = [tnu]
       self.indexes[position] = index
     return self.indexes[position]
-  def populate_from_file(self, indir):
-    with open(get_tnu_path(indir), "r") as infile:
+  def populate_from_directory(self, indirs):
+    self.populate_from_file(get_tnu_path(indir))
+  def populate_from_file(self, inpath):
+    with open(inpath, "r") as infile:
       reader = csv.reader(infile, delimiter="\t", quotechar='\a', quoting=csv.QUOTE_NONE)
       head = next(reader)
       guide = {key: position for (key, position) in zip(head, range(len(head)))}
@@ -96,9 +98,10 @@ def get_all_tnus(checklist):
 
 # Read a checklist from a file
 
-def read_checklist(indir):
+def read_checklist(specifier, prefix):
   checklist = Checklist()
-  checklist.populate_from_file(indir)
+  checklist.populate_from_file(specifier)
+  checklist.prefix = prefix
   return checklist
 
 # Utility - copied from another file - really ought to be shared
@@ -161,6 +164,20 @@ def get_name(tnu):
   if name != None:
     return name
   return get_value(tnu, scientific_name_field)
+
+# Unique name of the sort Nico likes
+
+def get_unique(tnu):
+  checklist = get_checklist(tnu)
+  name = get_name(tnu)
+  tnus_with_this_name = \
+    get_tnus_with_value(checklist, canonical_name_field, name)
+
+  better = checklist.prefix + name.replace(" ", "_")
+  if len(tnus_with_this_name) <= 1:
+    return better
+  else:
+    return checklist.prefix + name + "#" + get_value(tnu, tnu_id_field)
 
 # All synonyms, sorted
 

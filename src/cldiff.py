@@ -25,8 +25,8 @@ import argparse
 from checklist import *
 
 def main(c1, c2, out):
-  A = read_checklist(c1)
-  B = read_checklist(c2)
+  A = read_checklist(c1, "A.")
+  B = read_checklist(c2, "B.")
   print ("counts:", len(get_all_tnus(A)), len(get_all_tnus(B)))
 
   (best_A_for_B, reasons) = choose_best_matches(A, B)
@@ -166,8 +166,9 @@ def report(A, B, best_A_for_B, reasons, outpath):
         descend(child, subdepth)
 
       # Show grafts (inferred children)
+      # [B_tnu for B_tnu in B_tnus if is_graft(B_tnu)]
       for B_tnu in B_tnus:
-        if reasons[B_tnu][1] == "graft":
+        if is_graft(B_tnu):
           descend_graft(B_tnu, subdepth, True)
 
     def descend_graft(B_tnu, depth, graftp):
@@ -181,7 +182,7 @@ def report(A, B, best_A_for_B, reasons, outpath):
     def show_matches(A_tnu, B_tnus, depth):
 
       B_tnus = \
-        [B_tnu for B_tnu in B_tnus if reasons[B_tnu][0] < 80]
+        [B_tnu for B_tnu in B_tnus if not is_graft(B_tnu)]
       for A_syn in get_synonyms(A_tnu):
         B_tnus += Bs_for_A.get(A_syn, ())
       B_tnus = \
@@ -201,6 +202,9 @@ def report(A, B, best_A_for_B, reasons, outpath):
       else:
         write_row(A_tnu, None, "no match in B", depth)
 
+    def is_graft(B_tnu):
+      return reasons[B_tnu][0] >= 80
+
     def write_row(A_tnu, B_tnu, rel, depth):
       remark = None
       B_name = ''
@@ -212,14 +216,12 @@ def report(A, B, best_A_for_B, reasons, outpath):
         if not is_accepted(B_tnu):
           B_accepted = get_accepted(B_tnu)
           seen[B_accepted] = True
-          remark = ("synonym of %s %s" %
-                    (display_id(B_accepted, "B"), get_name(B_accepted)))
+          remark = ("synonym of %s" %
+                    (display_name(B_accepted)))
       writer.writerow([str(depth),
-                       display_id(A_tnu, "A"),
-                       (get_name(A_tnu) if A_tnu else ""),
+                       display_name(A_tnu),
                        rel,
-                       display_id(B_tnu, "B"),
-                       B_name,
+                       display_name(B_tnu),
                        remark])
 
     def relationship(A_tnu, B_tnu, rel):
@@ -239,11 +241,9 @@ def report(A, B, best_A_for_B, reasons, outpath):
                      probe[1] if probe else "??"),
                     1)
 
-def display_id(tnu, prefix):
+def display_name(tnu):
   if tnu:
-    id = get_value(tnu, tnu_id_field)
-    if id:
-      return "%s:%s" % (prefix, id)
+    return get_unique(tnu)
   return ''
 
 
