@@ -29,6 +29,12 @@ def main(c1, c2, out):
   B = read_checklist(c2, "B.")
   print ("counts:", len(get_all_tnus(A)), len(get_all_tnus(B)))
 
+  analyze_fringes(A, B)
+  print ("fringe matches:", len(fringe_matches))
+
+  analyze_topologies(A, B)
+  print ("cross_mrcas:", len(cross_mrcas))
+
   (best_A_for_B, reasons) = choose_best_matches(A, B)
 
   report(A, B, best_A_for_B, reasons, out)
@@ -49,69 +55,25 @@ def choose_best_matches(A, B):
 
   def process(B_tnu):           # B_tnu is accepted
 
-    # 1. Try to put it with its siblings (n.b. only accepted TNUs have children)
-    A_tnu = None
-    pending = []
+    # Look for match
+    links = all_matches(B_tnu, A)
+    if len(links) > 0:
+      (A_tnu, synonym, comment) = links[0]
+      best_A_for_B[B_tnu] = A_tnu
+      reasons[B_tnu] = (25, comment)
+    else:
+      A_tnu = None
+      reasons[B_tnu] = (99, "no match in A")
+
+    # Recur, and find orphans/grafts
     for B_child in get_children(B_tnu):
       A_child = process(B_child)
-      if A_child:
-        A_tnu = mrca(get_parent(A_child), A_tnu)
-      else:
-        pending.append(B_child) # graft
-    if A_tnu:
-      best_A_for_B[B_tnu] = A_tnu   # Accepted
-      reasons[B_tnu] = (10, "by topology")
-
-    # 2. If no siblings got assigned, look for textual match to
-    # accepted name.
-    if A_tnu == None:
-      A_tnu = text_match(A, B_tnu)
-      if A_tnu:
-        best_A_for_B[B_tnu] = A_tnu
-        if is_accepted(A_tnu):
-          reasons[B_tnu] = (20, "accepted/accepted")
+      if not A_child:
+        if A_tnu:
+          best_A_for_B[B_child] = A_tnu   # parent/child, though
+          reasons[B_child] = (80, "graft")
         else:
-          # This is the failing case??
-          reasons[B_tnu] = (25, "synonym/accepted")
-
-    # Now process the synonyms, looking for textual matches in A.
-    # (? maybe only do this if no match so far ?)
-    seen = [A_tnu]
-    for B_syn in get_synonyms(B_tnu): # Sorted by quality
-      A_match = text_match(A, B_syn)
-      if A_match:
-        A_accepted = get_accepted(A_match)
-        if A_accepted in seen:   # Eliminate redundant low quality synonyms
-          reasons[B_syn] = (98, "redundant B-synonym")
-        else:
-          seen.append(A_accepted)
-          best_A_for_B[B_syn] = A_match
-          if is_accepted(A_match):
-            reasons[B_syn] = (30, "accepted/synonym")
-          else:
-            reasons[B_syn] = (35, "synonym/synonym")
-
-    # 3. No match of accepted name; use mrca of synonym matches (if any)
-    #  (alternatively, 'best' synonym ?)
-    if A_tnu == None:
-      for B_syn in get_synonyms(B_tnu):
-        A_match = text_match(A, B_syn)
-        A_tnu = mrca(A_match, A_tnu)          # ???
-      if A_tnu:
-        best_A_for_B[B_tnu] = A_tnu
-        reasons[B_tnu] = (50, "mrca of B-synonyms")
-
-    # Graft unmatched siblings to mrca of matched siblings
-    if A_tnu:
-      for p in pending:
-        best_A_for_B[p] = A_tnu
-        reasons[p] = (80, "graft")
-    else:
-      for p in pending:
-        reasons[p] = (85, "part of graft")
-
-    if not B_tnu in best_A_for_B:
-      reasons[B_tnu] = (99, "no match/accepted")
+          reasons[B_child] = (85, "part of graft")
 
     return A_tnu
 
@@ -144,8 +106,8 @@ def report(A, B, best_A_for_B, reasons, outpath):
     print ("Writing:", outpath)
     writer = csv.writer(outfile)
 
-    writer.writerow(["nesting", "A_id", "A_name", "relationship",
-                     "B_id", "B_name", "remark"])
+    writer.writerow(["nesting", "A_taxon", "basis",
+                     "B_taxon", "remark"])
 
     # Print in order of A hierarchy
     # Rel = B_tnu's relationship to A_tnu
@@ -183,21 +145,19 @@ def report(A, B, best_A_for_B, reasons, outpath):
 
       B_tnus = \
         [B_tnu for B_tnu in B_tnus if not is_graft(B_tnu)]
-      for A_syn in get_synonyms(A_tnu):
-        B_tnus += Bs_for_A.get(A_syn, ())
       B_tnus = \
         sorted(B_tnus, key=lambda B_tnu: match_order(B_tnu, reasons))
 
       if len(B_tnus) == 1:
         B_tnu = B_tnus[0]
-        write_row(A_tnu, B_tnu, relationship(A_tnu, B_tnu, "unique "),
+        write_row(A_tnu, B_tnu, relationship(A_tnu, B_tnu, "%1"),
                   depth)
       elif len(B_tnus) > 1:
         write_row(A_tnu, None, "%s matches follow:" % len(B_tnus),
                   depth)
         for B_tnu in B_tnus:
           write_row(None, B_tnu,
-                    relationship(A_tnu, B_tnu, ""),
+                    relationship(A_tnu, B_tnu, "%2"),
                     depth)
       else:
         write_row(A_tnu, None, "no match in B", depth)
@@ -225,7 +185,7 @@ def report(A, B, best_A_for_B, reasons, outpath):
                        remark])
 
     def relationship(A_tnu, B_tnu, rel):
-      return rel + reasons[B_tnu][1]
+      return rel + (reasons[B_tnu][1] or "= by name")
 
     for root in get_roots(A):
       descend(root, 1)
@@ -248,6 +208,7 @@ def display_name(tnu):
 
 
 # Common ancestor - utility
+# Also computes number of matched tips
 
 def mrca(tnu1, tnu2):
   if tnu1 == None: return tnu2
@@ -283,6 +244,173 @@ def get_depth(tnu):
   depth_cache[tnu] = d
   return d
 
+# ----------------------------------------------------------------------
+# NEW
+
+def compose(link1, link2):
+  (node1, synonym1, comment1) = link1
+  (node2, synonym2, comment2) = link2
+  if badness(synonym1) < badness(synonym2):
+    return link2
+  else:
+    return (node2, synonym1, comment1)
+
+def synonym_matches(node):
+  return [(node, None, None)] + \
+         [(synonym, synonym, "<= by synonym")
+            for synonym in get_synonyms(node)]
+# tbd: use status = get_value(synonym, nomenclatural_status_field)
+
+def direct_name_matches(node, other):
+  name = get_name(node)
+  candidates = get_tnus_with_value(other, canonical_name_field, name)
+  return [(candidate, None, None)
+            for candidate in candidates]
+
+def accepted_matches(node):
+  if is_accepted(node):
+    return [(node, None, None)]
+  else:
+    return [(get_accepted(node), node, ">= by synonym")]
+
+def name_based_matches(node1, other):
+  links = []
+  assert node1 + 0 == node1
+  for link1 in synonym_matches(node1):
+    (node2, _, comment2) = link1
+    for link2 in direct_name_matches(node2, other):
+      link12 = compose(link1, link2)
+      (node3, _, comment3) = link12
+      for link3 in accepted_matches(node3):
+        links.append(compose(link12, link3))
+  links = sorted(links, key=lambda link: badness(link[1]))
+  pruned = []
+  seen = []
+  for link in links:
+    if not link[0] in seen:
+      pruned.append(link)
+      seen.append(link)
+  return pruned
+
+def all_matches(node, other):
+  m = topological_match(node)
+  m2 = name_based_matches(node, other)
+  if m:
+    return [m] + m2
+  else:
+    return m2
+
+#
+
+def analyze_topologies(A, B):
+  analyze_topology(A, B)
+  analyze_topology(B, A)
+
+def analyze_topology(checklist, other):
+  for root in get_roots(checklist):
+    subanalyze_topology(root, other)
+
+cross_mrcas = {}
+
+def subanalyze_topology(tnu, other):
+  children = get_children(tnu)
+  if len(children) > 0:
+    m = None
+    for child in children:
+      partner = subanalyze_topology(child, other)
+      if partner:
+        m = mrca(m, get_parent(partner))
+    if m:
+      cross_mrcas[tnu] = m
+      return m
+  return mutual_fringe_match(tnu)
+
+def topological_match(tnu):
+  partner = cross_mrcas.get(tnu)
+  if partner:
+    back = cross_mrcas.get(partner)
+    if tnu == back:
+      return (partner, None, "= by topology")
+    else:
+      return (partner, None, "> by topology")
+  else:
+    return None
+
+#
+
+def analyze_fringes(A, B):
+  analyze_fringe(A, B)
+  analyze_fringe(B, A)
+
+def analyze_fringe(checklist, other):
+  for root in get_roots(checklist):
+    subanalyze_fringe(root, other)
+
+fringe_matches = {}
+
+def subanalyze_fringe(tnu, other):
+  children = get_children(tnu)
+  if len(children) > 0:
+    found_match = False
+    for child in children:
+      if subanalyze_fringe(child, other):
+        found_match = True
+    if found_match:
+      return found_match
+  matches = name_based_matches(tnu, other)
+  if len(matches) > 0:
+    fringe_matches[tnu] = matches[0][0]
+    return True
+  return False
+
+def mutual_fringe_match(tnu):
+  partner = fringe_matches.get(tnu)
+  if partner and fringe_matches.get(partner) == tnu:
+    return partner
+  return None
+
+# For assigning priorities to synonyms
+
+def badness(tnu):
+  if tnu == None: return 0
+  if is_accepted(tnu): return 0
+  status = get_value(tnu, nomenclatural_status_field)
+  if status is None:
+    return 99
+  badness = badnesses.get(status, None)
+  if badness is None: badness = 99
+  return badness
+
+# Name / match classes, best to worst
+
+badnesses = {
+  "identical names": 1,        # namestrings are the same
+  "authority": 1.5,
+  "scientific name": 2,        # (actually canonical) exactly one per node
+  "equivalent name": 3,        # synonym but not nomenclaturally
+  "misspelling": 3.8,
+  "genbank synonym": 4,        # at most one per node; first among equals
+  "anamorph": 4.1,
+  "teleomorph": 4.2,
+  "unpublished name": 4.5,    # non-code synonym
+  "id": 4.7,
+  "merged id": 4.8,
+
+  # above here: equivalence implied. below here: acc>=syn implied.
+  # except in the case if 'in-part' which is acc<syn.
+
+  "synonym": 5,
+  "misnomer": 5.5,
+  "includes": 6,
+  "in-part": 6.5,              # this node is part of a polyphyly
+  "type material": 7,
+  "blast name": 8,             # large well-known taxa
+  "genbank common name": 9,    # at most one per node
+  "genbank acronym": 9.2,      # at most one per node
+  "genbank anamorph": 9.4,     # at most one per node
+  "common name": 10,
+  "acronym": 10.5,
+}
 
 # When invoked from command line:
 

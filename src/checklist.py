@@ -36,9 +36,9 @@ registry = {0: "unused"}
 # Get the value of a field of a TNU record (via global registry)
 
 def get_value(uid, field):
-  (values, checklist) = registry[uid]
+  (row, checklist) = registry[uid]
   (label, position) = field
-  return values[position]
+  return row[position]
 
 def get_checklist(uid):
   (_, checklist) = registry[uid]
@@ -51,9 +51,9 @@ class Checklist:
     self.tnus = []
     self.indexes = [None] * len(the_fields)
     self.metadata = None
-  def add_tnu(self, values):
+  def add_tnu(self, row):
     uid = len(registry)
-    registry[uid] = (values, self)
+    registry[uid] = (row, self)
     self.tnus.append(uid)
   def get_all_tnus(self):
     return self.tnus
@@ -64,8 +64,8 @@ class Checklist:
       index = {}
       for tnu in self.tnus:
         # Check each row
-        (values, _) = registry[tnu]
-        value = values[position]
+        (row, _) = registry[tnu]
+        value = row[position]
         if value:
           if value in index:
             index[value].append(tnu)
@@ -161,9 +161,10 @@ def index_unique_by_column(checklist, field):
 
 def get_name(tnu):
   name = get_value(tnu, canonical_name_field)
-  if name != None:
-    return name
-  return get_value(tnu, scientific_name_field)
+  if name != None: return name
+  name = get_value(tnu, scientific_name_field)
+  if name != None: return name  
+  return get_value(tnu, tnu_id_field)
 
 # Unique name of the sort Nico likes
 
@@ -179,13 +180,11 @@ def get_unique(tnu):
   else:
     return checklist.prefix + name + "#" + get_value(tnu, tnu_id_field)
 
-# All synonyms, sorted
-
 def get_synonyms(tnu):
   id = get_value(tnu, tnu_id_field)
   if id is None: return ()
   index = get_checklist(tnu).get_index(accepted_tnu_id_field)
-  return sorted(index.get(id, ()), key=badness)
+  return index.get(id, ())
 
 def is_accepted(tnu):
   return get_value(tnu, taxonomic_status_field) == "accepted"
@@ -208,7 +207,6 @@ def get_roots(checklist):
       parent = get_parent(tnu)
       if parent is None:
         roots.append(tnu)
-  print (len(roots), "roots")
   return roots
 
 # Parent/children
@@ -229,27 +227,34 @@ def get_children(parent):
 # For assigning priorities to synonyms
 
 def badness(tnu):
+  if tnu == None: return 0
+  if is_accepted(tnu): return 0
   status = get_value(tnu, nomenclatural_status_field)
   if status is None:
-    status = get_value(tnu, taxonomic_status_field)
-    if status is None:
-      return 99
+    return 99
   badness = badnesses.get(status, None)
   if badness is None: badness = 99
   return badness
 
-# Name classes, best to worst
+# Name / match classes, best to worst
 
 badnesses = {
-  "authority": 0,
-  "scientific name": 1,        # (actually canonical) exactly one per node
-  "accepted": 1,
-  "equivalent name": 2,        # synonym but not nomenclaturally
-  "misspelling": 3,
+  "identical names": 1,        # namestrings are the same
+  "authority": 1.5,
+  "scientific name": 2,        # (actually canonical) exactly one per node
+  "equivalent name": 3,        # synonym but not nomenclaturally
+  "misspelling": 3.8,
   "genbank synonym": 4,        # at most one per node; first among equals
+  "anamorph": 4.1,
+  "teleomorph": 4.2,
+  "unpublished name": 4.5,    # non-code synonym
+  "id": 4.7,
+  "merged id": 4.8,
+
+  # above here: equivalence implied. below here: acc>=syn implied.
+  # except in the case if 'in-part' which is acc<syn.
+
   "synonym": 5,
-  "anamorph": 5.1,
-  "teleomorph": 5.2,
   "misnomer": 5.5,
   "includes": 6,
   "in-part": 6.5,              # this node is part of a polyphyly
@@ -260,9 +265,6 @@ badnesses = {
   "genbank anamorph": 9.4,     # at most one per node
   "common name": 10,
   "acronym": 10.5,
-  "unpublished name": 10.7,    # non-code synonym
-  "id": 11,
-  "merged id": 12,
 }
 
 # Totally general utilities from here down... I guess...
