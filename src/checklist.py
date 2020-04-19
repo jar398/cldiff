@@ -224,49 +224,6 @@ def get_children(parent):
   parent_id = get_value(parent, tnu_id_field)
   return get_tnus_with_value(get_checklist(parent), parent_tnu_id_field, parent_id)
 
-# For assigning priorities to synonyms
-
-def badness(tnu):
-  if tnu == None: return 0
-  if is_accepted(tnu): return 0
-  status = get_value(tnu, nomenclatural_status_field)
-  if status is None:
-    return 99
-  badness = badnesses.get(status, None)
-  if badness is None: badness = 99
-  return badness
-
-# Name / match classes, best to worst
-
-badnesses = {
-  "identical names": 1,        # namestrings are the same
-  "authority": 1.5,
-  "scientific name": 2,        # (actually canonical) exactly one per node
-  "equivalent name": 3,        # synonym but not nomenclaturally
-  "misspelling": 3.8,
-  "genbank synonym": 4,        # at most one per node; first among equals
-  "anamorph": 4.1,
-  "teleomorph": 4.2,
-  "unpublished name": 4.5,    # non-code synonym
-  "id": 4.7,
-  "merged id": 4.8,
-
-  # above here: equivalence implied. below here: acc>=syn implied.
-  # except in the case if 'in-part' which is acc<syn.
-
-  "synonym": 5,
-  "misnomer": 5.5,
-  "includes": 6,
-  "in-part": 6.5,              # this node is part of a polyphyly
-  "type material": 7,
-  "blast name": 8,             # large well-known taxa
-  "genbank common name": 9,    # at most one per node
-  "genbank acronym": 9.2,      # at most one per node
-  "genbank anamorph": 9.4,     # at most one per node
-  "common name": 10,
-  "acronym": 10.5,
-}
-
 # Totally general utilities from here down... I guess...
 
 def invert_dict(d):
@@ -277,6 +234,43 @@ def invert_dict(d):
     else:
       inv[val] = [key]
   return inv
+
+# Common ancestor - utility
+# Also computes number of matched tips
+
+def mrca(tnu1, tnu2):
+  if tnu1 == None: return tnu2
+  if tnu2 == None: return tnu1
+  if tnu1 == tnu2: return tnu1
+
+  tnu1 = get_accepted(tnu1)
+  tnu2 = get_accepted(tnu2)
+
+  d1 = get_depth(tnu1)
+  d2 = get_depth(tnu2)
+  while d1 > d2:
+    tnu1 = get_parent(tnu1)
+    d1 -= 1
+  while d2 > d1:
+    tnu2 = get_parent(tnu2)
+    d2 -= 1
+  while tnu1 != tnu2:
+    tnu1 = get_parent(tnu1)
+    tnu2 = get_parent(tnu2)
+  return tnu1
+
+depth_cache = {}
+
+def get_depth(tnu):
+  depth = depth_cache.get(tnu, None)
+  if depth: return depth
+  parent = get_parent(tnu)
+  if parent == None:
+    d = 0
+  else:
+    d = get_depth(parent) + 1
+  depth_cache[tnu] = d
+  return d
 
 # Test
 

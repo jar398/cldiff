@@ -207,43 +207,6 @@ def display_name(tnu):
   return ''
 
 
-# Common ancestor - utility
-# Also computes number of matched tips
-
-def mrca(tnu1, tnu2):
-  if tnu1 == None: return tnu2
-  if tnu2 == None: return tnu1
-  if tnu1 == tnu2: return tnu1
-
-  tnu1 = get_accepted(tnu1)
-  tnu2 = get_accepted(tnu2)
-
-  d1 = get_depth(tnu1)
-  d2 = get_depth(tnu2)
-  while d1 > d2:
-    tnu1 = get_parent(tnu1)
-    d1 -= 1
-  while d2 > d1:
-    tnu2 = get_parent(tnu2)
-    d2 -= 1
-  while tnu1 != tnu2:
-    tnu1 = get_parent(tnu1)
-    tnu2 = get_parent(tnu2)
-  return tnu1
-
-depth_cache = {}
-
-def get_depth(tnu):
-  depth = depth_cache.get(tnu, None)
-  if depth: return depth
-  parent = get_parent(tnu)
-  if parent == None:
-    d = 0
-  else:
-    d = get_depth(parent) + 1
-  depth_cache[tnu] = d
-  return d
-
 # ----------------------------------------------------------------------
 # NEW
 
