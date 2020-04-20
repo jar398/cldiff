@@ -27,6 +27,7 @@ nomenclatural_status_field = define_field("nomenclaturalStatus")
 canonical_name_field       = define_field("canonicalName")    # without authority
 scientific_name_field      = define_field("scientificName")  # with authority
 parent_tnu_id_field        = define_field("parentNameUsageID")
+taxon_rank_field           = define_field("taxonRank")
 
 # Registry = tnu uid -> (value vector, checklist)
 #  where value vector is a vector that parallels the `the_fields` list
@@ -166,6 +167,9 @@ def get_name(tnu):
   if name != None: return name  
   return get_value(tnu, tnu_id_field)
 
+def get_rank(tnu):
+  return get_value(tnu, taxon_rank_field)
+
 # Unique name of the sort Nico likes
 
 def get_unique(tnu):
@@ -235,17 +239,8 @@ def invert_dict(d):
       inv[val] = [key]
   return inv
 
-# Common ancestor - utility
-# Also computes number of matched tips
-
-def mrca(tnu1, tnu2):
-  if tnu1 == None: return tnu2
-  if tnu2 == None: return tnu1
-  if tnu1 == tnu2: return tnu1
-
-  tnu1 = get_accepted(tnu1)
-  tnu2 = get_accepted(tnu2)
-
+def find_level(tnu1, tnu2):
+  assert get_checklist(tnu1) == get_checklist(tnu2)
   d1 = get_depth(tnu1)
   d2 = get_depth(tnu2)
   while d1 > d2:
@@ -254,7 +249,23 @@ def mrca(tnu1, tnu2):
   while d2 > d1:
     tnu2 = get_parent(tnu2)
     d2 -= 1
-  while tnu1 != tnu2:
+  return (tnu1, tnu2)
+
+def are_disjoint(tnu1, tnu2):
+  (tnu1, tnu2) = find_level(tnu1, tnu2)
+  return tnu1 != tnu2
+
+# Common ancestor - utility
+# Also computes number of matched tips
+
+def mrca(tnu1, tnu2):
+  if tnu1 == None: return tnu2
+  if tnu2 == None: return tnu1
+  tnu1 = get_accepted(tnu1)
+  tnu2 = get_accepted(tnu2)
+  if tnu1 == tnu2: return tnu1
+  (tnu1, tnu2) = find_level(tnu1, tnu2)
+  while tnu1 != tnu2 and tnu1:
     tnu1 = get_parent(tnu1)
     tnu2 = get_parent(tnu2)
   return tnu1

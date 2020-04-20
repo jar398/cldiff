@@ -35,18 +35,22 @@ def fuzz(rel):
 # compose = < > with min
 # but the others don't compose
 
-eq       = get_relation(1, 1, '=')
-lt       = get_relation(1, 0.5, '<')
-gt       = reverse(lt, '>')
-overlaps = get_relation(0.5, 0.5, '⟂')
-mutex    = get_relation(0, 0.3, '∥')
+eq        = get_relation(1, 1, '=')
+lt        = get_relation(1, 0.5, '<')
+gt        = reverse(lt, '>')
+conflict  = get_relation(0.5, 0.5, '⟂')    # careful with this
+disjoint  = get_relation(0, 0, '||')       # ∥ careful with this
 
 # Non-RCC5 options
 
-approx   = get_relation(0.9, 0.9, '≈')
-le       = get_relation(0.9, 0.5, '≤')
-ge       = reverse(le, '≥')
+similar  = get_relation(0.9, 0.9, '~=')  # ≈
+le       = get_relation(0.9, 0.5, '<=')  # ≤
+ge       = reverse(le, '>=')  # ≥
+intersect = get_relation(0.5, 0.5, '∩')
 
 assert reverse(eq) == eq
-
 assert compose(eq, eq) == eq
+assert compose(lt, lt) == lt
+assert compose(disjoint, gt) == disjoint
+assert compose(eq, similar) == similar
+# assert compose(lt, le) == lt  - doesn't work
