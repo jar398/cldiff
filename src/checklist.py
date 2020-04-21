@@ -184,6 +184,8 @@ def get_unique(tnu):
   tnus_with_this_name = \
     get_tnus_with_value(checklist, canonical_name_field, name)
 
+  if not is_accepted(tnu):
+    name = "?" + name
   better = checklist.prefix + name.replace(" ", "_")
   if len(tnus_with_this_name) <= 1:
     return better

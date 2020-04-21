@@ -80,7 +80,8 @@ def best_match(node, other):
     best_name_based_match(node, other)
 
 def best_topological_match(node, other):
-  matches = topological_matches(node, other)
+  matches = prune_matches([to_accepted_match(match)
+                           for match in topological_matches(node, other)])
   if len(matches) > 0:
     return matches[0]
   return None
@@ -352,7 +353,7 @@ def name_based_matches(tnu, other):
   probe = name_based_matches_cache.get(tnu)
   if probe: return probe
 
-  matches = [art.compose(a, to_accepted_match(direct))
+  matches = [to_accepted_match(art.compose(a, direct))
              for a in from_accepted_articulations(tnu)
              for direct in direct_matches(a.cod, other)]
   matches = prune_matches(matches)
