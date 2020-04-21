@@ -14,29 +14,33 @@ import relation as rel
 
 Articulation = \
   collections.namedtuple('Articulation',
-                         ['dom', 'cod', 'relation', 'badness', 'comment'])
+                         ['dom', 'cod', 'relation', 'relations'])
 
-def art(dom, cod, re, badness, comment):
-  assert dom
-  assert cod
-  assert badness >= 0
-  return Articulation(dom, cod, re, badness, comment)
+def art(dom, cod, re):
+  assert dom > 0
+  assert cod > 0
+  assert re
+  assert re.name
+  return Articulation(dom, cod, re, [re])
 
-def reverse(art):
-  return Articulation(art.cod, art.dom, rel.reverse(art.relation), art.badness, art.comment)
+def identity(node):
+  return art(node, node, rel.eq)
 
 def compose(p, q):
   assert p.cod == q.dom
-  if p.comment == None:
-    comment = q.comment
-  elif q.comment == None:
-    comment = p.comment
-  elif p.comment == q.comment:
-    comment = p.comment
-  else:
-    comment = "%s; %s" % (p.comment, q.comment)
+  if is_identity(p): return q
+  if is_identity(q): return p
   return Articulation(p.dom,
                       q.cod,
                       rel.compose(p.relation, q.relation),
-                      max(p.badness, q.badness),
-                      comment)
+                      p.relations + q.relations)
+
+def get_comment(art):
+  return "; ".join([re.name for re in art.relations])
+
+def reverse(art):
+  return Articulation(art.cod, art.dom, rel.reverse(art.relation),
+                      [rel.reverse(re) for re in art.relations[::-1]])
+
+def is_identity(art):
+  return art.dom == art.dom and art.relation == rel.eq

@@ -122,18 +122,24 @@ def get_tnu_path(dwca_dir):
 
 # Get TNUs in checklist having a given value
 
+canonical_empty_list = []
+
 def get_tnus_with_value(checklist, field, value):
-  return checklist.get_index(field).get(value, ())
+  return checklist.get_index(field).get(value, canonical_empty_list)
 
 # Get unique (we hope) TNU possessing a given identifier
 
+def get_tnu_id(tnu):
+  return get_value(tnu, tnu_id_field)
+
 def get_tnu_with_id(checklist, id):
-  index = checklist.get_index(tnu_id_field)
-  tnus = index.get(id, None)
+  tnus = checklist.get_index(tnu_id_field).get(id, None)
   if tnus:
     return tnus[0]
   else:
     return None
+
+  return get_value(tnu, tnu_id_field)
 
 # Create a dict mapping field values to lists of keys (uids, tnus)
 #  - deprecated
@@ -165,7 +171,7 @@ def get_name(tnu):
   if name != None: return name
   name = get_value(tnu, scientific_name_field)
   if name != None: return name  
-  return get_value(tnu, tnu_id_field)
+  return get_tnu_id(tnu)
 
 def get_rank(tnu):
   return get_value(tnu, taxon_rank_field)
@@ -182,36 +188,25 @@ def get_unique(tnu):
   if len(tnus_with_this_name) <= 1:
     return better
   else:
-    return checklist.prefix + name + "#" + get_value(tnu, tnu_id_field)
-
-def get_synonyms(tnu):
-  id = get_value(tnu, tnu_id_field)
-  if id is None: return ()
-  index = get_checklist(tnu).get_index(accepted_tnu_id_field)
-  return index.get(id, ())
-
-def is_accepted(tnu):
-  return get_value(tnu, taxonomic_status_field) == "accepted"
-
-def get_accepted(A_candidate):
-  if is_accepted(A_candidate):
-    return A_candidate
-  else:
-    A_accepted_id = get_value(A_candidate, accepted_tnu_id_field)
-    if A_accepted_id == None:
-      print ("tnu is accepted, but it has no accepted id", A_candidate)
-    return get_tnu_with_id(get_checklist(A_candidate), A_accepted_id)
+    return checklist.prefix + name + "#" + get_tnu_id(tnu)
 
 # Roots - accepted tnus without parents
 
 def get_roots(checklist):
   roots = []
   for tnu in get_all_tnus(checklist):
-    if is_accepted(tnu):
-      parent = get_parent(tnu)
-      if parent is None:
-        roots.append(tnu)
+    parent = get_superior(tnu)
+    if parent is None:
+      roots.append(tnu)
   return roots
+
+# Superior/inferior
+
+def get_superior(tnu):
+  return get_parent(tnu) or get_accepted(tnu)
+
+def get_inferiors(tnu):
+  return get_children(tnu) + get_synonyms(tnu)
 
 # Parent/children
 
@@ -222,11 +217,34 @@ def get_parent(tnu):
   else:
     return None
 
-# List of child tnus, or () if none
-
 def get_children(parent):
-  parent_id = get_value(parent, tnu_id_field)
-  return get_tnus_with_value(get_checklist(parent), parent_tnu_id_field, parent_id)
+  return get_tnus_with_value(get_checklist(parent),
+                             parent_tnu_id_field,
+                             get_tnu_id(parent))
+
+# Accepted/synonyms
+
+def to_accepted(tnu):
+  if is_accepted(tnu):
+    return tnu
+  else:
+    return get_accepted(tnu)
+
+def get_accepted(tnu):
+  assert tnu > 0
+  accepted_id = get_value(tnu, accepted_tnu_id_field)
+  if accepted_id == None:
+    return None
+  return get_tnu_with_id(get_checklist(tnu), accepted_id)
+
+def get_synonyms(tnu):
+  return get_tnus_with_value(get_checklist(tnu),
+                             accepted_tnu_id_field,
+                             get_tnu_id(tnu))
+
+
+def is_accepted(tnu):
+  return get_value(tnu, taxonomic_status_field) == "accepted"
 
 # Totally general utilities from here down... I guess...
 
@@ -240,18 +258,24 @@ def invert_dict(d):
   return inv
 
 def find_level(tnu1, tnu2):
+  assert tnu1 > 0
+  assert tnu2 > 0
   assert get_checklist(tnu1) == get_checklist(tnu2)
   d1 = get_depth(tnu1)
   d2 = get_depth(tnu2)
   while d1 > d2:
-    tnu1 = get_parent(tnu1)
+    tnu1 = get_superior(tnu1)
     d1 -= 1
   while d2 > d1:
-    tnu2 = get_parent(tnu2)
+    tnu2 = get_superior(tnu2)
     d2 -= 1
   return (tnu1, tnu2)
 
 def are_disjoint(tnu1, tnu2):
+  assert tnu1 > 0
+  assert tnu2 > 0
+  tnu1 = to_accepted(tnu1)
+  tnu2 = to_accepted(tnu2)
   (tnu1, tnu2) = find_level(tnu1, tnu2)
   return tnu1 != tnu2
 
@@ -261,13 +285,11 @@ def are_disjoint(tnu1, tnu2):
 def mrca(tnu1, tnu2):
   if tnu1 == None: return tnu2
   if tnu2 == None: return tnu1
-  tnu1 = get_accepted(tnu1)
-  tnu2 = get_accepted(tnu2)
   if tnu1 == tnu2: return tnu1
   (tnu1, tnu2) = find_level(tnu1, tnu2)
   while tnu1 != tnu2 and tnu1:
-    tnu1 = get_parent(tnu1)
-    tnu2 = get_parent(tnu2)
+    tnu1 = get_superior(tnu1)
+    tnu2 = get_superior(tnu2)
   return tnu1
 
 depth_cache = {}
@@ -275,7 +297,7 @@ depth_cache = {}
 def get_depth(tnu):
   depth = depth_cache.get(tnu, None)
   if depth: return depth
-  parent = get_parent(tnu)
+  parent = get_superior(tnu)
   if parent == None:
     d = 0
   else:
@@ -293,7 +315,7 @@ if __name__ == '__main__':
   print ("Specimen tnu:", tnu)
   print (registry[tnu][0])
   print ("Name:", get_name(tnu))
-  print ("Parent:", get_parent(tnu))
+  print ("Superior:", get_superior(tnu))
   synos = get_synonyms(tnu)
   print ("Synonyms:", list(map(get_name, synos)))
   print ("Back atcha:", [get_accepted(syno) for syno in synos])
