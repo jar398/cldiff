@@ -1,6 +1,6 @@
 WORK=work
 
-all: $(WORK)/diff.csv
+all: $(WORK)/output.csv
 
 # A (older)
 
@@ -47,4 +47,8 @@ $(B)/primates.csv: $(B)/converted.csv
 
 $(WORK)/diff.csv: src/cldiff.py $(A)/primates.csv $(B)/primates.csv
 	python3 src/cldiff.py $(A)/primates.csv $(B)/primates.csv --out $@.new
+	mv $@.new $@
+
+$(WORK)/output.csv: src/diff.py $(A)/primates.csv $(B)/primates.csv
+	python3 src/diff.py $(A)/primates.csv $(B)/primates.csv --out $@.new
 	mv $@.new $@

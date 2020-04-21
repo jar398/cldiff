@@ -1,528 +1,640 @@
-NO CHANGE,A.Primates,=,B.Primates,=fringe + =name
-  NO CHANGE,A.unclassified_Primates,=,B.unclassified_Primates,=fringe + =name
-    RENAME,A.Japanese_monkeys,=,B.Macaca_fuscata,id=; merged id of; alternate=
-    NO CHANGE,A.marmosets,=,B.marmosets,=fringe + =name
+NO CHANGE,A.Primates,=,B.Primates,fringe= + name=
+  NO CHANGE,A.unclassified_Primates,=,B.unclassified_Primates,fringe= + name=
+    MOVE,A.Japanese_monkeys,=,B.Macaca_fuscata,split; id=; merged id of
+    NO CHANGE,A.marmosets,=,B.marmosets,fringe= + name=
     NO CHANGE,A.unidentified_monkey,=,B.unidentified_monkey,fringe=; synonym of
-    NO CHANGE,A.Primates_sp._BOLD:AAA0001,=,B.Primates_sp._BOLD:AAA0001,=fringe + =name
-    NO CHANGE,A.Primates_sp._BOLD:AAC9009,=,B.Primates_sp._BOLD:AAC9009,=fringe + =name
-    NO CHANGE,A.Primates_sp._BOLD:AAE4744,=,B.Primates_sp._BOLD:AAE4744,=fringe + =name
-    NO CHANGE,A.Primates_sp._BOLD:AAJ7304,=,B.Primates_sp._BOLD:AAJ7304,=fringe + =name
-    NO CHANGE,A.Primates_sp._BOLD:AAO0053,=,B.Primates_sp._BOLD:AAO0053,=fringe + =name
-    NO CHANGE,A.Primates_sp._BOLD:AAC7735,=,B.Primates_sp._BOLD:AAC7735,=fringe + =name
-    NO CHANGE,A.Primates_sp._BOLD:AAD0215,=,B.Primates_sp._BOLD:AAD0215,=fringe + =name
-    NO CHANGE,A.Primates_sp._BOLD:AAF0367,=,B.Primates_sp._BOLD:AAF0367,=fringe + =name
-  NO CHANGE,A.Strepsirrhini,=,B.Strepsirrhini,=fringe + =name
-    NO CHANGE,A.Lemuriformes,=,B.Lemuriformes,=fringe + =name
-      NO CHANGE,A.Lemuridae,=,B.Lemuridae,=fringe + =name
-        NO CHANGE,A.Lemur,=,B.Lemur,=fringe + =name
+    NO CHANGE,A.Primates_sp._BOLD:AAA0001,=,B.Primates_sp._BOLD:AAA0001,fringe= + name=
+    NO CHANGE,A.Primates_sp._BOLD:AAC9009,=,B.Primates_sp._BOLD:AAC9009,fringe= + name=
+    NO CHANGE,A.Primates_sp._BOLD:AAE4744,=,B.Primates_sp._BOLD:AAE4744,fringe= + name=
+    NO CHANGE,A.Primates_sp._BOLD:AAJ7304,=,B.Primates_sp._BOLD:AAJ7304,fringe= + name=
+    NO CHANGE,A.Primates_sp._BOLD:AAO0053,=,B.Primates_sp._BOLD:AAO0053,fringe= + name=
+    NO CHANGE,A.Primates_sp._BOLD:AAC7735,=,B.Primates_sp._BOLD:AAC7735,fringe= + name=
+    NO CHANGE,A.Primates_sp._BOLD:AAD0215,=,B.Primates_sp._BOLD:AAD0215,fringe= + name=
+    NO CHANGE,A.Primates_sp._BOLD:AAF0367,=,B.Primates_sp._BOLD:AAF0367,fringe= + name=
+  NO CHANGE,A.Strepsirrhini,=,B.Strepsirrhini,fringe= + name=
+    NO CHANGE,A.Lemuriformes,=,B.Lemuriformes,fringe= + name=
+      NO CHANGE,A.Lemuridae,=,B.Lemuridae,fringe= + name=
+        NO CHANGE,A.Lemur,=,B.Lemur,fringe= + name=
           NO CHANGE,A.Lemur_catta,=,B.Lemur_catta,fringe=; genbank common name of
-          NO CHANGE,A.Lemur_sp.,=,B.Lemur_sp.,=fringe + =name
-        NO CHANGE,A.Varecia,=,B.Varecia,=fringe + =name
-          NO CHANGE,A.Varecia_variegata,=,B.Varecia_variegata,=fringe + =name
-            NO CHANGE,A.Varecia_variegata_variegata,=,B.Varecia_variegata_variegata,=fringe + =name
-          NO CHANGE,A.Varecia_rubra,=,B.Varecia_rubra,=fringe + =name
-        NO CHANGE,A.Eulemur,=,B.Eulemur,=fringe + =name
-          NO CHANGE,A.Eulemur_coronatus,=,B.Eulemur_coronatus,=fringe + =name
-          NO CHANGE,A.Eulemur_fulvus,=,B.Eulemur_fulvus,=fringe + =name
-            NO CHANGE,A.Eulemur_fulvus_mayottensis,=,B.Eulemur_fulvus_mayottensis,=fringe + =name
+          MOVE,A.Lemur_sp.,=,B.Lemur_sp.,fringe= + name=
+            RENAME,,=,B.unclassified_Lemur,fringe=; split
+        NO CHANGE,A.Varecia,=,B.Varecia,fringe= + name=
+          NO CHANGE,A.Varecia_variegata,=,B.Varecia_variegata,fringe= + name=
+            NO CHANGE,A.Varecia_variegata_variegata,=,B.Varecia_variegata_variegata,fringe= + name=
+          NO CHANGE,A.Varecia_rubra,=,B.Varecia_rubra,fringe= + name=
+        NO CHANGE,A.Eulemur,=,B.Eulemur,fringe= + name=
+          NO CHANGE,A.Eulemur_coronatus,=,B.Eulemur_coronatus,fringe= + name=
+          NO CHANGE,A.Eulemur_fulvus,=,B.Eulemur_fulvus,fringe= + name=
+            NO CHANGE,A.Eulemur_fulvus_mayottensis,=,B.Eulemur_fulvus_mayottensis,fringe= + name=
             NO CHANGE,A.Eulemur_fulvus_fulvus,=,B.Eulemur_fulvus_fulvus,fringe=; synonym of
             NO CHANGE,A.Eulemur_fulvus_collaris,=,B.Eulemur_fulvus_collaris,fringe=; synonym of
             NO CHANGE,A.Eulemur_fulvus_albocollaris,=,B.Eulemur_fulvus_albocollaris,fringe=; synonym of
-          RENAME,A.Eulemur_macaco,=,B.Eulemur_macaco_macaco,fringe=
-            NO CHANGE,A.Eulemur_macaco_macaco,=,B.Eulemur_macaco_macaco,=fringe + =name
-          NO CHANGE,A.Eulemur_mongoz,=,B.Eulemur_mongoz,=fringe + =name
-          NO CHANGE,A.Eulemur_rubriventer,=,B.Eulemur_rubriventer,=fringe + =name
-          NO CHANGE,A.Eulemur_flavifrons,=,B.Eulemur_flavifrons,=fringe + =name
-          NO CHANGE,A.Eulemur_sanfordi,=,B.Eulemur_sanfordi,=fringe + =name
+          MOVE,A.Eulemur_macaco,=,B.Eulemur_macaco_macaco,split; fringe=
+            MOVE,A.Eulemur_macaco_macaco,=,B.Eulemur_macaco_macaco,fringe= + name=
+              MOVE,,=,B.Eulemur_macaco,fringe=; split
+          NO CHANGE,A.Eulemur_mongoz,=,B.Eulemur_mongoz,fringe= + name=
+          NO CHANGE,A.Eulemur_rubriventer,=,B.Eulemur_rubriventer,fringe= + name=
+          NO CHANGE,A.Eulemur_flavifrons,=,B.Eulemur_flavifrons,fringe= + name=
+          NO CHANGE,A.Eulemur_sanfordi,=,B.Eulemur_sanfordi,fringe= + name=
           NO CHANGE,A.Eulemur_cinereiceps,=,B.Eulemur_cinereiceps,fringe=; genbank common name of
-          NO CHANGE,A.Eulemur_rufus,=,B.Eulemur_rufus,=fringe + =name
+          NO CHANGE,A.Eulemur_rufus,=,B.Eulemur_rufus,fringe= + name=
           NO CHANGE,A.Eulemur_rufifrons,=,B.Eulemur_rufifrons,fringe=; genbank common name of
-          NO CHANGE,A.Eulemur_albifrons,=,B.Eulemur_albifrons,=fringe + =name
-          REORGANIZE,A.Eulemur_hybrids,⟂,B.Eulemur,fringe-conflict
-            NO CHANGE,A.Eulemur_albifrons_x_rufifrons,=,B.Eulemur_albifrons_x_rufifrons,=fringe + =name
+          NO CHANGE,A.Eulemur_albifrons,=,B.Eulemur_albifrons,fringe= + name=
+          REORGANIZE,A.Eulemur_hybrids,⟂,B.Eulemur,split; fringe-conflict
+            NO CHANGE,A.Eulemur_albifrons_x_rufifrons,=,B.Eulemur_albifrons_x_rufifrons,fringe= + name=
             NO CHANGE,A.Eulemur_albifrons_x_cinereiceps,=,B.Eulemur_albifrons_x_cinereiceps,fringe=; synonym of
             NO CHANGE,A.Eulemur_cinereiceps_x_rufifrons,=,B.Eulemur_cinereiceps_x_rufifrons,fringe=; synonym of
-        NO CHANGE,A.Hapalemur,=,B.Hapalemur,=fringe + =name
-          NO CHANGE,A.Hapalemur_griseus,=,B.Hapalemur_griseus,=fringe + =name
-            NO CHANGE,A.Hapalemur_griseus_griseus,=,B.Hapalemur_griseus_griseus,=fringe + =name
-            NO CHANGE,A.Hapalemur_griseus_alaotrensis,=,B.Hapalemur_griseus_alaotrensis,=fringe + =name
-            NO CHANGE,A.Hapalemur_griseus_occidentalis,=,B.Hapalemur_griseus_occidentalis,=fringe + =name
-            NO CHANGE,A.Hapalemur_griseus_meridionalis,=,B.Hapalemur_griseus_meridionalis,=fringe + =name
-            NO CHANGE,A.Hapalemur_griseus_JF2002,=,B.Hapalemur_griseus_JF2002,=fringe + =name
+        NO CHANGE,A.Hapalemur,=,B.Hapalemur,fringe= + name=
+          NO CHANGE,A.Hapalemur_griseus,=,B.Hapalemur_griseus,fringe= + name=
+            NO CHANGE,A.Hapalemur_griseus_griseus,=,B.Hapalemur_griseus_griseus,fringe= + name=
+            NO CHANGE,A.Hapalemur_griseus_alaotrensis,=,B.Hapalemur_griseus_alaotrensis,fringe= + name=
+            NO CHANGE,A.Hapalemur_griseus_occidentalis,=,B.Hapalemur_griseus_occidentalis,fringe= + name=
+            NO CHANGE,A.Hapalemur_griseus_meridionalis,=,B.Hapalemur_griseus_meridionalis,fringe= + name=
+            NO CHANGE,A.Hapalemur_griseus_JF2002,=,B.Hapalemur_griseus_JF2002,fringe= + name=
           NO CHANGE,A.Hapalemur_aureus,=,B.Hapalemur_aureus,fringe=; genbank common name of
           NO CHANGE,A.Hapalemur_occidentalis,=,B.Hapalemur_occidentalis,fringe=; genbank common name of
-        REORGANIZE,A.Prolemur,⟂,B.Prolemur_simus,fringe-conflict
-          NO CHANGE,A.Prolemur_simus,=,B.Prolemur_simus,=fringe + =name
-      NO CHANGE,A.Indriidae,=,B.Indriidae,=fringe + =name
-        NO CHANGE,A.Propithecus,=,B.Propithecus,=fringe + =name
-          NO CHANGE,A.Propithecus_tattersalli,=,B.Propithecus_tattersalli,=fringe + =name
-          NO CHANGE,A.Propithecus_verreauxi,=,B.Propithecus_verreauxi,=fringe + =name
-            NO CHANGE,A.Propithecus_verreauxi_verreauxi,=,B.Propithecus_verreauxi_verreauxi,=fringe + =name
-          NO CHANGE,A.Propithecus_sp.,=,B.Propithecus_sp.,fringe=; genbank common name of
-          NO CHANGE,A.Propithecus_diadema,=,B.Propithecus_diadema,=fringe + =name
-            NO CHANGE,A.Propithecus_diadema_diadema,=,B.Propithecus_diadema_diadema,=fringe + =name
-            NO CHANGE,A.Propithecus_diadema_marshi,=,B.Propithecus_diadema_marshi,=fringe + =name
-          NO CHANGE,A.Propithecus_coquereli,=,B.Propithecus_coquereli,=fringe + =name
-          NO CHANGE,A.Propithecus_deckenii,=,B.Propithecus_deckenii,=fringe + =name
-            NO CHANGE,A.Propithecus_deckenii_coronatus,=,B.Propithecus_deckenii_coronatus,=fringe + =name
-            NO CHANGE,A.Propithecus_deckenii_deckenii,=,B.Propithecus_deckenii_deckenii,=fringe + =name
-          NO CHANGE,A.Propithecus_edwardsi,=,B.Propithecus_edwardsi,=fringe + =name
-          NO CHANGE,A.Propithecus_candidus,=,B.Propithecus_candidus,=fringe + =name
-          NO CHANGE,A.Propithecus_perrieri,=,B.Propithecus_perrieri,=fringe + =name
-        RENAME,A.Indri,=,B.Indri_indri,fringe=
-          NO CHANGE,A.Indri_indri,=,B.Indri_indri,=fringe + =name
-        NO CHANGE,A.Avahi,=,B.Avahi,=fringe + =name
+        REORGANIZE,A.Prolemur,⟂,B.Prolemur_simus,split; fringe-conflict
+          MOVE,A.Prolemur_simus,=,B.Prolemur_simus,fringe= + name=
+            REORGANIZED,,⟂,B.Prolemur,fringe-conflict; split
+        GRAFT,,>,B.Pachylemur,fringe= + name=; child; graft
+      NO CHANGE,A.Indriidae,=,B.Indriidae,fringe= + name=
+        NO CHANGE,A.Propithecus,=,B.Propithecus,fringe= + name=
+          NO CHANGE,A.Propithecus_tattersalli,=,B.Propithecus_tattersalli,fringe= + name=
+          NO CHANGE,A.Propithecus_verreauxi,=,B.Propithecus_verreauxi,fringe= + name=
+            NO CHANGE,A.Propithecus_verreauxi_verreauxi,=,B.Propithecus_verreauxi_verreauxi,fringe= + name=
+          MOVE,A.Propithecus_sp.,=,B.Propithecus_sp.,fringe=; genbank common name of
+            RENAME,,=,B.unclassified_Propithecus,genbank common name of; fringe=; split
+          NO CHANGE,A.Propithecus_diadema,=,B.Propithecus_diadema,fringe= + name=
+            NO CHANGE,A.Propithecus_diadema_diadema,=,B.Propithecus_diadema_diadema,fringe= + name=
+            NO CHANGE,A.Propithecus_diadema_marshi,=,B.Propithecus_diadema_marshi,fringe= + name=
+          NO CHANGE,A.Propithecus_coquereli,=,B.Propithecus_coquereli,fringe= + name=
+          NO CHANGE,A.Propithecus_deckenii,=,B.Propithecus_deckenii,fringe= + name=
+            NO CHANGE,A.Propithecus_deckenii_coronatus,=,B.Propithecus_deckenii_coronatus,fringe= + name=
+            NO CHANGE,A.Propithecus_deckenii_deckenii,=,B.Propithecus_deckenii_deckenii,fringe= + name=
+          NO CHANGE,A.Propithecus_edwardsi,=,B.Propithecus_edwardsi,fringe= + name=
+          NO CHANGE,A.Propithecus_candidus,=,B.Propithecus_candidus,fringe= + name=
+          NO CHANGE,A.Propithecus_perrieri,=,B.Propithecus_perrieri,fringe= + name=
+        MOVE,A.Indri,=,B.Indri_indri,split; fringe=
+          MOVE,A.Indri_indri,=,B.Indri_indri,fringe= + name=
+            MOVE,,=,B.Indri,fringe=; split
+        NO CHANGE,A.Avahi,=,B.Avahi,fringe= + name=
           NO CHANGE,A.Avahi_laniger,=,B.Avahi_laniger,fringe=; genbank common name of
-          NO CHANGE,A.Avahi_occidentalis,=,B.Avahi_occidentalis,=fringe + =name
+          NO CHANGE,A.Avahi_occidentalis,=,B.Avahi_occidentalis,fringe= + name=
           NO CHANGE,A.Avahi_unicolor,=,B.Avahi_unicolor,fringe=; genbank common name of
-          NO CHANGE,A.Avahi_cleesei,=,B.Avahi_cleesei,=fringe + =name
-          NO CHANGE,A.Avahi_peyrierasi,=,B.Avahi_peyrierasi,=fringe + =name
-        NO CHANGE,A.Archaeolemur,=,B.Archaeolemur,=fringe + =name
-          NO CHANGE,A.Archaeolemur_majori,=,B.Archaeolemur_majori,=fringe + =name
-          NO CHANGE,A.Archaeolemur_edwardsi,=,B.Archaeolemur_edwardsi,=fringe + =name
-        RENAME,A.Hadropithecus,=,B.Hadropithecus_stenognathus,fringe=
-          NO CHANGE,A.Hadropithecus_stenognathus,=,B.Hadropithecus_stenognathus,=fringe + =name
-      NO CHANGE,A.Lepilemuridae,=,B.Lepilemuridae,=fringe + =name
-        NO CHANGE,A.Lepilemur,=,B.Lepilemur,=fringe + =name
-          NO CHANGE,A.Lepilemur_mustelinus,=,B.Lepilemur_mustelinus,=fringe + =name
+          NO CHANGE,A.Avahi_cleesei,=,B.Avahi_cleesei,fringe= + name=
+          NO CHANGE,A.Avahi_peyrierasi,=,B.Avahi_peyrierasi,fringe= + name=
+        NO CHANGE,A.Archaeolemur,=,B.Archaeolemur,fringe= + name=
+          NO CHANGE,A.Archaeolemur_majori,=,B.Archaeolemur_majori,fringe= + name=
+          NO CHANGE,A.Archaeolemur_edwardsi,=,B.Archaeolemur_edwardsi,fringe= + name=
+        MOVE,A.Hadropithecus,=,B.Hadropithecus_stenognathus,split; fringe=
+          MOVE,A.Hadropithecus_stenognathus,=,B.Hadropithecus_stenognathus,fringe= + name=
+            MOVE,,=,B.Hadropithecus,fringe=; split
+      NO CHANGE,A.Lepilemuridae,=,B.Lepilemuridae,fringe= + name=
+        NO CHANGE,A.Lepilemur,=,B.Lepilemur,fringe= + name=
+          NO CHANGE,A.Lepilemur_mustelinus,=,B.Lepilemur_mustelinus,fringe= + name=
           NO CHANGE,A.Lepilemur_dorsalis,=,B.Lepilemur_dorsalis,fringe=; genbank common name of
           NO CHANGE,A.Lepilemur_septentrionalis,=,B.Lepilemur_septentrionalis,fringe=; genbank common name of
           NO CHANGE,A.Lepilemur_ruficaudatus,=,B.Lepilemur_ruficaudatus,fringe=; genbank common name of
           NO CHANGE,A.Lepilemur_leucopus,=,B.Lepilemur_leucopus,fringe=; genbank common name of
           NO CHANGE,A.Lepilemur_edwardsi,=,B.Lepilemur_edwardsi,fringe=; genbank common name of
-          NO CHANGE,A.Lepilemur_microdon,=,B.Lepilemur_microdon,=fringe + =name
-          NO CHANGE,A.Lepilemur_sp._RANO236,=,B.Lepilemur_sp._RANO236,=fringe + =name
-          NO CHANGE,A.Lepilemur_sp._RANO234,=,B.Lepilemur_sp._RANO234,=fringe + =name
-          NO CHANGE,A.Lepilemur_sp._RANO235,=,B.Lepilemur_sp._RANO235,=fringe + =name
-          NO CHANGE,A.Lepilemur_mitsinjoensis,=,B.Lepilemur_mitsinjoensis,=fringe + =name
-          NO CHANGE,A.Lepilemur_seali,=,B.Lepilemur_seali,=fringe + =name
-          NO CHANGE,A.Lepilemur_sahamalazensis,=,B.Lepilemur_sahamalazensis,=fringe + =name
-          NO CHANGE,A.Lepilemur_aeeclis,=,B.Lepilemur_aeeclis,=fringe + =name
-          NO CHANGE,A.Lepilemur_ankaranensis,=,B.Lepilemur_ankaranensis,=fringe + =name
-          NO CHANGE,A.Lepilemur_mittermeieri,=,B.Lepilemur_mittermeieri,=fringe + =name
-          NO CHANGE,A.Lepilemur_sp._hubbardi,=,B.Lepilemur_sp._hubbardi,=fringe + =name
-          NO CHANGE,A.Lepilemur_manasamody,=,B.Lepilemur_manasamody,=fringe + =name
-          NO CHANGE,A.Lepilemur_otto,=,B.Lepilemur_otto,=fringe + =name
-          RENAME,A.Lepilemur_jamesi,=,B.Lepilemur_jamesorum,=fringe + =name
-          NO CHANGE,A.Lepilemur_hubbardorum,=,B.Lepilemur_hubbardorum,=fringe + =name
-          NO CHANGE,A.Lepilemur_petteri,=,B.Lepilemur_petteri,=fringe + =name
-          NO CHANGE,A.Lepilemur_randrianasoloi,=,B.Lepilemur_randrianasoloi,=fringe + =name
-        NO CHANGE,A.Megaladapis,=,B.Megaladapis,=fringe + =name
-          NO CHANGE,A.Megaladapis_sp.,=,B.Megaladapis_sp.,=fringe + =name
-          NO CHANGE,A.Megaladapis_edwardsi,=,B.Megaladapis_edwardsi,=fringe + =name
-          NO CHANGE,A.Megaladapis_sp._UA5482,=,B.Megaladapis_sp._UA5482,=fringe + =name
-          NO CHANGE,A.Megaladapis_sp._UA4823,=,B.Megaladapis_sp._UA4823,=fringe + =name
-          NO CHANGE,A.Megaladapis_sp._UA4821,=,B.Megaladapis_sp._UA4821,=fringe + =name
-          NO CHANGE,A.Megaladapis_sp._UA4822,=,B.Megaladapis_sp._UA4822,=fringe + =name
-      NO CHANGE,A.Cheirogaleidae,=,B.Cheirogaleidae,=fringe + =name
-        NO CHANGE,A.Cheirogaleus,=,B.Cheirogaleus,=fringe + =name
-          NO CHANGE,A.Cheirogaleus_medius,=,B.Cheirogaleus_medius,=fringe + =name
+          NO CHANGE,A.Lepilemur_microdon,=,B.Lepilemur_microdon,fringe= + name=
+          MOVE,A.Lepilemur_sp._RANO236,=,B.Lepilemur_sp._RANO236,fringe= + name=
+          MOVE,A.Lepilemur_sp._RANO234,=,B.Lepilemur_sp._RANO234,fringe= + name=
+          MOVE,A.Lepilemur_sp._RANO235,=,B.Lepilemur_sp._RANO235,fringe= + name=
+          NO CHANGE,A.Lepilemur_mitsinjoensis,=,B.Lepilemur_mitsinjoensis,fringe= + name=
+          NO CHANGE,A.Lepilemur_seali,=,B.Lepilemur_seali,fringe= + name=
+          NO CHANGE,A.Lepilemur_sahamalazensis,=,B.Lepilemur_sahamalazensis,fringe= + name=
+          NO CHANGE,A.Lepilemur_aeeclis,=,B.Lepilemur_aeeclis,fringe= + name=
+          NO CHANGE,A.Lepilemur_ankaranensis,=,B.Lepilemur_ankaranensis,fringe= + name=
+          NO CHANGE,A.Lepilemur_mittermeieri,=,B.Lepilemur_mittermeieri,fringe= + name=
+          MOVE,A.Lepilemur_sp._hubbardi,=,B.Lepilemur_sp._hubbardi,fringe= + name=
+          NO CHANGE,A.Lepilemur_manasamody,=,B.Lepilemur_manasamody,fringe= + name=
+          NO CHANGE,A.Lepilemur_otto,=,B.Lepilemur_otto,fringe= + name=
+          RENAME,A.Lepilemur_jamesi,=,B.Lepilemur_jamesorum,fringe= + name=
+          NO CHANGE,A.Lepilemur_hubbardorum,=,B.Lepilemur_hubbardorum,fringe= + name=
+          NO CHANGE,A.Lepilemur_petteri,=,B.Lepilemur_petteri,fringe= + name=
+          NO CHANGE,A.Lepilemur_randrianasoloi,=,B.Lepilemur_randrianasoloi,fringe= + name=
+          GRAFT,,>,B.Lepilemur_ahmansonorum,fringe= + name=; child; graft
+          GRAFT,,>,B.Lepilemur_betsileo,fringe= + name=; child; graft
+          GRAFT,,>,B.Lepilemur_fleuretae,fringe= + name=; child; graft
+          GRAFT,,>,B.Lepilemur_grewcockorum,fringe= + name=; child; graft
+          GRAFT,,>,B.Lepilemur_hollandorum,fringe= + name=; child; graft
+          GRAFT,,>,B.Lepilemur_milanoii,fringe= + name=; child; graft
+          GRAFT,,>,B.Lepilemur_scottorum,fringe= + name=; child; graft
+          GRAFT,,>,B.Lepilemur_tymerlachsoni,fringe= + name=; child; graft
+          GRAFT,,>,B.Lepilemur_wrightae,fringe= + name=; child; graft
+          REORGANIZED,,⟂,B.unclassified_Lepilemur,fringe-conflict; split
+        NO CHANGE,A.Megaladapis,=,B.Megaladapis,fringe= + name=
+          MOVE,A.Megaladapis_sp.,=,B.Megaladapis_sp.,fringe= + name=
+          NO CHANGE,A.Megaladapis_edwardsi,=,B.Megaladapis_edwardsi,fringe= + name=
+          MOVE,A.Megaladapis_sp._UA5482,=,B.Megaladapis_sp._UA5482,fringe= + name=
+          MOVE,A.Megaladapis_sp._UA4823,=,B.Megaladapis_sp._UA4823,fringe= + name=
+          MOVE,A.Megaladapis_sp._UA4821,=,B.Megaladapis_sp._UA4821,fringe= + name=
+          MOVE,A.Megaladapis_sp._UA4822,=,B.Megaladapis_sp._UA4822,fringe= + name=
+          REORGANIZED,,⟂,B.unclassified_Megaladapis,fringe-conflict; split
+      NO CHANGE,A.Cheirogaleidae,=,B.Cheirogaleidae,fringe= + name=
+        NO CHANGE,A.Cheirogaleus,=,B.Cheirogaleus,fringe= + name=
+          NO CHANGE,A.Cheirogaleus_medius,=,B.Cheirogaleus_medius,fringe= + name=
           NO CHANGE,A.Cheirogaleus_major,=,B.Cheirogaleus_major,fringe=; genbank common name of
           NO CHANGE,A.Cheirogaleus_crossleyi,=,B.Cheirogaleus_crossleyi,fringe=; genbank common name of
-          NO CHANGE,A.Cheirogaleus_sibreei,=,B.Cheirogaleus_sibreei,=fringe + =name
+          NO CHANGE,A.Cheirogaleus_sibreei,=,B.Cheirogaleus_sibreei,fringe= + name=
           NO CHANGE,A.Cheirogaleus_minusculus,=,B.Cheirogaleus_minusculus,fringe=; genbank common name of
-        NO CHANGE,A.Microcebus,=,B.Microcebus,=fringe + =name
-          NO CHANGE,A.Microcebus_murinus,=,B.Microcebus_murinus,=fringe + =name
-          NO CHANGE,A.Microcebus_ravelobensis,=,B.Microcebus_ravelobensis,=fringe + =name
+          GRAFT,,>,B.Cheirogaleus_lavasoensis,fringe= + name=; child; graft
+        NO CHANGE,A.Microcebus,=,B.Microcebus,fringe= + name=
+          NO CHANGE,A.Microcebus_murinus,=,B.Microcebus_murinus,fringe= + name=
+          NO CHANGE,A.Microcebus_ravelobensis,=,B.Microcebus_ravelobensis,fringe= + name=
           NO CHANGE,A.Microcebus_rufus,=,B.Microcebus_rufus,fringe=; genbank common name of
-          NO CHANGE,A.Microcebus_myoxinus,=,B.Microcebus_myoxinus,=fringe + =name
-          NO CHANGE,A.Microcebus_tavaratra,=,B.Microcebus_tavaratra,=fringe + =name
+          NO CHANGE,A.Microcebus_myoxinus,=,B.Microcebus_myoxinus,fringe= + name=
+          NO CHANGE,A.Microcebus_tavaratra,=,B.Microcebus_tavaratra,fringe= + name=
           NO CHANGE,A.Microcebus_berthae,=,B.Microcebus_berthae,fringe=; genbank common name of
-          NO CHANGE,A.Microcebus_sambiranensis,=,B.Microcebus_sambiranensis,=fringe + =name
-          NO CHANGE,A.Microcebus_griseorufus,=,B.Microcebus_griseorufus,=fringe + =name
+          NO CHANGE,A.Microcebus_sambiranensis,=,B.Microcebus_sambiranensis,fringe= + name=
+          NO CHANGE,A.Microcebus_griseorufus,=,B.Microcebus_griseorufus,fringe= + name=
           NO CHANGE,A.Microcebus_simmonsi,=,B.Microcebus_simmonsi,fringe=; genbank common name of
           NO CHANGE,A.Microcebus_mittermeieri,=,B.Microcebus_mittermeieri,fringe=; genbank common name of
           NO CHANGE,A.Microcebus_jollyae,=,B.Microcebus_jollyae,fringe=; genbank common name of
-          NO CHANGE,A.Microcebus_sp._EELHDZ_M98,=,B.Microcebus_sp._EELHDZ_M98,=fringe + =name
-          NO CHANGE,A.Microcebus_sp._EELHDZ_TAD23,=,B.Microcebus_sp._EELHDZ_TAD23,=fringe + =name
-          NO CHANGE,A.Microcebus_sp._EELHDZ_VEV33,=,B.Microcebus_sp._EELHDZ_VEV33,=fringe + =name
-          NO CHANGE,A.Microcebus_sp._EELHDZ_VEV35,=,B.Microcebus_sp._EELHDZ_VEV35,=fringe + =name
-          NO CHANGE,A.Microcebus_lehilahytsara,=,B.Microcebus_lehilahytsara,=fringe + =name
-          NO CHANGE,A.Microcebus_sp._ANT5.1,=,B.Microcebus_sp._ANT5.1,=fringe + =name
-          NO CHANGE,A.Microcebus_bongolavensis,=,B.Microcebus_bongolavensis,=fringe + =name
-          NO CHANGE,A.Microcebus_danfossi,=,B.Microcebus_danfossi,=fringe + =name
-          NO CHANGE,A.Microcebus_lokobensis,=,B.Microcebus_lokobensis,=fringe + =name
-          NO CHANGE,A.Microcebus_sp._Ambongabe,=,B.Microcebus_sp._Ambongabe,=fringe + =name
-          NO CHANGE,A.Microcebus_sp._Bora,=,B.Microcebus_sp._Bora,=fringe + =name
-          NO CHANGE,A.Microcebus_sp._Mahajamba-Est,=,B.Microcebus_sp._Mahajamba-Est,=fringe + =name
-          NO CHANGE,A.Microcebus_sp._Maroakata,=,B.Microcebus_sp._Maroakata,=fringe + =name
+          MOVE,A.Microcebus_sp._EELHDZ_M98,=,B.Microcebus_sp._EELHDZ_M98,fringe= + name=
+          MOVE,A.Microcebus_sp._EELHDZ_TAD23,=,B.Microcebus_sp._EELHDZ_TAD23,fringe= + name=
+          MOVE,A.Microcebus_sp._EELHDZ_VEV33,=,B.Microcebus_sp._EELHDZ_VEV33,fringe= + name=
+          MOVE,A.Microcebus_sp._EELHDZ_VEV35,=,B.Microcebus_sp._EELHDZ_VEV35,fringe= + name=
+          NO CHANGE,A.Microcebus_lehilahytsara,=,B.Microcebus_lehilahytsara,fringe= + name=
+          MOVE,A.Microcebus_sp._ANT5.1,=,B.Microcebus_sp._ANT5.1,fringe= + name=
+          NO CHANGE,A.Microcebus_bongolavensis,=,B.Microcebus_bongolavensis,fringe= + name=
+          NO CHANGE,A.Microcebus_danfossi,=,B.Microcebus_danfossi,fringe= + name=
+          NO CHANGE,A.Microcebus_lokobensis,=,B.Microcebus_lokobensis,fringe= + name=
+          MOVE,A.Microcebus_sp._Ambongabe,=,B.Microcebus_sp._Ambongabe,fringe= + name=
+          MOVE,A.Microcebus_sp._Bora,=,B.Microcebus_sp._Bora,fringe= + name=
+          MOVE,A.Microcebus_sp._Mahajamba-Est,=,B.Microcebus_sp._Mahajamba-Est,fringe= + name=
+          MOVE,A.Microcebus_sp._Maroakata,=,B.Microcebus_sp._Maroakata,fringe= + name=
           NO CHANGE,A.Microcebus_mamiratra,=,B.Microcebus_mamiratra,fringe=; genbank common name of
-          NO CHANGE,A.Microcebus_macarthurii,=,B.Microcebus_macarthurii,=fringe + =name
-          NO CHANGE,A.Microcebus_sp._Anjiahely,=,B.Microcebus_sp._Anjiahely,=fringe + =name
-          NO CHANGE,A.Microcebus_sp._DWW-2010a,=,B.Microcebus_sp._DWW-2010a,=fringe + =name
+          NO CHANGE,A.Microcebus_macarthurii,=,B.Microcebus_macarthurii,fringe= + name=
+          MOVE,A.Microcebus_sp._Anjiahely,=,B.Microcebus_sp._Anjiahely,fringe= + name=
+          MOVE,A.Microcebus_sp._DWW-2010a,=,B.Microcebus_sp._DWW-2010a,fringe= + name=
           NO CHANGE,A.Microcebus_arnholdi,=,B.Microcebus_arnholdi,fringe=; genbank common name of
           NO CHANGE,A.Microcebus_margotmarshae,=,B.Microcebus_margotmarshae,fringe=; genbank common name of
           NO CHANGE,A.Microcebus_gerpi,=,B.Microcebus_gerpi,fringe=; genbank common name of
-          NO CHANGE,A.Microcebus_tanosi,=,B.Microcebus_tanosi,=fringe + =name
-          NO CHANGE,A.Microcebus_marohita,=,B.Microcebus_marohita,=fringe + =name
-          NO CHANGE,A.Microcebus_sp._d'Ambre,=,B.Microcebus_sp._d'Ambre,=fringe + =name
-        NO CHANGE,A.Mirza,=,B.Mirza,=fringe + =name
-          NO CHANGE,A.Mirza_coquereli,=,B.Mirza_coquereli,=fringe + =name
-          NO CHANGE,A.Mirza_zaza,=,B.Mirza_zaza,=fringe + =name
-          NO CHANGE,A.Mirza_sp._001y03,=,B.Mirza_sp._001y03,=fringe + =name
-        RENAME,A.Allocebus,=,B.Allocebus_trichotis,fringe=; genbank common name of
-          NO CHANGE,A.Allocebus_trichotis,=,B.Allocebus_trichotis,fringe=; genbank common name of
-        NO CHANGE,A.Phaner,=,B.Phaner,=fringe + =name
+          NO CHANGE,A.Microcebus_tanosi,=,B.Microcebus_tanosi,fringe= + name=
+          NO CHANGE,A.Microcebus_marohita,=,B.Microcebus_marohita,fringe= + name=
+          MOVE,A.Microcebus_sp._d'Ambre,=,B.Microcebus_sp._d'Ambre,fringe= + name=
+          GRAFT,,>,B.Microcebus_ganzhorni,fringe= + name=; child; graft
+          REORGANIZED,,⟂,B.unclassified_Microcebus,fringe-conflict; split
+          REORGANIZED,,⟂,B.Microcebus_sp._Antanosy,fringe-conflict; child; graft
+          REORGANIZED,,⟂,B.Microcebus_sp._3_GT-2019,fringe-conflict; child; graft
+        NO CHANGE,A.Mirza,=,B.Mirza,fringe= + name=
+          NO CHANGE,A.Mirza_coquereli,=,B.Mirza_coquereli,fringe= + name=
+          NO CHANGE,A.Mirza_zaza,=,B.Mirza_zaza,fringe= + name=
+          MOVE,A.Mirza_sp._001y03,=,B.Mirza_sp._001y03,fringe= + name=
+            RENAME,,=,B.unclassified_Mirza,fringe=; split
+        MOVE,A.Allocebus,=,B.Allocebus_trichotis,split; fringe=; genbank common name of
+          MOVE,A.Allocebus_trichotis,=,B.Allocebus_trichotis,fringe=; genbank common name of
+            MOVE,,=,B.Allocebus,genbank common name of; fringe=; split
+        NO CHANGE,A.Phaner,=,B.Phaner,fringe= + name=
           NO CHANGE,A.Phaner_furcifer,=,B.Phaner_furcifer,fringe=; genbank common name of
           NO CHANGE,A.Phaner_pallescens,=,B.Phaner_pallescens,fringe=; synonym of
-          NO CHANGE,A.Phaner_electromontis,=,B.Phaner_electromontis,=fringe + =name
-          NO CHANGE,A.Phaner_parienti,=,B.Phaner_parienti,=fringe + =name
-      REORGANIZE,A.Paleopropithecidae,⟂,B.unclassified_Palaeopropithecus,fringe-conflict
+          NO CHANGE,A.Phaner_electromontis,=,B.Phaner_electromontis,fringe= + name=
+          NO CHANGE,A.Phaner_parienti,=,B.Phaner_parienti,fringe= + name=
+      REORGANIZE,A.Paleopropithecidae,⟂,B.unclassified_Palaeopropithecus,split; fringe-conflict
         REORGANIZE,A.Palaeopropithecus,⟂,B.unclassified_Palaeopropithecus,fringe-conflict
-          NO CHANGE,A.Palaeopropithecus_sp._UA4466,=,B.Palaeopropithecus_sp._UA4466,=fringe + =name
-          NO CHANGE,A.Palaeopropithecus_sp._UA6184,=,B.Palaeopropithecus_sp._UA6184,=fringe + =name
-          NO CHANGE,A.Palaeopropithecus_sp._KPK-2005,=,B.Palaeopropithecus_sp._KPK-2005,=fringe + =name
-    REORGANIZE,A.Chiromyiformes,⟂,B.Strepsirrhini,fringe-conflict
-      NO CHANGE,A.Lorisidae,=,B.Lorisidae,=fringe + =name
-        NO CHANGE,A.Loris,=,B.Loris,=fringe + =name
-          NO CHANGE,A.Loris_tardigradus,=,B.Loris_tardigradus,=fringe + =name
-            NO CHANGE,A.Loris_tardigradus_nordicus,=,B.Loris_tardigradus_nordicus,=fringe + =name
-          NO CHANGE,A.Loris_lydekkerianus,=,B.Loris_lydekkerianus,=fringe + =name
+          NO CHANGE,A.Palaeopropithecus_sp._UA4466,=,B.Palaeopropithecus_sp._UA4466,fringe= + name=
+          NO CHANGE,A.Palaeopropithecus_sp._UA6184,=,B.Palaeopropithecus_sp._UA6184,fringe= + name=
+          NO CHANGE,A.Palaeopropithecus_sp._KPK-2005,=,B.Palaeopropithecus_sp._KPK-2005,fringe= + name=
+          REORGANIZED,,⟂,B.Paleopropithecidae,fringe-conflict; split
+          MOVE,,=,B.Palaeopropithecus,fringe= + name=; split
+          GRAFT,,>,B.Palaeopropithecus_ingens,fringe= + name=; child; graft
+          GRAFT,,>,B.Palaeopropithecus_maximus,fringe= + name=; child; graft
+    REORGANIZE,A.Chiromyiformes,⟂,B.Strepsirrhini,split; fringe-conflict
+      MOVE,A.Lorisidae,=,B.Lorisidae,fringe= + name=
+        NO CHANGE,A.Loris,=,B.Loris,fringe= + name=
+          NO CHANGE,A.Loris_tardigradus,=,B.Loris_tardigradus,fringe= + name=
+            NO CHANGE,A.Loris_tardigradus_nordicus,=,B.Loris_tardigradus_nordicus,fringe= + name=
+            GRAFT,,>,B.Loris_tardigradus_tardigradus,fringe= + name=; child; graft
+          NO CHANGE,A.Loris_lydekkerianus,=,B.Loris_lydekkerianus,fringe= + name=
             NO CHANGE,A.Loris_lydekkerianus_malabaricus,=,B.Loris_lydekkerianus_malabaricus,fringe=; synonym of
-        NO CHANGE,A.Nycticebus,=,B.Nycticebus,=fringe + =name
-          NO CHANGE,A.Nycticebus_coucang,=,B.Nycticebus_coucang,=fringe + =name
-            NO CHANGE,A.Nycticebus_coucang_coucang,=,B.Nycticebus_coucang_coucang,=fringe + =name
-          RENAME,A.Nycticebus_intermedius,=,B.Nycticebus_pygmaeus,id=; merged id of; alternate=
-          NO CHANGE,A.Nycticebus_pygmaeus,=,B.Nycticebus_pygmaeus,=fringe + =name
-          NO CHANGE,A.Nycticebus_sp.,=,B.Nycticebus_sp.,=fringe + =name
-          NO CHANGE,A.Nycticebus_bengalensis,=,B.Nycticebus_bengalensis,=fringe + =name
-          NO CHANGE,A.Nycticebus_menagensis,=,B.Nycticebus_menagensis,=fringe + =name
-          NO CHANGE,A.Nycticebus_javanicus,=,B.Nycticebus_javanicus,=fringe + =name
-        REORGANIZE,A.Perodicticus,⟂,B.Perodicticus_potto,fringe-conflict
-          NO CHANGE,A.Perodicticus_potto,=,B.Perodicticus_potto,=fringe + =name
+            GRAFT,,>,B.Loris_lydekkerianus_lydekkerianus,fringe= + name=; child; graft
+        NO CHANGE,A.Nycticebus,=,B.Nycticebus,fringe= + name=
+          NO CHANGE,A.Nycticebus_coucang,=,B.Nycticebus_coucang,fringe= + name=
+            NO CHANGE,A.Nycticebus_coucang_coucang,=,B.Nycticebus_coucang_coucang,fringe= + name=
+            GRAFT,,>,B.Nycticebus_coucang_insularis,fringe= + name=; child; graft
+          RENAME,A.Nycticebus_intermedius,=,B.Nycticebus_pygmaeus,split; id=; merged id of
+          NO CHANGE,A.Nycticebus_pygmaeus,=,B.Nycticebus_pygmaeus,fringe= + name=
+          MOVE,A.Nycticebus_sp.,=,B.Nycticebus_sp.,fringe= + name=
+            RENAME,,=,B.unclassified_Nycticebus,fringe=; split
+          NO CHANGE,A.Nycticebus_bengalensis,=,B.Nycticebus_bengalensis,fringe= + name=
+          NO CHANGE,A.Nycticebus_menagensis,=,B.Nycticebus_menagensis,fringe= + name=
+          NO CHANGE,A.Nycticebus_javanicus,=,B.Nycticebus_javanicus,fringe= + name=
+        REORGANIZE,A.Perodicticus,⟂,B.Perodicticus_potto,split; fringe-conflict
+          MOVE,A.Perodicticus_potto,=,B.Perodicticus_potto,fringe= + name=
             NO CHANGE,A.Perodicticus_potto_edwarsi,=,B.Perodicticus_potto_edwarsi,fringe=; synonym of
-            NO CHANGE,A.Perodicticus_potto_ibeanus,=,B.Perodicticus_potto_ibeanus,=fringe + =name
-        NO CHANGE,A.Arctocebus,=,B.Arctocebus,=fringe + =name
+            NO CHANGE,A.Perodicticus_potto_ibeanus,=,B.Perodicticus_potto_ibeanus,fringe= + name=
+            REORGANIZED,,⟂,B.Perodicticus,fringe-conflict; split
+        NO CHANGE,A.Arctocebus,=,B.Arctocebus,fringe= + name=
           NO CHANGE,A.Arctocebus_calabarensis,=,B.Arctocebus_calabarensis,fringe=; genbank common name of
           NO CHANGE,A.Arctocebus_aureus,=,B.Arctocebus_aureus,fringe=; genbank common name of
-      NO CHANGE,A.Daubentoniidae,=,B.Daubentoniidae,fringe=; genbank common name of
-        NO CHANGE,A.Daubentonia,=,B.Daubentonia,=fringe + =name
-          NO CHANGE,A.Daubentonia_madagascariensis,=,B.Daubentonia_madagascariensis,=fringe + =name
-    REORGANIZE,A.Lorisiformes,⟂,B.Galagidae,fringe-conflict
-      NO CHANGE,A.Galagidae,=,B.Galagidae,=fringe + =name
-        NO CHANGE,A.Galago,=,B.Galago,=fringe + =name
-          NO CHANGE,A.Galago_sp.,=,B.Galago_sp.,fringe=; genbank common name of
-          NO CHANGE,A.Galago_senegalensis,=,B.Galago_senegalensis,=fringe + =name
-          NO CHANGE,A.Galago_moholi,=,B.Galago_moholi,=fringe + =name
-          NO CHANGE,A.Galago_alleni,=,B.Galago_alleni,=fringe + =name
+      MOVE,A.Daubentoniidae,=,B.Daubentoniidae,fringe=; genbank common name of
+        NO CHANGE,A.Daubentonia,=,B.Daubentonia,fringe= + name=
+          NO CHANGE,A.Daubentonia_madagascariensis,=,B.Daubentonia_madagascariensis,fringe= + name=
+        RENAME,,=,B.Chiromyiformes,genbank common name of; fringe=; split
+    REORGANIZE,A.Lorisiformes,⟂,B.Galagidae,split; fringe-conflict
+      MOVE,A.Galagidae,=,B.Galagidae,fringe= + name=
+        NO CHANGE,A.Galago,=,B.Galago,fringe= + name=
+          MOVE,A.Galago_sp.,=,B.Galago_sp.,fringe=; genbank common name of
+            RENAME,,=,B.unclassified_Galago,genbank common name of; fringe=; split
+          NO CHANGE,A.Galago_senegalensis,=,B.Galago_senegalensis,fringe= + name=
+            GRAFT,,>,B.Galago_senegalensis_senegalensis,fringe= + name=; child; graft
+            GRAFT,,>,B.Galago_senegalensis_braccatus,fringe= + name=; child; graft
+          NO CHANGE,A.Galago_moholi,=,B.Galago_moholi,fringe= + name=
+          NO CHANGE,A.Galago_alleni,=,B.Galago_alleni,fringe= + name=
           NO CHANGE,A.Galago_gallarum,=,B.Galago_gallarum,fringe=; genbank common name of
           NO CHANGE,A.Galago_matschiei,=,B.Galago_matschiei,fringe=; genbank common name of
-          NO CHANGE,A.Galago_gabonensis,=,B.Galago_gabonensis,=fringe + =name
-          NO CHANGE,A.Galago_granti,=,B.Galago_granti,=fringe + =name
-          RENAME,A.Galago_thomasi,=,B.Galagoides_thomasi,id=
-        NO CHANGE,A.Otolemur,=,B.Otolemur,=fringe + =name
-          NO CHANGE,A.Otolemur_crassicaudatus,=,B.Otolemur_crassicaudatus,=fringe + =name
-          NO CHANGE,A.Otolemur_garnettii,=,B.Otolemur_garnettii,=fringe + =name
-            NO CHANGE,A.Otolemur_garnettii_garnettii,=,B.Otolemur_garnettii_garnettii,=fringe + =name
-          NO CHANGE,A.Otolemur_monteiri,=,B.Otolemur_monteiri,=fringe + =name
-            NO CHANGE,A.Otolemur_monteiri_monteiri,=,B.Otolemur_monteiri_monteiri,=fringe + =name
-            NO CHANGE,A.Otolemur_monteiri_argentatus,=,B.Otolemur_monteiri_argentatus,=fringe + =name
-        NO CHANGE,A.Galagoides,=,B.Galagoides,=fringe + =name
-          NO CHANGE,A.Galagoides_demidoff,=,B.Galagoides_demidoff,=fringe + =name
-          NO CHANGE,A.Galagoides_zanzibaricus,=,B.Galagoides_zanzibaricus,=fringe + =name
-          NO CHANGE,A.Galagoides_orinus,=,B.Galagoides_orinus,=fringe + =name
-          NO CHANGE,A.Galagoides_cocos,=,B.Galagoides_cocos,=fringe + =name
-        RENAME,A.Euoticus,=,B.Euoticus_elegantulus,fringe=; genbank common name of
-          NO CHANGE,A.Euoticus_elegantulus,=,B.Euoticus_elegantulus,fringe=; genbank common name of
-  NO CHANGE,A.Haplorrhini,=,B.Haplorrhini,=fringe + =name
-    NO CHANGE,A.Simiiformes,=,B.Simiiformes,=fringe + =name
-      NO CHANGE,A.Platyrrhini,=,B.Platyrrhini,=fringe + =name
-        NO CHANGE,A.Cebidae,=,B.Cebidae,=fringe + =name
-          NO CHANGE,A.Callitrichinae,=,B.Callitrichinae,=fringe + =name
-            REORGANIZE,A.Callithrix,⟂,B.Callitrichinae,fringe-conflict
-              RENAME,A.Callithrix_argentata,=,B.Mico_argentatus,=fringe + =name
+          NO CHANGE,A.Galago_gabonensis,=,B.Galago_gabonensis,fringe= + name=
+          NO CHANGE,A.Galago_granti,=,B.Galago_granti,fringe= + name=
+          MOVE,A.Galago_thomasi,=,B.Galagoides_thomasi,id=
+        NO CHANGE,A.Otolemur,=,B.Otolemur,fringe= + name=
+          NO CHANGE,A.Otolemur_crassicaudatus,=,B.Otolemur_crassicaudatus,fringe= + name=
+          NO CHANGE,A.Otolemur_garnettii,=,B.Otolemur_garnettii,fringe= + name=
+            NO CHANGE,A.Otolemur_garnettii_garnettii,=,B.Otolemur_garnettii_garnettii,fringe= + name=
+          NO CHANGE,A.Otolemur_monteiri,=,B.Otolemur_monteiri,fringe= + name=
+            NO CHANGE,A.Otolemur_monteiri_monteiri,=,B.Otolemur_monteiri_monteiri,fringe= + name=
+            NO CHANGE,A.Otolemur_monteiri_argentatus,=,B.Otolemur_monteiri_argentatus,fringe= + name=
+        NO CHANGE,A.Galagoides,=,B.Galagoides,fringe= + name=
+          NO CHANGE,A.Galagoides_demidoff,=,B.Galagoides_demidoff,fringe= + name=
+            GRAFT,,>,B.Galagoides_demidoff_murinus,fringe= + name=; child; graft
+          NO CHANGE,A.Galagoides_zanzibaricus,=,B.Galagoides_zanzibaricus,fringe= + name=
+            GRAFT,,>,B.Galagoides_zanzibaricus_udzungwensis,fringe= + name=; child; graft
+            GRAFT,,>,B.Galagoides_zanzibaricus_zanzibaricus,fringe= + name=; child; graft
+          NO CHANGE,A.Galagoides_orinus,=,B.Galagoides_orinus,fringe= + name=
+          NO CHANGE,A.Galagoides_cocos,=,B.Galagoides_cocos,fringe= + name=
+          GRAFT,,>,B.Galagoides_rondoensis,fringe= + name=; child; graft
+        MOVE,A.Euoticus,=,B.Euoticus_elegantulus,split; fringe=; genbank common name of
+          MOVE,A.Euoticus_elegantulus,=,B.Euoticus_elegantulus,fringe=; genbank common name of
+            MOVE,,=,B.Euoticus,genbank common name of; fringe=; split
+        GRAFT,,>,B.Paragalago,fringe= + name=; child; graft
+    REORGANIZED,,⟂,B.Lorisiformes,fringe-conflict; split
+  NO CHANGE,A.Haplorrhini,=,B.Haplorrhini,fringe= + name=
+    NO CHANGE,A.Simiiformes,=,B.Simiiformes,fringe= + name=
+      NO CHANGE,A.Platyrrhini,=,B.Platyrrhini,fringe= + name=
+        NO CHANGE,A.Cebidae,=,B.Cebidae,fringe= + name=
+          NO CHANGE,A.Callitrichinae,=,B.Callitrichinae,fringe= + name=
+            REORGANIZE,A.Callithrix,⟂,B.Callitrichinae,split; fringe-conflict
+              MOVE,A.Callithrix_argentata,=,B.Mico_argentatus,fringe= + name=
                 RENAME,A.Callithrix_argentata_argentata,=,B.Mico_argentatus_argentatus,id=
-              NO CHANGE,A.Callithrix_jacchus,=,B.Callithrix_jacchus,=fringe + =name
-              NO CHANGE,A.Callithrix_sp.,=,B.Callithrix_sp.,=fringe + =name
-              NO CHANGE,A.Callithrix_pygmaea,=,B.Callithrix_pygmaea,=fringe + =name
-              RENAME,A.Callithrix_emiliae,=,B.Mico_emiliae,id=
-              NO CHANGE,A.Callithrix_geoffroyi,=,B.Callithrix_geoffroyi,=fringe + =name
-              RENAME,A.Callithrix_humeralifera,=,B.Mico_humeralifer,=fringe + =name
-              NO CHANGE,A.Callithrix_aurita,=,B.Callithrix_aurita,fringe=; genbank common name of
-              RENAME,A.Callithrix_mauesi,=,B.Mico_mauesi,id=
-              NO CHANGE,A.Callithrix_penicillata,=,B.Callithrix_penicillata,=fringe + =name
-              RENAME,A.Callithrix_cf._emiliae,=,B.Mico_cf._emiliae,id=
-              RENAME,A.Callithrix_saterei,=,B.Mico_saterei,id=
-              NO CHANGE,A.Callithrix_sp._DB-2003,=,B.Callithrix_sp._DB-2003,=fringe + =name
-              NO CHANGE,A.Callithrix_humilis,=,B.Callithrix_humilis,=fringe + =name
-              NO CHANGE,A.Callithrix_kuhlii,=,B.Callithrix_kuhlii,=fringe + =name
-              RENAME,A.Callithrix_melanura,=,B.Mico_melanurus,fringe=; genbank common name of
-              RENAME,A.Callithrix_rondoni,=,B.Mico_rondoni,fringe=; genbank common name of
-              NO CHANGE,A.Callithrix_flaviceps,=,B.Callithrix_flaviceps,fringe=; genbank common name of
-              NO CHANGE,A.Callithrix_jacchus_x_penicillata,=,B.Callithrix_jacchus_x_penicillata,=fringe + =name
-            REORGANIZE,A.Saguinus,⟂,B.Callitrichinae,fringe-conflict
-              RENAME,A.Saguinus_fuscicollis,=,B.Leontocebus_fuscicollis,=fringe + =name
-                RENAME,A.Saguinus_fuscicollis_fuscicollis,=,B.Leontocebus_fuscicollis_fuscicollis,=fringe + =name
+              MOVE,A.Callithrix_jacchus,=,B.Callithrix_jacchus,fringe= + name=
+              MOVE,A.Callithrix_sp.,=,B.Callithrix_sp.,fringe= + name=
+              MOVE,A.Callithrix_pygmaea,=,B.Callithrix_pygmaea,fringe= + name=
+                REORGANIZED,,⟂,B.Cebuella,fringe-conflict; split
+              MOVE,A.Callithrix_emiliae,=,B.Mico_emiliae,id=
+              MOVE,A.Callithrix_geoffroyi,=,B.Callithrix_geoffroyi,fringe= + name=
+              MOVE,A.Callithrix_humeralifera,=,B.Mico_humeralifer,fringe= + name=
+              MOVE,A.Callithrix_aurita,=,B.Callithrix_aurita,fringe=; genbank common name of
+              MOVE,A.Callithrix_mauesi,=,B.Mico_mauesi,id=
+              MOVE,A.Callithrix_penicillata,=,B.Callithrix_penicillata,fringe= + name=
+              MOVE,A.Callithrix_cf._emiliae,=,B.Mico_cf._emiliae,id=
+              MOVE,A.Callithrix_saterei,=,B.Mico_saterei,id=
+              MOVE,A.Callithrix_sp._DB-2003,=,B.Callithrix_sp._DB-2003,fringe= + name=
+              MOVE,A.Callithrix_humilis,=,B.Callithrix_humilis,fringe= + name=
+                REORGANIZED,,⟂,B.Calibella,fringe-conflict; split
+              MOVE,A.Callithrix_kuhlii,=,B.Callithrix_kuhlii,fringe= + name=
+              MOVE,A.Callithrix_melanura,=,B.Mico_melanurus,fringe=; genbank common name of
+              MOVE,A.Callithrix_rondoni,=,B.Mico_rondoni,fringe=; genbank common name of
+              MOVE,A.Callithrix_flaviceps,=,B.Callithrix_flaviceps,fringe=; genbank common name of
+              MOVE,A.Callithrix_jacchus_x_penicillata,=,B.Callithrix_jacchus_x_penicillata,fringe= + name=
+              NO CHANGE,,=,B.Callithrix#9481,fringe= + name=; split
+              MOVE,,=,B.Callithrix#1965096,fringe= + name=; split
+              RENAME,,=,B.Mico,fringe= + name=; split
+              GRAFT,,>,B.Mico_chrysoleucus,fringe= + name=; child; graft
+              GRAFT,,>,B.Mico_intermedius,fringe= + name=; child; graft
+              GRAFT,,>,B.Mico_leucippe,fringe= + name=; child; graft
+              GRAFT,,>,B.Mico_marcai,fringe= + name=; child; graft
+              GRAFT,,>,B.Mico_munduruku,fringe= + name=; child; graft
+            REORGANIZE,A.Saguinus,⟂,B.Callitrichinae,split; fringe-conflict
+              MOVE,A.Saguinus_fuscicollis,=,B.Leontocebus_fuscicollis,fringe= + name=
+                RENAME,A.Saguinus_fuscicollis_fuscicollis,=,B.Leontocebus_fuscicollis_fuscicollis,fringe= + name=
                 RENAME,A.Saguinus_fuscicollis_weddelli,=,B.Leontocebus_fuscicollis_weddelli,id=
                 RENAME,A.Saguinus_fuscicollis_leucogenys,=,B.Leontocebus_fuscicollis_leucogenys,id=
                 RENAME,A.Saguinus_fuscicollis_illigeri,=,B.Leontocebus_fuscicollis_illigeri,id=
                 RENAME,A.Saguinus_fuscicollis_nigrifrons,=,B.Leontocebus_fuscicollis_nigrifrons,id=
                 RENAME,A.Saguinus_fuscicollis_lagonotus,=,B.Leontocebus_fuscicollis_lagonotus,id=
-              RENAME,A.Saguinus_mystax,=,B.Saguinus_mystax_mystax,fringe=
-                NO CHANGE,A.Saguinus_mystax_mystax,=,B.Saguinus_mystax_mystax,=fringe + =name
-              RENAME,A.Saguinus_nigricollis,=,B.Leontocebus_nigricollis_nigricollis,fringe=
-                RENAME,A.Saguinus_nigricollis_nigricollis,=,B.Leontocebus_nigricollis_nigricollis,=fringe + =name
-              NO CHANGE,A.Saguinus_oedipus,=,B.Saguinus_oedipus,fringe=; genbank common name of
-              NO CHANGE,A.Saguinus_imperator,=,B.Saguinus_imperator,=fringe + =name
-                NO CHANGE,A.Saguinus_imperator_subgrisescens,=,B.Saguinus_imperator_subgrisescens,=fringe + =name
-              NO CHANGE,A.Saguinus_midas,=,B.Saguinus_midas,=fringe + =name
-                NO CHANGE,A.Saguinus_midas_midas,=,B.Saguinus_midas_midas,=fringe + =name
-              NO CHANGE,A.Saguinus_bicolor,=,B.Saguinus_bicolor,=fringe + =name
+              MOVE,A.Saguinus_mystax,=,B.Saguinus_mystax_mystax,split; fringe=
+                MOVE,A.Saguinus_mystax_mystax,=,B.Saguinus_mystax_mystax,fringe= + name=
+                  MOVE,,=,B.Saguinus_mystax,fringe=; split
+              MOVE,A.Saguinus_nigricollis,=,B.Leontocebus_nigricollis_nigricollis,split; fringe=
+                MOVE,A.Saguinus_nigricollis_nigricollis,=,B.Leontocebus_nigricollis_nigricollis,fringe= + name=
+                  MOVE,,=,B.Leontocebus_nigricollis,fringe=; split
+              MOVE,A.Saguinus_oedipus,=,B.Saguinus_oedipus,fringe=; genbank common name of
+              MOVE,A.Saguinus_imperator,=,B.Saguinus_imperator,fringe= + name=
+                NO CHANGE,A.Saguinus_imperator_subgrisescens,=,B.Saguinus_imperator_subgrisescens,fringe= + name=
+              MOVE,A.Saguinus_midas,=,B.Saguinus_midas,fringe= + name=
+                NO CHANGE,A.Saguinus_midas_midas,=,B.Saguinus_midas_midas,fringe= + name=
+              MOVE,A.Saguinus_bicolor,=,B.Saguinus_bicolor,fringe= + name=
                 NO CHANGE,A.Saguinus_bicolor_bicolor,=,B.Saguinus_bicolor_bicolor,fringe=; genbank common name of
-              NO CHANGE,A.Saguinus_geoffroyi,=,B.Saguinus_geoffroyi,fringe=; genbank common name of
-              NO CHANGE,A.Saguinus_labiatus,=,B.Saguinus_labiatus,=fringe + =name
-                NO CHANGE,A.Saguinus_labiatus_labiatus,=,B.Saguinus_labiatus_labiatus,=fringe + =name
-              NO CHANGE,A.Saguinus_sp.,=,B.Saguinus_sp.,=fringe + =name
-              RENAME,A.Saguinus_tripartitus,=,B.Leontocebus_tripartitus,fringe=; genbank common name of
-              NO CHANGE,A.Saguinus_sp._T1030,=,B.Saguinus_sp._T1030,=fringe + =name
-              NO CHANGE,A.Saguinus_leucopus,=,B.Saguinus_leucopus,fringe=; genbank common name of
-              NO CHANGE,A.Saguinus_niger,=,B.Saguinus_niger,fringe=; merged id of
-              NO CHANGE,A.Saguinus_martinsi,=,B.Saguinus_martinsi,=fringe + =name
-              NO CHANGE,A.Saguinus_melanoleucus,=,B.Saguinus_melanoleucus,=fringe + =name
-                NO CHANGE,A.Saguinus_melanoleucus_melanoleucus,=,B.Saguinus_melanoleucus_melanoleucus,=fringe + =name
-              NO CHANGE,A.Saguinus_graellsi,=,B.Saguinus_graellsi,=fringe + =name
-              NO CHANGE,A.Saguinus_inustus,=,B.Saguinus_inustus,fringe=; genbank common name of
-            NO CHANGE,A.Callimico,=,B.Callimico,=fringe + =name
+              MOVE,A.Saguinus_geoffroyi,=,B.Saguinus_geoffroyi,fringe=; genbank common name of
+              MOVE,A.Saguinus_labiatus,=,B.Saguinus_labiatus,fringe= + name=
+                NO CHANGE,A.Saguinus_labiatus_labiatus,=,B.Saguinus_labiatus_labiatus,fringe= + name=
+              MOVE,A.Saguinus_sp.,=,B.Saguinus_sp.,fringe= + name=
+              MOVE,A.Saguinus_tripartitus,=,B.Leontocebus_tripartitus,fringe=; genbank common name of
+              MOVE,A.Saguinus_sp._T1030,=,B.Saguinus_sp._T1030,fringe= + name=
+              MOVE,A.Saguinus_leucopus,=,B.Saguinus_leucopus,fringe=; genbank common name of
+              MOVE,A.Saguinus_niger,=,B.Saguinus_niger,fringe=; merged id of
+              MOVE,A.Saguinus_martinsi,=,B.Saguinus_martinsi,fringe= + name=
+              MOVE,A.Saguinus_melanoleucus,=,B.Saguinus_melanoleucus,fringe= + name=
+                NO CHANGE,A.Saguinus_melanoleucus_melanoleucus,=,B.Saguinus_melanoleucus_melanoleucus,fringe= + name=
+              MOVE,A.Saguinus_graellsi,=,B.Saguinus_graellsi,fringe= + name=
+              MOVE,A.Saguinus_inustus,=,B.Saguinus_inustus,fringe=; genbank common name of
+              NO CHANGE,,=,B.Saguinus,fringe= + name=; split
+              GRAFT,,>,B.Saguinus_geoffroyi_x_Saguinus_leucopus,fringe= + name=; child; graft
+              GRAFT,,>,B.Saguinus_oedipus_x_Saguinus_leucopus,fringe= + name=; child; graft
+              REORGANIZED,,⟂,B.unclassified_Saguinus,fringe-conflict; split
+              REORGANIZED,,⟂,B.Saguinus_sp._EG-2017,fringe-conflict; child; graft
+              RENAME,,=,B.Leontocebus,fringe= + rank=; split
+              GRAFT,,>,B.Leontocebus_cruzlimai,fringe= + rank=; child; graft
+            NO CHANGE,A.Callimico,=,B.Callimico,fringe= + name=
               NO CHANGE,A.Callimico_goeldii,=,B.Callimico_goeldii,fringe=; merged id of
-              NO CHANGE,A.Callimico_sp._MAS-2011,=,B.Callimico_sp._MAS-2011,=fringe + =name
-            NO CHANGE,A.Leontopithecus,=,B.Leontopithecus,=fringe + =name
-              NO CHANGE,A.Leontopithecus_rosalia,=,B.Leontopithecus_rosalia,=fringe + =name
-              NO CHANGE,A.Leontopithecus_chrysomelas,=,B.Leontopithecus_chrysomelas,=fringe + =name
-              NO CHANGE,A.Leontopithecus_chrysopygus,=,B.Leontopithecus_chrysopygus,=fringe + =name
-          NO CHANGE,A.Cebinae,=,B.Cebinae,=fringe + =name
-            NO CHANGE,A.Cebus,=,B.Cebus,=fringe + =name
-              NO CHANGE,A.Cebus_albifrons,=,B.Cebus_albifrons,=fringe + =name
-              NO CHANGE,A.Cebus_capucinus,=,B.Cebus_capucinus,=fringe + =name
-              NO CHANGE,A.Cebus_sp.,=,B.Cebus_sp.,=fringe + =name
-              NO CHANGE,A.Cebus_kaapori,=,B.Cebus_kaapori,=fringe + =name
-              NO CHANGE,A.Cebus_olivaceus,=,B.Cebus_olivaceus,=fringe + =name
-                NO CHANGE,A.Cebus_olivaceus_nigrivittatus,=,B.Cebus_olivaceus_nigrivittatus,=fringe + =name
-              NO CHANGE,A.Cebus_sp._MAS-2011,=,B.Cebus_sp._MAS-2011,=fringe + =name
-            NO CHANGE,A.Sapajus,=,B.Sapajus,=fringe + =name
-              NO CHANGE,A.Sapajus_apella,=,B.Sapajus_apella,=fringe + =name
+              MOVE,A.Callimico_sp._MAS-2011,=,B.Callimico_sp._MAS-2011,fringe= + name=
+                RENAME,,=,B.unclassified_Callimico,fringe=; split
+                GRAFT,,>,B.Callimico_sp.,fringe=; child; graft
+            NO CHANGE,A.Leontopithecus,=,B.Leontopithecus,fringe= + name=
+              NO CHANGE,A.Leontopithecus_rosalia,=,B.Leontopithecus_rosalia,fringe= + name=
+              NO CHANGE,A.Leontopithecus_chrysomelas,=,B.Leontopithecus_chrysomelas,fringe= + name=
+              NO CHANGE,A.Leontopithecus_chrysopygus,=,B.Leontopithecus_chrysopygus,fringe= + name=
+          NO CHANGE,A.Cebinae,=,B.Cebinae,fringe= + name=
+            NO CHANGE,A.Cebus,=,B.Cebus,fringe= + name=
+              NO CHANGE,A.Cebus_albifrons,=,B.Cebus_albifrons,fringe= + name=
+              NO CHANGE,A.Cebus_capucinus,=,B.Cebus_capucinus,fringe= + name=
+                GRAFT,,>,B.Cebus_capucinus_imitator,fringe= + name=; child; graft
+              MOVE,A.Cebus_sp.,=,B.Cebus_sp.,fringe= + name=
+              NO CHANGE,A.Cebus_kaapori,=,B.Cebus_kaapori,fringe= + name=
+              NO CHANGE,A.Cebus_olivaceus,=,B.Cebus_olivaceus,fringe= + name=
+                NO CHANGE,A.Cebus_olivaceus_nigrivittatus,=,B.Cebus_olivaceus_nigrivittatus,fringe= + name=
+                GRAFT,,>,B.Cebus_olivaceus_castaneus,fringe= + name=; child; graft
+              MOVE,A.Cebus_sp._MAS-2011,=,B.Cebus_sp._MAS-2011,fringe= + name=
+              GRAFT,,>,B.Cebus_unicolor,fringe= + name=; child; graft
+              GRAFT,,>,B.Cebus_versicolor,fringe= + name=; child; graft
+              REORGANIZED,,⟂,B.unclassified_Cebus,fringe-conflict; split
+              REORGANIZED,,⟂,B.Cebus_sp._1_EG-2017,fringe-conflict; child; graft
+              REORGANIZED,,⟂,B.Cebus_sp._2_EG-2017,fringe-conflict; child; graft
+            NO CHANGE,A.Sapajus,=,B.Sapajus,fringe= + name=
+              NO CHANGE,A.Sapajus_apella,=,B.Sapajus_apella,fringe= + name=
                 NO CHANGE,A.Sapajus_apella_apella,=,B.Sapajus_apella_apella,fringe=; synonym of
                 NO CHANGE,A.Sapajus_apella_macrocephalus,=,B.Sapajus_apella_macrocephalus,fringe=; synonym of
-              NO CHANGE,A.Sapajus_xanthosternos,=,B.Sapajus_xanthosternos,=fringe + =name
-              NO CHANGE,A.Sapajus_cay,=,B.Sapajus_cay,=fringe + =name
-              NO CHANGE,A.Sapajus_nigritus,=,B.Sapajus_nigritus,=fringe + =name
-                NO CHANGE,A.Sapajus_nigritus_robustus,=,B.Sapajus_nigritus_robustus,=fringe + =name
-              NO CHANGE,A.Sapajus_flavius,=,B.Sapajus_flavius,=fringe + =name
+              NO CHANGE,A.Sapajus_xanthosternos,=,B.Sapajus_xanthosternos,fringe= + name=
+              NO CHANGE,A.Sapajus_cay,=,B.Sapajus_cay,fringe= + name=
+              NO CHANGE,A.Sapajus_nigritus,=,B.Sapajus_nigritus,fringe= + name=
+                NO CHANGE,A.Sapajus_nigritus_robustus,=,B.Sapajus_nigritus_robustus,fringe= + name=
+              NO CHANGE,A.Sapajus_flavius,=,B.Sapajus_flavius,fringe= + name=
               NO CHANGE,A.Sapajus_libidinosus,=,B.Sapajus_libidinosus,fringe=; authority of
-          RENAME,A.unclassified_Cebidae,=,B.Aotinae_gen._sp.,fringe=
-            NO CHANGE,A.Aotinae_gen._sp.,=,B.Aotinae_gen._sp.,=fringe + =name
-          REORGANIZE,A.Saimiriinae,⟂,B.Saimiri,fringe-conflict
-            NO CHANGE,A.Saimiri,=,B.Saimiri,=fringe + =name
-              NO CHANGE,A.Saimiri_sciureus,=,B.Saimiri_sciureus,=fringe + =name
-                NO CHANGE,A.Saimiri_sciureus_sciureus,=,B.Saimiri_sciureus_sciureus,=fringe + =name
+              GRAFT,,>,B.unclassified_Sapajus,fringe= + name=; child; graft
+          MOVE,A.unclassified_Cebidae,=,B.Aotinae_gen._sp.,split; fringe=
+            MOVE,A.Aotinae_gen._sp.,=,B.Aotinae_gen._sp.,fringe= + name=
+              MOVE,,=,B.unclassified_Cebidae,fringe=; split
+          REORGANIZE,A.Saimiriinae,⟂,B.Saimiri,split; fringe-conflict
+            MOVE,A.Saimiri,=,B.Saimiri,fringe= + name=
+              NO CHANGE,A.Saimiri_sciureus,=,B.Saimiri_sciureus,fringe= + name=
+                NO CHANGE,A.Saimiri_sciureus_sciureus,=,B.Saimiri_sciureus_sciureus,fringe= + name=
                 NO CHANGE,A.Saimiri_sciureus_collinsi,=,B.Saimiri_sciureus_collinsi,fringe=; synonym of
-                NO CHANGE,A.Saimiri_sciureus_albigena,=,B.Saimiri_sciureus_albigena,=fringe + =name
-                NO CHANGE,A.Saimiri_sciureus_cassiquiarensis,=,B.Saimiri_sciureus_cassiquiarensis,=fringe + =name
-                NO CHANGE,A.Saimiri_sciureus_macrodon,=,B.Saimiri_sciureus_macrodon,=fringe + =name
-              NO CHANGE,A.Saimiri_boliviensis,=,B.Saimiri_boliviensis,=fringe + =name
-                NO CHANGE,A.Saimiri_boliviensis_boliviensis,=,B.Saimiri_boliviensis_boliviensis,=fringe + =name
+                NO CHANGE,A.Saimiri_sciureus_albigena,=,B.Saimiri_sciureus_albigena,fringe= + name=
+                NO CHANGE,A.Saimiri_sciureus_cassiquiarensis,=,B.Saimiri_sciureus_cassiquiarensis,fringe= + name=
+                NO CHANGE,A.Saimiri_sciureus_macrodon,=,B.Saimiri_sciureus_macrodon,fringe= + name=
+              NO CHANGE,A.Saimiri_boliviensis,=,B.Saimiri_boliviensis,fringe= + name=
+                NO CHANGE,A.Saimiri_boliviensis_boliviensis,=,B.Saimiri_boliviensis_boliviensis,fringe= + name=
                 NO CHANGE,A.Saimiri_boliviensis_peruviensis,=,B.Saimiri_boliviensis_peruviensis,fringe=; synonym of
               NO CHANGE,A.Saimiri_ustus,=,B.Saimiri_ustus,fringe=; genbank common name of
-              NO CHANGE,A.Saimiri_oerstedii,=,B.Saimiri_oerstedii,=fringe + =name
-                NO CHANGE,A.Saimiri_oerstedii_oerstedii,=,B.Saimiri_oerstedii_oerstedii,=fringe + =name
-                NO CHANGE,A.Saimiri_oerstedii_citrinellus,=,B.Saimiri_oerstedii_citrinellus,=fringe + =name
-              NO CHANGE,A.Saimiri_sp._MAS-2011,=,B.Saimiri_sp._MAS-2011,=fringe + =name
+              NO CHANGE,A.Saimiri_oerstedii,=,B.Saimiri_oerstedii,fringe= + name=
+                NO CHANGE,A.Saimiri_oerstedii_oerstedii,=,B.Saimiri_oerstedii_oerstedii,fringe= + name=
+                NO CHANGE,A.Saimiri_oerstedii_citrinellus,=,B.Saimiri_oerstedii_citrinellus,fringe= + name=
+              MOVE,A.Saimiri_sp._MAS-2011,=,B.Saimiri_sp._MAS-2011,fringe= + name=
               NO CHANGE,A.Saimiri_vanzolinii,=,B.Saimiri_vanzolinii,fringe=; genbank common name of
-              NO CHANGE,A.Saimiri_sp.,=,B.Saimiri_sp.,=fringe + =name
-        REORGANIZE,A.Aotidae,⟂,B.Aotus,fringe-conflict
-          NO CHANGE,A.Aotus,=,B.Aotus,=fringe + =name
-            NO CHANGE,A.Aotus_trivirgatus,=,B.Aotus_trivirgatus,=fringe + =name
-            NO CHANGE,A.Aotus_azarai,=,B.Aotus_azarai,=fringe + =name
+              MOVE,A.Saimiri_sp.,=,B.Saimiri_sp.,fringe= + name=
+              REORGANIZED,,⟂,B.Saimiriinae,fringe-conflict; split
+              REORGANIZED,,⟂,B.unclassified_Saimiri,fringe-conflict; split
+              REORGANIZED,,⟂,B.Saimiri_sp._1_EG-2017,fringe-conflict; child; graft
+              REORGANIZED,,⟂,B.Saimiri_sp._2_EG-2017,fringe-conflict; child; graft
+              REORGANIZED,,⟂,B.Saimiri_sp._3_EG-2017,fringe-conflict; child; graft
+        REORGANIZE,A.Aotidae,⟂,B.Aotus,split; fringe-conflict
+          MOVE,A.Aotus,=,B.Aotus,fringe= + name=
+            NO CHANGE,A.Aotus_trivirgatus,=,B.Aotus_trivirgatus,fringe= + name=
+            NO CHANGE,A.Aotus_azarai,=,B.Aotus_azarai,fringe= + name=
               NO CHANGE,A.Aotus_azarai_azarai,=,B.Aotus_azarai_azarai,fringe=; synonym of
               NO CHANGE,A.Aotus_azarai_boliviensis,=,B.Aotus_azarai_boliviensis,fringe=; synonym of
-              NO CHANGE,A.Aotus_azarai_infulatus,=,B.Aotus_azarai_infulatus,=fringe + =name
-            NO CHANGE,A.Aotus_nancymaae,=,B.Aotus_nancymaae,=fringe + =name
-            NO CHANGE,A.Aotus_lemurinus,=,B.Aotus_lemurinus,=fringe + =name
+              NO CHANGE,A.Aotus_azarai_infulatus,=,B.Aotus_azarai_infulatus,fringe= + name=
+            NO CHANGE,A.Aotus_nancymaae,=,B.Aotus_nancymaae,fringe= + name=
+            NO CHANGE,A.Aotus_lemurinus,=,B.Aotus_lemurinus,fringe= + name=
             NO CHANGE,A.Aotus_nigriceps,=,B.Aotus_nigriceps,fringe=; genbank common name of
-            NO CHANGE,A.Aotus_vociferans,=,B.Aotus_vociferans,=fringe + =name
-            NO CHANGE,A.Aotus_sp._NIM-2003,=,B.Aotus_sp._NIM-2003,=fringe + =name
-            NO CHANGE,A.Aotus_sp.,=,B.Aotus_sp.,=fringe + =name
-            NO CHANGE,A.Aotus_sp._PDE-2004,=,B.Aotus_sp._PDE-2004,=fringe + =name
+            NO CHANGE,A.Aotus_vociferans,=,B.Aotus_vociferans,fringe= + name=
+            MOVE,A.Aotus_sp._NIM-2003,=,B.Aotus_sp._NIM-2003,fringe= + name=
+            MOVE,A.Aotus_sp.,=,B.Aotus_sp.,fringe= + name=
+            MOVE,A.Aotus_sp._PDE-2004,=,B.Aotus_sp._PDE-2004,fringe= + name=
             NO CHANGE,A.Aotus_griseimembra,=,B.Aotus_griseimembra,fringe=; synonym of
-            NO CHANGE,A.Aotus_brumbacki,=,B.Aotus_brumbacki,=fringe + =name
-            NO CHANGE,A.Aotus_sp._Aot1,=,B.Aotus_sp._Aot1,=fringe + =name
-            NO CHANGE,A.Aotus_sp._SHM-2010,=,B.Aotus_sp._SHM-2010,=fringe + =name
-            NO CHANGE,A.Aotus_sp._AVB-2011,=,B.Aotus_sp._AVB-2011,=fringe + =name
-            NO CHANGE,A.Aotus_sp._MAS-2011,=,B.Aotus_sp._MAS-2011,=fringe + =name
-            NO CHANGE,A.Aotus_sp._LC-2012,=,B.Aotus_sp._LC-2012,=fringe + =name
+            NO CHANGE,A.Aotus_brumbacki,=,B.Aotus_brumbacki,fringe= + name=
+            MOVE,A.Aotus_sp._Aot1,=,B.Aotus_sp._Aot1,fringe= + name=
+            MOVE,A.Aotus_sp._SHM-2010,=,B.Aotus_sp._SHM-2010,fringe= + name=
+            MOVE,A.Aotus_sp._AVB-2011,=,B.Aotus_sp._AVB-2011,fringe= + name=
+            MOVE,A.Aotus_sp._MAS-2011,=,B.Aotus_sp._MAS-2011,fringe= + name=
+            MOVE,A.Aotus_sp._LC-2012,=,B.Aotus_sp._LC-2012,fringe= + name=
             NO CHANGE,A.Aotus_zonalis,=,B.Aotus_zonalis,fringe=; genbank common name of
-        NO CHANGE,A.Pitheciidae,=,B.Pitheciidae,=fringe + =name
-          NO CHANGE,A.Pitheciinae,=,B.Pitheciinae,=fringe + =name
-            NO CHANGE,A.Chiropotes,=,B.Chiropotes,=fringe + =name
-              NO CHANGE,A.Chiropotes_satanas,=,B.Chiropotes_satanas,=fringe + =name
-              NO CHANGE,A.Chiropotes_albinasus,=,B.Chiropotes_albinasus,=fringe + =name
-              NO CHANGE,A.Chiropotes_satanas_x_albinasus,=,B.Chiropotes_satanas_x_albinasus,=fringe + =name
-              RENAME,A.Chiropotes_utahicki,=,B.Chiropotes_utahickae,=fringe + =name
-              NO CHANGE,A.Chiropotes_israelita,=,B.Chiropotes_israelita,=fringe + =name
-              NO CHANGE,A.Chiropotes_albinasus_x_satanas,=,B.Chiropotes_albinasus_x_satanas,=fringe + =name
-              NO CHANGE,A.Chiropotes_chiropotes,=,B.Chiropotes_chiropotes,=fringe + =name
+            REORGANIZED,,⟂,B.Aotidae,fringe-conflict; split
+            REORGANIZED,,⟂,B.unclassified_Aotus_(in:_Chordata),fringe-conflict; split
+        NO CHANGE,A.Pitheciidae,=,B.Pitheciidae,fringe= + name=
+          NO CHANGE,A.Pitheciinae,=,B.Pitheciinae,fringe= + name=
+            NO CHANGE,A.Chiropotes,=,B.Chiropotes,fringe= + name=
+              NO CHANGE,A.Chiropotes_satanas,=,B.Chiropotes_satanas,fringe= + name=
+              NO CHANGE,A.Chiropotes_albinasus,=,B.Chiropotes_albinasus,fringe= + name=
+              NO CHANGE,A.Chiropotes_satanas_x_albinasus,=,B.Chiropotes_satanas_x_albinasus,fringe= + name=
+              RENAME,A.Chiropotes_utahicki,=,B.Chiropotes_utahickae,fringe= + name=
+              NO CHANGE,A.Chiropotes_israelita,=,B.Chiropotes_israelita,fringe= + name=
+              NO CHANGE,A.Chiropotes_albinasus_x_satanas,=,B.Chiropotes_albinasus_x_satanas,fringe= + name=
+              NO CHANGE,A.Chiropotes_chiropotes,=,B.Chiropotes_chiropotes,fringe= + name=
                 NO CHANGE,A.Chiropotes_chiropotes_sagulata,=,B.Chiropotes_chiropotes_sagulata,fringe=; synonym of
-              NO CHANGE,A.Chiropotes_sp._MAS-2011,=,B.Chiropotes_sp._MAS-2011,=fringe + =name
-            NO CHANGE,A.Cacajao,=,B.Cacajao,=fringe + =name
-              NO CHANGE,A.Cacajao_calvus,=,B.Cacajao_calvus,=fringe + =name
-                NO CHANGE,A.Cacajao_calvus_calvus,=,B.Cacajao_calvus_calvus,=fringe + =name
-                NO CHANGE,A.Cacajao_calvus_novaesi,=,B.Cacajao_calvus_novaesi,=fringe + =name
-                NO CHANGE,A.Cacajao_calvus_ucayalli,=,B.Cacajao_calvus_ucayalli,=fringe + =name
-                NO CHANGE,A.Cacajao_calvus_rubicundus,=,B.Cacajao_calvus_rubicundus,=fringe + =name
+              MOVE,A.Chiropotes_sp._MAS-2011,=,B.Chiropotes_sp._MAS-2011,fringe= + name=
+                RENAME,,=,B.unclassified_Chiropotes,fringe=; split
+                GRAFT,,>,B.Chiropotes_sp._ZFMK_2008.244,fringe=; child; graft
+                GRAFT,,>,B.Chiropotes_sp.,fringe=; child; graft
+            NO CHANGE,A.Cacajao,=,B.Cacajao,fringe= + name=
+              NO CHANGE,A.Cacajao_calvus,=,B.Cacajao_calvus,fringe= + name=
+                NO CHANGE,A.Cacajao_calvus_calvus,=,B.Cacajao_calvus_calvus,fringe= + name=
+                NO CHANGE,A.Cacajao_calvus_novaesi,=,B.Cacajao_calvus_novaesi,fringe= + name=
+                NO CHANGE,A.Cacajao_calvus_ucayalli,=,B.Cacajao_calvus_ucayalli,fringe= + name=
+                NO CHANGE,A.Cacajao_calvus_rubicundus,=,B.Cacajao_calvus_rubicundus,fringe= + name=
               NO CHANGE,A.Cacajao_melanocephalus,=,B.Cacajao_melanocephalus,fringe=; genbank common name of
-              NO CHANGE,A.Cacajao_rubicundus,=,B.Cacajao_rubicundus,=fringe + =name
+              NO CHANGE,A.Cacajao_rubicundus,=,B.Cacajao_rubicundus,fringe= + name=
               ADD,A.Cacajao_ayresi,>,B.Cacajao_ayresi,fringe=; included in
               NO CHANGE,A.Cacajao_hosomi,=,B.Cacajao_hosomi,fringe=; synonym of
-            NO CHANGE,A.Pithecia,=,B.Pithecia,=fringe + =name
-              NO CHANGE,A.Pithecia_irrorata,=,B.Pithecia_irrorata,=fringe + =name
-              NO CHANGE,A.Pithecia_pithecia,=,B.Pithecia_pithecia,=fringe + =name
-                NO CHANGE,A.Pithecia_pithecia_pithecia,=,B.Pithecia_pithecia_pithecia,=fringe + =name
+            NO CHANGE,A.Pithecia,=,B.Pithecia,fringe= + name=
+              NO CHANGE,A.Pithecia_irrorata,=,B.Pithecia_irrorata,fringe= + name=
+              NO CHANGE,A.Pithecia_pithecia,=,B.Pithecia_pithecia,fringe= + name=
+                NO CHANGE,A.Pithecia_pithecia_pithecia,=,B.Pithecia_pithecia_pithecia,fringe= + name=
               NO CHANGE,A.Pithecia_monachus,=,B.Pithecia_monachus,fringe=; genbank common name of
-          NO CHANGE,A.Callicebinae,=,B.Callicebinae,=fringe + =name
+              GRAFT,,>,B.unclassified_Pithecia,fringe= + name=; child; graft
+          NO CHANGE,A.Callicebinae,=,B.Callicebinae,split; fringe= + name=
             REORGANIZE,A.Callicebus,⟂,B.Callicebinae,fringe-conflict
-              RENAME,A.Callicebus_moloch,=,B.Plecturocebus_moloch,id=
-              RENAME,A.Callicebus_torquatus,=,B.Cheracebus_torquatus,id=
-              NO CHANGE,A.Callicebus_personatus,=,B.Callicebus_personatus,=fringe + =name
-                NO CHANGE,A.Callicebus_personatus_nigrifrons,=,B.Callicebus_personatus_nigrifrons,=fringe + =name
-                NO CHANGE,A.Callicebus_personatus_personatus,=,B.Callicebus_personatus_personatus,=fringe + =name
-              RENAME,A.Callicebus_hoffmannsi,=,B.Plecturocebus_hoffmannsi,=fringe + =name
-              NO CHANGE,A.Callicebus_sp.,=,B.Callicebus_sp.,=fringe + =name
-              RENAME,A.Callicebus_cupreus,=,B.Plecturocebus_cupreus,id=
-              RENAME,A.Callicebus_lugens,=,B.Cheracebus_lugens,id=
-              RENAME,A.Callicebus_brunneus,=,B.Plecturocebus_brunneus,fringe=; genbank common name of
-              RENAME,A.Callicebus_donacophilus,=,B.Plecturocebus_donacophilus,=fringe + =name
+              MOVE,A.Callicebus_moloch,=,B.Plecturocebus_moloch,id=
+              MOVE,A.Callicebus_torquatus,=,B.Cheracebus_torquatus,id=
+              MOVE,A.Callicebus_personatus,=,B.Callicebus_personatus,fringe= + name=
+                NO CHANGE,A.Callicebus_personatus_nigrifrons,=,B.Callicebus_personatus_nigrifrons,fringe= + name=
+                NO CHANGE,A.Callicebus_personatus_personatus,=,B.Callicebus_personatus_personatus,fringe= + name=
+              MOVE,A.Callicebus_hoffmannsi,=,B.Plecturocebus_hoffmannsi,fringe= + name=
+              MOVE,A.Callicebus_sp.,=,B.Callicebus_sp.,fringe= + name=
+              MOVE,A.Callicebus_cupreus,=,B.Plecturocebus_cupreus,id=
+              MOVE,A.Callicebus_lugens,=,B.Cheracebus_lugens,id=
+              MOVE,A.Callicebus_brunneus,=,B.Plecturocebus_brunneus,fringe=; genbank common name of
+              MOVE,A.Callicebus_donacophilus,=,B.Plecturocebus_donacophilus,fringe= + name=
                 RENAME,A.Callicebus_donacophilus_donacophilus,=,B.Plecturocebus_donacophilus_donacophilus,id=
-              RENAME,A.Callicebus_caligatus,=,B.Plecturocebus_caligatus,fringe=; synonym of
-              NO CHANGE,A.Callicebus_coimbrai,=,B.Callicebus_coimbrai,fringe=; genbank common name of
-              NO CHANGE,A.Callicebus_nigrifrons,=,B.Callicebus_nigrifrons,fringe=; genbank common name of
-              NO CHANGE,A.Callicebus_sp._MAS-2011,=,B.Callicebus_sp._MAS-2011,=fringe + =name
-              RENAME,A.Callicebus_purinus,=,B.Cheracebus_purinus,=fringe + =name
-        NO CHANGE,A.Atelidae,=,B.Atelidae,=fringe + =name
-          REORGANIZE,A.Alouattinae,⟂,B.Alouatta,fringe-conflict
-            NO CHANGE,A.Alouatta,=,B.Alouatta,=fringe + =name
+              MOVE,A.Callicebus_caligatus,=,B.Plecturocebus_caligatus,fringe=; synonym of
+              MOVE,A.Callicebus_coimbrai,=,B.Callicebus_coimbrai,fringe=; genbank common name of
+              MOVE,A.Callicebus_nigrifrons,=,B.Callicebus_nigrifrons,fringe=; genbank common name of
+              MOVE,A.Callicebus_sp._MAS-2011,=,B.Callicebus_sp._MAS-2011,fringe= + name=
+              MOVE,A.Callicebus_purinus,=,B.Cheracebus_purinus,fringe= + name=
+                REORGANIZED,,⟂,B.Cheracebus,fringe-conflict; split
+                REORGANIZED,,⟂,B.Cheracebus_lucifer,fringe-conflict; child; graft
+              NO CHANGE,,=,B.Callicebus,fringe= + name=; split
+              GRAFT,,>,B.Callicebus_dubius,fringe= + name=; child; graft
+              GRAFT,,>,B.Callicebus_caquetensis,fringe= + name=; child; graft
+              GRAFT,,>,B.Callicebus_ornatus,fringe= + name=; child; graft
+              GRAFT,,>,B.Callicebus_discolor,fringe= + name=; child; graft
+              REORGANIZED,,⟂,B.unclassified_Callicebus,fringe-conflict; split
+              REORGANIZED,,⟂,B.Callicebus_sp._1_MH-2016,fringe-conflict; child; graft
+              REORGANIZED,,⟂,B.Callicebus_sp._2_MH-2016,fringe-conflict; child; graft
+              RENAME,,=,B.Plecturocebus,fringe= + rank=; split
+              GRAFT,,>,B.Plecturocebus_bernhardi,fringe= + rank=; child; graft
+              GRAFT,,>,B.Plecturocebus_cinerascens,fringe= + rank=; child; graft
+              GRAFT,,>,B.Plecturocebus_miltoni,fringe= + rank=; child; graft
+              GRAFT,,>,B.Plecturocebus_vieirai,fringe= + rank=; child; graft
+              GRAFT,,>,B.Plecturocebus_grovesi,fringe= + rank=; child; graft
+          GRAFT,,>,B.Xenothricinae,fringe= + name=; child; graft
+        NO CHANGE,A.Atelidae,=,B.Atelidae,fringe= + name=
+          REORGANIZE,A.Alouattinae,⟂,B.Alouatta,split; fringe-conflict
+            MOVE,A.Alouatta,=,B.Alouatta,fringe= + name=
               NO CHANGE,A.Alouatta_caraya,=,B.Alouatta_caraya,fringe=; genbank common name of
-              NO CHANGE,A.Alouatta_seniculus,=,B.Alouatta_seniculus,=fringe + =name
-                NO CHANGE,A.Alouatta_seniculus_seniculus,=,B.Alouatta_seniculus_seniculus,=fringe + =name
+              NO CHANGE,A.Alouatta_seniculus,=,B.Alouatta_seniculus,fringe= + name=
+                NO CHANGE,A.Alouatta_seniculus_seniculus,=,B.Alouatta_seniculus_seniculus,fringe= + name=
                 NO CHANGE,A.Alouatta_seniculus_macconnelli,=,B.Alouatta_seniculus_macconnelli,fringe=; merged id of
-              NO CHANGE,A.Alouatta_palliata,=,B.Alouatta_palliata,=fringe + =name
-                NO CHANGE,A.Alouatta_palliata_mexicana,=,B.Alouatta_palliata_mexicana,=fringe + =name
-                NO CHANGE,A.Alouatta_palliata_coibensis,=,B.Alouatta_palliata_coibensis,=fringe + =name
-                NO CHANGE,A.Alouatta_palliata_palliata,=,B.Alouatta_palliata_palliata,=fringe + =name
-                NO CHANGE,A.Alouatta_palliata_trabeata,=,B.Alouatta_palliata_trabeata,=fringe + =name
-                NO CHANGE,A.Alouatta_palliata_aequatorialis,=,B.Alouatta_palliata_aequatorialis,=fringe + =name
-              NO CHANGE,A.Alouatta_belzebul,=,B.Alouatta_belzebul,=fringe + =name
-                NO CHANGE,A.Alouatta_belzebul_belzebul,=,B.Alouatta_belzebul_belzebul,=fringe + =name
+              NO CHANGE,A.Alouatta_palliata,=,B.Alouatta_palliata,fringe= + name=
+                NO CHANGE,A.Alouatta_palliata_mexicana,=,B.Alouatta_palliata_mexicana,fringe= + name=
+                NO CHANGE,A.Alouatta_palliata_coibensis,=,B.Alouatta_palliata_coibensis,fringe= + name=
+                NO CHANGE,A.Alouatta_palliata_palliata,=,B.Alouatta_palliata_palliata,fringe= + name=
+                NO CHANGE,A.Alouatta_palliata_trabeata,=,B.Alouatta_palliata_trabeata,fringe= + name=
+                NO CHANGE,A.Alouatta_palliata_aequatorialis,=,B.Alouatta_palliata_aequatorialis,fringe= + name=
+              NO CHANGE,A.Alouatta_belzebul,=,B.Alouatta_belzebul,fringe= + name=
+                NO CHANGE,A.Alouatta_belzebul_belzebul,=,B.Alouatta_belzebul_belzebul,fringe= + name=
               NO CHANGE,A.Alouatta_sara,=,B.Alouatta_sara,fringe=; genbank common name of
-              NO CHANGE,A.Alouatta_stramineus,=,B.Alouatta_stramineus,=fringe + =name
-              NO CHANGE,A.Alouatta_pigra,=,B.Alouatta_pigra,=fringe + =name
-              NO CHANGE,A.Alouatta_guariba,=,B.Alouatta_guariba,=fringe + =name
+              NO CHANGE,A.Alouatta_stramineus,=,B.Alouatta_stramineus,fringe= + name=
+              NO CHANGE,A.Alouatta_pigra,=,B.Alouatta_pigra,fringe= + name=
+              NO CHANGE,A.Alouatta_guariba,=,B.Alouatta_guariba,fringe= + name=
                 NO CHANGE,A.Alouatta_guariba_clamitans,=,B.Alouatta_guariba_clamitans,fringe=; synonym of
-          NO CHANGE,A.Atelinae,=,B.Atelinae,=fringe + =name
-            NO CHANGE,A.Ateles,=,B.Ateles,=fringe + =name
-              NO CHANGE,A.Ateles_belzebuth,=,B.Ateles_belzebuth,=fringe + =name
-                NO CHANGE,A.Ateles_belzebuth_chamek,=,B.Ateles_belzebuth_chamek,=fringe + =name
-                NO CHANGE,A.Ateles_belzebuth_marginatus,=,B.Ateles_belzebuth_marginatus,=fringe + =name
-              NO CHANGE,A.Ateles_fusciceps,=,B.Ateles_fusciceps,=fringe + =name
-                NO CHANGE,A.Ateles_fusciceps_robustus,=,B.Ateles_fusciceps_robustus,=fringe + =name
-                NO CHANGE,A.Ateles_fusciceps_rufiventris,=,B.Ateles_fusciceps_rufiventris,=fringe + =name
-              NO CHANGE,A.Ateles_geoffroyi,=,B.Ateles_geoffroyi,=fringe + =name
-                NO CHANGE,A.Ateles_geoffroyi_panamensis,=,B.Ateles_geoffroyi_panamensis,=fringe + =name
-                NO CHANGE,A.Ateles_geoffroyi_vellerosus,=,B.Ateles_geoffroyi_vellerosus,=fringe + =name
-                NO CHANGE,A.Ateles_geoffroyi_yucatanensis,=,B.Ateles_geoffroyi_yucatanensis,=fringe + =name
-                NO CHANGE,A.Ateles_geoffroyi_frontatus,=,B.Ateles_geoffroyi_frontatus,=fringe + =name
-                NO CHANGE,A.Ateles_geoffroyi_ornatus,=,B.Ateles_geoffroyi_ornatus,=fringe + =name
-                NO CHANGE,A.Ateles_geoffroyi_azuerensis,=,B.Ateles_geoffroyi_azuerensis,=fringe + =name
+              REORGANIZED,,⟂,B.Alouattinae,fringe-conflict; split
+              GRAFT,,>,B.Alouatta_palliata_x_Alouatta_pigra,fringe= + name=; child; graft
+          NO CHANGE,A.Atelinae,=,B.Atelinae,fringe= + name=
+            NO CHANGE,A.Ateles,=,B.Ateles,fringe= + name=
+              NO CHANGE,A.Ateles_belzebuth,=,B.Ateles_belzebuth,fringe= + name=
+                NO CHANGE,A.Ateles_belzebuth_chamek,=,B.Ateles_belzebuth_chamek,fringe= + name=
+                NO CHANGE,A.Ateles_belzebuth_marginatus,=,B.Ateles_belzebuth_marginatus,fringe= + name=
+              NO CHANGE,A.Ateles_fusciceps,=,B.Ateles_fusciceps,fringe= + name=
+                NO CHANGE,A.Ateles_fusciceps_robustus,=,B.Ateles_fusciceps_robustus,fringe= + name=
+                NO CHANGE,A.Ateles_fusciceps_rufiventris,=,B.Ateles_fusciceps_rufiventris,fringe= + name=
+              NO CHANGE,A.Ateles_geoffroyi,=,B.Ateles_geoffroyi,fringe= + name=
+                NO CHANGE,A.Ateles_geoffroyi_panamensis,=,B.Ateles_geoffroyi_panamensis,fringe= + name=
+                NO CHANGE,A.Ateles_geoffroyi_vellerosus,=,B.Ateles_geoffroyi_vellerosus,fringe= + name=
+                NO CHANGE,A.Ateles_geoffroyi_yucatanensis,=,B.Ateles_geoffroyi_yucatanensis,fringe= + name=
+                NO CHANGE,A.Ateles_geoffroyi_frontatus,=,B.Ateles_geoffroyi_frontatus,fringe= + name=
+                NO CHANGE,A.Ateles_geoffroyi_ornatus,=,B.Ateles_geoffroyi_ornatus,fringe= + name=
+                NO CHANGE,A.Ateles_geoffroyi_azuerensis,=,B.Ateles_geoffroyi_azuerensis,fringe= + name=
               NO CHANGE,A.Ateles_paniscus,=,B.Ateles_paniscus,fringe=; genbank common name of
-              NO CHANGE,A.Ateles_sp.,=,B.Ateles_sp.,fringe=; genbank common name of
+              MOVE,A.Ateles_sp.,=,B.Ateles_sp.,fringe=; genbank common name of
               NO CHANGE,A.Ateles_paniscus_x_Ateles_fusciceps,=,B.Ateles_paniscus_x_Ateles_fusciceps,fringe=; genbank common name of
-              NO CHANGE,A.unclassified_Ateles,=,B.unclassified_Ateles,=fringe + =name
-                NO CHANGE,A.Ateles_sp._haplotype_Abh9,=,B.Ateles_sp._haplotype_Abh9,=fringe + =name
-                NO CHANGE,A.Ateles_sp._haplotype_Abh10,=,B.Ateles_sp._haplotype_Abh10,=fringe + =name
-                NO CHANGE,A.Ateles_sp._haplotype_Abh11,=,B.Ateles_sp._haplotype_Abh11,=fringe + =name
-                NO CHANGE,A.Ateles_sp._haplotype_Agsubspp._16,=,B.Ateles_sp._haplotype_Agsubspp._16,=fringe + =name
-                NO CHANGE,A.Ateles_sp._haplotype_Afr19,=,B.Ateles_sp._haplotype_Afr19,=fringe + =name
-                NO CHANGE,A.Ateles_sp._haplotype_Afr20,=,B.Ateles_sp._haplotype_Afr20,=fringe + =name
-                NO CHANGE,A.Ateles_sp._haplotype_Afr21,=,B.Ateles_sp._haplotype_Afr21,=fringe + =name
-                NO CHANGE,A.Ateles_sp._haplotype_Abh19,=,B.Ateles_sp._haplotype_Abh19,=fringe + =name
-                NO CHANGE,A.Ateles_sp._haplotype_Agp13,=,B.Ateles_sp._haplotype_Agp13,=fringe + =name
-                NO CHANGE,A.Ateles_sp._haplotype_Afr27,=,B.Ateles_sp._haplotype_Afr27,=fringe + =name
-                NO CHANGE,A.Ateles_sp._KO-2004,=,B.Ateles_sp._KO-2004,=fringe + =name
-                NO CHANGE,A.Ateles_sp._JPV-2004,=,B.Ateles_sp._JPV-2004,=fringe + =name
-              NO CHANGE,A.Ateles_hybridus,=,B.Ateles_hybridus,=fringe + =name
-                NO CHANGE,A.Ateles_hybridus_hybridus,=,B.Ateles_hybridus_hybridus,=fringe + =name
+              NO CHANGE,A.unclassified_Ateles,=,B.unclassified_Ateles,split; fringe= + name=
+                NO CHANGE,A.Ateles_sp._haplotype_Abh9,=,B.Ateles_sp._haplotype_Abh9,fringe= + name=
+                NO CHANGE,A.Ateles_sp._haplotype_Abh10,=,B.Ateles_sp._haplotype_Abh10,fringe= + name=
+                NO CHANGE,A.Ateles_sp._haplotype_Abh11,=,B.Ateles_sp._haplotype_Abh11,fringe= + name=
+                NO CHANGE,A.Ateles_sp._haplotype_Agsubspp._16,=,B.Ateles_sp._haplotype_Agsubspp._16,fringe= + name=
+                NO CHANGE,A.Ateles_sp._haplotype_Afr19,=,B.Ateles_sp._haplotype_Afr19,fringe= + name=
+                NO CHANGE,A.Ateles_sp._haplotype_Afr20,=,B.Ateles_sp._haplotype_Afr20,fringe= + name=
+                NO CHANGE,A.Ateles_sp._haplotype_Afr21,=,B.Ateles_sp._haplotype_Afr21,fringe= + name=
+                NO CHANGE,A.Ateles_sp._haplotype_Abh19,=,B.Ateles_sp._haplotype_Abh19,fringe= + name=
+                NO CHANGE,A.Ateles_sp._haplotype_Agp13,=,B.Ateles_sp._haplotype_Agp13,fringe= + name=
+                NO CHANGE,A.Ateles_sp._haplotype_Afr27,=,B.Ateles_sp._haplotype_Afr27,fringe= + name=
+                NO CHANGE,A.Ateles_sp._KO-2004,=,B.Ateles_sp._KO-2004,fringe= + name=
+                NO CHANGE,A.Ateles_sp._JPV-2004,=,B.Ateles_sp._JPV-2004,fringe= + name=
+              NO CHANGE,A.Ateles_hybridus,=,B.Ateles_hybridus,fringe= + name=
+                NO CHANGE,A.Ateles_hybridus_hybridus,=,B.Ateles_hybridus_hybridus,fringe= + name=
               NO CHANGE,A.Ateles_marginatus,=,B.Ateles_marginatus,fringe=; genbank common name of
-            NO CHANGE,A.Lagothrix,=,B.Lagothrix,=fringe + =name
+              REORGANIZED,,⟂,B.unclassified_Ateles,fringe-conflict; split
+              REORGANIZED,,⟂,B.Ateles_sp._EG-2017,fringe-conflict; child; graft
+            NO CHANGE,A.Lagothrix,=,B.Lagothrix,fringe= + name=
               NO CHANGE,A.Lagothrix_lagotricha,=,B.Lagothrix_lagotricha,fringe=; synonym of
-              NO CHANGE,A.Lagothrix_sp._CCS-2009a,=,B.Lagothrix_sp._CCS-2009a,=fringe + =name
-              NO CHANGE,A.Lagothrix_lugens,=,B.Lagothrix_lugens,=fringe + =name
-              NO CHANGE,A.Lagothrix_poeppigii,=,B.Lagothrix_poeppigii,=fringe + =name
-              NO CHANGE,A.Lagothrix_cana,=,B.Lagothrix_cana,=fringe + =name
-            NO CHANGE,A.Brachyteles,=,B.Brachyteles,=fringe + =name
-              NO CHANGE,A.Brachyteles_arachnoides,=,B.Brachyteles_arachnoides,=fringe + =name
-              NO CHANGE,A.Brachyteles_hypoxanthus,=,B.Brachyteles_hypoxanthus,=fringe + =name
-      NO CHANGE,A.Catarrhini,=,B.Catarrhini,=fringe + =name
-        REORGANIZE,A.Cercopithecoidea,⟂,B.Cercopithecidae,fringe-conflict
-          NO CHANGE,A.Cercopithecidae,=,B.Cercopithecidae,=fringe + =name
-            NO CHANGE,A.Cercopithecinae,=,B.Cercopithecinae,=fringe + =name
-              NO CHANGE,A.Cercocebus,=,B.Cercocebus,=fringe + =name
-                NO CHANGE,A.Cercocebus_torquatus,=,B.Cercocebus_torquatus,=fringe + =name
-                  NO CHANGE,A.Cercocebus_torquatus_torquatus,=,B.Cercocebus_torquatus_torquatus,=fringe + =name
-                NO CHANGE,A.Cercocebus_atys,=,B.Cercocebus_atys,=fringe + =name
-                  NO CHANGE,A.Cercocebus_atys_lunulatus,=,B.Cercocebus_atys_lunulatus,=fringe + =name
+              MOVE,A.Lagothrix_sp._CCS-2009a,=,B.Lagothrix_sp._CCS-2009a,fringe= + name=
+                RENAME,,=,B.unclassified_Lagothrix,fringe=; split
+                GRAFT,,>,B.Lagothrix_sp._EG-2017,fringe=; child; graft
+              NO CHANGE,A.Lagothrix_lugens,=,B.Lagothrix_lugens,fringe= + name=
+              NO CHANGE,A.Lagothrix_poeppigii,=,B.Lagothrix_poeppigii,fringe= + name=
+              NO CHANGE,A.Lagothrix_cana,=,B.Lagothrix_cana,fringe= + name=
+              GRAFT,,>,B.Lagothrix_flavicauda,fringe= + name=; child; graft
+              GRAFT,,>,B.Lagothrix_tschudii,fringe= + name=; child; graft
+            NO CHANGE,A.Brachyteles,=,B.Brachyteles,fringe= + name=
+              NO CHANGE,A.Brachyteles_arachnoides,=,B.Brachyteles_arachnoides,fringe= + name=
+              NO CHANGE,A.Brachyteles_hypoxanthus,=,B.Brachyteles_hypoxanthus,fringe= + name=
+      NO CHANGE,A.Catarrhini,=,B.Catarrhini,fringe= + name=
+        REORGANIZE,A.Cercopithecoidea,⟂,B.Cercopithecidae,split; fringe-conflict
+          MOVE,A.Cercopithecidae,=,B.Cercopithecidae,fringe= + name=
+            NO CHANGE,A.Cercopithecinae,=,B.Cercopithecinae,fringe= + name=
+              NO CHANGE,A.Cercocebus,=,B.Cercocebus,fringe= + name=
+                NO CHANGE,A.Cercocebus_torquatus,=,B.Cercocebus_torquatus,fringe= + name=
+                  NO CHANGE,A.Cercocebus_torquatus_torquatus,=,B.Cercocebus_torquatus_torquatus,fringe= + name=
+                NO CHANGE,A.Cercocebus_atys,=,B.Cercocebus_atys,fringe= + name=
+                  NO CHANGE,A.Cercocebus_atys_lunulatus,=,B.Cercocebus_atys_lunulatus,fringe= + name=
+                  GRAFT,,>,B.Cercocebus_atys_atys,fringe= + name=; child; graft
                 NO CHANGE,A.Cercocebus_galeritus,=,B.Cercocebus_galeritus,fringe=; genbank common name of
-                NO CHANGE,A.Cercocebus_chrysogaster,=,B.Cercocebus_chrysogaster,=fringe + =name
+                NO CHANGE,A.Cercocebus_chrysogaster,=,B.Cercocebus_chrysogaster,fringe= + name=
                 NO CHANGE,A.Cercocebus_agilis,=,B.Cercocebus_agilis,fringe=; genbank common name of
-              NO CHANGE,A.Cercopithecus,=,B.Cercopithecus,=fringe + =name
-                NO CHANGE,A.Cercopithecus_cephus,=,B.Cercopithecus_cephus,=fringe + =name
-                  NO CHANGE,A.Cercopithecus_cephus_ngottoensis,=,B.Cercopithecus_cephus_ngottoensis,=fringe + =name
-                  NO CHANGE,A.Cercopithecus_cephus_cephodes,=,B.Cercopithecus_cephus_cephodes,=fringe + =name
-                  NO CHANGE,A.Cercopithecus_cephus_cephus,=,B.Cercopithecus_cephus_cephus,=fringe + =name
-                NO CHANGE,A.Cercopithecus_hamlyni,=,B.Cercopithecus_hamlyni,=fringe + =name
-                  NO CHANGE,A.Cercopithecus_hamlyni_hamlyni,=,B.Cercopithecus_hamlyni_hamlyni,=fringe + =name
-                NO CHANGE,A.Cercopithecus_ascanius,=,B.Cercopithecus_ascanius,=fringe + =name
-                  NO CHANGE,A.Cercopithecus_ascanius_ascanius,=,B.Cercopithecus_ascanius_ascanius,=fringe + =name
-                  NO CHANGE,A.Cercopithecus_ascanius_katangae,=,B.Cercopithecus_ascanius_katangae,=fringe + =name
-                  NO CHANGE,A.Cercopithecus_ascanius_schmidti,=,B.Cercopithecus_ascanius_schmidti,=fringe + =name
-                  NO CHANGE,A.Cercopithecus_ascanius_whitesidei,=,B.Cercopithecus_ascanius_whitesidei,=fringe + =name
-                NO CHANGE,A.Cercopithecus_diana,=,B.Cercopithecus_diana,=fringe + =name
-                NO CHANGE,A.Cercopithecus_mitis,=,B.Cercopithecus_mitis,=fringe + =name
-                  NO CHANGE,A.Cercopithecus_mitis_boutourlinii,=,B.Cercopithecus_mitis_boutourlinii,=fringe + =name
-                  NO CHANGE,A.Cercopithecus_mitis_heymansi,=,B.Cercopithecus_mitis_heymansi,=fringe + =name
-                  NO CHANGE,A.Cercopithecus_mitis_mitis,=,B.Cercopithecus_mitis_mitis,=fringe + =name
-                  NO CHANGE,A.Cercopithecus_mitis_opisthostictus,=,B.Cercopithecus_mitis_opisthostictus,=fringe + =name
-                  NO CHANGE,A.Cercopithecus_mitis_stuhlmanni,=,B.Cercopithecus_mitis_stuhlmanni,=fringe + =name
-                NO CHANGE,A.Cercopithecus_mona,=,B.Cercopithecus_mona,=fringe + =name
-                  NO CHANGE,A.Cercopithecus_mona_mona,=,B.Cercopithecus_mona_mona,=fringe + =name
-                  NO CHANGE,A.Cercopithecus_mona_campbelli,=,B.Cercopithecus_mona_campbelli,=fringe + =name
+              NO CHANGE,A.Cercopithecus,=,B.Cercopithecus,fringe= + name=
+                NO CHANGE,A.Cercopithecus_cephus,=,B.Cercopithecus_cephus,fringe= + name=
+                  NO CHANGE,A.Cercopithecus_cephus_ngottoensis,=,B.Cercopithecus_cephus_ngottoensis,fringe= + name=
+                  NO CHANGE,A.Cercopithecus_cephus_cephodes,=,B.Cercopithecus_cephus_cephodes,fringe= + name=
+                  NO CHANGE,A.Cercopithecus_cephus_cephus,=,B.Cercopithecus_cephus_cephus,fringe= + name=
+                NO CHANGE,A.Cercopithecus_hamlyni,=,B.Cercopithecus_hamlyni,fringe= + name=
+                  NO CHANGE,A.Cercopithecus_hamlyni_hamlyni,=,B.Cercopithecus_hamlyni_hamlyni,fringe= + name=
+                NO CHANGE,A.Cercopithecus_ascanius,=,B.Cercopithecus_ascanius,fringe= + name=
+                  NO CHANGE,A.Cercopithecus_ascanius_ascanius,=,B.Cercopithecus_ascanius_ascanius,fringe= + name=
+                  NO CHANGE,A.Cercopithecus_ascanius_katangae,=,B.Cercopithecus_ascanius_katangae,fringe= + name=
+                  NO CHANGE,A.Cercopithecus_ascanius_schmidti,=,B.Cercopithecus_ascanius_schmidti,fringe= + name=
+                  NO CHANGE,A.Cercopithecus_ascanius_whitesidei,=,B.Cercopithecus_ascanius_whitesidei,fringe= + name=
+                NO CHANGE,A.Cercopithecus_diana,=,B.Cercopithecus_diana,fringe= + name=
+                NO CHANGE,A.Cercopithecus_mitis,=,B.Cercopithecus_mitis,fringe= + name=
+                  NO CHANGE,A.Cercopithecus_mitis_boutourlinii,=,B.Cercopithecus_mitis_boutourlinii,fringe= + name=
+                  NO CHANGE,A.Cercopithecus_mitis_heymansi,=,B.Cercopithecus_mitis_heymansi,fringe= + name=
+                  NO CHANGE,A.Cercopithecus_mitis_mitis,=,B.Cercopithecus_mitis_mitis,fringe= + name=
+                  NO CHANGE,A.Cercopithecus_mitis_opisthostictus,=,B.Cercopithecus_mitis_opisthostictus,fringe= + name=
+                  NO CHANGE,A.Cercopithecus_mitis_stuhlmanni,=,B.Cercopithecus_mitis_stuhlmanni,fringe= + name=
+                NO CHANGE,A.Cercopithecus_mona,=,B.Cercopithecus_mona,fringe= + name=
+                  NO CHANGE,A.Cercopithecus_mona_mona,=,B.Cercopithecus_mona_mona,fringe= + name=
+                  NO CHANGE,A.Cercopithecus_mona_campbelli,=,B.Cercopithecus_mona_campbelli,fringe= + name=
                 NO CHANGE,A.Cercopithecus_neglectus,=,B.Cercopithecus_neglectus,fringe=; genbank common name of
-                NO CHANGE,A.Cercopithecus_nictitans,=,B.Cercopithecus_nictitans,=fringe + =name
-                  NO CHANGE,A.Cercopithecus_nictitans_martini,=,B.Cercopithecus_nictitans_martini,=fringe + =name
-                  NO CHANGE,A.Cercopithecus_nictitans_nictitans,=,B.Cercopithecus_nictitans_nictitans,=fringe + =name
-                RENAME,A.Cercopithecus_lhoesti,=,B.Allochrocebus_lhoesti,id=
-                NO CHANGE,A.Cercopithecus_petaurista,=,B.Cercopithecus_petaurista,=fringe + =name
-                  NO CHANGE,A.Cercopithecus_petaurista_petaurista,=,B.Cercopithecus_petaurista_petaurista,=fringe + =name
+                NO CHANGE,A.Cercopithecus_nictitans,=,B.Cercopithecus_nictitans,fringe= + name=
+                  NO CHANGE,A.Cercopithecus_nictitans_martini,=,B.Cercopithecus_nictitans_martini,fringe= + name=
+                  NO CHANGE,A.Cercopithecus_nictitans_nictitans,=,B.Cercopithecus_nictitans_nictitans,fringe= + name=
+                MOVE,A.Cercopithecus_lhoesti,=,B.Allochrocebus_lhoesti,id=
+                NO CHANGE,A.Cercopithecus_petaurista,=,B.Cercopithecus_petaurista,fringe= + name=
+                  NO CHANGE,A.Cercopithecus_petaurista_petaurista,=,B.Cercopithecus_petaurista_petaurista,fringe= + name=
                   NO CHANGE,A.Cercopithecus_petaurista_buettikoferi,=,B.Cercopithecus_petaurista_buettikoferi,fringe=; synonym of
-                NO CHANGE,A.Cercopithecus_pogonias,=,B.Cercopithecus_pogonias,=fringe + =name
-                  NO CHANGE,A.Cercopithecus_pogonias_grayi,=,B.Cercopithecus_pogonias_grayi,=fringe + =name
-                  NO CHANGE,A.Cercopithecus_pogonias_nigripes,=,B.Cercopithecus_pogonias_nigripes,=fringe + =name
-                  NO CHANGE,A.Cercopithecus_pogonias_pogonias,=,B.Cercopithecus_pogonias_pogonias,=fringe + =name
-                  NO CHANGE,A.Cercopithecus_pogonias_schwarzianus,=,B.Cercopithecus_pogonias_schwarzianus,=fringe + =name
-                RENAME,A.Cercopithecus_preussi,=,B.Allochrocebus_preussi,id=
+                NO CHANGE,A.Cercopithecus_pogonias,=,B.Cercopithecus_pogonias,fringe= + name=
+                  NO CHANGE,A.Cercopithecus_pogonias_grayi,=,B.Cercopithecus_pogonias_grayi,fringe= + name=
+                  NO CHANGE,A.Cercopithecus_pogonias_nigripes,=,B.Cercopithecus_pogonias_nigripes,fringe= + name=
+                  NO CHANGE,A.Cercopithecus_pogonias_pogonias,=,B.Cercopithecus_pogonias_pogonias,fringe= + name=
+                  NO CHANGE,A.Cercopithecus_pogonias_schwarzianus,=,B.Cercopithecus_pogonias_schwarzianus,fringe= + name=
+                MOVE,A.Cercopithecus_preussi,=,B.Allochrocebus_preussi,id=
                   RENAME,A.Cercopithecus_preussi_insularis,=,B.Allochrocebus_preussi_insularis,id=
                   RENAME,A.Cercopithecus_preussi_preussi,=,B.Allochrocebus_preussi_preussi,id=
-                RENAME,A.Cercopithecus_solatus,=,B.Allochrocebus_solatus,id=
-                NO CHANGE,A.Cercopithecus_erythrogaster,=,B.Cercopithecus_erythrogaster,=fringe + =name
-                  NO CHANGE,A.Cercopithecus_erythrogaster_erythrogaster,=,B.Cercopithecus_erythrogaster_erythrogaster,=fringe + =name
-                  NO CHANGE,A.Cercopithecus_erythrogaster_pococki,=,B.Cercopithecus_erythrogaster_pococki,=fringe + =name
-                NO CHANGE,A.Cercopithecus_erythrotis,=,B.Cercopithecus_erythrotis,=fringe + =name
-                  NO CHANGE,A.Cercopithecus_erythrotis_erythrotis,=,B.Cercopithecus_erythrotis_erythrotis,=fringe + =name
-                  NO CHANGE,A.Cercopithecus_erythrotis_camerunensis,=,B.Cercopithecus_erythrotis_camerunensis,=fringe + =name
-                NO CHANGE,A.Cercopithecus_wolfi,=,B.Cercopithecus_wolfi,=fringe + =name
-                  NO CHANGE,A.Cercopithecus_wolfi_wolfi,=,B.Cercopithecus_wolfi_wolfi,=fringe + =name
+                MOVE,A.Cercopithecus_solatus,=,B.Allochrocebus_solatus,id=
+                NO CHANGE,A.Cercopithecus_erythrogaster,=,B.Cercopithecus_erythrogaster,fringe= + name=
+                  NO CHANGE,A.Cercopithecus_erythrogaster_erythrogaster,=,B.Cercopithecus_erythrogaster_erythrogaster,fringe= + name=
+                  NO CHANGE,A.Cercopithecus_erythrogaster_pococki,=,B.Cercopithecus_erythrogaster_pococki,fringe= + name=
+                NO CHANGE,A.Cercopithecus_erythrotis,=,B.Cercopithecus_erythrotis,fringe= + name=
+                  NO CHANGE,A.Cercopithecus_erythrotis_erythrotis,=,B.Cercopithecus_erythrotis_erythrotis,fringe= + name=
+                  NO CHANGE,A.Cercopithecus_erythrotis_camerunensis,=,B.Cercopithecus_erythrotis_camerunensis,fringe= + name=
+                NO CHANGE,A.Cercopithecus_wolfi,=,B.Cercopithecus_wolfi,fringe= + name=
+                  NO CHANGE,A.Cercopithecus_wolfi_wolfi,=,B.Cercopithecus_wolfi_wolfi,fringe= + name=
                   NO CHANGE,A.Cercopithecus_wolfi_elegans,=,B.Cercopithecus_wolfi_elegans,fringe=; synonym of
                   NO CHANGE,A.Cercopithecus_wolfi_pyrogaster,=,B.Cercopithecus_wolfi_pyrogaster,fringe=; synonym of
-                NO CHANGE,A.Cercopithecus_campbelli,=,B.Cercopithecus_campbelli,=fringe + =name
-                  NO CHANGE,A.Cercopithecus_campbelli_lowei,=,B.Cercopithecus_campbelli_lowei,=fringe + =name
-                NO CHANGE,A.Cercopithecus_albogularis,=,B.Cercopithecus_albogularis,=fringe + =name
+                NO CHANGE,A.Cercopithecus_campbelli,=,B.Cercopithecus_campbelli,fringe= + name=
+                  NO CHANGE,A.Cercopithecus_campbelli_lowei,=,B.Cercopithecus_campbelli_lowei,fringe= + name=
+                NO CHANGE,A.Cercopithecus_albogularis,=,B.Cercopithecus_albogularis,fringe= + name=
                   NO CHANGE,A.Cercopithecus_albogularis_kolbi,=,B.Cercopithecus_albogularis_kolbi,fringe=; synonym of
                   NO CHANGE,A.Cercopithecus_albogularis_albotorquatus,=,B.Cercopithecus_albogularis_albotorquatus,fringe=; synonym of
                   NO CHANGE,A.Cercopithecus_albogularis_erythrarchus,=,B.Cercopithecus_albogularis_erythrarchus,fringe=; synonym of
@@ -531,295 +643,351 @@ NO CHANGE,A.Primates,=,B.Primates,=fringe + =name
                   NO CHANGE,A.Cercopithecus_albogularis_moloneyi,=,B.Cercopithecus_albogularis_moloneyi,fringe=; synonym of
                   NO CHANGE,A.Cercopithecus_albogularis_monoides,=,B.Cercopithecus_albogularis_monoides,fringe=; synonym of
                 NO CHANGE,A.Cercopithecus_dryas,=,B.Cercopithecus_dryas,fringe=; genbank common name of
-                NO CHANGE,A.Cercopithecus_roloway,=,B.Cercopithecus_roloway,=fringe + =name
-                NO CHANGE,A.Cercopithecus_doggetti,=,B.Cercopithecus_doggetti,=fringe + =name
-                NO CHANGE,A.Cercopithecus_kandti,=,B.Cercopithecus_kandti,=fringe + =name
-                NO CHANGE,A.Cercopithecus_denti,=,B.Cercopithecus_denti,=fringe + =name
-                NO CHANGE,A.Cercopithecus_sp._WMS-2012,=,B.Cercopithecus_sp._WMS-2012,=fringe + =name
+                NO CHANGE,A.Cercopithecus_roloway,=,B.Cercopithecus_roloway,fringe= + name=
+                NO CHANGE,A.Cercopithecus_doggetti,=,B.Cercopithecus_doggetti,fringe= + name=
+                NO CHANGE,A.Cercopithecus_kandti,=,B.Cercopithecus_kandti,fringe= + name=
+                NO CHANGE,A.Cercopithecus_denti,=,B.Cercopithecus_denti,fringe= + name=
+                MOVE,A.Cercopithecus_sp._WMS-2012,=,B.Cercopithecus_sp._WMS-2012,fringe= + name=
+                  RENAME,,=,B.unclassified_Cercopithecus,fringe=; split
                 ADD,A.Cercopithecus_lomamiensis,>,B.Cercopithecus_lomamiensis,fringe=; included in
-              REORGANIZE,A.Erythrocebus,⟂,B.Erythrocebus_patas,fringe-conflict
-                NO CHANGE,A.Erythrocebus_patas,=,B.Erythrocebus_patas,=fringe + =name
-              NO CHANGE,A.Macaca,=,B.Macaca,=fringe + =name
-                NO CHANGE,A.Macaca_arctoides,=,B.Macaca_arctoides,=fringe + =name
-                NO CHANGE,A.Macaca_fascicularis,=,B.Macaca_fascicularis,=fringe + =name
-                  NO CHANGE,A.Macaca_fascicularis_philippinensis,=,B.Macaca_fascicularis_philippinensis,=fringe + =name
-                  NO CHANGE,A.Macaca_fascicularis_fascicularis,=,B.Macaca_fascicularis_fascicularis,=fringe + =name
-                NO CHANGE,A.Macaca_fuscata,=,B.Macaca_fuscata,=fringe + =name
-                  NO CHANGE,A.Macaca_fuscata_fuscata,=,B.Macaca_fuscata_fuscata,=fringe + =name
-                  NO CHANGE,A.Macaca_fuscata_yakui,=,B.Macaca_fuscata_yakui,=fringe + =name
-                NO CHANGE,A.Macaca_mulatta,=,B.Macaca_mulatta,=fringe + =name
+                GRAFT,,>,B.Cercopithecus_sclateri,fringe= + name=; child; graft
+              REORGANIZE,A.Erythrocebus,⟂,B.Erythrocebus_patas,split; fringe-conflict
+                MOVE,A.Erythrocebus_patas,=,B.Erythrocebus_patas,fringe= + name=
+                  REORGANIZED,,⟂,B.Erythrocebus,fringe-conflict; split
+              NO CHANGE,A.Macaca,=,B.Macaca,fringe= + name=
+                NO CHANGE,A.Macaca_arctoides,=,B.Macaca_arctoides,fringe= + name=
+                NO CHANGE,A.Macaca_fascicularis,=,B.Macaca_fascicularis,fringe= + name=
+                  NO CHANGE,A.Macaca_fascicularis_philippinensis,=,B.Macaca_fascicularis_philippinensis,fringe= + name=
+                  NO CHANGE,A.Macaca_fascicularis_fascicularis,=,B.Macaca_fascicularis_fascicularis,fringe= + name=
+                  GRAFT,,>,B.Macaca_fascicularis_aureus,fringe= + name=; child; graft
+                NO CHANGE,A.Macaca_fuscata,=,B.Macaca_fuscata,fringe= + name=
+                  NO CHANGE,A.Macaca_fuscata_fuscata,=,B.Macaca_fuscata_fuscata,fringe= + name=
+                  NO CHANGE,A.Macaca_fuscata_yakui,=,B.Macaca_fuscata_yakui,fringe= + name=
+                NO CHANGE,A.Macaca_mulatta,=,B.Macaca_mulatta,fringe= + name=
                   NO CHANGE,A.Macaca_mulatta_lasiotus,=,B.Macaca_mulatta_lasiotus,fringe=; synonym of
-                NO CHANGE,A.Macaca_nemestrina,=,B.Macaca_nemestrina,=fringe + =name
-                  RENAME,A.Macaca_nemestrina_leonina,=,B.Macaca_leonina,id=; alternate=
-                  NO CHANGE,A.Macaca_nemestrina_nemestrina,=,B.Macaca_nemestrina_nemestrina,=fringe + =name
-                  RENAME,A.Macaca_nemestrina_siberu,=,B.Macaca_siberu,id=; alternate=
-                NO CHANGE,A.Macaca_sylvanus,=,B.Macaca_sylvanus,=fringe + =name
-                NO CHANGE,A.Macaca_radiata,=,B.Macaca_radiata,=fringe + =name
-                  NO CHANGE,A.Macaca_radiata_radiata,=,B.Macaca_radiata_radiata,=fringe + =name
-                NO CHANGE,A.Macaca_sp.,=,B.Macaca_sp.,=fringe + =name
-                NO CHANGE,A.Macaca_assamensis,=,B.Macaca_assamensis,=fringe + =name
-                  NO CHANGE,A.Macaca_assamensis_assamensis,=,B.Macaca_assamensis_assamensis,=fringe + =name
-                NO CHANGE,A.Macaca_sinica,=,B.Macaca_sinica,=fringe + =name
+                  GRAFT,,>,B.Macaca_mulatta_brevicaudus,fringe= + name=; child; graft
+                  GRAFT,,>,B.Macaca_mulatta_vestita,fringe= + name=; child; graft
+                NO CHANGE,A.Macaca_nemestrina,=,B.Macaca_nemestrina,fringe= + name=
+                  MOVE,A.Macaca_nemestrina_leonina,=,B.Macaca_leonina,split; id=
+                  NO CHANGE,A.Macaca_nemestrina_nemestrina,=,B.Macaca_nemestrina_nemestrina,fringe= + name=
+                  MOVE,A.Macaca_nemestrina_siberu,=,B.Macaca_siberu,split; id=
+                NO CHANGE,A.Macaca_sylvanus,=,B.Macaca_sylvanus,fringe= + name=
+                NO CHANGE,A.Macaca_radiata,=,B.Macaca_radiata,fringe= + name=
+                  NO CHANGE,A.Macaca_radiata_radiata,=,B.Macaca_radiata_radiata,fringe= + name=
+                MOVE,A.Macaca_sp.,=,B.Macaca_sp.,fringe= + name=
+                  RENAME,,=,B.unclassified_Macaca,fringe=; split
+                NO CHANGE,A.Macaca_assamensis,=,B.Macaca_assamensis,fringe= + name=
+                  NO CHANGE,A.Macaca_assamensis_assamensis,=,B.Macaca_assamensis_assamensis,fringe= + name=
+                NO CHANGE,A.Macaca_sinica,=,B.Macaca_sinica,fringe= + name=
                 NO CHANGE,A.Macaca_speciosa,=,B.Macaca_speciosa,fringe=; genbank common name of
                 NO CHANGE,A.Macaca_tonkeana,=,B.Macaca_tonkeana,fringe=; genbank common name of
                 NO CHANGE,A.Macaca_nigra,=,B.Macaca_nigra,fringe=; genbank common name of
                 NO CHANGE,A.Macaca_silenus,=,B.Macaca_silenus,fringe=; genbank common name of
-                NO CHANGE,A.Macaca_thibetana,=,B.Macaca_thibetana,=fringe + =name
-                  NO CHANGE,A.Macaca_thibetana_thibetana,=,B.Macaca_thibetana_thibetana,=fringe + =name
+                NO CHANGE,A.Macaca_thibetana,=,B.Macaca_thibetana,fringe= + name=
+                  NO CHANGE,A.Macaca_thibetana_thibetana,=,B.Macaca_thibetana_thibetana,fringe= + name=
                 NO CHANGE,A.Macaca_cyclopis,=,B.Macaca_cyclopis,fringe=; genbank common name of
-                NO CHANGE,A.Macaca_brunnescens,=,B.Macaca_brunnescens,=fringe + =name
+                NO CHANGE,A.Macaca_brunnescens,=,B.Macaca_brunnescens,fringe= + name=
                 NO CHANGE,A.Macaca_hecki,=,B.Macaca_hecki,fringe=; genbank common name of
-                NO CHANGE,A.Macaca_maura,=,B.Macaca_maura,=fringe + =name
-                NO CHANGE,A.Macaca_nigrescens,=,B.Macaca_nigrescens,=fringe + =name
+                NO CHANGE,A.Macaca_maura,=,B.Macaca_maura,fringe= + name=
+                NO CHANGE,A.Macaca_nigrescens,=,B.Macaca_nigrescens,fringe= + name=
                 NO CHANGE,A.Macaca_ochreata,=,B.Macaca_ochreata,fringe=; genbank common name of
-                NO CHANGE,A.Macaca_maura_x_tonkeana,=,B.Macaca_maura_x_tonkeana,=fringe + =name
-                NO CHANGE,A.Macaca_hecki_x_tonkeana,=,B.Macaca_hecki_x_tonkeana,=fringe + =name
-                NO CHANGE,A.Macaca_pagensis,=,B.Macaca_pagensis,=fringe + =name
-                NO CHANGE,A.Macaca_balantak,=,B.Macaca_balantak,=fringe + =name
-                NO CHANGE,A.Macaca_balantak_x_tonkeana,=,B.Macaca_balantak_x_tonkeana,=fringe + =name
+                NO CHANGE,A.Macaca_maura_x_tonkeana,=,B.Macaca_maura_x_tonkeana,fringe= + name=
+                NO CHANGE,A.Macaca_hecki_x_tonkeana,=,B.Macaca_hecki_x_tonkeana,fringe= + name=
+                NO CHANGE,A.Macaca_pagensis,=,B.Macaca_pagensis,fringe= + name=
+                NO CHANGE,A.Macaca_balantak,=,B.Macaca_balantak,fringe= + name=
+                NO CHANGE,A.Macaca_balantak_x_tonkeana,=,B.Macaca_balantak_x_tonkeana,fringe= + name=
                 CHANGE ID,A.Macaca_leonina,=,B.Macaca_leonina,fringe=; genbank common name of
                 NO CHANGE,A.Macaca_munzala,=,B.Macaca_munzala,fringe=; genbank common name of
                 CHANGE ID,A.Macaca_siberu,=,B.Macaca_siberu,fringe=; genbank common name of
-              NO CHANGE,A.Papio,=,B.Papio,=fringe + =name
-                NO CHANGE,A.Papio_anubis,=,B.Papio_anubis,=fringe + =name
-                  NO CHANGE,A.Papio_anubis_anubis,=,B.Papio_anubis_anubis,=fringe + =name
-                NO CHANGE,A.Papio_cynocephalus,=,B.Papio_cynocephalus,=fringe + =name
-                  NO CHANGE,A.Papio_cynocephalus_cynocephalus,=,B.Papio_cynocephalus_cynocephalus,=fringe + =name
-                  NO CHANGE,A.Papio_cynocephalus_ibeanus,=,B.Papio_cynocephalus_ibeanus,=fringe + =name
-                NO CHANGE,A.Papio_hamadryas,=,B.Papio_hamadryas,=fringe + =name
-                  NO CHANGE,A.Papio_hamadryas_hamadryas,=,B.Papio_hamadryas_hamadryas,=fringe + =name
-                RENAME,A.Papio_ursinus,=,B.Papio_ursinus_ursinus,fringe=
-                  NO CHANGE,A.Papio_ursinus_ursinus,=,B.Papio_ursinus_ursinus,=fringe + =name
-                NO CHANGE,A.Papio_sp.,=,B.Papio_sp.,=fringe + =name
+                GRAFT,,>,B.Macaca_leucogenys,fringe= + name=; child; graft
+              NO CHANGE,A.Papio,=,B.Papio,fringe= + name=
+                NO CHANGE,A.Papio_anubis,=,B.Papio_anubis,fringe= + name=
+                  NO CHANGE,A.Papio_anubis_anubis,=,B.Papio_anubis_anubis,fringe= + name=
+                NO CHANGE,A.Papio_cynocephalus,=,B.Papio_cynocephalus,fringe= + name=
+                  NO CHANGE,A.Papio_cynocephalus_cynocephalus,=,B.Papio_cynocephalus_cynocephalus,fringe= + name=
+                  NO CHANGE,A.Papio_cynocephalus_ibeanus,=,B.Papio_cynocephalus_ibeanus,fringe= + name=
+                NO CHANGE,A.Papio_hamadryas,=,B.Papio_hamadryas,fringe= + name=
+                  NO CHANGE,A.Papio_hamadryas_hamadryas,=,B.Papio_hamadryas_hamadryas,fringe= + name=
+                MOVE,A.Papio_ursinus,=,B.Papio_ursinus_ursinus,split; fringe=
+                  MOVE,A.Papio_ursinus_ursinus,=,B.Papio_ursinus_ursinus,fringe= + name=
+                    MOVE,,=,B.Papio_ursinus,fringe=; split
+                    GRAFT,,>,B.Papio_ursinus_griseipes,fringe=; child; graft
+                MOVE,A.Papio_sp.,=,B.Papio_sp.,fringe= + name=
                 NO CHANGE,A.Papio_papio,=,B.Papio_papio,fringe=; merged id of
                 NO CHANGE,A.Papio_kindae,=,B.Papio_kindae,fringe=; genbank common name of
-                NO CHANGE,A.Papio_cynocephalus_x_Papio_anubis,=,B.Papio_cynocephalus_x_Papio_anubis,=fringe + =name
-                NO CHANGE,A.Papio_sp._Africa-2004,=,B.Papio_sp._Africa-2004,=fringe + =name
-                NO CHANGE,A.Papio_sp._PS-2007,=,B.Papio_sp._PS-2007,=fringe + =name
+                NO CHANGE,A.Papio_cynocephalus_x_Papio_anubis,=,B.Papio_cynocephalus_x_Papio_anubis,fringe= + name=
+                MOVE,A.Papio_sp._Africa-2004,=,B.Papio_sp._Africa-2004,fringe= + name=
+                MOVE,A.Papio_sp._PS-2007,=,B.Papio_sp._PS-2007,fringe= + name=
                 NO CHANGE,A.Papio_anubis_x_hamadryas,=,B.Papio_anubis_x_hamadryas,fringe=; synonym of
-              RENAME,A.Theropithecus,=,B.Theropithecus_gelada,fringe=; common name of
-                NO CHANGE,A.Theropithecus_gelada,=,B.Theropithecus_gelada,fringe=; common name of
+                GRAFT,,>,B.Papio_anubis_x_Papio_cynocephalus,fringe= + name=; child; graft
+                GRAFT,,>,B.Papio_anubis_x_Papio_ursinus,fringe= + name=; child; graft
+                GRAFT,,>,B.Papio_kindae_x_Papio_cynocephalus,fringe= + name=; child; graft
+                GRAFT,,>,B.Papio_kindae_x_Papio_ursinus_griseipes,fringe= + name=; child; graft
+                REORGANIZED,,⟂,B.unclassified_Papio,fringe-conflict; split
+              MOVE,A.Theropithecus,=,B.Theropithecus_gelada,split; fringe=; common name of
+                MOVE,A.Theropithecus_gelada,=,B.Theropithecus_gelada,fringe=; common name of
+                  MOVE,,=,B.Theropithecus,common name of; fringe=; split
               NO CHANGE,A.Mandrillus,=,B.Mandrillus,fringe=; genbank common name of
-                NO CHANGE,A.Mandrillus_sphinx,=,B.Mandrillus_sphinx,=fringe + =name
-                NO CHANGE,A.Mandrillus_leucophaeus,=,B.Mandrillus_leucophaeus,=fringe + =name
-              NO CHANGE,A.Miopithecus,=,B.Miopithecus,=fringe + =name
-                NO CHANGE,A.Miopithecus_talapoin,=,B.Miopithecus_talapoin,=fringe + =name
-                  NO CHANGE,A.Miopithecus_talapoin_talapoin,=,B.Miopithecus_talapoin_talapoin,=fringe + =name
+                NO CHANGE,A.Mandrillus_sphinx,=,B.Mandrillus_sphinx,fringe= + name=
+                NO CHANGE,A.Mandrillus_leucophaeus,=,B.Mandrillus_leucophaeus,fringe= + name=
+              NO CHANGE,A.Miopithecus,=,B.Miopithecus,fringe= + name=
+                NO CHANGE,A.Miopithecus_talapoin,=,B.Miopithecus_talapoin,fringe= + name=
+                  NO CHANGE,A.Miopithecus_talapoin_talapoin,=,B.Miopithecus_talapoin_talapoin,fringe= + name=
                 NO CHANGE,A.Miopithecus_ogouensis,=,B.Miopithecus_ogouensis,fringe=; genbank common name of
-              RENAME,A.Allenopithecus,=,B.Allenopithecus_nigroviridis,fringe=; genbank common name of
-                NO CHANGE,A.Allenopithecus_nigroviridis,=,B.Allenopithecus_nigroviridis,fringe=; genbank common name of
-              NO CHANGE,A.Lophocebus,=,B.Lophocebus,=fringe + =name
-                NO CHANGE,A.Lophocebus_aterrimus,=,B.Lophocebus_aterrimus,=fringe + =name
-                NO CHANGE,A.Lophocebus_albigena,=,B.Lophocebus_albigena,=fringe + =name
-                  NO CHANGE,A.Lophocebus_albigena_albigena,=,B.Lophocebus_albigena_albigena,=fringe + =name
-              REORGANIZE,A.Rungwecebus,⟂,B.Rungwecebus_kipunji,fringe-conflict
-                NO CHANGE,A.Rungwecebus_kipunji,=,B.Rungwecebus_kipunji,=fringe + =name
-              NO CHANGE,A.Chlorocebus,=,B.Chlorocebus,=fringe + =name
-                NO CHANGE,A.Chlorocebus_aethiops,=,B.Chlorocebus_aethiops,=fringe + =name
+              MOVE,A.Allenopithecus,=,B.Allenopithecus_nigroviridis,split; fringe=; genbank common name of
+                MOVE,A.Allenopithecus_nigroviridis,=,B.Allenopithecus_nigroviridis,fringe=; genbank common name of
+                  MOVE,,=,B.Allenopithecus,genbank common name of; fringe=; split
+              NO CHANGE,A.Lophocebus,=,B.Lophocebus,fringe= + name=
+                NO CHANGE,A.Lophocebus_aterrimus,=,B.Lophocebus_aterrimus,fringe= + name=
+                NO CHANGE,A.Lophocebus_albigena,=,B.Lophocebus_albigena,fringe= + name=
+                  NO CHANGE,A.Lophocebus_albigena_albigena,=,B.Lophocebus_albigena_albigena,fringe= + name=
+              REORGANIZE,A.Rungwecebus,⟂,B.Rungwecebus_kipunji,split; fringe-conflict
+                MOVE,A.Rungwecebus_kipunji,=,B.Rungwecebus_kipunji,fringe= + name=
+                  REORGANIZED,,⟂,B.Rungwecebus,fringe-conflict; split
+              NO CHANGE,A.Chlorocebus,=,B.Chlorocebus,fringe= + name=
+                NO CHANGE,A.Chlorocebus_aethiops,=,B.Chlorocebus_aethiops,fringe= + name=
                   NO CHANGE,A.Chlorocebus_aethiops_vervet,=,B.Chlorocebus_aethiops_vervet,fringe=; synonym of
                   NO CHANGE,A.Chlorocebus_aethiops_aethiops,=,B.Chlorocebus_aethiops_aethiops,fringe=; synonym of
-                NO CHANGE,A.Chlorocebus_pygerythrus,=,B.Chlorocebus_pygerythrus,=fringe + =name
-                  NO CHANGE,A.Chlorocebus_pygerythrus_pygerythrus,=,B.Chlorocebus_pygerythrus_pygerythrus,=fringe + =name
-                  NO CHANGE,A.Chlorocebus_pygerythrus_hilgerti,=,B.Chlorocebus_pygerythrus_hilgerti,=fringe + =name
-                NO CHANGE,A.Chlorocebus_sabaeus,=,B.Chlorocebus_sabaeus,=fringe + =name
-                NO CHANGE,A.Chlorocebus_tantalus,=,B.Chlorocebus_tantalus,=fringe + =name
-                  NO CHANGE,A.Chlorocebus_tantalus_budgetti,=,B.Chlorocebus_tantalus_budgetti,=fringe + =name
-                NO CHANGE,A.Chlorocebus_cynosuros,=,B.Chlorocebus_cynosuros,=fringe + =name
-                NO CHANGE,A.Chlorocebus_sp._MAS-2011,=,B.Chlorocebus_sp._MAS-2011,=fringe + =name
-                NO CHANGE,A.Chlorocebus_djamdjamensis,=,B.Chlorocebus_djamdjamensis,=fringe + =name
-                NO CHANGE,A.Chlorocebus_sp._TH-2013,=,B.Chlorocebus_sp._TH-2013,=fringe + =name
-            NO CHANGE,A.Colobinae,=,B.Colobinae,=fringe + =name
-              NO CHANGE,A.Colobus,=,B.Colobus,=fringe + =name
+                NO CHANGE,A.Chlorocebus_pygerythrus,=,B.Chlorocebus_pygerythrus,fringe= + name=
+                  NO CHANGE,A.Chlorocebus_pygerythrus_pygerythrus,=,B.Chlorocebus_pygerythrus_pygerythrus,fringe= + name=
+                  NO CHANGE,A.Chlorocebus_pygerythrus_hilgerti,=,B.Chlorocebus_pygerythrus_hilgerti,fringe= + name=
+                  GRAFT,,>,B.Chlorocebus_pygerythrus_x_Chlorocebus_aethiops,fringe= + name=; child; graft
+                NO CHANGE,A.Chlorocebus_sabaeus,=,B.Chlorocebus_sabaeus,fringe= + name=
+                NO CHANGE,A.Chlorocebus_tantalus,=,B.Chlorocebus_tantalus,fringe= + name=
+                  NO CHANGE,A.Chlorocebus_tantalus_budgetti,=,B.Chlorocebus_tantalus_budgetti,fringe= + name=
+                NO CHANGE,A.Chlorocebus_cynosuros,=,B.Chlorocebus_cynosuros,fringe= + name=
+                MOVE,A.Chlorocebus_sp._MAS-2011,=,B.Chlorocebus_sp._MAS-2011,fringe= + name=
+                NO CHANGE,A.Chlorocebus_djamdjamensis,=,B.Chlorocebus_djamdjamensis,fringe= + name=
+                MOVE,A.Chlorocebus_sp._TH-2013,=,B.Chlorocebus_sp._TH-2013,fringe= + name=
+                GRAFT,,>,B.Chlorocebus_aethiops_x_djamdjamensis,fringe= + name=; child; graft
+                GRAFT,,>,B.Chlorocebus_aethiops_x_Chlorocebus_pygerythrus,fringe= + name=; child; graft
+                REORGANIZED,,⟂,B.unclassified_Chlorocebus,fringe-conflict; split
+                REORGANIZED,,⟂,B.Chlorocebus_sp._LDS-2018,fringe-conflict; child; graft
+              GRAFT,,>,B.Allochrocebus,fringe= + name=; child; graft
+            NO CHANGE,A.Colobinae,=,B.Colobinae,fringe= + name=
+              NO CHANGE,A.Colobus,=,B.Colobus,fringe= + name=
                 NO CHANGE,A.Colobus_polykomos,=,B.Colobus_polykomos,fringe=; genbank common name of
-                NO CHANGE,A.Colobus_guereza,=,B.Colobus_guereza,=fringe + =name
-                  NO CHANGE,A.Colobus_guereza_kikuyuensis,=,B.Colobus_guereza_kikuyuensis,=fringe + =name
-                  NO CHANGE,A.Colobus_guereza_matschiei,=,B.Colobus_guereza_matschiei,=fringe + =name
-                  NO CHANGE,A.Colobus_guereza_caudatus,=,B.Colobus_guereza_caudatus,=fringe + =name
-                  NO CHANGE,A.Colobus_guereza_occidentalis,=,B.Colobus_guereza_occidentalis,=fringe + =name
-                NO CHANGE,A.Colobus_sp.,=,B.Colobus_sp.,fringe=; common name of
-                NO CHANGE,A.Colobus_angolensis,=,B.Colobus_angolensis,=fringe + =name
-                  NO CHANGE,A.Colobus_angolensis_palliatus,=,B.Colobus_angolensis_palliatus,=fringe + =name
-                NO CHANGE,A.Colobus_sp._DTG-2004,=,B.Colobus_sp._DTG-2004,=fringe + =name
-                NO CHANGE,A.Colobus_sp._MB-2005,=,B.Colobus_sp._MB-2005,=fringe + =name
-                NO CHANGE,A.Colobus_vellerosus,=,B.Colobus_vellerosus,=fringe + =name
-                NO CHANGE,A.Colobus_vellerosus_x_angolensis,=,B.Colobus_vellerosus_x_angolensis,=fringe + =name
-                NO CHANGE,A.Colobus_satanas,=,B.Colobus_satanas,=fringe + =name
-                  NO CHANGE,A.Colobus_satanas_satanas,=,B.Colobus_satanas_satanas,=fringe + =name
-              NO CHANGE,A.Presbytis,=,B.Presbytis,=fringe + =name
-                NO CHANGE,A.Presbytis_senex,=,B.Presbytis_senex,=fringe + =name
-                NO CHANGE,A.Presbytis_melalophos,=,B.Presbytis_melalophos,=fringe + =name
-                  NO CHANGE,A.Presbytis_melalophos_mitrata,=,B.Presbytis_melalophos_mitrata,=fringe + =name
-                  NO CHANGE,A.Presbytis_melalophos_bicolor,=,B.Presbytis_melalophos_bicolor,=fringe + =name
-                  NO CHANGE,A.Presbytis_melalophos_melalophos,=,B.Presbytis_melalophos_melalophos,=fringe + =name
+                NO CHANGE,A.Colobus_guereza,=,B.Colobus_guereza,fringe= + name=
+                  NO CHANGE,A.Colobus_guereza_kikuyuensis,=,B.Colobus_guereza_kikuyuensis,fringe= + name=
+                  NO CHANGE,A.Colobus_guereza_matschiei,=,B.Colobus_guereza_matschiei,fringe= + name=
+                  NO CHANGE,A.Colobus_guereza_caudatus,=,B.Colobus_guereza_caudatus,fringe= + name=
+                  NO CHANGE,A.Colobus_guereza_occidentalis,=,B.Colobus_guereza_occidentalis,fringe= + name=
+                MOVE,A.Colobus_sp.,=,B.Colobus_sp.,fringe=; common name of
+                NO CHANGE,A.Colobus_angolensis,=,B.Colobus_angolensis,fringe= + name=
+                  NO CHANGE,A.Colobus_angolensis_palliatus,=,B.Colobus_angolensis_palliatus,fringe= + name=
+                MOVE,A.Colobus_sp._DTG-2004,=,B.Colobus_sp._DTG-2004,fringe= + name=
+                MOVE,A.Colobus_sp._MB-2005,=,B.Colobus_sp._MB-2005,fringe= + name=
+                NO CHANGE,A.Colobus_vellerosus,=,B.Colobus_vellerosus,fringe= + name=
+                NO CHANGE,A.Colobus_vellerosus_x_angolensis,=,B.Colobus_vellerosus_x_angolensis,fringe= + name=
+                NO CHANGE,A.Colobus_satanas,=,B.Colobus_satanas,fringe= + name=
+                  NO CHANGE,A.Colobus_satanas_satanas,=,B.Colobus_satanas_satanas,fringe= + name=
+                REORGANIZED,,⟂,B.unclassified_Colobus,fringe-conflict; split
+              NO CHANGE,A.Presbytis,=,B.Presbytis,fringe= + name=
+                NO CHANGE,A.Presbytis_senex,=,B.Presbytis_senex,fringe= + name=
+                NO CHANGE,A.Presbytis_melalophos,=,B.Presbytis_melalophos,fringe= + name=
+                  NO CHANGE,A.Presbytis_melalophos_mitrata,=,B.Presbytis_melalophos_mitrata,fringe= + name=
+                  NO CHANGE,A.Presbytis_melalophos_bicolor,=,B.Presbytis_melalophos_bicolor,fringe= + name=
+                  NO CHANGE,A.Presbytis_melalophos_melalophos,=,B.Presbytis_melalophos_melalophos,fringe= + name=
                   NO CHANGE,A.Presbytis_melalophos_sumatranus,=,B.Presbytis_melalophos_sumatranus,fringe=; synonym of
-                NO CHANGE,A.Presbytis_comata,=,B.Presbytis_comata,=fringe + =name
-                  NO CHANGE,A.Presbytis_comata_comata,=,B.Presbytis_comata_comata,=fringe + =name
-                  NO CHANGE,A.Presbytis_comata_fredericae,=,B.Presbytis_comata_fredericae,=fringe + =name
+                NO CHANGE,A.Presbytis_comata,=,B.Presbytis_comata,fringe= + name=
+                  NO CHANGE,A.Presbytis_comata_comata,=,B.Presbytis_comata_comata,fringe= + name=
+                  NO CHANGE,A.Presbytis_comata_fredericae,=,B.Presbytis_comata_fredericae,fringe= + name=
                 NO CHANGE,A.Presbytis_femoralis,=,B.Presbytis_femoralis,fringe=; genbank common name of
+                  GRAFT,,>,B.Presbytis_femoralis_femoralis,genbank common name of; fringe=; child; graft
                 NO CHANGE,A.Presbytis_chrysomelas,=,B.Presbytis_chrysomelas,fringe=; genbank common name of
                 NO CHANGE,A.Presbytis_frontata,=,B.Presbytis_frontata,fringe=; genbank common name of
-                NO CHANGE,A.Presbytis_hosei,=,B.Presbytis_hosei,=fringe + =name
-                  NO CHANGE,A.Presbytis_hosei_hosei,=,B.Presbytis_hosei_hosei,=fringe + =name
-                NO CHANGE,A.Presbytis_potenziani,=,B.Presbytis_potenziani,=fringe + =name
-                  NO CHANGE,A.Presbytis_potenziani_potenziani,=,B.Presbytis_potenziani_potenziani,=fringe + =name
-                  NO CHANGE,A.Presbytis_potenziani_siberu,=,B.Presbytis_potenziani_siberu,=fringe + =name
-                NO CHANGE,A.Presbytis_rubicunda,=,B.Presbytis_rubicunda,=fringe + =name
-                  NO CHANGE,A.Presbytis_rubicunda_rubicunda,=,B.Presbytis_rubicunda_rubicunda,=fringe + =name
+                NO CHANGE,A.Presbytis_hosei,=,B.Presbytis_hosei,fringe= + name=
+                  NO CHANGE,A.Presbytis_hosei_hosei,=,B.Presbytis_hosei_hosei,fringe= + name=
+                NO CHANGE,A.Presbytis_potenziani,=,B.Presbytis_potenziani,fringe= + name=
+                  NO CHANGE,A.Presbytis_potenziani_potenziani,=,B.Presbytis_potenziani_potenziani,fringe= + name=
+                  NO CHANGE,A.Presbytis_potenziani_siberu,=,B.Presbytis_potenziani_siberu,fringe= + name=
+                NO CHANGE,A.Presbytis_rubicunda,=,B.Presbytis_rubicunda,fringe= + name=
+                  NO CHANGE,A.Presbytis_rubicunda_rubicunda,=,B.Presbytis_rubicunda_rubicunda,fringe= + name=
                 NO CHANGE,A.Presbytis_thomasi,=,B.Presbytis_thomasi,fringe=; genbank common name of
-              RENAME,A.Nasalis,=,B.Nasalis_larvatus,fringe=; genbank common name of
-                NO CHANGE,A.Nasalis_larvatus,=,B.Nasalis_larvatus,fringe=; genbank common name of
-              NO CHANGE,A.Pygathrix,=,B.Pygathrix,=fringe + =name
-                RENAME,A.Pygathrix_nemaeus,=,B.Pygathrix_nemaeus_nemaeus,fringe=
-                  NO CHANGE,A.Pygathrix_nemaeus_nemaeus,=,B.Pygathrix_nemaeus_nemaeus,=fringe + =name
-                NO CHANGE,A.Pygathrix_nigripes,=,B.Pygathrix_nigripes,=fringe + =name
+              MOVE,A.Nasalis,=,B.Nasalis_larvatus,split; fringe=; genbank common name of
+                MOVE,A.Nasalis_larvatus,=,B.Nasalis_larvatus,fringe=; genbank common name of
+                  MOVE,,=,B.Nasalis,genbank common name of; fringe=; split
+              NO CHANGE,A.Pygathrix,=,B.Pygathrix,fringe= + name=
+                MOVE,A.Pygathrix_nemaeus,=,B.Pygathrix_nemaeus_nemaeus,split; fringe=
+                  MOVE,A.Pygathrix_nemaeus_nemaeus,=,B.Pygathrix_nemaeus_nemaeus,fringe= + name=
+                    MOVE,,=,B.Pygathrix_nemaeus,fringe=; split
+                NO CHANGE,A.Pygathrix_nigripes,=,B.Pygathrix_nigripes,fringe= + name=
                 NO CHANGE,A.Pygathrix_cinerea,=,B.Pygathrix_cinerea,fringe=; merged id of
-                NO CHANGE,A.Pygathrix_cinerea_1_RL-2012,=,B.Pygathrix_cinerea_1_RL-2012,=fringe + =name
-                NO CHANGE,A.Pygathrix_cinerea_2_RL-2012,=,B.Pygathrix_cinerea_2_RL-2012,=fringe + =name
-              NO CHANGE,A.Trachypithecus,=,B.Trachypithecus,=fringe + =name
-                NO CHANGE,A.Trachypithecus_vetulus,=,B.Trachypithecus_vetulus,=fringe + =name
-                  NO CHANGE,A.Trachypithecus_vetulus_vetulus,=,B.Trachypithecus_vetulus_vetulus,=fringe + =name
-                NO CHANGE,A.Trachypithecus_francoisi,=,B.Trachypithecus_francoisi,=fringe + =name
-                  NO CHANGE,A.Trachypithecus_francoisi_francoisi,=,B.Trachypithecus_francoisi_francoisi,=fringe + =name
-                NO CHANGE,A.Trachypithecus_obscurus,=,B.Trachypithecus_obscurus,=fringe + =name
-                NO CHANGE,A.Trachypithecus_phayrei,=,B.Trachypithecus_phayrei,=fringe + =name
-                  NO CHANGE,A.Trachypithecus_phayrei_phayrei,=,B.Trachypithecus_phayrei_phayrei,=fringe + =name
+                NO CHANGE,A.Pygathrix_cinerea_1_RL-2012,=,B.Pygathrix_cinerea_1_RL-2012,fringe= + name=
+                NO CHANGE,A.Pygathrix_cinerea_2_RL-2012,=,B.Pygathrix_cinerea_2_RL-2012,fringe= + name=
+              NO CHANGE,A.Trachypithecus,=,B.Trachypithecus,fringe= + name=
+                NO CHANGE,A.Trachypithecus_vetulus,=,B.Trachypithecus_vetulus,fringe= + name=
+                  NO CHANGE,A.Trachypithecus_vetulus_vetulus,=,B.Trachypithecus_vetulus_vetulus,fringe= + name=
+                NO CHANGE,A.Trachypithecus_francoisi,=,B.Trachypithecus_francoisi,fringe= + name=
+                  NO CHANGE,A.Trachypithecus_francoisi_francoisi,=,B.Trachypithecus_francoisi_francoisi,fringe= + name=
+                NO CHANGE,A.Trachypithecus_obscurus,=,B.Trachypithecus_obscurus,fringe= + name=
+                NO CHANGE,A.Trachypithecus_phayrei,=,B.Trachypithecus_phayrei,fringe= + name=
+                  NO CHANGE,A.Trachypithecus_phayrei_phayrei,=,B.Trachypithecus_phayrei_phayrei,fringe= + name=
                   NO CHANGE,A.Trachypithecus_phayrei_crepuscula,=,B.Trachypithecus_phayrei_crepuscula,fringe=; synonym of
                   NO CHANGE,A.Trachypithecus_phayrei_holotephreus,=,B.Trachypithecus_phayrei_holotephreus,fringe=; synonym of
-                  NO CHANGE,A.Trachypithecus_phayrei_shanicus,=,B.Trachypithecus_phayrei_shanicus,=fringe + =name
-                NO CHANGE,A.Trachypithecus_johnii,=,B.Trachypithecus_johnii,=fringe + =name
-                NO CHANGE,A.Trachypithecus_cristatus,=,B.Trachypithecus_cristatus,=fringe + =name
-                NO CHANGE,A.Trachypithecus_geei,=,B.Trachypithecus_geei,=fringe + =name
-                NO CHANGE,A.Trachypithecus_pileatus,=,B.Trachypithecus_pileatus,=fringe + =name
-                NO CHANGE,A.Trachypithecus_auratus,=,B.Trachypithecus_auratus,=fringe + =name
-                  NO CHANGE,A.Trachypithecus_auratus_pyrrhus,=,B.Trachypithecus_auratus_pyrrhus,=fringe + =name
-                  NO CHANGE,A.Trachypithecus_auratus_auratus,=,B.Trachypithecus_auratus_auratus,=fringe + =name
-                  NO CHANGE,A.Trachypithecus_auratus_mauritius,=,B.Trachypithecus_auratus_mauritius,=fringe + =name
-                NO CHANGE,A.Trachypithecus_germaini,=,B.Trachypithecus_germaini,=fringe + =name
-                NO CHANGE,A.Trachypithecus_barbei,=,B.Trachypithecus_barbei,=fringe + =name
+                  NO CHANGE,A.Trachypithecus_phayrei_shanicus,=,B.Trachypithecus_phayrei_shanicus,fringe= + name=
+                NO CHANGE,A.Trachypithecus_johnii,=,B.Trachypithecus_johnii,fringe= + name=
+                NO CHANGE,A.Trachypithecus_cristatus,=,B.Trachypithecus_cristatus,fringe= + name=
+                NO CHANGE,A.Trachypithecus_geei,=,B.Trachypithecus_geei,fringe= + name=
+                NO CHANGE,A.Trachypithecus_pileatus,=,B.Trachypithecus_pileatus,fringe= + name=
+                NO CHANGE,A.Trachypithecus_auratus,=,B.Trachypithecus_auratus,fringe= + name=
+                  NO CHANGE,A.Trachypithecus_auratus_pyrrhus,=,B.Trachypithecus_auratus_pyrrhus,fringe= + name=
+                  NO CHANGE,A.Trachypithecus_auratus_auratus,=,B.Trachypithecus_auratus_auratus,fringe= + name=
+                  NO CHANGE,A.Trachypithecus_auratus_mauritius,=,B.Trachypithecus_auratus_mauritius,fringe= + name=
+                NO CHANGE,A.Trachypithecus_germaini,=,B.Trachypithecus_germaini,fringe= + name=
+                NO CHANGE,A.Trachypithecus_barbei,=,B.Trachypithecus_barbei,fringe= + name=
                 NO CHANGE,A.Trachypithecus_delacouri,=,B.Trachypithecus_delacouri,fringe=; genbank common name of
                 NO CHANGE,A.Trachypithecus_laotum,=,B.Trachypithecus_laotum,fringe=; genbank common name of
-                NO CHANGE,A.Trachypithecus_poliocephalus,=,B.Trachypithecus_poliocephalus,=fringe + =name
+                NO CHANGE,A.Trachypithecus_poliocephalus,=,B.Trachypithecus_poliocephalus,fringe= + name=
                   NO CHANGE,A.Trachypithecus_poliocephalus_leucocephalus,=,B.Trachypithecus_poliocephalus_leucocephalus,fringe=; synonym of
-                  NO CHANGE,A.Trachypithecus_poliocephalus_poliocephalus,=,B.Trachypithecus_poliocephalus_poliocephalus,=fringe + =name
-                NO CHANGE,A.Trachypithecus_sp.,=,B.Trachypithecus_sp.,=fringe + =name
-                NO CHANGE,A.Trachypithecus_francoisi_x_poliocephalus,=,B.Trachypithecus_francoisi_x_poliocephalus,=fringe + =name
+                  NO CHANGE,A.Trachypithecus_poliocephalus_poliocephalus,=,B.Trachypithecus_poliocephalus_poliocephalus,fringe= + name=
+                MOVE,A.Trachypithecus_sp.,=,B.Trachypithecus_sp.,fringe= + name=
+                  RENAME,,=,B.unclassified_Trachypithecus,fringe=; split
+                NO CHANGE,A.Trachypithecus_francoisi_x_poliocephalus,=,B.Trachypithecus_francoisi_x_poliocephalus,fringe= + name=
                 NO CHANGE,A.Trachypithecus_hatinhensis,=,B.Trachypithecus_hatinhensis,fringe=; genbank common name of
                 NO CHANGE,A.Trachypithecus_shortridgei,=,B.Trachypithecus_shortridgei,fringe=; genbank common name of
-              NO CHANGE,A.Semnopithecus,=,B.Semnopithecus,=fringe + =name
-                NO CHANGE,A.Semnopithecus_entellus,=,B.Semnopithecus_entellus,=fringe + =name
-                  RENAME,A.Semnopithecus_entellus_priam,=,B.Semnopithecus_priam,id=; merged id of; alternate=
-                  NO CHANGE,A.Semnopithecus_entellus_entellus,=,B.Semnopithecus_entellus_entellus,=fringe + =name
-                NO CHANGE,A.Semnopithecus_hector,=,B.Semnopithecus_hector,=fringe + =name
+                GRAFT,,>,B.Trachypithecus_mauritius,fringe= + name=; child; graft
+              NO CHANGE,A.Semnopithecus,=,B.Semnopithecus,fringe= + name=
+                NO CHANGE,A.Semnopithecus_entellus,=,B.Semnopithecus_entellus,fringe= + name=
+                  MOVE,A.Semnopithecus_entellus_priam,=,B.Semnopithecus_priam,split; id=; merged id of
+                  NO CHANGE,A.Semnopithecus_entellus_entellus,=,B.Semnopithecus_entellus_entellus,fringe= + name=
+                NO CHANGE,A.Semnopithecus_hector,=,B.Semnopithecus_hector,fringe= + name=
                 NO CHANGE,A.Semnopithecus_priam,=,B.Semnopithecus_priam,fringe=; genbank common name of
                 NO CHANGE,A.Semnopithecus_hypoleucos,=,B.Semnopithecus_hypoleucos,fringe=; genbank common name of
-              REORGANIZE,A.Procolobus,⟂,B.Procolobus_verus,fringe-conflict
-                NO CHANGE,A.Procolobus_verus,=,B.Procolobus_verus,=fringe + =name
-              NO CHANGE,A.Rhinopithecus,=,B.Rhinopithecus,=fringe + =name
-                NO CHANGE,A.Rhinopithecus_bieti,=,B.Rhinopithecus_bieti,=fringe + =name
+                GRAFT,,>,B.unclassified_Semnopithecus,fringe= + name=; child; graft
+              REORGANIZE,A.Procolobus,⟂,B.Procolobus_verus,split; fringe-conflict
+                MOVE,A.Procolobus_verus,=,B.Procolobus_verus,fringe= + name=
+                  REORGANIZED,,⟂,B.Procolobus,fringe-conflict; split
+              NO CHANGE,A.Rhinopithecus,=,B.Rhinopithecus,fringe= + name=
+                NO CHANGE,A.Rhinopithecus_bieti,=,B.Rhinopithecus_bieti,fringe= + name=
                 NO CHANGE,A.Rhinopithecus_roxellana,=,B.Rhinopithecus_roxellana,fringe=; merged id of
-                NO CHANGE,A.Rhinopithecus_avunculus,=,B.Rhinopithecus_avunculus,=fringe + =name
-                NO CHANGE,A.Rhinopithecus_brelichi,=,B.Rhinopithecus_brelichi,=fringe + =name
-                NO CHANGE,A.Rhinopithecus_bieti_1_RL-2012,=,B.Rhinopithecus_bieti_1_RL-2012,=fringe + =name
-                NO CHANGE,A.Rhinopithecus_bieti_2_RL-2012,=,B.Rhinopithecus_bieti_2_RL-2012,=fringe + =name
-                NO CHANGE,A.Rhinopithecus_strykeri,=,B.Rhinopithecus_strykeri,=fringe + =name
-              NO CHANGE,A.Piliocolobus,=,B.Piliocolobus,=fringe + =name
-                NO CHANGE,A.Piliocolobus_badius,=,B.Piliocolobus_badius,=fringe + =name
-                  NO CHANGE,A.Piliocolobus_badius_badius,=,B.Piliocolobus_badius_badius,=fringe + =name
-                  NO CHANGE,A.Piliocolobus_badius_temminckii,=,B.Piliocolobus_badius_temminckii,=fringe + =name
-                NO CHANGE,A.Piliocolobus_gordonorum,=,B.Piliocolobus_gordonorum,=fringe + =name
-                NO CHANGE,A.Piliocolobus_rufomitratus,=,B.Piliocolobus_rufomitratus,=fringe + =name
-                NO CHANGE,A.Piliocolobus_tholloni,=,B.Piliocolobus_tholloni,=fringe + =name
-                NO CHANGE,A.Piliocolobus_tephrosceles,=,B.Piliocolobus_tephrosceles,=fringe + =name
-                NO CHANGE,A.Piliocolobus_kirkii,=,B.Piliocolobus_kirkii,=fringe + =name
-                NO CHANGE,A.Piliocolobus_foai,=,B.Piliocolobus_foai,=fringe + =name
-                NO CHANGE,A.Piliocolobus_pennantii,=,B.Piliocolobus_pennantii,=fringe + =name
-                NO CHANGE,A.Piliocolobus_preussi,=,B.Piliocolobus_preussi,=fringe + =name
-              REORGANIZE,A.Simias,⟂,B.Simias_concolor,fringe-conflict
-                NO CHANGE,A.Simias_concolor,=,B.Simias_concolor,=fringe + =name
-            NO CHANGE,A.Cercopithecidae_gen._sp.,=,B.Cercopithecidae_gen._sp.,=fringe + =name
-        NO CHANGE,A.Hominoidea,=,B.Hominoidea,=fringe + =name
-          NO CHANGE,A.Hylobatidae,=,B.Hylobatidae,=fringe + =name
-            NO CHANGE,A.Hylobates,=,B.Hylobates,=fringe + =name
-              NO CHANGE,A.Hylobates_agilis,=,B.Hylobates_agilis,=fringe + =name
-                NO CHANGE,A.Hylobates_agilis_unko,=,B.Hylobates_agilis_unko,=fringe + =name
-                NO CHANGE,A.Hylobates_agilis_agilis,=,B.Hylobates_agilis_agilis,=fringe + =name
-              NO CHANGE,A.Hylobates_lar,=,B.Hylobates_lar,=fringe + =name
-                NO CHANGE,A.Hylobates_lar_carpenteri,=,B.Hylobates_lar_carpenteri,=fringe + =name
-                NO CHANGE,A.Hylobates_lar_entelloides,=,B.Hylobates_lar_entelloides,=fringe + =name
-                NO CHANGE,A.Hylobates_lar_lar,=,B.Hylobates_lar_lar,=fringe + =name
-                NO CHANGE,A.Hylobates_lar_vestitus,=,B.Hylobates_lar_vestitus,=fringe + =name
-              NO CHANGE,A.Hylobates_sp.,=,B.Hylobates_sp.,fringe=; genbank common name of
+                NO CHANGE,A.Rhinopithecus_avunculus,=,B.Rhinopithecus_avunculus,fringe= + name=
+                NO CHANGE,A.Rhinopithecus_brelichi,=,B.Rhinopithecus_brelichi,fringe= + name=
+                NO CHANGE,A.Rhinopithecus_bieti_1_RL-2012,=,B.Rhinopithecus_bieti_1_RL-2012,fringe= + name=
+                NO CHANGE,A.Rhinopithecus_bieti_2_RL-2012,=,B.Rhinopithecus_bieti_2_RL-2012,fringe= + name=
+                NO CHANGE,A.Rhinopithecus_strykeri,=,B.Rhinopithecus_strykeri,fringe= + name=
+                GRAFT,,>,B.unclassified_Rhinopithecus,fringe= + name=; child; graft
+              NO CHANGE,A.Piliocolobus,=,B.Piliocolobus,fringe= + name=
+                NO CHANGE,A.Piliocolobus_badius,=,B.Piliocolobus_badius,fringe= + name=
+                  NO CHANGE,A.Piliocolobus_badius_badius,=,B.Piliocolobus_badius_badius,fringe= + name=
+                  NO CHANGE,A.Piliocolobus_badius_temminckii,=,B.Piliocolobus_badius_temminckii,fringe= + name=
+                NO CHANGE,A.Piliocolobus_gordonorum,=,B.Piliocolobus_gordonorum,fringe= + name=
+                NO CHANGE,A.Piliocolobus_rufomitratus,=,B.Piliocolobus_rufomitratus,fringe= + name=
+                NO CHANGE,A.Piliocolobus_tholloni,=,B.Piliocolobus_tholloni,fringe= + name=
+                NO CHANGE,A.Piliocolobus_tephrosceles,=,B.Piliocolobus_tephrosceles,fringe= + name=
+                NO CHANGE,A.Piliocolobus_kirkii,=,B.Piliocolobus_kirkii,fringe= + name=
+                NO CHANGE,A.Piliocolobus_foai,=,B.Piliocolobus_foai,fringe= + name=
+                NO CHANGE,A.Piliocolobus_pennantii,=,B.Piliocolobus_pennantii,fringe= + name=
+                NO CHANGE,A.Piliocolobus_preussi,=,B.Piliocolobus_preussi,fringe= + name=
+              REORGANIZE,A.Simias,⟂,B.Simias_concolor,split; fringe-conflict
+                MOVE,A.Simias_concolor,=,B.Simias_concolor,fringe= + name=
+                  REORGANIZED,,⟂,B.Simias,fringe-conflict; split
+            NO CHANGE,A.Cercopithecidae_gen._sp.,=,B.Cercopithecidae_gen._sp.,fringe= + name=
+            REORGANIZED,,⟂,B.Cercopithecoidea,fringe-conflict; split
+        NO CHANGE,A.Hominoidea,=,B.Hominoidea,fringe= + name=
+          NO CHANGE,A.Hylobatidae,=,B.Hylobatidae,fringe= + name=
+            NO CHANGE,A.Hylobates,=,B.Hylobates,fringe= + name=
+              NO CHANGE,A.Hylobates_agilis,=,B.Hylobates_agilis,fringe= + name=
+                NO CHANGE,A.Hylobates_agilis_unko,=,B.Hylobates_agilis_unko,fringe= + name=
+                NO CHANGE,A.Hylobates_agilis_agilis,=,B.Hylobates_agilis_agilis,fringe= + name=
+              NO CHANGE,A.Hylobates_lar,=,B.Hylobates_lar,fringe= + name=
+                NO CHANGE,A.Hylobates_lar_carpenteri,=,B.Hylobates_lar_carpenteri,fringe= + name=
+                NO CHANGE,A.Hylobates_lar_entelloides,=,B.Hylobates_lar_entelloides,fringe= + name=
+                NO CHANGE,A.Hylobates_lar_lar,=,B.Hylobates_lar_lar,fringe= + name=
+                NO CHANGE,A.Hylobates_lar_vestitus,=,B.Hylobates_lar_vestitus,fringe= + name=
+              MOVE,A.Hylobates_sp.,=,B.Hylobates_sp.,fringe=; genbank common name of
               NO CHANGE,A.Hylobates_klossii,=,B.Hylobates_klossii,fringe=; genbank common name of
-              NO CHANGE,A.Hylobates_muelleri,=,B.Hylobates_muelleri,=fringe + =name
-                NO CHANGE,A.Hylobates_muelleri_muelleri,=,B.Hylobates_muelleri_muelleri,=fringe + =name
-                NO CHANGE,A.Hylobates_muelleri_funereus,=,B.Hylobates_muelleri_funereus,=fringe + =name
-                NO CHANGE,A.Hylobates_muelleri_abbotti,=,B.Hylobates_muelleri_abbotti,=fringe + =name
+              NO CHANGE,A.Hylobates_muelleri,=,B.Hylobates_muelleri,fringe= + name=
+                NO CHANGE,A.Hylobates_muelleri_muelleri,=,B.Hylobates_muelleri_muelleri,fringe= + name=
+                NO CHANGE,A.Hylobates_muelleri_funereus,=,B.Hylobates_muelleri_funereus,fringe= + name=
+                NO CHANGE,A.Hylobates_muelleri_abbotti,=,B.Hylobates_muelleri_abbotti,fringe= + name=
               NO CHANGE,A.Hylobates_pileatus,=,B.Hylobates_pileatus,fringe=; genbank common name of
               NO CHANGE,A.Hylobates_moloch,=,B.Hylobates_moloch,fringe=; genbank common name of
-              NO CHANGE,A.Hylobates_sp._TIB-201,=,B.Hylobates_sp._TIB-201,=fringe + =name
-              NO CHANGE,A.Hylobates_sp._IGL-2004,=,B.Hylobates_sp._IGL-2004,=fringe + =name
-              NO CHANGE,A.Hylobates_sp._AMA-2004,=,B.Hylobates_sp._AMA-2004,=fringe + =name
-              NO CHANGE,A.Hylobates_sp._ECACC_MLA144,=,B.Hylobates_sp._ECACC_MLA144,=fringe + =name
-              NO CHANGE,A.Hylobates_sp._PS-2007,=,B.Hylobates_sp._PS-2007,=fringe + =name
+              MOVE,A.Hylobates_sp._TIB-201,=,B.Hylobates_sp._TIB-201,fringe= + name=
+              MOVE,A.Hylobates_sp._IGL-2004,=,B.Hylobates_sp._IGL-2004,fringe= + name=
+              MOVE,A.Hylobates_sp._AMA-2004,=,B.Hylobates_sp._AMA-2004,fringe= + name=
+              MOVE,A.Hylobates_sp._ECACC_MLA144,=,B.Hylobates_sp._ECACC_MLA144,fringe= + name=
+              MOVE,A.Hylobates_sp._PS-2007,=,B.Hylobates_sp._PS-2007,fringe= + name=
               RENAME,A.Hylobates_alibarbis,=,B.Hylobates_albibarbis,fringe=; merged id of
-            NO CHANGE,A.Nomascus,=,B.Nomascus,=fringe + =name
-              NO CHANGE,A.Nomascus_siki,=,B.Nomascus_siki,=fringe + =name
-              NO CHANGE,A.Nomascus_concolor,=,B.Nomascus_concolor,=fringe + =name
-                NO CHANGE,A.Nomascus_concolor_jingdongensis,=,B.Nomascus_concolor_jingdongensis,=fringe + =name
-                NO CHANGE,A.Nomascus_concolor_furvogaster,=,B.Nomascus_concolor_furvogaster,=fringe + =name
-                NO CHANGE,A.Nomascus_concolor_concolor,=,B.Nomascus_concolor_concolor,=fringe + =name
-                NO CHANGE,A.Nomascus_concolor_lu,=,B.Nomascus_concolor_lu,=fringe + =name
+              REORGANIZED,,⟂,B.unclassified_Hylobates,fringe-conflict; split
+              REORGANIZED,,⟂,B.Hylobates_sp._OH-2017,fringe-conflict; child; graft
+            NO CHANGE,A.Nomascus,=,B.Nomascus,fringe= + name=
+              NO CHANGE,A.Nomascus_siki,=,B.Nomascus_siki,fringe= + name=
+              NO CHANGE,A.Nomascus_concolor,=,B.Nomascus_concolor,fringe= + name=
+                NO CHANGE,A.Nomascus_concolor_jingdongensis,=,B.Nomascus_concolor_jingdongensis,fringe= + name=
+                NO CHANGE,A.Nomascus_concolor_furvogaster,=,B.Nomascus_concolor_furvogaster,fringe= + name=
+                NO CHANGE,A.Nomascus_concolor_concolor,=,B.Nomascus_concolor_concolor,fringe= + name=
+                NO CHANGE,A.Nomascus_concolor_lu,=,B.Nomascus_concolor_lu,fringe= + name=
               NO CHANGE,A.Nomascus_gabriellae,=,B.Nomascus_gabriellae,fringe=; merged id of
-              NO CHANGE,A.Nomascus_leucogenys,=,B.Nomascus_leucogenys,=fringe + =name
-              NO CHANGE,A.Nomascus_nasutus,=,B.Nomascus_nasutus,=fringe + =name
+              NO CHANGE,A.Nomascus_leucogenys,=,B.Nomascus_leucogenys,fringe= + name=
+              NO CHANGE,A.Nomascus_nasutus,=,B.Nomascus_nasutus,fringe= + name=
               NO CHANGE,A.Nomascus_hainanus,=,B.Nomascus_hainanus,fringe=; genbank common name of
-            REORGANIZE,A.Symphalangus,⟂,B.Symphalangus_syndactylus,fringe-conflict
-              NO CHANGE,A.Symphalangus_syndactylus,=,B.Symphalangus_syndactylus,=fringe + =name
+              GRAFT,,>,B.Nomascus_annamensis,fringe= + name=; child; graft
+              GRAFT,,>,B.Nomascus_gabriellae_x_Nomascus_siki,fringe= + name=; child; graft
+              GRAFT,,>,B.Nomascus_leucogenys_x_Nomascus_siki,fringe= + name=; child; graft
+              GRAFT,,>,B.Nomascus_cf._leucogenys_SSH-2018,fringe= + name=; child; graft
+            REORGANIZE,A.Symphalangus,⟂,B.Symphalangus_syndactylus,split; fringe-conflict
+              MOVE,A.Symphalangus_syndactylus,=,B.Symphalangus_syndactylus,fringe= + name=
                 NO CHANGE,A.Symphalangus_syndactylus_syndactylus,=,B.Symphalangus_syndactylus_syndactylus,fringe=; synonym of
-            NO CHANGE,A.Hoolock,=,B.Hoolock,=fringe + =name
-              NO CHANGE,A.Hoolock_hoolock,=,B.Hoolock_hoolock,=fringe + =name
+                REORGANIZED,,⟂,B.Symphalangus,fringe-conflict; split
+            NO CHANGE,A.Hoolock,=,B.Hoolock,fringe= + name=
+              NO CHANGE,A.Hoolock_hoolock,=,B.Hoolock_hoolock,fringe= + name=
               NO CHANGE,A.Hoolock_leuconedys,=,B.Hoolock_leuconedys,fringe=; synonym of
-          NO CHANGE,A.Hominidae,=,B.Hominidae,=fringe + =name
-            NO CHANGE,A.Homininae,=,B.Homininae,=fringe + =name
-              NO CHANGE,A.Gorilla,=,B.Gorilla,=fringe + =name
-                NO CHANGE,A.Gorilla_gorilla,=,B.Gorilla_gorilla,=fringe + =name
-                  NO CHANGE,A.Gorilla_gorilla_gorilla,=,B.Gorilla_gorilla_gorilla,=fringe + =name
-                  NO CHANGE,A.Gorilla_gorilla_uellensis,=,B.Gorilla_gorilla_uellensis,=fringe + =name
+              GRAFT,,>,B.Hoolock_tianxing,fringe= + name=; child; graft
+              GRAFT,,>,B.Hoolock_leuconedys_x_Hoolock_tianxing,fringe= + name=; child; graft
+          NO CHANGE,A.Hominidae,=,B.Hominidae,fringe= + name=
+            NO CHANGE,A.Homininae,=,B.Homininae,fringe= + name=
+              NO CHANGE,A.Gorilla,=,B.Gorilla,fringe= + name=
+                NO CHANGE,A.Gorilla_gorilla,=,B.Gorilla_gorilla,fringe= + name=
+                  NO CHANGE,A.Gorilla_gorilla_gorilla,=,B.Gorilla_gorilla_gorilla,fringe= + name=
+                  NO CHANGE,A.Gorilla_gorilla_uellensis,=,B.Gorilla_gorilla_uellensis,fringe= + name=
                   NO CHANGE,A.Gorilla_gorilla_diehli,=,B.Gorilla_gorilla_diehli,fringe=; genbank common name of
-                NO CHANGE,A.Gorilla_beringei,=,B.Gorilla_beringei,=fringe + =name
-                  NO CHANGE,A.Gorilla_beringei_graueri,=,B.Gorilla_beringei_graueri,=fringe + =name
-                  NO CHANGE,A.Gorilla_beringei_beringei,=,B.Gorilla_beringei_beringei,=fringe + =name
-              NO CHANGE,A.Pan,=,B.Pan,=fringe + =name
-                NO CHANGE,A.Pan_paniscus,=,B.Pan_paniscus,=fringe + =name
-                NO CHANGE,A.Pan_troglodytes,=,B.Pan_troglodytes,=fringe + =name
-                  NO CHANGE,A.Pan_troglodytes_schweinfurthii,=,B.Pan_troglodytes_schweinfurthii,=fringe + =name
-                  NO CHANGE,A.Pan_troglodytes_troglodytes,=,B.Pan_troglodytes_troglodytes,=fringe + =name
-                  NO CHANGE,A.Pan_troglodytes_verus,=,B.Pan_troglodytes_verus,=fringe + =name
-                  NO CHANGE,A.Pan_troglodytes_vellerosus,=,B.Pan_troglodytes_vellerosus,=fringe + =name
+                NO CHANGE,A.Gorilla_beringei,=,B.Gorilla_beringei,fringe= + name=
+                  NO CHANGE,A.Gorilla_beringei_graueri,=,B.Gorilla_beringei_graueri,fringe= + name=
+                  NO CHANGE,A.Gorilla_beringei_beringei,=,B.Gorilla_beringei_beringei,fringe= + name=
+              NO CHANGE,A.Pan,=,B.Pan,fringe= + name=
+                NO CHANGE,A.Pan_paniscus,=,B.Pan_paniscus,fringe= + name=
+                NO CHANGE,A.Pan_troglodytes,=,B.Pan_troglodytes,fringe= + name=
+                  NO CHANGE,A.Pan_troglodytes_schweinfurthii,=,B.Pan_troglodytes_schweinfurthii,fringe= + name=
+                  NO CHANGE,A.Pan_troglodytes_troglodytes,=,B.Pan_troglodytes_troglodytes,fringe= + name=
+                  NO CHANGE,A.Pan_troglodytes_verus,=,B.Pan_troglodytes_verus,fringe= + name=
+                  NO CHANGE,A.Pan_troglodytes_vellerosus,=,B.Pan_troglodytes_vellerosus,fringe= + name=
                   NO CHANGE,A.Pan_troglodytes_ellioti,=,B.Pan_troglodytes_ellioti,fringe=; synonym of
                   NO CHANGE,A.Pan_troglodytes_verus_x_troglodytes,=,B.Pan_troglodytes_verus_x_troglodytes,fringe=; synonym of
-              NO CHANGE,A.Homo,=,B.Homo,=fringe + =name
-                NO CHANGE,A.Homo_sapiens,=,B.Homo_sapiens,=fringe + =name
-                  NO CHANGE,A.Homo_sapiens_neanderthalensis,=,B.Homo_sapiens_neanderthalensis,=fringe + =name
-                  RENAME,A.Homo_sapiens_ssp._Denisova,=,B.Homo_sapiens_subsp._'Denisova',=fringe + =name
+              NO CHANGE,A.Homo,=,B.Homo,fringe= + name=
+                NO CHANGE,A.Homo_sapiens,=,B.Homo_sapiens,fringe= + name=
+                  NO CHANGE,A.Homo_sapiens_neanderthalensis,=,B.Homo_sapiens_neanderthalensis,fringe= + name=
+                  RENAME,A.Homo_sapiens_ssp._Denisova,=,B.Homo_sapiens_subsp._'Denisova',fringe= + name=
                 NO CHANGE,A.Homo_heidelbergensis,=,B.Homo_heidelbergensis,fringe=; genbank common name of
-            REORGANIZE,A.Ponginae,⟂,B.Pongo,fringe-conflict
-              NO CHANGE,A.Pongo,=,B.Pongo,=fringe + =name
-                NO CHANGE,A.Pongo_pygmaeus,=,B.Pongo_pygmaeus,=fringe + =name
-                  NO CHANGE,A.Pongo_pygmaeus_pygmaeus,=,B.Pongo_pygmaeus_pygmaeus,=fringe + =name
+            REORGANIZE,A.Ponginae,⟂,B.Pongo,split; fringe-conflict
+              MOVE,A.Pongo,=,B.Pongo,fringe= + name=
+                NO CHANGE,A.Pongo_pygmaeus,=,B.Pongo_pygmaeus,fringe= + name=
+                  NO CHANGE,A.Pongo_pygmaeus_pygmaeus,=,B.Pongo_pygmaeus_pygmaeus,fringe= + name=
                 NO CHANGE,A.Pongo_abelii,=,B.Pongo_abelii,fringe=; synonym of
-                NO CHANGE,A.Pongo_sp.,=,B.Pongo_sp.,fringe=; synonym of
-                NO CHANGE,A.Pongo_abelii_x_pygmaeus,=,B.Pongo_abelii_x_pygmaeus,=fringe + =name
-    REORGANIZE,A.Tarsiiformes,⟂,B.Tarsiidae,fringe-conflict
-      NO CHANGE,A.Tarsiidae,=,B.Tarsiidae,=fringe + =name
-        REORGANIZE,A.Tarsius,⟂,B.Tarsiidae,fringe-conflict
-          RENAME,A.Tarsius_bancanus,=,B.Cephalopachus_bancanus,fringe=; genbank common name of
-          RENAME,A.Tarsius_syrichta,=,B.Carlito_syrichta,fringe=; genbank common name of
-          NO CHANGE,A.Tarsius_sp.,=,B.Tarsius_sp.,=fringe + =name
-          NO CHANGE,A.Tarsius_dentatus,=,B.Tarsius_dentatus,=fringe + =name
-          NO CHANGE,A.Tarsius_lariang,=,B.Tarsius_lariang,fringe=; genbank common name of
-          NO CHANGE,A.Tarsius_dentatus_x_lariang,=,B.Tarsius_dentatus_x_lariang,fringe=; synonym of
-          NO CHANGE,A.Tarsius_tarsier,=,B.Tarsius_tarsier,=fringe + =name
-          NO CHANGE,A.Tarsius_sp._FFA-2009a,=,B.Tarsius_sp._FFA-2009a,=fringe + =name
-          NO CHANGE,A.Tarsius_sangirensis,=,B.Tarsius_sangirensis,fringe=; genbank common name of
-          NO CHANGE,A.Tarsius_wallacei,=,B.Tarsius_wallacei,=fringe + =name
+                MOVE,A.Pongo_sp.,=,B.Pongo_sp.,fringe=; synonym of
+                  RENAME,,=,B.unclassified_Pongo,synonym of; fringe=; split
+                NO CHANGE,A.Pongo_abelii_x_pygmaeus,=,B.Pongo_abelii_x_pygmaeus,fringe= + name=
+                REORGANIZED,,⟂,B.Ponginae,fringe-conflict; split
+                GRAFT,,>,B.Pongo_tapanuliensis,fringe= + name=; child; graft
+    REORGANIZE,A.Tarsiiformes,⟂,B.Tarsiidae,split; fringe-conflict
+      MOVE,A.Tarsiidae,=,B.Tarsiidae,fringe= + name=
+        REORGANIZE,A.Tarsius,⟂,B.Tarsiidae,split; fringe-conflict
+          MOVE,A.Tarsius_bancanus,=,B.Cephalopachus_bancanus,fringe=; genbank common name of
+            RENAME,,=,B.Cephalopachus,genbank common name of; fringe=; split
+            GRAFT,,>,B.Cephalopachus_bancanus_bancanus,genbank common name of; fringe=; child; graft
+            GRAFT,,>,B.Cephalopachus_bancanus_borneanus,genbank common name of; fringe=; child; graft
+          MOVE,A.Tarsius_syrichta,=,B.Carlito_syrichta,fringe=; genbank common name of
+            RENAME,,=,B.Carlito,genbank common name of; fringe=; split
+          MOVE,A.Tarsius_sp.,=,B.Tarsius_sp.,fringe= + name=
+          MOVE,A.Tarsius_dentatus,=,B.Tarsius_dentatus,fringe= + name=
+          MOVE,A.Tarsius_lariang,=,B.Tarsius_lariang,fringe=; genbank common name of
+          MOVE,A.Tarsius_dentatus_x_lariang,=,B.Tarsius_dentatus_x_lariang,fringe=; synonym of
+          MOVE,A.Tarsius_tarsier,=,B.Tarsius_tarsier,fringe= + name=
+          MOVE,A.Tarsius_sp._FFA-2009a,=,B.Tarsius_sp._FFA-2009a,fringe= + name=
+          MOVE,A.Tarsius_sangirensis,=,B.Tarsius_sangirensis,fringe=; genbank common name of
+          MOVE,A.Tarsius_wallacei,=,B.Tarsius_wallacei,fringe= + name=
+          NO CHANGE,,=,B.Tarsius,fringe= + name=; split
+          GRAFT,,>,B.Tarsius_fuscus,fringe= + name=; child; graft
+          REORGANIZED,,⟂,B.unclassified_Tarsius,fringe-conflict; split
+          REORGANIZED,,⟂,B.Tarsius_sp._CD-2015,fringe-conflict; child; graft
+        REORGANIZED,,⟂,B.Tarsiiformes,fringe-conflict; split

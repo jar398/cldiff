@@ -37,11 +37,13 @@ registry = {0: "unused"}
 # Get the value of a field of a TNU record (via global registry)
 
 def get_value(uid, field):
+  assert uid > 0
   (row, checklist) = registry[uid]
   (label, position) = field
   return row[position]
 
 def get_checklist(uid):
+  assert uid > 0
   (_, checklist) = registry[uid]
   return checklist
 

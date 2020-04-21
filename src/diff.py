@@ -32,86 +32,151 @@ reported = {}
 
 def subreport(node, B, writer, indent):
   assert cl.get_checklist(node) != B
-  match = best_match(node, B)      # cod is accepted
+  match = good_match(node, B)      # cod is accepted
   if match:
-    report_on_match(match, writer, indent)
-    for sub in get_subarticulations(node):
-      subreport(sub.cod, B, writer, indent + "  ")
-  elif cl.is_accepted(node):
-    writer.writerow([indent + "REMOVE",
-                     cl.get_unique(node),
-                     "",
-                     "",
-                     "no match in B"])
+    report_on_match(match, False, writer, indent)
+    indent = indent + "  "
+    for sub in child_articulations(node):
+      subreport(sub.cod, B, writer, indent)
+    for match in graft_matches(node):
+      report_on_match(match, True, writer, indent)
 
-def get_subarticulations(node):
-  return (child_articulations(node) +
-          graft_articulations(node))
-
-def report_on_match(match, writer, indent):
-  if rel.is_variant(match.relation, rel.eq):
-    if cl.get_name(match.dom) == cl.get_name(match.cod):
-      if cl.get_tnu_id(match.dom) == cl.get_tnu_id(match.cod):
-        tag = "NO CHANGE"
-      else:
-        tag = "CHANGE ID"
-    else:
-      tag = "RENAME"
-  elif rel.is_variant(match.relation, rel.lt):
-    tag = "REMOVE"
-  elif rel.is_variant(match.relation, rel.gt):
-    tag = "ADD"
-  elif rel.is_variant(match.relation, rel.disjoint):
-    tag = "MOVE"    # shouldn't happen ...
-  else:
-    tag = "REORGANIZE"
+def report_on_match(match, 
+                    graftp, writer, indent):
+  A_unique = "" if graftp else cl.get_unique(match.dom)
+  tag = tag_for_match(match, graftp)
   writer.writerow([indent + tag,
-                   cl.get_unique(match.dom),
-                   rel.variant(match.relation, 0).name,
+                   A_unique,
+                   rel.variant(match.relation, rel.goodness).name,
                    cl.get_unique(match.cod),
                    art.get_comment(match)])
 
-# For any node in A, return the most appropriate related node in B
+def tag_for_match(match, graftp):
+  tag = "?"
+  if rel.is_variant(match.relation, rel.eq):
+    if graftp: tag = "SPLIT"
+    if parent_changed(match):
+      tag = "MOVE"
+    else:
+      if cl.get_name(match.dom) == cl.get_name(match.cod):
+        if cl.get_tnu_id(match.dom) == cl.get_tnu_id(match.cod):
+          tag = "NO CHANGE"
+        else:
+          tag = "CHANGE ID"
+      else:
+        tag = "RENAME"
+  elif rel.is_variant(match.relation, rel.lt):
+    tag = "INSERT" if graftp else "REMOVE"
+  elif rel.is_variant(match.relation, rel.gt):
+    tag = "GRAFT" if graftp else "ADD"
+  elif rel.is_variant(match.relation, rel.disjoint):
+    tag = "PEPPERONI"    # shouldn't happen ...
+  elif rel.is_variant(match.relation, rel.conflict):
+    tag = "REORGANIZED" if graftp else "REORGANIZE"
+  return tag
 
-def best_match(node, other):
-  assert node > 0
-  assert cl.get_checklist(node) != other
-  return best_topological_match(node, other) or \
-    best_name_based_match(node, other)
+def parent_changed(match):
+  parent = cl.get_parent(match.dom)
+  coparent = cl.get_parent(match.cod)
+  if parent == None and coparent == None:
+    return False
+  if parent == None or coparent == None:
+    return True
+  match = best_match(parent)
+  if not match: return True
+  return match.cod != coparent
 
-def best_topological_match(node, other):
-  matches = prune_matches([to_accepted_match(match)
-                           for match in topological_matches(node, other)])
-  if len(matches) > 0:
-    return matches[0]
-  return None
+def good_match(node, other):
+  best = best_match(node, other)
+  if not best: return None
+  reciprocal = best_match(best.cod, cl.get_checklist(node))
+  if reciprocal:
+    if reciprocal.cod == node:
+      return best
+  return graft_match(node, other)
+
+# ---------- GRAFTS
 
 # Grafts
+# Find nodes in B that are not mutually matched to nodes in A
 
-def graft_articulations(node):
-  return [art.art(node, graft, rel.lt)
-          for graft in graft_points.get(node, ())]
+def graft_matches(A_node):
+  A = cl.get_checklist(A_node)
+  return [art.reverse(graft_match(B_node, A))
+          for B_node in (grafts.get(A_node) or [])]
 
-grafts = {}
-graft_points = {}
+# A B_node that is not the best_match of any A_node
 
 def analyze_grafts(A, B):
   global grafts
-  def process(tnu, sup):
-    if sup:
-      sup_match = best_match(sup, A)
-    for inf_art in child_articulations(tnu):
-      inf = inf_art.cod
-      if sup:
-        other = best_match(inf, A)
-        if other == None:
-          graft_points[inf] = art.compose(sup_match,
-                                          rel.reverse(inf_art))
-      else:
-        process(inf, tnu)
+  graft_points = {}
+  def process(tnu):
+    match = graft_match(tnu, A)  # B -> A
+    if match:
+      assert match.dom == tnu
+      graft_points[tnu] = match.cod    # in A
+    for child in cl.get_children(tnu):
+      process(child)
   for root in cl.get_roots(B):
-    process(root, None)
+    process(root)
   grafts = cl.invert_dict(graft_points)
+
+def graft_match(B_tnu, A):  # B -> A
+  match = None
+  A_match = best_match(B_tnu, A)
+  if A_match:
+    assert A_match.dom == B_tnu
+    A_tnu = A_match.cod
+    B = cl.get_checklist(B_tnu)
+    back_to_B = best_match(A_tnu, B)  # A -> B
+    if back_to_B:
+      assert back_to_B.dom == A_tnu
+      if back_to_B.cod != B_tnu:
+        # Outcompeted
+        match = A_match    # B -> A
+        re = rel_alternative
+  else:
+    to_B_parent = parent_articulation(B_tnu)
+    if to_B_parent:
+      B_parent = to_B_parent.cod
+      B_parent_match = best_match(B_parent, A)
+      if B_parent_match:
+        # compose > o conflict fails
+        match = art.compose(to_B_parent, B_parent_match) # B -> A
+        re = rel_graft
+  if match:
+    return art.compose(art.art(match.dom, match.dom, re), match)
+  return None
+
+rel_alternative = rel.variant(rel.eq, 0.5, "split", "merge")
+rel_graft = rel.variant(rel.eq, 0, "graft", "prune")
+
+
+grafts = {}    # Maps an A-node to its 'adopted' children in B
+
+# ---------- One-sided best match
+
+best_match_cache = {}
+
+def best_match(node, other = None):
+  assert node > 0
+  assert cl.get_checklist(node) != other
+  if node in best_match_cache:
+    return best_match_cache[node]
+
+  assert other
+
+  match = choose_least_bad(best_matches(node, other))
+    
+  best_match_cache[node] = match
+  return match
+
+def best_matches(node, other):
+  assert node > 0
+  matches = prune_matches([to_accepted_match(match)
+                           for match in topological_matches(node, other)])
+  if matches: return matches
+  return name_based_matches(node, other)
 
 # ---------- TOPOLOGY
 
@@ -132,7 +197,7 @@ def topological_matches(tnu, other):
       scan = cl.get_superior(scan)
       if scan == None: break
       if cross_mrcas.get(scan) != tnu: break
-      matches.append(art.art(tnu, scan, topo_eq))
+      matches.append(bridge(tnu, scan, topo_eq))
   return sorted([score_topo_match(match) for match in matches],
                 key=lambda match: match.relation.badness)
 
@@ -147,7 +212,7 @@ topo_disjoint = rel.variant(rel.disjoint, topology_badness, "fringe-disjoint")
 
 def compare_fringes(tnu, other):
   assert tnu > 0
-  match = direct_fringe_match(tnu, other)
+  match = best_fringe_match(tnu, other)
   if match: return match
   partner = cross_mrcas.get(tnu)    # another TNU I think
   if not partner:
@@ -170,14 +235,7 @@ def compare_fringes(tnu, other):
         if cl.mrca(tnu, back) == tnu and cross_disjoint(tnu, partner):
           relation = topo_conflict
           break
-  return art.art(tnu, partner, relation)
-
-def direct_fringe_match(tnu, other):
-  matches = direct_fringe_matches(tnu, other)
-  if len(matches) == 1:
-    return matches[0]
-  else:
-    return None
+  return bridge(tnu, partner, relation)
 
 def cross_disjoint(tnu, partner):
   assert tnu > 0
@@ -217,10 +275,10 @@ def score_topo_match(match):
       relation = rel_fringe_and_name
       break
 
-  return art.art(tnu, option, relation)
+  return bridge(tnu, option, relation)
 
-rel_fringe_and_name = rel.variant(rel.eq, 2, "=fringe + =name")
-rel_fringe_and_rank = rel.variant(rel.eq, 3, "=fringe + =rank")
+rel_fringe_and_name = rel.variant(rel.eq, 2, "fringe= + name=")
+rel_fringe_and_rank = rel.variant(rel.eq, 3, "fringe= + rank=")
 
 #    assert match.dom == tnu
 #    assert cl.get_checklist(match.cod) == other
@@ -279,17 +337,15 @@ def mutual_fringe_match(tnu, other):
 def best_fringe_match(tnu, other):
   assert tnu > 0
   if is_fringe.get(tnu):
-    matches = direct_fringe_matches(tnu, other)
-    if matches:
-      if len(matches) == 1:
-        return matches[0]
-      else:
-        print("Ambiguous", cl.get_name(tnu))
+    return choose_least_bad(direct_fringe_matches(tnu, other))
   return None
 
 def direct_fringe_matches(tnu, other):
-  return [match for match in direct_matches(tnu, other)
-          if is_fringe.get(tnu)]
+  if not is_fringe.get(tnu): return []
+  d = direct_matches(tnu, other)
+  assert is_matches(d)
+  return [match for match in d
+          if is_fringe.get(match.cod)]
 
 # ---------- Fringe determination
 
@@ -321,31 +377,28 @@ def subanalyze_fringe(tnu, other):
   elif len(partners) > 1:
     return False
 
+def analyze_hits(checklist, other):
+  def subanalyze_hits(tnu, other):
+    found_match = False
+    for inf in cl.get_inferiors(tnu):
+      if subanalyze_hits(inf, other):
+        found_match = True
+    if found_match:
+      return True
+    partners = direct_matches(tnu, other)
+    if len(partners) == 1:
+      is_fringe[tnu] = True
+      return True
+    elif len(partners) > 1:
+      return False
+  for root in cl.get_roots(checklist):
+    subanalyze_hits(root, other)
+
+
 # ---------- Matches based on name and synonym
 
 # Three components: synonym-or-self o direct o synonym-of-or-self
 # from_accepted_articulations o direct_matches o [to_accepted_articulation]
-
-def best_name_based_match(accepted, other):
-  m1 = name_based_matches(accepted, other)
-  if m1:
-    winner = m1[0]
-    m2 = name_based_matches(winner.cod, cl.get_checklist(accepted))
-    if len(m2) > 0:
-      if len(m2) > 1:
-        if m2[0] == m1[0]:
-          return art.compose(winner,
-                             art.art(winner.cod, winner.cod, rel_best_eq))
-        else:
-          return art.compose(winner,
-                             art.art(winner.cod, winner.cod, rel_alternate_eq))
-      else:
-        return winner
-  return None
-
-rel_best_eq = rel.variant(rel.eq, 0.1, "best=")
-rel_alternate_eq = rel.variant(rel.eq, 0.2, "alternate=")
-
 
 name_based_matches_cache = {}
 
@@ -373,20 +426,31 @@ def to_accepted_match(m):
     return art.compose(m, accepted_articulation(m.cod))
 
 # Direct matches by name (no synonym following)
+# This is what open tree was so concerned about...
 
 def direct_matches(node, other):
   assert node > 0
-  name = cl.get_name(node)
-  candidates = cl.get_tnus_with_value(other, cl.canonical_name_field, name)
-  matches = [art.art(node, candidate, same_namestring) 
-             for candidate in candidates]
-  partner = cl.get_tnu_with_id(other, cl.get_tnu_id(node))
-  if partner and not partner in candidates:
-    matches = [art.art(node, partner, same_id)] + matches
+  assert cl.get_checklist(node) != other
+  hits = cl.get_tnus_with_value(other,
+                                cl.canonical_name_field,
+                                cl.get_name(node))
+  id_hit = cl.get_tnu_with_id(other, cl.get_tnu_id(node))
+
+  matches = [bridge(node,
+                    hit,
+                    same_namestring_and_id if hit == id_hit \
+                    else same_namestring)
+             for hit in hits]
+  assert is_matches(matches) and True
+  if id_hit and not id_hit in hits:
+    matches = [bridge(node, id_hit, same_id)] + matches
+  assert is_matches(matches)
   return matches
 
-same_namestring = rel.variant(rel.eq, 2, "namestring=", "namestring=")
-same_id = rel.variant(rel.eq, 2.1, "id=", "id=")
+same_namestring_and_id = rel.variant(rel.eq, 2,
+                                     "name= + id=")
+same_namestring = rel.variant(rel.eq, 2.1, "name=", "name=")
+same_id = rel.variant(rel.eq, 2.2, "id=", "id=")
 
 # ---------- Within-checklist articulations
 
@@ -408,7 +472,7 @@ def inferior_articulations(tnu):
 def parent_articulation(child):
   parent = cl.get_parent(child)
   if parent:
-    return art.art(child, parent, rel.parent_child)
+    return art.art(child, parent, rel.child)
   else:
     return None
 
@@ -445,6 +509,8 @@ def synonym_articulations(tnu):
 # different
 
 def prune_matches(arts):
+  if len(arts) <= 1: return arts
+  assert arts[0].dom
   arts = sorted(arts, key=lambda art: art.relation.badness)
   kept = []
   seen = []
@@ -454,6 +520,46 @@ def prune_matches(arts):
       kept.append(a)
       seen.append(good)
   return kept
+
+def choose_least_bad(arts):     # => art
+  assert is_matches(arts)
+  if len(arts) == 0: return None
+  besties = prune_further(arts)
+  assert besties[0].dom
+  if len(besties) == 1: return besties[0]
+  print("** This shouldn't happen. Need to look at other criteria",
+        [cl.get_unique(a.cod) for a in besties])
+  return None
+
+def prune_further(arts):
+  if len(arts) == 0: return []
+  arts = sorted(arts, key=prune_ordering)
+  # if len(arts) == 1: return [arts[0]]
+  key = prune_ordering(arts[0])
+  return [a for a in arts
+          if prune_ordering(a) == key]
+
+def prune_ordering(ar):
+  return (ar.relation.badness, cl.get_depth(ar.cod))
+
+def is_match(ar):
+  c1 = cl.get_checklist(ar.dom)
+  c2 = cl.get_checklist(ar.cod)
+  if c1 == c2:
+    print("%s and %s both in %s" %
+          (cl.get_name(c1),
+           c2.get_name(c2),
+           c1.prefix))
+    return False
+  return True
+
+def is_matches(matches):
+  if len(matches) == 0: return True
+  return is_match(matches[0])
+
+def bridge(dom, cod, re):
+  assert cl.get_checklist(dom) != cl.get_checklist(cod)
+  return art.art(dom, cod, re)
 
 # ---------- NCBI nomenclatural statuses
 
