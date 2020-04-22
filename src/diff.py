@@ -17,7 +17,12 @@ def main(c1, c2, out):
   analyze_cross_mrcas(A, B)
   print ("number of cross-mrcas:", len(cross_mrcas))
 
-  analyze_grafts(A, B)
+  assign_matches(A, B)
+  print ("number of besties:", len(anti_best))
+
+  analyze_unmatched(A, B)
+  print ("number of joins:", len(joins))
+  print ("number of grafts:", len(grafts))
 
   report(A, B, out)
 
@@ -31,31 +36,65 @@ def report(A, B, outpath):
 reported = {}
 
 def subreport(node, B, writer, indent):
-  assert cl.get_checklist(node) != B
-  match = good_match(node, B)      # cod is accepted
+  A = cl.get_checklist(node)
+  assert A != B
+  match = best_match(node, B)      # cod is accepted
   if match:
     report_on_match(match, False, writer, indent)
     indent = indent + "  "
-    for sub in child_articulations(node):
-      subreport(sub.cod, B, writer, indent)
-    for match in graft_matches(node):
+    def for_seq(node):
+      b = best_match(node)
+      return b.cod if b else node
+    def sort_key(triple):
+      (B_node, which, arg) = triple
+      if isinstance(B_node, art.Articulation):
+        print("Loser", which, cl.get_name(B_node.cod))
+      return cl.get_sequence_number(B_node)
+    agenda = \
+      [(for_seq(child), 0, child) for child in cl.get_children(node)] + \
+      [(match.cod, 1, match) for match in join_matches(node)] + \
+      [(B_node, 2, B_node) for B_node in get_graftees(node)]
+    for (B_node, which, arg) in \
+       sorted(agenda, key=sort_key):
+      if which == 0:
+        subreport(arg, B, writer, indent)
+      elif which == 1:
+        report_on_match(arg, True, writer, indent)    # split
+      elif which == 2:
+        writer.writerow([indent + "GRAFT",
+                         "",
+                         ">",
+                         cl.get_unique(arg),
+                         "not a match target"])
+
+"""
+    for child in cl.get_children(node):
+      subreport(child, B, writer, indent)
+    for match in join_matches(node):
       report_on_match(match, True, writer, indent)
+    for B_node in get_graftees(node):
+      writer.writerow([indent + "GRAFT",
+                       "",
+                       ">",
+                       cl.get_unique(B_node),
+                       "not a match target"])
+"""
 
 def report_on_match(match, 
-                    graftp, writer, indent):
-  A_unique = "" if graftp else cl.get_unique(match.dom)
-  tag = tag_for_match(match, graftp)
+                    splitp, writer, indent):
+  A_unique = "" if splitp else cl.get_unique(match.dom)
+  tag = tag_for_match(match, splitp)
   writer.writerow([indent + tag,
                    A_unique,
                    rel.variant(match.relation, rel.goodness).name,
                    cl.get_unique(match.cod),
                    art.get_comment(match)])
 
-def tag_for_match(match, graftp):
+def tag_for_match(match, splitp):
   tag = "?"
   if rel.is_variant(match.relation, rel.eq):
-    if graftp: tag = "SPLIT"
-    if parent_changed(match):
+    if splitp: tag = "SPLIT"
+    elif parent_changed(match):
       tag = "MOVE"
     else:
       if cl.get_name(match.dom) == cl.get_name(match.cod):
@@ -66,13 +105,13 @@ def tag_for_match(match, graftp):
       else:
         tag = "RENAME"
   elif rel.is_variant(match.relation, rel.lt):
-    tag = "INSERT" if graftp else "REMOVE"
+    tag = "INSERT" if splitp else "REMOVE"
   elif rel.is_variant(match.relation, rel.gt):
-    tag = "GRAFT" if graftp else "ADD"
+    tag = "GRAFT" if splitp else "ADD"
+  elif rel.is_variant(match.relation, rel.conflict):
+    tag = "REFORM" if splitp else "BREAK"
   elif rel.is_variant(match.relation, rel.disjoint):
     tag = "PEPPERONI"    # shouldn't happen ...
-  elif rel.is_variant(match.relation, rel.conflict):
-    tag = "REORGANIZED" if graftp else "REORGANIZE"
   return tag
 
 def parent_changed(match):
@@ -86,73 +125,92 @@ def parent_changed(match):
   if not match: return True
   return match.cod != coparent
 
-def good_match(node, other):
-  best = best_match(node, other)
-  if not best: return None
-  reciprocal = best_match(best.cod, cl.get_checklist(node))
-  if reciprocal:
-    if reciprocal.cod == node:
-      return best
-  return graft_match(node, other)
+# Fill the cache
 
-# ---------- GRAFTS
+def assign_matches(A, B):
+  global anti_best
+  anti_best = {}
+  def process(tnu):
+    bestie = best_match(tnu, B)  # A -> B
+    if bestie:
+      anti_best[bestie.cod] = art.reverse(bestie)
+    for child in cl.get_children(tnu):
+      process(child)
+    return bestie
+  for root in cl.get_roots(A):
+    process(root)
 
-# Grafts
+def anti_best_match(B_tnu, parent = None):
+  return anti_best.get(B_tnu)
+
+# ---------- UNMATCHED
+
+# Unmatched
 # Find nodes in B that are not mutually matched to nodes in A
 
-def graft_matches(A_node):
+def join_matches(A_node):
   A = cl.get_checklist(A_node)
-  return [art.reverse(graft_match(B_node, A))
-          for B_node in (grafts.get(A_node) or [])]
+  B_nodes = (joins.get(A_node) or [])
+  return [join_match(B_node, A) for B_node in B_nodes]
 
 # A B_node that is not the best_match of any A_node
 
-def analyze_grafts(A, B):
+def analyze_unmatched(A, B):
+  global joins
   global grafts
+  join_points = {}
   graft_points = {}
-  def process(tnu):
-    match = graft_match(tnu, A)  # B -> A
-    if match:
-      assert match.dom == tnu
-      graft_points[tnu] = match.cod    # in A
-    for child in cl.get_children(tnu):
+  def process(B_tnu):
+    if anti_best_match(B_tnu) == None:
+      match = best_match(B_tnu, A)  # B -> A
+      if match:
+        assert is_match(match)
+        assert match.dom == B_tnu
+        join_points[B_tnu] = match.cod    # in A
+      else:
+        point = get_graft_point(B_tnu, A)    # in A
+        if point:
+          graft_points[B_tnu] = point    # in A
+    for child in cl.get_children(B_tnu):
       process(child)
   for root in cl.get_roots(B):
     process(root)
+  joins = cl.invert_dict(join_points)
   grafts = cl.invert_dict(graft_points)
 
-def graft_match(B_tnu, A):  # B -> A
-  match = None
-  A_match = best_match(B_tnu, A)
-  if A_match:
-    assert A_match.dom == B_tnu
-    A_tnu = A_match.cod
-    B = cl.get_checklist(B_tnu)
-    back_to_B = best_match(A_tnu, B)  # A -> B
-    if back_to_B:
-      assert back_to_B.dom == A_tnu
-      if back_to_B.cod != B_tnu:
-        # Outcompeted
-        match = A_match    # B -> A
-        re = rel_alternative
+def join_match(B_tnu, A):
+  assert cl.get_checklist(B_tnu) != A
+  match = best_match(B_tnu, A)
+  return art.reverse(art.compose(art.art(match.dom, match.dom, rel_alternative),
+                                 match))
+
+def get_graftees(A_node):
+  return (grafts.get(A_node) or [])
+
+def graft_match(B_tnu, A):
+  A_parent = get_graft_point(B_tnu, A)
+  if A_parent:
+    return to_graft_match(A_parent, B_tnu)
   else:
-    to_B_parent = parent_articulation(B_tnu)
-    if to_B_parent:
-      B_parent = to_B_parent.cod
-      B_parent_match = best_match(B_parent, A)
-      if B_parent_match:
-        # compose > o conflict fails
-        match = art.compose(to_B_parent, B_parent_match) # B -> A
-        re = rel_graft
-  if match:
-    return art.compose(art.art(match.dom, match.dom, re), match)
+    return None
+
+def to_graft_match(A_parent, B_tnu):
+  to_B_parent = parent_articulation(B_tnu)
+  match = art.compose(to_B_parent, B_parent_match) # B -> A
+  return art.compose(art.art(match.dom, match.dom, rel_graft),
+                     match)
+
+def get_graft_point(B_tnu, A = None):
+  A_match = anti_best_match(B_tnu)  # B -> A
+  B_parent = cl.get_parent(B_tnu)
+  if B_parent:
+    B_parent_match = anti_best_match(B_parent, A)
+    if B_parent_match:
+      return B_parent_match.cod
   return None
 
 rel_alternative = rel.variant(rel.eq, 0.5, "split", "merge")
 rel_graft = rel.variant(rel.eq, 0, "graft", "prune")
-
-
-grafts = {}    # Maps an A-node to its 'adopted' children in B
 
 # ---------- One-sided best match
 

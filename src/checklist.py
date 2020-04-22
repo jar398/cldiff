@@ -33,6 +33,7 @@ taxon_rank_field           = define_field("taxonRank")
 #  where value vector is a vector that parallels the `the_fields` list
 
 registry = {0: "unused"}
+sequence_numbers = {}
 
 # Get the value of a field of a TNU record (via global registry)
 
@@ -46,6 +47,10 @@ def get_checklist(uid):
   assert uid > 0
   (_, checklist) = registry[uid]
   return checklist
+
+def get_sequence_number(uid):
+  assert uid > 0
+  return sequence_numbers.get(uid)
 
 # Checklist and registry
 
@@ -93,6 +98,17 @@ class Checklist:
             if value != '':
               values[position] = value
         self.add_tnu(values)
+      self.assign_sequence_numbers()
+  def assign_sequence_numbers(self):
+    n = len(sequence_numbers)
+    def process(tnu, n):
+      sequence_numbers[tnu] = n
+      n = n + 1
+      for inf in get_inferiors(tnu):
+        n = process(inf, n)
+      return n
+    for root in get_roots(self):
+      n = process(root, n)
 
 # A checklist's TNU list
 
