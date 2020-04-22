@@ -41,7 +41,7 @@ def subreport(node, B, writer, indent):
   match = best_match(node, B)      # cod is accepted
   if match:
     report_on_match(match, False, writer, indent)
-    indent = indent + "  "
+    indent = indent + "__"
     def for_seq(node):
       b = best_match(node)
       return b.cod if b else node
