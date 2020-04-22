@@ -1,4 +1,5 @@
 import os, csv
+import rank
 
 # Darwin Core field = (label, position)
 
@@ -266,6 +267,9 @@ def get_synonyms(tnu):
 def is_accepted(tnu):
   return get_value(tnu, taxonomic_status_field) == "accepted"
 
+def get_rank(tnu):
+  return rank.name_to_rank.get(get_value(tnu, taxon_rank_field))
+
 # Totally general utilities from here down... I guess...
 
 def invert_dict(d):
@@ -285,10 +289,10 @@ def find_level(tnu1, tnu2):
   d2 = get_depth(tnu2)
   while d1 > d2:
     tnu1 = get_superior(tnu1)
-    d1 -= 1
+    d1 = get_depth(tnu1)
   while d2 > d1:
     tnu2 = get_superior(tnu2)
-    d2 -= 1
+    d2 = get_depth(tnu2)
   return (tnu1, tnu2)
 
 def are_disjoint(tnu1, tnu2):
@@ -306,22 +310,27 @@ def mrca(tnu1, tnu2):
   if tnu1 == None: return tnu2
   if tnu2 == None: return tnu1
   if tnu1 == tnu2: return tnu1
-  (tnu1, tnu2) = find_level(tnu1, tnu2)
-  while tnu1 != tnu2 and tnu1:
-    tnu1 = get_superior(tnu1)
-    tnu2 = get_superior(tnu2)
+
+  d1 = get_depth(tnu1)
+  d2 = get_depth(tnu2)
+  while tnu1 != tnu2:
+    if d1 >= d2:
+      tnu1 = get_superior(tnu1)
+      d1 = get_depth(tnu1)
+    else:
+      tnu2 = get_superior(tnu2)
+      d2 = get_depth(tnu2)
   return tnu1
 
 depth_cache = {}
 
 def get_depth(tnu):
+  if tnu == None: return 0
   depth = depth_cache.get(tnu, None)
   if depth: return depth
-  parent = get_superior(tnu)
-  if parent == None:
-    d = 0
-  else:
-    d = get_depth(parent) + 1
+  d = get_depth(get_superior(tnu)) + 1
+  r = get_rank(tnu)
+  if r and r > d: d = r
   depth_cache[tnu] = d
   return d
 
