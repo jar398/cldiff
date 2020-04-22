@@ -85,3 +85,47 @@ def self_tests():
   assert compose(lt, lt) == lt
   assert compose(disjoint, gt) == disjoint
   assert compose(eq, similar) == similar
+
+# -------------------- Synonyms
+
+def synonym_relation(nomenclatural_status):
+  return badnesses[nomenclatural_status]
+
+badnesses = {}
+badness = 1
+
+def declare_badnesses():
+  def b(revname, re, name = None):
+    assert re
+    global badness
+    name = name or (revname + " of")
+    badnesses[revname] = variant(re, badness, name, revname)
+    badness += 1
+
+  b("authority", eq)
+  b("scientific name", eq)        # (actually canonical) exactly one per node
+  b("equivalent name", eq)        # synonym but not nomenclaturally
+  b("misspelling", eq)
+  b("genbank synonym", eq)        # at most one per node; first among equals
+  b("anamorph", eq)
+  b("genbank anamorph", eq)    # at most one per node
+  b("teleomorph", eq)
+  b("unpublished name", eq)    # non-code synonym
+  b("merged id", eq)
+  b("acronym", eq)
+
+  # above here: equivalence implied. below here: acc>=syn implied.
+  # except in the case if 'in-part' which is acc<syn.
+
+  b("synonym", eq)
+  b("misnomer", eq)
+  b("includes", gt, "included in")
+  b("in-part", lt, "part of")      # this node is part of a polyphyly
+  b("type material", eq)
+  b("blast name", eq)             # large well-known taxa
+  b("genbank common name", eq)    # at most one per node
+  b("genbank acronym", eq)      # at most one per node
+  b("common name", eq)
+
+declare_badnesses()
+

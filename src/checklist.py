@@ -303,25 +303,28 @@ def find_peers(tnu1, tnu2):
     parent1 = get_superior(tnu1)
     p1 = get_rank(parent1)
     # No leapfrogging
-    if p1 < d1: break
+    if p1 < d2: break
     tnu1 = parent1
     d1 = p1
   while True:
     parent2 = get_superior(tnu2)
     p2 = get_rank(parent2)
-    if p2 < d2: break
+    if p2 < d1: break
     tnu2 = parent2
     d2 = p2
   return (tnu1, tnu2)
 
 def how_related(tnu1, tnu2):
+  assert tnu1 > 0
+  assert tnu2 > 0
   if tnu1 == tnu2:
     return rel.eq
   (peer1, peer2) = find_peers(tnu1, tnu2)  
   if peer1 != peer2:
     return rel.disjoint
   if peer1 == tnu1:
-    return rel.lt
+    # TBD: check for synonymy
+    return rel.gt
   if peer2 == tnu2:
     return rel.lt
   assert False

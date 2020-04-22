@@ -544,7 +544,7 @@ def accepted_articulation(syn):   # goes from synonym to accepted
   assert syn > 0
   accepted = cl.get_accepted(syn)
   if accepted:
-    return art.art(syn, accepted, synonym_relation(syn_status(syn)))
+    return art.art(syn, accepted, rel.synonym_relation(syn_status(syn)))
   else:
     print("Shouldn't happen", cl.get_name(syn))
     return None
@@ -598,7 +598,7 @@ def prune_further(arts):
           if prune_ordering(a) == key]
 
 def prune_ordering(ar):
-  return (ar.relation.badness, cl.get_depth(ar.cod))
+  return (ar.relation.badness, cl.get_rank(ar.cod))
 
 def is_match(ar):
   c1 = cl.get_checklist(ar.dom)
@@ -618,49 +618,6 @@ def is_matches(matches):
 def bridge(dom, cod, re):
   assert cl.get_checklist(dom) != cl.get_checklist(cod)
   return art.art(dom, cod, re)
-
-# ---------- NCBI nomenclatural statuses
-
-def synonym_relation(status):
-  return badnesses[status]
-
-badnesses = {}
-badness = 1
-
-def declare_badnesses():
-  def b(revname, re, name = None):
-    assert re
-    global badness
-    name = name or (revname + " of")
-    badnesses[revname] = rel.variant(re, badness, name, revname)
-    badness += 1
-
-  b("authority", rel.eq)
-  b("scientific name", rel.eq)        # (actually canonical) exactly one per node
-  b("equivalent name", rel.eq)        # synonym but not nomenclaturally
-  b("misspelling", rel.eq)
-  b("genbank synonym", rel.eq)        # at most one per node; first among equals
-  b("anamorph", rel.eq)
-  b("genbank anamorph", rel.eq)    # at most one per node
-  b("teleomorph", rel.eq)
-  b("unpublished name", rel.eq)    # non-code synonym
-  b("merged id", rel.eq)
-  b("acronym", rel.eq)
-
-  # above here: equivalence implied. below here: acc>=syn implied.
-  # except in the case if 'in-part' which is acc<syn.
-
-  b("synonym", rel.eq)
-  b("misnomer", rel.eq)
-  b("includes", rel.gt, "included in")
-  b("in-part", rel.lt, "part of")      # this node is part of a polyphyly
-  b("type material", rel.eq)
-  b("blast name", rel.eq)             # large well-known taxa
-  b("genbank common name", rel.eq)    # at most one per node
-  b("genbank acronym", rel.eq)      # at most one per node
-  b("common name", rel.eq)
-
-declare_badnesses()
 
 if __name__ == '__main__':
   parser = argparse.ArgumentParser()
