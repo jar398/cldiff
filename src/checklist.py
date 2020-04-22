@@ -1,5 +1,7 @@
 import os, csv
 
+# ---------- Fields
+
 # Darwin Core field = (label, position)
 
 the_fields = []
@@ -29,6 +31,8 @@ scientific_name_field      = define_field("scientificName")  # with authority
 parent_tnu_id_field        = define_field("parentNameUsageID")
 taxon_rank_field           = define_field("taxonRank")
 
+# ---------- Taxon registry and taxa
+
 # Registry = tnu uid -> (value vector, checklist)
 #  where value vector is a vector that parallels the `the_fields` list
 
@@ -37,11 +41,14 @@ sequence_numbers = {}
 
 # Get the value of a field of a TNU record (via global registry)
 
-def get_value(uid, field):
+def _get_record(uid):
   assert uid > 0
-  (row, checklist) = registry[uid]
-  (label, position) = field
-  return row[position]
+  (record, _) = registry[uid]
+  return record
+
+def get_value(uid, field):
+  record = _get_record(uid)
+  return record[field_position(field)]
 
 def get_checklist(uid):
   assert uid > 0
@@ -50,30 +57,35 @@ def get_checklist(uid):
 
 def get_sequence_number(uid):
   assert uid > 0
-  return sequence_numbers.get(uid)
+  return sequence_numbers[uid]
 
-# Checklist and registry
+# ---------- Checklists
 
 class Checklist:
   def __init__(self):
     self.tnus = []
     self.indexes = [None] * len(the_fields)
     self.metadata = None
-  def add_tnu(self, row):
-    uid = len(registry)
-    registry[uid] = (row, self)
-    self.tnus.append(uid)
   def get_all_tnus(self):
     return self.tnus
+  def add_tnu(self, record):
+    uid = len(registry)
+    registry[uid] = (record, self)
+    self.tnus.append(uid)
+    return uid
+  def new_tnu(self):
+    record = [None] * len(the_fields)
+    add_tnu(record)
+    tnu
   def get_index(self, field):
     (_, position) = field
     # create the index if necessary, on demand
     if not self.indexes[position]:
       index = {}
       for tnu in self.tnus:
-        # Check each row
-        (row, _) = registry[tnu]
-        value = row[position]
+        # Check each record
+        (record, _) = registry[tnu]
+        value = record[position]
         if value:
           if value in index:
             index[value].append(tnu)
@@ -89,15 +101,15 @@ class Checklist:
       head = next(reader)
       guide = {key: position for (key, position) in zip(head, range(len(head)))}
       for row in reader:
-        values = [None] * len(the_fields)
+        uid = self.new_tnu()
+        record = _get_record(uid)
         for (label, (_, position)) in label_to_field.items():
           position_in_row = guide.get(label, None)
           # Idiot python treats 0 as false
           if position_in_row != None:
             value = row[position_in_row]
             if value != '':
-              values[position] = value
-        self.add_tnu(values)
+              record[position] = value
       self.assign_sequence_numbers()
   def assign_sequence_numbers(self):
     n = len(sequence_numbers)
@@ -277,7 +289,7 @@ def invert_dict(d):
       inv[val] = [key]
   return inv
 
-def find_level(tnu1, tnu2):
+def find_peers(tnu1, tnu2):
   assert tnu1 > 0
   assert tnu2 > 0
   assert get_checklist(tnu1) == get_checklist(tnu2)
@@ -296,7 +308,7 @@ def are_disjoint(tnu1, tnu2):
   assert tnu2 > 0
   tnu1 = to_accepted(tnu1)
   tnu2 = to_accepted(tnu2)
-  (tnu1, tnu2) = find_level(tnu1, tnu2)
+  (tnu1, tnu2) = find_peers(tnu1, tnu2)
   return tnu1 != tnu2
 
 # Common ancestor - utility
@@ -306,7 +318,7 @@ def mrca(tnu1, tnu2):
   if tnu1 == None: return tnu2
   if tnu2 == None: return tnu1
   if tnu1 == tnu2: return tnu1
-  (tnu1, tnu2) = find_level(tnu1, tnu2)
+  (tnu1, tnu2) = find_peers(tnu1, tnu2)
   while tnu1 != tnu2 and tnu1:
     tnu1 = get_superior(tnu1)
     tnu2 = get_superior(tnu2)
