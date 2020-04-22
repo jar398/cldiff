@@ -17,11 +17,10 @@ def main(c1, c2, out):
   analyze_cross_mrcas(A, B)
   print ("number of cross-mrcas:", len(cross_mrcas))
 
-  assign_matches(A, B)
+  assign_matches(B, A)
   print ("number of besties:", len(anti_best))
 
   analyze_unmatched(A, B)
-  print ("number of joins:", len(joins))
   print ("number of grafts:", len(grafts))
 
   report(A, B, out)
@@ -38,47 +37,51 @@ reported = {}
 def subreport(node, B, writer, indent):
   A = cl.get_checklist(node)
   assert A != B
-  match = best_match(node, B)      # cod is accepted
-  if match:
-    report_on_match(match, False, writer, indent)
-    indent = indent + "__"
-    def for_seq(node):
-      b = best_match(node)
-      return b.cod if b else node
-    def sort_key(triple):
-      (B_node, which, arg) = triple
-      if isinstance(B_node, art.Articulation):
-        print("Loser", which, cl.get_name(B_node.cod))
-      return cl.get_sequence_number(B_node)
-    agenda = \
-      [(for_seq(child), 0, child) for child in cl.get_children(node)] + \
-      [(match.cod, 1, match) for match in join_matches(node)] + \
-      [(B_node, 2, B_node) for B_node in get_graftees(node)]
-    for (B_node, which, arg) in \
-       sorted(agenda, key=sort_key):
-      if which == 0:
-        subreport(arg, B, writer, indent)
-      elif which == 1:
-        report_on_match(arg, True, writer, indent)    # split
-      elif which == 2:
-        writer.writerow([indent + "GRAFT",
-                         "",
-                         ">",
-                         cl.get_unique(arg),
-                         "not a match target"])
-
-"""
-    for child in cl.get_children(node):
-      subreport(child, B, writer, indent)
-    for match in join_matches(node):
-      report_on_match(match, True, writer, indent)
-    for B_node in get_graftees(node):
+  report_on_matches(node, B, writer, indent)
+  indent = indent + "__"
+  def for_seq(node):
+    b = best_partner(node, B)
+    return b.cod if b else node
+  def sort_key(triple):
+    (B_node, which, arg) = triple
+    if isinstance(B_node, art.Articulation):
+      print("Loser", which, cl.get_name(B_node.cod))
+    return cl.get_sequence_number(B_node)
+  agenda = \
+    [(for_seq(child), 0, child) for child in cl.get_children(node)] + \
+    [(B_node, 2, B_node) for B_node in get_graftees(node)]
+  for (B_node, which, arg) in \
+     sorted(agenda, key=sort_key):
+    if which == 0:
+      subreport(arg, B, writer, indent)
+    elif which == 1:
+      report_on_match(arg, True, writer, indent)    # split
+    elif which == 2:
       writer.writerow([indent + "GRAFT",
                        "",
                        ">",
-                       cl.get_unique(B_node),
+                       cl.get_unique(arg),
                        "not a match target"])
-"""
+
+def report_on_matches(node, B, writer, indent):
+  matches = best_partners(node, B)      # cod is accepted
+  if len(matches) == 0:
+    writer.writerow([indent + "DELETE",
+                     cl.get_unique(node),
+                     "",
+                     "",
+                     "%s B nodes match this A node" % len(matches)])
+  elif len(matches) == 1:
+    report_on_match(matches[0], False, writer, indent)
+  else:
+    writer.writerow([indent + "MULTIPLE",
+                     cl.get_unique(node),
+                     "?",
+                     "",
+                     "%s B nodes match this A node" % len(matches)])
+    indent = "__" + indent
+    for p in matches:
+      report_on_match(p, True, writer, indent)
 
 def report_on_match(match, 
                     splitp, writer, indent):
@@ -93,7 +96,7 @@ def report_on_match(match,
 def tag_for_match(match, splitp):
   tag = "?"
   if rel.is_variant(match.relation, rel.eq):
-    if splitp: tag = "SPLIT"
+    if splitp: tag = "OPTION"
     elif parent_changed(match):
       tag = "MOVE"
     else:
@@ -121,68 +124,66 @@ def parent_changed(match):
     return False
   if parent == None or coparent == None:
     return True
-  match = best_match(parent)
+  other = cl.get_checklist(coparent)
+  match = best_match(parent, other)
   if not match: return True
   return match.cod != coparent
 
+# Partners list for reporting (A->B articulations)
+
+def best_partners(tnu, other):
+  matches = anti_best.get(tnu) or []
+  if len(matches) == 0:
+    investigate = best_match(tnu, other)
+    if investigate: matches = [investigate]
+  return matches
+
+def best_partner(tnu, other):  # for children sort order
+  return choose_least_bad(best_partners(tnu, other))
+
 # Fill the cache
 
-def assign_matches(A, B):
+def assign_matches(here, other):
   global anti_best
-  anti_best = {}
   def process(tnu):
-    bestie = best_match(tnu, B)  # A -> B
-    if bestie:
-      anti_best[bestie.cod] = art.reverse(bestie)
+    best_match(tnu, other)  # Fill the cache
     for child in cl.get_children(tnu):
       process(child)
-    return bestie
-  for root in cl.get_roots(A):
+  for root in cl.get_roots(here):
     process(root)
+  anti_best = invert_dict_by_cod(best_match_cache)
 
-def anti_best_match(B_tnu, parent = None):
-  return anti_best.get(B_tnu)
+def invert_dict_by_cod(d):
+  inv = {}
+  for (node, ar) in d.items():
+    if ar:
+      ar = art.reverse(ar)
+      if ar.dom in inv:
+        inv[ar.dom].append(ar)
+      else:
+        inv[ar.dom] = [ar]
+  return inv
 
 # ---------- UNMATCHED
 
 # Unmatched
 # Find nodes in B that are not mutually matched to nodes in A
 
-def join_matches(A_node):
-  A = cl.get_checklist(A_node)
-  B_nodes = (joins.get(A_node) or [])
-  return [join_match(B_node, A) for B_node in B_nodes]
-
 # A B_node that is not the best_match of any A_node
 
 def analyze_unmatched(A, B):
-  global joins
   global grafts
-  join_points = {}
   graft_points = {}
   def process(B_tnu):
-    if anti_best_match(B_tnu) == None:
-      match = best_match(B_tnu, A)  # B -> A
-      if match:
-        assert is_match(match)
-        assert match.dom == B_tnu
-        join_points[B_tnu] = match.cod    # in A
-      else:
-        point = get_graft_point(B_tnu, A)    # in A
-        if point:
-          graft_points[B_tnu] = point    # in A
+    if not best_match(B_tnu, A):
+      point = get_graft_point(B_tnu, A)    # in A
+      if point:
+        graft_points[B_tnu] = point    # in A
     for child in cl.get_children(B_tnu):
       process(child)
   for root in cl.get_roots(B):
     process(root)
-  joins = cl.invert_dict(join_points)
   grafts = cl.invert_dict(graft_points)
-
-def join_match(B_tnu, A):
-  assert cl.get_checklist(B_tnu) != A
-  match = best_match(B_tnu, A)
-  return art.reverse(art.compose(art.art(match.dom, match.dom, rel_alternative),
-                                 match))
 
 def get_graftees(A_node):
   return (grafts.get(A_node) or [])
@@ -201,15 +202,13 @@ def to_graft_match(A_parent, B_tnu):
                      match)
 
 def get_graft_point(B_tnu, A = None):
-  A_match = anti_best_match(B_tnu)  # B -> A
   B_parent = cl.get_parent(B_tnu)
   if B_parent:
-    B_parent_match = anti_best_match(B_parent, A)
+    B_parent_match = best_match(B_parent, A)
     if B_parent_match:
       return B_parent_match.cod
   return None
 
-rel_alternative = rel.variant(rel.eq, 0.5, "split", "merge")
 rel_graft = rel.variant(rel.eq, 0, "graft", "prune")
 
 # ---------- One-sided best match
@@ -223,13 +222,12 @@ def best_match(node, other = None):
     return best_match_cache[node]
 
   assert other
-
-  match = choose_least_bad(best_matches(node, other))
+  match = choose_least_bad(good_matches(node, other))
     
   best_match_cache[node] = match
   return match
 
-def best_matches(node, other):
+def good_matches(node, other):
   assert node > 0
   matches = prune_matches([to_accepted_match(match)
                            for match in topological_matches(node, other)])
@@ -585,8 +583,10 @@ def choose_least_bad(arts):     # => art
   besties = prune_further(arts)
   assert besties[0].dom
   if len(besties) == 1: return besties[0]
-  print("** This shouldn't happen. Need to look at other criteria",
-        [cl.get_unique(a.cod) for a in besties])
+  print("** Multiple least-bad matches. Need to look at other criteria:",
+        "%s -> %s" %
+        (cl.get_unique(arts[0].dom),
+         [cl.get_unique(a.cod) for a in besties]))
   return None
 
 def prune_further(arts):

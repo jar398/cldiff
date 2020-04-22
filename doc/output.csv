@@ -1,7 +1,7 @@
 NO CHANGE,A.Primates,=,B.Primates,scientific name of
 __NO CHANGE,A.unclassified_Primates,=,B.unclassified_Primates,scientific name of
 ____NO CHANGE,A.marmosets,=,B.marmosets,scientific name of
-____NO CHANGE,A.unidentified_monkey,=,B.unidentified_monkey,fringe=; synonym of
+____NO CHANGE,A.unidentified_monkey,=,B.unidentified_monkey,synonym of; fringe=
 ____NO CHANGE,A.Primates_sp._BOLD:AAA0001,=,B.Primates_sp._BOLD:AAA0001,scientific name of
 ____NO CHANGE,A.Primates_sp._BOLD:AAC9009,=,B.Primates_sp._BOLD:AAC9009,scientific name of
 ____NO CHANGE,A.Primates_sp._BOLD:AAE4744,=,B.Primates_sp._BOLD:AAE4744,scientific name of
@@ -11,10 +11,13 @@ ____NO CHANGE,A.Primates_sp._BOLD:AAC7735,=,B.Primates_sp._BOLD:AAC7735,scientif
 ____NO CHANGE,A.Primates_sp._BOLD:AAD0215,=,B.Primates_sp._BOLD:AAD0215,scientific name of
 ____NO CHANGE,A.Primates_sp._BOLD:AAF0367,=,B.Primates_sp._BOLD:AAF0367,scientific name of
 ____MOVE,A.Japanese_monkeys,=,B.Macaca_fuscata,id=; merged id of
-__NO CHANGE,A.Strepsirrhini,=,B.Strepsirrhini,scientific name of
+__MULTIPLE,A.Strepsirrhini,?,,2 B nodes match this A node
+____OPTION,,=,B.Strepsirrhini,scientific name of
+____REFORM,,⟂,B.Lorisiformes,fringe-conflict
 ____BREAK,A.Chiromyiformes,⟂,B.Strepsirrhini,fringe-conflict
-______MOVE,A.Daubentoniidae,=,B.Daubentoniidae,fringe=; genbank common name of
-________SPLIT,,=,B.Chiromyiformes,genbank common name of; fringe=; split
+______MULTIPLE,A.Daubentoniidae,?,,2 B nodes match this A node
+________OPTION,,=,B.Chiromyiformes,genbank common name of; fringe=
+________OPTION,,=,B.Daubentoniidae,genbank common name of; fringe=
 ________NO CHANGE,A.Daubentonia,=,B.Daubentonia,scientific name of
 __________NO CHANGE,A.Daubentonia_madagascariensis,=,B.Daubentonia_madagascariensis,scientific name of
 ______MOVE,A.Lorisidae,=,B.Lorisidae,scientific name of
@@ -23,7 +26,7 @@ __________NO CHANGE,A.Loris_tardigradus,=,B.Loris_tardigradus,scientific name of
 ____________NO CHANGE,A.Loris_tardigradus_nordicus,=,B.Loris_tardigradus_nordicus,scientific name of
 ____________GRAFT,,>,B.Loris_tardigradus_tardigradus,not a match target
 __________NO CHANGE,A.Loris_lydekkerianus,=,B.Loris_lydekkerianus,scientific name of
-____________NO CHANGE,A.Loris_lydekkerianus_malabaricus,=,B.Loris_lydekkerianus_malabaricus,fringe=; synonym of
+____________NO CHANGE,A.Loris_lydekkerianus_malabaricus,=,B.Loris_lydekkerianus_malabaricus,synonym of; fringe=
 ____________GRAFT,,>,B.Loris_lydekkerianus_lydekkerianus,not a match target
 ________NO CHANGE,A.Nycticebus,=,B.Nycticebus,scientific name of
 __________NO CHANGE,A.Nycticebus_coucang,=,B.Nycticebus_coucang,scientific name of
@@ -34,22 +37,25 @@ __________NO CHANGE,A.Nycticebus_pygmaeus,=,B.Nycticebus_pygmaeus,scientific nam
 __________NO CHANGE,A.Nycticebus_bengalensis,=,B.Nycticebus_bengalensis,scientific name of
 __________NO CHANGE,A.Nycticebus_menagensis,=,B.Nycticebus_menagensis,scientific name of
 __________NO CHANGE,A.Nycticebus_javanicus,=,B.Nycticebus_javanicus,scientific name of
-__________MOVE,A.Nycticebus_sp.,=,B.Nycticebus_sp.,scientific name of
-____________SPLIT,,=,B.unclassified_Nycticebus,fringe=; split
+__________MULTIPLE,A.Nycticebus_sp.,?,,2 B nodes match this A node
+____________OPTION,,=,B.unclassified_Nycticebus,fringe=
+____________OPTION,,=,B.Nycticebus_sp.,scientific name of
 ________BREAK,A.Perodicticus,⟂,B.Perodicticus_potto,fringe-conflict
-__________MOVE,A.Perodicticus_potto,=,B.Perodicticus_potto,scientific name of
-____________REFORM,,⟂,B.Perodicticus,fringe-conflict; split
-____________NO CHANGE,A.Perodicticus_potto_edwarsi,=,B.Perodicticus_potto_edwarsi,fringe=; synonym of
+__________MULTIPLE,A.Perodicticus_potto,?,,2 B nodes match this A node
+____________REFORM,,⟂,B.Perodicticus,fringe-conflict
+____________OPTION,,=,B.Perodicticus_potto,scientific name of
+____________NO CHANGE,A.Perodicticus_potto_edwarsi,=,B.Perodicticus_potto_edwarsi,synonym of; fringe=
 ____________NO CHANGE,A.Perodicticus_potto_ibeanus,=,B.Perodicticus_potto_ibeanus,scientific name of
 ________NO CHANGE,A.Arctocebus,=,B.Arctocebus,scientific name of
-__________NO CHANGE,A.Arctocebus_calabarensis,=,B.Arctocebus_calabarensis,fringe=; genbank common name of
-__________NO CHANGE,A.Arctocebus_aureus,=,B.Arctocebus_aureus,fringe=; genbank common name of
+__________NO CHANGE,A.Arctocebus_calabarensis,=,B.Arctocebus_calabarensis,genbank common name of; fringe=
+__________NO CHANGE,A.Arctocebus_aureus,=,B.Arctocebus_aureus,genbank common name of; fringe=
 ____NO CHANGE,A.Lemuriformes,=,B.Lemuriformes,scientific name of
 ______NO CHANGE,A.Lemuridae,=,B.Lemuridae,scientific name of
 ________NO CHANGE,A.Lemur,=,B.Lemur,scientific name of
-__________NO CHANGE,A.Lemur_catta,=,B.Lemur_catta,fringe=; genbank common name of
-__________MOVE,A.Lemur_sp.,=,B.Lemur_sp.,scientific name of
-____________SPLIT,,=,B.unclassified_Lemur,fringe=; split
+__________NO CHANGE,A.Lemur_catta,=,B.Lemur_catta,genbank common name of; fringe=
+__________MULTIPLE,A.Lemur_sp.,?,,2 B nodes match this A node
+____________OPTION,,=,B.unclassified_Lemur,fringe=
+____________OPTION,,=,B.Lemur_sp.,scientific name of
 ________NO CHANGE,A.Varecia,=,B.Varecia,scientific name of
 __________NO CHANGE,A.Varecia_variegata,=,B.Varecia_variegata,scientific name of
 ____________NO CHANGE,A.Varecia_variegata_variegata,=,B.Varecia_variegata_variegata,scientific name of
@@ -57,24 +63,25 @@ __________NO CHANGE,A.Varecia_rubra,=,B.Varecia_rubra,scientific name of
 ________NO CHANGE,A.Eulemur,=,B.Eulemur,scientific name of
 __________BREAK,A.Eulemur_hybrids,⟂,B.Eulemur,fringe-conflict
 ____________NO CHANGE,A.Eulemur_albifrons_x_rufifrons,=,B.Eulemur_albifrons_x_rufifrons,scientific name of
-____________NO CHANGE,A.Eulemur_albifrons_x_cinereiceps,=,B.Eulemur_albifrons_x_cinereiceps,fringe=; synonym of
-____________NO CHANGE,A.Eulemur_cinereiceps_x_rufifrons,=,B.Eulemur_cinereiceps_x_rufifrons,fringe=; synonym of
+____________NO CHANGE,A.Eulemur_albifrons_x_cinereiceps,=,B.Eulemur_albifrons_x_cinereiceps,synonym of; fringe=
+____________NO CHANGE,A.Eulemur_cinereiceps_x_rufifrons,=,B.Eulemur_cinereiceps_x_rufifrons,synonym of; fringe=
 __________NO CHANGE,A.Eulemur_coronatus,=,B.Eulemur_coronatus,scientific name of
 __________NO CHANGE,A.Eulemur_fulvus,=,B.Eulemur_fulvus,scientific name of
 ____________NO CHANGE,A.Eulemur_fulvus_mayottensis,=,B.Eulemur_fulvus_mayottensis,scientific name of
-____________NO CHANGE,A.Eulemur_fulvus_fulvus,=,B.Eulemur_fulvus_fulvus,fringe=; synonym of
-____________NO CHANGE,A.Eulemur_fulvus_collaris,=,B.Eulemur_fulvus_collaris,fringe=; synonym of
-____________NO CHANGE,A.Eulemur_fulvus_albocollaris,=,B.Eulemur_fulvus_albocollaris,fringe=; synonym of
+____________NO CHANGE,A.Eulemur_fulvus_fulvus,=,B.Eulemur_fulvus_fulvus,synonym of; fringe=
+____________NO CHANGE,A.Eulemur_fulvus_collaris,=,B.Eulemur_fulvus_collaris,synonym of; fringe=
+____________NO CHANGE,A.Eulemur_fulvus_albocollaris,=,B.Eulemur_fulvus_albocollaris,synonym of; fringe=
 __________MOVE,A.Eulemur_macaco,=,B.Eulemur_macaco_macaco,fringe=
-____________MOVE,A.Eulemur_macaco_macaco,=,B.Eulemur_macaco_macaco,scientific name of
-______________SPLIT,,=,B.Eulemur_macaco,fringe=; split
+____________MULTIPLE,A.Eulemur_macaco_macaco,?,,2 B nodes match this A node
+______________OPTION,,=,B.Eulemur_macaco,fringe=
+______________OPTION,,=,B.Eulemur_macaco_macaco,scientific name of
 __________NO CHANGE,A.Eulemur_mongoz,=,B.Eulemur_mongoz,scientific name of
 __________NO CHANGE,A.Eulemur_rubriventer,=,B.Eulemur_rubriventer,scientific name of
 __________NO CHANGE,A.Eulemur_flavifrons,=,B.Eulemur_flavifrons,scientific name of
 __________NO CHANGE,A.Eulemur_sanfordi,=,B.Eulemur_sanfordi,scientific name of
-__________NO CHANGE,A.Eulemur_cinereiceps,=,B.Eulemur_cinereiceps,fringe=; genbank common name of
+__________NO CHANGE,A.Eulemur_cinereiceps,=,B.Eulemur_cinereiceps,genbank common name of; fringe=
 __________NO CHANGE,A.Eulemur_rufus,=,B.Eulemur_rufus,scientific name of
-__________NO CHANGE,A.Eulemur_rufifrons,=,B.Eulemur_rufifrons,fringe=; genbank common name of
+__________NO CHANGE,A.Eulemur_rufifrons,=,B.Eulemur_rufifrons,genbank common name of; fringe=
 __________NO CHANGE,A.Eulemur_albifrons,=,B.Eulemur_albifrons,scientific name of
 ________NO CHANGE,A.Hapalemur,=,B.Hapalemur,scientific name of
 __________NO CHANGE,A.Hapalemur_griseus,=,B.Hapalemur_griseus,scientific name of
@@ -83,11 +90,12 @@ ____________NO CHANGE,A.Hapalemur_griseus_alaotrensis,=,B.Hapalemur_griseus_alao
 ____________NO CHANGE,A.Hapalemur_griseus_occidentalis,=,B.Hapalemur_griseus_occidentalis,scientific name of
 ____________NO CHANGE,A.Hapalemur_griseus_meridionalis,=,B.Hapalemur_griseus_meridionalis,scientific name of
 ____________NO CHANGE,A.Hapalemur_griseus_JF2002,=,B.Hapalemur_griseus_JF2002,scientific name of
-__________NO CHANGE,A.Hapalemur_aureus,=,B.Hapalemur_aureus,fringe=; genbank common name of
-__________NO CHANGE,A.Hapalemur_occidentalis,=,B.Hapalemur_occidentalis,fringe=; genbank common name of
+__________NO CHANGE,A.Hapalemur_aureus,=,B.Hapalemur_aureus,genbank common name of; fringe=
+__________NO CHANGE,A.Hapalemur_occidentalis,=,B.Hapalemur_occidentalis,genbank common name of; fringe=
 ________BREAK,A.Prolemur,⟂,B.Prolemur_simus,fringe-conflict
-__________MOVE,A.Prolemur_simus,=,B.Prolemur_simus,scientific name of
-____________REFORM,,⟂,B.Prolemur,fringe-conflict; split
+__________MULTIPLE,A.Prolemur_simus,?,,2 B nodes match this A node
+____________REFORM,,⟂,B.Prolemur,fringe-conflict
+____________OPTION,,=,B.Prolemur_simus,scientific name of
 ________GRAFT,,>,B.Pachylemur,not a match target
 ______NO CHANGE,A.Indriidae,=,B.Indriidae,scientific name of
 ________NO CHANGE,A.Propithecus,=,B.Propithecus,scientific name of
@@ -104,31 +112,36 @@ ____________NO CHANGE,A.Propithecus_deckenii_deckenii,=,B.Propithecus_deckenii_d
 __________NO CHANGE,A.Propithecus_edwardsi,=,B.Propithecus_edwardsi,scientific name of
 __________NO CHANGE,A.Propithecus_candidus,=,B.Propithecus_candidus,scientific name of
 __________NO CHANGE,A.Propithecus_perrieri,=,B.Propithecus_perrieri,scientific name of
-__________MOVE,A.Propithecus_sp.,=,B.Propithecus_sp.,fringe=; genbank common name of
-____________SPLIT,,=,B.unclassified_Propithecus,genbank common name of; fringe=; split
+__________MULTIPLE,A.Propithecus_sp.,?,,2 B nodes match this A node
+____________OPTION,,=,B.unclassified_Propithecus,genbank common name of; fringe=
+____________OPTION,,=,B.Propithecus_sp.,genbank common name of; fringe=
 ________MOVE,A.Indri,=,B.Indri_indri,fringe=
-__________MOVE,A.Indri_indri,=,B.Indri_indri,scientific name of
-____________SPLIT,,=,B.Indri,fringe=; split
+__________MULTIPLE,A.Indri_indri,?,,2 B nodes match this A node
+____________OPTION,,=,B.Indri,fringe=
+____________OPTION,,=,B.Indri_indri,scientific name of
 ________NO CHANGE,A.Avahi,=,B.Avahi,scientific name of
-__________NO CHANGE,A.Avahi_laniger,=,B.Avahi_laniger,fringe=; genbank common name of
+__________NO CHANGE,A.Avahi_laniger,=,B.Avahi_laniger,genbank common name of; fringe=
 __________NO CHANGE,A.Avahi_occidentalis,=,B.Avahi_occidentalis,scientific name of
-__________NO CHANGE,A.Avahi_unicolor,=,B.Avahi_unicolor,fringe=; genbank common name of
+__________NO CHANGE,A.Avahi_unicolor,=,B.Avahi_unicolor,genbank common name of; fringe=
 __________NO CHANGE,A.Avahi_cleesei,=,B.Avahi_cleesei,scientific name of
 __________NO CHANGE,A.Avahi_peyrierasi,=,B.Avahi_peyrierasi,scientific name of
 ________NO CHANGE,A.Archaeolemur,=,B.Archaeolemur,scientific name of
 __________NO CHANGE,A.Archaeolemur_majori,=,B.Archaeolemur_majori,scientific name of
 __________NO CHANGE,A.Archaeolemur_edwardsi,=,B.Archaeolemur_edwardsi,scientific name of
 ________MOVE,A.Hadropithecus,=,B.Hadropithecus_stenognathus,fringe=
-__________MOVE,A.Hadropithecus_stenognathus,=,B.Hadropithecus_stenognathus,scientific name of
-____________SPLIT,,=,B.Hadropithecus,fringe=; split
+__________MULTIPLE,A.Hadropithecus_stenognathus,?,,2 B nodes match this A node
+____________OPTION,,=,B.Hadropithecus,fringe=
+____________OPTION,,=,B.Hadropithecus_stenognathus,scientific name of
 ______NO CHANGE,A.Lepilemuridae,=,B.Lepilemuridae,scientific name of
-________NO CHANGE,A.Lepilemur,=,B.Lepilemur,scientific name of
+________MULTIPLE,A.Lepilemur,?,,2 B nodes match this A node
+__________OPTION,,=,B.Lepilemur,scientific name of
+__________REFORM,,⟂,B.unclassified_Lepilemur,fringe-conflict
 __________NO CHANGE,A.Lepilemur_mustelinus,=,B.Lepilemur_mustelinus,scientific name of
-__________NO CHANGE,A.Lepilemur_dorsalis,=,B.Lepilemur_dorsalis,fringe=; genbank common name of
-__________NO CHANGE,A.Lepilemur_septentrionalis,=,B.Lepilemur_septentrionalis,fringe=; genbank common name of
-__________NO CHANGE,A.Lepilemur_ruficaudatus,=,B.Lepilemur_ruficaudatus,fringe=; genbank common name of
-__________NO CHANGE,A.Lepilemur_leucopus,=,B.Lepilemur_leucopus,fringe=; genbank common name of
-__________NO CHANGE,A.Lepilemur_edwardsi,=,B.Lepilemur_edwardsi,fringe=; genbank common name of
+__________NO CHANGE,A.Lepilemur_dorsalis,=,B.Lepilemur_dorsalis,genbank common name of; fringe=
+__________NO CHANGE,A.Lepilemur_septentrionalis,=,B.Lepilemur_septentrionalis,genbank common name of; fringe=
+__________NO CHANGE,A.Lepilemur_ruficaudatus,=,B.Lepilemur_ruficaudatus,genbank common name of; fringe=
+__________NO CHANGE,A.Lepilemur_leucopus,=,B.Lepilemur_leucopus,genbank common name of; fringe=
+__________NO CHANGE,A.Lepilemur_edwardsi,=,B.Lepilemur_edwardsi,genbank common name of; fringe=
 __________NO CHANGE,A.Lepilemur_microdon,=,B.Lepilemur_microdon,scientific name of
 __________NO CHANGE,A.Lepilemur_mitsinjoensis,=,B.Lepilemur_mitsinjoensis,scientific name of
 __________NO CHANGE,A.Lepilemur_seali,=,B.Lepilemur_seali,scientific name of
@@ -151,14 +164,14 @@ __________NO CHANGE,A.Lepilemur_randrianasoloi,=,B.Lepilemur_randrianasoloi,scie
 __________GRAFT,,>,B.Lepilemur_scottorum,not a match target
 __________GRAFT,,>,B.Lepilemur_tymerlachsoni,not a match target
 __________GRAFT,,>,B.Lepilemur_wrightae,not a match target
-__________REFORM,,⟂,B.unclassified_Lepilemur,fringe-conflict; split
 __________MOVE,A.Lepilemur_sp._RANO236,=,B.Lepilemur_sp._RANO236,scientific name of
 __________MOVE,A.Lepilemur_sp._RANO234,=,B.Lepilemur_sp._RANO234,scientific name of
 __________MOVE,A.Lepilemur_sp._RANO235,=,B.Lepilemur_sp._RANO235,scientific name of
 __________MOVE,A.Lepilemur_sp._hubbardi,=,B.Lepilemur_sp._hubbardi,scientific name of
-________NO CHANGE,A.Megaladapis,=,B.Megaladapis,scientific name of
+________MULTIPLE,A.Megaladapis,?,,2 B nodes match this A node
+__________OPTION,,=,B.Megaladapis,scientific name of
+__________REFORM,,⟂,B.unclassified_Megaladapis,fringe-conflict
 __________NO CHANGE,A.Megaladapis_edwardsi,=,B.Megaladapis_edwardsi,scientific name of
-__________REFORM,,⟂,B.unclassified_Megaladapis,fringe-conflict; split
 __________MOVE,A.Megaladapis_sp.,=,B.Megaladapis_sp.,scientific name of
 __________MOVE,A.Megaladapis_sp._UA5482,=,B.Megaladapis_sp._UA5482,scientific name of
 __________MOVE,A.Megaladapis_sp._UA4823,=,B.Megaladapis_sp._UA4823,scientific name of
@@ -167,36 +180,37 @@ __________MOVE,A.Megaladapis_sp._UA4822,=,B.Megaladapis_sp._UA4822,scientific na
 ______NO CHANGE,A.Cheirogaleidae,=,B.Cheirogaleidae,scientific name of
 ________NO CHANGE,A.Cheirogaleus,=,B.Cheirogaleus,scientific name of
 __________NO CHANGE,A.Cheirogaleus_medius,=,B.Cheirogaleus_medius,scientific name of
-__________NO CHANGE,A.Cheirogaleus_major,=,B.Cheirogaleus_major,fringe=; genbank common name of
-__________NO CHANGE,A.Cheirogaleus_crossleyi,=,B.Cheirogaleus_crossleyi,fringe=; genbank common name of
+__________NO CHANGE,A.Cheirogaleus_major,=,B.Cheirogaleus_major,genbank common name of; fringe=
+__________NO CHANGE,A.Cheirogaleus_crossleyi,=,B.Cheirogaleus_crossleyi,genbank common name of; fringe=
 __________NO CHANGE,A.Cheirogaleus_sibreei,=,B.Cheirogaleus_sibreei,scientific name of
-__________NO CHANGE,A.Cheirogaleus_minusculus,=,B.Cheirogaleus_minusculus,fringe=; genbank common name of
+__________NO CHANGE,A.Cheirogaleus_minusculus,=,B.Cheirogaleus_minusculus,genbank common name of; fringe=
 __________GRAFT,,>,B.Cheirogaleus_lavasoensis,not a match target
-________NO CHANGE,A.Microcebus,=,B.Microcebus,scientific name of
+________MULTIPLE,A.Microcebus,?,,2 B nodes match this A node
+__________OPTION,,=,B.Microcebus,scientific name of
+__________REFORM,,⟂,B.unclassified_Microcebus,fringe-conflict
 __________NO CHANGE,A.Microcebus_murinus,=,B.Microcebus_murinus,scientific name of
 __________NO CHANGE,A.Microcebus_ravelobensis,=,B.Microcebus_ravelobensis,scientific name of
-__________NO CHANGE,A.Microcebus_rufus,=,B.Microcebus_rufus,fringe=; genbank common name of
+__________NO CHANGE,A.Microcebus_rufus,=,B.Microcebus_rufus,genbank common name of; fringe=
 __________NO CHANGE,A.Microcebus_myoxinus,=,B.Microcebus_myoxinus,scientific name of
 __________NO CHANGE,A.Microcebus_tavaratra,=,B.Microcebus_tavaratra,scientific name of
-__________NO CHANGE,A.Microcebus_berthae,=,B.Microcebus_berthae,fringe=; genbank common name of
+__________NO CHANGE,A.Microcebus_berthae,=,B.Microcebus_berthae,genbank common name of; fringe=
 __________NO CHANGE,A.Microcebus_sambiranensis,=,B.Microcebus_sambiranensis,scientific name of
 __________NO CHANGE,A.Microcebus_griseorufus,=,B.Microcebus_griseorufus,scientific name of
-__________NO CHANGE,A.Microcebus_simmonsi,=,B.Microcebus_simmonsi,fringe=; genbank common name of
-__________NO CHANGE,A.Microcebus_mittermeieri,=,B.Microcebus_mittermeieri,fringe=; genbank common name of
-__________NO CHANGE,A.Microcebus_jollyae,=,B.Microcebus_jollyae,fringe=; genbank common name of
+__________NO CHANGE,A.Microcebus_simmonsi,=,B.Microcebus_simmonsi,genbank common name of; fringe=
+__________NO CHANGE,A.Microcebus_mittermeieri,=,B.Microcebus_mittermeieri,genbank common name of; fringe=
+__________NO CHANGE,A.Microcebus_jollyae,=,B.Microcebus_jollyae,genbank common name of; fringe=
 __________NO CHANGE,A.Microcebus_lehilahytsara,=,B.Microcebus_lehilahytsara,scientific name of
 __________NO CHANGE,A.Microcebus_bongolavensis,=,B.Microcebus_bongolavensis,scientific name of
 __________NO CHANGE,A.Microcebus_danfossi,=,B.Microcebus_danfossi,scientific name of
 __________NO CHANGE,A.Microcebus_lokobensis,=,B.Microcebus_lokobensis,scientific name of
-__________NO CHANGE,A.Microcebus_mamiratra,=,B.Microcebus_mamiratra,fringe=; genbank common name of
+__________NO CHANGE,A.Microcebus_mamiratra,=,B.Microcebus_mamiratra,genbank common name of; fringe=
 __________NO CHANGE,A.Microcebus_macarthurii,=,B.Microcebus_macarthurii,scientific name of
-__________NO CHANGE,A.Microcebus_arnholdi,=,B.Microcebus_arnholdi,fringe=; genbank common name of
-__________NO CHANGE,A.Microcebus_margotmarshae,=,B.Microcebus_margotmarshae,fringe=; genbank common name of
-__________NO CHANGE,A.Microcebus_gerpi,=,B.Microcebus_gerpi,fringe=; genbank common name of
+__________NO CHANGE,A.Microcebus_arnholdi,=,B.Microcebus_arnholdi,genbank common name of; fringe=
+__________NO CHANGE,A.Microcebus_margotmarshae,=,B.Microcebus_margotmarshae,genbank common name of; fringe=
+__________NO CHANGE,A.Microcebus_gerpi,=,B.Microcebus_gerpi,genbank common name of; fringe=
 __________NO CHANGE,A.Microcebus_tanosi,=,B.Microcebus_tanosi,scientific name of
 __________NO CHANGE,A.Microcebus_marohita,=,B.Microcebus_marohita,scientific name of
 __________GRAFT,,>,B.Microcebus_ganzhorni,not a match target
-__________REFORM,,⟂,B.unclassified_Microcebus,fringe-conflict; split
 __________MOVE,A.Microcebus_sp._EELHDZ_M98,=,B.Microcebus_sp._EELHDZ_M98,scientific name of
 __________MOVE,A.Microcebus_sp._EELHDZ_TAD23,=,B.Microcebus_sp._EELHDZ_TAD23,scientific name of
 __________MOVE,A.Microcebus_sp._EELHDZ_VEV33,=,B.Microcebus_sp._EELHDZ_VEV33,scientific name of
@@ -206,30 +220,36 @@ __________MOVE,A.Microcebus_sp._Ambongabe,=,B.Microcebus_sp._Ambongabe,scientifi
 __________MOVE,A.Microcebus_sp._Bora,=,B.Microcebus_sp._Bora,scientific name of
 __________MOVE,A.Microcebus_sp._Mahajamba-Est,=,B.Microcebus_sp._Mahajamba-Est,scientific name of
 __________MOVE,A.Microcebus_sp._Maroakata,=,B.Microcebus_sp._Maroakata,scientific name of
+__________GRAFT,,>,B.Microcebus_sp._Antanosy,not a match target
 __________MOVE,A.Microcebus_sp._Anjiahely,=,B.Microcebus_sp._Anjiahely,scientific name of
 __________MOVE,A.Microcebus_sp._DWW-2010a,=,B.Microcebus_sp._DWW-2010a,scientific name of
 __________MOVE,A.Microcebus_sp._d'Ambre,=,B.Microcebus_sp._d'Ambre,scientific name of
+__________GRAFT,,>,B.Microcebus_sp._3_GT-2019,not a match target
 ________NO CHANGE,A.Mirza,=,B.Mirza,scientific name of
 __________NO CHANGE,A.Mirza_coquereli,=,B.Mirza_coquereli,scientific name of
 __________NO CHANGE,A.Mirza_zaza,=,B.Mirza_zaza,scientific name of
-__________MOVE,A.Mirza_sp._001y03,=,B.Mirza_sp._001y03,scientific name of
-____________SPLIT,,=,B.unclassified_Mirza,fringe=; split
+__________MULTIPLE,A.Mirza_sp._001y03,?,,2 B nodes match this A node
+____________OPTION,,=,B.unclassified_Mirza,fringe=
+____________OPTION,,=,B.Mirza_sp._001y03,scientific name of
 ________MOVE,A.Allocebus,=,B.Allocebus_trichotis,fringe=; genbank common name of
-__________MOVE,A.Allocebus_trichotis,=,B.Allocebus_trichotis,fringe=; genbank common name of
-____________SPLIT,,=,B.Allocebus,genbank common name of; fringe=; split
+__________MULTIPLE,A.Allocebus_trichotis,?,,2 B nodes match this A node
+____________OPTION,,=,B.Allocebus,genbank common name of; fringe=
+____________OPTION,,=,B.Allocebus_trichotis,genbank common name of; fringe=
 ________NO CHANGE,A.Phaner,=,B.Phaner,scientific name of
-__________NO CHANGE,A.Phaner_furcifer,=,B.Phaner_furcifer,fringe=; genbank common name of
-__________NO CHANGE,A.Phaner_pallescens,=,B.Phaner_pallescens,fringe=; synonym of
+__________NO CHANGE,A.Phaner_furcifer,=,B.Phaner_furcifer,genbank common name of; fringe=
+__________NO CHANGE,A.Phaner_pallescens,=,B.Phaner_pallescens,synonym of; fringe=
 __________NO CHANGE,A.Phaner_electromontis,=,B.Phaner_electromontis,scientific name of
 __________NO CHANGE,A.Phaner_parienti,=,B.Phaner_parienti,scientific name of
 ______BREAK,A.Paleopropithecidae,⟂,B.unclassified_Palaeopropithecus,fringe-conflict
-________BREAK,A.Palaeopropithecus,⟂,B.unclassified_Palaeopropithecus,fringe-conflict
-__________REFORM,,⟂,B.Paleopropithecidae,fringe-conflict; split
-__________SPLIT,,=,B.Palaeopropithecus,scientific name of; split
+________MULTIPLE,A.Palaeopropithecus,?,,3 B nodes match this A node
+__________REFORM,,⟂,B.Paleopropithecidae,fringe-conflict
+__________OPTION,,=,B.Palaeopropithecus,scientific name of
+__________REFORM,,⟂,B.unclassified_Palaeopropithecus,fringe-conflict
+__________GRAFT,,>,B.Palaeopropithecus_ingens,not a match target
+__________GRAFT,,>,B.Palaeopropithecus_maximus,not a match target
 __________NO CHANGE,A.Palaeopropithecus_sp._UA4466,=,B.Palaeopropithecus_sp._UA4466,scientific name of
 __________NO CHANGE,A.Palaeopropithecus_sp._UA6184,=,B.Palaeopropithecus_sp._UA6184,scientific name of
 __________NO CHANGE,A.Palaeopropithecus_sp._KPK-2005,=,B.Palaeopropithecus_sp._KPK-2005,scientific name of
-____REFORM,,⟂,B.Lorisiformes,fringe-conflict; split
 ____BREAK,A.Lorisiformes,⟂,B.Galagidae,fringe-conflict
 ______MOVE,A.Galagidae,=,B.Galagidae,scientific name of
 ________NO CHANGE,A.Galago,=,B.Galago,scientific name of
@@ -238,12 +258,13 @@ ____________GRAFT,,>,B.Galago_senegalensis_senegalensis,not a match target
 ____________GRAFT,,>,B.Galago_senegalensis_braccatus,not a match target
 __________NO CHANGE,A.Galago_moholi,=,B.Galago_moholi,scientific name of
 __________NO CHANGE,A.Galago_alleni,=,B.Galago_alleni,scientific name of
-__________NO CHANGE,A.Galago_gallarum,=,B.Galago_gallarum,fringe=; genbank common name of
-__________NO CHANGE,A.Galago_matschiei,=,B.Galago_matschiei,fringe=; genbank common name of
+__________NO CHANGE,A.Galago_gallarum,=,B.Galago_gallarum,genbank common name of; fringe=
+__________NO CHANGE,A.Galago_matschiei,=,B.Galago_matschiei,genbank common name of; fringe=
 __________NO CHANGE,A.Galago_gabonensis,=,B.Galago_gabonensis,scientific name of
 __________NO CHANGE,A.Galago_granti,=,B.Galago_granti,scientific name of
-__________MOVE,A.Galago_sp.,=,B.Galago_sp.,fringe=; genbank common name of
-____________SPLIT,,=,B.unclassified_Galago,genbank common name of; fringe=; split
+__________MULTIPLE,A.Galago_sp.,?,,2 B nodes match this A node
+____________OPTION,,=,B.unclassified_Galago,genbank common name of; fringe=
+____________OPTION,,=,B.Galago_sp.,genbank common name of; fringe=
 __________MOVE,A.Galago_thomasi,=,B.Galagoides_thomasi,id=
 ________NO CHANGE,A.Otolemur,=,B.Otolemur,scientific name of
 __________NO CHANGE,A.Otolemur_crassicaudatus,=,B.Otolemur_crassicaudatus,scientific name of
@@ -262,31 +283,34 @@ __________NO CHANGE,A.Galagoides_orinus,=,B.Galagoides_orinus,scientific name of
 __________NO CHANGE,A.Galagoides_cocos,=,B.Galagoides_cocos,scientific name of
 __________GRAFT,,>,B.Galagoides_rondoensis,not a match target
 ________MOVE,A.Euoticus,=,B.Euoticus_elegantulus,fringe=; genbank common name of
-__________MOVE,A.Euoticus_elegantulus,=,B.Euoticus_elegantulus,fringe=; genbank common name of
-____________SPLIT,,=,B.Euoticus,genbank common name of; fringe=; split
+__________MULTIPLE,A.Euoticus_elegantulus,?,,2 B nodes match this A node
+____________OPTION,,=,B.Euoticus,genbank common name of; fringe=
+____________OPTION,,=,B.Euoticus_elegantulus,genbank common name of; fringe=
 ________GRAFT,,>,B.Paragalago,not a match target
 __NO CHANGE,A.Haplorrhini,=,B.Haplorrhini,scientific name of
 ____NO CHANGE,A.Simiiformes,=,B.Simiiformes,scientific name of
 ______NO CHANGE,A.Platyrrhini,=,B.Platyrrhini,scientific name of
 ________NO CHANGE,A.Cebidae,=,B.Cebidae,scientific name of
 __________NO CHANGE,A.Callitrichinae,=,B.Callitrichinae,scientific name of
-____________BREAK,A.Callithrix,⟂,B.Callitrichinae,fringe-conflict
-______________SPLIT,,=,B.Callithrix#9481,scientific name of; split
-______________SPLIT,,=,B.Callithrix#1965096,scientific name of; split
+____________MULTIPLE,A.Callithrix,?,,3 B nodes match this A node
+______________OPTION,,=,B.Callithrix#9481,scientific name of
+______________OPTION,,=,B.Callithrix#1965096,scientific name of
+______________OPTION,,=,B.Mico,scientific name of
 ______________MOVE,A.Callithrix_jacchus,=,B.Callithrix_jacchus,scientific name of
 ______________MOVE,A.Callithrix_sp.,=,B.Callithrix_sp.,scientific name of
 ______________MOVE,A.Callithrix_geoffroyi,=,B.Callithrix_geoffroyi,scientific name of
-______________MOVE,A.Callithrix_aurita,=,B.Callithrix_aurita,fringe=; genbank common name of
+______________MOVE,A.Callithrix_aurita,=,B.Callithrix_aurita,genbank common name of; fringe=
 ______________MOVE,A.Callithrix_penicillata,=,B.Callithrix_penicillata,scientific name of
 ______________MOVE,A.Callithrix_sp._DB-2003,=,B.Callithrix_sp._DB-2003,scientific name of
 ______________MOVE,A.Callithrix_kuhlii,=,B.Callithrix_kuhlii,scientific name of
-______________MOVE,A.Callithrix_flaviceps,=,B.Callithrix_flaviceps,fringe=; genbank common name of
+______________MOVE,A.Callithrix_flaviceps,=,B.Callithrix_flaviceps,genbank common name of; fringe=
 ______________MOVE,A.Callithrix_jacchus_x_penicillata,=,B.Callithrix_jacchus_x_penicillata,scientific name of
-______________MOVE,A.Callithrix_pygmaea,=,B.Callithrix_pygmaea,scientific name of
-________________REFORM,,⟂,B.Cebuella,fringe-conflict; split
-______________MOVE,A.Callithrix_humilis,=,B.Callithrix_humilis,scientific name of
-________________REFORM,,⟂,B.Calibella,fringe-conflict; split
-______________SPLIT,,=,B.Mico,scientific name of; split
+______________MULTIPLE,A.Callithrix_pygmaea,?,,2 B nodes match this A node
+________________REFORM,,⟂,B.Cebuella,fringe-conflict
+________________OPTION,,=,B.Callithrix_pygmaea,scientific name of
+______________MULTIPLE,A.Callithrix_humilis,?,,2 B nodes match this A node
+________________REFORM,,⟂,B.Calibella,fringe-conflict
+________________OPTION,,=,B.Callithrix_humilis,scientific name of
 ______________MOVE,A.Callithrix_argentata,=,B.Mico_argentatus,scientific name of
 ________________RENAME,A.Callithrix_argentata_argentata,=,B.Mico_argentatus_argentatus,id=
 ______________MOVE,A.Callithrix_emiliae,=,B.Mico_emiliae,id=
@@ -294,34 +318,43 @@ ______________MOVE,A.Callithrix_humeralifera,=,B.Mico_humeralifer,scientific nam
 ______________MOVE,A.Callithrix_mauesi,=,B.Mico_mauesi,id=
 ______________MOVE,A.Callithrix_cf._emiliae,=,B.Mico_cf._emiliae,id=
 ______________MOVE,A.Callithrix_saterei,=,B.Mico_saterei,id=
-______________MOVE,A.Callithrix_melanura,=,B.Mico_melanurus,fringe=; genbank common name of
-______________MOVE,A.Callithrix_rondoni,=,B.Mico_rondoni,fringe=; genbank common name of
-____________BREAK,A.Saguinus,⟂,B.Callitrichinae,fringe-conflict
-______________SPLIT,,=,B.Saguinus,scientific name of; split
+______________MOVE,A.Callithrix_melanura,=,B.Mico_melanurus,genbank common name of; fringe=
+______________MOVE,A.Callithrix_rondoni,=,B.Mico_rondoni,genbank common name of; fringe=
+______________GRAFT,,>,B.Mico_chrysoleucus,not a match target
+______________GRAFT,,>,B.Mico_intermedius,not a match target
+______________GRAFT,,>,B.Mico_leucippe,not a match target
+______________GRAFT,,>,B.Mico_marcai,not a match target
+______________GRAFT,,>,B.Mico_munduruku,not a match target
+____________MULTIPLE,A.Saguinus,?,,3 B nodes match this A node
+______________OPTION,,=,B.Saguinus,scientific name of
+______________REFORM,,⟂,B.unclassified_Saguinus,fringe-conflict
+______________OPTION,,=,B.Leontocebus,equivalent name of
 ______________MOVE,A.Saguinus_mystax,=,B.Saguinus_mystax_mystax,fringe=
-________________MOVE,A.Saguinus_mystax_mystax,=,B.Saguinus_mystax_mystax,scientific name of
-__________________SPLIT,,=,B.Saguinus_mystax,fringe=; split
-______________MOVE,A.Saguinus_oedipus,=,B.Saguinus_oedipus,fringe=; genbank common name of
+________________MULTIPLE,A.Saguinus_mystax_mystax,?,,2 B nodes match this A node
+__________________OPTION,,=,B.Saguinus_mystax,fringe=
+__________________OPTION,,=,B.Saguinus_mystax_mystax,scientific name of
+______________MOVE,A.Saguinus_oedipus,=,B.Saguinus_oedipus,genbank common name of; fringe=
 ______________MOVE,A.Saguinus_imperator,=,B.Saguinus_imperator,scientific name of
 ________________NO CHANGE,A.Saguinus_imperator_subgrisescens,=,B.Saguinus_imperator_subgrisescens,scientific name of
 ______________MOVE,A.Saguinus_midas,=,B.Saguinus_midas,scientific name of
 ________________NO CHANGE,A.Saguinus_midas_midas,=,B.Saguinus_midas_midas,scientific name of
 ______________MOVE,A.Saguinus_bicolor,=,B.Saguinus_bicolor,scientific name of
-________________NO CHANGE,A.Saguinus_bicolor_bicolor,=,B.Saguinus_bicolor_bicolor,fringe=; genbank common name of
-______________MOVE,A.Saguinus_geoffroyi,=,B.Saguinus_geoffroyi,fringe=; genbank common name of
+________________NO CHANGE,A.Saguinus_bicolor_bicolor,=,B.Saguinus_bicolor_bicolor,genbank common name of; fringe=
+______________MOVE,A.Saguinus_geoffroyi,=,B.Saguinus_geoffroyi,genbank common name of; fringe=
 ______________MOVE,A.Saguinus_labiatus,=,B.Saguinus_labiatus,scientific name of
 ________________NO CHANGE,A.Saguinus_labiatus_labiatus,=,B.Saguinus_labiatus_labiatus,scientific name of
-______________MOVE,A.Saguinus_leucopus,=,B.Saguinus_leucopus,fringe=; genbank common name of
-______________MOVE,A.Saguinus_niger,=,B.Saguinus_niger,fringe=; merged id of
+______________MOVE,A.Saguinus_leucopus,=,B.Saguinus_leucopus,genbank common name of; fringe=
+______________MOVE,A.Saguinus_niger,=,B.Saguinus_niger,merged id of; fringe=
 ______________MOVE,A.Saguinus_martinsi,=,B.Saguinus_martinsi,scientific name of
 ______________MOVE,A.Saguinus_melanoleucus,=,B.Saguinus_melanoleucus,scientific name of
 ________________NO CHANGE,A.Saguinus_melanoleucus_melanoleucus,=,B.Saguinus_melanoleucus_melanoleucus,scientific name of
 ______________MOVE,A.Saguinus_graellsi,=,B.Saguinus_graellsi,scientific name of
-______________MOVE,A.Saguinus_inustus,=,B.Saguinus_inustus,fringe=; genbank common name of
-______________REFORM,,⟂,B.unclassified_Saguinus,fringe-conflict; split
+______________MOVE,A.Saguinus_inustus,=,B.Saguinus_inustus,genbank common name of; fringe=
+______________GRAFT,,>,B.Saguinus_geoffroyi_x_Saguinus_leucopus,not a match target
+______________GRAFT,,>,B.Saguinus_oedipus_x_Saguinus_leucopus,not a match target
 ______________MOVE,A.Saguinus_sp.,=,B.Saguinus_sp.,scientific name of
 ______________MOVE,A.Saguinus_sp._T1030,=,B.Saguinus_sp._T1030,scientific name of
-______________SPLIT,,=,B.Leontocebus,equivalent name of; split
+______________GRAFT,,>,B.Saguinus_sp._EG-2017,not a match target
 ______________MOVE,A.Saguinus_fuscicollis,=,B.Leontocebus_fuscicollis,scientific name of
 ________________RENAME,A.Saguinus_fuscicollis_fuscicollis,=,B.Leontocebus_fuscicollis_fuscicollis,scientific name of
 ________________RENAME,A.Saguinus_fuscicollis_weddelli,=,B.Leontocebus_fuscicollis_weddelli,id=
@@ -330,19 +363,25 @@ ________________RENAME,A.Saguinus_fuscicollis_illigeri,=,B.Leontocebus_fuscicoll
 ________________RENAME,A.Saguinus_fuscicollis_nigrifrons,=,B.Leontocebus_fuscicollis_nigrifrons,id=
 ________________RENAME,A.Saguinus_fuscicollis_lagonotus,=,B.Leontocebus_fuscicollis_lagonotus,id=
 ______________MOVE,A.Saguinus_nigricollis,=,B.Leontocebus_nigricollis_nigricollis,fringe=
-________________MOVE,A.Saguinus_nigricollis_nigricollis,=,B.Leontocebus_nigricollis_nigricollis,scientific name of
-__________________SPLIT,,=,B.Leontocebus_nigricollis,fringe=; split
-______________MOVE,A.Saguinus_tripartitus,=,B.Leontocebus_tripartitus,fringe=; genbank common name of
+________________MULTIPLE,A.Saguinus_nigricollis_nigricollis,?,,2 B nodes match this A node
+__________________OPTION,,=,B.Leontocebus_nigricollis,fringe=
+__________________OPTION,,=,B.Leontocebus_nigricollis_nigricollis,scientific name of
+______________MOVE,A.Saguinus_tripartitus,=,B.Leontocebus_tripartitus,genbank common name of; fringe=
+______________GRAFT,,>,B.Leontocebus_cruzlimai,not a match target
 ____________NO CHANGE,A.Callimico,=,B.Callimico,scientific name of
-______________NO CHANGE,A.Callimico_goeldii,=,B.Callimico_goeldii,fringe=; merged id of
-______________MOVE,A.Callimico_sp._MAS-2011,=,B.Callimico_sp._MAS-2011,scientific name of
-________________SPLIT,,=,B.unclassified_Callimico,fringe=; split
+______________NO CHANGE,A.Callimico_goeldii,=,B.Callimico_goeldii,merged id of; fringe=
+______________MULTIPLE,A.Callimico_sp._MAS-2011,?,,2 B nodes match this A node
+________________OPTION,,=,B.unclassified_Callimico,fringe=
+________________OPTION,,=,B.Callimico_sp._MAS-2011,scientific name of
+________________GRAFT,,>,B.Callimico_sp.,not a match target
 ____________NO CHANGE,A.Leontopithecus,=,B.Leontopithecus,scientific name of
 ______________NO CHANGE,A.Leontopithecus_rosalia,=,B.Leontopithecus_rosalia,scientific name of
 ______________NO CHANGE,A.Leontopithecus_chrysomelas,=,B.Leontopithecus_chrysomelas,scientific name of
 ______________NO CHANGE,A.Leontopithecus_chrysopygus,=,B.Leontopithecus_chrysopygus,scientific name of
 __________NO CHANGE,A.Cebinae,=,B.Cebinae,scientific name of
-____________NO CHANGE,A.Cebus,=,B.Cebus,scientific name of
+____________MULTIPLE,A.Cebus,?,,2 B nodes match this A node
+______________OPTION,,=,B.Cebus,scientific name of
+______________REFORM,,⟂,B.unclassified_Cebus,fringe-conflict
 ______________NO CHANGE,A.Cebus_albifrons,=,B.Cebus_albifrons,scientific name of
 ______________NO CHANGE,A.Cebus_capucinus,=,B.Cebus_capucinus,scientific name of
 ________________GRAFT,,>,B.Cebus_capucinus_imitator,not a match target
@@ -352,59 +391,66 @@ ________________NO CHANGE,A.Cebus_olivaceus_nigrivittatus,=,B.Cebus_olivaceus_ni
 ________________GRAFT,,>,B.Cebus_olivaceus_castaneus,not a match target
 ______________GRAFT,,>,B.Cebus_unicolor,not a match target
 ______________GRAFT,,>,B.Cebus_versicolor,not a match target
-______________REFORM,,⟂,B.unclassified_Cebus,fringe-conflict; split
 ______________MOVE,A.Cebus_sp.,=,B.Cebus_sp.,scientific name of
 ______________MOVE,A.Cebus_sp._MAS-2011,=,B.Cebus_sp._MAS-2011,scientific name of
+______________GRAFT,,>,B.Cebus_sp._1_EG-2017,not a match target
+______________GRAFT,,>,B.Cebus_sp._2_EG-2017,not a match target
 ____________NO CHANGE,A.Sapajus,=,B.Sapajus,scientific name of
 ______________NO CHANGE,A.Sapajus_apella,=,B.Sapajus_apella,scientific name of
-________________NO CHANGE,A.Sapajus_apella_apella,=,B.Sapajus_apella_apella,fringe=; synonym of
-________________NO CHANGE,A.Sapajus_apella_macrocephalus,=,B.Sapajus_apella_macrocephalus,fringe=; synonym of
+________________NO CHANGE,A.Sapajus_apella_apella,=,B.Sapajus_apella_apella,synonym of; fringe=
+________________NO CHANGE,A.Sapajus_apella_macrocephalus,=,B.Sapajus_apella_macrocephalus,synonym of; fringe=
 ______________NO CHANGE,A.Sapajus_xanthosternos,=,B.Sapajus_xanthosternos,scientific name of
 ______________NO CHANGE,A.Sapajus_cay,=,B.Sapajus_cay,scientific name of
 ______________NO CHANGE,A.Sapajus_nigritus,=,B.Sapajus_nigritus,scientific name of
 ________________NO CHANGE,A.Sapajus_nigritus_robustus,=,B.Sapajus_nigritus_robustus,scientific name of
 ______________NO CHANGE,A.Sapajus_flavius,=,B.Sapajus_flavius,scientific name of
-______________NO CHANGE,A.Sapajus_libidinosus,=,B.Sapajus_libidinosus,fringe=; authority of
+______________NO CHANGE,A.Sapajus_libidinosus,=,B.Sapajus_libidinosus,authority of; fringe=
 ______________GRAFT,,>,B.unclassified_Sapajus,not a match target
 __________MOVE,A.unclassified_Cebidae,=,B.Aotinae_gen._sp.,fringe=
-____________MOVE,A.Aotinae_gen._sp.,=,B.Aotinae_gen._sp.,scientific name of
-______________SPLIT,,=,B.unclassified_Cebidae,fringe=; split
+____________MULTIPLE,A.Aotinae_gen._sp.,?,,2 B nodes match this A node
+______________OPTION,,=,B.unclassified_Cebidae,fringe=
+______________OPTION,,=,B.Aotinae_gen._sp.,scientific name of
 __________BREAK,A.Saimiriinae,⟂,B.Saimiri,fringe-conflict
-____________MOVE,A.Saimiri,=,B.Saimiri,scientific name of
-______________REFORM,,⟂,B.Saimiriinae,fringe-conflict; split
+____________MULTIPLE,A.Saimiri,?,,3 B nodes match this A node
+______________REFORM,,⟂,B.Saimiriinae,fringe-conflict
+______________OPTION,,=,B.Saimiri,scientific name of
+______________REFORM,,⟂,B.unclassified_Saimiri,fringe-conflict
 ______________NO CHANGE,A.Saimiri_sciureus,=,B.Saimiri_sciureus,scientific name of
 ________________NO CHANGE,A.Saimiri_sciureus_sciureus,=,B.Saimiri_sciureus_sciureus,scientific name of
-________________NO CHANGE,A.Saimiri_sciureus_collinsi,=,B.Saimiri_sciureus_collinsi,fringe=; synonym of
+________________NO CHANGE,A.Saimiri_sciureus_collinsi,=,B.Saimiri_sciureus_collinsi,synonym of; fringe=
 ________________NO CHANGE,A.Saimiri_sciureus_albigena,=,B.Saimiri_sciureus_albigena,scientific name of
 ________________NO CHANGE,A.Saimiri_sciureus_cassiquiarensis,=,B.Saimiri_sciureus_cassiquiarensis,scientific name of
 ________________NO CHANGE,A.Saimiri_sciureus_macrodon,=,B.Saimiri_sciureus_macrodon,scientific name of
 ______________NO CHANGE,A.Saimiri_boliviensis,=,B.Saimiri_boliviensis,scientific name of
 ________________NO CHANGE,A.Saimiri_boliviensis_boliviensis,=,B.Saimiri_boliviensis_boliviensis,scientific name of
-________________NO CHANGE,A.Saimiri_boliviensis_peruviensis,=,B.Saimiri_boliviensis_peruviensis,fringe=; synonym of
-______________NO CHANGE,A.Saimiri_ustus,=,B.Saimiri_ustus,fringe=; genbank common name of
+________________NO CHANGE,A.Saimiri_boliviensis_peruviensis,=,B.Saimiri_boliviensis_peruviensis,synonym of; fringe=
+______________NO CHANGE,A.Saimiri_ustus,=,B.Saimiri_ustus,genbank common name of; fringe=
 ______________NO CHANGE,A.Saimiri_oerstedii,=,B.Saimiri_oerstedii,scientific name of
 ________________NO CHANGE,A.Saimiri_oerstedii_oerstedii,=,B.Saimiri_oerstedii_oerstedii,scientific name of
 ________________NO CHANGE,A.Saimiri_oerstedii_citrinellus,=,B.Saimiri_oerstedii_citrinellus,scientific name of
-______________NO CHANGE,A.Saimiri_vanzolinii,=,B.Saimiri_vanzolinii,fringe=; genbank common name of
-______________REFORM,,⟂,B.unclassified_Saimiri,fringe-conflict; split
+______________NO CHANGE,A.Saimiri_vanzolinii,=,B.Saimiri_vanzolinii,genbank common name of; fringe=
 ______________MOVE,A.Saimiri_sp._MAS-2011,=,B.Saimiri_sp._MAS-2011,scientific name of
 ______________MOVE,A.Saimiri_sp.,=,B.Saimiri_sp.,scientific name of
+______________GRAFT,,>,B.Saimiri_sp._1_EG-2017,not a match target
+______________GRAFT,,>,B.Saimiri_sp._2_EG-2017,not a match target
+______________GRAFT,,>,B.Saimiri_sp._3_EG-2017,not a match target
 ________BREAK,A.Aotidae,⟂,B.Aotus,fringe-conflict
-__________MOVE,A.Aotus,=,B.Aotus,scientific name of
-____________REFORM,,⟂,B.Aotidae,fringe-conflict; split
+__________MULTIPLE,A.Aotus,?,,3 B nodes match this A node
+____________REFORM,,⟂,B.Aotidae,fringe-conflict
+____________OPTION,,=,B.Aotus,scientific name of
+____________REFORM,,⟂,B.unclassified_Aotus_(in:_Chordata),fringe-conflict
 ____________NO CHANGE,A.Aotus_trivirgatus,=,B.Aotus_trivirgatus,scientific name of
 ____________NO CHANGE,A.Aotus_azarai,=,B.Aotus_azarai,scientific name of
-______________NO CHANGE,A.Aotus_azarai_azarai,=,B.Aotus_azarai_azarai,fringe=; synonym of
-______________NO CHANGE,A.Aotus_azarai_boliviensis,=,B.Aotus_azarai_boliviensis,fringe=; synonym of
+______________NO CHANGE,A.Aotus_azarai_azarai,=,B.Aotus_azarai_azarai,synonym of; fringe=
+______________NO CHANGE,A.Aotus_azarai_boliviensis,=,B.Aotus_azarai_boliviensis,synonym of; fringe=
 ______________NO CHANGE,A.Aotus_azarai_infulatus,=,B.Aotus_azarai_infulatus,scientific name of
 ____________NO CHANGE,A.Aotus_nancymaae,=,B.Aotus_nancymaae,scientific name of
 ____________NO CHANGE,A.Aotus_lemurinus,=,B.Aotus_lemurinus,scientific name of
-____________NO CHANGE,A.Aotus_nigriceps,=,B.Aotus_nigriceps,fringe=; genbank common name of
+____________NO CHANGE,A.Aotus_nigriceps,=,B.Aotus_nigriceps,genbank common name of; fringe=
 ____________NO CHANGE,A.Aotus_vociferans,=,B.Aotus_vociferans,scientific name of
-____________NO CHANGE,A.Aotus_griseimembra,=,B.Aotus_griseimembra,fringe=; synonym of
+____________NO CHANGE,A.Aotus_griseimembra,=,B.Aotus_griseimembra,synonym of; fringe=
 ____________NO CHANGE,A.Aotus_brumbacki,=,B.Aotus_brumbacki,scientific name of
-____________NO CHANGE,A.Aotus_zonalis,=,B.Aotus_zonalis,fringe=; genbank common name of
-____________REFORM,,⟂,B.unclassified_Aotus_(in:_Chordata),fringe-conflict; split
+____________NO CHANGE,A.Aotus_zonalis,=,B.Aotus_zonalis,genbank common name of; fringe=
 ____________MOVE,A.Aotus_sp._NIM-2003,=,B.Aotus_sp._NIM-2003,scientific name of
 ____________MOVE,A.Aotus_sp.,=,B.Aotus_sp.,scientific name of
 ____________MOVE,A.Aotus_sp._PDE-2004,=,B.Aotus_sp._PDE-2004,scientific name of
@@ -423,57 +469,75 @@ ______________RENAME,A.Chiropotes_utahicki,=,B.Chiropotes_utahickae,scientific n
 ______________NO CHANGE,A.Chiropotes_israelita,=,B.Chiropotes_israelita,scientific name of
 ______________NO CHANGE,A.Chiropotes_albinasus_x_satanas,=,B.Chiropotes_albinasus_x_satanas,scientific name of
 ______________NO CHANGE,A.Chiropotes_chiropotes,=,B.Chiropotes_chiropotes,scientific name of
-________________NO CHANGE,A.Chiropotes_chiropotes_sagulata,=,B.Chiropotes_chiropotes_sagulata,fringe=; synonym of
-______________MOVE,A.Chiropotes_sp._MAS-2011,=,B.Chiropotes_sp._MAS-2011,scientific name of
-________________SPLIT,,=,B.unclassified_Chiropotes,fringe=; split
+________________NO CHANGE,A.Chiropotes_chiropotes_sagulata,=,B.Chiropotes_chiropotes_sagulata,synonym of; fringe=
+______________MULTIPLE,A.Chiropotes_sp._MAS-2011,?,,2 B nodes match this A node
+________________OPTION,,=,B.unclassified_Chiropotes,fringe=
+________________OPTION,,=,B.Chiropotes_sp._MAS-2011,scientific name of
+________________GRAFT,,>,B.Chiropotes_sp._ZFMK_2008.244,not a match target
+________________GRAFT,,>,B.Chiropotes_sp.,not a match target
 ____________NO CHANGE,A.Cacajao,=,B.Cacajao,scientific name of
 ______________NO CHANGE,A.Cacajao_calvus,=,B.Cacajao_calvus,scientific name of
 ________________NO CHANGE,A.Cacajao_calvus_calvus,=,B.Cacajao_calvus_calvus,scientific name of
 ________________NO CHANGE,A.Cacajao_calvus_novaesi,=,B.Cacajao_calvus_novaesi,scientific name of
 ________________NO CHANGE,A.Cacajao_calvus_ucayalli,=,B.Cacajao_calvus_ucayalli,scientific name of
 ________________NO CHANGE,A.Cacajao_calvus_rubicundus,=,B.Cacajao_calvus_rubicundus,scientific name of
-______________NO CHANGE,A.Cacajao_melanocephalus,=,B.Cacajao_melanocephalus,fringe=; genbank common name of
+______________NO CHANGE,A.Cacajao_melanocephalus,=,B.Cacajao_melanocephalus,genbank common name of; fringe=
 ______________NO CHANGE,A.Cacajao_rubicundus,=,B.Cacajao_rubicundus,scientific name of
-______________ADD,A.Cacajao_ayresi,>,B.Cacajao_ayresi,fringe=; included in
-______________NO CHANGE,A.Cacajao_hosomi,=,B.Cacajao_hosomi,fringe=; synonym of
+______________NO CHANGE,A.Cacajao_ayresi,=,B.Cacajao_ayresi,synonym of; fringe=
+______________NO CHANGE,A.Cacajao_hosomi,=,B.Cacajao_hosomi,synonym of; fringe=
 ____________NO CHANGE,A.Pithecia,=,B.Pithecia,scientific name of
 ______________NO CHANGE,A.Pithecia_irrorata,=,B.Pithecia_irrorata,scientific name of
 ______________NO CHANGE,A.Pithecia_pithecia,=,B.Pithecia_pithecia,scientific name of
 ________________NO CHANGE,A.Pithecia_pithecia_pithecia,=,B.Pithecia_pithecia_pithecia,scientific name of
-______________NO CHANGE,A.Pithecia_monachus,=,B.Pithecia_monachus,fringe=; genbank common name of
+______________NO CHANGE,A.Pithecia_monachus,=,B.Pithecia_monachus,genbank common name of; fringe=
 ______________GRAFT,,>,B.unclassified_Pithecia,not a match target
 __________NO CHANGE,A.Callicebinae,=,B.Callicebinae,scientific name of
-____________BREAK,A.Callicebus,⟂,B.Callicebinae,fringe-conflict
-______________SPLIT,,=,B.Callicebus,scientific name of; split
+____________MULTIPLE,A.Callicebus,?,,4 B nodes match this A node
+______________REFORM,,⟂,B.Callicebinae,fringe-conflict
+______________OPTION,,=,B.Callicebus,scientific name of
+______________REFORM,,⟂,B.unclassified_Callicebus,fringe-conflict
+______________OPTION,,=,B.Plecturocebus,equivalent name of
 ______________MOVE,A.Callicebus_personatus,=,B.Callicebus_personatus,scientific name of
 ________________NO CHANGE,A.Callicebus_personatus_nigrifrons,=,B.Callicebus_personatus_nigrifrons,scientific name of
 ________________NO CHANGE,A.Callicebus_personatus_personatus,=,B.Callicebus_personatus_personatus,scientific name of
-______________MOVE,A.Callicebus_coimbrai,=,B.Callicebus_coimbrai,fringe=; genbank common name of
-______________MOVE,A.Callicebus_nigrifrons,=,B.Callicebus_nigrifrons,fringe=; genbank common name of
-______________REFORM,,⟂,B.unclassified_Callicebus,fringe-conflict; split
+______________MOVE,A.Callicebus_coimbrai,=,B.Callicebus_coimbrai,genbank common name of; fringe=
+______________MOVE,A.Callicebus_nigrifrons,=,B.Callicebus_nigrifrons,genbank common name of; fringe=
+______________GRAFT,,>,B.Callicebus_dubius,not a match target
+______________GRAFT,,>,B.Callicebus_caquetensis,not a match target
+______________GRAFT,,>,B.Callicebus_ornatus,not a match target
+______________GRAFT,,>,B.Callicebus_discolor,not a match target
 ______________MOVE,A.Callicebus_sp.,=,B.Callicebus_sp.,scientific name of
 ______________MOVE,A.Callicebus_sp._MAS-2011,=,B.Callicebus_sp._MAS-2011,scientific name of
-______________SPLIT,,=,B.Plecturocebus,equivalent name of; split
+______________GRAFT,,>,B.Callicebus_sp._1_MH-2016,not a match target
+______________GRAFT,,>,B.Callicebus_sp._2_MH-2016,not a match target
 ______________MOVE,A.Callicebus_moloch,=,B.Plecturocebus_moloch,id=
 ______________MOVE,A.Callicebus_hoffmannsi,=,B.Plecturocebus_hoffmannsi,scientific name of
 ______________MOVE,A.Callicebus_cupreus,=,B.Plecturocebus_cupreus,id=
 ______________MOVE,A.Callicebus_donacophilus,=,B.Plecturocebus_donacophilus,scientific name of
 ________________RENAME,A.Callicebus_donacophilus_donacophilus,=,B.Plecturocebus_donacophilus_donacophilus,id=
-______________MOVE,A.Callicebus_caligatus,=,B.Plecturocebus_caligatus,fringe=; synonym of
-______________MOVE,A.Callicebus_brunneus,=,B.Plecturocebus_brunneus,fringe=; genbank common name of
+______________MOVE,A.Callicebus_caligatus,=,B.Plecturocebus_caligatus,genbank common name of; fringe=
+______________GRAFT,,>,B.Plecturocebus_bernhardi,not a match target
+______________GRAFT,,>,B.Plecturocebus_cinerascens,not a match target
+______________GRAFT,,>,B.Plecturocebus_miltoni,not a match target
+______________MOVE,A.Callicebus_brunneus,=,B.Plecturocebus_brunneus,genbank common name of; fringe=
+______________GRAFT,,>,B.Plecturocebus_vieirai,not a match target
+______________GRAFT,,>,B.Plecturocebus_grovesi,not a match target
 ______________MOVE,A.Callicebus_torquatus,=,B.Cheracebus_torquatus,id=
 ______________MOVE,A.Callicebus_lugens,=,B.Cheracebus_lugens,id=
-______________MOVE,A.Callicebus_purinus,=,B.Cheracebus_purinus,scientific name of
-________________REFORM,,⟂,B.Cheracebus,fringe-conflict; split
+______________MULTIPLE,A.Callicebus_purinus,?,,2 B nodes match this A node
+________________REFORM,,⟂,B.Cheracebus,fringe-conflict
+________________OPTION,,=,B.Cheracebus_purinus,scientific name of
+________________GRAFT,,>,B.Cheracebus_lucifer,not a match target
 __________GRAFT,,>,B.Xenothricinae,not a match target
 ________NO CHANGE,A.Atelidae,=,B.Atelidae,scientific name of
 __________BREAK,A.Alouattinae,⟂,B.Alouatta,fringe-conflict
-____________MOVE,A.Alouatta,=,B.Alouatta,scientific name of
-______________REFORM,,⟂,B.Alouattinae,fringe-conflict; split
-______________NO CHANGE,A.Alouatta_caraya,=,B.Alouatta_caraya,fringe=; genbank common name of
+____________MULTIPLE,A.Alouatta,?,,2 B nodes match this A node
+______________REFORM,,⟂,B.Alouattinae,fringe-conflict
+______________OPTION,,=,B.Alouatta,scientific name of
+______________NO CHANGE,A.Alouatta_caraya,=,B.Alouatta_caraya,genbank common name of; fringe=
 ______________NO CHANGE,A.Alouatta_seniculus,=,B.Alouatta_seniculus,scientific name of
 ________________NO CHANGE,A.Alouatta_seniculus_seniculus,=,B.Alouatta_seniculus_seniculus,scientific name of
-________________NO CHANGE,A.Alouatta_seniculus_macconnelli,=,B.Alouatta_seniculus_macconnelli,fringe=; merged id of
+________________NO CHANGE,A.Alouatta_seniculus_macconnelli,=,B.Alouatta_seniculus_macconnelli,merged id of; fringe=
 ______________NO CHANGE,A.Alouatta_palliata,=,B.Alouatta_palliata,scientific name of
 ________________NO CHANGE,A.Alouatta_palliata_mexicana,=,B.Alouatta_palliata_mexicana,scientific name of
 ________________NO CHANGE,A.Alouatta_palliata_coibensis,=,B.Alouatta_palliata_coibensis,scientific name of
@@ -482,14 +546,16 @@ ________________NO CHANGE,A.Alouatta_palliata_trabeata,=,B.Alouatta_palliata_tra
 ________________NO CHANGE,A.Alouatta_palliata_aequatorialis,=,B.Alouatta_palliata_aequatorialis,scientific name of
 ______________NO CHANGE,A.Alouatta_belzebul,=,B.Alouatta_belzebul,scientific name of
 ________________NO CHANGE,A.Alouatta_belzebul_belzebul,=,B.Alouatta_belzebul_belzebul,scientific name of
-______________NO CHANGE,A.Alouatta_sara,=,B.Alouatta_sara,fringe=; genbank common name of
+______________NO CHANGE,A.Alouatta_sara,=,B.Alouatta_sara,genbank common name of; fringe=
 ______________NO CHANGE,A.Alouatta_stramineus,=,B.Alouatta_stramineus,scientific name of
 ______________NO CHANGE,A.Alouatta_pigra,=,B.Alouatta_pigra,scientific name of
 ______________NO CHANGE,A.Alouatta_guariba,=,B.Alouatta_guariba,scientific name of
-________________NO CHANGE,A.Alouatta_guariba_clamitans,=,B.Alouatta_guariba_clamitans,fringe=; synonym of
+________________NO CHANGE,A.Alouatta_guariba_clamitans,=,B.Alouatta_guariba_clamitans,synonym of; fringe=
 ______________GRAFT,,>,B.Alouatta_palliata_x_Alouatta_pigra,not a match target
 __________NO CHANGE,A.Atelinae,=,B.Atelinae,scientific name of
-____________NO CHANGE,A.Ateles,=,B.Ateles,scientific name of
+____________MULTIPLE,A.Ateles,?,,2 B nodes match this A node
+______________OPTION,,=,B.Ateles,scientific name of
+______________REFORM,,⟂,B.unclassified_Ateles,fringe-conflict
 ______________NO CHANGE,A.Ateles_belzebuth,=,B.Ateles_belzebuth,scientific name of
 ________________NO CHANGE,A.Ateles_belzebuth_chamek,=,B.Ateles_belzebuth_chamek,scientific name of
 ________________NO CHANGE,A.Ateles_belzebuth_marginatus,=,B.Ateles_belzebuth_marginatus,scientific name of
@@ -503,8 +569,8 @@ ________________NO CHANGE,A.Ateles_geoffroyi_yucatanensis,=,B.Ateles_geoffroyi_y
 ________________NO CHANGE,A.Ateles_geoffroyi_frontatus,=,B.Ateles_geoffroyi_frontatus,scientific name of
 ________________NO CHANGE,A.Ateles_geoffroyi_ornatus,=,B.Ateles_geoffroyi_ornatus,scientific name of
 ________________NO CHANGE,A.Ateles_geoffroyi_azuerensis,=,B.Ateles_geoffroyi_azuerensis,scientific name of
-______________NO CHANGE,A.Ateles_paniscus,=,B.Ateles_paniscus,fringe=; genbank common name of
-______________NO CHANGE,A.Ateles_paniscus_x_Ateles_fusciceps,=,B.Ateles_paniscus_x_Ateles_fusciceps,fringe=; genbank common name of
+______________NO CHANGE,A.Ateles_paniscus,=,B.Ateles_paniscus,genbank common name of; fringe=
+______________NO CHANGE,A.Ateles_paniscus_x_Ateles_fusciceps,=,B.Ateles_paniscus_x_Ateles_fusciceps,genbank common name of; fringe=
 ______________NO CHANGE,A.unclassified_Ateles,=,B.unclassified_Ateles,scientific name of
 ________________NO CHANGE,A.Ateles_sp._haplotype_Abh9,=,B.Ateles_sp._haplotype_Abh9,scientific name of
 ________________NO CHANGE,A.Ateles_sp._haplotype_Abh10,=,B.Ateles_sp._haplotype_Abh10,scientific name of
@@ -518,27 +584,30 @@ ________________NO CHANGE,A.Ateles_sp._haplotype_Agp13,=,B.Ateles_sp._haplotype_
 ________________NO CHANGE,A.Ateles_sp._haplotype_Afr27,=,B.Ateles_sp._haplotype_Afr27,scientific name of
 ________________NO CHANGE,A.Ateles_sp._KO-2004,=,B.Ateles_sp._KO-2004,scientific name of
 ________________NO CHANGE,A.Ateles_sp._JPV-2004,=,B.Ateles_sp._JPV-2004,scientific name of
-________________GRAFT,,>,B.Ateles_sp._EG-2017,not a match target
-______________MOVE,A.Ateles_sp.,=,B.Ateles_sp.,fringe=; genbank common name of
+______________MOVE,A.Ateles_sp.,=,B.Ateles_sp.,genbank common name of; fringe=
+______________GRAFT,,>,B.Ateles_sp._EG-2017,not a match target
 ______________NO CHANGE,A.Ateles_hybridus,=,B.Ateles_hybridus,scientific name of
 ________________NO CHANGE,A.Ateles_hybridus_hybridus,=,B.Ateles_hybridus_hybridus,scientific name of
-______________NO CHANGE,A.Ateles_marginatus,=,B.Ateles_marginatus,fringe=; genbank common name of
+______________NO CHANGE,A.Ateles_marginatus,=,B.Ateles_marginatus,genbank common name of; fringe=
 ____________NO CHANGE,A.Lagothrix,=,B.Lagothrix,scientific name of
-______________NO CHANGE,A.Lagothrix_lagotricha,=,B.Lagothrix_lagotricha,fringe=; synonym of
+______________NO CHANGE,A.Lagothrix_lagotricha,=,B.Lagothrix_lagotricha,synonym of; fringe=
 ______________NO CHANGE,A.Lagothrix_lugens,=,B.Lagothrix_lugens,scientific name of
 ______________NO CHANGE,A.Lagothrix_poeppigii,=,B.Lagothrix_poeppigii,scientific name of
 ______________NO CHANGE,A.Lagothrix_cana,=,B.Lagothrix_cana,scientific name of
 ______________GRAFT,,>,B.Lagothrix_flavicauda,not a match target
 ______________GRAFT,,>,B.Lagothrix_tschudii,not a match target
-______________MOVE,A.Lagothrix_sp._CCS-2009a,=,B.Lagothrix_sp._CCS-2009a,scientific name of
-________________SPLIT,,=,B.unclassified_Lagothrix,fringe=; split
+______________MULTIPLE,A.Lagothrix_sp._CCS-2009a,?,,2 B nodes match this A node
+________________OPTION,,=,B.unclassified_Lagothrix,fringe=
+________________OPTION,,=,B.Lagothrix_sp._CCS-2009a,scientific name of
+________________GRAFT,,>,B.Lagothrix_sp._EG-2017,not a match target
 ____________NO CHANGE,A.Brachyteles,=,B.Brachyteles,scientific name of
 ______________NO CHANGE,A.Brachyteles_arachnoides,=,B.Brachyteles_arachnoides,scientific name of
 ______________NO CHANGE,A.Brachyteles_hypoxanthus,=,B.Brachyteles_hypoxanthus,scientific name of
 ______NO CHANGE,A.Catarrhini,=,B.Catarrhini,scientific name of
 ________BREAK,A.Cercopithecoidea,⟂,B.Cercopithecidae,fringe-conflict
-__________MOVE,A.Cercopithecidae,=,B.Cercopithecidae,scientific name of
-____________REFORM,,⟂,B.Cercopithecoidea,fringe-conflict; split
+__________MULTIPLE,A.Cercopithecidae,?,,2 B nodes match this A node
+____________REFORM,,⟂,B.Cercopithecoidea,fringe-conflict
+____________OPTION,,=,B.Cercopithecidae,scientific name of
 ____________NO CHANGE,A.Cercopithecinae,=,B.Cercopithecinae,scientific name of
 ______________NO CHANGE,A.Cercocebus,=,B.Cercocebus,scientific name of
 ________________NO CHANGE,A.Cercocebus_torquatus,=,B.Cercocebus_torquatus,scientific name of
@@ -546,9 +615,9 @@ __________________NO CHANGE,A.Cercocebus_torquatus_torquatus,=,B.Cercocebus_torq
 ________________NO CHANGE,A.Cercocebus_atys,=,B.Cercocebus_atys,scientific name of
 __________________NO CHANGE,A.Cercocebus_atys_lunulatus,=,B.Cercocebus_atys_lunulatus,scientific name of
 __________________GRAFT,,>,B.Cercocebus_atys_atys,not a match target
-________________NO CHANGE,A.Cercocebus_galeritus,=,B.Cercocebus_galeritus,fringe=; genbank common name of
+________________NO CHANGE,A.Cercocebus_galeritus,=,B.Cercocebus_galeritus,genbank common name of; fringe=
 ________________NO CHANGE,A.Cercocebus_chrysogaster,=,B.Cercocebus_chrysogaster,scientific name of
-________________NO CHANGE,A.Cercocebus_agilis,=,B.Cercocebus_agilis,fringe=; genbank common name of
+________________NO CHANGE,A.Cercocebus_agilis,=,B.Cercocebus_agilis,genbank common name of; fringe=
 ______________NO CHANGE,A.Cercopithecus,=,B.Cercopithecus,scientific name of
 ________________NO CHANGE,A.Cercopithecus_cephus,=,B.Cercopithecus_cephus,scientific name of
 __________________NO CHANGE,A.Cercopithecus_cephus_ngottoensis,=,B.Cercopithecus_cephus_ngottoensis,scientific name of
@@ -571,13 +640,13 @@ __________________NO CHANGE,A.Cercopithecus_mitis_stuhlmanni,=,B.Cercopithecus_m
 ________________NO CHANGE,A.Cercopithecus_mona,=,B.Cercopithecus_mona,scientific name of
 __________________NO CHANGE,A.Cercopithecus_mona_mona,=,B.Cercopithecus_mona_mona,scientific name of
 __________________NO CHANGE,A.Cercopithecus_mona_campbelli,=,B.Cercopithecus_mona_campbelli,scientific name of
-________________NO CHANGE,A.Cercopithecus_neglectus,=,B.Cercopithecus_neglectus,fringe=; genbank common name of
+________________NO CHANGE,A.Cercopithecus_neglectus,=,B.Cercopithecus_neglectus,genbank common name of; fringe=
 ________________NO CHANGE,A.Cercopithecus_nictitans,=,B.Cercopithecus_nictitans,scientific name of
 __________________NO CHANGE,A.Cercopithecus_nictitans_martini,=,B.Cercopithecus_nictitans_martini,scientific name of
 __________________NO CHANGE,A.Cercopithecus_nictitans_nictitans,=,B.Cercopithecus_nictitans_nictitans,scientific name of
 ________________NO CHANGE,A.Cercopithecus_petaurista,=,B.Cercopithecus_petaurista,scientific name of
 __________________NO CHANGE,A.Cercopithecus_petaurista_petaurista,=,B.Cercopithecus_petaurista_petaurista,scientific name of
-__________________NO CHANGE,A.Cercopithecus_petaurista_buettikoferi,=,B.Cercopithecus_petaurista_buettikoferi,fringe=; synonym of
+__________________NO CHANGE,A.Cercopithecus_petaurista_buettikoferi,=,B.Cercopithecus_petaurista_buettikoferi,synonym of; fringe=
 ________________NO CHANGE,A.Cercopithecus_pogonias,=,B.Cercopithecus_pogonias,scientific name of
 __________________NO CHANGE,A.Cercopithecus_pogonias_grayi,=,B.Cercopithecus_pogonias_grayi,scientific name of
 __________________NO CHANGE,A.Cercopithecus_pogonias_nigripes,=,B.Cercopithecus_pogonias_nigripes,scientific name of
@@ -591,35 +660,37 @@ __________________NO CHANGE,A.Cercopithecus_erythrotis_erythrotis,=,B.Cercopithe
 __________________NO CHANGE,A.Cercopithecus_erythrotis_camerunensis,=,B.Cercopithecus_erythrotis_camerunensis,scientific name of
 ________________NO CHANGE,A.Cercopithecus_wolfi,=,B.Cercopithecus_wolfi,scientific name of
 __________________NO CHANGE,A.Cercopithecus_wolfi_wolfi,=,B.Cercopithecus_wolfi_wolfi,scientific name of
-__________________NO CHANGE,A.Cercopithecus_wolfi_elegans,=,B.Cercopithecus_wolfi_elegans,fringe=; synonym of
-__________________NO CHANGE,A.Cercopithecus_wolfi_pyrogaster,=,B.Cercopithecus_wolfi_pyrogaster,fringe=; synonym of
+__________________NO CHANGE,A.Cercopithecus_wolfi_elegans,=,B.Cercopithecus_wolfi_elegans,synonym of; fringe=
+__________________NO CHANGE,A.Cercopithecus_wolfi_pyrogaster,=,B.Cercopithecus_wolfi_pyrogaster,synonym of; fringe=
 ________________NO CHANGE,A.Cercopithecus_campbelli,=,B.Cercopithecus_campbelli,scientific name of
 __________________NO CHANGE,A.Cercopithecus_campbelli_lowei,=,B.Cercopithecus_campbelli_lowei,scientific name of
 ________________NO CHANGE,A.Cercopithecus_albogularis,=,B.Cercopithecus_albogularis,scientific name of
-__________________NO CHANGE,A.Cercopithecus_albogularis_kolbi,=,B.Cercopithecus_albogularis_kolbi,fringe=; synonym of
-__________________NO CHANGE,A.Cercopithecus_albogularis_albotorquatus,=,B.Cercopithecus_albogularis_albotorquatus,fringe=; synonym of
-__________________NO CHANGE,A.Cercopithecus_albogularis_erythrarchus,=,B.Cercopithecus_albogularis_erythrarchus,fringe=; synonym of
-__________________NO CHANGE,A.Cercopithecus_albogularis_francescae,=,B.Cercopithecus_albogularis_francescae,fringe=; synonym of
-__________________NO CHANGE,A.Cercopithecus_albogularis_labiatus,=,B.Cercopithecus_albogularis_labiatus,fringe=; synonym of
-__________________NO CHANGE,A.Cercopithecus_albogularis_moloneyi,=,B.Cercopithecus_albogularis_moloneyi,fringe=; synonym of
-__________________NO CHANGE,A.Cercopithecus_albogularis_monoides,=,B.Cercopithecus_albogularis_monoides,fringe=; synonym of
-________________NO CHANGE,A.Cercopithecus_dryas,=,B.Cercopithecus_dryas,fringe=; genbank common name of
+__________________NO CHANGE,A.Cercopithecus_albogularis_kolbi,=,B.Cercopithecus_albogularis_kolbi,synonym of; fringe=
+__________________NO CHANGE,A.Cercopithecus_albogularis_albotorquatus,=,B.Cercopithecus_albogularis_albotorquatus,synonym of; fringe=
+__________________NO CHANGE,A.Cercopithecus_albogularis_erythrarchus,=,B.Cercopithecus_albogularis_erythrarchus,synonym of; fringe=
+__________________NO CHANGE,A.Cercopithecus_albogularis_francescae,=,B.Cercopithecus_albogularis_francescae,synonym of; fringe=
+__________________NO CHANGE,A.Cercopithecus_albogularis_labiatus,=,B.Cercopithecus_albogularis_labiatus,synonym of; fringe=
+__________________NO CHANGE,A.Cercopithecus_albogularis_moloneyi,=,B.Cercopithecus_albogularis_moloneyi,synonym of; fringe=
+__________________NO CHANGE,A.Cercopithecus_albogularis_monoides,=,B.Cercopithecus_albogularis_monoides,synonym of; fringe=
+________________NO CHANGE,A.Cercopithecus_dryas,=,B.Cercopithecus_dryas,genbank common name of; fringe=
 ________________NO CHANGE,A.Cercopithecus_roloway,=,B.Cercopithecus_roloway,scientific name of
 ________________NO CHANGE,A.Cercopithecus_doggetti,=,B.Cercopithecus_doggetti,scientific name of
 ________________NO CHANGE,A.Cercopithecus_kandti,=,B.Cercopithecus_kandti,scientific name of
 ________________NO CHANGE,A.Cercopithecus_denti,=,B.Cercopithecus_denti,scientific name of
-________________ADD,A.Cercopithecus_lomamiensis,>,B.Cercopithecus_lomamiensis,fringe=; included in
+________________NO CHANGE,A.Cercopithecus_lomamiensis,=,B.Cercopithecus_lomamiensis,equivalent name of; fringe=
 ________________GRAFT,,>,B.Cercopithecus_sclateri,not a match target
-________________MOVE,A.Cercopithecus_sp._WMS-2012,=,B.Cercopithecus_sp._WMS-2012,scientific name of
-__________________SPLIT,,=,B.unclassified_Cercopithecus,fringe=; split
+________________MULTIPLE,A.Cercopithecus_sp._WMS-2012,?,,2 B nodes match this A node
+__________________OPTION,,=,B.unclassified_Cercopithecus,fringe=
+__________________OPTION,,=,B.Cercopithecus_sp._WMS-2012,scientific name of
 ________________MOVE,A.Cercopithecus_lhoesti,=,B.Allochrocebus_lhoesti,id=
 ________________MOVE,A.Cercopithecus_preussi,=,B.Allochrocebus_preussi,id=
 __________________RENAME,A.Cercopithecus_preussi_insularis,=,B.Allochrocebus_preussi_insularis,id=
 __________________RENAME,A.Cercopithecus_preussi_preussi,=,B.Allochrocebus_preussi_preussi,id=
 ________________MOVE,A.Cercopithecus_solatus,=,B.Allochrocebus_solatus,id=
 ______________BREAK,A.Erythrocebus,⟂,B.Erythrocebus_patas,fringe-conflict
-________________MOVE,A.Erythrocebus_patas,=,B.Erythrocebus_patas,scientific name of
-__________________REFORM,,⟂,B.Erythrocebus,fringe-conflict; split
+________________MULTIPLE,A.Erythrocebus_patas,?,,2 B nodes match this A node
+__________________REFORM,,⟂,B.Erythrocebus,fringe-conflict
+__________________OPTION,,=,B.Erythrocebus_patas,scientific name of
 ______________NO CHANGE,A.Macaca,=,B.Macaca,scientific name of
 ________________NO CHANGE,A.Macaca_arctoides,=,B.Macaca_arctoides,scientific name of
 ________________NO CHANGE,A.Macaca_fascicularis,=,B.Macaca_fascicularis,scientific name of
@@ -630,7 +701,7 @@ ________________NO CHANGE,A.Macaca_fuscata,=,B.Macaca_fuscata,scientific name of
 __________________NO CHANGE,A.Macaca_fuscata_fuscata,=,B.Macaca_fuscata_fuscata,scientific name of
 __________________NO CHANGE,A.Macaca_fuscata_yakui,=,B.Macaca_fuscata_yakui,scientific name of
 ________________NO CHANGE,A.Macaca_mulatta,=,B.Macaca_mulatta,scientific name of
-__________________NO CHANGE,A.Macaca_mulatta_lasiotus,=,B.Macaca_mulatta_lasiotus,fringe=; synonym of
+__________________NO CHANGE,A.Macaca_mulatta_lasiotus,=,B.Macaca_mulatta_lasiotus,synonym of; fringe=
 __________________GRAFT,,>,B.Macaca_mulatta_brevicaudus,not a match target
 __________________GRAFT,,>,B.Macaca_mulatta_vestita,not a match target
 ________________NO CHANGE,A.Macaca_nemestrina,=,B.Macaca_nemestrina,scientific name of
@@ -643,30 +714,33 @@ __________________NO CHANGE,A.Macaca_radiata_radiata,=,B.Macaca_radiata_radiata,
 ________________NO CHANGE,A.Macaca_assamensis,=,B.Macaca_assamensis,scientific name of
 __________________NO CHANGE,A.Macaca_assamensis_assamensis,=,B.Macaca_assamensis_assamensis,scientific name of
 ________________NO CHANGE,A.Macaca_sinica,=,B.Macaca_sinica,scientific name of
-________________NO CHANGE,A.Macaca_speciosa,=,B.Macaca_speciosa,fringe=; genbank common name of
-________________NO CHANGE,A.Macaca_tonkeana,=,B.Macaca_tonkeana,fringe=; genbank common name of
-________________NO CHANGE,A.Macaca_nigra,=,B.Macaca_nigra,fringe=; genbank common name of
-________________NO CHANGE,A.Macaca_silenus,=,B.Macaca_silenus,fringe=; genbank common name of
+________________NO CHANGE,A.Macaca_speciosa,=,B.Macaca_speciosa,genbank common name of; fringe=
+________________NO CHANGE,A.Macaca_tonkeana,=,B.Macaca_tonkeana,genbank common name of; fringe=
+________________NO CHANGE,A.Macaca_nigra,=,B.Macaca_nigra,genbank common name of; fringe=
+________________NO CHANGE,A.Macaca_silenus,=,B.Macaca_silenus,genbank common name of; fringe=
 ________________NO CHANGE,A.Macaca_thibetana,=,B.Macaca_thibetana,scientific name of
 __________________NO CHANGE,A.Macaca_thibetana_thibetana,=,B.Macaca_thibetana_thibetana,scientific name of
-________________NO CHANGE,A.Macaca_cyclopis,=,B.Macaca_cyclopis,fringe=; genbank common name of
+________________NO CHANGE,A.Macaca_cyclopis,=,B.Macaca_cyclopis,genbank common name of; fringe=
 ________________NO CHANGE,A.Macaca_brunnescens,=,B.Macaca_brunnescens,scientific name of
-________________NO CHANGE,A.Macaca_hecki,=,B.Macaca_hecki,fringe=; genbank common name of
+________________NO CHANGE,A.Macaca_hecki,=,B.Macaca_hecki,genbank common name of; fringe=
 ________________NO CHANGE,A.Macaca_maura,=,B.Macaca_maura,scientific name of
 ________________NO CHANGE,A.Macaca_nigrescens,=,B.Macaca_nigrescens,scientific name of
-________________NO CHANGE,A.Macaca_ochreata,=,B.Macaca_ochreata,fringe=; genbank common name of
-________________CHANGE ID,A.Macaca_leonina,=,B.Macaca_leonina,fringe=; genbank common name of
+________________NO CHANGE,A.Macaca_ochreata,=,B.Macaca_ochreata,genbank common name of; fringe=
+________________CHANGE ID,A.Macaca_leonina,=,B.Macaca_leonina,genbank common name of; fringe=
 ________________NO CHANGE,A.Macaca_maura_x_tonkeana,=,B.Macaca_maura_x_tonkeana,scientific name of
 ________________NO CHANGE,A.Macaca_hecki_x_tonkeana,=,B.Macaca_hecki_x_tonkeana,scientific name of
 ________________NO CHANGE,A.Macaca_pagensis,=,B.Macaca_pagensis,scientific name of
-________________CHANGE ID,A.Macaca_siberu,=,B.Macaca_siberu,fringe=; genbank common name of
+________________CHANGE ID,A.Macaca_siberu,=,B.Macaca_siberu,genbank common name of; fringe=
 ________________NO CHANGE,A.Macaca_balantak,=,B.Macaca_balantak,scientific name of
 ________________NO CHANGE,A.Macaca_balantak_x_tonkeana,=,B.Macaca_balantak_x_tonkeana,scientific name of
-________________NO CHANGE,A.Macaca_munzala,=,B.Macaca_munzala,fringe=; genbank common name of
+________________NO CHANGE,A.Macaca_munzala,=,B.Macaca_munzala,genbank common name of; fringe=
 ________________GRAFT,,>,B.Macaca_leucogenys,not a match target
-________________MOVE,A.Macaca_sp.,=,B.Macaca_sp.,scientific name of
-__________________SPLIT,,=,B.unclassified_Macaca,fringe=; split
-______________NO CHANGE,A.Papio,=,B.Papio,scientific name of
+________________MULTIPLE,A.Macaca_sp.,?,,2 B nodes match this A node
+__________________OPTION,,=,B.unclassified_Macaca,fringe=
+__________________OPTION,,=,B.Macaca_sp.,scientific name of
+______________MULTIPLE,A.Papio,?,,2 B nodes match this A node
+________________OPTION,,=,B.Papio,scientific name of
+________________REFORM,,⟂,B.unclassified_Papio,fringe-conflict
 ________________NO CHANGE,A.Papio_anubis,=,B.Papio_anubis,scientific name of
 __________________NO CHANGE,A.Papio_anubis_anubis,=,B.Papio_anubis_anubis,scientific name of
 ________________NO CHANGE,A.Papio_cynocephalus,=,B.Papio_cynocephalus,scientific name of
@@ -675,44 +749,50 @@ __________________NO CHANGE,A.Papio_cynocephalus_ibeanus,=,B.Papio_cynocephalus_
 ________________NO CHANGE,A.Papio_hamadryas,=,B.Papio_hamadryas,scientific name of
 __________________NO CHANGE,A.Papio_hamadryas_hamadryas,=,B.Papio_hamadryas_hamadryas,scientific name of
 ________________MOVE,A.Papio_ursinus,=,B.Papio_ursinus_ursinus,fringe=
-__________________MOVE,A.Papio_ursinus_ursinus,=,B.Papio_ursinus_ursinus,scientific name of
-____________________SPLIT,,=,B.Papio_ursinus,fringe=; split
-________________NO CHANGE,A.Papio_papio,=,B.Papio_papio,fringe=; merged id of
-________________NO CHANGE,A.Papio_kindae,=,B.Papio_kindae,fringe=; genbank common name of
+__________________MULTIPLE,A.Papio_ursinus_ursinus,?,,2 B nodes match this A node
+____________________OPTION,,=,B.Papio_ursinus,fringe=
+____________________OPTION,,=,B.Papio_ursinus_ursinus,scientific name of
+____________________GRAFT,,>,B.Papio_ursinus_griseipes,not a match target
+________________NO CHANGE,A.Papio_papio,=,B.Papio_papio,merged id of; fringe=
+________________NO CHANGE,A.Papio_kindae,=,B.Papio_kindae,genbank common name of; fringe=
 ________________NO CHANGE,A.Papio_cynocephalus_x_Papio_anubis,=,B.Papio_cynocephalus_x_Papio_anubis,scientific name of
-________________NO CHANGE,A.Papio_anubis_x_hamadryas,=,B.Papio_anubis_x_hamadryas,fringe=; synonym of
+________________NO CHANGE,A.Papio_anubis_x_hamadryas,=,B.Papio_anubis_x_hamadryas,synonym of; fringe=
 ________________GRAFT,,>,B.Papio_anubis_x_Papio_cynocephalus,not a match target
 ________________GRAFT,,>,B.Papio_anubis_x_Papio_ursinus,not a match target
 ________________GRAFT,,>,B.Papio_kindae_x_Papio_cynocephalus,not a match target
 ________________GRAFT,,>,B.Papio_kindae_x_Papio_ursinus_griseipes,not a match target
-________________REFORM,,⟂,B.unclassified_Papio,fringe-conflict; split
 ________________MOVE,A.Papio_sp.,=,B.Papio_sp.,scientific name of
 ________________MOVE,A.Papio_sp._Africa-2004,=,B.Papio_sp._Africa-2004,scientific name of
 ________________MOVE,A.Papio_sp._PS-2007,=,B.Papio_sp._PS-2007,scientific name of
 ______________MOVE,A.Theropithecus,=,B.Theropithecus_gelada,fringe=; common name of
-________________MOVE,A.Theropithecus_gelada,=,B.Theropithecus_gelada,fringe=; common name of
-__________________SPLIT,,=,B.Theropithecus,common name of; fringe=; split
-______________NO CHANGE,A.Mandrillus,=,B.Mandrillus,fringe=; genbank common name of
+________________MULTIPLE,A.Theropithecus_gelada,?,,2 B nodes match this A node
+__________________OPTION,,=,B.Theropithecus,common name of; fringe=
+__________________OPTION,,=,B.Theropithecus_gelada,common name of; fringe=
+______________NO CHANGE,A.Mandrillus,=,B.Mandrillus,genbank common name of; fringe=
 ________________NO CHANGE,A.Mandrillus_sphinx,=,B.Mandrillus_sphinx,scientific name of
 ________________NO CHANGE,A.Mandrillus_leucophaeus,=,B.Mandrillus_leucophaeus,scientific name of
 ______________NO CHANGE,A.Miopithecus,=,B.Miopithecus,scientific name of
 ________________NO CHANGE,A.Miopithecus_talapoin,=,B.Miopithecus_talapoin,scientific name of
 __________________NO CHANGE,A.Miopithecus_talapoin_talapoin,=,B.Miopithecus_talapoin_talapoin,scientific name of
-________________NO CHANGE,A.Miopithecus_ogouensis,=,B.Miopithecus_ogouensis,fringe=; genbank common name of
+________________NO CHANGE,A.Miopithecus_ogouensis,=,B.Miopithecus_ogouensis,genbank common name of; fringe=
 ______________MOVE,A.Allenopithecus,=,B.Allenopithecus_nigroviridis,fringe=; genbank common name of
-________________MOVE,A.Allenopithecus_nigroviridis,=,B.Allenopithecus_nigroviridis,fringe=; genbank common name of
-__________________SPLIT,,=,B.Allenopithecus,genbank common name of; fringe=; split
+________________MULTIPLE,A.Allenopithecus_nigroviridis,?,,2 B nodes match this A node
+__________________OPTION,,=,B.Allenopithecus,genbank common name of; fringe=
+__________________OPTION,,=,B.Allenopithecus_nigroviridis,genbank common name of; fringe=
 ______________NO CHANGE,A.Lophocebus,=,B.Lophocebus,scientific name of
 ________________NO CHANGE,A.Lophocebus_aterrimus,=,B.Lophocebus_aterrimus,scientific name of
 ________________NO CHANGE,A.Lophocebus_albigena,=,B.Lophocebus_albigena,scientific name of
 __________________NO CHANGE,A.Lophocebus_albigena_albigena,=,B.Lophocebus_albigena_albigena,scientific name of
 ______________BREAK,A.Rungwecebus,⟂,B.Rungwecebus_kipunji,fringe-conflict
-________________MOVE,A.Rungwecebus_kipunji,=,B.Rungwecebus_kipunji,scientific name of
-__________________REFORM,,⟂,B.Rungwecebus,fringe-conflict; split
-______________NO CHANGE,A.Chlorocebus,=,B.Chlorocebus,scientific name of
+________________MULTIPLE,A.Rungwecebus_kipunji,?,,2 B nodes match this A node
+__________________REFORM,,⟂,B.Rungwecebus,fringe-conflict
+__________________OPTION,,=,B.Rungwecebus_kipunji,scientific name of
+______________MULTIPLE,A.Chlorocebus,?,,2 B nodes match this A node
+________________OPTION,,=,B.Chlorocebus,scientific name of
+________________REFORM,,⟂,B.unclassified_Chlorocebus,fringe-conflict
 ________________NO CHANGE,A.Chlorocebus_aethiops,=,B.Chlorocebus_aethiops,scientific name of
-__________________NO CHANGE,A.Chlorocebus_aethiops_vervet,=,B.Chlorocebus_aethiops_vervet,fringe=; synonym of
-__________________NO CHANGE,A.Chlorocebus_aethiops_aethiops,=,B.Chlorocebus_aethiops_aethiops,fringe=; synonym of
+__________________NO CHANGE,A.Chlorocebus_aethiops_vervet,=,B.Chlorocebus_aethiops_vervet,synonym of; fringe=
+__________________NO CHANGE,A.Chlorocebus_aethiops_aethiops,=,B.Chlorocebus_aethiops_aethiops,synonym of; fringe=
 ________________NO CHANGE,A.Chlorocebus_pygerythrus,=,B.Chlorocebus_pygerythrus,scientific name of
 __________________NO CHANGE,A.Chlorocebus_pygerythrus_pygerythrus,=,B.Chlorocebus_pygerythrus_pygerythrus,scientific name of
 __________________NO CHANGE,A.Chlorocebus_pygerythrus_hilgerti,=,B.Chlorocebus_pygerythrus_hilgerti,scientific name of
@@ -724,13 +804,15 @@ ________________NO CHANGE,A.Chlorocebus_cynosuros,=,B.Chlorocebus_cynosuros,scie
 ________________NO CHANGE,A.Chlorocebus_djamdjamensis,=,B.Chlorocebus_djamdjamensis,scientific name of
 ________________GRAFT,,>,B.Chlorocebus_aethiops_x_djamdjamensis,not a match target
 ________________GRAFT,,>,B.Chlorocebus_aethiops_x_Chlorocebus_pygerythrus,not a match target
-________________REFORM,,⟂,B.unclassified_Chlorocebus,fringe-conflict; split
 ________________MOVE,A.Chlorocebus_sp._MAS-2011,=,B.Chlorocebus_sp._MAS-2011,scientific name of
 ________________MOVE,A.Chlorocebus_sp._TH-2013,=,B.Chlorocebus_sp._TH-2013,scientific name of
+________________GRAFT,,>,B.Chlorocebus_sp._LDS-2018,not a match target
 ______________GRAFT,,>,B.Allochrocebus,not a match target
 ____________NO CHANGE,A.Colobinae,=,B.Colobinae,scientific name of
-______________NO CHANGE,A.Colobus,=,B.Colobus,scientific name of
-________________NO CHANGE,A.Colobus_polykomos,=,B.Colobus_polykomos,fringe=; genbank common name of
+______________MULTIPLE,A.Colobus,?,,2 B nodes match this A node
+________________OPTION,,=,B.Colobus,scientific name of
+________________REFORM,,⟂,B.unclassified_Colobus,fringe-conflict
+________________NO CHANGE,A.Colobus_polykomos,=,B.Colobus_polykomos,genbank common name of; fringe=
 ________________NO CHANGE,A.Colobus_guereza,=,B.Colobus_guereza,scientific name of
 __________________NO CHANGE,A.Colobus_guereza_kikuyuensis,=,B.Colobus_guereza_kikuyuensis,scientific name of
 __________________NO CHANGE,A.Colobus_guereza_matschiei,=,B.Colobus_guereza_matschiei,scientific name of
@@ -742,8 +824,7 @@ ________________NO CHANGE,A.Colobus_vellerosus,=,B.Colobus_vellerosus,scientific
 ________________NO CHANGE,A.Colobus_vellerosus_x_angolensis,=,B.Colobus_vellerosus_x_angolensis,scientific name of
 ________________NO CHANGE,A.Colobus_satanas,=,B.Colobus_satanas,scientific name of
 __________________NO CHANGE,A.Colobus_satanas_satanas,=,B.Colobus_satanas_satanas,scientific name of
-________________REFORM,,⟂,B.unclassified_Colobus,fringe-conflict; split
-________________MOVE,A.Colobus_sp.,=,B.Colobus_sp.,fringe=; common name of
+________________MOVE,A.Colobus_sp.,=,B.Colobus_sp.,common name of; fringe=
 ________________MOVE,A.Colobus_sp._DTG-2004,=,B.Colobus_sp._DTG-2004,scientific name of
 ________________MOVE,A.Colobus_sp._MB-2005,=,B.Colobus_sp._MB-2005,scientific name of
 ______________NO CHANGE,A.Presbytis,=,B.Presbytis,scientific name of
@@ -752,14 +833,14 @@ ________________NO CHANGE,A.Presbytis_melalophos,=,B.Presbytis_melalophos,scient
 __________________NO CHANGE,A.Presbytis_melalophos_mitrata,=,B.Presbytis_melalophos_mitrata,scientific name of
 __________________NO CHANGE,A.Presbytis_melalophos_bicolor,=,B.Presbytis_melalophos_bicolor,scientific name of
 __________________NO CHANGE,A.Presbytis_melalophos_melalophos,=,B.Presbytis_melalophos_melalophos,scientific name of
-__________________NO CHANGE,A.Presbytis_melalophos_sumatranus,=,B.Presbytis_melalophos_sumatranus,fringe=; synonym of
+__________________NO CHANGE,A.Presbytis_melalophos_sumatranus,=,B.Presbytis_melalophos_sumatranus,synonym of; fringe=
 ________________NO CHANGE,A.Presbytis_comata,=,B.Presbytis_comata,scientific name of
 __________________NO CHANGE,A.Presbytis_comata_comata,=,B.Presbytis_comata_comata,scientific name of
 __________________NO CHANGE,A.Presbytis_comata_fredericae,=,B.Presbytis_comata_fredericae,scientific name of
-________________NO CHANGE,A.Presbytis_femoralis,=,B.Presbytis_femoralis,fringe=; genbank common name of
+________________NO CHANGE,A.Presbytis_femoralis,=,B.Presbytis_femoralis,genbank common name of; fringe=
 __________________GRAFT,,>,B.Presbytis_femoralis_femoralis,not a match target
-________________NO CHANGE,A.Presbytis_chrysomelas,=,B.Presbytis_chrysomelas,fringe=; genbank common name of
-________________NO CHANGE,A.Presbytis_frontata,=,B.Presbytis_frontata,fringe=; genbank common name of
+________________NO CHANGE,A.Presbytis_chrysomelas,=,B.Presbytis_chrysomelas,genbank common name of; fringe=
+________________NO CHANGE,A.Presbytis_frontata,=,B.Presbytis_frontata,genbank common name of; fringe=
 ________________NO CHANGE,A.Presbytis_hosei,=,B.Presbytis_hosei,scientific name of
 __________________NO CHANGE,A.Presbytis_hosei_hosei,=,B.Presbytis_hosei_hosei,scientific name of
 ________________NO CHANGE,A.Presbytis_potenziani,=,B.Presbytis_potenziani,scientific name of
@@ -767,16 +848,18 @@ __________________NO CHANGE,A.Presbytis_potenziani_potenziani,=,B.Presbytis_pote
 __________________NO CHANGE,A.Presbytis_potenziani_siberu,=,B.Presbytis_potenziani_siberu,scientific name of
 ________________NO CHANGE,A.Presbytis_rubicunda,=,B.Presbytis_rubicunda,scientific name of
 __________________NO CHANGE,A.Presbytis_rubicunda_rubicunda,=,B.Presbytis_rubicunda_rubicunda,scientific name of
-________________NO CHANGE,A.Presbytis_thomasi,=,B.Presbytis_thomasi,fringe=; genbank common name of
+________________NO CHANGE,A.Presbytis_thomasi,=,B.Presbytis_thomasi,genbank common name of; fringe=
 ______________MOVE,A.Nasalis,=,B.Nasalis_larvatus,fringe=; genbank common name of
-________________MOVE,A.Nasalis_larvatus,=,B.Nasalis_larvatus,fringe=; genbank common name of
-__________________SPLIT,,=,B.Nasalis,genbank common name of; fringe=; split
+________________MULTIPLE,A.Nasalis_larvatus,?,,2 B nodes match this A node
+__________________OPTION,,=,B.Nasalis,genbank common name of; fringe=
+__________________OPTION,,=,B.Nasalis_larvatus,genbank common name of; fringe=
 ______________NO CHANGE,A.Pygathrix,=,B.Pygathrix,scientific name of
 ________________MOVE,A.Pygathrix_nemaeus,=,B.Pygathrix_nemaeus_nemaeus,fringe=
-__________________MOVE,A.Pygathrix_nemaeus_nemaeus,=,B.Pygathrix_nemaeus_nemaeus,scientific name of
-____________________SPLIT,,=,B.Pygathrix_nemaeus,fringe=; split
+__________________MULTIPLE,A.Pygathrix_nemaeus_nemaeus,?,,2 B nodes match this A node
+____________________OPTION,,=,B.Pygathrix_nemaeus,fringe=
+____________________OPTION,,=,B.Pygathrix_nemaeus_nemaeus,scientific name of
 ________________NO CHANGE,A.Pygathrix_nigripes,=,B.Pygathrix_nigripes,scientific name of
-________________NO CHANGE,A.Pygathrix_cinerea,=,B.Pygathrix_cinerea,fringe=; merged id of
+________________NO CHANGE,A.Pygathrix_cinerea,=,B.Pygathrix_cinerea,merged id of; fringe=
 ________________NO CHANGE,A.Pygathrix_cinerea_1_RL-2012,=,B.Pygathrix_cinerea_1_RL-2012,scientific name of
 ________________NO CHANGE,A.Pygathrix_cinerea_2_RL-2012,=,B.Pygathrix_cinerea_2_RL-2012,scientific name of
 ______________NO CHANGE,A.Trachypithecus,=,B.Trachypithecus,scientific name of
@@ -787,8 +870,8 @@ __________________NO CHANGE,A.Trachypithecus_francoisi_francoisi,=,B.Trachypithe
 ________________NO CHANGE,A.Trachypithecus_obscurus,=,B.Trachypithecus_obscurus,scientific name of
 ________________NO CHANGE,A.Trachypithecus_phayrei,=,B.Trachypithecus_phayrei,scientific name of
 __________________NO CHANGE,A.Trachypithecus_phayrei_phayrei,=,B.Trachypithecus_phayrei_phayrei,scientific name of
-__________________NO CHANGE,A.Trachypithecus_phayrei_crepuscula,=,B.Trachypithecus_phayrei_crepuscula,fringe=; synonym of
-__________________NO CHANGE,A.Trachypithecus_phayrei_holotephreus,=,B.Trachypithecus_phayrei_holotephreus,fringe=; synonym of
+__________________NO CHANGE,A.Trachypithecus_phayrei_crepuscula,=,B.Trachypithecus_phayrei_crepuscula,synonym of; fringe=
+__________________NO CHANGE,A.Trachypithecus_phayrei_holotephreus,=,B.Trachypithecus_phayrei_holotephreus,synonym of; fringe=
 __________________NO CHANGE,A.Trachypithecus_phayrei_shanicus,=,B.Trachypithecus_phayrei_shanicus,scientific name of
 ________________NO CHANGE,A.Trachypithecus_johnii,=,B.Trachypithecus_johnii,scientific name of
 ________________NO CHANGE,A.Trachypithecus_cristatus,=,B.Trachypithecus_cristatus,scientific name of
@@ -800,31 +883,33 @@ __________________NO CHANGE,A.Trachypithecus_auratus_auratus,=,B.Trachypithecus_
 __________________NO CHANGE,A.Trachypithecus_auratus_mauritius,=,B.Trachypithecus_auratus_mauritius,scientific name of
 ________________NO CHANGE,A.Trachypithecus_germaini,=,B.Trachypithecus_germaini,scientific name of
 ________________NO CHANGE,A.Trachypithecus_barbei,=,B.Trachypithecus_barbei,scientific name of
-________________NO CHANGE,A.Trachypithecus_delacouri,=,B.Trachypithecus_delacouri,fringe=; genbank common name of
-________________NO CHANGE,A.Trachypithecus_laotum,=,B.Trachypithecus_laotum,fringe=; genbank common name of
+________________NO CHANGE,A.Trachypithecus_delacouri,=,B.Trachypithecus_delacouri,genbank common name of; fringe=
+________________NO CHANGE,A.Trachypithecus_laotum,=,B.Trachypithecus_laotum,genbank common name of; fringe=
 ________________NO CHANGE,A.Trachypithecus_poliocephalus,=,B.Trachypithecus_poliocephalus,scientific name of
-__________________NO CHANGE,A.Trachypithecus_poliocephalus_leucocephalus,=,B.Trachypithecus_poliocephalus_leucocephalus,fringe=; synonym of
+__________________NO CHANGE,A.Trachypithecus_poliocephalus_leucocephalus,=,B.Trachypithecus_poliocephalus_leucocephalus,synonym of; fringe=
 __________________NO CHANGE,A.Trachypithecus_poliocephalus_poliocephalus,=,B.Trachypithecus_poliocephalus_poliocephalus,scientific name of
 ________________NO CHANGE,A.Trachypithecus_francoisi_x_poliocephalus,=,B.Trachypithecus_francoisi_x_poliocephalus,scientific name of
-________________NO CHANGE,A.Trachypithecus_hatinhensis,=,B.Trachypithecus_hatinhensis,fringe=; genbank common name of
-________________NO CHANGE,A.Trachypithecus_shortridgei,=,B.Trachypithecus_shortridgei,fringe=; genbank common name of
+________________NO CHANGE,A.Trachypithecus_hatinhensis,=,B.Trachypithecus_hatinhensis,genbank common name of; fringe=
+________________NO CHANGE,A.Trachypithecus_shortridgei,=,B.Trachypithecus_shortridgei,genbank common name of; fringe=
 ________________GRAFT,,>,B.Trachypithecus_mauritius,not a match target
-________________MOVE,A.Trachypithecus_sp.,=,B.Trachypithecus_sp.,scientific name of
-__________________SPLIT,,=,B.unclassified_Trachypithecus,fringe=; split
+________________MULTIPLE,A.Trachypithecus_sp.,?,,2 B nodes match this A node
+__________________OPTION,,=,B.unclassified_Trachypithecus,fringe=
+__________________OPTION,,=,B.Trachypithecus_sp.,scientific name of
 ______________NO CHANGE,A.Semnopithecus,=,B.Semnopithecus,scientific name of
 ________________NO CHANGE,A.Semnopithecus_entellus,=,B.Semnopithecus_entellus,scientific name of
 __________________NO CHANGE,A.Semnopithecus_entellus_entellus,=,B.Semnopithecus_entellus_entellus,scientific name of
 __________________MOVE,A.Semnopithecus_entellus_priam,=,B.Semnopithecus_priam,id=; merged id of
 ________________NO CHANGE,A.Semnopithecus_hector,=,B.Semnopithecus_hector,scientific name of
-________________NO CHANGE,A.Semnopithecus_priam,=,B.Semnopithecus_priam,fringe=; genbank common name of
-________________NO CHANGE,A.Semnopithecus_hypoleucos,=,B.Semnopithecus_hypoleucos,fringe=; genbank common name of
+________________NO CHANGE,A.Semnopithecus_priam,=,B.Semnopithecus_priam,genbank common name of; fringe=
+________________NO CHANGE,A.Semnopithecus_hypoleucos,=,B.Semnopithecus_hypoleucos,genbank common name of; fringe=
 ________________GRAFT,,>,B.unclassified_Semnopithecus,not a match target
 ______________BREAK,A.Procolobus,⟂,B.Procolobus_verus,fringe-conflict
-________________MOVE,A.Procolobus_verus,=,B.Procolobus_verus,scientific name of
-__________________REFORM,,⟂,B.Procolobus,fringe-conflict; split
+________________MULTIPLE,A.Procolobus_verus,?,,2 B nodes match this A node
+__________________REFORM,,⟂,B.Procolobus,fringe-conflict
+__________________OPTION,,=,B.Procolobus_verus,scientific name of
 ______________NO CHANGE,A.Rhinopithecus,=,B.Rhinopithecus,scientific name of
 ________________NO CHANGE,A.Rhinopithecus_bieti,=,B.Rhinopithecus_bieti,scientific name of
-________________NO CHANGE,A.Rhinopithecus_roxellana,=,B.Rhinopithecus_roxellana,fringe=; merged id of
+________________NO CHANGE,A.Rhinopithecus_roxellana,=,B.Rhinopithecus_roxellana,merged id of; fringe=
 ________________NO CHANGE,A.Rhinopithecus_avunculus,=,B.Rhinopithecus_avunculus,scientific name of
 ________________NO CHANGE,A.Rhinopithecus_brelichi,=,B.Rhinopithecus_brelichi,scientific name of
 ________________NO CHANGE,A.Rhinopithecus_bieti_1_RL-2012,=,B.Rhinopithecus_bieti_1_RL-2012,scientific name of
@@ -844,12 +929,15 @@ ________________NO CHANGE,A.Piliocolobus_foai,=,B.Piliocolobus_foai,scientific n
 ________________NO CHANGE,A.Piliocolobus_pennantii,=,B.Piliocolobus_pennantii,scientific name of
 ________________NO CHANGE,A.Piliocolobus_preussi,=,B.Piliocolobus_preussi,scientific name of
 ______________BREAK,A.Simias,⟂,B.Simias_concolor,fringe-conflict
-________________MOVE,A.Simias_concolor,=,B.Simias_concolor,scientific name of
-__________________REFORM,,⟂,B.Simias,fringe-conflict; split
+________________MULTIPLE,A.Simias_concolor,?,,2 B nodes match this A node
+__________________REFORM,,⟂,B.Simias,fringe-conflict
+__________________OPTION,,=,B.Simias_concolor,scientific name of
 ____________NO CHANGE,A.Cercopithecidae_gen._sp.,=,B.Cercopithecidae_gen._sp.,scientific name of
 ________NO CHANGE,A.Hominoidea,=,B.Hominoidea,scientific name of
 __________NO CHANGE,A.Hylobatidae,=,B.Hylobatidae,scientific name of
-____________NO CHANGE,A.Hylobates,=,B.Hylobates,scientific name of
+____________MULTIPLE,A.Hylobates,?,,2 B nodes match this A node
+______________OPTION,,=,B.Hylobates,scientific name of
+______________REFORM,,⟂,B.unclassified_Hylobates,fringe-conflict
 ______________NO CHANGE,A.Hylobates_agilis,=,B.Hylobates_agilis,scientific name of
 ________________NO CHANGE,A.Hylobates_agilis_unko,=,B.Hylobates_agilis_unko,scientific name of
 ________________NO CHANGE,A.Hylobates_agilis_agilis,=,B.Hylobates_agilis_agilis,scientific name of
@@ -858,21 +946,21 @@ ________________NO CHANGE,A.Hylobates_lar_carpenteri,=,B.Hylobates_lar_carpenter
 ________________NO CHANGE,A.Hylobates_lar_entelloides,=,B.Hylobates_lar_entelloides,scientific name of
 ________________NO CHANGE,A.Hylobates_lar_lar,=,B.Hylobates_lar_lar,scientific name of
 ________________NO CHANGE,A.Hylobates_lar_vestitus,=,B.Hylobates_lar_vestitus,scientific name of
-______________NO CHANGE,A.Hylobates_klossii,=,B.Hylobates_klossii,fringe=; genbank common name of
+______________NO CHANGE,A.Hylobates_klossii,=,B.Hylobates_klossii,genbank common name of; fringe=
 ______________NO CHANGE,A.Hylobates_muelleri,=,B.Hylobates_muelleri,scientific name of
 ________________NO CHANGE,A.Hylobates_muelleri_muelleri,=,B.Hylobates_muelleri_muelleri,scientific name of
 ________________NO CHANGE,A.Hylobates_muelleri_funereus,=,B.Hylobates_muelleri_funereus,scientific name of
 ________________NO CHANGE,A.Hylobates_muelleri_abbotti,=,B.Hylobates_muelleri_abbotti,scientific name of
-______________NO CHANGE,A.Hylobates_pileatus,=,B.Hylobates_pileatus,fringe=; genbank common name of
-______________NO CHANGE,A.Hylobates_moloch,=,B.Hylobates_moloch,fringe=; genbank common name of
-______________RENAME,A.Hylobates_alibarbis,=,B.Hylobates_albibarbis,fringe=; merged id of
-______________REFORM,,⟂,B.unclassified_Hylobates,fringe-conflict; split
-______________MOVE,A.Hylobates_sp.,=,B.Hylobates_sp.,fringe=; genbank common name of
+______________NO CHANGE,A.Hylobates_pileatus,=,B.Hylobates_pileatus,genbank common name of; fringe=
+______________NO CHANGE,A.Hylobates_moloch,=,B.Hylobates_moloch,genbank common name of; fringe=
+______________RENAME,A.Hylobates_alibarbis,=,B.Hylobates_albibarbis,merged id of; fringe=
+______________MOVE,A.Hylobates_sp.,=,B.Hylobates_sp.,genbank common name of; fringe=
 ______________MOVE,A.Hylobates_sp._TIB-201,=,B.Hylobates_sp._TIB-201,scientific name of
 ______________MOVE,A.Hylobates_sp._IGL-2004,=,B.Hylobates_sp._IGL-2004,scientific name of
 ______________MOVE,A.Hylobates_sp._AMA-2004,=,B.Hylobates_sp._AMA-2004,scientific name of
 ______________MOVE,A.Hylobates_sp._ECACC_MLA144,=,B.Hylobates_sp._ECACC_MLA144,scientific name of
 ______________MOVE,A.Hylobates_sp._PS-2007,=,B.Hylobates_sp._PS-2007,scientific name of
+______________GRAFT,,>,B.Hylobates_sp._OH-2017,not a match target
 ____________NO CHANGE,A.Nomascus,=,B.Nomascus,scientific name of
 ______________NO CHANGE,A.Nomascus_siki,=,B.Nomascus_siki,scientific name of
 ______________NO CHANGE,A.Nomascus_concolor,=,B.Nomascus_concolor,scientific name of
@@ -880,21 +968,22 @@ ________________NO CHANGE,A.Nomascus_concolor_jingdongensis,=,B.Nomascus_concolo
 ________________NO CHANGE,A.Nomascus_concolor_furvogaster,=,B.Nomascus_concolor_furvogaster,scientific name of
 ________________NO CHANGE,A.Nomascus_concolor_concolor,=,B.Nomascus_concolor_concolor,scientific name of
 ________________NO CHANGE,A.Nomascus_concolor_lu,=,B.Nomascus_concolor_lu,scientific name of
-______________NO CHANGE,A.Nomascus_gabriellae,=,B.Nomascus_gabriellae,fringe=; merged id of
+______________NO CHANGE,A.Nomascus_gabriellae,=,B.Nomascus_gabriellae,merged id of; fringe=
 ______________NO CHANGE,A.Nomascus_leucogenys,=,B.Nomascus_leucogenys,scientific name of
 ______________NO CHANGE,A.Nomascus_nasutus,=,B.Nomascus_nasutus,scientific name of
-______________NO CHANGE,A.Nomascus_hainanus,=,B.Nomascus_hainanus,fringe=; genbank common name of
+______________NO CHANGE,A.Nomascus_hainanus,=,B.Nomascus_hainanus,genbank common name of; fringe=
 ______________GRAFT,,>,B.Nomascus_annamensis,not a match target
 ______________GRAFT,,>,B.Nomascus_gabriellae_x_Nomascus_siki,not a match target
 ______________GRAFT,,>,B.Nomascus_leucogenys_x_Nomascus_siki,not a match target
 ______________GRAFT,,>,B.Nomascus_cf._leucogenys_SSH-2018,not a match target
 ____________BREAK,A.Symphalangus,⟂,B.Symphalangus_syndactylus,fringe-conflict
-______________MOVE,A.Symphalangus_syndactylus,=,B.Symphalangus_syndactylus,scientific name of
-________________REFORM,,⟂,B.Symphalangus,fringe-conflict; split
-________________NO CHANGE,A.Symphalangus_syndactylus_syndactylus,=,B.Symphalangus_syndactylus_syndactylus,fringe=; synonym of
+______________MULTIPLE,A.Symphalangus_syndactylus,?,,2 B nodes match this A node
+________________REFORM,,⟂,B.Symphalangus,fringe-conflict
+________________OPTION,,=,B.Symphalangus_syndactylus,scientific name of
+________________NO CHANGE,A.Symphalangus_syndactylus_syndactylus,=,B.Symphalangus_syndactylus_syndactylus,synonym of; fringe=
 ____________NO CHANGE,A.Hoolock,=,B.Hoolock,scientific name of
 ______________NO CHANGE,A.Hoolock_hoolock,=,B.Hoolock_hoolock,scientific name of
-______________NO CHANGE,A.Hoolock_leuconedys,=,B.Hoolock_leuconedys,fringe=; synonym of
+______________NO CHANGE,A.Hoolock_leuconedys,=,B.Hoolock_leuconedys,synonym of; fringe=
 ______________GRAFT,,>,B.Hoolock_tianxing,not a match target
 ______________GRAFT,,>,B.Hoolock_leuconedys_x_Hoolock_tianxing,not a match target
 __________NO CHANGE,A.Hominidae,=,B.Hominidae,scientific name of
@@ -903,7 +992,7 @@ ______________NO CHANGE,A.Gorilla,=,B.Gorilla,scientific name of
 ________________NO CHANGE,A.Gorilla_gorilla,=,B.Gorilla_gorilla,scientific name of
 __________________NO CHANGE,A.Gorilla_gorilla_gorilla,=,B.Gorilla_gorilla_gorilla,scientific name of
 __________________NO CHANGE,A.Gorilla_gorilla_uellensis,=,B.Gorilla_gorilla_uellensis,scientific name of
-__________________NO CHANGE,A.Gorilla_gorilla_diehli,=,B.Gorilla_gorilla_diehli,fringe=; genbank common name of
+__________________NO CHANGE,A.Gorilla_gorilla_diehli,=,B.Gorilla_gorilla_diehli,genbank common name of; fringe=
 ________________NO CHANGE,A.Gorilla_beringei,=,B.Gorilla_beringei,scientific name of
 __________________NO CHANGE,A.Gorilla_beringei_graueri,=,B.Gorilla_beringei_graueri,scientific name of
 __________________NO CHANGE,A.Gorilla_beringei_beringei,=,B.Gorilla_beringei_beringei,scientific name of
@@ -914,40 +1003,47 @@ __________________NO CHANGE,A.Pan_troglodytes_schweinfurthii,=,B.Pan_troglodytes
 __________________NO CHANGE,A.Pan_troglodytes_troglodytes,=,B.Pan_troglodytes_troglodytes,scientific name of
 __________________NO CHANGE,A.Pan_troglodytes_verus,=,B.Pan_troglodytes_verus,scientific name of
 __________________NO CHANGE,A.Pan_troglodytes_vellerosus,=,B.Pan_troglodytes_vellerosus,scientific name of
-__________________NO CHANGE,A.Pan_troglodytes_ellioti,=,B.Pan_troglodytes_ellioti,fringe=; synonym of
-__________________NO CHANGE,A.Pan_troglodytes_verus_x_troglodytes,=,B.Pan_troglodytes_verus_x_troglodytes,fringe=; synonym of
+__________________NO CHANGE,A.Pan_troglodytes_ellioti,=,B.Pan_troglodytes_ellioti,synonym of; fringe=
+__________________NO CHANGE,A.Pan_troglodytes_verus_x_troglodytes,=,B.Pan_troglodytes_verus_x_troglodytes,synonym of; fringe=
 ______________NO CHANGE,A.Homo,=,B.Homo,scientific name of
 ________________NO CHANGE,A.Homo_sapiens,=,B.Homo_sapiens,scientific name of
 __________________NO CHANGE,A.Homo_sapiens_neanderthalensis,=,B.Homo_sapiens_neanderthalensis,scientific name of
 __________________RENAME,A.Homo_sapiens_ssp._Denisova,=,B.Homo_sapiens_subsp._'Denisova',scientific name of
-________________NO CHANGE,A.Homo_heidelbergensis,=,B.Homo_heidelbergensis,fringe=; genbank common name of
+________________NO CHANGE,A.Homo_heidelbergensis,=,B.Homo_heidelbergensis,genbank common name of; fringe=
 ____________BREAK,A.Ponginae,⟂,B.Pongo,fringe-conflict
-______________MOVE,A.Pongo,=,B.Pongo,scientific name of
-________________REFORM,,⟂,B.Ponginae,fringe-conflict; split
+______________MULTIPLE,A.Pongo,?,,2 B nodes match this A node
+________________REFORM,,⟂,B.Ponginae,fringe-conflict
+________________OPTION,,=,B.Pongo,scientific name of
 ________________NO CHANGE,A.Pongo_pygmaeus,=,B.Pongo_pygmaeus,scientific name of
 __________________NO CHANGE,A.Pongo_pygmaeus_pygmaeus,=,B.Pongo_pygmaeus_pygmaeus,scientific name of
-________________NO CHANGE,A.Pongo_abelii,=,B.Pongo_abelii,fringe=; synonym of
+________________NO CHANGE,A.Pongo_abelii,=,B.Pongo_abelii,synonym of; fringe=
 ________________NO CHANGE,A.Pongo_abelii_x_pygmaeus,=,B.Pongo_abelii_x_pygmaeus,scientific name of
 ________________GRAFT,,>,B.Pongo_tapanuliensis,not a match target
-________________MOVE,A.Pongo_sp.,=,B.Pongo_sp.,fringe=; synonym of
-__________________SPLIT,,=,B.unclassified_Pongo,synonym of; fringe=; split
+________________MULTIPLE,A.Pongo_sp.,?,,2 B nodes match this A node
+__________________OPTION,,=,B.unclassified_Pongo,synonym of; fringe=
+__________________OPTION,,=,B.Pongo_sp.,synonym of; fringe=
 ____BREAK,A.Tarsiiformes,⟂,B.Tarsiidae,fringe-conflict
-______MOVE,A.Tarsiidae,=,B.Tarsiidae,scientific name of
-________REFORM,,⟂,B.Tarsiiformes,fringe-conflict; split
-________BREAK,A.Tarsius,⟂,B.Tarsiidae,fringe-conflict
-__________SPLIT,,=,B.Tarsius,scientific name of; split
+______MULTIPLE,A.Tarsiidae,?,,2 B nodes match this A node
+________REFORM,,⟂,B.Tarsiiformes,fringe-conflict
+________OPTION,,=,B.Tarsiidae,scientific name of
+________MULTIPLE,A.Tarsius,?,,2 B nodes match this A node
+__________OPTION,,=,B.Tarsius,scientific name of
+__________REFORM,,⟂,B.unclassified_Tarsius,fringe-conflict
 __________MOVE,A.Tarsius_dentatus,=,B.Tarsius_dentatus,scientific name of
-__________MOVE,A.Tarsius_lariang,=,B.Tarsius_lariang,fringe=; genbank common name of
-__________MOVE,A.Tarsius_dentatus_x_lariang,=,B.Tarsius_dentatus_x_lariang,fringe=; synonym of
+__________MOVE,A.Tarsius_lariang,=,B.Tarsius_lariang,genbank common name of; fringe=
+__________MOVE,A.Tarsius_dentatus_x_lariang,=,B.Tarsius_dentatus_x_lariang,synonym of; fringe=
 __________MOVE,A.Tarsius_tarsier,=,B.Tarsius_tarsier,scientific name of
-__________MOVE,A.Tarsius_sangirensis,=,B.Tarsius_sangirensis,fringe=; genbank common name of
+__________MOVE,A.Tarsius_sangirensis,=,B.Tarsius_sangirensis,genbank common name of; fringe=
 __________MOVE,A.Tarsius_wallacei,=,B.Tarsius_wallacei,scientific name of
-__________REFORM,,⟂,B.unclassified_Tarsius,fringe-conflict; split
+__________GRAFT,,>,B.Tarsius_fuscus,not a match target
 __________MOVE,A.Tarsius_sp.,=,B.Tarsius_sp.,scientific name of
 __________MOVE,A.Tarsius_sp._FFA-2009a,=,B.Tarsius_sp._FFA-2009a,scientific name of
-__________MOVE,A.Tarsius_syrichta,=,B.Carlito_syrichta,fringe=; genbank common name of
-____________SPLIT,,=,B.Carlito,genbank common name of; fringe=; split
-__________MOVE,A.Tarsius_bancanus,=,B.Cephalopachus_bancanus,fringe=; genbank common name of
-____________SPLIT,,=,B.Cephalopachus,genbank common name of; fringe=; split
+__________GRAFT,,>,B.Tarsius_sp._CD-2015,not a match target
+__________MULTIPLE,A.Tarsius_syrichta,?,,2 B nodes match this A node
+____________OPTION,,=,B.Carlito,genbank common name of; fringe=
+____________OPTION,,=,B.Carlito_syrichta,genbank common name of; fringe=
+__________MULTIPLE,A.Tarsius_bancanus,?,,2 B nodes match this A node
+____________OPTION,,=,B.Cephalopachus,genbank common name of; fringe=
+____________OPTION,,=,B.Cephalopachus_bancanus,genbank common name of; fringe=
 ____________GRAFT,,>,B.Cephalopachus_bancanus_bancanus,not a match target
 ____________GRAFT,,>,B.Cephalopachus_bancanus_borneanus,not a match target
