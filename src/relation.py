@@ -63,19 +63,17 @@ def compose(rel1, rel2):
   
 # RCC5: find a representation that makes composition possible
 
-goodness = 0.01
-
-eq        = get_relation(1, 1,     goodness, '=')
-lt        = get_relation(1, 0.5,   goodness, '<', '>')
+eq        = get_relation(1, 1,     0, '=')
+lt        = get_relation(1, 0.5,   0, '<', '>')
 gt        = reverse(lt)
-conflict  = get_relation(0.5, 0.5, goodness, '⟂') 
-disjoint  = get_relation(0.1, 0.1, goodness, '||')
+conflict  = get_relation(0.5, 0.5, 0, '⟂') 
+disjoint  = get_relation(0.1, 0.1, 0, '||')
 
 # Non-RCC5 options
 
-no_info   = get_relation(0,   0,   0.05, '?')
-le        = get_relation(1,   0.7, 0.02, '<=', '>=')
-intersect = get_relation(0.3, 0.3, 0.04, '∩')
+le        = get_relation(1,   0.7, 10, '<=', '>=')
+intersect = get_relation(0.3, 0.3, 10, '∩')
+no_info   = get_relation(0,   0,   10, '?')
 
 child     = variant(lt, 0, 'parent', 'child')
 
@@ -92,7 +90,7 @@ def synonym_relation(nomenclatural_status):
   return badnesses[nomenclatural_status]
 
 badnesses = {}
-badness = 1
+badness = 100
 
 def declare_badnesses():
   def b(revname, re, name = None):

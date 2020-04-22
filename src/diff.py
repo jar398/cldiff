@@ -37,8 +37,7 @@ reported = {}
 def subreport(node, B, writer, indent):
   A = cl.get_checklist(node)
   assert A != B
-  report_on_matches(node, B, writer, indent)
-  indent = indent + "__"
+  multiple = report_on_matches(node, B, writer, indent)
   def for_seq(node):
     b = best_partner(node, B)
     return b.cod if b else node
@@ -49,7 +48,9 @@ def subreport(node, B, writer, indent):
     return cl.get_sequence_number(B_node)
   agenda = \
     [(for_seq(child), 0, child) for child in cl.get_children(node)] + \
+    [(option.cod, 1, option) for option in multiple] + \
     [(B_node, 2, B_node) for B_node in get_graftees(node)]
+  indent = indent + "__"
   for (B_node, which, arg) in \
      sorted(agenda, key=sort_key):
     if which == 0:
@@ -71,17 +72,17 @@ def report_on_matches(node, B, writer, indent):
                      "",
                      "",
                      "%s B nodes match this A node" % len(matches)])
+    return []
   elif len(matches) == 1:
     report_on_match(matches[0], False, writer, indent)
+    return []
   else:
     writer.writerow([indent + "MULTIPLE",
                      cl.get_unique(node),
                      "?",
                      "",
                      "%s B nodes match this A node" % len(matches)])
-    indent = "__" + indent
-    for p in matches:
-      report_on_match(p, True, writer, indent)
+    return matches
 
 def report_on_match(match, 
                     splitp, writer, indent):
@@ -89,7 +90,7 @@ def report_on_match(match,
   tag = tag_for_match(match, splitp)
   writer.writerow([indent + tag,
                    A_unique,
-                   rel.variant(match.relation, rel.goodness).name,
+                   rel.variant(match.relation, 0).name,
                    cl.get_unique(match.cod),
                    art.get_comment(match)])
 
@@ -209,8 +210,6 @@ def get_graft_point(B_tnu, A = None):
       return B_parent_match.cod
   return None
 
-rel_graft = rel.variant(rel.eq, 0, "graft", "prune")
-
 # ---------- One-sided best match
 
 best_match_cache = {}
@@ -229,10 +228,20 @@ def best_match(node, other = None):
 
 def good_matches(node, other):
   assert node > 0
-  matches = prune_matches([to_accepted_match(match)
-                           for match in topological_matches(node, other)])
-  if matches: return matches
-  return name_based_matches(node, other)
+  topos = topological_matches(node, other)
+  nameys = name_based_matches(node, other)
+  matches = [score_topo_match(topo, nameys) for topo in topos] + nameys
+  return prune_matches([to_accepted_match(match) for match in matches])
+
+# Returns new articulation with same domain and codomain
+
+def score_topo_match(match, nameys):
+  for namey in nameys:
+    assert is_match(namey)
+    if namey.cod == match.cod:
+      print("Gotcha", cl.get_unique(match.cod))
+      return art.art(match.dom, match.cod, rel_fringe_and_name)
+  return match
 
 # ---------- TOPOLOGY
 
@@ -254,17 +263,8 @@ def topological_matches(tnu, other):
       if scan == None: break
       if cross_mrcas.get(scan) != tnu: break
       matches.append(bridge(tnu, scan, topo_eq))
-  return sorted([score_topo_match(match) for match in matches],
-                key=lambda match: match.relation.badness)
-
-# Determine how tnu compares to its cross-mrca
-
-topology_badness = 1000
-topo_eq       = rel.variant(rel.eq, topology_badness, "fringe=")
-topo_lt       = rel.variant(rel.lt, topology_badness, "fringe<", "fringe>")
-topo_gt       = rel.reverse(topo_lt)
-topo_conflict = rel.variant(rel.conflict, topology_badness, "fringe-conflict")
-topo_disjoint = rel.variant(rel.disjoint, topology_badness, "fringe-disjoint")
+  matches.reverse()    # hmm. for choose
+  return matches
 
 def compare_fringes(tnu, other):
   assert tnu > 0
@@ -308,36 +308,6 @@ def cross_disjoint(tnu, partner):
     if not cross_disjoint(tnu, inf):
       return False
   return True
-
-# returns new articulation with same domain and codomain
-
-def score_topo_match(match):
-  tnu = match.dom
-  option = match.cod
-  other = cl.get_checklist(option)
-
-  relation = match.relation
-  
-  if cl.get_rank(tnu) == cl.get_rank(option):
-    relation = rel_fringe_and_rank
-  
-  matches = name_based_matches(tnu, other) # these come sorted
-  # tnu has offered many other-nodes with various names.
-  # see if one of them is the one we have in hand
-  for match in matches:    # match : tnu.checklist -> other
-    assert match.dom == tnu
-    assert cl.get_checklist(match.cod) == other
-    if match.cod == option:
-      relation = rel_fringe_and_name
-      break
-
-  return bridge(tnu, option, relation)
-
-rel_fringe_and_name = rel.variant(rel.eq, 2, "fringe= + name=")
-rel_fringe_and_rank = rel.variant(rel.eq, 3, "fringe= + rank=")
-
-#    assert match.dom == tnu
-#    assert cl.get_checklist(match.cod) == other
 
 # ---------- Cross-MRCAs
 
@@ -470,11 +440,6 @@ def name_based_matches(tnu, other):
   name_based_matches_cache[tnu] = matches
   return matches
 
-# not used (yet?)
-def accepted_direct_matches(tnu, other):
-  return [to_accepted_match(direct)
-          for direct in direct_matches(tnu, other)]
-
 def to_accepted_match(m):
   if cl.is_accepted(m.cod):
     return m
@@ -502,11 +467,6 @@ def direct_matches(node, other):
     matches = [bridge(node, id_hit, same_id)] + matches
   assert is_matches(matches)
   return matches
-
-same_namestring_and_id = rel.variant(rel.eq, 2,
-                                     "name= + id=")
-same_namestring = rel.variant(rel.eq, 2.1, "name=", "name=")
-same_id = rel.variant(rel.eq, 2.2, "id=", "id=")
 
 # ---------- Within-checklist articulations
 
@@ -618,6 +578,35 @@ def is_matches(matches):
 def bridge(dom, cod, re):
   assert cl.get_checklist(dom) != cl.get_checklist(cod)
   return art.art(dom, cod, re)
+
+# ---------- Special non-synonym relations used here
+
+# Matches are of two sorts:
+#  topological, name-based
+
+# These all need separate badnesses
+
+# Topology bests everything
+
+rel_fringe_and_name = rel.variant(rel.eq, 9, "fringe= + name=")
+topo_eq       = rel.variant(rel.eq, 10, "fringe=")
+topo_lt       = rel.variant(rel.lt, 11, "fringe<", "fringe>")
+topo_gt       = rel.reverse(topo_lt)
+topo_conflict = rel.variant(rel.conflict, 12, "fringe-conflict")
+topo_disjoint = rel.variant(rel.disjoint, 13, "fringe-disjoint")
+
+rel_graft = rel.variant(rel.eq, 20, "graft", "prune")
+
+# Direct matches
+same_namestring_and_id = rel.variant(rel.eq, 30,
+                                     "name= + id=")
+same_namestring = rel.variant(rel.eq, 31, "name=", "name=")
+same_id = rel.variant(rel.eq, 32, "id=", "id=")
+
+#    assert match.dom == tnu
+#    assert cl.get_checklist(match.cod) == other
+
+# ----
 
 if __name__ == '__main__':
   parser = argparse.ArgumentParser()
