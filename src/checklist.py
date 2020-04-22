@@ -1,5 +1,7 @@
 import os, csv
+
 import relation as rel
+import rank
 
 # ---------- Fields
 
@@ -76,12 +78,11 @@ class Checklist:
     return uid
   def new_tnu(self):
     record = [None] * len(the_fields)
-    add_tnu(record)
-    tnu
+    return self.add_tnu(record)
   def get_index(self, field):
     (_, position) = field
     # create the index if necessary, on demand
-    if not self.indexes[position]:
+    if self.indexes[position] == None:
       index = {}
       for tnu in self.tnus:
         # Check each record
@@ -296,18 +297,18 @@ def find_peers(tnu1, tnu2):
   assert tnu1 > 0
   assert tnu2 > 0
   assert get_checklist(tnu1) == get_checklist(tnu2)
-  d1 = get_depth(tnu1)
-  d2 = get_depth(tnu2)
+  d1 = get_rank(tnu1)
+  d2 = get_rank(tnu2)
   while True:
     parent1 = get_superior(tnu1)
-    p1 = get_depth(parent1)
+    p1 = get_rank(parent1)
     # No leapfrogging
     if p1 < d1: break
     tnu1 = parent1
     d1 = p1
   while True:
     parent2 = get_superior(tnu2)
-    p2 = get_depth(parent2)
+    p2 = get_rank(parent2)
     if p2 < d2: break
     tnu2 = parent2
     d2 = p2
@@ -340,22 +341,26 @@ def mrca(tnu1, tnu2):
   if tnu1 == None: return tnu2
   if tnu2 == None: return tnu1
   if tnu1 == tnu2: return tnu1
-  (tnu1, tnu2) = find_peers(tnu1, tnu2)
-  while tnu1 != tnu2 and tnu1:
-    tnu1 = get_superior(tnu1)
-    tnu2 = get_superior(tnu2)
+  d1 = get_rank(tnu1)
+  d2 = get_rank(tnu2)
+  while tnu1 != tnu2:
+    if d1 >= d2:
+      tnu1 = get_superior(tnu1)
+      d1 = get_rank(tnu1)
+    else:
+      tnu2 = get_superior(tnu2)
+      d2 = get_rank(tnu2)
   return tnu1
 
 depth_cache = {}
 
-def get_depth(tnu):
+def get_rank(tnu):
+  if tnu == None: return 0
   depth = depth_cache.get(tnu, None)
   if depth: return depth
-  parent = get_superior(tnu)
-  if parent == None:
-    d = 0
-  else:
-    d = get_depth(parent) + 1
+  d = get_rank(get_superior(tnu)) + 1
+  r = rank.name_to_rank.get(get_nominal_rank(tnu))
+  if r and r > d: d = r
   depth_cache[tnu] = d
   return d
 
