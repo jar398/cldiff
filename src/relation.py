@@ -9,16 +9,12 @@ Relation = \
                          ['b_given_a', 'a_given_b', 'badness', 'name', 'revname'])
 
 defined_relations = {}
-def get_relation(b_given_a, a_given_b, badness, name = None, revname = None):
+def intern_relation(b_given_a, a_given_b, badness, name = None, revname = None):
   key = (b_given_a, a_given_b, badness)
   if key in defined_relations:
     return defined_relations[key]
+  revname = default_revname(name, revname, b_given_a, a_given_b)
   if name:
-    if not revname:
-      if b_given_a == a_given_b:
-        revname = name
-      else:
-        revname = name + " of"
     def establish(b_given_a, a_given_b, badness, name, revname):
       re = Relation(b_given_a, a_given_b, badness, name, revname)
       defined_relations[key] = re
@@ -28,11 +24,26 @@ def get_relation(b_given_a, a_given_b, badness, name = None, revname = None):
   print("unrecognized relationship", name, b_given_a, a_given_b, badness, file=sys.stderr)
   assert False
 
+def get_relation(b_given_a, a_given_b, badness, name = None, revname = None):
+  assert badness >= 0
+  revname = default_revname(name, revname, b_given_a, a_given_b)
+  if badness == 0 or name == None:
+    return intern_relation(b_given_a, a_given_b, badness, name, revname)
+  else:
+    return Relation(b_given_a, a_given_b, badness, name, revname)
+
+def default_revname(name, revname, b_given_a, a_given_b):
+  if name != None and revname == None:
+    if b_given_a == a_given_b:
+      revname = name
+    else:
+      revname = name + " of"
+  return revname
+
 def variant(re, badness, name = None, revname = None):
   assert re.name
   assert badness >=0
-  return get_relation(re.b_given_a, re.a_given_b,
-                      badness, name, revname)
+  return intern_relation(re.b_given_a, re.a_given_b, badness, name, revname)
 
 def is_variant(rel1, rel2):
   return rel1.b_given_a == rel2.b_given_a and \
@@ -87,7 +98,12 @@ def self_tests():
 # -------------------- Synonyms
 
 def synonym_relation(nomenclatural_status):
-  return badnesses[nomenclatural_status]
+  if nomenclatural_status == None: return badnesses["synonym"]
+  status = badnesses.get(nomenclatural_status)
+  if status:
+    return status
+  print("Unrecognized nomenclatural status: %s" % status)
+  return badnesses["synonym"]
 
 badnesses = {}
 badness = 100
@@ -100,6 +116,7 @@ def declare_badnesses():
     badnesses[revname] = variant(re, badness, name, revname)
     badness += 1
 
+  b("homotypic synonym", eq)    # GBIF
   b("authority", eq)
   b("scientific name", eq)        # (actually canonical) exactly one per node
   b("equivalent name", eq)        # synonym but not nomenclaturally

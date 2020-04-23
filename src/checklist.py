@@ -71,6 +71,8 @@ class Checklist:
     self.metadata = None
   def get_all_tnus(self):
     return self.tnus
+  def tnu_count(self):
+    return len(self.tnus)
   def add_tnu(self, record):
     uid = len(registry)
     registry[uid] = (record, self)
@@ -259,10 +261,10 @@ def get_children(parent):
 # Accepted/synonyms
 
 def to_accepted(tnu):
-  if is_accepted(tnu):
-    return tnu
-  else:
+  if is_synonym(tnu):
     return get_accepted(tnu)
+  else:
+    return tnu
 
 def get_accepted(tnu):
   assert tnu > 0
@@ -280,6 +282,9 @@ def get_synonyms(tnu):
 def is_accepted(tnu):
   return get_value(tnu, taxonomic_status_field) == "accepted"
 
+def is_synonym(tnu):
+  return get_value(tnu, taxonomic_status_field) == "synonym"
+
 # Totally general utilities from here down... I guess...
 
 def invert_dict(d):
@@ -294,6 +299,8 @@ def invert_dict(d):
 # ---------- Hierarchy analyzers
 
 def find_peers(tnu1, tnu2):
+  if tnu1 == None or tnu2 == None:
+    return (None, None)
   assert tnu1 > 0
   assert tnu2 > 0
   assert get_checklist(tnu1) == get_checklist(tnu2)

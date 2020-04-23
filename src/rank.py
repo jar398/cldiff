@@ -1,7 +1,7 @@
 # Thanks to Open Tree
 
 rank_names = ["domain",
-		      "superkingdom",
+		          "superkingdom",
               "kingdom",
               "subkingdom",
               "division",         # h2007

@@ -13,6 +13,8 @@ def main(c1, c2, out):
 
   analyze_fringes(A, B)
   print ("number of fringe matches:", len(is_fringe))
+  print ("id_match_count:", id_match_count)
+  print ("tnu_count:", A.tnu_count())
 
   analyze_cross_mrcas(A, B)
   print ("number of cross-mrcas:", len(cross_mrcas))
@@ -67,7 +69,7 @@ def subreport(node, B, writer, indent):
 def report_on_matches(node, B, writer, indent):
   matches = best_partners(node, B)      # cod is accepted
   if len(matches) == 0:
-    writer.writerow([indent + "DELETE",
+    writer.writerow([indent + "REMOVE",
                      cl.get_unique(node),
                      "",
                      "",
@@ -102,16 +104,17 @@ def tag_for_match(match, splitp):
       tag = "MOVE"
     else:
       if cl.get_name(match.dom) == cl.get_name(match.cod):
-        if cl.get_tnu_id(match.dom) == cl.get_tnu_id(match.cod):
+        if id_match_count * 2 < cl.get_checklist(match.dom).tnu_count() or \
+           cl.get_tnu_id(match.dom) == cl.get_tnu_id(match.cod):
           tag = "NO CHANGE"
         else:
           tag = "CHANGE ID"
       else:
         tag = "RENAME"
   elif rel.is_variant(match.relation, rel.lt):
-    tag = "INSERT" if splitp else "REMOVE"
+    tag = "ELIDE"
   elif rel.is_variant(match.relation, rel.gt):
-    tag = "GRAFT" if splitp else "ADD"
+    tag = "INSERT"
   elif rel.is_variant(match.relation, rel.conflict):
     tag = "REFORM" if splitp else "BREAK"
   elif rel.is_variant(match.relation, rel.disjoint):
@@ -239,7 +242,6 @@ def score_topo_match(match, nameys):
   for namey in nameys:
     assert is_match(namey)
     if namey.cod == match.cod:
-      print("Gotcha", cl.get_unique(match.cod))
       return art.art(match.dom, match.cod, rel_fringe_and_name)
   return match
 
@@ -384,42 +386,29 @@ def analyze_fringes(A, B):
 
 is_fringe = {}
 
+# One-sided fringe determination... 
+
+id_match_count = 0
+
 def analyze_fringe(checklist, other):
-  for root in cl.get_roots(checklist):
-    subanalyze_fringe(root, other)
-
-def subanalyze_fringe(tnu, other):
-  found_match = False
-  for inf in cl.get_inferiors(tnu):
-    if subanalyze_fringe(inf, other):
-      found_match = True
-  if found_match:
-    return True
-  name = cl.get_name(tnu)
-  partners = direct_matches(tnu, other)
-  if len(partners) == 1:
-    is_fringe[tnu] = True
-    return True
-  elif len(partners) > 1:
-    return False
-
-def analyze_hits(checklist, other):
-  def subanalyze_hits(tnu, other):
+  def subanalyze_fringe(tnu, other):
+    global id_match_count
     found_match = False
     for inf in cl.get_inferiors(tnu):
-      if subanalyze_hits(inf, other):
+      if subanalyze_fringe(inf, other):
         found_match = True
     if found_match:
       return True
     partners = direct_matches(tnu, other)
     if len(partners) == 1:
       is_fringe[tnu] = True
+      if cl.get_tnu_id(tnu) == cl.get_tnu_id(partners[0].cod):
+        id_match_count += 1
       return True
     elif len(partners) > 1:
       return False
   for root in cl.get_roots(checklist):
-    subanalyze_hits(root, other)
-
+    subanalyze_fringe(root, other)
 
 # ---------- Matches based on name and synonym
 
@@ -441,10 +430,10 @@ def name_based_matches(tnu, other):
   return matches
 
 def to_accepted_match(m):
-  if cl.is_accepted(m.cod):
-    return m
-  else:
+  if cl.is_synonym(m.cod):
     return art.compose(m, accepted_articulation(m.cod))
+  else:
+    return m
 
 # Direct matches by name (no synonym following)
 # This is what open tree was so concerned about...
@@ -513,11 +502,11 @@ def syn_status(synonym):
          "synonym"
 
 def synonym_articulations(tnu):
-  if cl.is_accepted(tnu):
+  if cl.is_synonym(tnu):
+    return []
+  else:
     return prune_matches([art.reverse(accepted_articulation(syn))
                           for syn in cl.get_synonyms(tnu)])
-  else:
-    return []
 
 # ---------- Pruning
 
