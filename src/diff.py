@@ -45,8 +45,6 @@ def subreport(node, B, writer, indent):
     return b.cod if b else node
   def sort_key(triple):
     (B_node, which, arg) = triple
-    if isinstance(B_node, art.Articulation):
-      print("Loser", which, cl.get_name(B_node.cod))
     return cl.get_sequence_number(B_node)
   agenda = \
     [(for_seq(child), 0, child) for child in cl.get_children(node)] + \
@@ -92,7 +90,7 @@ def report_on_match(match,
   tag = tag_for_match(match, splitp)
   writer.writerow([indent + tag,
                    A_unique,
-                   rel.variant(match.relation, 0).name,
+                   rel.rcc5_name(match.relation),
                    cl.get_unique(match.cod),
                    art.get_comment(match)])
 
@@ -135,6 +133,9 @@ def parent_changed(match):
 
 # Partners list for reporting (A->B articulations)
 
+def best_partner(tnu, other):  # for children sort order
+  return choose_least_bad(best_partners(tnu, other))
+
 def best_partners(tnu, other):
   matches = anti_best.get(tnu) or []
   if len(matches) == 0:
@@ -142,20 +143,19 @@ def best_partners(tnu, other):
     if investigate: matches = [investigate]
   return matches
 
-def best_partner(tnu, other):  # for children sort order
-  return choose_least_bad(best_partners(tnu, other))
-
 # Fill the cache
 
 def assign_matches(here, other):
   global anti_best
+  best_match_map = {}
   def process(tnu):
-    best_match(tnu, other)  # Fill the cache
+    m = best_match(tnu, other)  # Fill the cache
+    if m: best_match_map[tnu] = m    # here -> other
     for child in cl.get_children(tnu):
       process(child)
   for root in cl.get_roots(here):
     process(root)
-  anti_best = invert_dict_by_cod(best_match_cache)
+  anti_best = invert_dict_by_cod(best_match_map)
 
 def invert_dict_by_cod(d):
   inv = {}
@@ -192,19 +192,6 @@ def analyze_unmatched(A, B):
 def get_graftees(A_node):
   return (grafts.get(A_node) or [])
 
-def graft_match(B_tnu, A):
-  A_parent = get_graft_point(B_tnu, A)
-  if A_parent:
-    return to_graft_match(A_parent, B_tnu)
-  else:
-    return None
-
-def to_graft_match(A_parent, B_tnu):
-  to_B_parent = parent_articulation(B_tnu)
-  match = art.compose(to_B_parent, B_parent_match) # B -> A
-  return art.compose(art.art(match.dom, match.dom, rel_graft),
-                     match)
-
 def get_graft_point(B_tnu, A = None):
   B_parent = cl.get_parent(B_tnu)
   if B_parent:
@@ -229,12 +216,23 @@ def best_match(node, other = None):
   best_match_cache[node] = match
   return match
 
+good_matches_cache = {}
+
 def good_matches(node, other):
   assert node > 0
+  assert cl.get_checklist(node) != other
+  if node in good_matches_cache: return good_matches_cache[node]
+
   topos = topological_matches(node, other)
   nameys = name_based_matches(node, other)
-  matches = [score_topo_match(topo, nameys) for topo in topos] + nameys
-  return prune_matches([to_accepted_match(match) for match in matches])
+  matches = [art.conjoin(topo, namey) for topo in topos for namey in nameys]
+  matches = [match for match in matches if match]
+  matches = matches or topos or nameys
+  # matches = [score_topo_match(topo, nameys) for topo in topos] + nameys
+  matches = prune_matches([to_accepted_match(match) for match in matches])
+
+  good_matches_cache[node] = matches
+  return matches
 
 # Returns new articulation with same domain and codomain
 
@@ -242,7 +240,7 @@ def score_topo_match(match, nameys):
   for namey in nameys:
     assert is_match(namey)
     if namey.cod == match.cod:
-      return art.art(match.dom, match.cod, rel_fringe_and_name)
+      return art.art(match.dom, match.cod, rel.fringe_and_name)
   return match
 
 # ---------- TOPOLOGY
@@ -256,7 +254,7 @@ def topological_matches(tnu, other):
   if not match: return []
   matches = [match]
 
-  if rel.is_variant(match.relation, topo_eq):
+  if rel.is_variant(match.relation, rel.topo_eq):
     # Scan upwards looking for nodes whose cross_mrca is us... not
     # quite right
     scan = match.cod    # tnu -> something
@@ -264,7 +262,7 @@ def topological_matches(tnu, other):
       scan = cl.get_superior(scan)
       if scan == None: break
       if cross_mrcas.get(scan) != tnu: break
-      matches.append(bridge(tnu, scan, topo_eq))
+      matches.append(bridge(tnu, scan, rel.topo_eq))
   matches.reverse()    # hmm. for choose
   return matches
 
@@ -278,20 +276,20 @@ def compare_fringes(tnu, other):
   here = cl.get_checklist(tnu)
   back = cross_mrca_or_fringe(partner, here)
   if not back:
-    relation = topo_disjoint
+    relation = rel.topo_disjoint
   elif cl.are_disjoint(tnu, back):
-    relation = topo_disjoint
+    relation = rel.topo_disjoint
   else:
     if cl.mrca(tnu, back) == tnu:
-      relation = topo_eq
+      relation = rel.topo_eq
     else:
-      relation = topo_lt
+      relation = rel.topo_lt
     for sub in cl.get_inferiors(partner):
       back = cross_mrca_or_fringe(sub, here)
       if back:
         assert cl.get_checklist(tnu) == cl.get_checklist(back)
         if cl.mrca(tnu, back) == tnu and cross_disjoint(tnu, partner):
-          relation = topo_conflict
+          relation = rel.topo_conflict
           break
   return bridge(tnu, partner, relation)
 
@@ -448,12 +446,12 @@ def direct_matches(node, other):
 
   matches = [bridge(node,
                     hit,
-                    same_namestring_and_id if hit == id_hit \
-                    else same_namestring)
+                    rel.same_name_and_id if hit == id_hit \
+                    else rel.same_name)
              for hit in hits]
   assert is_matches(matches) and True
   if id_hit and not id_hit in hits:
-    matches = [bridge(node, id_hit, same_id)] + matches
+    matches = [bridge(node, id_hit, rel.same_id)] + matches
   assert is_matches(matches)
   return matches
 
@@ -466,24 +464,24 @@ def from_accepted_articulations(node):
 
 # Superior/inferior
 
-def superior_articulation(tnu):
-  return parent_articulation(tnu) or accepted_articulation(tnu)
+#def superior_articulation(tnu):
+#  return parent_articulation(tnu) or accepted_articulation(tnu)
 
-def inferior_articulations(tnu):
-  return child_articulations(tnu) + synonym_articulations(tnu)
+#def inferior_articulations(tnu):
+#  return child_articulations(tnu) + synonym_articulations(tnu)
 
 # Parent/child
 
-def parent_articulation(child):
-  parent = cl.get_parent(child)
-  if parent:
-    return art.art(child, parent, rel.child)
-  else:
-    return None
+# def parent_articulation(child):
+#   parent = cl.get_parent(child)
+#   if parent:
+#     return art.art(child, parent, rel.child_of)
+#   else:
+#     return None
 
-def child_articulations(node):
-  return [art.reverse(parent_articulation(child))
-          for child in cl.get_children(node)]
+#def child_articulations(node):
+#  return [art.reverse(parent_articulation(child))
+#          for child in cl.get_children(node)]
 
 # Accepted/synonym
 
@@ -516,7 +514,7 @@ def synonym_articulations(tnu):
 def prune_matches(arts):
   if len(arts) <= 1: return arts
   assert arts[0].dom
-  arts = sorted(arts, key=lambda art: art.relation.badness)
+  arts = sorted(arts, key=prune_ordering)
   kept = []
   seen = []
   for a in arts:
@@ -532,10 +530,11 @@ def choose_least_bad(arts):     # => art
   besties = prune_further(arts)
   assert besties[0].dom
   if len(besties) == 1: return besties[0]
-  print("** Multiple least-bad matches. Need to look at other criteria:",
-        "%s -> %s" %
+  print("** Multiple least-bad matches. Need to look at other criteria.")
+  print("%s -> %s" %
         (cl.get_unique(arts[0].dom),
          [cl.get_unique(a.cod) for a in besties]))
+  print(', '.join(["%o" % ar.relation.goodness for ar in besties]))
   return None
 
 def prune_further(arts):
@@ -547,7 +546,7 @@ def prune_further(arts):
           if prune_ordering(a) == key]
 
 def prune_ordering(ar):
-  return (ar.relation.badness, cl.get_rank(ar.cod))
+  return (rel.sort_key(ar.relation), -cl.get_rank(ar.cod))
 
 def is_match(ar):
   c1 = cl.get_checklist(ar.dom)
@@ -567,33 +566,6 @@ def is_matches(matches):
 def bridge(dom, cod, re):
   assert cl.get_checklist(dom) != cl.get_checklist(cod)
   return art.art(dom, cod, re)
-
-# ---------- Special non-synonym relations used here
-
-# Matches are of two sorts:
-#  topological, name-based
-
-# These all need separate badnesses
-
-# Topology bests everything
-
-rel_fringe_and_name = rel.variant(rel.eq, 9, "fringe= + name=")
-topo_eq       = rel.variant(rel.eq, 10, "fringe=")
-topo_lt       = rel.variant(rel.lt, 11, "fringe<", "fringe>")
-topo_gt       = rel.reverse(topo_lt)
-topo_conflict = rel.variant(rel.conflict, 12, "fringe-conflict")
-topo_disjoint = rel.variant(rel.disjoint, 13, "fringe-disjoint")
-
-rel_graft = rel.variant(rel.eq, 20, "graft", "prune")
-
-# Direct matches
-same_namestring_and_id = rel.variant(rel.eq, 30,
-                                     "name= + id=")
-same_namestring = rel.variant(rel.eq, 31, "name=", "name=")
-same_id = rel.variant(rel.eq, 32, "id=", "id=")
-
-#    assert match.dom == tnu
-#    assert cl.get_checklist(match.cod) == other
 
 # ----
 
