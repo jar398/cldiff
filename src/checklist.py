@@ -246,8 +246,11 @@ def get_inferiors(tnu):
 
 # Parent/children
 
+def get_parent_id(tnu):
+  return get_value(tnu, parent_tnu_id_field)
+
 def get_parent(tnu):
-  parent_id = get_value(tnu, parent_tnu_id_field)
+  parent_id = get_parent_id(tnu)
   if parent_id != None:
     return get_tnu_with_id(get_checklist(tnu), parent_id)
   else:

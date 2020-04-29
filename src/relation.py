@@ -4,95 +4,173 @@
 import sys
 import collections
 
+Rcc5 = \
+  collections.namedtuple('Rcc5', ['b_given_a', 'a_given_b'])
+
 Relation = \
   collections.namedtuple('Relation',
-                         ['b_given_a', 'a_given_b', 'goodness', 'name', 'revname'])
+                         ['rcc5', 'goodness',
+                          'path_length', 'name', 'revname'])
 
-def _relation(b_given_a, a_given_b, goodness, name = None, revname = None):
-  assert name or revname
-  if name == None and revname != None:
-    if b_given_a == a_given_b:
-      name = revname
-    else:
-      name = revname + " of"
+strong = 1
+weak = 100
+
+def _relation(rcc5, goodness,
+              name, revname = None, path_length = weak):
+  assert path_length >= 0
+  assert name
+  assert isinstance(rcc5, Rcc5)
   if revname == None:
-    if b_given_a == a_given_b:
+    if rcc5.b_given_a == rcc5.a_given_b:
       revname = name
     else:
-      revname = name + " of"
-  return Relation(b_given_a, a_given_b, goodness, name, revname)
+      revname = name + "-of"
+  return Relation(rcc5, goodness, path_length, name, revname)
+
+identity = _relation(Rcc5(1, 1), 0, 'identical', 'identical', 0)
 
 def variant(re, goodness, name, revname = None):
   assert name or revname
-  return _relation(re.b_given_a, re.a_given_b, goodness, name, revname)
+  return _relation(re.rcc5, goodness, name,
+                   revname, re.path_length)
 
 def is_variant(rel1, rel2):
-  return rel1.b_given_a == rel2.b_given_a and \
-         rel1.a_given_b == rel2.a_given_b
+  return rel1.rcc5 == rel2.rcc5
+
+def justify(re, bit, name, revname = None):
+  return _relation(re.rcc5, re.goodness | bit,
+                   name, revname, re.path_length)
+
+def adjacently(re, name, revname = None):
+  return _relation(re.rcc5, re.goodness,
+                   name, revname, strong)
 
 def reverse(re):
-  rre = _relation(re.a_given_b, re.b_given_a, re.goodness,
-                     re.revname, re.name)
+  rre = _relation(Rcc5(re.rcc5.a_given_b, re.rcc5.b_given_a), re.goodness,
+                  re.revname, re.name, re.path_length)
   assert rre
   return rre
 
 def compose(rel1, rel2):
-  b_given_a = min(rel1.b_given_a, rel2.b_given_a)
-  a_given_b = min(rel1.a_given_b, rel2.a_given_b)
-  if a_given_b == 0 and b_given_a == 0:
-    pass                        # Composing with no_info
-  elif rel1.b_given_a < 0.8 and rel2.a_given_b < 0.8:
-    print("losing information",
-          rel1.name, rel1.b_given_a,
-          rel2.a_given_b, rel2.name,
-          file=sys.stderr)
-    return compose(compose(rel1, no_info), rel2)
   goodness = rel1.goodness & rel2.goodness
-  name = "%s; %s" % (rel1.name, rel2.name)
-  revname = "%s; %s" % (rel2.revname, rel1.revname)
-  return _relation(b_given_a, a_given_b, goodness,
-                              name, revname)
+  name    = _compose_names(rel1.name, rel2.name)
+  revname = _compose_names(rel2.revname, rel1.revname)
+  len = rel1.path_length + rel2.path_length
+  return _relation(compose_rcc5(rel1.rcc5, rel2.rcc5), goodness,
+                   name, revname, len)
   
-def conjoin(rel1, rel2, name = None, revname = None):
-  assert is_variant(rel1, rel2)
-  if name == None:
-    if rel1.name == rel2.name: name = rel1.name
-    else: name = "%s & %s" % (rel1.name, rel2.name)
-  if revname == None:
-    if rel1.revname == rel2.revname: name = rel1.revname
-    else: revname = "%s & %s" % (rel1.revname, rel2.revname)
-  return variant(rel1,
-                 rel1.goodness | rel2.goodness,
-                 name,
-                 revname)
+def _compose_names(name1, name2):
+  if name1.startswith("["): name1 = name1[1:-1]
+  if name2.startswith("["): name2 = name2[1:-1]
+  return "[%s → %s]" % (name1, name2)
+
+def composable(rel1, rel2):
+  return composable_rcc5s(rel1.rcc5, rel2.rcc5) != None
+
+def composable_rcc5s(r1, r2):
+  b_given_a = min(r1.b_given_a, r2.b_given_a)
+  a_given_b = min(r1.a_given_b, r2.a_given_b)
+  if r1.b_given_a < 1 and r2.a_given_b < 1:
+    return None
+  return Rcc5(b_given_a, a_given_b)
+
+def compose_rcc5(r1, r2):
+  rcc5 = composable_rcc5s(r1, r2)
+  if not rcc5:
+    print("** losing information", r1, r2,
+          file=sys.stderr)
+    return noinfo_rcc5
+  return rcc5
+
+def conjoin(rel1, rel2):
+  assert conjoinable(rel1, rel2)
+  return _relation(rel1.rcc5,
+                   rel1.goodness | rel2.goodness,
+                   _conjoin_names(rel1.name, rel2.name),
+                   _conjoin_names(rel1.revname, rel2.revname),
+                   min(rel1.path_length, rel2.path_length))
+
+def _conjoin_names(name1, name2):
+  if name1 == name2: return name1
+  elif name1.endswith(" ...}"):
+    return name1                # Discard lesser reasons
+  elif name1.endswith("}"):
+    return name1[0:-1] + " ...}"
+  elif name2.startswith("{"):
+    return "{%s ...}" % name1
+  elif name2.startswith("["):
+    return "{%s ...}" % name1
+  else:
+    return "{%s & %s}" % (name1, name2)
+
+def conjoinable(rel1, rel2):
+  return is_variant(rel1, rel2)
+
+# re1 < re2 in sort order iff sort_key(re1) < sort_key(re2)
 
 def sort_key(re):
-  return -1 - re.goodness
+  return (rcc5_key(re),    # distinguish < from >
+          -1-re.goodness,
+          re.path_length)
+
+def rcc5_key(re):
+  assert re.name
+  return (-(re.rcc5.a_given_b + re.rcc5.b_given_a),
+          re.rcc5.b_given_a - re.rcc5.a_given_b)
+
+def better(re1, re2):
+  return sort_key(re1) < sort_key(re2)
 
 # Goodness represented as bit manipulation
 
 def bit(b): return (1 << b)
 
-no_info   = _relation(1, 1, bit(16)-1, '?')
+# Unjustified
 
-# Direct matches
-same_rank          = variant(no_info, bit(0), "rank=")
-same_parent        = variant(no_info, bit(1), "parent=")
-vernacular         = variant(no_info, bit(2), "vernacular")
-synonym            = variant(no_info, bit(3), "synonym")
-same_name          = variant(no_info, bit(4), "name=")
-same_id            = variant(no_info, bit(5), "id=")
+noinfo_species = Rcc5(-1, -1)
+noinfo    = _relation(noinfo_species,   0, 'noinfo')
+disjoint  = _relation(Rcc5(0,   0),   0, '!')
+conflict  = _relation(Rcc5(0.5, 0.5), 0, '><') 
+lt        = _relation(Rcc5(1,   0.5), 0, '<', '>')
+eq        = _relation(Rcc5(1,   1),   0, '=')
+gt        = reverse(lt)
 
+child_of  = adjacently(lt, 'child of', 'parent of')
+parent_of = reverse(child_of)
+sibling_of = adjacently(disjoint, 'sibling of')  # ?
+
+# Intensional half-matches ?
+
+# Intensional matches
+
+same_rank          = justify(eq, bit(0), "same-rank")
+same_parent        = justify(eq, bit(1), "same-parent")
+has_vernacular     = justify(eq, bit(2), "vernacular")
+has_synonym        = justify(eq, bit(3), "synonym")
+same_name          = justify(eq, bit(4), "same-name")
+same_id            = justify(eq, bit(5), "same-id")
 same_name_and_id = conjoin(same_name, same_id)
 
-# RCC5
-topo_disjoint  = _relation(0,   0,   bit(9), 'tips ||')
-topo_conflict  = _relation(0.5, 0.5, bit(10), 'tips ⟂') 
-topo_lt        = _relation(1,   0.5, bit(11), 'tips<', 'tips>')
-topo_eq        = _relation(1,   1,   bit(12), 'tips=')           # =
-topo_gt        = reverse(topo_lt)
+# Individual half-matches?
+# Individual matches?
+# Cross-mrca half-matches ??
+# Cross-mrca matches ???
 
-same_checklist     = variant(no_info, bit(13), 'checklist=')
+# Justified extensionally (i.e. assuming nonentities don't matter)
+
+extensionally = bit(12)
+
+extension_disjoint  = justify(disjoint, extensionally, "x !")
+extension_conflict  = justify(conflict, extensionally, "x ><") 
+extension_lt        = justify(lt, extensionally, "x <", "x >")
+extension_eq        = justify(eq, extensionally, "x !")
+extension_gt = reverse(extension_lt)
+
+# Monotypy is a tough one.  The extension is the same, but the
+# intension differs.
+
+monotypic_over = justify(gt, bit(14), "monotypic-over", "monotypic-in")
+monotypic_in   = reverse(monotypic_over)
 
 def rcc5_name(re):
   if is_variant(re, eq): return eq.name
@@ -101,17 +179,6 @@ def rcc5_name(re):
   if is_variant(re, conflict): return conflict.name
   if is_variant(re, disjoint): return disjoint.name
   else: return re.name
-
-def rcc5(topo, name, revname = None):
-  return variant(topo, (same_checklist.goodness | topo.goodness), name, revname)
-
-disjoint = rcc5(topo_disjoint, '||')
-conflict = rcc5(topo_conflict, '⟂')
-lt       = rcc5(topo_lt,       '<', '>')
-eq       = rcc5(topo_eq,       '=')
-gt       = reverse(lt)
-
-fringe_and_name = conjoin(eq, same_name)
 
 def self_tests():
   assert reverse(eq) == eq
@@ -125,18 +192,23 @@ def self_tests():
 def synonym_relation(nomenclatural_status):
   if nomenclatural_status == None:
     return synonym
-  re = synonym_types.get(nomenclatural_status)
+  re = synonym_relations.get(nomenclatural_status)
   if re: return re
   print("Unrecognized nomenclatural status: %s" % status)
-  return synonym
+  return reverse(synonym)
 
-synonym_types = {}
+# These relations go from synonym to accepted (the "has x" form)
 
-def declare_synonym_types():
+synonym_relations = {}
 
-  def b(nstatus, rcc5 = eq, name = None, relation = synonym):
-    revname = nstatus
-    synonym_types[nstatus] = variant(rcc5, relation.goodness, name, revname)
+def declare_synonym_relations():
+
+  def b(nstatus, rcc5 = eq, name = None, revname = None, relation = has_synonym):
+    if name == None: name = "has-" + nstatus.replace(" ", "-")
+    if revname == None: revname = nstatus.replace(" ", "-") + "-of"
+    synonym_relations[nstatus] = \
+      reverse(variant(rcc5, relation.goodness,
+                      name, revname))
 
   b("homotypic synonym")    # GBIF
   b("authority")
@@ -159,11 +231,11 @@ def declare_synonym_types():
   b("merged id")    # ?
 
   # Really dubious
-  b("genbank common name", relation = vernacular)    # at most one per node
-  b("common name", relation = vernacular)
+  b("genbank common name", relation = has_vernacular)    # at most one per node
+  b("common name", relation = has_vernacular)
 
-  b("includes", rcc5=gt, name="part of")
-  b("in-part",  rcc5=lt, name="included in")  # part of a polyphyly
+  b("includes", rcc5=gt, name="part-of", revname="included-in")
+  b("in-part",  rcc5=lt, name="included-in", revname="part-of")  # part of a polyphyly
 
-declare_synonym_types()
+declare_synonym_relations()
 
