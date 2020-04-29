@@ -32,13 +32,16 @@ This is highly in flux... as of today we have:
          * `OPTION`  - several B nodes have this A node as their best
                        match.  Could be either a genuine split, some kind
                        of error, or something else.
+     * `...` - this node's children are all unchanged so they have
+          not been listed.
      * Indentation level reflects parent/child relationships in A
  * `A node` - name of node in A
  * `RCC5` - one of `< > = >< !` for proper containment, properly
     contains, same extension, conflict (overlap without equality or
     containment), disjoint
  * `B node`
- * `steps` - the steps taken in finding a path from the A node to the
+ * `steps` - the steps, as a sequence separated by '→', taken in
+    finding a path from the A node to the 
     B node; alternatively, the relationship between the two nodes.
     Sometimes this column just holds a comment.
 
@@ -46,8 +49,8 @@ The row order is a preorder traversal of the hierarchy of A, with the
 children of each node sorted according to the B hierarchy preorder.
 
 Where there is a graft of an unmatched subtree of B into the A
-hierarchy, the B grafted subtree is shown according to the B
-hierarchy.
+hierarchy, only the root of the B subtree is shown, not its
+descendants.
 
 ## Tools
 
