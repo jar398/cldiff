@@ -1,7 +1,13 @@
 # Checklist difference
 
 The inputs are two checklists in TSV or CSV format (extension .tsv or
-.csv).  The output is an ad hoc report file.  See below for
+.csv).  The output is an ad hoc report file.
+
+Examples
+ * [NCBI Taxonomy 2015 to 2020](ncbi-2015-2020.csv) (Primates only)
+ * [NCBI Taxonomy 2020 to GBIF](ncbi-gbif.csv) (Primates only)
+
+See below for
 restrictions.
 
 A "checklist" is a table with one row per taxon name.  A "taxonomy" is
