@@ -7,6 +7,38 @@ restrictions.
 A "checklist" is a table with one row per taxon name.  A "taxonomy" is
 a checklist that provides a hierarchy (parent pointers).
 
+## Report file format
+
+This is highly in flux... as of today we have:
+
+ * `operation` - what needs to be done to A to make it more like B
+     * `NO CHANGE`
+     * `CHANGE ID` - change the taxon id of this node
+     * `RENAME`  - change the canonical name of this node
+     * `ELIDE`   - splice this node out of the A tree
+     * `INSERT`  - insert a new B node into the A tree
+     * `BREAK`  - elide this A node so that the tree can be reorganized
+     * `REFORM`  - add new B node as part of reorganization
+     * `OPTION`  - several B nodes have this A node as their best
+                   match.  Could be either a genuine split or some kind
+                   of error.
+     * `MUTEX`  - independent roots?
+     * Indentation level reflects parent/child relationships in A
+ * `A node` - name of node in A
+ * `RCC5` - one of `< > = >< !` for proper containment, properly
+    contains, same extension, conflict (overlap without equality or
+    containment), disjoint
+ * `B node`
+ * `steps` - the steps taken in finding a path from the A node to the
+    B node; alternatively, the relationship between the nodes
+
+The row order is a preorder traversal of the hierarchy of A, with the
+children of each node sorted according to the B hierarchy preorder.
+
+Where there is a graft of an unmatched subtree of B into the A
+hierarchy, the B grafted subtree is shown according to the B
+hierarchy.
+
 ## Tools
 
 ### NCBI to Darwin Core CSV
@@ -109,22 +141,6 @@ If you put the two in the opposite report you'll get the comparison
 ordered by the other taxonomy:
 
     python3 src/cldiff.py work/gbif/2019-09-16/primates.csv work/ncbi/2020-01-01/primates.csv
-
-## Report file format
-
-This is highly in flux... as of today we have:
-
- * `nesting` - increases with hierarchical nesting depth, so in
-   general (for example) the value in this row will be greater for
-   species than for families.
- * `A_name` - canonical name of the TNU in the A checklist
- * `B_name` - canonical name of the TNU in the B checklist
- * `how` - describes matching status, usually via topology
- * `mode` - describes matching via synonymy
-
-The row order follows the hierarchy of A.  Where there is a graft of
-an unmatched subtree of B into the A hierarchy, the B grafted subtree
-is shown according to the B hierarchy.
 
 ## Darwin Core fields of interest:
 

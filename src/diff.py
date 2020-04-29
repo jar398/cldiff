@@ -31,6 +31,7 @@ def report(A, B, outpath):
   with open(outpath, "w") as outfile:
     print ("Writing:", outpath)
     writer = csv.writer(outfile)
+    writer.writerow(["operation", "A node", "RCC5", "B node", "steps"])
     for root in cl.get_roots(A):
       subreport(root, B, writer, "")
 
@@ -118,7 +119,7 @@ def tag_for_match(match, splitp):
   elif rel.is_variant(match.relation, rel.conflict):
     tag = "REFORM" if splitp else "BREAK"
   elif rel.is_variant(match.relation, rel.disjoint):
-    tag = "PEPPERONI"    # shouldn't happen ...
+    tag = "MUTEX"    # shouldn't happen ...
   return tag
 
 def parent_changed(match):

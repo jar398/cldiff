@@ -77,8 +77,8 @@ def compose(rel1, rel2):
 eq        = get_relation(1, 1,     0, '=')
 lt        = get_relation(1, 0.5,   0, '<', '>')
 gt        = reverse(lt)
-conflict  = get_relation(0.5, 0.5, 0, '⟂') 
-disjoint  = get_relation(0.1, 0.1, 0, '||')
+conflict  = get_relation(0.5, 0.5, 0, '><') 
+disjoint  = get_relation(0.1, 0.1, 0, '!')
 
 # Non-RCC5 options
 
