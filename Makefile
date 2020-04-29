@@ -64,4 +64,12 @@ $(WORK)/ncbi-gbif.csv: $(SOURCES) $(B)/primates.csv $(C)/primates.csv
 	python3 src/diff.py $(B)/primates.csv $(C)/primates.csv --out $@.new
 	mv $@.new $@
 
+publish: doc/ncbi-2015-2020.csv doc/ncbi-gbif.csv
+
+doc/ncbi-2015-2020.csv: $(WORK)/ncbi-2015-2020.csv
+	cp -p $< $@
+
+doc/ncbi-gbif.csv: $(WORK)/ncbi-gbif.csv
+	cp -p $< $@
+
 gbif: $(WORK)/ncbi-gbif.csv

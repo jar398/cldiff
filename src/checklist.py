@@ -281,7 +281,6 @@ def get_synonyms(tnu):
                              accepted_tnu_id_field,
                              get_tnu_id(tnu))
 
-
 def is_accepted(tnu):
   return get_value(tnu, taxonomic_status_field) == "accepted"
 

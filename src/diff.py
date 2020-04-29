@@ -1,4 +1,4 @@
-3
+
 import sys, csv
 import argparse
 
@@ -83,7 +83,7 @@ def drain(sink):
                  parent)
 
 def proclaim(sink, indent, tag, dom, re, cod, remark):
-  if tag != "NO CHANGE": sink[0] = True
+  if tag != "NO CHANGE" and tag != "CHANGED ID": sink[0] = True
   proclaim_row((indent, tag, dom, re, cod, remark), sink)
 
 def proclaim_row(row, sink):
@@ -181,7 +181,7 @@ def tag_for_match(match, splitp):
   elif rel.is_variant(match.relation, rel.conflict):
     tag = "REFORM" if splitp else "BREAK"
   elif rel.is_variant(match.relation, rel.disjoint):
-    tag = "PEPPERONI"    # shouldn't happen ...
+    tag = "MUTEX"    # shouldn't happen ...
   return tag
 
 def parent_changed(match):
@@ -551,8 +551,8 @@ def synonyms_locally(tnu):
   if cl.is_synonym(tnu):
     return []
   else:
-    return collapse_matches([art.reverse(has_accepted_locally(syn))
-                             for syn in cl.get_synonyms(tnu)])
+    hases = [has_accepted_locally(syn) for syn in cl.get_synonyms(tnu)]
+    return collapse_matches([art.reverse(ar) for ar in hases if ar])
 
 # A synonym has only one accepted name
 
@@ -560,12 +560,16 @@ def has_accepted_locally(maybe_syn):   # goes from synonym to accepted
   assert maybe_syn > 0
   if cl.is_synonym(maybe_syn):
     accepted = cl.get_accepted(maybe_syn)
-    if accepted != maybe_syn:
-      status = rel.synonym_relation(maybe_syn_status(maybe_syn))
-      return art.art(maybe_syn, accepted, status)
+    if accepted:
+      if accepted != maybe_syn:
+        status = rel.synonym_relation(maybe_syn_status(maybe_syn))
+        return art.art(maybe_syn, accepted, status)
+      else:
+        print("** Shouldn't happen", cl.get_unique(maybe_syn))
+        return art.identity(maybe_syn)
     else:
-      print("Shouldn't happen", cl.get_name(maybe_syn))
-      return art.identity(maybe_syn)
+      print("** Synonym has no accepted name" % cl.get_unique(maybe_syn))
+      return None
   else:
     return None
 

@@ -7,6 +7,48 @@ restrictions.
 A "checklist" is a table with one row per taxon name.  A "taxonomy" is
 a checklist that provides a hierarchy (parent pointers).
 
+## Report file format
+
+This is highly in flux... as of today we have:
+
+ * `operation` - what needs to be done to A to make it more like B
+     * `NO CHANGE`
+     * Intensional properies:
+         * `CHANGE ID`   - change the taxon id of this node (similarly RANK)
+         * `CHANGE NAME` - change the canonical name of this node
+     * Comings and goings:
+         * `GRAFT`   - add a B subtree to A
+         * `REMOVE`  - remove an A subtree so it's not in B
+         * `INSERT`  - insert a new B node into the A tree, with
+                       descendants mapped to A
+         * `ELIDE`   - splice this A node, one with B descendants, out of the tree
+     * Reorganization:
+         * `MOVE`    - this B subtree now has a parent mapped to a
+                       different place in the A tree
+         * `BREAK`   - remove an A node that has descendants mapped to B
+         * `REFORM`  - add new B node as part of reorganization
+         * `CHANGE PARENT` - change the parent; it is now in another place in the tree
+     * `MULTIPLE` - this A node is the favorite of multiple B nodes
+         * `OPTION`  - several B nodes have this A node as their best
+                       match.  Could be either a genuine split, some kind
+                       of error, or something else.
+     * Indentation level reflects parent/child relationships in A
+ * `A node` - name of node in A
+ * `RCC5` - one of `< > = >< !` for proper containment, properly
+    contains, same extension, conflict (overlap without equality or
+    containment), disjoint
+ * `B node`
+ * `steps` - the steps taken in finding a path from the A node to the
+    B node; alternatively, the relationship between the two nodes.
+    Sometimes this column just holds a comment.
+
+The row order is a preorder traversal of the hierarchy of A, with the
+children of each node sorted according to the B hierarchy preorder.
+
+Where there is a graft of an unmatched subtree of B into the A
+hierarchy, the B grafted subtree is shown according to the B
+hierarchy.
+
 ## Tools
 
 ### NCBI to Darwin Core CSV
@@ -109,22 +151,6 @@ If you put the two in the opposite report you'll get the comparison
 ordered by the other taxonomy:
 
     python3 src/cldiff.py work/gbif/2019-09-16/primates.csv work/ncbi/2020-01-01/primates.csv
-
-## Report file format
-
-This is highly in flux... as of today we have:
-
- * `nesting` - increases with hierarchical nesting depth, so in
-   general (for example) the value in this row will be greater for
-   species than for families.
- * `A_name` - canonical name of the TNU in the A checklist
- * `B_name` - canonical name of the TNU in the B checklist
- * `how` - describes matching status, usually via topology
- * `mode` - describes matching via synonymy
-
-The row order follows the hierarchy of A.  Where there is a graft of
-an unmatched subtree of B into the A hierarchy, the B grafted subtree
-is shown according to the B hierarchy.
 
 ## Darwin Core fields of interest:
 
