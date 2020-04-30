@@ -1,8 +1,6 @@
 WORK=work
 
-default_target: $(WORK)/ncbi-2015-2020.csv
-
-all: publish
+all: $(WORK)/ncbi-2015-2020.csv
 
 # A (NCBI 2015)
 

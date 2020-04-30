@@ -80,8 +80,10 @@ def drain(sink):
                   "%s unchanged children" % len(rows)),
                  parent)
 
+no_change_tags = ["NO CHANGE", "CHANGED ID", "..."]
+
 def proclaim(sink, indent, tag, dom, re, cod, remark):
-  if tag != "NO CHANGE" and tag != "CHANGED ID": sink[0] = True
+  if not tag in no_change_tags: sink[0] = True
   proclaim_row((indent, tag, dom, re, cod, remark), sink)
 
 def proclaim_row(row, sink):

@@ -388,13 +388,15 @@ def find_peers(tnu1, tnu2):
 def how_related(tnu1, tnu2):
   assert tnu1 > 0
   assert tnu2 > 0
+  tnu1 = get_accepted(tnu1)    # TBD: implement in-part 'synonyms'
+  tnu2 = get_accepted(tnu2)
   if tnu1 == tnu2:
+    # If in differently checklists, this could be an incompatibility
     return rel.eq
   (peer1, peer2) = find_peers(tnu1, tnu2)  
   if peer1 != peer2:
     return rel.disjoint
   if peer1 == tnu1:
-    # TBD: check for synonymy
     return rel.gt
   if peer2 == tnu2:
     return rel.lt
