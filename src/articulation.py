@@ -77,4 +77,4 @@ def conjoin_sort_key(ar):
 
 def badness(ar):
   return(rel.sort_key(ar.relation),
-         cl.get_rank(ar.cod))
+         cl.get_mutex(ar.cod))

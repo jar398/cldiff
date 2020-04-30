@@ -14,11 +14,11 @@ def main(c1, c2, out):
   report(A, B, out)
 
 def start(A, B):
-  global individuals
+  global particles
   global cross_mrcas
 
-  individuals = find_individuals(A, B)
-  print ("number of individuals:", len(individuals)>>1)
+  particles = find_particles(A, B)
+  print ("number of particles:", len(particles)>>1)
 
   cross_mrcas = analyze_cross_mrcas(A, B)
   print ("number of cross-mrcas:", len(cross_mrcas))
@@ -125,7 +125,7 @@ def subreport(node, B, sink, indent):
       proclaim(sink,
                indent, "GRAFT",
                        "",
-                       ">",
+                       "",
                        cl.get_unique(arg),
                        "")
   drain(sink)
@@ -350,7 +350,7 @@ def extensional_matches(tnu, other):
 def extensional_match(tnu, other):
   assert tnu > 0
   here = cl.get_checklist(tnu)
-  match = individual_match(tnu, other)
+  match = particle_match(tnu, other)
   if match:
     return match
   else:
@@ -362,7 +362,7 @@ def extensional_match(tnu, other):
 
 def how_related_extensionally(tnu, partner):
   here = cl.get_checklist(tnu)
-  i = individual_match(tnu, partner)
+  i = particle_match(tnu, partner)
   if i:
     return i.relation
   else:
@@ -412,7 +412,7 @@ def cross_disjoint(tnu, partner):
 
 def cross_mrca(tnu, other):
   assert tnu > 0
-  match = individual_match(tnu, other)
+  match = particle_match(tnu, other)
   if match:
     return match.cod
   else:
@@ -422,13 +422,13 @@ def analyze_cross_mrcas(A, B):
   cross_mrcas = {}
   def half_analyze_cross_mrcas(checklist, other):
     def subanalyze_cross_mrcas(tnu, other):
-      ind = individual_match(tnu, other)
+      ind = particle_match(tnu, other)
       if ind:
         assert ind.dom == tnu
         if rel.is_variant(ind.relation, rel.eq):
           m = ind.cod
         else:
-          print("** Non-eq articulation from individual_match\n  %s" +
+          print("** Non-eq articulation from particle_match\n  %s" +
                 art.express(ind))
           assert False
       else:
@@ -451,16 +451,16 @@ def analyze_cross_mrcas(A, B):
 
 cross_mrcas = {}
 
-# ---------- Individuals
+# ---------- Particles
 
-# A individual is mutual articulation deriving from sameness of 'intrinsic'
+# A particle is mutual articulation deriving from sameness of 'intrinsic'
 # node properties: name, id, rank, parent, etc.
 
-def individual_match(tnu, other):
-  return individuals.get(tnu)
+def particle_match(tnu, other):
+  return particles.get(tnu)
 
-def find_individuals(here, other):
-  individuals = {}
+def find_particles(here, other):
+  particles = {}
   count = [0]
   def log(tnu, message):
     if count[0] < 10:
@@ -477,7 +477,7 @@ def find_individuals(here, other):
       log(tnu, "child %s" % inf)
       if subanalyze(inf, other):
         found_match = True
-    if found_match:    # Some descendant is an individual
+    if found_match:    # Some descendant is an particle
       return True
     candidate = best_match(matches_to_accepted(tnu, other))
     if candidate:
@@ -486,8 +486,8 @@ def find_individuals(here, other):
         if rematch.cod == tnu:
           if cl.get_accepted(candidate.cod):
             print("** Candidate is synonymlike: %s" % cl.get_unique(candidate.cod))
-          individuals[tnu] = candidate    # here -> other
-          individuals[candidate.cod] = art.reverse(candidate)  # other -> here
+          particles[tnu] = candidate    # here -> other
+          particles[candidate.cod] = art.reverse(candidate)  # other -> here
           return True
         else:
           # This situation probably reflects a split!
@@ -502,7 +502,7 @@ def find_individuals(here, other):
   for root in cl.get_roots(here):
     log(root, "root")
     subanalyze(root, other)
-  return individuals
+  return particles
 
 # ---------- Matches to accepted nodes
 
@@ -567,7 +567,7 @@ def intensional_matches(node, other):
   assert is_matches(matches)
   rank_matches = [bridge(node, match.cod, rel.same_rank)
                   for match in matches
-                  if cl.get_rank(match.cod) == cl.get_rank(node)]
+                  if cl.get_nominal_rank(match.cod) == cl.get_nominal_rank(node)]
   return sort_by_badness(collapse_matches(matches + rank_matches))    # Should be cached.
 
 # ---------- Within-checklist articulations

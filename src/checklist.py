@@ -347,13 +347,6 @@ def is_accepted(tnu):
 def is_synonym(tnu):
   return get_taxonomic_status(tnu) == "synonym"
 
-def to_accepted(tnu):
-  probe = get_accepted(tnu)
-  if probe:
-    return probe
-  else:
-    return tnu
-
 # ----------
 # Totally general utilities from here down... I guess...
 
@@ -368,27 +361,28 @@ def invert_dict(d):
 
 # ---------- Hierarchy analyzers
 
+# Find ancestor(s) of tnu1 and tnu2 that are in the same mutex: either
+# disjoint or equal.
+
 def find_peers(tnu1, tnu2):
   if (not tnu1) or (not tnu2):
     return (None, None)
   assert tnu1 > 0
   assert tnu2 > 0
-  assert get_checklist(tnu1) == get_checklist(tnu2)
-  d1 = get_rank(tnu1)
-  d2 = get_rank(tnu2)
-  while True:
-    parent1 = get_superior(tnu1)
-    p1 = get_rank(parent1)
-    # No leapfrogging
-    if p1 < d2: break
-    tnu1 = parent1
-    d1 = p1
-  while True:
-    parent2 = get_superior(tnu2)
-    p2 = get_rank(parent2)
-    if p2 < d1: break
-    tnu2 = parent2
-    d2 = p2
+  assert get_checklist(tnu1) == get_checklist(tnu2)  #?
+  tnu1 = to_accepted(tnu1)
+  tnu2 = to_accepted(tnu2)
+  mutex1 = get_mutex(tnu1)
+  mutex2 = get_mutex(tnu2)
+  while mutex1 != mutex2:
+    if mutex1 < mutex2:
+      # If p1 is closer to the root, try going rootward from p2
+      tnu2 = get_superior(tnu2)
+      mutex2 = get_mutex(tnu2)
+    else:
+      # If p2 is closer to the root, try going rootward from p1
+      tnu1 = get_superior(tnu1)
+      mutex1 = get_mutex(tnu1)
   return (tnu1, tnu2)
 
 def how_related(tnu1, tnu2):
@@ -409,8 +403,6 @@ def how_related(tnu1, tnu2):
 def are_disjoint(tnu1, tnu2):
   assert tnu1 > 0
   assert tnu2 > 0
-  tnu1 = to_accepted(tnu1)
-  tnu2 = to_accepted(tnu2)
   (tnu1, tnu2) = find_peers(tnu1, tnu2)
   return tnu1 != tnu2
 
@@ -418,38 +410,80 @@ def are_disjoint(tnu1, tnu2):
 # Also computes number of matched tips
 
 def mrca(tnu1, tnu2):
-  if not tnu1: return tnu2
-  if not tnu2: return tnu1
-  if tnu1 == tnu2: return tnu1
-  d1 = get_rank(tnu1)
-  d2 = get_rank(tnu2)
+  if not tnu1 or not tnu2: return tnu1
+  tnu1 = to_accepted(tnu1)
+  tnu2 = to_accepted(tnu2)
   while tnu1 != tnu2:
-    if d1 >= d2:
-      tnu1 = get_superior(tnu1)
-      d1 = get_rank(tnu1)
-    else:
-      tnu2 = get_superior(tnu2)
-      d2 = get_rank(tnu2)
+    tnu1 = get_superior(tnu1)
+    tnu2 = get_superior(tnu2)
+    (tnu1, tnu2) = find_peers(tnu1, tnu2)
   return tnu1
 
-depth_cache = {}
+def get_mutex(tnu):
+  return rank.height_to_depth(level_table.get(tnu, rank.root_height))
 
-def get_rank(tnu):
-  if not tnu: return 0    # None is OK, means we fell off top
-  assert tnu > 0
-  depth = depth_cache.get(tnu, None)
-  if depth: return depth
-  d = 1
-  rankname = get_nominal_rank(tnu)
-  if rankname:
-    r = rank.name_to_rank.get(rankname)
-    if r:
-      d = max(d, r)
-  sup = get_superior(tnu)
-  if sup:
-    d = max(d, get_rank(sup) + 1)
-  depth_cache[tnu] = d
-  return d
+level_table = {}
+
+def get_height(tnu):
+  if not tnu:
+    return anything_depth
+  probe = level_table.get(tnu)
+  if probe: return probe
+  height = get_height_really(tnu)
+  assert height >= 0
+  level_table[tnu] = height    # Perhaps amended later
+  return height
+
+def get_height_really(tnu):
+  # Must be higher than any child
+  level = 0    # Can increase
+  inferiors = get_inferiors(tnu)
+  if len(inferiors) > 0:
+    # The children are mutually exclusive
+    unplaced_level = 0
+    for inf in inferiors:
+      h = get_height(inf)
+      level = max(level, h)
+      if is_container(h):
+        unplaced_level = max(unplaced_level, h)
+    if unplaced_level >= level:
+      print("** Shouldn't happen: height(%s) >= height(%s)" % \
+            (get_unique(inf), get_unique(tnu)))
+      level += 1
+    for inf in get_inferiors(tnu):
+      if not is_container(inf):
+        # This may change the value that's already there
+        h = level_table[inf]
+        if h != level:
+          print("** Promotion: %s from %s to %s" % \
+                (get_unique(inf), h, level))
+          level_table[inf] = level
+    if not is_container(tnu):
+      level += 1
+      rank = get_nominal_rank(tnu)
+      if rank:
+        r = rank.rank_to_height(rank)
+        if r > level:
+          print("** Promoting %s from %s to %s" % \
+                (get_unique(tnu), level, r))
+          level = r
+  return level
+
+def is_container(tnu):
+  name = get_name(inf).lower()
+  return "unclassified" in name or \
+         "incertae sedis" in name or \
+         "unallocated" in name or \
+         "unassigned" in name
+  
+def to_accepted(tnu):
+  if not tnu: return tnu
+  probe = get_accepted(tnu)
+  if probe:
+    return probe
+  else:
+    return tnu
+
 
 # Test
 
