@@ -135,8 +135,8 @@ def get_all_tnus(checklist):
 
 def read_checklist(specifier, prefix):
   checklist = Checklist()
-  checklist.populate_from_file(specifier)
   checklist.prefix = prefix
+  checklist.populate_from_file(specifier)
   return checklist
 
 # Utility - copied from another file - really ought to be shared
@@ -213,13 +213,19 @@ def get_nominal_rank(tnu):
 # Unique name of the sort Nico likes
 
 def get_unique(tnu):
+  if not tnu: return "none"
   checklist = get_checklist(tnu)
   name = get_name(tnu)
   tnus_with_this_name = \
     get_tnus_with_value(checklist, canonical_name_field, name)
 
   if not is_accepted(tnu):
-    name = "?" + name
+    if is_synonym(tnu):
+      name = "?" + name
+    else:
+      status = get_value(tnu, nomenclatural_status_field)
+      if not status: status = "nom. status not given"
+      name = "%s (%s)" % (name, status)
   better = checklist.prefix + name.replace(" ", "_")
   if len(tnus_with_this_name) <= 1:
     return better
@@ -231,55 +237,106 @@ def get_unique(tnu):
 def get_roots(checklist):
   roots = []
   for tnu in get_all_tnus(checklist):
-    parent = get_superior(tnu)
-    if parent is None:
+    if not get_accepted(tnu) and not get_parent(tnu):
       roots.append(tnu)
+  print("Roots:", roots)
   return roots
 
 # Superior/inferior
 
 def get_superior(tnu):
-  return get_parent(tnu) or get_accepted(tnu)
+  assert tnu > 0
+  return get_accepted(tnu) or get_parent(tnu)
 
 def get_inferiors(tnu):
-  return get_children(tnu) + get_synonyms(tnu)
+  assert tnu > 0
+  return get_synonyms(tnu) + get_children(tnu)
 
-# Parent/children
+# ----------
+# Parent/children and accepted/synonyms
 
-def get_parent_id(tnu):
-  return get_value(tnu, parent_tnu_id_field)
+parents_cache = {}
 
 def get_parent(tnu):
-  parent_id = get_parent_id(tnu)
+  probe = parents_cache.get(tnu)
+  if probe != None: return probe
+  parent = get_parent_really(tnu)
+  parents_cache[tnu] = parent or False
+  return parent
+
+def get_parent_really(tnu):
+  parent = None
+  probe = get_accepted(tnu)
+  if probe:
+    # This happens a lot in GBIF.  Don't bother.
+    if False:
+      print("** In get_parent: %s has accepted name %s," %
+            (get_unique(tnu), get_unique(probe)))
+    tnu = probe
+  parent_id = get_value(tnu, parent_tnu_id_field)
   if parent_id != None:
-    return get_tnu_with_id(get_checklist(tnu), parent_id)
-  else:
-    return None
+    # No parent means root taxon
+    probe = get_tnu_with_id(get_checklist(tnu), parent_id)
+    if probe:
+      if is_accepted(tnu) and not is_accepted(probe):
+        # GBIF contains all sorts of junk
+        print("** Parent %s of accepted %s is not accepted" %
+              (get_unique(probe), get_unique(tnu)))
+        probe2 = get_accepted(probe)
+        if probe2:
+          parent = probe2
+        elif not probe2:
+          print("** Unaccepted parent %s of %s has no accepted taxon" %
+                (get_unique(probe), get_unique(tnu)))
+      else:
+        parent = probe
+    else:
+      # This is a root
+      pass
+  return parent
 
 def get_children(parent):
   return get_tnus_with_value(get_checklist(parent),
                              parent_tnu_id_field,
                              get_tnu_id(parent))
 
+# ----------
 # Accepted/synonyms
 
-def to_accepted(tnu):
-  if is_synonym(tnu):
-    return get_accepted(tnu)
-  else:
-    return tnu
+accepteds_cache = {}
 
 def get_accepted(tnu):
-  assert tnu > 0
-  accepted_id = get_value(tnu, accepted_tnu_id_field)
-  if accepted_id == None:
-    return None
-  return get_tnu_with_id(get_checklist(tnu), accepted_id)
+  probe = accepteds_cache.get(tnu)
+  if probe != None: return probe
+
+  accepted = None
+  if is_accepted(tnu):
+    pass                        # This is normal
+  else:
+    accepted_id = get_value(tnu, accepted_tnu_id_field)
+    if not accepted_id:
+      pass                      # This is normal
+    else:
+      probe = get_tnu_with_id(get_checklist(tnu), accepted_id)
+      if probe:
+        if is_accepted(probe):
+          accepted = probe      # Normal case
+        else:
+          print("** Accepted taxon %s for %s is not accepted" %
+                (get_unique(probe), get_unique(tnu)))
+      else:
+        print("** Accepted id %s for %s doesn't resolve" %
+              (accepted_id, get_unique(tnu)))
+
+  accepteds_cache[tnu] = accepted or False
+  return accepted
 
 def get_synonyms(tnu):
-  return get_tnus_with_value(get_checklist(tnu),
-                             accepted_tnu_id_field,
-                             get_tnu_id(tnu))
+  return [syn
+          for syn in get_tnus_with_value(get_checklist(tnu),
+                                         accepted_tnu_id_field,
+                                         get_tnu_id(tnu))
+          if not get_parent(tnu)]
 
 def is_accepted(tnu):
   return get_value(tnu, taxonomic_status_field) == "accepted"
@@ -287,6 +344,14 @@ def is_accepted(tnu):
 def is_synonym(tnu):
   return get_value(tnu, taxonomic_status_field) == "synonym"
 
+def to_accepted(tnu):
+  probe = get_accepted(tnu)
+  if probe:
+    return probe
+  else:
+    return tnu
+
+# ----------
 # Totally general utilities from here down... I guess...
 
 def invert_dict(d):
@@ -301,7 +366,7 @@ def invert_dict(d):
 # ---------- Hierarchy analyzers
 
 def find_peers(tnu1, tnu2):
-  if tnu1 == None or tnu2 == None:
+  if (not tnu1) or (not tnu2):
     return (None, None)
   assert tnu1 > 0
   assert tnu2 > 0
@@ -350,8 +415,8 @@ def are_disjoint(tnu1, tnu2):
 # Also computes number of matched tips
 
 def mrca(tnu1, tnu2):
-  if tnu1 == None: return tnu2
-  if tnu2 == None: return tnu1
+  if not tnu1: return tnu2
+  if not tnu2: return tnu1
   if tnu1 == tnu2: return tnu1
   d1 = get_rank(tnu1)
   d2 = get_rank(tnu2)
@@ -367,12 +432,19 @@ def mrca(tnu1, tnu2):
 depth_cache = {}
 
 def get_rank(tnu):
-  if tnu == None: return 0
+  if not tnu: return 0    # None is OK, means we fell off top
+  assert tnu > 0
   depth = depth_cache.get(tnu, None)
   if depth: return depth
-  d = get_rank(get_superior(tnu)) + 1
-  r = rank.name_to_rank.get(get_nominal_rank(tnu))
-  if r and r > d: d = r
+  d = 1
+  rankname = get_nominal_rank(tnu)
+  if rankname:
+    r = rank.name_to_rank.get(rankname)
+    if r:
+      d = max(d, r)
+  sup = get_superior(tnu)
+  if sup:
+    d = max(d, get_rank(sup) + 1)
   depth_cache[tnu] = d
   return d
 

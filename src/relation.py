@@ -160,10 +160,10 @@ same_name_and_id = conjoin(same_name, same_id)
 
 extensionally = bit(12)
 
-extension_disjoint  = justify(disjoint, extensionally, "x !")
-extension_conflict  = justify(conflict, extensionally, "x ><") 
-extension_lt        = justify(lt, extensionally, "x <", "x >")
-extension_eq        = justify(eq, extensionally, "x !")
+extension_disjoint  = justify(disjoint, extensionally, "ext !")
+extension_conflict  = justify(conflict, extensionally, "ext ><") 
+extension_lt        = justify(lt, extensionally, "ext <", "ext >")
+extension_eq        = justify(eq, extensionally, "ext !")
 extension_gt = reverse(extension_lt)
 
 # Monotypy is a tough one.  The extension is the same, but the
@@ -189,12 +189,12 @@ def self_tests():
 
 # -------------------- Synonyms 
 
-def synonym_relation(nomenclatural_status):
-  if nomenclatural_status == None:
+def synonym_relation(nom_status):
+  if nom_status == None:
     return synonym
-  re = synonym_relations.get(nomenclatural_status)
+  re = synonym_relations.get(nom_status)
   if re: return re
-  print("Unrecognized nomenclatural status: %s" % status)
+  print("Unrecognized nomenclatural status: %s" % nom_status)
   return reverse(synonym)
 
 # These relations go from synonym to accepted (the "has x" form)
@@ -202,13 +202,14 @@ def synonym_relation(nomenclatural_status):
 synonym_relations = {}
 
 def declare_synonym_relations():
+  global synonym
 
   def b(nstatus, rcc5 = eq, name = None, revname = None, relation = has_synonym):
     if name == None: name = "has-" + nstatus.replace(" ", "-")
     if revname == None: revname = nstatus.replace(" ", "-") + "-of"
-    synonym_relations[nstatus] = \
-      reverse(variant(rcc5, relation.goodness,
-                      name, revname))
+    re = reverse(variant(rcc5, relation.goodness, name, revname))
+    synonym_relations[nstatus] = re
+    return re
 
   b("homotypic synonym")    # GBIF
   b("authority")
@@ -225,7 +226,7 @@ def declare_synonym_relations():
   b("genbank acronym")      # at most one per node
 
   # More dubious
-  b("synonym")
+  synonym = b("synonym")
   b("misnomer")
   b("type material")
   b("merged id")    # ?

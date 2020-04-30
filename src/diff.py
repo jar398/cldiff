@@ -7,11 +7,9 @@ import relation as rel
 import articulation as art
 
 def main(c1, c2, out):
-  global individuals
   A = cl.read_checklist(c1, "A.")
   B = cl.read_checklist(c2, "B.")
-  print ("counts:", len(cl.get_all_tnus(A)), len(cl.get_all_tnus(B)))
-  print ("A's tnu count:", A.tnu_count())
+  print ("TNU counts:", len(cl.get_all_tnus(A)), len(cl.get_all_tnus(B)))
   start(A, B)
   report(A, B, out)
 
@@ -124,7 +122,7 @@ def subreport(node, B, sink, indent):
                        "",
                        ">",
                        cl.get_unique(arg),
-                       "not a match target")
+                       "")
   drain(sink)
 
 def report_on_matches(node, B, sink, indent):
@@ -187,9 +185,9 @@ def tag_for_match(match, splitp):
 def parent_changed(match):
   parent = cl.get_parent(match.dom)
   coparent = cl.get_parent(match.cod)
-  if parent == None and coparent == None:
+  if not parent and not coparent:
     return False
-  if parent == None or coparent == None:
+  if not parent or not coparent:
     return True
   other = cl.get_checklist(coparent)
   match = good_match(parent, other)
@@ -276,8 +274,17 @@ def good_match(node, other = None):
     return good_match_cache[node]
 
   assert other
-  match = best_match(good_matches(node, other))
-    
+  matches = good_matches(node, other)
+  match = best_match(matches)
+  if match:
+    if cl.get_accepted(match.cod):
+      print("** Match is supposed to be terminal:\n  %s" %
+            (art.express(match)))
+    if not cl.is_accepted(match.cod):
+      print("** Match has taxonomic status %s\n  %s" %
+            (cl.get_value(match.cod, cl.taxonomic_status_field),
+             art.express(match)))
+
   good_match_cache[node] = match
   return match
 
@@ -289,6 +296,7 @@ def good_matches(node, other):
   if node in good_matches_cache: return good_matches_cache[node]
 
   exties = extensional_matches(node, other)
+  exties = [match_to_accepted(m) for m in exties]
   nameys = matches_to_accepted(node, other)
   matches = collapse_matches(exties + nameys)
 
@@ -313,7 +321,7 @@ def extensional_matches(tnu, other):
     here = cl.get_checklist(scan)
     while True:
       scan = cl.get_superior(scan)    # in other
-      if scan == None: break
+      if not scan: break
       rev = extensional_match(scan, here)
       # rev: other -> here
       if not rev: break
@@ -445,8 +453,14 @@ def find_individuals(here, other):
       print("# %s: %s" % (cl.get_unique(tnu), message))
       count[0] += 1
   def subanalyze(tnu, other):
+    log(tnu, "subanalyze")
+    if cl.get_accepted(tnu):
+      print("** Child %s of %s has an accepted name" %
+            (cl.get_unique(tnu), cl.get_unique(cl.get_parent(tnu))))
+      return False
     found_match = False
     for inf in cl.get_children(tnu):
+      log(tnu, "child %s" % inf)
       if subanalyze(inf, other):
         found_match = True
     if found_match:    # Some descendant is an individual
@@ -456,6 +470,8 @@ def find_individuals(here, other):
       rematch = best_match(matches_to_accepted(candidate.cod, here))
       if rematch:
         if rematch.cod == tnu:
+          if not cl.is_accepted(candidate.cod):
+            print("** Candidate is not accepted: %s" % cl.get_unique(candidate.cod))
           individuals[tnu] = candidate    # here -> other
           individuals[candidate.cod] = art.reverse(candidate)  # other -> here
           return True
@@ -467,10 +483,10 @@ def find_individuals(here, other):
                art.express(art.reverse(rematch))))
       else:
         log(tnu, "No rematch")
-    else:
-      log(tnu, "No candidate")
     return False
+  log(0, "top")
   for root in cl.get_roots(here):
+    log(root, "root")
     subanalyze(root, other)
   return individuals
 
@@ -504,7 +520,7 @@ def strong_matches_to_accepted(tnu, other):
   assert is_matches(matches)
   matches = [match_to_accepted(match) for match in matches]
   assert is_matches(matches)
-  if cl.is_synonym(tnu):
+  if cl.get_accepted(tnu):
     accept = has_accepted_locally(tnu)
     assert accept.dom == tnu
     more = [art.compose(accept, match) for match in intensional_matches(accept.cod, other)]
@@ -514,7 +530,7 @@ def strong_matches_to_accepted(tnu, other):
 # Convert match a->b to a->b' where b' is accepted (maybe b=b')
 
 def match_to_accepted(m):
-  if cl.is_synonym(m.cod):
+  if cl.get_accepted(m.cod):
     return art.compose(m, has_accepted_locally(m.cod))
   else:
     return m
@@ -548,7 +564,7 @@ def intensional_matches(node, other):
 # An accepted name can have many synonyms
 
 def synonyms_locally(tnu):
-  if cl.is_synonym(tnu):
+  if cl.get_accepted(tnu):
     return []
   else:
     hases = [has_accepted_locally(syn) for syn in cl.get_synonyms(tnu)]
@@ -558,7 +574,7 @@ def synonyms_locally(tnu):
 
 def has_accepted_locally(maybe_syn):   # goes from synonym to accepted
   assert maybe_syn > 0
-  if cl.is_synonym(maybe_syn):
+  if cl.get_accepted(maybe_syn):
     accepted = cl.get_accepted(maybe_syn)
     if accepted:
       if accepted != maybe_syn:
@@ -568,7 +584,7 @@ def has_accepted_locally(maybe_syn):   # goes from synonym to accepted
         print("** Shouldn't happen", cl.get_unique(maybe_syn))
         return art.identity(maybe_syn)
     else:
-      print("** Synonym has no accepted name" % cl.get_unique(maybe_syn))
+      print("** Synonym %s has no accepted name" % cl.get_unique(maybe_syn))
       return None
   else:
     return None

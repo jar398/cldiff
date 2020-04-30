@@ -1,6 +1,6 @@
 WORK=work
 
-all: $(WORK)/ncbi-2015-2020.csv
+all: $(WORK)/ncbi-gbif.csv
 
 # A (NCBI 2015)
 
@@ -54,7 +54,7 @@ $(C)/primates.csv: $(C)/dump/Taxon.tsv
 	python3 src/subset_dwc.py $< 798 --out $@
 foo: $(C)/primates.csv
 
-SOURCES=src/diff.py src/articulation.py src/relation.py
+SOURCES=src/diff.py src/articulation.py src/relation.py src/checklist.py
 
 $(WORK)/ncbi-2015-2020.csv: $(SOURCES) $(A)/primates.csv $(B)/primates.csv
 	python3 src/diff.py $(A)/primates.csv $(B)/primates.csv --out $@.new
