@@ -92,14 +92,16 @@ def conjoin(rel1, rel2):
 
 def _conjoin_names(name1, name2):
   if name1 == name2: return name1
+  if not name1: return name2
+  if not name2: return name1
   elif name1.endswith(" ...}"):
     return name1                # Discard lesser reasons
   elif name1.endswith("}"):
     return name1[0:-1] + " ...}"
   elif name2.startswith("{"):
-    return "{%s ...}" % name1
+    return "{%s & ...}" % name1
   elif name2.startswith("["):
-    return "{%s ...}" % name1
+    return "{%s & ...}" % name1
   else:
     return "{%s & %s}" % (name1, name2)
 
@@ -224,9 +226,11 @@ def declare_synonym_relations():
   b("acronym")
   b("blast name")             # large well-known taxa
   b("genbank acronym")      # at most one per node
+  b("apparent BOLD id")
 
   # More dubious
   synonym = b("synonym")
+  b("heterotypic synonym")      # GBIF
   b("misnomer")
   b("type material")
   b("merged id")    # ?
@@ -237,6 +241,7 @@ def declare_synonym_relations():
 
   b("includes", rcc5=gt, name="part-of", revname="included-in")
   b("in-part",  rcc5=lt, name="included-in", revname="part-of")  # part of a polyphyly
+  b("proparte synonym", rcc5=lt)
 
 declare_synonym_relations()
 

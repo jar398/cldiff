@@ -38,7 +38,7 @@ def alignment(A, B):
   def subprepare(node):
     for match in good_candidates(node, B):      # cod is accepted
       alignment.append(match)
-    for child in cl.get_children(node):
+    for child in get_children(node):
       subprepare(child)
     for graftee in get_graftees(node):
       # Go from graftee's parent's match to graftee's parent, then graftee
@@ -94,6 +94,11 @@ def proclaim_row(row, sink):
 
 # Report generation
 
+def get_children(node):
+  return [node
+          for node in cl.get_children(node) + cl.get_synonyms(node)
+          if not cl.get_accepted(node)]
+
 def subreport(node, B, sink, indent):
   A = cl.get_checklist(node)
   assert A != B
@@ -106,7 +111,7 @@ def subreport(node, B, sink, indent):
     (B_node, which, arg) = triple
     return cl.get_sequence_number(B_node)
   agenda = \
-    [(for_seq(child), 0, child) for child in cl.get_children(node)] + \
+    [(for_seq(child), 0, child) for child in get_children(node)] + \
     [(option.cod, 1, option) for option in multiple] + \
     [(B_node, 2, B_node) for B_node in get_graftees(node)]
   indent = indent + "__"
@@ -157,19 +162,25 @@ def report_on_match(match, splitp, sink, indent):
 def tag_for_match(match, splitp):
   tag = "?"
   if rel.is_variant(match.relation, rel.eq):
-    if splitp: tag = "OPTION"
+    if splitp:
+      if cl.get_accepted(match.cod):
+        tag = "ADD SYNONYM"
+      else:
+        tag = "OPTION"
     elif parent_changed(match):
       tag = "MOVE"
     else:
       changes = []
       if cl.get_name(match.dom) != cl.get_name(match.cod):
         changes.append("NAME")
-      if cl.get_tnu_id(match.dom) != cl.get_tnu_id(match.cod):
-        changes.append("ID")
-      elif cl.get_nominal_rank(match.dom) != cl.get_nominal_rank(match.cod):
+      if cl.get_nominal_rank(match.dom) != cl.get_nominal_rank(match.cod):
         changes.append("RANK")
+      if cl.get_taxonomic_status(match.dom) != cl.get_taxonomic_status(match.cod):
+        changes.append("STATUS")
+      if len(changes) == 0 and cl.get_tnu_id(match.dom) != cl.get_tnu_id(match.cod):
+        changes.append("ID")
       if changes:
-        tag = "CHANGE " + ", ".join(changes)
+        tag = "CHANGE " + " & ".join(changes)
       else:
         tag = "NO CHANGE"
   elif rel.is_variant(match.relation, rel.lt):
@@ -204,7 +215,8 @@ def good_candidates(tnu, other):
   if len(matches) == 0:
     investigate = good_match(tnu, other)
     if investigate: matches = [investigate]
-  return matches
+  return [match for match in matches if not cl.get_accepted(match.cod)]
+
 
 # Fill the cache
 
@@ -214,7 +226,7 @@ def assign_matches(here, other):
   def process(tnu):
     m = good_match(tnu, other)  # Fill the cache
     if m: good_match_map[tnu] = m    # here -> other
-    for child in cl.get_children(tnu):
+    for child in get_children(tnu):
       process(child)
   for root in cl.get_roots(here):
     process(root)
@@ -242,12 +254,13 @@ def analyze_unmatched(A, B):
   global grafts
   graft_points = {}
   def process(B_tnu):
-    if not good_match(B_tnu, A):
+    if not good_match(B_tnu, A) and not cl.get_accepted(B_tnu):
       point = get_graft_point(B_tnu, A)    # in A
       if point:
         graft_points[B_tnu] = point    # in A
-    for child in cl.get_children(B_tnu):
-      process(child)
+    else:
+      for child in cl.get_inferiors(B_tnu):
+        process(child)
   for root in cl.get_roots(B):
     process(root)
   grafts = cl.invert_dict(graft_points)
@@ -277,10 +290,11 @@ def good_match(node, other = None):
   matches = good_matches(node, other)
   match = best_match(matches)
   if match:
-    if cl.get_accepted(match.cod):
+    if cl.get_accepted(match.cod) and not cl.get_accepted(match.dom):
       print("** Match is supposed to be terminal:\n  %s" %
             (art.express(match)))
-    if not cl.is_accepted(match.cod):
+    # Happens way often in GBIF
+    if False and not cl.is_accepted(match.cod):
       print("** Match has taxonomic status %s\n  %s" %
             (cl.get_value(match.cod, cl.taxonomic_status_field),
              art.express(match)))
@@ -364,7 +378,7 @@ def how_related_extensionally(tnu, partner):
       # Monotypic: back < tnu
       return rel.monotypic_in
     else:
-      for sub in cl.get_children(partner):
+      for sub in get_children(partner):
         back = cross_mrca(sub, here)
         if back:
           assert cl.get_checklist(tnu) == cl.get_checklist(back)
@@ -386,7 +400,7 @@ def cross_disjoint(tnu, partner):
   assert cl.get_checklist(back) == cl.get_checklist(tnu)
   if cl.are_disjoint(tnu, back):
     return True
-  for inf in cl.get_children(partner):
+  for inf in get_children(partner):
     assert inf > 0
     if not cross_disjoint(tnu, inf):
       return False
@@ -419,7 +433,7 @@ def analyze_cross_mrcas(A, B):
           assert False
       else:
         m = None
-        for child in cl.get_children(tnu):
+        for child in get_children(tnu):
           m2 = subanalyze_cross_mrcas(child, other)
           if m2:
             m = cl.mrca(m, m2)
@@ -459,7 +473,7 @@ def find_individuals(here, other):
             (cl.get_unique(tnu), cl.get_unique(cl.get_parent(tnu))))
       return False
     found_match = False
-    for inf in cl.get_children(tnu):
+    for inf in get_children(tnu):
       log(tnu, "child %s" % inf)
       if subanalyze(inf, other):
         found_match = True
@@ -470,8 +484,8 @@ def find_individuals(here, other):
       rematch = best_match(matches_to_accepted(candidate.cod, here))
       if rematch:
         if rematch.cod == tnu:
-          if not cl.is_accepted(candidate.cod):
-            print("** Candidate is not accepted: %s" % cl.get_unique(candidate.cod))
+          if cl.get_accepted(candidate.cod):
+            print("** Candidate is synonymlike: %s" % cl.get_unique(candidate.cod))
           individuals[tnu] = candidate    # here -> other
           individuals[candidate.cod] = art.reverse(candidate)  # other -> here
           return True

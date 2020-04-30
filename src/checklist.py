@@ -338,11 +338,14 @@ def get_synonyms(tnu):
                                          get_tnu_id(tnu))
           if not get_parent(tnu)]
 
+def get_taxonomic_status(tnu):
+  return get_value(tnu, taxonomic_status_field)
+
 def is_accepted(tnu):
-  return get_value(tnu, taxonomic_status_field) == "accepted"
+  return get_taxonomic_status(tnu) == "accepted"
 
 def is_synonym(tnu):
-  return get_value(tnu, taxonomic_status_field) == "synonym"
+  return get_taxonomic_status(tnu) == "synonym"
 
 def to_accepted(tnu):
   probe = get_accepted(tnu)

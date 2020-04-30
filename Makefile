@@ -44,14 +44,14 @@ $(C)/dump/Taxon.tsv: $(C)/backbone.zip
 
 # Extract Primates from each
 
-$(A)/primates.csv: $(A)/converted.csv
-	python3 src/subset_dwc.py $< 9443 --out $@
+$(A)/primates.csv: src/subset_dwc.py $(A)/converted.csv
+	python3 src/subset_dwc.py $(A)/converted.csv 9443 --out $@
 
-$(B)/primates.csv: $(B)/converted.csv
-	python3 src/subset_dwc.py $< 9443 --out $@
+$(B)/primates.csv: src/subset_dwc.py $(B)/converted.csv
+	python3 src/subset_dwc.py $(B)/converted.csv 9443 --out $@
 
-$(C)/primates.csv: $(C)/dump/Taxon.tsv
-	python3 src/subset_dwc.py $< 798 --out $@
+$(C)/primates.csv: src/subset_dwc.py $(C)/dump/Taxon.tsv
+	python3 src/subset_dwc.py $(C)/dump/Taxon.tsv 798 --out $@
 foo: $(C)/primates.csv
 
 SOURCES=src/diff.py src/articulation.py src/relation.py src/checklist.py

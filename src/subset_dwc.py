@@ -15,24 +15,32 @@ def main(checklist, tax_path, root_id, outpath):
   write_subset(checklist, root_id, all, outpath)
 
 def write_subset(checklist, root_id, all, outpath):
+
   (delimiter, quotechar) = choose_csv_parameters(checklist)
   with open(checklist, "r") as infile:
     reader = csv.reader(infile, delimiter=delimiter, quotechar=quotechar)
     head = next(reader)
-    tid_column = head.index("taxonID") 
+
+    tid_column = None
+    if "taxonID" in head:
+      tid_column = head.index("taxonID") 
     aid_column = None
     if "acceptedNameUsageID" in head:
       aid_column = head.index("acceptedNameUsageID")
+
+    if tid_column == None:      # usually 0
+      print("No taxonID column found")
 
     with open(outpath, "w") as outfile:
       (delimiter, quotechar) = choose_csv_parameters(outpath)
       writer = csv.writer(outfile, delimiter=delimiter, quotechar=quotechar, quoting=csv.QUOTE_NONE)
       writer.writerow(head)
       for row in reader:
-        tid = row[tid_column]
-        if tid in all: 
-          writer.writerow(row)
-        elif aid_column:
+        if tid_column != None:
+          tid = row[tid_column]
+          if tid in all: 
+            writer.writerow(row)
+        if aid_column != None:
           aid = row[aid_column]
           if aid in all:
             writer.writerow(row)
@@ -53,6 +61,7 @@ def read_topology(tax_path):
   with open(tax_path, "r") as infile:
     reader = csv.reader(infile, delimiter=delimiter, quotechar=quotechar)
     head = next(reader)
+    print("Header row:", head)
     tid_column = head.index("taxonID") 
     pid_column = head.index("parentNameUsageID")
     for row in reader:
@@ -66,7 +75,7 @@ def read_topology(tax_path):
   return children
 
 def choose_csv_parameters(outpath):
-  _, extension = os.path.splitext(outpath)
+  (_, extension) = os.path.splitext(outpath)
   return (',', '"') if extension == "csv" else ('\t', '\a')
 
 # main(checklist, taxonomy, root_id, outfile)

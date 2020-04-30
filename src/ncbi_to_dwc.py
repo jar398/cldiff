@@ -46,13 +46,23 @@ def emit_dwc(nodes, names, scinames, authorities, merged, outpath):
                 None, authorities.get(id, None), scinames.get(id, None),
                 "accepted", None)
     for (id, text, kind, spin) in names:
-      # synonym is a taxonomic status, not a nomenclatural status
-      if kind == "synonym": kind = None
-      minted = id + "." + str(spin)
-      write_row(writer,
-                minted, None, None,
-                id, None, text,
-                "synonym", kind)
+      if "BOLD:" in text or "bold:" in text:
+        z = text.split("BOLD:")
+        if len(z) == 2:
+          write_row(writer,
+                    id + ".BOLD", None, None,
+                    id, None, "BOLD:" + z[1],
+                    "synonym", "apparent BOLD id")
+        else:
+          print("Malformed BOLD: name, %s" % z)
+      if kind != "scientific name":
+        # synonym is a taxonomic status, not a nomenclatural status
+        if kind == "synonym": kind = None
+        minted = id + "." + str(spin)
+        write_row(writer,
+                  minted, None, None,
+                  id, None, text,
+                  "synonym", kind)
     for (old_id, new_id) in merged:
       canonical = "%s merged into %s" % (old_id, new_id)
       write_row(writer,
