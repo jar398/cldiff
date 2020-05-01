@@ -223,8 +223,8 @@ def get_unique(tnu):
     if is_synonym(tnu):
       name = "?" + name
     else:
-      status = get_value(tnu, nomenclatural_status_field)
-      if not status: status = "nom. status not given"
+      status = get_value(tnu, taxonomic_status_field)
+      if not status: status = "tax. status not given"
       name = "%s (%s)" % (name, status)
   better = checklist.prefix + name.replace(" ", "_")
   if len(tnus_with_this_name) <= 1:
@@ -274,22 +274,24 @@ def get_superiors(tnu):
 def get_superiors_really(tnu):
   parent_id = get_value(tnu, parent_tnu_id_field)
   if parent_id:
-    parent = get_tnu_with_id(get_checklist(tnu), parent_id)
+    parent = to_accepted(get_tnu_with_id(get_checklist(tnu), parent_id))
     # If id doesn't resolve, it's a root
   else:
     parent = None
 
   accepted_id = get_value(tnu, accepted_tnu_id_field)
   if accepted_id:
-    accepted = get_tnu_with_id(get_checklist(tnu), accepted_id)
+    accepted = to_accepted(get_tnu_with_id(get_checklist(tnu), accepted_id))
     if accepted:
-      a_status = get_taxonomic_status(accepted)
-      if a_status != "accepted":
+      accepted_taxo_status = get_taxonomic_status(accepted)
+      if accepted_taxo_status and accepted_taxo_status != "accepted":
+        # Example: GBIF backbone:
+        # C.?Hylobates sericus#8955169 -> C.Bunopithecus_sericus_(doubtful)
         print("** Putative accepted has wrong taxonomic status %s\n  %s -> %s" % \
-              (a_status, get_unique(tnu), get_unique(accepted)))
+              (accepted_taxo_status, get_unique(tnu), get_unique(accepted)))
       # Iterate???
     else:
-       print("** Id %s for accepted of %s doesn't resolve" % \
+      print("** Id %s for accepted of %s doesn't resolve" % \
             (accepted_id, get_unique(tnu)))
   else:
     n_status = get_taxonomic_status(tnu)
@@ -300,10 +302,16 @@ def get_superiors_really(tnu):
     accepted = None
 
   if parent and accepted:
-    print("** Taxon has both accepted and parent links\n  %s -> %s, %s" % \
-          (get_unique(tnu), get_unique(accepted), get_unique(parent)))
-    print("** Preferring parent to accepted")
-    parent = None
+    parent_taxo_status = get_taxonomic_status(parent)
+    if parent_taxo_status == "accepted" and accepted_taxo_status == "accepted":
+      if False:
+        print("** Taxon has both accepted and parent links\n  %s -> %s, %s" % \
+              (get_unique(tnu), get_unique(accepted), get_unique(parent)))
+        print("** Preferring parent to accepted")
+      parent = None
+    else:
+      # This case is common in GBIF files
+      accepted = None
   return (to_accepted(parent), to_accepted(accepted))
 
 def get_children(parent):
@@ -315,7 +323,7 @@ def to_accepted(tnu):
   if not tnu: return tnu
   probe = get_accepted(tnu)
   if probe:
-    return probe
+    return probe  # or to_accepted(probe) ?
   else:
     return tnu
 
