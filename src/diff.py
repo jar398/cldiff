@@ -6,9 +6,9 @@ import checklist as cl
 import relation as rel
 import articulation as art
 
-def main(c1, c2, out):
-  A = cl.read_checklist(c1, "A.")
-  B = cl.read_checklist(c2, "B.")
+def main(c1, c1_tag, c2, c2_tag, out):
+  A = cl.read_checklist(c1, c1_tag + ".")
+  B = cl.read_checklist(c2, c2_tag + ".")
   print ("TNU counts:", len(cl.get_all_tnus(A)), len(cl.get_all_tnus(B)))
   start(A, B)
   report(A, B, out)
@@ -97,7 +97,7 @@ def proclaim_row(row, sink):
     writer.writerow([indent + tag, dom_name, dom_id, re, cod_id, cod_name, remark])
 
 def write_header(writer):
-  writer.writerow(["tag", "A name", "A id", "rcc5", "B id", "B name", "justification"])
+  writer.writerow(["tag", "left name", "left id", "rcc5", "right id", "right name", "justification"])
 
 def get_tnu_info(tnu):
   if tnu:
@@ -151,7 +151,7 @@ def report_on_matches(node, B, sink, indent):
                      node,
                      "",
                      "",
-                     "%s B nodes match this A node" % len(matches))
+                     "%s right nodes match this left node" % len(matches))
     return []
   elif len(matches) == 1:
     report_on_match(matches[0], False, sink, indent)
@@ -161,7 +161,7 @@ def report_on_matches(node, B, sink, indent):
                      node,
                      "?",
                      "",
-                     "%s B nodes match this A node" % len(matches))
+                     "%s right nodes match this left node" % len(matches))
     return matches
 
 def report_on_match(match, splitp, sink, indent):
@@ -714,8 +714,10 @@ def cache_it(fun, tnu, other, dict):
 
 if __name__ == '__main__':
   parser = argparse.ArgumentParser()
-  parser.add_argument('A', help='A checklist')
-  parser.add_argument('B', help='B checklist')
+  parser.add_argument('left', help='A checklist')
+  parser.add_argument('right', help='B checklist')
+  parser.add_argument('--left-tag', default="A")
+  parser.add_argument('--right-tag', default="B")
   parser.add_argument('--out', help='file name for report', default='diff.csv')
   args = parser.parse_args()
-  main(args.A, args.B, args.out)
+  main(args.left, args.left_tag, args.right, args.right_tag, args.out)

@@ -1,4 +1,4 @@
-tag,A name,A id,rcc5,B id,B name,justification
+tag,left name,left id,rcc5,right id,right name,justification
 NO CHANGE,Primates,A.9443,=,B.9443,Primates,{same-name & same-rank ...}
 __NO CHANGE,unclassified Primates,A.57118,=,B.57118,unclassified Primates,{same-name & same-rank}
 ____NO CHANGE,marmosets,A.38020,=,B.38020,marmosets,{same-name & same-rank}
@@ -22,7 +22,7 @@ __________MOVE,Lemur sp.,A.69491,=,B.69491,Lemur sp.,{same-name & same-rank}
 ________NO CHANGE,Varecia,A.9454,=,B.9454,Varecia,{same-name & same-rank}
 __________...,,,,,,3 unchanged children
 ________NO CHANGE,Eulemur,A.13513,=,B.13513,Eulemur,{same-name & same-rank}
-__________REMOVE,Eulemur hybrids,A.1417238,,,,0 B nodes match this A node
+__________REMOVE,Eulemur hybrids,A.1417238,,,,0 right nodes match this left node
 ____________MOVE,Eulemur albifrons x rufifrons,A.1417231,=,B.1417231,Eulemur albifrons x rufifrons,{same-name & same-rank}
 ____________MOVE,Eulemur albifrons x cinereiceps,A.1417236,=,B.1417236,Eulemur albifrons x cinereiceps,{same-name & same-rank}
 ____________MOVE,Eulemur cinereiceps x rufifrons,A.1417237,=,B.1417237,Eulemur cinereiceps x rufifrons,{same-name & same-rank}
@@ -232,7 +232,7 @@ ____NO CHANGE,Simiiformes,A.314293,=,B.314293,Simiiformes,{same-name & same-rank
 ______NO CHANGE,Platyrrhini,A.9479,=,B.9479,Platyrrhini,{same-name & same-rank}
 ________NO CHANGE,Cebidae,A.9498,=,B.9498,Cebidae,{same-name & same-rank}
 __________NO CHANGE,Callitrichinae,A.9480,=,B.9480,Callitrichinae,{same-name & same-rank}
-____________MULTIPLE,Callithrix,A.9481,?,,,4 B nodes match this A node
+____________MULTIPLE,Callithrix,A.9481,?,,,4 right nodes match this left node
 ______________OPTION,,,=,B.9481,Callithrix,{same-name & same-rank}
 ______________OPTION,,,=,B.1965096,Callithrix,same-name
 ______________MOVE,Callithrix jacchus,A.9483,=,B.9483,Callithrix jacchus,{same-name & same-rank}
