@@ -53,6 +53,7 @@ def report(A, B, outpath):
   with open(outpath, "w") as outfile:
     print ("Writing:", outpath)
     writer = csv.writer(outfile)
+    write_header(writer)
     sink = make_sink(writer, None)
     for root in cl.get_roots(A):
       subreport(root, B, sink, "")
@@ -76,9 +77,8 @@ def drain(sink):
     sink[1] = []              # Ensure no double printing...
   else:
     indent = rows[0][0]
-    proclaim_row((indent, "...", "", "", "",
-                  "%s unchanged children" % len(rows)),
-                 parent)
+    proclaim(parent, indent, "...", None, None, None,
+             "%s unchanged children" % len(rows))
 
 no_change_tags = ["NO CHANGE", "CHANGED ID", "..."]
 
@@ -92,7 +92,19 @@ def proclaim_row(row, sink):
     rows.append(row)
   else:
     (indent, tag, dom, re, cod, remark) = row
-    writer.writerow([indent + tag, dom, re, cod, remark])
+    (dom_name, dom_id) = get_tnu_info(dom)
+    (cod_name, cod_id) = get_tnu_info(cod)
+    writer.writerow([indent + tag, dom_name, dom_id, re, cod_id, cod_name, remark])
+
+def write_header(writer):
+  writer.writerow(["tag", "A name", "A id", "rcc5", "B id", "B name", "justification"])
+
+def get_tnu_info(tnu):
+  if tnu:
+    return (cl.get_name(tnu),
+            cl.get_checklist(tnu).prefix + cl.get_tnu_id(tnu))
+  else:
+    return (None, None)
 
 # Report generation
 
@@ -128,7 +140,7 @@ def subreport(node, B, sink, indent):
                indent, "GRAFT",
                        "",
                        "",
-                       cl.get_unique(arg),
+                       arg,
                        "")
   drain(sink)
 
@@ -136,7 +148,7 @@ def report_on_matches(node, B, sink, indent):
   matches = good_candidates(node, B)      # cod is accepted
   if len(matches) == 0:
     proclaim(sink, indent, "REMOVE",
-                     cl.get_unique(node),
+                     node,
                      "",
                      "",
                      "%s B nodes match this A node" % len(matches))
@@ -146,19 +158,18 @@ def report_on_matches(node, B, sink, indent):
     return []
   else:
     proclaim(sink, indent, "MULTIPLE",
-                     cl.get_unique(node),
+                     node,
                      "?",
                      "",
                      "%s B nodes match this A node" % len(matches))
     return matches
 
 def report_on_match(match, splitp, sink, indent):
-  A_unique = "" if splitp else cl.get_unique(match.dom)
   tag = tag_for_match(match, splitp)
   proclaim(sink, indent, tag,
-                   A_unique,
+                   None if splitp else match.dom,
                    rel.rcc5_name(match.relation),
-                   cl.get_unique(match.cod),
+                   match.cod,
                    art.get_comment(match))
 
 def tag_for_match(match, splitp):
