@@ -1462,11 +1462,25 @@ ________________REMOVE,unclassified Colobus,B.2618863,,,,0 right nodes match thi
 __________________REMOVE,Colobus sp.,B.34824,,,,0 right nodes match this left node
 __________________REMOVE,Colobus sp. DTG-2004,B.288544,,,,0 right nodes match this left node
 __________________REMOVE,Colobus sp. MB-2005,B.325172,,,,0 right nodes match this left node
-________________MOVE,Colobus satanas,B.517012,=,C.5963046,Colobus satanas,{same-name & same-rank}
+________________GRAFT,,,,C.7356532,Simia comosa,
+________________GRAFT,,,,C.7356532,Simia comosa,
+________________GRAFT,,,,C.8067573,Simia tetradactyla,
+________________GRAFT,,,,C.8067573,Simia tetradactyla,
+________________GRAFT,,,,C.8174193,Simia regalis,
+________________GRAFT,,,,C.8174193,Simia regalis,
+________________GRAFT,,,,C.8118610,Cebus polykomos,
+________________GRAFT,,,,C.8118610,Cebus polykomos,
+________________GRAFT,,,,C.8156379,Simia polycomos,
+________________GRAFT,,,,C.8156379,Simia polycomos,
+________________GRAFT,,,,C.8890531,Colobus polycomos,
+________________GRAFT,,,,C.8957958,Colobus satanus,
+________________GRAFT,,,,C.9135851,Colobus palliatus,
+________________CHANGE ID,Colobus satanas,B.517012,=,C.5963046,Colobus satanas,{same-name & same-rank}
 __________________CHANGE ID,Colobus satanas satanas,B.517013,=,C.6075605,Colobus satanas satanas,{same-name & same-rank}
 __________________GRAFT,,,,C.10536041,BOLD:ACP8950,
 __________________GRAFT,,,,C.6075610,Colobus satanas anthracinus,
-________________MOVE,Colobus guereza,B.33548,=,C.5963045,Colobus guereza,{same-name & same-rank}
+________________GRAFT,,,,C.9138979,Colobus tephrasceles,
+________________CHANGE ID,Colobus guereza,B.33548,=,C.5963045,Colobus guereza,{same-name & same-rank}
 __________________GRAFT,,,,C.6100690,Colobus guereza gallarum,
 __________________GRAFT,,,,C.6075597,Colobus guereza dodingae,
 __________________CHANGE ID,Colobus guereza kikuyuensis,B.132548,=,C.6075603,Colobus guereza kikuyuensis,{same-name & same-rank}
@@ -1476,7 +1490,8 @@ __________________GRAFT,,,,C.7262016,Colobus guereza guereza,
 __________________CHANGE ID,Colobus guereza matschiei,B.373030,=,C.6075609,Colobus guereza matschiei,{same-name & same-rank}
 __________________CHANGE ID,Colobus guereza caudatus,B.373031,=,C.6075608,Colobus guereza caudatus,{same-name & same-rank}
 __________________GRAFT,,,,C.9896444,BOLD:AAE9706,
-________________MOVE,Colobus angolensis,B.54131,=,C.5963047,Colobus angolensis,{same-name & same-rank}
+________________GRAFT,,,,C.9017613,Colobus ruwezorii,
+________________CHANGE ID,Colobus angolensis,B.54131,=,C.5963047,Colobus angolensis,{same-name & same-rank}
 __________________GRAFT,,,,C.6100689,Colobus angolensis sharpei,
 __________________GRAFT,,,,C.7262017,Colobus angolensis angolensis,
 __________________GRAFT,,,,C.6075607,Colobus angolensis ruwenzorii,
@@ -1484,10 +1499,20 @@ __________________GRAFT,,,,C.6075606,Colobus angolensis cottoni,
 __________________GRAFT,,,,C.6075601,Colobus angolensis prigoginei,
 __________________GRAFT,,,,C.6075600,Colobus angolensis cordieri,
 __________________CHANGE ID,Colobus angolensis palliatus,B.336983,=,C.6100688,Colobus angolensis palliatus,{same-name & same-rank}
-________________MOVE,Colobus vellerosus,B.378195,=,C.6075599,Colobus vellerosus,{same-name & same-rank ...}
-________________MOVE,Colobus polykomos,B.9572,=,C.5963044,Colobus polykomos,{same-name & same-rank ...}
+________________CHANGE ID,Colobus vellerosus,B.378195,=,C.6075599,Colobus vellerosus,{same-name & same-rank}
+________________GRAFT,,,,C.8979734,Colobus fuliginosus,
+________________GRAFT,,,,C.8946723,Colobus leucomerus,
+________________CHANGE ID,Colobus polykomos,B.9572,=,C.5963044,Colobus polykomos,{same-name & same-rank}
 __________________GRAFT,,,,C.8830116,Colobus polykomos polykomos,
 __________________GRAFT,,,,C.8728104,Colobus polykomos vellerosus,
+________________GRAFT,,,,C.7628859,Colobus leucomeros,
+________________GRAFT,,,,C.7628859,Colobus leucomeros,
+________________GRAFT,,,,C.7559699,Semnopithecus bicolor,
+________________GRAFT,,,,C.7559699,Semnopithecus bicolor,
+________________GRAFT,,,,C.8392867,Colobus ursinus,
+________________GRAFT,,,,C.8392867,Colobus ursinus,
+________________GRAFT,,,,C.8803164,Colobus polykomos dollmani,
+________________GRAFT,,,,C.8803164,Colobus polykomos dollmani,
 ______________MOVE,Procolobus,B.164647,=,C.2436596,Procolobus,{same-name & same-rank}
 ________________CHANGE ID,Procolobus verus,B.373033,=,C.2436597,Procolobus verus,{same-name & same-rank}
 __________________GRAFT,,,,C.9847516,BOLD:ADC7744,
