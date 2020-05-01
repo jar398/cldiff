@@ -367,7 +367,7 @@ def extensional_match(tnu, other):
   if match:
     return match
   else:
-    partner = cross_mrca(tnu, other)     # TNU in other checklist
+    (partner, _, _) = cross_mrca(tnu, other)     # TNU in other checklist
     if not partner:
       return None
     match = bridge(tnu, partner, how_related_extensionally(tnu, partner))
@@ -379,7 +379,7 @@ def how_related_extensionally(tnu, partner):
   if i:
     return i.relation
   else:
-    back = cross_mrca(partner, here)
+    (back, _, _) = cross_mrca(partner, here)
     if not back:                # shouldn't happen
       assert False
       return rel.extension_disjoint
@@ -392,7 +392,7 @@ def how_related_extensionally(tnu, partner):
       return rel.monotypic_in
     else:
       for sub in get_children(partner):
-        back = cross_mrca(sub, here)
+        (back, _, _) = cross_mrca(sub, here)
         if back:
           assert cl.get_checklist(tnu) == cl.get_checklist(back)
           if cl.mrca(tnu, back) == tnu and cross_disjoint(tnu, partner):
@@ -406,7 +406,7 @@ def cross_disjoint(tnu, partner):
   assert partner > 0
   assert cl.get_checklist(tnu) != cl.get_checklist(partner)
 
-  back = cross_mrca(partner, cl.get_checklist(tnu))
+  (back, _, _) = cross_mrca(partner, cl.get_checklist(tnu))
   if not back:
     return True
   assert back > 0
@@ -425,11 +425,9 @@ def cross_disjoint(tnu, partner):
 
 def cross_mrca(tnu, other):
   assert tnu > 0
-  match = particle_match(tnu, other)
-  if match:
-    return match.cod
-  else:
-    return cross_mrcas.get(tnu)
+  return cross_mrcas.get(tnu) or (None, 1, 0)
+
+# Returns (the-mrca, number-unmatched)
 
 def analyze_cross_mrcas(A, B):
   cross_mrcas = {}
@@ -439,23 +437,31 @@ def analyze_cross_mrcas(A, B):
       if ind:
         assert ind.dom == tnu
         if rel.is_variant(ind.relation, rel.eq):
-          m = ind.cod
+          result = (ind.cod,
+                    len(get_children(ind.dom)),    # Drop from A
+                    len(get_children(ind.cod)))   # Add to B
         else:
+          # Can't happen
           print("** Non-eq articulation from particle_match\n  %s" +
                 art.express(ind))
           assert False
       else:
+        drops = 0
+        adds = 0
         m = None
-        for child in get_children(tnu):
-          m2 = subanalyze_cross_mrcas(child, other)
-          if m2:
-            m = cl.mrca(m, m2)
-      if m:
-        assert cl.get_checklist(tnu) != cl.get_checklist(m)
-        cross_mrcas[tnu] = m
-        return m
-      else:
-        return None
+        children = get_children(tnu)
+        if children:
+          for child in children:
+            (m2, d2, a2) = subanalyze_cross_mrcas(child, other)
+            drops += d2
+            adds += a2
+            if m2:
+              m = cl.mrca(m, m2)
+        else:
+          drops = 1
+        result = (m, drops, adds)
+      cross_mrcas[tnu] = result
+      return result
     for root in cl.get_roots(checklist):
       subanalyze_cross_mrcas(root, other)
   half_analyze_cross_mrcas(A, B)

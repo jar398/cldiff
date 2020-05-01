@@ -239,14 +239,9 @@ def get_roots(checklist):
   for tnu in get_all_tnus(checklist):
     if not get_accepted(tnu) and not get_parent(tnu):
       roots.append(tnu)
-  print("Roots:", roots)
   return roots
 
 # Superior/inferior
-
-def get_superior(tnu):
-  assert tnu > 0
-  return get_accepted(tnu) or get_parent(tnu)
 
 def get_inferiors(tnu):
   assert tnu > 0
@@ -255,60 +250,81 @@ def get_inferiors(tnu):
 # ----------
 # Parent/children and accepted/synonyms
 
-parents_cache = {}
+superiors_cache = {}
+
+def get_superior(tnu):
+  (parent, accepted) = get_superiors(tnu)
+  return parent or accepted
 
 def get_parent(tnu):
-  probe = parents_cache.get(tnu)
-  if probe != None: return probe
-  parent = get_parent_really(tnu)
-  parents_cache[tnu] = parent or False
+  (parent, _) = get_superiors(tnu)
   return parent
 
-def get_parent_really(tnu):
-  parent = None
-  probe = get_accepted(tnu)
-  if probe:
-    # This happens a lot in GBIF.  Don't bother.
-    if False:
-      print("** In get_parent: %s has accepted name %s," %
-            (get_unique(tnu), get_unique(probe)))
-    tnu = probe
+def get_accepted(tnu):
+  (_, accepted) = get_superiors(tnu)
+  return accepted
+
+def get_superiors(tnu):
+  probe = superiors_cache.get(tnu)
+  if probe: return probe
+  result = get_superiors_really(tnu)
+  superiors_cache[tnu] = result
+  return result
+
+def get_superiors_really(tnu):
   parent_id = get_value(tnu, parent_tnu_id_field)
-  if parent_id != None:
-    # No parent means root taxon
-    probe = get_tnu_with_id(get_checklist(tnu), parent_id)
-    if probe:
-      if is_accepted(tnu) and not is_accepted(probe):
-        # GBIF contains all sorts of junk
-        print("** Parent %s of accepted %s is not accepted" %
-              (get_unique(probe), get_unique(tnu)))
-        probe2 = get_accepted(probe)
-        if probe2:
-          parent = probe2
-        elif not probe2:
-          print("** Unaccepted parent %s of %s has no accepted taxon" %
-                (get_unique(probe), get_unique(tnu)))
-      else:
-        parent = probe
+  if parent_id:
+    parent = get_tnu_with_id(get_checklist(tnu), parent_id)
+    # If id doesn't resolve, it's a root
+  else:
+    parent = None
+
+  accepted_id = get_value(tnu, accepted_tnu_id_field)
+  if accepted_id:
+    accepted = get_tnu_with_id(get_checklist(tnu), accepted_id)
+    if accepted:
+      a_status = get_taxonomic_status(accepted)
+      if a_status != "accepted":
+        print("** Putative accepted has wrong taxonomic status %s\n  %s -> %s" % \
+              (a_status, get_unique(tnu), get_unique(accepted)))
+      # Iterate???
     else:
-      # This is a root
-      pass
-  return parent
+       print("** Id %s for accepted of %s doesn't resolve" % \
+            (accepted_id, get_unique(tnu)))
+  else:
+    n_status = get_taxonomic_status(tnu)
+    if n_status == "synonym":
+      print("** Node with status = 'synonym' has no accepted node\n  %s" % \
+            (get_unique(tnu)))
+
+    accepted = None
+
+  if parent and accepted:
+    print("** Taxon has both accepted and parent links\n  %s -> %s, %s" % \
+          (get_unique(tnu), get_unique(accepted), get_unique(parent)))
+    print("** Preferring parent to accepted")
+    parent = None
+  return (to_accepted(parent), to_accepted(accepted))
 
 def get_children(parent):
   return get_tnus_with_value(get_checklist(parent),
                              parent_tnu_id_field,
                              get_tnu_id(parent))
 
+def to_accepted(tnu):
+  if not tnu: return tnu
+  probe = get_accepted(tnu)
+  if probe:
+    return probe
+  else:
+    return tnu
+
 # ----------
 # Accepted/synonyms
 
 accepteds_cache = {}
 
-def get_accepted(tnu):
-  probe = accepteds_cache.get(tnu)
-  if probe != None: return probe
-
+def get_accepted_really(tnu):
   accepted = None
   if is_accepted(tnu):
     pass                        # This is normal
@@ -328,7 +344,6 @@ def get_accepted(tnu):
         print("** Accepted id %s for %s doesn't resolve" %
               (accepted_id, get_unique(tnu)))
 
-  accepteds_cache[tnu] = accepted or False
   return accepted
 
 def get_synonyms(tnu):
@@ -478,14 +493,6 @@ def is_container(tnu):
          "unallocated" in name or \
          "unassigned" in name
   
-def to_accepted(tnu):
-  if not tnu: return tnu
-  probe = get_accepted(tnu)
-  if probe:
-    return probe
-  else:
-    return tnu
-
 
 # Test
 
