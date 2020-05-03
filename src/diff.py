@@ -1,3 +1,4 @@
+debug = False
 
 import sys, csv
 import argparse
@@ -50,14 +51,20 @@ def alignment(A, B):
   return None
 
 def report(A, B, outpath):
-  with open(outpath, "w") as outfile:
-    print ("Writing:", outpath)
-    writer = csv.writer(outfile)
-    write_header(writer)
-    sink = make_sink(writer, None)
-    for root in cl.get_roots(A):
-      subreport(root, B, sink, "")
-    drain(sink)
+  if outpath == "-":
+    report_to_io(A, B, sys.stdout)
+  else:
+    with open(outpath, "w") as outfile:
+      print ("Writing:", outpath)
+      report_to_io(A, B, outfile)
+
+def report_to_io(A, B, outfile):
+  writer = csv.writer(outfile)
+  write_header(writer)
+  sink = make_sink(writer, None)
+  for root in cl.get_roots(A):
+    subreport(root, B, sink, "")
+  drain(sink)
 
 def make_sink(writer, parent):
   return [False, [], writer, parent]
@@ -101,8 +108,11 @@ def write_header(writer):
 
 def get_tnu_info(tnu):
   if tnu:
+    prefix = cl.get_checklist(tnu).prefix
+    status = cl.get_taxonomic_status(tnu)
+    modifiers = "?" if status == "synonym" else ""
     return (cl.get_name(tnu),
-            cl.get_checklist(tnu).prefix + cl.get_tnu_id(tnu))
+            prefix + cl.get_tnu_id(tnu) + modifiers)
   else:
     return (None, None)
 
@@ -381,6 +391,8 @@ def how_related_extensionally(tnu, partner):
   else:
     (back, _, _) = cross_mrca(partner, here)
     if not back:                # shouldn't happen
+      print("** No return cross-MRCA\n  %s -> %s -> ??" %\
+            (cl.get_unique(tnu), cl.get_unique(partner)))
       assert False
       return rel.extension_disjoint
     elif cl.are_disjoint(tnu, back):
@@ -425,47 +437,69 @@ def cross_disjoint(tnu, partner):
 
 def cross_mrca(tnu, other):
   assert tnu > 0
-  return cross_mrcas.get(tnu) or (None, 1, 0)
+  probe = cross_mrcas.get(tnu, 17)
+  if probe != 17:
+    return probe
+  elif cl.is_accepted(tnu):
+    print("** No cross-MRCA set for %s" % cl.get_unique(tnu))
+  return (cl.forest, 1, 0)    # shouldn't happen
 
 # Returns (the-mrca, number-unmatched)
 
 def analyze_cross_mrcas(A, B):
-  cross_mrcas = {}
-  def half_analyze_cross_mrcas(checklist, other):
+  cross_mrcas = {cl.forest: (cl.forest, 0, 0)}
+  def half_analyze_cross_mrcas(checklist, other, checkp):
     def subanalyze_cross_mrcas(tnu, other):
-      ind = particle_match(tnu, other)
-      if ind:
-        assert ind.dom == tnu
-        if rel.is_variant(ind.relation, rel.eq):
-          result = (ind.cod,
-                    len(get_children(ind.dom)),    # Drop from A
-                    len(get_children(ind.cod)))   # Add to B
+      pmatch = particle_match(tnu, other)
+      drops = 0     # These get upgraded
+      adds = 0
+      m = 0      # is the identity for mrca
+      if pmatch:
+        assert pmatch.dom == tnu
+        if rel.is_variant(pmatch.relation, rel.eq):
+          m = pmatch.cod
+          drops = len(get_children(pmatch.dom))
+          adds = len(get_children(pmatch.cod))
+          if debug:
+           print("#   particle(%s) = %s" % (cl.get_unique(tnu), cl.get_unique(pmatch.cod)))
         else:
           # Can't happen
           print("** Non-eq articulation from particle_match\n  %s" +
-                art.express(ind))
+                art.express(pmatch))
           assert False
       else:
-        drops = 0
-        adds = 0
-        m = None
         children = get_children(tnu)
         if children:
           for child in children:
+            if debug:
+              print("# Child %s of %s" % (cl.get_unique(child), cl.get_unique(tnu)))
             (m2, d2, a2) = subanalyze_cross_mrcas(child, other)
-            drops += d2
-            adds += a2
-            if m2:
+            if m2 != None:
+              drops += d2
+              adds += a2
+              if debug:
+                print("#  Folding %s into %s" % (cl.get_unique(m2), cl.get_unique(m)))
               m = cl.mrca(m, m2)
+              if debug:
+                print("#   -> %s" % cl.get_unique(m))
         else:
           drops = 1
-        result = (m, drops, adds)
+      if debug:
+        print("#   cm(%s) = (%s, %s, %s)" % \
+              (cl.get_unique(tnu), cl.get_unique(m), drops, adds))
+      result = (m, drops, adds)
       cross_mrcas[tnu] = result
+      if checkp:
+        (back, _, _) = cross_mrcas[m]
+        if not back in cross_mrcas:
+          print("** No return cross-MRCA for %s -> %s -> %s" %\
+                (cl.get_unique(tnu), cl.get_unique(m), cl.get_unique(back)))
+          assert False
       return result
     for root in cl.get_roots(checklist):
       subanalyze_cross_mrcas(root, other)
-  half_analyze_cross_mrcas(A, B)
-  half_analyze_cross_mrcas(B, A)
+  half_analyze_cross_mrcas(A, B, False)
+  half_analyze_cross_mrcas(B, A, True)
   return cross_mrcas
 
 cross_mrcas = {}
@@ -482,8 +516,9 @@ def find_particles(here, other):
   particles = {}
   count = [0]
   def log(tnu, message):
-    if count[0] < 10:
-      print("# %s: %s" % (cl.get_unique(tnu), message))
+    if count[0] < 0:
+      if debug:
+       print("# fp(%s): %s" % (cl.get_unique(tnu), message))
       count[0] += 1
   def subanalyze(tnu, other):
     log(tnu, "subanalyze")
@@ -580,7 +615,9 @@ def intensional_matches(node, other):
                                 cl.get_name(node))
   matches = [bridge(node, hit, rel.same_name) for hit in hits]
   assert is_matches(matches) and True
-  id_hit = cl.get_tnu_with_id(other, cl.get_tnu_id(node))
+  if shared_idspace:
+    id_hit = cl.get_tnu_with_id(other, cl.get_tnu_id(node))
+  else: id_hit = None
   if id_hit and not id_hit in hits:
     matches = [bridge(node, id_hit, rel.same_id)] + matches
   assert is_matches(matches)
@@ -724,6 +761,8 @@ if __name__ == '__main__':
   parser.add_argument('right', help='B checklist')
   parser.add_argument('--left-tag', default="A")
   parser.add_argument('--right-tag', default="B")
+  parser.add_argument('--idspace', default=False)
   parser.add_argument('--out', help='file name for report', default='diff.csv')
   args = parser.parse_args()
+  shared_idspace = args.idspace
   main(args.left, args.left_tag, args.right, args.right_tag, args.out)

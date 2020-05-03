@@ -1,16 +1,13 @@
 # Thanks to Open Tree
 
-# Height counts the number of groupings, bottom up, starting at 0 =
-# fewest groups (everything is in a different group).
-
-# Depth counts the number of bifurcations, starting at 0 = fewest
-# bifurcations (everything is in one group).
+# Depth counts the number of splittings, starting at 0 = fewest
+# bifurcations (everything is in one group; 'forest').
 
 # Approximately 50 currently named ranks
 
 rank_configuration = [
   [[],
-   ["individual"]],  # added by jar for fun
+   ["atom"]],  # added by jar for fun
 
   [["no rank",       # NCBI
     "population"],     
@@ -68,68 +65,59 @@ rank_configuration = [
    ["kingdom",
     "superkingdom",
     "domain",
-    "root"]],
+    "root",
+    "checklist"]],
 
-  [[], ["anything"]]    # added by JAR for fun
+  [[], ["forest"]]    # added by JAR for fun
   ]
 
+linnean_increment = 100000
+
+# The least deep rank is 'forest'
+forest = 0
+
+# The deepest rank is 'atom'  (identity for 'min')
+atom = (len(rank_configuration)+1) * linnean_increment
+
 def process_ranks(groups):
-  rank_to_height = {}
-  height_to_name = {}
-  max_depth = 0
-  def associate(name, i):
-    rank_to_height[name] = i
-    height_to_name[i] = name
-  linnean_increment = 100000
+  name_to_mutex_table = {}
+  mutex_to_name_table = {}
+  def set_mutex(name, mutex):
+    name_to_mutex_table[name] = mutex
+    mutex_to_name_table[mutex] = name
   foo = 10
   sublinnean_increment = int(linnean_increment / foo)
-  height = 0
+  mutex = atom
   for (colinnea, linnea) in groups:
-    if len(colinnea) > foo/2:
-      print("** Too many subgroup levels")
-    if len(linnea) > foo/2:
-      print("** Too many supergroup levels")
-    print("height(%s) = %s" % (linnea[0], height))
-    down = height
+    d = mutex
+    colinnea.reverse()
     for name in colinnea:
-      down -= sublinnean_increment
-      associate(name, down)
-    up = height
+      d += sublinnean_increment
+      set_mutex(name, d)
+    d = mutex
     for name in linnea:
-      associate(name, up)
-      max_height = up
-      up += sublinnean_increment
-    height += linnean_increment
-  return (rank_to_height, height_to_name, max_height)
+      set_mutex(name, d)
+      d -= sublinnean_increment
+    mutex -= linnean_increment
+  return (name_to_mutex_table, mutex_to_name_table)
 
-(rank_to_height_table, height_to_name_table, max_height) = \
+(name_to_mutex_table, mutex_to_name_table) = \
   process_ranks(rank_configuration)
 
-max_depth = max_height
+def name_to_mutex(name):
+  # If absent, return the identity for min
+  return name_to_mutex_table.get(name)
 
-def rank_to_height(name):
-  return rank_to_height_table.get(name)
+def mutex_to_name(mutex):       # For display purposes
+  # If absent, return the numeric mutex I guess.  Can do better.
+  return mutex_to_name_table.get(mutex, mutex)
 
-def height_to_depth(height):
-  return max_height - height
+root = name_to_mutex("root")
 
-def depth_to_height(height):
-  return max_depth - height
+# ---
 
-def rank_to_depth(name):
-  height = rank_to_height_table.get(name)
-  if height:
-    return height_to_depth(height)
-  return None
+def self_test():
+  for rank in ["subspecies", "atom", "forest"]:
+    print("mutex %s -> %s" % (rank, name_to_mutex(rank)))
 
-for rank in ["subspecies", "individual", "anything"]:
-  print("height %s -> %s" % (rank, rank_to_height(rank)))
-  print("depth %s -> %s" % (rank, rank_to_depth(rank)))
-
-individual_height = 0
-anything_depth = 0
-
-def next_higher(height):        # more phylumward
-  return height + 1
-
-root_height = rank_to_height("root")
+if __name__ == '__main__': self_test()

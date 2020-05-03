@@ -52,10 +52,10 @@ def emit_dwc(nodes, names, scinames, authorities, merged, outpath):
           write_row(writer,
                     id + ".BOLD", None, None,
                     id, None, "BOLD:" + z[1],
-                    "synonym", "apparent BOLD id")
+                    "synonym", "BOLD id")
         else:
-          print("Malformed BOLD: name, %s" % z)
-      if kind != "scientific name":
+          print("** Malformed BOLD: name, %s" % z)
+      if not (kind == "scientific name" or kind == "authority"):
         # synonym is a taxonomic status, not a nomenclatural status
         if kind == "synonym": kind = None
         minted = id + "." + str(spin)

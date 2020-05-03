@@ -134,8 +134,8 @@ __________CHANGE ID,Avahi laniger,B.122246,=,C.2436426,Avahi laniger,{same-name 
 ____________GRAFT,,,,C.10563384,BOLD:ACV6530,
 ____________GRAFT,,,,C.10120494,BOLD:ADC6865,
 ________GRAFT,,,,C.4827491,Mesopropithecus,
-________GRAFT,,,,C.4827493,Neopropithecus,
-________GRAFT,,,,C.4827493,Neopropithecus,
+________GRAFT,,,,C.4827493?,Neopropithecus,
+________GRAFT,,,,C.4827493?,Neopropithecus,
 ________MOVE,Hadropithecus,B.523824,=,C.4827060,Hadropithecus,{same-name & same-rank}
 __________REMOVE,Hadropithecus stenognathus,B.523825,,,,0 right nodes match this left node
 ________MOVE,Archaeolemur,B.523820,=,C.4827057,Archaeolemur,{same-name & same-rank}
@@ -1462,16 +1462,16 @@ ________________REMOVE,unclassified Colobus,B.2618863,,,,0 right nodes match thi
 __________________REMOVE,Colobus sp.,B.34824,,,,0 right nodes match this left node
 __________________REMOVE,Colobus sp. DTG-2004,B.288544,,,,0 right nodes match this left node
 __________________REMOVE,Colobus sp. MB-2005,B.325172,,,,0 right nodes match this left node
-________________GRAFT,,,,C.7356532,Simia comosa,
-________________GRAFT,,,,C.7356532,Simia comosa,
-________________GRAFT,,,,C.8067573,Simia tetradactyla,
-________________GRAFT,,,,C.8067573,Simia tetradactyla,
-________________GRAFT,,,,C.8174193,Simia regalis,
-________________GRAFT,,,,C.8174193,Simia regalis,
+________________GRAFT,,,,C.7356532?,Simia comosa,
+________________GRAFT,,,,C.7356532?,Simia comosa,
+________________GRAFT,,,,C.8067573?,Simia tetradactyla,
+________________GRAFT,,,,C.8067573?,Simia tetradactyla,
+________________GRAFT,,,,C.8174193?,Simia regalis,
+________________GRAFT,,,,C.8174193?,Simia regalis,
 ________________GRAFT,,,,C.8118610,Cebus polykomos,
 ________________GRAFT,,,,C.8118610,Cebus polykomos,
-________________GRAFT,,,,C.8156379,Simia polycomos,
-________________GRAFT,,,,C.8156379,Simia polycomos,
+________________GRAFT,,,,C.8156379?,Simia polycomos,
+________________GRAFT,,,,C.8156379?,Simia polycomos,
 ________________GRAFT,,,,C.8890531,Colobus polycomos,
 ________________GRAFT,,,,C.8957958,Colobus satanus,
 ________________GRAFT,,,,C.9135851,Colobus palliatus,
@@ -1505,14 +1505,14 @@ ________________GRAFT,,,,C.8946723,Colobus leucomerus,
 ________________CHANGE ID,Colobus polykomos,B.9572,=,C.5963044,Colobus polykomos,{same-name & same-rank}
 __________________GRAFT,,,,C.8830116,Colobus polykomos polykomos,
 __________________GRAFT,,,,C.8728104,Colobus polykomos vellerosus,
-________________GRAFT,,,,C.7628859,Colobus leucomeros,
-________________GRAFT,,,,C.7628859,Colobus leucomeros,
-________________GRAFT,,,,C.7559699,Semnopithecus bicolor,
-________________GRAFT,,,,C.7559699,Semnopithecus bicolor,
-________________GRAFT,,,,C.8392867,Colobus ursinus,
-________________GRAFT,,,,C.8392867,Colobus ursinus,
-________________GRAFT,,,,C.8803164,Colobus polykomos dollmani,
-________________GRAFT,,,,C.8803164,Colobus polykomos dollmani,
+________________GRAFT,,,,C.7628859?,Colobus leucomeros,
+________________GRAFT,,,,C.7628859?,Colobus leucomeros,
+________________GRAFT,,,,C.7559699?,Semnopithecus bicolor,
+________________GRAFT,,,,C.7559699?,Semnopithecus bicolor,
+________________GRAFT,,,,C.8392867?,Colobus ursinus,
+________________GRAFT,,,,C.8392867?,Colobus ursinus,
+________________GRAFT,,,,C.8803164?,Colobus polykomos dollmani,
+________________GRAFT,,,,C.8803164?,Colobus polykomos dollmani,
 ______________MOVE,Procolobus,B.164647,=,C.2436596,Procolobus,{same-name & same-rank}
 ________________CHANGE ID,Procolobus verus,B.373033,=,C.2436597,Procolobus verus,{same-name & same-rank}
 __________________GRAFT,,,,C.9847516,BOLD:ADC7744,
@@ -1629,18 +1629,18 @@ ________________MOVE,Presbytis hosei,B.1046093,=,C.5219564,Presbytis hosei,{same
 __________________MOVE,Presbytis hosei hosei,B.1046094,=,C.5219564,Presbytis hosei,[{same-name & same-rank ...} → synonym-of]
 ________________OPTION,,,=,C.7237060,Presbytis,{same-name & same-rank}
 ____________REMOVE,Cercopithecidae gen. sp.,B.9576,,,,0 right nodes match this left node
-____________GRAFT,,,,C.4827242,Colobolus,
-____________GRAFT,,,,C.4827242,Colobolus,
-____________GRAFT,,,,C.4827232,Pterygocolobus,
-____________GRAFT,,,,C.4827232,Pterygocolobus,
-____________GRAFT,,,,C.4827243,Stachycolobus,
-____________GRAFT,,,,C.4827243,Stachycolobus,
-____________GRAFT,,,,C.4827241,Guereza,
-____________GRAFT,,,,C.4827241,Guereza,
-____________GRAFT,,,,C.4827244,Colobos,
-____________GRAFT,,,,C.4827244,Colobos,
-____________GRAFT,,,,C.4827240,Pterycolobus,
-____________GRAFT,,,,C.4827240,Pterycolobus,
+____________GRAFT,,,,C.4827242?,Colobolus,
+____________GRAFT,,,,C.4827242?,Colobolus,
+____________GRAFT,,,,C.4827232?,Pterygocolobus,
+____________GRAFT,,,,C.4827232?,Pterygocolobus,
+____________GRAFT,,,,C.4827243?,Stachycolobus,
+____________GRAFT,,,,C.4827243?,Stachycolobus,
+____________GRAFT,,,,C.4827241?,Guereza,
+____________GRAFT,,,,C.4827241?,Guereza,
+____________GRAFT,,,,C.4827244?,Colobos,
+____________GRAFT,,,,C.4827244?,Colobos,
+____________GRAFT,,,,C.4827240?,Pterycolobus,
+____________GRAFT,,,,C.4827240?,Pterycolobus,
 ____________GRAFT,,,,C.9607673,? nasuus,
 ____________GRAFT,,,,C.9279891,? hamadryas,
 ____________GRAFT,,,,C.9589700,? hypsilophus,
@@ -1724,13 +1724,13 @@ ____________CHANGE ID,Symphalangus,B.325166,=,C.4267276,Symphalangus,{same-name 
 ______________CHANGE ID,Symphalangus syndactylus,B.9590,=,C.4267277,Symphalangus syndactylus,{same-name & same-rank}
 ________________CHANGE NAME & STATUS,Symphalangus syndactylus syndactylus,B.405039,=,C.8589281,Hylobates syndactylus syndactylus,[has-synonym → same-name]
 ________________GRAFT,,,,C.10096033,BOLD:AAF4223,
-________________GRAFT,,,,C.8482565,Siamanga syndactyla volzi,
-________________GRAFT,,,,C.8482565,Siamanga syndactyla volzi,
+________________GRAFT,,,,C.8482565?,Siamanga syndactyla volzi,
+________________GRAFT,,,,C.8482565?,Siamanga syndactyla volzi,
 ____________MULTIPLE,Hoolock,B.325167,?,,,2 right nodes match this left node
 ______________REMOVE,Hoolock leuconedys x Hoolock tianxing,B.1934191,,,,0 right nodes match this left node
 ______________OPTION,,,=,C.4267261,Bunopithecus,[has-synonym → same-name]
-______________GRAFT,,,,C.8955169,Hylobates sericus,
-______________GRAFT,,,,C.8955169,Hylobates sericus,
+______________GRAFT,,,,C.8955169?,Hylobates sericus,
+______________GRAFT,,,,C.8955169?,Hylobates sericus,
 ______________GRAFT,,,,C.8608565,Bunopithecus sericus,
 ______________OPTION,,,=,C.4827728,Hoolock,{same-name & same-rank}
 ______________CHANGE ID,Hoolock tianxing,B.1934190,=,C.9533083,Hoolock tianxing,{same-name & same-rank}
@@ -1791,8 +1791,8 @@ __________________CHANGE ID,Pan troglodytes ellioti,B.756884,=,C.5786533,Pan tro
 ______________MOVE,Gorilla,B.9592,=,C.2436440,Gorilla,{same-name & same-rank}
 ________________CHANGE ID,Gorilla beringei,B.499232,=,C.7262070,Gorilla beringei,{same-name & same-rank}
 __________________MULTIPLE,Gorilla beringei graueri,B.46359,?,,,3 right nodes match this left node
-____________________OPTION,,,=,C.5786531,Gorilla gorilla graueri,[has-synonym → same-name]
-____________________OPTION,,,=,C.5786531,Gorilla gorilla graueri,[has-synonym → same-name]
+____________________OPTION,,,=,C.5786531?,Gorilla gorilla graueri,[has-synonym → same-name]
+____________________OPTION,,,=,C.5786531?,Gorilla gorilla graueri,[has-synonym → same-name]
 ____________________OPTION,,,=,C.4267322,Gorilla beringei graueri,{same-name & same-rank}
 __________________CHANGE ID,Gorilla beringei beringei,B.1159185,=,C.4267319,Gorilla beringei beringei,{same-name & same-rank}
 __________________GRAFT,,,,C.10153628,BOLD:AAB2252,
@@ -1897,10 +1897,10 @@ ____________GRAFT,,,,C.4827541,Giganthropus,
 ____________GRAFT,,,,C.4827661,Morotopithecus,
 ____________GRAFT,,,,C.4827673,Australopithecus,
 ____________GRAFT,,,,C.4827543,Limnopithecus,
-____________GRAFT,,,,C.4827674,Plesianthropus,
-____________GRAFT,,,,C.4827674,Plesianthropus,
-____________GRAFT,,,,C.4827682,Paraustralopithecus,
-____________GRAFT,,,,C.4827682,Paraustralopithecus,
+____________GRAFT,,,,C.4827674?,Plesianthropus,
+____________GRAFT,,,,C.4827674?,Plesianthropus,
+____________GRAFT,,,,C.4827682?,Paraustralopithecus,
+____________GRAFT,,,,C.4827682?,Paraustralopithecus,
 ____________OPTION,,,=,C.3239570,Pongidae,[has-synonym → same-name]
 ____________GRAFT,,,,C.10228061,? sivalensis,
 ____________GRAFT,,,,C.9833959,? meteai,
@@ -2027,8 +2027,8 @@ __GRAFT,,,,C.9626124,Anthropoidipes,
 __GRAFT,,,,C.7839949,Plesiadapis,
 __GRAFT,,,,C.8665654,Gatanthropus,
 __GRAFT,,,,C.8634261,Yunnanadapis,
-__GRAFT,,,,C.7531007,Dinopithecus,
-__GRAFT,,,,C.7531007,Dinopithecus,
+__GRAFT,,,,C.7531007?,Dinopithecus,
+__GRAFT,,,,C.7531007?,Dinopithecus,
 __GRAFT,,,,C.3239614,Dinanthropoides,
 __GRAFT,,,,C.9243541,Sulaimanius,
 __GRAFT,,,,C.4827053,Mackennatherium,

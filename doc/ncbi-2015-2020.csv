@@ -11,7 +11,7 @@ ____NO CHANGE,Primates sp. BOLD:AAO0053,A.976302,=,B.976302,Primates sp. BOLD:AA
 ____NO CHANGE,Primates sp. BOLD:AAC7735,A.1068292,=,B.1068292,Primates sp. BOLD:AAC7735,{same-name & same-rank}
 ____NO CHANGE,Primates sp. BOLD:AAD0215,A.1068293,=,B.1068293,Primates sp. BOLD:AAD0215,{same-name & same-rank}
 ____NO CHANGE,Primates sp. BOLD:AAF0367,A.1068294,=,B.1068294,Primates sp. BOLD:AAF0367,{same-name & same-rank}
-____MOVE,Japanese monkeys,A.36513,=,B.9542,Macaca fuscata,[{same-name & same-id} → common-name-of]
+____MOVE,Japanese monkeys,A.36513,=,B.9542,Macaca fuscata,[same-name → common-name-of]
 __NO CHANGE,Strepsirrhini,A.376911,=,B.376911,Strepsirrhini,{same-name & same-rank}
 ____NO CHANGE,Lemuriformes,A.376915,=,B.376915,Lemuriformes,{same-name & same-rank}
 ______NO CHANGE,Lemuridae,A.9445,=,B.9445,Lemuridae,{same-name & same-rank}
@@ -69,6 +69,7 @@ ________NO CHANGE,Hadropithecus,A.523824,=,B.523824,Hadropithecus,{same-name & s
 __________...,,,,,,1 unchanged children
 ______NO CHANGE,Lepilemuridae,A.30614,=,B.30614,Lepilemuridae,{same-name & same-rank}
 ________NO CHANGE,Lepilemur,A.9452,=,B.9452,Lepilemur,{same-name & same-rank}
+__________REMOVE,Lepilemur jamesi,A.486960,,,,0 right nodes match this left node
 __________NO CHANGE,Lepilemur mustelinus,A.9453,=,B.9453,Lepilemur mustelinus,{same-name & same-rank}
 __________NO CHANGE,Lepilemur dorsalis,A.78583,=,B.78583,Lepilemur dorsalis,{same-name & same-rank}
 __________NO CHANGE,Lepilemur septentrionalis,A.78584,=,B.78584,Lepilemur septentrionalis,{same-name & same-rank}
@@ -84,7 +85,7 @@ __________NO CHANGE,Lepilemur ankaranensis,A.342401,=,B.342401,Lepilemur ankaran
 __________NO CHANGE,Lepilemur mittermeieri,A.378517,=,B.378517,Lepilemur mittermeieri,{same-name & same-rank}
 __________NO CHANGE,Lepilemur manasamody,A.458171,=,B.458171,Lepilemur manasamody,{same-name & same-rank}
 __________NO CHANGE,Lepilemur otto,A.458173,=,B.458173,Lepilemur otto,{same-name & same-rank}
-__________CHANGE NAME,Lepilemur jamesi,A.486960,=,B.486960,Lepilemur jamesorum,{same-id & same-rank}
+__________GRAFT,,,,B.486960,Lepilemur jamesorum,
 __________NO CHANGE,Lepilemur hubbardorum,A.756882,=,B.756882,Lepilemur hubbardorum,{same-name & same-rank}
 __________GRAFT,,,,B.886957,Lepilemur ahmansonorum,
 __________GRAFT,,,,B.886958,Lepilemur betsileo,
@@ -187,7 +188,7 @@ ________NO CHANGE,Nycticebus,A.9469,=,B.9469,Nycticebus,{same-name & same-rank}
 __________NO CHANGE,Nycticebus coucang,A.9470,=,B.9470,Nycticebus coucang,{same-name & same-rank}
 ____________NO CHANGE,Nycticebus coucang coucang,A.310933,=,B.310933,Nycticebus coucang coucang,{same-name & same-rank}
 ____________GRAFT,,,,B.2020906,Nycticebus coucang insularis,
-__________CHANGE NAME,Nycticebus intermedius,A.101277,=,B.101278,Nycticebus pygmaeus,[{same-name & same-id} → synonym-of]
+__________CHANGE NAME,Nycticebus intermedius,A.101277,=,B.101278,Nycticebus pygmaeus,[same-name → synonym-of]
 __________NO CHANGE,Nycticebus pygmaeus,A.101278,=,B.101278,Nycticebus pygmaeus,{same-name & same-rank}
 __________NO CHANGE,Nycticebus bengalensis,A.261741,=,B.261741,Nycticebus bengalensis,{same-name & same-rank}
 __________NO CHANGE,Nycticebus menagensis,A.310932,=,B.310932,Nycticebus menagensis,{same-name & same-rank}
@@ -212,7 +213,7 @@ __________NO CHANGE,Galago gabonensis,A.261731,=,B.261731,Galago gabonensis,{sam
 __________NO CHANGE,Galago granti,A.261732,=,B.261732,Galago granti,{same-name & same-rank}
 __________GRAFT,,,,B.2628747,unclassified Galago,
 __________MOVE,Galago sp.,A.9464,=,B.9464,Galago sp.,{same-name & same-rank}
-__________MOVE,Galago thomasi,A.867376,=,B.867376,Galagoides thomasi,{same-id & same-rank ...}
+__________MOVE,Galago thomasi,A.867376,=,B.867376,Galagoides thomasi,[same-name → synonym-of]
 ________NO CHANGE,Otolemur,A.30610,=,B.30610,Otolemur,{same-name & same-rank}
 __________...,,,,,,5 unchanged children
 ________NO CHANGE,Galagoides,A.89671,=,B.89671,Galagoides,{same-name & same-rank}
@@ -222,6 +223,7 @@ __________NO CHANGE,Galagoides zanzibaricus,A.111174,=,B.111174,Galagoides zanzi
 ____________GRAFT,,,,B.1738046,Galagoides zanzibaricus udzungwensis,
 ____________GRAFT,,,,B.1738053,Galagoides zanzibaricus zanzibaricus,
 __________NO CHANGE,Galagoides orinus,A.337210,=,B.337210,Galagoides orinus,{same-name & same-rank}
+__________GRAFT,,,,B.867376,Galagoides thomasi,
 __________NO CHANGE,Galagoides cocos,A.1487601,=,B.1487601,Galagoides cocos,{same-name & same-rank}
 __________GRAFT,,,,B.1738047,Galagoides rondoensis,
 ________NO CHANGE,Euoticus,A.261735,=,B.261735,Euoticus,{same-name & same-rank}
@@ -233,6 +235,8 @@ ______NO CHANGE,Platyrrhini,A.9479,=,B.9479,Platyrrhini,{same-name & same-rank}
 ________NO CHANGE,Cebidae,A.9498,=,B.9498,Cebidae,{same-name & same-rank}
 __________NO CHANGE,Callitrichinae,A.9480,=,B.9480,Callitrichinae,{same-name & same-rank}
 ____________MULTIPLE,Callithrix,A.9481,?,,,4 right nodes match this left node
+______________REMOVE,Callithrix argentata,A.9482,,,,0 right nodes match this left node
+________________MOVE,Callithrix argentata argentata,A.867362,=,B.867362,Mico argentatus argentatus,[same-name → synonym-of]
 ______________OPTION,,,=,B.9481,Callithrix,{same-name & same-rank}
 ______________OPTION,,,=,B.1965096,Callithrix,same-name
 ______________MOVE,Callithrix jacchus,A.9483,=,B.9483,Callithrix jacchus,{same-name & same-rank}
@@ -249,21 +253,24 @@ ______________MOVE,Callithrix pygmaea,A.9493,=,B.9493,Callithrix pygmaea,{same-n
 ______________GRAFT,,,,B.1965113,Calibella,
 ______________MOVE,Callithrix humilis,A.666519,=,B.666519,Callithrix humilis,{same-name & same-rank}
 ______________INSERT,,,>,B.1965102,Mico,[part-of → same-name]
-______________MOVE,Callithrix argentata,A.9482,=,B.9482,Mico argentatus,{same-id & same-rank}
-________________CHANGE NAME,Callithrix argentata argentata,A.867362,=,B.867362,Mico argentatus argentatus,{same-id & same-rank ...}
-______________MOVE,Callithrix emiliae,A.48842,=,B.48842,Mico emiliae,{same-id & same-rank ...}
-______________MOVE,Callithrix humeralifera,A.52232,=,B.52232,Mico humeralifer,{same-id & same-rank ...}
-______________MOVE,Callithrix mauesi,A.57377,=,B.57377,Mico mauesi,{same-id & same-rank ...}
-______________MOVE,Callithrix cf. emiliae,A.198701,=,B.198701,Mico cf. emiliae,{same-id & same-rank ...}
-______________MOVE,Callithrix saterei,A.198702,=,B.198702,Mico saterei,{same-id & same-rank ...}
-______________MOVE,Callithrix melanura,A.1090896,=,B.1090896,Mico melanurus,{same-id & same-rank ...}
-______________MOVE,Callithrix rondoni,A.1127763,=,B.1127763,Mico rondoni,{same-id & same-rank ...}
+______________GRAFT,,,,B.9482,Mico argentatus,
+______________MOVE,Callithrix emiliae,A.48842,=,B.48842,Mico emiliae,{[same-name → synonym-of] & ...}
+______________MOVE,Callithrix humeralifera,A.52232,=,B.52232,Mico humeralifer,{[same-name → synonym-of] & ...}
+______________MOVE,Callithrix mauesi,A.57377,=,B.57377,Mico mauesi,{[same-name → synonym-of] & ...}
+______________MOVE,Callithrix cf. emiliae,A.198701,=,B.198701,Mico cf. emiliae,{[same-name → synonym-of] & ...}
+______________MOVE,Callithrix saterei,A.198702,=,B.198702,Mico saterei,{[same-name → synonym-of] & ...}
+______________MOVE,Callithrix melanura,A.1090896,=,B.1090896,Mico melanurus,[same-name → synonym-of]
+______________GRAFT,,,,B.1090896,Mico melanurus,
+______________MOVE,Callithrix rondoni,A.1127763,=,B.1127763,Mico rondoni,{[same-name → synonym-of] & ...}
 ______________GRAFT,,,,B.1758231,Mico chrysoleucus,
 ______________GRAFT,,,,B.2592805,Mico intermedius,
 ______________GRAFT,,,,B.2592806,Mico leucippe,
 ______________GRAFT,,,,B.2592807,Mico marcai,
 ______________GRAFT,,,,B.2592808,Mico munduruku,
 ____________NO CHANGE,Saguinus,A.9486,=,B.9486,Saguinus,{same-name & same-rank}
+______________REMOVE,Saguinus nigricollis,A.9489,,,,0 right nodes match this left node
+________________REMOVE,Saguinus nigricollis nigricollis,A.873070,,,,0 right nodes match this left node
+______________REMOVE,Saguinus tripartitus,A.122388,,,,0 right nodes match this left node
 ______________NO CHANGE,Saguinus mystax,A.9488,=,B.9488,Saguinus mystax,{same-name & same-rank}
 ________________...,,,,,,1 unchanged children
 ______________NO CHANGE,Saguinus oedipus,A.9490,=,B.9490,Saguinus oedipus,{same-name & same-rank}
@@ -288,16 +295,13 @@ ______________GRAFT,,,,B.2586294,Saguinus oedipus x Saguinus leucopus,
 ______________GRAFT,,,,B.2642123,unclassified Saguinus,
 ______________MOVE,Saguinus sp.,A.100754,=,B.100754,Saguinus sp.,{same-name & same-rank}
 ______________MOVE,Saguinus sp. T1030,A.260575,=,B.260575,Saguinus sp. T1030,{same-name & same-rank}
-______________MOVE,Saguinus fuscicollis,A.9487,=,B.9487,Leontocebus fuscicollis,{same-id & same-rank}
-________________CHANGE NAME,Saguinus fuscicollis fuscicollis,A.48018,=,B.48018,Leontocebus fuscicollis fuscicollis,{same-id & same-rank}
-________________CHANGE NAME,Saguinus fuscicollis weddelli,A.343424,=,B.343424,Leontocebus fuscicollis weddelli,{same-id & same-rank ...}
-________________CHANGE NAME,Saguinus fuscicollis leucogenys,A.881946,=,B.881946,Leontocebus fuscicollis leucogenys,{same-id & same-rank ...}
-________________CHANGE NAME,Saguinus fuscicollis illigeri,A.881947,=,B.881947,Leontocebus fuscicollis illigeri,{same-id & same-rank ...}
-________________CHANGE NAME,Saguinus fuscicollis nigrifrons,A.881949,=,B.881949,Leontocebus fuscicollis nigrifrons,{same-id & same-rank ...}
-________________CHANGE NAME,Saguinus fuscicollis lagonotus,A.881950,=,B.881950,Leontocebus fuscicollis lagonotus,{same-id & same-rank ...}
-______________MOVE,Saguinus nigricollis,A.9489,=,B.9489,Leontocebus nigricollis,{same-id & same-rank}
-________________CHANGE NAME,Saguinus nigricollis nigricollis,A.873070,=,B.873070,Leontocebus nigricollis nigricollis,{same-id & same-rank}
-______________MOVE,Saguinus tripartitus,A.122388,=,B.122388,Leontocebus tripartitus,{same-id & same-rank}
+______________MOVE,Saguinus fuscicollis,A.9487,=,B.9487,Leontocebus fuscicollis,[same-name → synonym-of]
+________________REMOVE,Saguinus fuscicollis fuscicollis,A.48018,,,,0 right nodes match this left node
+________________CHANGE NAME,Saguinus fuscicollis weddelli,A.343424,=,B.343424,Leontocebus fuscicollis weddelli,[same-name → synonym-of]
+________________CHANGE NAME,Saguinus fuscicollis leucogenys,A.881946,=,B.881946,Leontocebus fuscicollis leucogenys,[same-name → synonym-of]
+________________CHANGE NAME,Saguinus fuscicollis illigeri,A.881947,=,B.881947,Leontocebus fuscicollis illigeri,[same-name → synonym-of]
+________________CHANGE NAME,Saguinus fuscicollis nigrifrons,A.881949,=,B.881949,Leontocebus fuscicollis nigrifrons,[same-name → synonym-of]
+________________CHANGE NAME,Saguinus fuscicollis lagonotus,A.881950,=,B.881950,Leontocebus fuscicollis lagonotus,[same-name → synonym-of]
 ____________NO CHANGE,Callimico,A.9494,=,B.9494,Callimico,{same-name & same-rank}
 ______________NO CHANGE,Callimico goeldii,A.9495,=,B.9495,Callimico goeldii,{same-name & same-rank}
 ______________GRAFT,,,,B.2634122,unclassified Callimico,
@@ -371,7 +375,8 @@ ____________NO CHANGE,Chiropotes,A.9524,=,B.9524,Chiropotes,{same-name & same-ra
 ______________NO CHANGE,Chiropotes satanas,A.9525,=,B.9525,Chiropotes satanas,{same-name & same-rank}
 ______________NO CHANGE,Chiropotes albinasus,A.198627,=,B.198627,Chiropotes albinasus,{same-name & same-rank}
 ______________NO CHANGE,Chiropotes satanas x albinasus,A.202458,=,B.202458,Chiropotes satanas x albinasus,{same-name & same-rank}
-______________CHANGE NAME,Chiropotes utahicki,A.280160,=,B.280160,Chiropotes utahickae,{same-id & same-rank ...}
+______________CHANGE NAME,Chiropotes utahicki,A.280160,=,B.280160,Chiropotes utahickae,[same-name → synonym-of]
+______________GRAFT,,,,B.280160,Chiropotes utahickae,
 ______________NO CHANGE,Chiropotes israelita,A.280163,=,B.280163,Chiropotes israelita,{same-name & same-rank}
 ______________NO CHANGE,Chiropotes albinasus x satanas,A.626367,=,B.626367,Chiropotes albinasus x satanas,{same-name & same-rank}
 ______________NO CHANGE,Chiropotes chiropotes,A.658221,=,B.658221,Chiropotes chiropotes,{same-name & same-rank}
@@ -399,16 +404,16 @@ ______________GRAFT,,,,B.1861703,Callicebus discolor,
 ______________GRAFT,,,,B.2627897,unclassified Callicebus,
 ______________MOVE,Callicebus sp.,A.116962,=,B.116962,Callicebus sp.,{same-name & same-rank}
 ______________MOVE,Callicebus sp. MAS-2011,A.1090915,=,B.1090915,Callicebus sp. MAS-2011,{same-name & same-rank}
-______________MOVE,Callicebus moloch,A.9523,=,B.9523,Plecturocebus moloch,{same-id & same-rank ...}
-______________MOVE,Callicebus hoffmannsi,A.78255,=,B.78255,Plecturocebus hoffmannsi,{same-id & same-rank ...}
-______________MOVE,Callicebus cupreus,A.202457,=,B.202457,Plecturocebus cupreus,{same-id & same-rank ...}
-______________MOVE,Callicebus donacophilus,A.230833,=,B.230833,Plecturocebus donacophilus,{same-id & same-rank}
-________________CHANGE NAME,Callicebus donacophilus donacophilus,A.285954,=,B.285954,Plecturocebus donacophilus donacophilus,{same-id & same-rank ...}
-______________MOVE,Callicebus caligatus,A.867332,=,B.867332,Plecturocebus caligatus,{same-id & same-rank ...}
-______________MOVE,Callicebus brunneus,A.221704,=,B.1812042,Plecturocebus brunneus,[{same-name & same-id} → synonym-of]
-______________MOVE,Callicebus torquatus,A.30592,=,B.30592,Cheracebus torquatus,{same-id & same-rank ...}
-______________MOVE,Callicebus lugens,A.210166,=,B.210166,Cheracebus lugens,{same-id & same-rank ...}
-______________MOVE,Callicebus purinus,A.1560619,=,B.1560619,Cheracebus purinus,{same-id & same-rank ...}
+______________MOVE,Callicebus moloch,A.9523,=,B.9523,Plecturocebus moloch,[same-name → synonym-of]
+______________MOVE,Callicebus hoffmannsi,A.78255,=,B.78255,Plecturocebus hoffmannsi,[same-name → synonym-of]
+______________MOVE,Callicebus cupreus,A.202457,=,B.202457,Plecturocebus cupreus,[same-name → synonym-of]
+______________MOVE,Callicebus donacophilus,A.230833,=,B.230833,Plecturocebus donacophilus,[same-name → synonym-of]
+________________CHANGE NAME,Callicebus donacophilus donacophilus,A.285954,=,B.285954,Plecturocebus donacophilus donacophilus,[same-name → synonym-of]
+______________MOVE,Callicebus caligatus,A.867332,=,B.867332,Plecturocebus caligatus,[same-name → synonym-of]
+______________MOVE,Callicebus brunneus,A.221704,=,B.1812042,Plecturocebus brunneus,[same-name → synonym-of]
+______________MOVE,Callicebus torquatus,A.30592,=,B.30592,Cheracebus torquatus,[same-name → synonym-of]
+______________MOVE,Callicebus lugens,A.210166,=,B.210166,Cheracebus lugens,[same-name → synonym-of]
+______________MOVE,Callicebus purinus,A.1560619,=,B.1560619,Cheracebus purinus,[same-name → synonym-of]
 ____________GRAFT,,,,B.1812035,Plecturocebus,
 ____________GRAFT,,,,B.1812102,Cheracebus,
 __________GRAFT,,,,B.2490929,Xenothricinae,
@@ -518,11 +523,11 @@ ________________NO CHANGE,Cercopithecus lomamiensis,A.1191211,=,B.1191211,Cercop
 ________________GRAFT,,,,B.1579530,Cercopithecus sclateri,
 ________________GRAFT,,,,B.2618071,unclassified Cercopithecus,
 ________________MOVE,Cercopithecus sp. WMS-2012,A.1144881,=,B.1144881,Cercopithecus sp. WMS-2012,{same-name & same-rank}
-________________MOVE,Cercopithecus lhoesti,A.100224,=,B.100224,Allochrocebus lhoesti,{same-id & same-rank ...}
-________________MOVE,Cercopithecus preussi,A.147649,=,B.147649,Allochrocebus preussi,{same-id & same-rank}
-__________________CHANGE NAME,Cercopithecus preussi insularis,A.1137512,=,B.1137512,Allochrocebus preussi insularis,{same-id & same-rank ...}
-__________________CHANGE NAME,Cercopithecus preussi preussi,A.1137513,=,B.1137513,Allochrocebus preussi preussi,{same-id & same-rank ...}
-________________MOVE,Cercopithecus solatus,A.147650,=,B.147650,Allochrocebus solatus,{same-id & same-rank ...}
+________________MOVE,Cercopithecus lhoesti,A.100224,=,B.100224,Allochrocebus lhoesti,[same-name → synonym-of]
+________________MOVE,Cercopithecus preussi,A.147649,=,B.147649,Allochrocebus preussi,[same-name → synonym-of]
+__________________CHANGE NAME,Cercopithecus preussi insularis,A.1137512,=,B.1137512,Allochrocebus preussi insularis,[same-name → synonym-of]
+__________________CHANGE NAME,Cercopithecus preussi preussi,A.1137513,=,B.1137513,Allochrocebus preussi preussi,[same-name → synonym-of]
+________________MOVE,Cercopithecus solatus,A.147650,=,B.147650,Allochrocebus solatus,[same-name → synonym-of]
 ______________NO CHANGE,Erythrocebus,A.9537,=,B.9537,Erythrocebus,{same-name & same-rank}
 ________________...,,,,,,1 unchanged children
 ______________NO CHANGE,Macaca,A.9539,=,B.9539,Macaca,{same-name & same-rank}
@@ -539,8 +544,8 @@ __________________GRAFT,,,,B.1654737,Macaca mulatta brevicaudus,
 __________________GRAFT,,,,B.2008792,Macaca mulatta vestita,
 ________________NO CHANGE,Macaca nemestrina,A.9545,=,B.9545,Macaca nemestrina,{same-name & same-rank}
 __________________NO CHANGE,Macaca nemestrina nemestrina,A.90388,=,B.90388,Macaca nemestrina nemestrina,{same-name & same-rank}
-__________________MOVE,Macaca nemestrina leonina,A.90387,=,B.90387,Macaca leonina,{same-id & same-name ...}
-__________________MOVE,Macaca nemestrina siberu,A.244255,=,B.244255,Macaca siberu,{same-id & same-name ...}
+__________________MOVE,Macaca nemestrina leonina,A.90387,=,B.90387,Macaca leonina,[same-name → synonym-of]
+__________________MOVE,Macaca nemestrina siberu,A.244255,=,B.244255,Macaca siberu,[same-name → synonym-of]
 ________________NO CHANGE,Macaca sylvanus,A.9546,=,B.9546,Macaca sylvanus,{same-name & same-rank}
 ________________NO CHANGE,Macaca radiata,A.9548,=,B.9548,Macaca radiata,{same-name & same-rank}
 __________________...,,,,,,1 unchanged children
@@ -559,11 +564,11 @@ ________________NO CHANGE,Macaca hecki,A.90382,=,B.90382,Macaca hecki,{same-name
 ________________NO CHANGE,Macaca maura,A.90383,=,B.90383,Macaca maura,{same-name & same-rank}
 ________________NO CHANGE,Macaca nigrescens,A.90384,=,B.90384,Macaca nigrescens,{same-name & same-rank}
 ________________NO CHANGE,Macaca ochreata,A.90385,=,B.90385,Macaca ochreata,{same-name & same-rank}
-________________CHANGE ID,Macaca leonina,A.285350,=,B.90387,Macaca leonina,{same-name & same-rank ...}
+________________CHANGE ID,Macaca leonina,A.285350,=,B.90387,Macaca leonina,{same-name & same-rank}
 ________________NO CHANGE,Macaca maura x tonkeana,A.168259,=,B.168259,Macaca maura x tonkeana,{same-name & same-rank}
 ________________NO CHANGE,Macaca hecki x tonkeana,A.171293,=,B.171293,Macaca hecki x tonkeana,{same-name & same-rank}
 ________________NO CHANGE,Macaca pagensis,A.230653,=,B.230653,Macaca pagensis,{same-name & same-rank}
-________________CHANGE ID,Macaca siberu,A.867378,=,B.244255,Macaca siberu,{same-name & same-rank ...}
+________________CHANGE ID,Macaca siberu,A.867378,=,B.244255,Macaca siberu,{same-name & same-rank}
 ________________NO CHANGE,Macaca balantak,A.281404,=,B.281404,Macaca balantak,{same-name & same-rank}
 ________________NO CHANGE,Macaca balantak x tonkeana,A.281405,=,B.281405,Macaca balantak x tonkeana,{same-name & same-rank}
 ________________NO CHANGE,Macaca munzala,A.402888,=,B.402888,Macaca munzala,{same-name & same-rank}
@@ -687,7 +692,7 @@ ________________MOVE,Trachypithecus sp.,A.580599,=,B.580599,Trachypithecus sp.,{
 ______________NO CHANGE,Semnopithecus,A.88028,=,B.88028,Semnopithecus,{same-name & same-rank}
 ________________NO CHANGE,Semnopithecus entellus,A.88029,=,B.88029,Semnopithecus entellus,{same-name & same-rank}
 __________________NO CHANGE,Semnopithecus entellus entellus,A.867381,=,B.867381,Semnopithecus entellus entellus,{same-name & same-rank}
-__________________MOVE,Semnopithecus entellus priam,A.272117,=,B.1208733,Semnopithecus priam,[{same-name & same-id} → synonym-of]
+__________________MOVE,Semnopithecus entellus priam,A.272117,=,B.1208733,Semnopithecus priam,[same-name → synonym-of]
 ________________NO CHANGE,Semnopithecus hector,A.867382,=,B.867382,Semnopithecus hector,{same-name & same-rank}
 ________________NO CHANGE,Semnopithecus priam,A.1208733,=,B.1208733,Semnopithecus priam,{same-name & same-rank}
 ________________NO CHANGE,Semnopithecus hypoleucos,A.1208734,=,B.1208734,Semnopithecus hypoleucos,{same-name & same-rank}
@@ -711,6 +716,7 @@ ____________NO CHANGE,Cercopithecidae gen. sp.,A.9576,=,B.9576,Cercopithecidae g
 ________NO CHANGE,Hominoidea,A.314295,=,B.314295,Hominoidea,{same-name & same-rank}
 __________NO CHANGE,Hylobatidae,A.9577,=,B.9577,Hylobatidae,{same-name & same-rank}
 ____________NO CHANGE,Hylobates,A.9578,=,B.9578,Hylobates,{same-name & same-rank}
+______________REMOVE,Hylobates alibarbis,A.716691,,,,0 right nodes match this left node
 ______________NO CHANGE,Hylobates agilis,A.9579,=,B.9579,Hylobates agilis,{same-name & same-rank}
 ________________...,,,,,,2 unchanged children
 ______________NO CHANGE,Hylobates lar,A.9580,=,B.9580,Hylobates lar,{same-name & same-rank}
@@ -720,7 +726,7 @@ ______________NO CHANGE,Hylobates muelleri,A.9588,=,B.9588,Hylobates muelleri,{s
 ________________...,,,,,,3 unchanged children
 ______________NO CHANGE,Hylobates pileatus,A.9589,=,B.9589,Hylobates pileatus,{same-name & same-rank}
 ______________NO CHANGE,Hylobates moloch,A.81572,=,B.81572,Hylobates moloch,{same-name & same-rank}
-______________CHANGE NAME,Hylobates alibarbis,A.716691,=,B.716691,Hylobates albibarbis,{same-id & same-rank}
+______________GRAFT,,,,B.716691,Hylobates albibarbis,
 ______________GRAFT,,,,B.2647113,unclassified Hylobates,
 ______________MOVE,Hylobates sp.,A.9581,=,B.9581,Hylobates sp.,{same-name & same-rank}
 ______________MOVE,Hylobates sp. TIB-201,A.150249,=,B.150249,Hylobates sp. TIB-201,{same-name & same-rank}
@@ -756,7 +762,8 @@ ________________...,,,,,,3 unchanged children
 ______________NO CHANGE,Homo,A.9605,=,B.9605,Homo,{same-name & same-rank}
 ________________NO CHANGE,Homo sapiens,A.9606,=,B.9606,Homo sapiens,{same-name & same-rank}
 __________________NO CHANGE,Homo sapiens neanderthalensis,A.63221,=,B.63221,Homo sapiens neanderthalensis,{same-name & same-rank}
-__________________CHANGE NAME,Homo sapiens ssp. Denisova,A.741158,=,B.741158,Homo sapiens subsp. 'Denisova',{same-id & same-rank ...}
+__________________CHANGE NAME,Homo sapiens ssp. Denisova,A.741158,=,B.741158,Homo sapiens subsp. 'Denisova',[same-name → equivalent-name-of]
+__________________GRAFT,,,,B.741158,Homo sapiens subsp. 'Denisova',
 ________________NO CHANGE,Homo heidelbergensis,A.1425170,=,B.1425170,Homo heidelbergensis,{same-name & same-rank}
 ____________NO CHANGE,Ponginae,A.607660,=,B.607660,Ponginae,{same-name & same-rank}
 ______________NO CHANGE,Pongo,A.9599,=,B.9599,Pongo,{same-name & same-rank}
@@ -780,7 +787,7 @@ __________GRAFT,,,,B.1748400,Tarsius fuscus,
 __________GRAFT,,,,B.2624233,unclassified Tarsius,
 __________MOVE,Tarsius sp.,A.30612,=,B.30612,Tarsius sp.,{same-name & same-rank}
 __________MOVE,Tarsius sp. FFA-2009a,A.662655,=,B.662655,Tarsius sp. FFA-2009a,{same-name & same-rank}
-__________MOVE,Tarsius syrichta,A.9478,=,B.1868482,Carlito syrichta,[{same-name & same-id} → synonym-of]
-__________MOVE,Tarsius bancanus,A.9477,=,B.9477,Cephalopachus bancanus,{same-id & same-rank ...}
+__________MOVE,Tarsius syrichta,A.9478,=,B.1868482,Carlito syrichta,[same-name → synonym-of]
+__________MOVE,Tarsius bancanus,A.9477,=,B.9477,Cephalopachus bancanus,[same-name → synonym-of]
 ________GRAFT,,,,B.1868481,Carlito,
 ________GRAFT,,,,B.1971489,Cephalopachus,

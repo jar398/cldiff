@@ -1,7 +1,10 @@
+debug = False
+
 import os, csv
 
 import relation as rel
 import rank
+import chaitin
 
 # ---------- Fields
 
@@ -39,33 +42,44 @@ taxon_rank_field           = define_field("taxonRank")
 # Registry = tnu uid -> (value vector, checklist)
 #  where value vector is a vector that parallels the `the_fields` list
 
-registry = {0: "unused"}
+forest_tnu = 0
+registry = {forest_tnu: "no forest record"}
 sequence_numbers = {}
 
 # Get the value of a field of a TNU record (via global registry)
 
 def _get_record(uid):
-  assert uid > 0
+  assert uid >= 0
   (record, _) = registry[uid]
   return record
 
 def get_value(uid, field):
+  if uid == forest_tnu: return None
   record = _get_record(uid)
   return record[field_position(field)]
 
 def get_checklist(uid):
-  assert uid > 0
+  assert uid >= 0               # Forest has no checklist
+  if uid == forest_tnu: return None
   (_, checklist) = registry[uid]
   return checklist
 
 def get_sequence_number(uid):
-  assert uid > 0
+  assert uid                    # Forest has no checklist
   return sequence_numbers[uid]
+
+def fresh_tnu(checklist):
+  record = [None] * len(the_fields)
+  uid = len(registry)
+  registry[uid] = (record, checklist)
+  return uid
 
 # ---------- Checklists
 
 class Checklist:
-  def __init__(self):
+  def __init__(self, prefix):
+    assert prefix
+    self.prefix = prefix
     self.tnus = []
     self.indexes = [None] * len(the_fields)
     self.metadata = None
@@ -73,14 +87,10 @@ class Checklist:
     return self.tnus
   def tnu_count(self):
     return len(self.tnus)
-  def add_tnu(self, record):
-    uid = len(registry)
-    registry[uid] = (record, self)
-    self.tnus.append(uid)
-    return uid
   def new_tnu(self):
-    record = [None] * len(the_fields)
-    return self.add_tnu(record)
+    tnu = fresh_tnu(self)
+    self.tnus.append(tnu)
+    return tnu
   def get_index(self, field):
     (_, position) = field
     # create the index if necessary, on demand
@@ -100,21 +110,31 @@ class Checklist:
   def populate_from_directory(self, indirs):
     self.populate_from_file(get_tnu_path(indir))
   def populate_from_file(self, inpath):
-    with open(inpath, "r") as infile:
-      reader = csv.reader(infile, delimiter="\t", quotechar='\a', quoting=csv.QUOTE_NONE)
-      head = next(reader)
-      guide = {key: position for (key, position) in zip(head, range(len(head)))}
-      for row in reader:
-        uid = self.new_tnu()
-        record = _get_record(uid)
-        for (label, (_, position)) in label_to_field.items():
-          position_in_row = guide.get(label, None)
-          # Idiot python treats 0 as false
-          if position_in_row != None:
-            value = row[position_in_row]
-            if value != '':
-              record[position] = value
-      self.assign_sequence_numbers()
+    if '(' in inpath:
+      rows = chaitin.parse(inpath)
+      self.populate_from_generator((row for row in rows))
+    else:
+      with open(inpath, "r") as infile:
+        reader = csv.reader(infile, delimiter="\t", quotechar='\a', quoting=csv.QUOTE_NONE)
+        self.populate_from_generator(reader)
+  def populate_from_generator(self, row_generator):
+    head = next(row_generator)
+    guide = {key: position for (key, position) in zip(head, range(len(head)))}
+    if guide.get("taxonID", None) == None:
+      print("** Didn't find a column for taxonID")
+      print("%s" % guide)
+      assert False
+    for row in row_generator:
+      uid = self.new_tnu()
+      record = _get_record(uid)
+      for (label, (_, position)) in label_to_field.items():
+        position_in_row = guide.get(label, None)
+        # Idiot python treats 0 as false
+        if position_in_row != None:
+          value = row[position_in_row]
+          if value != '':
+            record[position] = value
+    self.assign_sequence_numbers()
   def assign_sequence_numbers(self):
     n = len(sequence_numbers)
     def process(tnu, n):
@@ -134,8 +154,8 @@ def get_all_tnus(checklist):
 # Read a checklist from a file
 
 def read_checklist(specifier, prefix):
-  checklist = Checklist()
-  checklist.prefix = prefix
+  assert prefix
+  checklist = Checklist(prefix)
   checklist.populate_from_file(specifier)
   return checklist
 
@@ -164,7 +184,9 @@ def get_tnus_with_value(checklist, field, value):
 # Get unique (we hope) TNU possessing a given identifier
 
 def get_tnu_id(tnu):
-  return get_value(tnu, tnu_id_field)
+  id = get_value(tnu, tnu_id_field)
+  assert id != None
+  return id
 
 def get_tnu_with_id(checklist, id):
   tnus = checklist.get_index(tnu_id_field).get(id, None)
@@ -208,24 +230,28 @@ def get_name(tnu):
   return get_tnu_id(tnu)
 
 def get_nominal_rank(tnu):
+  if is_container(tnu): return None
   return get_value(tnu, taxon_rank_field)
 
 # Unique name of the sort Nico likes
 
 def get_unique(tnu):
-  if not tnu: return "none"
+  if tnu == None: return "none"
+  if tnu == forest: return "forest"
+  assert tnu > 0
   checklist = get_checklist(tnu)
   name = get_name(tnu)
   tnus_with_this_name = \
     get_tnus_with_value(checklist, canonical_name_field, name)
 
-  if not is_accepted(tnu):
-    if is_synonym(tnu):
-      name = "?" + name
-    else:
-      status = get_value(tnu, taxonomic_status_field)
-      if not status: status = "tax. status not given"
-      name = "%s (%s)" % (name, status)
+  status = get_value(tnu, taxonomic_status_field)
+  if status == "accepted" or not status:
+    pass
+  elif status == "synonym":
+    name = "?" + name
+  else:
+    name = "%s (%s)" % (name, status)
+
   better = checklist.prefix + name.replace(" ", "_")
   if len(tnus_with_this_name) <= 1:
     return better
@@ -253,31 +279,48 @@ def get_inferiors(tnu):
 superiors_cache = {}
 
 def get_superior(tnu):
-  (parent, accepted) = get_superiors(tnu)
+  (accepted, parent) = get_superiors(tnu)
   return parent or accepted
 
 def get_parent(tnu):
-  (parent, _) = get_superiors(tnu)
+  assert tnu >= 0
+  assert tnu
+  (_, parent) = get_superiors(tnu)
+  assert parent != None
   return parent
 
 def get_accepted(tnu):
-  (_, accepted) = get_superiors(tnu)
+  assert tnu >= 0
+  (accepted, _) = get_superiors(tnu)
   return accepted
 
+# Returns (accepted, parent)
+
 def get_superiors(tnu):
+  assert tnu >= 0
   probe = superiors_cache.get(tnu)
   if probe: return probe
   result = get_superiors_really(tnu)
   superiors_cache[tnu] = result
+  if False:
+    print("# Cached gs(%s) = (%s, %s)" % \
+          (get_unique(tnu), get_unique(result[0]), get_unique(result[1])))
   return result
 
 def get_superiors_really(tnu):
+  assert tnu >= 0
+  if tnu == forest_tnu: return (None, None)
   parent_id = get_value(tnu, parent_tnu_id_field)
-  if parent_id:
-    parent = to_accepted(get_tnu_with_id(get_checklist(tnu), parent_id))
-    # If id doesn't resolve, it's a root
+  if parent_id == None:
+    parent = forest_tnu
   else:
-    parent = None
+    parent_uid = get_tnu_with_id(get_checklist(tnu), parent_id)
+    if parent_uid == None:
+      parent = forest_tnu
+    else:
+      parent = to_accepted(parent_uid)
+  
+  # If id doesn't resolve, it's a root
 
   accepted_id = get_value(tnu, accepted_tnu_id_field)
   if accepted_id:
@@ -312,7 +355,9 @@ def get_superiors_really(tnu):
     else:
       # This case is common in GBIF files
       accepted = None
-  return (to_accepted(parent), to_accepted(accepted))
+  if parent != None: parent = to_accepted(parent)
+  if accepted != None: accepted = to_accepted(accepted)
+  return (accepted, parent)
 
 def get_children(parent):
   return get_tnus_with_value(get_checklist(parent),
@@ -320,12 +365,12 @@ def get_children(parent):
                              get_tnu_id(parent))
 
 def to_accepted(tnu):
-  if not tnu: return tnu
-  probe = get_accepted(tnu)
-  if probe:
-    return probe  # or to_accepted(probe) ?
-  else:
+  assert tnu >= 0
+  probe = get_accepted(tnu)     # cached
+  if probe == None:
     return tnu
+  else:
+    return probe
 
 # ----------
 # Accepted/synonyms
@@ -384,35 +429,9 @@ def invert_dict(d):
 
 # ---------- Hierarchy analyzers
 
-# Find ancestor(s) of tnu1 and tnu2 that are in the same mutex: either
-# disjoint or equal.
-
-def find_peers(tnu1, tnu2):
-  if (not tnu1) or (not tnu2):
-    return (None, None)
-  assert tnu1 > 0
-  assert tnu2 > 0
-  assert get_checklist(tnu1) == get_checklist(tnu2)  #?
-  tnu1 = to_accepted(tnu1)
-  tnu2 = to_accepted(tnu2)
-  mutex1 = get_mutex(tnu1)
-  mutex2 = get_mutex(tnu2)
-  while mutex1 != mutex2:
-    if mutex1 < mutex2:
-      # If p1 is closer to the root, try going rootward from p2
-      tnu2 = get_superior(tnu2)
-      mutex2 = get_mutex(tnu2)
-    else:
-      # If p2 is closer to the root, try going rootward from p1
-      tnu1 = get_superior(tnu1)
-      mutex1 = get_mutex(tnu1)
-  return (tnu1, tnu2)
-
 def how_related(tnu1, tnu2):
-  assert tnu1 > 0
-  assert tnu2 > 0
-  tnu1 = get_accepted(tnu1)    # TBD: implement in-part 'synonyms'
-  tnu2 = get_accepted(tnu2)
+  assert tnu1 >= 0
+  assert tnu2 >= 0
   if tnu1 == tnu2:
     # If in differently checklists, this could be an incompatibility
     return rel.eq
@@ -431,71 +450,129 @@ def are_disjoint(tnu1, tnu2):
   (tnu1, tnu2) = find_peers(tnu1, tnu2)
   return tnu1 != tnu2
 
-# Common ancestor - utility
-# Also computes number of matched tips
+# Find ancestor(s) of tnu1 and tnu2 that are in the same mutex: either
+# disjoint or equal.
 
-def mrca(tnu1, tnu2):
-  if not tnu1 or not tnu2: return tnu1
+def find_peers(tnu1, tnu2):
+  assert tnu1 >= 0
+  assert tnu2 >= 0
+
   tnu1 = to_accepted(tnu1)
   tnu2 = to_accepted(tnu2)
-  while tnu1 != tnu2:
-    tnu1 = get_superior(tnu1)
-    tnu2 = get_superior(tnu2)
+
+  if tnu1 == forest_tnu or tnu2 == forest_tnu:
+    return (forest_tnu, forest_tnu)
+  assert get_checklist(tnu1) == get_checklist(tnu2)  #?
+
+  mutex1 = get_mutex(tnu1)
+  mutex2 = get_mutex(tnu2)
+
+  #print("# Mutexes are %s %s" % (mutex1, mutex1))
+
+  while mutex1 != mutex2:
+    assert mutex1 >= 0
+    assert mutex2 >= 0
+    if mutex1 > mutex2:
+      # If p1 is closer to the root, try going rootward from p2
+      tnu2 = get_parent(tnu2)
+      if tnu2 == forest_tnu: return (forest_tnu, forest_tnu)
+      mutex2 = get_mutex(tnu2)
+    else: # mutex1 < mutex2:
+      # If p2 is closer to the root, try going rootward from p1
+      tnu1 = get_parent(tnu1)
+      if tnu1 == forest_tnu: return (forest_tnu, forest_tnu)
+      mutex1 = get_mutex(tnu1)
+    #print("# Adjusted mutexes are %s %s" % (mutex1, mutex1))
+  return (tnu1, tnu2)
+
+forest = 0
+
+# Common ancestor - utility
+# Also computes number of matched tips
+# None (not 0) is the identity for mrca
+
+def mrca(tnu1, tnu2):
+  if tnu1 == None: return tnu2
+  if tnu2 == None: return tnu1
+  assert tnu1 >= 0
+  assert tnu2 >= 0
+  while True:
     (tnu1, tnu2) = find_peers(tnu1, tnu2)
-  return tnu1
+    if tnu1 == tnu2: return tnu1
+    tnu1 = get_parent(tnu1)
+    tnu2 = get_parent(tnu2)
+    if debug:
+      print("# Proceeding rootward")
+
+mutex_table = {}
+
+def set_mutex(tnu, mutex):
+  have = mutex_table.get(tnu, mutex)
+  if have != mutex:
+    verb = "Promoting" if have > mutex else "Demoting"
+    print("** %s %s, %s -> %s" % \
+          (verb, get_unique(tnu),
+           rank.mutex_to_name(have),
+           rank.mutex_to_name(mutex)))
+  mutex_table[tnu] = mutex
 
 def get_mutex(tnu):
-  return rank.height_to_depth(level_table.get(tnu, rank.root_height))
-
-level_table = {}
-
-def get_height(tnu):
   if not tnu:
-    return anything_depth
-  probe = level_table.get(tnu)
+    # Above root of tree = forest
+    return rank.forest
+  probe = mutex_table.get(tnu)
   if probe: return probe
-  height = get_height_really(tnu)
-  assert height >= 0
-  level_table[tnu] = height    # Perhaps amended later
-  return height
+  mutex = get_mutex_really(tnu)
+  assert mutex >= 0
+  mutex_table[tnu] = mutex    # Perhaps amended later
+  return mutex
 
-def get_height_really(tnu):
-  # Must be higher than any child
-  level = 0    # Can increase
-  inferiors = get_inferiors(tnu)
-  if len(inferiors) > 0:
-    # The children are mutually exclusive
-    unplaced_level = 0
-    for inf in inferiors:
-      h = get_height(inf)
-      level = max(level, h)
-      if is_container(h):
-        unplaced_level = max(unplaced_level, h)
-    if unplaced_level >= level:
-      print("** Shouldn't happen: height(%s) >= height(%s)" % \
-            (get_unique(inf), get_unique(tnu)))
-      level += 1
-    for inf in get_inferiors(tnu):
-      if not is_container(inf):
-        # This may change the value that's already there
-        h = level_table[inf]
-        if h != level:
-          print("** Promotion: %s from %s to %s" % \
-                (get_unique(inf), h, level))
-          level_table[inf] = level
-    if not is_container(tnu):
-      level += 1
-      rank = get_nominal_rank(tnu)
-      if rank:
-        r = rank.rank_to_height(rank)
-        if r > level:
-          print("** Promoting %s from %s to %s" % \
-                (get_unique(tnu), level, r))
-          level = r
-  return level
+# Higher numbers are more tipward.
+# Parent's level > child's level for all children.
+
+def get_mutex_really(tnu):
+
+  probe = get_accepted(tnu)
+  if probe: return get_mutex(probe)
+
+  # Findest most rootward mutex of all the children
+  children_mutex = rank.atom     # identity for min
+  for child in get_children(tnu):
+    children_mutex = min(children_mutex, get_mutex(child))
+
+  # Treat given rank, if any, as normative
+  nominal = get_nominal_mutex(tnu)
+  mutex = nominal or (children_mutex - 10)
+  set_mutex(tnu, mutex)
+
+  # Demote children that have higher rank
+  correct_children_mutexes(tnu, mutex)
+
+  return mutex
+
+def correct_children_mutexes(parent, parent_mutex):
+  for child in get_children(parent):
+    child_mutex = get_mutex(child)
+    if child_mutex <= parent_mutex:
+      if child_mutex == parent_mutex:
+        print("** Child %s has same rank as parent %s" % \
+              (get_unique(child), get_unique(parent)))
+      else:
+        print("** Child %s is of higher rank than parent %s" %\
+              (get_unique(child), get_unique(parent)))
+      if is_container(child):
+        new_mutex = parent_mutex + 1 # demote!
+        set_mutex(child, new_mutex)
+        correct_children_mutexes(child, new_mutex) # ?
+      else:
+        set_mutex(child, parent_mutex + 10)  # demote!
+
+def get_nominal_mutex(tnu):
+  nominal = get_nominal_rank(tnu) # name of rank
+  return rank.name_to_mutex(nominal)
 
 def is_container(tnu):
-  name = get_name(inf).lower()
+  name = get_name(tnu).lower()
   return "unclassified" in name or \
          "incertae sedis" in name or \
          "unallocated" in name or \
