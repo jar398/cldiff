@@ -6,57 +6,46 @@ import argparse
 import checklist as cl
 import relation as rel
 import articulation as art
+import eulerx
 
-def main(c1, c1_tag, c2, c2_tag, out):
-  A = cl.read_checklist(c1, c1_tag + ".")
-  B = cl.read_checklist(c2, c2_tag + ".")
+def main(c1, c1_tag, c2, c2_tag, out, format):
+  A = cl.read_checklist(c1, c1_tag + ".", "checklist 1")
+  B = cl.read_checklist(c2, c2_tag + ".", "checklist 2")
   print ("TNU counts:", len(cl.get_all_tnus(A)), len(cl.get_all_tnus(B)))
   start(A, B)
-  report(A, B, out)
+  write_report(A, B, format, out)
 
 def start(A, B):
   global particles
   global cross_mrcas
 
   particles = find_particles(A, B)
-  print ("number of particles:", len(particles)>>1)
+  print ("# Number of particles:", len(particles)>>1)
 
   cross_mrcas = analyze_cross_mrcas(A, B)
-  print ("number of cross-mrcas:", len(cross_mrcas))
+  print ("# Number of cross-mrcas:", len(cross_mrcas))
 
   assign_matches(B, A)
-  print ("number of besties:", len(inverse_good_candidates))
+  print ("# Number of besties:", len(inverse_good_candidates))
 
   analyze_unmatched(A, B)
-  print ("number of grafts:", len(grafts))
+  print ("# Number of grafts: %s\n" % len(grafts))
 
-def alignment(A, B):
-  start(A, B)
+  # return finish_alignment(B, A)
 
-  # Unordered set of matches
-  alignment = {}
-
-  def subprepare(node):
-    for match in good_candidates(node, B):      # cod is accepted
-      alignment.append(match)
-    for child in get_children(node):
-      subprepare(child)
-    for graftee in get_graftees(node):
-      # Go from graftee's parent's match to graftee's parent, then graftee
-      alignment.append([match_for_graftee(graftee) for graftee in graftee])
-
-  for root in cl.get_roots(A):
-    subprepare(root)
-
-  return None
-
-def report(A, B, outpath):
+def write_report(A, B, format, outpath):
   if outpath == "-":
-    report_to_io(A, B, sys.stdout)
+    really_write_report(A, B, format, sys.stdout)
   else:
     with open(outpath, "w") as outfile:
       print ("Writing:", outpath)
-      report_to_io(A, B, outfile)
+      really_write_report(A, B, outfile)
+
+def really_write_report(A, B, format, outfile):
+  if format == "eulerx":
+    eulerx.dump_alignment(finish_alignment(B, A), outfile)
+  else:
+    report_to_io(A, B, outfile)
 
 def report_to_io(A, B, outfile):
   writer = csv.writer(outfile)
@@ -299,15 +288,31 @@ def get_graft_point(B_tnu, A = None):
       return B_parent_match.cod
   return None
 
+# ---------- Alignments
+
+def finish_alignment(B, A):
+  alignment = {}
+  def process(node):
+    m = good_match(node, A)
+    if m:
+      alignment[node] = m
+    for child in cl.get_children(node):
+      process(child)
+    for synonym in cl.get_synonyms(node):
+      process(synonym)
+  for root in cl.get_roots(B):
+    process(root)
+  return alignment
+
 # ---------- One-sided best match
 
-good_match_cache = {}
+alignment = {}
 
 def good_match(node, other = None):
   assert node > 0
   assert cl.get_checklist(node) != other
-  if node in good_match_cache:
-    return good_match_cache[node]
+  if node in alignment:
+    return alignment[node]
 
   assert other
   matches = good_matches(node, other)
@@ -322,7 +327,7 @@ def good_match(node, other = None):
             (cl.get_value(match.cod, cl.taxonomic_status_field),
              art.express(match)))
 
-  good_match_cache[node] = match
+  alignment[node] = match
   return match
 
 good_matches_cache = {}
@@ -764,6 +769,8 @@ if __name__ == '__main__':
   parser.add_argument('--right-tag', default="B")
   parser.add_argument('--idspace', default=False)
   parser.add_argument('--out', help='file name for report', default='diff.csv')
+  parser.add_argument('--format', help='report format', default='ad-hoc')
   args = parser.parse_args()
   shared_idspace = args.idspace
-  main(args.left, args.left_tag, args.right, args.right_tag, args.out)
+  main(args.left, args.left_tag, args.right, args.right_tag, args.out, args.format)
+

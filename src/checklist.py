@@ -80,12 +80,13 @@ def fresh_tnu(checklist):
 # ---------- Checklists
 
 class Checklist:
-  def __init__(self, prefix):
+  def __init__(self, prefix, name):
     assert prefix
     self.prefix = prefix
     self.tnus = []
     self.indexes = [None] * len(the_fields)
     self.metadata = None
+    self.name = name
   def get_all_tnus(self):
     return self.tnus
   def tnu_count(self):
@@ -156,9 +157,9 @@ def get_all_tnus(checklist):
 
 # Read a checklist from a file
 
-def read_checklist(specifier, prefix):
+def read_checklist(specifier, prefix, name):
   assert prefix
-  checklist = Checklist(prefix)
+  checklist = Checklist(prefix, name)
   checklist.populate_from_file(specifier)
   return checklist
 
@@ -238,14 +239,17 @@ def get_nominal_rank(tnu):
 
 # Unique name of the sort Nico likes
 
-def get_unique(tnu):
+def get_spaceless(tnu):
   if tnu == None: return "none"
   assert is_tnu(tnu)
   if tnu == forest: return "forest"
   checklist = get_checklist(tnu)
   name = get_name(tnu)
+
   tnus_with_this_name = \
     get_tnus_with_value(checklist, canonical_name_field, name)
+  if len(tnus_with_this_name) > 1:
+    name = name + "#" + get_tnu_id(tnu)
 
   status = get_value(tnu, taxonomic_status_field)
   if status == "accepted" or not status:
@@ -255,11 +259,11 @@ def get_unique(tnu):
   else:
     name = "%s (%s)" % (name, status)
 
-  better = checklist.prefix + name.replace(" ", "_")
-  if len(tnus_with_this_name) <= 1:
-    return better
-  else:
-    return checklist.prefix + name + "#" + get_tnu_id(tnu)
+  name = name.replace(" ", "_")
+  return name
+
+def get_unique(tnu):
+  return get_checklist(tnu).prefix + get_spaceless(tnu)
 
 # Roots - accepted tnus without parents
 

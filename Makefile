@@ -74,3 +74,6 @@ doc/ncbi-gbif.csv: $(WORK)/ncbi-gbif.csv
 	cp -p $< $@
 
 gbif: $(WORK)/ncbi-gbif.csv
+
+test:
+	python3 src/diff.py "(l(pba)e)" "(lb(pae))" --out -
