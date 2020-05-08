@@ -8,22 +8,28 @@ import relation as rel
 import articulation as art
 import eulerx
 
-def get_children(node):
-  return [node
-          for node in cl.get_children(node) + cl.get_synonyms(node)
-          if not cl.get_accepted(node)]
+# ---------- OVERALL
 
-def parent_changed(match):
-  parent = cl.get_parent(match.dom)
-  coparent = cl.get_parent(match.cod)
-  if not parent and not coparent:
-    return False
-  if not parent or not coparent:
-    return True
-  other = cl.get_checklist(coparent)
-  match = good_match(parent, other)
-  if not match: return True
-  return match.cod != coparent
+def start(A, B):
+  global particles
+  global cross_mrcas
+  global inverse_good_candidates
+  global grafts
+
+  particles = find_particles(A, B)
+  print ("# Number of particles:", len(particles)>>1)
+
+  cross_mrcas = analyze_cross_mrcas(A, B)
+  print ("# Number of cross-mrcas:", len(cross_mrcas))
+
+  alignment = finish_alignment(B, A)
+  print ("# Number of alignment articulations:", len(alignment))
+  inverse_good_candidates = invert_dict_by_cod(alignment)
+
+  grafts = analyze_unmatched(A, B)
+  print ("# Number of grafts: %s\n" % len(grafts))
+
+  return alignment
 
 # Partners list for reporting (A->B articulations)
 
@@ -37,20 +43,9 @@ def good_candidates(tnu, other):
     if investigate: matches = [investigate]
   return [match for match in matches if not cl.get_accepted(match.cod)]
 
+# ---------- Alignments
 
 # Fill the cache
-
-def assign_matches(here, other):
-  global inverse_good_candidates
-  good_match_map = {}
-  def process(tnu):
-    m = good_match(tnu, other)  # Fill the cache
-    if m: good_match_map[tnu] = m    # here -> other
-    for child in get_children(tnu):
-      process(child)
-  for root in cl.get_roots(here):
-    process(root)
-  inverse_good_candidates = invert_dict_by_cod(good_match_map)
 
 def invert_dict_by_cod(d):
   inv = {}
@@ -63,86 +58,24 @@ def invert_dict_by_cod(d):
         inv[ar.dom] = [ar]
   return inv
 
-# ---------- OVERALL
-
-def start(A, B):
-  global particles
-  global cross_mrcas
-
-  particles = find_particles(A, B)
-  print ("# Number of particles:", len(particles)>>1)
-
-  cross_mrcas = analyze_cross_mrcas(A, B)
-  print ("# Number of cross-mrcas:", len(cross_mrcas))
-
-  assign_matches(B, A)
-  print ("# Number of besties:", len(inverse_good_candidates))
-
-  analyze_unmatched(A, B)
-  print ("# Number of grafts: %s\n" % len(grafts))
-
-  # return finish_alignment(B, A)
-
-# ---------- UNMATCHED
-
-# Unmatched
-# Find nodes in B that are not mutually matched to nodes in A
-
-# A B_node that is not the best_match of any A_node
-
-def analyze_unmatched(A, B):
-  global grafts
-  graft_points = {}
-  def process(B_tnu):
-    if not good_match(B_tnu, A) and not cl.get_accepted(B_tnu):
-      point = get_graft_point(B_tnu, A)    # in A
-      if point:
-        graft_points[B_tnu] = point    # in A
-    else:
-      for child in cl.get_inferiors(B_tnu):
-        process(child)
-  for root in cl.get_roots(B):
-    process(root)
-  grafts = cl.invert_dict(graft_points)
-
-def get_graftees(A_node):
-  return (grafts.get(A_node) or [])
-
-def get_graft_point(B_tnu, A = None):
-  B_parent = cl.get_parent(B_tnu)
-  if B_parent:
-    B_parent_match = good_match(B_parent, A)
-    if B_parent_match:
-      return B_parent_match.cod
-  return None
-
-# ---------- Alignments
-
 def finish_alignment(B, A):
   alignment = {}
   def process(node):
     m = good_match(node, A)
     if m:
       alignment[node] = m
-    for child in cl.get_children(node):
+    for child in get_children(node):
       process(child)
-    for synonym in cl.get_synonyms(node):
-      process(synonym)
   for root in cl.get_roots(B):
     process(root)
   return alignment
 
 # ---------- One-sided best match
 
-alignment = {}
-
 def good_match(node, other = None):
   assert node > 0
-  assert cl.get_checklist(node) != other
-  if node in alignment:
-    return alignment[node]
-
   assert other
+  assert cl.get_checklist(node) != other
   matches = good_matches(node, other)
   match = best_match(matches)
   if match:
@@ -154,8 +87,6 @@ def good_match(node, other = None):
       print("# ** Match has taxonomic status %s\n  %s" %
             (cl.get_value(match.cod, cl.taxonomic_status_field),
              art.express(match)))
-
-  alignment[node] = match
   return match
 
 good_matches_cache = {}
@@ -460,7 +391,41 @@ def intensional_matches(node, other):
                   if cl.get_nominal_rank(match.cod) == cl.get_nominal_rank(node)]
   return sort_by_badness(collapse_matches(matches + rank_matches))    # Should be cached.
 
+# ---------- UNMATCHED
+
+# Unmatched
+# Find nodes in B that are not mutually matched to nodes in A
+
+# A B_node that is not the best_match of any A_node ...
+
+def analyze_unmatched(A, B):
+  graft_points = {}
+  def process(B_tnu):
+    if not good_match(B_tnu, A) and not cl.get_accepted(B_tnu):
+      point = get_graft_point(B_tnu, A)    # in A
+      if point:
+        graft_points[B_tnu] = point    # in A
+    else:
+      for child in cl.get_inferiors(B_tnu):
+        process(child)
+  for root in cl.get_roots(B):
+    process(root)
+  return cl.invert_dict(graft_points)
+
+def get_graftees(A_node):
+  return (grafts.get(A_node) or [])
+
+def get_graft_point(B_tnu, A = None):
+  B_parent = cl.get_parent(B_tnu)
+  if B_parent:
+    B_parent_match = good_match(B_parent, A)
+    if B_parent_match:
+      return B_parent_match.cod
+  return None
+
 # ---------- Within-checklist articulations
+
+# Handy for composing paths.
 
 # Synonym-or-self = to-accepted
 # Matches that involve going from an accepted name to a synonym are weak
@@ -532,6 +497,25 @@ def best_matches(sorted_matches):
 
 def sort_by_badness(arts):
   return sorted(arts, key=art.badness)
+
+# Random
+
+def get_children(node):
+  return [node
+          for node in cl.get_children(node) + cl.get_synonyms(node)
+          if not cl.get_accepted(node)]
+
+def parent_changed(match):
+  parent = cl.get_parent(match.dom)
+  coparent = cl.get_parent(match.cod)
+  if not parent and not coparent:
+    return False
+  if not parent or not coparent:
+    return True
+  other = cl.get_checklist(coparent)
+  match = good_match(parent, other)
+  if not match: return True
+  return match.cod != coparent
 
 # ---------- Utility: collapsing a set of matches
 

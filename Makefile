@@ -60,6 +60,12 @@ $(WORK)/ncbi-2015-2020.csv: $(SOURCES) $(A)/primates.csv $(B)/primates.csv
 	python3 src/report.py $(A)/primates.csv $(B)/primates.csv --out $@.new
 	mv $@.new $@
 
+ex: $(WORK)/ncbi-2015-2020.ex
+$(WORK)/ncbi-2015-2020.ex: $(SOURCES) $(A)/primates.csv $(B)/primates.csv
+	python3 src/report.py $(A)/primates.csv $(B)/primates.csv \
+	  --out $@.new --format eulerx
+	mv $@.new $@
+
 $(WORK)/ncbi-gbif.csv: $(SOURCES) $(B)/primates.csv $(C)/primates.csv
 	python3 src/report.py $(B)/primates.csv --left-tag=B \
 			    $(C)/primates.csv --right-tag=C --out $@.new
