@@ -54,14 +54,14 @@ $(C)/primates.csv: src/subset_dwc.py $(C)/dump/Taxon.tsv
 	python3 src/subset_dwc.py $(C)/dump/Taxon.tsv 798 --out $@
 foo: $(C)/primates.csv
 
-SOURCES=src/diff.py src/articulation.py src/relation.py src/checklist.py
+SOURCES=src/report.py src/diff.py src/articulation.py src/relation.py src/checklist.py
 
 $(WORK)/ncbi-2015-2020.csv: $(SOURCES) $(A)/primates.csv $(B)/primates.csv
-	python3 src/diff.py $(A)/primates.csv $(B)/primates.csv --out $@.new
+	python3 src/report.py $(A)/primates.csv $(B)/primates.csv --out $@.new
 	mv $@.new $@
 
 $(WORK)/ncbi-gbif.csv: $(SOURCES) $(B)/primates.csv $(C)/primates.csv
-	python3 src/diff.py $(B)/primates.csv --left-tag=B \
+	python3 src/report.py $(B)/primates.csv --left-tag=B \
 			    $(C)/primates.csv --right-tag=C --out $@.new
 	mv $@.new $@
 
@@ -76,4 +76,4 @@ doc/ncbi-gbif.csv: $(WORK)/ncbi-gbif.csv
 gbif: $(WORK)/ncbi-gbif.csv
 
 test:
-	python3 src/diff.py "(l(pba)e)" "(lb(pae))" --out -
+	python3 src/report.py "(l(pab)c)" "(l(qab)c)" --out -
