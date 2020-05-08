@@ -42,6 +42,9 @@ taxon_rank_field           = define_field("taxonRank")
 # Registry = tnu uid -> (value vector, checklist)
 #  where value vector is a vector that parallels the `the_fields` list
 
+def is_tnu(x):
+  return isinstance(x, int) and x >= 0
+
 forest_tnu = 0
 registry = {forest_tnu: "no forest record"}
 sequence_numbers = {}
@@ -49,7 +52,7 @@ sequence_numbers = {}
 # Get the value of a field of a TNU record (via global registry)
 
 def _get_record(uid):
-  assert uid >= 0
+  assert is_tnu(uid)
   (record, _) = registry[uid]
   return record
 
@@ -59,7 +62,7 @@ def get_value(uid, field):
   return record[field_position(field)]
 
 def get_checklist(uid):
-  assert uid >= 0               # Forest has no checklist
+  assert is_tnu(uid)               # Forest has no checklist
   if uid == forest_tnu: return None
   (_, checklist) = registry[uid]
   return checklist
@@ -237,8 +240,8 @@ def get_nominal_rank(tnu):
 
 def get_unique(tnu):
   if tnu == None: return "none"
+  assert is_tnu(tnu)
   if tnu == forest: return "forest"
-  assert tnu > 0
   checklist = get_checklist(tnu)
   name = get_name(tnu)
   tnus_with_this_name = \
@@ -270,7 +273,8 @@ def get_roots(checklist):
 # Superior/inferior
 
 def get_inferiors(tnu):
-  assert tnu > 0
+  assert is_tnu(tnu)
+  assert tnu != forest
   return get_synonyms(tnu) + get_children(tnu)
 
 # ----------
@@ -283,21 +287,21 @@ def get_superior(tnu):
   return parent or accepted
 
 def get_parent(tnu):
-  assert tnu >= 0
+  assert is_tnu(tnu)
   assert tnu
   (_, parent) = get_superiors(tnu)
   assert parent != None
   return parent
 
 def get_accepted(tnu):
-  assert tnu >= 0
+  assert is_tnu(tnu)
   (accepted, _) = get_superiors(tnu)
   return accepted
 
 # Returns (accepted, parent)
 
 def get_superiors(tnu):
-  assert tnu >= 0
+  assert is_tnu(tnu)
   probe = superiors_cache.get(tnu)
   if probe: return probe
   result = get_superiors_really(tnu)
@@ -308,7 +312,7 @@ def get_superiors(tnu):
   return result
 
 def get_superiors_really(tnu):
-  assert tnu >= 0
+  assert is_tnu(tnu)
   if tnu == forest_tnu: return (None, None)
   parent_id = get_value(tnu, parent_tnu_id_field)
   if parent_id == None:
@@ -365,7 +369,7 @@ def get_children(parent):
                              get_tnu_id(parent))
 
 def to_accepted(tnu):
-  assert tnu >= 0
+  assert is_tnu(tnu)
   probe = get_accepted(tnu)     # cached
   if probe == None:
     return tnu
@@ -430,8 +434,8 @@ def invert_dict(d):
 # ---------- Hierarchy analyzers
 
 def how_related(tnu1, tnu2):
-  assert tnu1 >= 0
-  assert tnu2 >= 0
+  assert is_tnu(tnu1)
+  assert is_tnu(tnu2)
   if tnu1 == tnu2:
     # If in differently checklists, this could be an incompatibility
     return rel.eq
@@ -445,8 +449,9 @@ def how_related(tnu1, tnu2):
   assert False
 
 def are_disjoint(tnu1, tnu2):
-  assert tnu1 > 0
-  assert tnu2 > 0
+  assert is_tnu(tnu)
+  if tnu1 == forest: return False
+  if tnu2 == forest: return False
   (tnu1, tnu2) = find_peers(tnu1, tnu2)
   return tnu1 != tnu2
 
@@ -454,8 +459,8 @@ def are_disjoint(tnu1, tnu2):
 # disjoint or equal.
 
 def find_peers(tnu1, tnu2):
-  assert tnu1 >= 0
-  assert tnu2 >= 0
+  assert is_tnu(tnu1)
+  assert is_tnu(tnu2)
 
   tnu1 = to_accepted(tnu1)
   tnu2 = to_accepted(tnu2)
@@ -494,15 +499,13 @@ forest = 0
 def mrca(tnu1, tnu2):
   if tnu1 == None: return tnu2
   if tnu2 == None: return tnu1
-  assert tnu1 >= 0
-  assert tnu2 >= 0
+  assert is_tnu(tnu1)
+  assert is_tnu(tnu2)
   while True:
     (tnu1, tnu2) = find_peers(tnu1, tnu2)
     if tnu1 == tnu2: return tnu1
     tnu1 = get_parent(tnu1)
     tnu2 = get_parent(tnu2)
-    if debug:
-      print("# Proceeding rootward")
 
 mutex_table = {}
 

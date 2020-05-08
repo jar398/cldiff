@@ -390,7 +390,7 @@ def how_related_extensionally(tnu, partner):
     return i.relation
   else:
     (back, _, _) = cross_mrca(partner, here)
-    if not back:                # shouldn't happen
+    if back == None:                # shouldn't happen
       print("** No return cross-MRCA\n  %s -> %s -> ??" %\
             (cl.get_unique(tnu), cl.get_unique(partner)))
       assert False
@@ -400,13 +400,12 @@ def how_related_extensionally(tnu, partner):
     elif tnu == back:
       return rel.eq
     elif cl.mrca(tnu, back) == tnu:
-      # Monotypic: back < tnu
+      # Monotypic: back < tnu.
       return rel.monotypic_in
     else:
       for sub in get_children(partner):
         (back, _, _) = cross_mrca(sub, here)
-        if back:
-          assert cl.get_checklist(tnu) == cl.get_checklist(back)
+        if back != None:
           if cl.mrca(tnu, back) == tnu and cross_disjoint(tnu, partner):
             return rel.extension_conflict
       return rel.extension_lt
@@ -419,15 +418,17 @@ def cross_disjoint(tnu, partner):
   assert cl.get_checklist(tnu) != cl.get_checklist(partner)
 
   (back, _, _) = cross_mrca(partner, cl.get_checklist(tnu))
-  if not back:
+  if back == None:
     return True
   assert back > 0
   assert cl.get_checklist(back) == cl.get_checklist(tnu)
   if cl.are_disjoint(tnu, back):
     return True
-  for inf in get_children(partner):
-    assert inf > 0
-    if not cross_disjoint(tnu, inf):
+  for child in get_children(partner):
+    assert child > 0
+    if not cross_disjoint(tnu, child):
+      print("# Test %s ! %s failed because not ! %s" %\
+            (cl.get_unique(tnu), cl.get_unique(partner), cl.get_unique(child)))
       return False
   return True
 

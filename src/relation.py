@@ -226,7 +226,7 @@ def declare_synonym_relations():
   b("acronym")
   b("blast name")             # large well-known taxa
   b("genbank acronym")      # at most one per node
-  b("apparent BOLD id")
+  b("BOLD id")
 
   # More dubious
   synonym = b("synonym")
