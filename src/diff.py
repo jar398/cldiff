@@ -39,7 +39,7 @@ def write_report(A, B, format, outpath):
   else:
     with open(outpath, "w") as outfile:
       print ("Writing:", outpath)
-      really_write_report(A, B, outfile)
+      really_write_report(A, B, format, outfile)
 
 def really_write_report(A, B, format, outfile):
   if format == "eulerx":
@@ -319,11 +319,11 @@ def good_match(node, other = None):
   match = best_match(matches)
   if match:
     if cl.get_accepted(match.cod) and not cl.get_accepted(match.dom):
-      print("** Match is supposed to be terminal:\n  %s" %
+      print("# ** Match is supposed to be terminal:\n  %s" %
             (art.express(match)))
     # Happens way often in GBIF
     if False and not cl.is_accepted(match.cod):
-      print("** Match has taxonomic status %s\n  %s" %
+      print("# ** Match has taxonomic status %s\n  %s" %
             (cl.get_value(match.cod, cl.taxonomic_status_field),
              art.express(match)))
 
@@ -396,7 +396,7 @@ def how_related_extensionally(tnu, partner):
   else:
     (back, _, _) = cross_mrca(partner, here)
     if back == None:                # shouldn't happen
-      print("** No return cross-MRCA\n  %s -> %s -> ??" %\
+      print("# ** No return cross-MRCA\n  %s -> %s -> ??" %\
             (cl.get_unique(tnu), cl.get_unique(partner)))
       assert False
       return rel.extension_disjoint
@@ -447,7 +447,7 @@ def cross_mrca(tnu, other):
   if probe != 17:
     return probe
   elif cl.is_accepted(tnu):
-    print("** No cross-MRCA set for %s" % cl.get_unique(tnu))
+    print("# ** No cross-MRCA set for %s" % cl.get_unique(tnu))
   return (cl.forest, 1, 0)    # shouldn't happen
 
 # Returns (the-mrca, number-unmatched)
@@ -470,7 +470,7 @@ def analyze_cross_mrcas(A, B):
            print("#   particle(%s) = %s" % (cl.get_unique(tnu), cl.get_unique(pmatch.cod)))
         else:
           # Can't happen
-          print("** Non-eq articulation from particle_match\n  %s" +
+          print("# ** Non-eq articulation from particle_match\n  %s" +
                 art.express(pmatch))
           assert False
       else:
@@ -498,7 +498,7 @@ def analyze_cross_mrcas(A, B):
       if checkp:
         (back, _, _) = cross_mrcas[m]
         if not back in cross_mrcas:
-          print("** No return cross-MRCA for %s -> %s -> %s" %\
+          print("# ** No return cross-MRCA for %s -> %s -> %s" %\
                 (cl.get_unique(tnu), cl.get_unique(m), cl.get_unique(back)))
           assert False
       return result
@@ -529,7 +529,7 @@ def find_particles(here, other):
   def subanalyze(tnu, other):
     log(tnu, "subanalyze")
     if cl.get_accepted(tnu):
-      print("** Child %s of %s has an accepted name" %
+      print("# ** Child %s of %s has an accepted name" %
             (cl.get_unique(tnu), cl.get_unique(cl.get_parent(tnu))))
       return False
     found_match = False
@@ -545,7 +545,7 @@ def find_particles(here, other):
       if rematch:
         if rematch.cod == tnu:
           if cl.get_accepted(candidate.cod):
-            print("** Candidate is synonymlike: %s" % cl.get_unique(candidate.cod))
+            print("# ** Candidate is synonymlike: %s" % cl.get_unique(candidate.cod))
           particles[tnu] = candidate    # here -> other
           particles[candidate.cod] = art.reverse(candidate)  # other -> here
           return True
@@ -657,10 +657,10 @@ def has_accepted_locally(maybe_syn):   # goes from synonym to accepted
         status = rel.synonym_relation(maybe_syn_status(maybe_syn))
         return art.art(maybe_syn, accepted, status)
       else:
-        print("** Shouldn't happen", cl.get_unique(maybe_syn))
+        print("# ** Shouldn't happen", cl.get_unique(maybe_syn))
         return art.identity(maybe_syn)
     else:
-      print("** Synonym %s has no accepted name" % cl.get_unique(maybe_syn))
+      print("# ** Synonym %s has no accepted name" % cl.get_unique(maybe_syn))
       return None
   else:
     return None
@@ -680,7 +680,7 @@ def best_match(arts):     # => art
   arts = best_matches(sort_by_badness(collapse_matches(arts)))
   b = arts[0]
   if len(arts) == 1: return b
-  print("** Multiple least-bad matches. Need to find more tie-breakers.")
+  print("# ** Multiple least-bad matches. Need to find more tie-breakers.")
   print("   %s -> %s" %
         (cl.get_unique(b.dom),
          [cl.get_unique(a.cod) for a in arts]))

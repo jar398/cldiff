@@ -125,7 +125,7 @@ class Checklist:
     head = next(row_generator)
     guide = {key: position for (key, position) in zip(head, range(len(head)))}
     if guide.get("taxonID", None) == None:
-      print("** Didn't find a column for taxonID")
+      print("# ** Didn't find a column for taxonID")
       print("%s" % guide)
       assert False
     for row in row_generator:
@@ -338,16 +338,16 @@ def get_superiors_really(tnu):
       if accepted_taxo_status and accepted_taxo_status != "accepted":
         # Example: GBIF backbone:
         # C.?Hylobates sericus#8955169 -> C.Bunopithecus_sericus_(doubtful)
-        print("** Putative accepted has wrong taxonomic status %s\n  %s -> %s" % \
+        print("# ** Putative accepted has wrong taxonomic status %s\n  %s -> %s" % \
               (accepted_taxo_status, get_unique(tnu), get_unique(accepted)))
       # Iterate???
     else:
-      print("** Id %s for accepted of %s doesn't resolve" % \
+      print("# ** Id %s for accepted of %s doesn't resolve" % \
             (accepted_id, get_unique(tnu)))
   else:
     n_status = get_taxonomic_status(tnu)
     if n_status == "synonym":
-      print("** Node with status = 'synonym' has no accepted node\n  %s" % \
+      print("# ** Node with status = 'synonym' has no accepted node\n  %s" % \
             (get_unique(tnu)))
 
     accepted = None
@@ -356,9 +356,9 @@ def get_superiors_really(tnu):
     parent_taxo_status = get_taxonomic_status(parent)
     if parent_taxo_status == "accepted" and accepted_taxo_status == "accepted":
       if False:
-        print("** Taxon has both accepted and parent links\n  %s -> %s, %s" % \
+        print("# ** Taxon has both accepted and parent links\n  %s -> %s, %s" % \
               (get_unique(tnu), get_unique(accepted), get_unique(parent)))
-        print("** Preferring parent to accepted")
+        print("# ** Preferring parent to accepted")
       parent = None
     else:
       # This case is common in GBIF files
@@ -399,10 +399,10 @@ def get_accepted_really(tnu):
         if is_accepted(probe):
           accepted = probe      # Normal case
         else:
-          print("** Accepted taxon %s for %s is not accepted" %
+          print("# ** Accepted taxon %s for %s is not accepted" %
                 (get_unique(probe), get_unique(tnu)))
       else:
-        print("** Accepted id %s for %s doesn't resolve" %
+        print("# ** Accepted id %s for %s doesn't resolve" %
               (accepted_id, get_unique(tnu)))
 
   return accepted
@@ -517,7 +517,7 @@ def set_mutex(tnu, mutex):
   have = mutex_table.get(tnu, mutex)
   if have != mutex:
     verb = "Promoting" if have > mutex else "Demoting"
-    print("** %s %s, %s -> %s" % \
+    print("# ** %s %s, %s -> %s" % \
           (verb, get_unique(tnu),
            rank.mutex_to_name(have),
            rank.mutex_to_name(mutex)))
@@ -562,10 +562,10 @@ def correct_children_mutexes(parent, parent_mutex):
     child_mutex = get_mutex(child)
     if child_mutex <= parent_mutex:
       if child_mutex == parent_mutex:
-        print("** Child %s has same rank as parent %s" % \
+        print("# ** Child %s has same rank as parent %s" % \
               (get_unique(child), get_unique(parent)))
       else:
-        print("** Child %s is of higher rank than parent %s" %\
+        print("# ** Child %s is of higher rank than parent %s" %\
               (get_unique(child), get_unique(parent)))
       if is_container(child):
         new_mutex = parent_mutex + 1 # demote!
