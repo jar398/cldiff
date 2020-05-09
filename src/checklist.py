@@ -242,7 +242,7 @@ def get_nominal_rank(tnu):
 def get_spaceless(tnu):
   if tnu == None: return "none"
   assert is_tnu(tnu)
-  if tnu == forest: return "forest"
+  if tnu == forest_tnu: return "forest"
   checklist = get_checklist(tnu)
   name = get_name(tnu)
 
@@ -263,13 +263,17 @@ def get_spaceless(tnu):
   return name
 
 def get_unique(tnu):
-  return get_checklist(tnu).prefix + get_spaceless(tnu)
+  if tnu:
+    return get_checklist(tnu).prefix + get_spaceless(tnu)
+  else:
+    return get_spaceless(tnu)
 
 # Roots - accepted tnus without parents
 
 def get_roots(checklist):
   roots = []
   for tnu in get_all_tnus(checklist):
+    assert tnu > 0
     if not get_accepted(tnu) and not get_parent(tnu):
       roots.append(tnu)
   return roots
@@ -278,7 +282,7 @@ def get_roots(checklist):
 
 def get_inferiors(tnu):
   assert is_tnu(tnu)
-  assert tnu != forest
+  assert tnu != forest_tnu
   return get_synonyms(tnu) + get_children(tnu)
 
 # ----------
@@ -294,12 +298,12 @@ def get_parent(tnu):
   assert is_tnu(tnu)
   assert tnu
   (_, parent) = get_superiors(tnu)
-  assert parent != None
   return parent
 
 def get_accepted(tnu):
   assert is_tnu(tnu)
   (accepted, _) = get_superiors(tnu)
+  assert accepted != forest_tnu
   return accepted
 
 # Returns (accepted, parent)
@@ -310,7 +314,7 @@ def get_superiors(tnu):
   if probe: return probe
   result = get_superiors_really(tnu)
   superiors_cache[tnu] = result
-  if False:
+  if debug:
     print("# Cached gs(%s) = (%s, %s)" % \
           (get_unique(tnu), get_unique(result[0]), get_unique(result[1])))
   return result
@@ -375,10 +379,10 @@ def get_children(parent):
 def to_accepted(tnu):
   assert is_tnu(tnu)
   probe = get_accepted(tnu)     # cached
-  if probe == None:
-    return tnu
-  else:
+  if probe:
     return probe
+  else:
+    return tnu
 
 # ----------
 # Accepted/synonyms
@@ -453,21 +457,23 @@ def how_related(tnu1, tnu2):
   assert False
 
 def are_disjoint(tnu1, tnu2):
-  assert is_tnu(tnu)
-  if tnu1 == forest: return False
-  if tnu2 == forest: return False
+  assert is_tnu(tnu1)
+  assert is_tnu(tnu2)
+  if tnu1 == forest_tnu: return False
+  if tnu2 == forest_tnu: return False
+  if tnu1 == tnu2: return False
   (tnu1, tnu2) = find_peers(tnu1, tnu2)
   return tnu1 != tnu2
 
-# Find ancestor(s) of tnu1 and tnu2 that are in the same mutex: either
+# Find ancestor(s) of tnu1 and/or tnu2 that are in the same mutex: either
 # disjoint or equal.
 
-def find_peers(tnu1, tnu2):
-  assert is_tnu(tnu1)
-  assert is_tnu(tnu2)
+def find_peers(tnu_1, tnu_2):
+  assert is_tnu(tnu_1)
+  assert is_tnu(tnu_2)
 
-  tnu1 = to_accepted(tnu1)
-  tnu2 = to_accepted(tnu2)
+  tnu1 = to_accepted(tnu_1)
+  tnu2 = to_accepted(tnu_2)
 
   if tnu1 == forest_tnu or tnu2 == forest_tnu:
     return (forest_tnu, forest_tnu)
@@ -476,40 +482,47 @@ def find_peers(tnu1, tnu2):
   mutex1 = get_mutex(tnu1)
   mutex2 = get_mutex(tnu2)
 
-  #print("# Mutexes are %s %s" % (mutex1, mutex1))
+  if mutex1 == mutex2:
+    if debug:
+      print ("# Kludge %s %s" % (get_unique(tnu1), get_unique(tnu2)))
+    tnu1 = get_parent(tnu1)
+    mutex1 = get_mutex(tnu1)    
+
+  #print("# Mutexes are %s %s" % (mutex1, mutex2))
+  # Mutex of the forest is 0.  Going in 0-ward direction.
 
   while mutex1 != mutex2:
     assert mutex1 >= 0
     assert mutex2 >= 0
     if mutex1 > mutex2:
-      # If p1 is closer to the root, try going rootward from p2
-      tnu2 = get_parent(tnu2)
-      if tnu2 == forest_tnu: return (forest_tnu, forest_tnu)
-      mutex2 = get_mutex(tnu2)
-    else: # mutex1 < mutex2:
       # If p2 is closer to the root, try going rootward from p1
-      tnu1 = get_parent(tnu1)
       if tnu1 == forest_tnu: return (forest_tnu, forest_tnu)
+      tnu1 = get_parent(tnu1)
       mutex1 = get_mutex(tnu1)
-    #print("# Adjusted mutexes are %s %s" % (mutex1, mutex1))
-  return (tnu1, tnu2)
+    else: # mutex1 < mutex2:
+      # If p1 is closer to the root, try going rootward from p2
+      if tnu2 == forest_tnu: return (forest_tnu, forest_tnu)
+      tnu2 = get_parent(tnu2)
+      mutex2 = get_mutex(tnu2)
 
-forest = 0
+  if debug:
+   print("# find_peers(%s, %s) = %s, %s" % \
+        (get_unique(tnu_1), get_unique(tnu_2), 
+         get_unique(tnu1), get_unique(tnu2)))
+  return (tnu1, tnu2)
 
 # Common ancestor - utility
 # Also computes number of matched tips
 # None (not 0) is the identity for mrca
 
 def mrca(tnu1, tnu2):
-  if tnu1 == None: return tnu2
-  if tnu2 == None: return tnu1
-  assert is_tnu(tnu1)
-  assert is_tnu(tnu2)
   while True:
-    (tnu1, tnu2) = find_peers(tnu1, tnu2)
+    assert is_tnu(tnu1)
+    assert is_tnu(tnu2)
+    # to_accepted ??
     if tnu1 == tnu2: return tnu1
-    tnu1 = get_parent(tnu1)
-    tnu2 = get_parent(tnu2)
+    (tnu1, tnu2) = find_peers(tnu1, tnu2)
+    assert get_mutex(tnu1) == get_mutex(tnu2)
 
 mutex_table = {}
 
@@ -525,7 +538,7 @@ def set_mutex(tnu, mutex):
 
 def get_mutex(tnu):
   if not tnu:
-    # Above root of tree = forest
+    # Above root of tree = forest_tnu
     return rank.forest
   probe = mutex_table.get(tnu)
   if probe: return probe
@@ -548,8 +561,11 @@ def get_mutex_really(tnu):
     children_mutex = min(children_mutex, get_mutex(child))
 
   # Treat given rank, if any, as normative
-  nominal = get_nominal_mutex(tnu)
-  mutex = nominal or (children_mutex - 10)
+  if get_parent(tnu) == forest_tnu:
+    mutex = rank.root
+  else:
+    nominal = get_nominal_mutex(tnu)
+    mutex = nominal or (children_mutex - 10)
   set_mutex(tnu, mutex)
 
   # Demote children that have higher rank

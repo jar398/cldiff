@@ -34,7 +34,7 @@ def start(A, B):
 # Partners list for reporting (A->B articulations)
 
 def good_candidate(tnu, other):  # for children sort order
-  return best_match(good_candidates(tnu, other))
+  return choose_best_match(good_candidates(tnu, other))
 
 def good_candidates(tnu, other):
   matches = inverse_good_candidates.get(tnu) or []
@@ -77,7 +77,7 @@ def good_match(node, other = None):
   assert other
   assert cl.get_checklist(node) != other
   matches = good_matches(node, other)
-  match = best_match(matches)
+  match = choose_best_match(matches)
   if match:
     if cl.get_accepted(match.cod) and not cl.get_accepted(match.dom):
       print("# ** Match is supposed to be terminal:\n  %s" %
@@ -96,10 +96,22 @@ def good_matches(node, other):
   assert cl.get_checklist(node) != other
   if node in good_matches_cache: return good_matches_cache[node]
 
+  if debug:
+    print("# matching", cl.get_unique(node))
   exties = extensional_matches(node, other)
-  exties = [match_to_accepted(m) for m in exties]
-  nameys = matches_to_accepted(node, other)
-  matches = collapse_matches(exties + nameys)
+
+  if len(exties) > 0:
+    if debug: print("# >0 exties")
+    if rel.is_variant(exties[0].relation, rel.eq):
+      if debug: print("# at least one eq")
+      matches = exties + matches_to_accepted(node, other)
+    else:
+      if debug: print("# no eq")
+      matches = exties
+  else:
+    if debug: print("# no extie")
+    matches = matches_to_accepted(node, other)
+  matches = collapse_matches(exties)
 
   good_matches_cache[node] = matches
   return matches
@@ -113,8 +125,11 @@ def extensional_matches(tnu, other):
   assert cl.get_checklist(tnu) != other
 
   match = extensional_match(tnu, other)    # Single extensional match
-  if not match: return []
+  if not match:
+    if debug: print("# no ext match")
+    return []
   matches = [match]
+  if debug: print("# an ext match")
 
   if rel.is_variant(match.relation, rel.extension_eq):
     # Scan upwards looking for nodes that return to us...
@@ -130,6 +145,7 @@ def extensional_matches(tnu, other):
       if rev.cod != tnu: break
       matches.append(rel.reverse(rev))
   matches.reverse()    # hmm. for choose ?
+  if debug: print("# %s ext matches to %s" % (len(matches), cl.get_unique(tnu)))
   return matches
 
 # Guaranteed invertible, except for monotypic node chains
@@ -137,42 +153,49 @@ def extensional_matches(tnu, other):
 def extensional_match(tnu, other):
   assert tnu > 0
   here = cl.get_checklist(tnu)
-  match = particle_match(tnu, other)
-  if match:
-    return match
-  else:
-    (partner, _, _) = cross_mrca(tnu, other)     # TNU in other checklist
-    if not partner:
-      return None
-    match = bridge(tnu, partner, how_related_extensionally(tnu, partner))
-    return match_to_accepted(match)
+  (partner, drops) = cross_mrca(tnu, other)     # TNU in other checklist
+  if not partner:
+    if debug: print("# no partner")
+    return None
+  if debug: print("# partner, bridging")
+  match = bridge(tnu,
+                 partner,
+                 how_related_extensionally(tnu, partner, drops))
+  return match_to_accepted(match)
 
-def how_related_extensionally(tnu, partner):
+def how_related_extensionally(tnu, partner, drops):
   here = cl.get_checklist(tnu)
   i = particle_match(tnu, partner)
   if i:
-    return i.relation
+    (back, adds) = (0, 0)
+    re = i.relation
   else:
-    (back, _, _) = cross_mrca(partner, here)
+    (back, adds) = cross_mrca(partner, here)
     if back == None:                # shouldn't happen
       print("# ** No return cross-MRCA\n  %s -> %s -> ??" %\
             (cl.get_unique(tnu), cl.get_unique(partner)))
       assert False
-      return rel.extension_disjoint
+      re = rel.disjoint
     elif cl.are_disjoint(tnu, back):
-      return rel.extension_disjoint
+      re = rel.disjoint
     elif tnu == back:
-      return rel.eq
+      re = rel.eq
     elif cl.mrca(tnu, back) == tnu:
       # Monotypic: back < tnu.
-      return rel.monotypic_in
+      re = rel.gt
+      adds += 1     # ???
     else:
+      re = rel.lt
       for sub in get_children(partner):
-        (back, _, _) = cross_mrca(sub, here)
+        (back, _) = cross_mrca(sub, here)
         if back != None:
           if cl.mrca(tnu, back) == tnu and cross_disjoint(tnu, partner):
-            return rel.extension_conflict
-      return rel.extension_lt
+            re = rel.conflict
+  if drops + adds == 0:
+    re = rel.justify(re, rel.sharply, "ext " + rel.rcc5_name(re))
+  else:
+    re = rel.justify(re, rel.extensionally, "ext ~" + rel.rcc5_name(re))
+  return re
 
 # ---------- Determine disjointness across checklists
 
@@ -181,7 +204,7 @@ def cross_disjoint(tnu, partner):
   assert partner > 0
   assert cl.get_checklist(tnu) != cl.get_checklist(partner)
 
-  (back, _, _) = cross_mrca(partner, cl.get_checklist(tnu))
+  (back, _) = cross_mrca(partner, cl.get_checklist(tnu))
   if back == None:
     return True
   assert back > 0
@@ -191,7 +214,7 @@ def cross_disjoint(tnu, partner):
   for child in get_children(partner):
     assert child > 0
     if not cross_disjoint(tnu, child):
-      print("# Test %s ! %s failed because not ! %s" %\
+      print("# ** Test %s ! %s failed because not ! %s" %\
             (cl.get_unique(tnu), cl.get_unique(partner), cl.get_unique(child)))
       return False
   return True
@@ -206,25 +229,24 @@ def cross_mrca(tnu, other):
   if probe != 17:
     return probe
   elif cl.is_accepted(tnu):
-    print("# ** No cross-MRCA set for %s" % cl.get_unique(tnu))
-  return (cl.forest, 1, 0)    # shouldn't happen
+    if debug:
+      print("# ** No cross-MRCA set for %s" % cl.get_unique(tnu))
+  return (None, 1)
 
 # Returns (the-mrca, number-unmatched)
 
 def analyze_cross_mrcas(A, B):
-  cross_mrcas = {cl.forest: (cl.forest, 0, 0)}
+  cross_mrcas = {cl.forest_tnu: (cl.forest_tnu, 0, 0)}
   def half_analyze_cross_mrcas(checklist, other, checkp):
     def subanalyze_cross_mrcas(tnu, other):
       pmatch = particle_match(tnu, other)
-      drops = 0     # These get upgraded
-      adds = 0
-      m = 0      # is the identity for mrca
+      drops = 0     # How many branches do I prune as I go from A to B?
+      m = None      # is the identity for mrca
       if pmatch:
         assert pmatch.dom == tnu
         if rel.is_variant(pmatch.relation, rel.eq):
           m = pmatch.cod
           drops = len(get_children(pmatch.dom))
-          adds = len(get_children(pmatch.cod))
           if debug:
            print("#   particle(%s) = %s" % (cl.get_unique(tnu), cl.get_unique(pmatch.cod)))
         else:
@@ -238,28 +260,26 @@ def analyze_cross_mrcas(A, B):
           for child in children:
             if debug:
               print("# Child %s of %s" % (cl.get_unique(child), cl.get_unique(tnu)))
-            (m2, d2, a2) = subanalyze_cross_mrcas(child, other)
-            if m2 != None:
+            (m2, d2) = subanalyze_cross_mrcas(child, other)
+            if m2 == None:
+              drops += 1
+            else:
               drops += d2
-              adds += a2
               if debug:
                 print("#  Folding %s into %s" % (cl.get_unique(m2), cl.get_unique(m)))
-              m = cl.mrca(m, m2)
+              m = cl.mrca(m, m2) if m != None else m2
               if debug:
                 print("#   -> %s" % cl.get_unique(m))
-        else:
-          drops = 1
       if debug:
-        print("#   cm(%s) = (%s, %s, %s)" % \
-              (cl.get_unique(tnu), cl.get_unique(m), drops, adds))
-      result = (m, drops, adds)
+        print("#   cm(%s) = (%s, %s)" % \
+              (cl.get_unique(tnu), cl.get_unique(m), drops))
+      result = (m, drops)
       cross_mrcas[tnu] = result
-      if checkp:
-        (back, _, _) = cross_mrcas[m]
-        if not back in cross_mrcas:
-          print("# ** No return cross-MRCA for %s -> %s -> %s" %\
-                (cl.get_unique(tnu), cl.get_unique(m), cl.get_unique(back)))
-          assert False
+      if debug and checkp:
+        probe = cross_mrcas.get(m)
+        if not probe:
+          print("# ** No return cross-MRCA for %s -> %s -> ..." %\
+                (cl.get_unique(tnu), cl.get_unique(m)))
       return result
     for root in cl.get_roots(checklist):
       subanalyze_cross_mrcas(root, other)
@@ -298,9 +318,9 @@ def find_particles(here, other):
         found_match = True
     if found_match:    # Some descendant is an particle
       return True
-    candidate = best_match(matches_to_accepted(tnu, other))
+    candidate = choose_best_match(matches_to_accepted(tnu, other))
     if candidate:
-      rematch = best_match(matches_to_accepted(candidate.cod, here))
+      rematch = choose_best_match(matches_to_accepted(candidate.cod, here))
       if rematch:
         if rematch.cod == tnu:
           if cl.get_accepted(candidate.cod):
@@ -467,10 +487,10 @@ def maybe_syn_status(synonym):
 
 # Assumes already sorted by art.badness
 
-def best_match(arts):     # => art
+def choose_best_match(arts):     # => art
   assert is_matches(arts)
   if len(arts) == 0: return None
-  arts = best_matches(sort_by_badness(collapse_matches(arts)))
+  arts = choose_best_matches(sort_by_badness(collapse_matches(arts)))
   b = arts[0]
   if len(arts) == 1: return b
   print("# ** Multiple least-bad matches. Need to find more tie-breakers.")
@@ -482,7 +502,7 @@ def best_match(arts):     # => art
 
 # There can be multiple best matches
 
-def best_matches(sorted_matches):
+def choose_best_matches(sorted_matches):
   if len(sorted_matches) == 0:
     return []
   else:

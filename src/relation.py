@@ -168,6 +168,8 @@ extension_lt        = justify(lt, extensionally, "ext <", "ext >")
 extension_eq        = justify(eq, extensionally, "ext !")
 extension_gt = reverse(extension_lt)
 
+sharply = bit(13)
+
 # Monotypy is a tough one.  The extension is the same, but the
 # intension differs.
 

@@ -1,6 +1,6 @@
 # Thanks to Open Tree
 
-# Depth counts the number of splittings, starting at 0 = fewest
+# Depth/mutex counts the number of splittings, starting at 0 = fewest
 # bifurcations (everything is in one group; 'forest').
 
 # Approximately 50 currently named ranks

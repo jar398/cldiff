@@ -1,793 +1,985 @@
 tag,left name,left id,rcc5,right id,right name,justification
-NO CHANGE,Primates,A.9443,=,B.9443,Primates,{same-name & same-rank ...}
-__NO CHANGE,unclassified Primates,A.57118,=,B.57118,unclassified Primates,{same-name & same-rank}
-____NO CHANGE,marmosets,A.38020,=,B.38020,marmosets,{same-name & same-rank}
-____NO CHANGE,unidentified monkey,A.70699,=,B.70699,unidentified monkey,{same-name & same-rank}
-____NO CHANGE,Primates sp. BOLD:AAA0001,A.976298,=,B.976298,Primates sp. BOLD:AAA0001,{same-name & same-rank}
-____NO CHANGE,Primates sp. BOLD:AAC9009,A.976299,=,B.976299,Primates sp. BOLD:AAC9009,{same-name & same-rank}
-____NO CHANGE,Primates sp. BOLD:AAE4744,A.976300,=,B.976300,Primates sp. BOLD:AAE4744,{same-name & same-rank}
-____NO CHANGE,Primates sp. BOLD:AAJ7304,A.976301,=,B.976301,Primates sp. BOLD:AAJ7304,{same-name & same-rank}
-____NO CHANGE,Primates sp. BOLD:AAO0053,A.976302,=,B.976302,Primates sp. BOLD:AAO0053,{same-name & same-rank}
-____NO CHANGE,Primates sp. BOLD:AAC7735,A.1068292,=,B.1068292,Primates sp. BOLD:AAC7735,{same-name & same-rank}
-____NO CHANGE,Primates sp. BOLD:AAD0215,A.1068293,=,B.1068293,Primates sp. BOLD:AAD0215,{same-name & same-rank}
-____NO CHANGE,Primates sp. BOLD:AAF0367,A.1068294,=,B.1068294,Primates sp. BOLD:AAF0367,{same-name & same-rank}
-____MOVE,Japanese monkeys,A.36513,=,B.9542,Macaca fuscata,[same-name → common-name-of]
-__NO CHANGE,Strepsirrhini,A.376911,=,B.376911,Strepsirrhini,{same-name & same-rank}
-____NO CHANGE,Lemuriformes,A.376915,=,B.376915,Lemuriformes,{same-name & same-rank}
-______NO CHANGE,Lemuridae,A.9445,=,B.9445,Lemuridae,{same-name & same-rank}
-________NO CHANGE,Lemur,A.9446,=,B.9446,Lemur,{same-name & same-rank}
-__________NO CHANGE,Lemur catta,A.9447,=,B.9447,Lemur catta,{same-name & same-rank}
-__________GRAFT,,,,B.2641939,unclassified Lemur,
-__________MOVE,Lemur sp.,A.69491,=,B.69491,Lemur sp.,{same-name & same-rank}
-________NO CHANGE,Varecia,A.9454,=,B.9454,Varecia,{same-name & same-rank}
-__________...,,,,,,3 unchanged children
-________NO CHANGE,Eulemur,A.13513,=,B.13513,Eulemur,{same-name & same-rank}
-__________REMOVE,Eulemur hybrids,A.1417238,,,,0 right nodes match this left node
-____________MOVE,Eulemur albifrons x rufifrons,A.1417231,=,B.1417231,Eulemur albifrons x rufifrons,{same-name & same-rank}
-____________MOVE,Eulemur albifrons x cinereiceps,A.1417236,=,B.1417236,Eulemur albifrons x cinereiceps,{same-name & same-rank}
-____________MOVE,Eulemur cinereiceps x rufifrons,A.1417237,=,B.1417237,Eulemur cinereiceps x rufifrons,{same-name & same-rank}
-__________NO CHANGE,Eulemur coronatus,A.13514,=,B.13514,Eulemur coronatus,{same-name & same-rank}
-__________NO CHANGE,Eulemur fulvus,A.13515,=,B.13515,Eulemur fulvus,{same-name & same-rank}
-____________...,,,,,,4 unchanged children
-__________NO CHANGE,Eulemur macaco,A.30602,=,B.30602,Eulemur macaco,{same-name & same-rank}
-____________...,,,,,,1 unchanged children
-__________NO CHANGE,Eulemur mongoz,A.34828,=,B.34828,Eulemur mongoz,{same-name & same-rank}
-__________NO CHANGE,Eulemur rubriventer,A.34829,=,B.34829,Eulemur rubriventer,{same-name & same-rank}
-__________NO CHANGE,Eulemur flavifrons,A.87288,=,B.87288,Eulemur flavifrons,{same-name & same-rank}
-__________NO CHANGE,Eulemur sanfordi,A.122225,=,B.122225,Eulemur sanfordi,{same-name & same-rank}
-__________NO CHANGE,Eulemur cinereiceps,A.639525,=,B.639525,Eulemur cinereiceps,{same-name & same-rank}
-__________NO CHANGE,Eulemur rufus,A.859983,=,B.859983,Eulemur rufus,{same-name & same-rank}
-__________NO CHANGE,Eulemur rufifrons,A.859984,=,B.859984,Eulemur rufifrons,{same-name & same-rank}
-__________NO CHANGE,Eulemur albifrons,A.1215604,=,B.1215604,Eulemur albifrons,{same-name & same-rank}
-________NO CHANGE,Hapalemur,A.13556,=,B.13556,Hapalemur,{same-name & same-rank}
-__________...,,,,,,4 unchanged children
-________NO CHANGE,Prolemur,A.1328069,=,B.1328069,Prolemur,{same-name & same-rank}
-__________...,,,,,,1 unchanged children
-________GRAFT,,,,B.1513474,Pachylemur,
-______NO CHANGE,Indriidae,A.30599,=,B.30599,Indriidae,{same-name & same-rank}
-________NO CHANGE,Propithecus,A.30600,=,B.30600,Propithecus,{same-name & same-rank}
-__________NO CHANGE,Propithecus tattersalli,A.30601,=,B.30601,Propithecus tattersalli,{same-name & same-rank}
-__________NO CHANGE,Propithecus verreauxi,A.34825,=,B.34825,Propithecus verreauxi,{same-name & same-rank}
-____________...,,,,,,1 unchanged children
-__________NO CHANGE,Propithecus diadema,A.83281,=,B.83281,Propithecus diadema,{same-name & same-rank}
-____________...,,,,,,2 unchanged children
-__________NO CHANGE,Propithecus coquereli,A.379532,=,B.379532,Propithecus coquereli,{same-name & same-rank}
-__________NO CHANGE,Propithecus deckenii,A.475618,=,B.475618,Propithecus deckenii,{same-name & same-rank}
-____________...,,,,,,2 unchanged children
-__________NO CHANGE,Propithecus edwardsi,A.543559,=,B.543559,Propithecus edwardsi,{same-name & same-rank}
-__________NO CHANGE,Propithecus candidus,A.543560,=,B.543560,Propithecus candidus,{same-name & same-rank}
-__________NO CHANGE,Propithecus perrieri,A.989338,=,B.989338,Propithecus perrieri,{same-name & same-rank}
-__________GRAFT,,,,B.2677806,unclassified Propithecus,
-__________MOVE,Propithecus sp.,A.39582,=,B.39582,Propithecus sp.,{same-name & same-rank}
-________NO CHANGE,Indri,A.34826,=,B.34826,Indri,{same-name & same-rank}
-__________...,,,,,,1 unchanged children
-________NO CHANGE,Avahi,A.122245,=,B.122245,Avahi,{same-name & same-rank}
-__________...,,,,,,5 unchanged children
-________NO CHANGE,Archaeolemur,A.523820,=,B.523820,Archaeolemur,{same-name & same-rank}
+NO CHANGE,Primates,A.9443,=,B.9443,Primates,ext ~=
+__NO CHANGE,unclassified Primates,A.57118,=,B.57118,unclassified Primates,ext ~=
+____REMOVE,Japanese monkeys,A.36513,,,,0 right nodes match this left node
+____NO CHANGE,marmosets,A.38020,=,B.38020,marmosets,ext =
+____NO CHANGE,unidentified monkey,A.70699,=,B.70699,unidentified monkey,ext =
+____NO CHANGE,Primates sp. BOLD:AAA0001,A.976298,=,B.976298,Primates sp. BOLD:AAA0001,ext =
+____NO CHANGE,Primates sp. BOLD:AAC9009,A.976299,=,B.976299,Primates sp. BOLD:AAC9009,ext =
+____NO CHANGE,Primates sp. BOLD:AAE4744,A.976300,=,B.976300,Primates sp. BOLD:AAE4744,ext =
+____NO CHANGE,Primates sp. BOLD:AAJ7304,A.976301,=,B.976301,Primates sp. BOLD:AAJ7304,ext =
+____NO CHANGE,Primates sp. BOLD:AAO0053,A.976302,=,B.976302,Primates sp. BOLD:AAO0053,ext =
+____NO CHANGE,Primates sp. BOLD:AAC7735,A.1068292,=,B.1068292,Primates sp. BOLD:AAC7735,ext =
+____NO CHANGE,Primates sp. BOLD:AAD0215,A.1068293,=,B.1068293,Primates sp. BOLD:AAD0215,ext =
+____NO CHANGE,Primates sp. BOLD:AAF0367,A.1068294,=,B.1068294,Primates sp. BOLD:AAF0367,ext =
+__MULTIPLE,Strepsirrhini,A.376911,?,,,2 right nodes match this left node
+____BREAK,Chiromyiformes,A.376916,><,B.376911,Strepsirrhini,ext ~><
+______INSERT,Daubentoniidae,A.30613,>,B.31869,Daubentonia madagascariensis,ext ~>
+________INSERT,Daubentonia,A.13038,>,B.31869,Daubentonia madagascariensis,ext ~>
+__________MULTIPLE,Daubentonia madagascariensis,A.31869,?,,,4 right nodes match this left node
+____________ELIDE,,,<,B.376916,Chiromyiformes,ext ~>-of
+____________ELIDE,,,<,B.30613,Daubentoniidae,ext ~>-of
+____________ELIDE,,,<,B.13038,Daubentonia,ext ~>-of
+____________OPTION,,,=,B.31869,Daubentonia madagascariensis,ext =
+______MOVE,Lorisidae,A.9461,=,B.9461,Lorisidae,ext ~=
+________NO CHANGE,Loris,A.9467,=,B.9467,Loris,ext ~=
+__________INSERT,Loris tardigradus,A.9468,>,B.261740,Loris tardigradus nordicus,ext ~>
+____________MULTIPLE,Loris tardigradus nordicus,A.261740,?,,,2 right nodes match this left node
+______________ELIDE,,,<,B.9468,Loris tardigradus,ext ~>-of
+______________OPTION,,,=,B.261740,Loris tardigradus nordicus,ext =
+______________GRAFT,,,,B.1738049,Loris tardigradus tardigradus,
+__________INSERT,Loris lydekkerianus,A.300163,>,B.300166,Loris lydekkerianus malabaricus,ext ~>
+____________MULTIPLE,Loris lydekkerianus malabaricus,A.300166,?,,,2 right nodes match this left node
+______________ELIDE,,,<,B.300163,Loris lydekkerianus,ext ~>-of
+______________OPTION,,,=,B.300166,Loris lydekkerianus malabaricus,ext =
+______________GRAFT,,,,B.1738050,Loris lydekkerianus lydekkerianus,
+________NO CHANGE,Nycticebus,A.9469,=,B.9469,Nycticebus,ext ~=
+__________REMOVE,Nycticebus intermedius,A.101277,,,,0 right nodes match this left node
+__________INSERT,Nycticebus coucang,A.9470,>,B.310933,Nycticebus coucang coucang,ext ~>
+____________MULTIPLE,Nycticebus coucang coucang,A.310933,?,,,2 right nodes match this left node
+______________ELIDE,,,<,B.9470,Nycticebus coucang,ext ~>-of
+______________OPTION,,,=,B.310933,Nycticebus coucang coucang,ext =
+______________GRAFT,,,,B.2020906,Nycticebus coucang insularis,
+__________NO CHANGE,Nycticebus pygmaeus,A.101278,=,B.101278,Nycticebus pygmaeus,ext =
+__________NO CHANGE,Nycticebus bengalensis,A.261741,=,B.261741,Nycticebus bengalensis,ext =
+__________NO CHANGE,Nycticebus menagensis,A.310932,=,B.310932,Nycticebus menagensis,ext =
+__________NO CHANGE,Nycticebus javanicus,A.310934,=,B.310934,Nycticebus javanicus,ext =
+__________MULTIPLE,Nycticebus sp.,A.108082,?,,,2 right nodes match this left node
+____________ELIDE,,,<,B.2646861,unclassified Nycticebus,ext ~>-of
+____________OPTION,,,=,B.108082,Nycticebus sp.,ext =
+________INSERT,Perodicticus,A.9471,>,B.9472,Perodicticus potto,ext ~>
+__________MULTIPLE,Perodicticus potto,A.9472,?,,,2 right nodes match this left node
+____________ELIDE,,,<,B.9471,Perodicticus,ext ~>-of
+____________OPTION,,,=,B.9472,Perodicticus potto,ext =
+____________NO CHANGE,Perodicticus potto edwarsi,A.9473,=,B.9473,Perodicticus potto edwarsi,ext =
+____________NO CHANGE,Perodicticus potto ibeanus,A.261737,=,B.261737,Perodicticus potto ibeanus,ext =
+________NO CHANGE,Arctocebus,A.261738,=,B.261738,Arctocebus,ext =
 __________...,,,,,,2 unchanged children
-________NO CHANGE,Hadropithecus,A.523824,=,B.523824,Hadropithecus,{same-name & same-rank}
-__________...,,,,,,1 unchanged children
-______NO CHANGE,Lepilemuridae,A.30614,=,B.30614,Lepilemuridae,{same-name & same-rank}
-________NO CHANGE,Lepilemur,A.9452,=,B.9452,Lepilemur,{same-name & same-rank}
+____OPTION,,,=,B.376911,Strepsirrhini,ext ~=
+____NO CHANGE,Lemuriformes,A.376915,=,B.376915,Lemuriformes,ext ~=
+______NO CHANGE,Lemuridae,A.9445,=,B.9445,Lemuridae,ext ~=
+________NO CHANGE,Lemur,A.9446,=,B.9446,Lemur,ext =
+__________NO CHANGE,Lemur catta,A.9447,=,B.9447,Lemur catta,ext =
+__________MULTIPLE,Lemur sp.,A.69491,?,,,2 right nodes match this left node
+____________ELIDE,,,<,B.2641939,unclassified Lemur,ext ~>-of
+____________OPTION,,,=,B.69491,Lemur sp.,ext =
+________NO CHANGE,Varecia,A.9454,=,B.9454,Varecia,ext =
+__________INSERT,Varecia variegata,A.9455,>,B.87289,Varecia variegata variegata,ext ~>
+____________MULTIPLE,Varecia variegata variegata,A.87289,?,,,2 right nodes match this left node
+______________ELIDE,,,<,B.9455,Varecia variegata,ext ~>-of
+______________OPTION,,,=,B.87289,Varecia variegata variegata,ext =
+__________NO CHANGE,Varecia rubra,A.554167,=,B.554167,Varecia rubra,ext =
+________NO CHANGE,Eulemur,A.13513,=,B.13513,Eulemur,ext =
+__________BREAK,Eulemur hybrids,A.1417238,><,B.13513,Eulemur,ext ><
+____________...,,,,,,3 unchanged children
+__________NO CHANGE,Eulemur coronatus,A.13514,=,B.13514,Eulemur coronatus,ext =
+__________NO CHANGE,Eulemur fulvus,A.13515,=,B.13515,Eulemur fulvus,ext =
+____________...,,,,,,4 unchanged children
+__________INSERT,Eulemur macaco,A.30602,>,B.30603,Eulemur macaco macaco,ext ~>
+____________MULTIPLE,Eulemur macaco macaco,A.30603,?,,,2 right nodes match this left node
+______________ELIDE,,,<,B.30602,Eulemur macaco,ext ~>-of
+______________OPTION,,,=,B.30603,Eulemur macaco macaco,ext =
+__________NO CHANGE,Eulemur mongoz,A.34828,=,B.34828,Eulemur mongoz,ext =
+__________NO CHANGE,Eulemur rubriventer,A.34829,=,B.34829,Eulemur rubriventer,ext =
+__________NO CHANGE,Eulemur flavifrons,A.87288,=,B.87288,Eulemur flavifrons,ext =
+__________NO CHANGE,Eulemur sanfordi,A.122225,=,B.122225,Eulemur sanfordi,ext =
+__________NO CHANGE,Eulemur cinereiceps,A.639525,=,B.639525,Eulemur cinereiceps,ext =
+__________NO CHANGE,Eulemur rufus,A.859983,=,B.859983,Eulemur rufus,ext =
+__________NO CHANGE,Eulemur rufifrons,A.859984,=,B.859984,Eulemur rufifrons,ext =
+__________NO CHANGE,Eulemur albifrons,A.1215604,=,B.1215604,Eulemur albifrons,ext =
+________NO CHANGE,Hapalemur,A.13556,=,B.13556,Hapalemur,ext =
+__________...,,,,,,4 unchanged children
+________INSERT,Prolemur,A.1328069,>,B.1328070,Prolemur simus,ext ~>
+__________MULTIPLE,Prolemur simus,A.1328070,?,,,2 right nodes match this left node
+____________ELIDE,,,<,B.1328069,Prolemur,ext ~>-of
+____________OPTION,,,=,B.1328070,Prolemur simus,ext =
+________GRAFT,,,,B.1513474,Pachylemur,
+______NO CHANGE,Indriidae,A.30599,=,B.30599,Indriidae,ext =
+________NO CHANGE,Propithecus,A.30600,=,B.30600,Propithecus,ext =
+__________NO CHANGE,Propithecus tattersalli,A.30601,=,B.30601,Propithecus tattersalli,ext =
+__________INSERT,Propithecus verreauxi,A.34825,>,B.122229,Propithecus verreauxi verreauxi,ext ~>
+____________MULTIPLE,Propithecus verreauxi verreauxi,A.122229,?,,,2 right nodes match this left node
+______________ELIDE,,,<,B.34825,Propithecus verreauxi,ext ~>-of
+______________OPTION,,,=,B.122229,Propithecus verreauxi verreauxi,ext =
+__________NO CHANGE,Propithecus diadema,A.83281,=,B.83281,Propithecus diadema,ext =
+____________...,,,,,,2 unchanged children
+__________NO CHANGE,Propithecus coquereli,A.379532,=,B.379532,Propithecus coquereli,ext =
+__________NO CHANGE,Propithecus deckenii,A.475618,=,B.475618,Propithecus deckenii,ext =
+____________...,,,,,,2 unchanged children
+__________NO CHANGE,Propithecus edwardsi,A.543559,=,B.543559,Propithecus edwardsi,ext =
+__________NO CHANGE,Propithecus candidus,A.543560,=,B.543560,Propithecus candidus,ext =
+__________NO CHANGE,Propithecus perrieri,A.989338,=,B.989338,Propithecus perrieri,ext =
+__________MULTIPLE,Propithecus sp.,A.39582,?,,,2 right nodes match this left node
+____________ELIDE,,,<,B.2677806,unclassified Propithecus,ext ~>-of
+____________OPTION,,,=,B.39582,Propithecus sp.,ext =
+________INSERT,Indri,A.34826,>,B.34827,Indri indri,ext ~>
+__________MULTIPLE,Indri indri,A.34827,?,,,2 right nodes match this left node
+____________ELIDE,,,<,B.34826,Indri,ext ~>-of
+____________OPTION,,,=,B.34827,Indri indri,ext =
+________NO CHANGE,Avahi,A.122245,=,B.122245,Avahi,ext =
+__________...,,,,,,5 unchanged children
+________NO CHANGE,Archaeolemur,A.523820,=,B.523820,Archaeolemur,ext =
+__________...,,,,,,2 unchanged children
+________INSERT,Hadropithecus,A.523824,>,B.523825,Hadropithecus stenognathus,ext ~>
+__________MULTIPLE,Hadropithecus stenognathus,A.523825,?,,,2 right nodes match this left node
+____________ELIDE,,,<,B.523824,Hadropithecus,ext ~>-of
+____________OPTION,,,=,B.523825,Hadropithecus stenognathus,ext =
+______NO CHANGE,Lepilemuridae,A.30614,=,B.30614,Lepilemuridae,ext ~=
+________MULTIPLE,Lepilemur,A.9452,?,,,2 right nodes match this left node
 __________REMOVE,Lepilemur jamesi,A.486960,,,,0 right nodes match this left node
-__________NO CHANGE,Lepilemur mustelinus,A.9453,=,B.9453,Lepilemur mustelinus,{same-name & same-rank}
-__________NO CHANGE,Lepilemur dorsalis,A.78583,=,B.78583,Lepilemur dorsalis,{same-name & same-rank}
-__________NO CHANGE,Lepilemur septentrionalis,A.78584,=,B.78584,Lepilemur septentrionalis,{same-name & same-rank}
-__________NO CHANGE,Lepilemur ruficaudatus,A.78866,=,B.78866,Lepilemur ruficaudatus,{same-name & same-rank}
-__________NO CHANGE,Lepilemur leucopus,A.100475,=,B.100475,Lepilemur leucopus,{same-name & same-rank}
-__________NO CHANGE,Lepilemur edwardsi,A.122230,=,B.122230,Lepilemur edwardsi,{same-name & same-rank}
-__________NO CHANGE,Lepilemur microdon,A.185457,=,B.185457,Lepilemur microdon,{same-name & same-rank}
-__________NO CHANGE,Lepilemur mitsinjoensis,A.236287,=,B.236287,Lepilemur mitsinjoensis,{same-name & same-rank}
-__________NO CHANGE,Lepilemur seali,A.236288,=,B.236288,Lepilemur seali,{same-name & same-rank}
-__________NO CHANGE,Lepilemur sahamalazensis,A.342398,=,B.342398,Lepilemur sahamalazensis,{same-name & same-rank}
-__________NO CHANGE,Lepilemur aeeclis,A.342399,=,B.342399,Lepilemur aeeclis,{same-name & same-rank}
-__________NO CHANGE,Lepilemur ankaranensis,A.342401,=,B.342401,Lepilemur ankaranensis,{same-name & same-rank}
-__________NO CHANGE,Lepilemur mittermeieri,A.378517,=,B.378517,Lepilemur mittermeieri,{same-name & same-rank}
-__________NO CHANGE,Lepilemur manasamody,A.458171,=,B.458171,Lepilemur manasamody,{same-name & same-rank}
-__________NO CHANGE,Lepilemur otto,A.458173,=,B.458173,Lepilemur otto,{same-name & same-rank}
+__________OPTION,,,=,B.9452,Lepilemur,ext ~=
+__________NO CHANGE,Lepilemur mustelinus,A.9453,=,B.9453,Lepilemur mustelinus,ext =
+__________NO CHANGE,Lepilemur dorsalis,A.78583,=,B.78583,Lepilemur dorsalis,ext =
+__________NO CHANGE,Lepilemur septentrionalis,A.78584,=,B.78584,Lepilemur septentrionalis,ext =
+__________NO CHANGE,Lepilemur ruficaudatus,A.78866,=,B.78866,Lepilemur ruficaudatus,ext =
+__________NO CHANGE,Lepilemur leucopus,A.100475,=,B.100475,Lepilemur leucopus,ext =
+__________NO CHANGE,Lepilemur edwardsi,A.122230,=,B.122230,Lepilemur edwardsi,ext =
+__________NO CHANGE,Lepilemur microdon,A.185457,=,B.185457,Lepilemur microdon,ext =
+__________NO CHANGE,Lepilemur mitsinjoensis,A.236287,=,B.236287,Lepilemur mitsinjoensis,ext =
+__________NO CHANGE,Lepilemur seali,A.236288,=,B.236288,Lepilemur seali,ext =
+__________NO CHANGE,Lepilemur sahamalazensis,A.342398,=,B.342398,Lepilemur sahamalazensis,ext =
+__________NO CHANGE,Lepilemur aeeclis,A.342399,=,B.342399,Lepilemur aeeclis,ext =
+__________NO CHANGE,Lepilemur ankaranensis,A.342401,=,B.342401,Lepilemur ankaranensis,ext =
+__________NO CHANGE,Lepilemur mittermeieri,A.378517,=,B.378517,Lepilemur mittermeieri,ext =
+__________NO CHANGE,Lepilemur manasamody,A.458171,=,B.458171,Lepilemur manasamody,ext =
+__________NO CHANGE,Lepilemur otto,A.458173,=,B.458173,Lepilemur otto,ext =
 __________GRAFT,,,,B.486960,Lepilemur jamesorum,
-__________NO CHANGE,Lepilemur hubbardorum,A.756882,=,B.756882,Lepilemur hubbardorum,{same-name & same-rank}
+__________NO CHANGE,Lepilemur hubbardorum,A.756882,=,B.756882,Lepilemur hubbardorum,ext =
 __________GRAFT,,,,B.886957,Lepilemur ahmansonorum,
 __________GRAFT,,,,B.886958,Lepilemur betsileo,
 __________GRAFT,,,,B.886959,Lepilemur fleuretae,
 __________GRAFT,,,,B.886960,Lepilemur grewcockorum,
 __________GRAFT,,,,B.886961,Lepilemur hollandorum,
 __________GRAFT,,,,B.886963,Lepilemur milanoii,
-__________NO CHANGE,Lepilemur petteri,A.886964,=,B.886964,Lepilemur petteri,{same-name & same-rank}
-__________NO CHANGE,Lepilemur randrianasoloi,A.886965,=,B.886965,Lepilemur randrianasoloi,{same-name & same-rank}
+__________NO CHANGE,Lepilemur petteri,A.886964,=,B.886964,Lepilemur petteri,ext =
+__________NO CHANGE,Lepilemur randrianasoloi,A.886965,=,B.886965,Lepilemur randrianasoloi,ext =
 __________GRAFT,,,,B.886966,Lepilemur scottorum,
 __________GRAFT,,,,B.886967,Lepilemur tymerlachsoni,
 __________GRAFT,,,,B.886968,Lepilemur wrightae,
-__________GRAFT,,,,B.2645584,unclassified Lepilemur,
-__________MOVE,Lepilemur sp. RANO236,A.185458,=,B.185458,Lepilemur sp. RANO236,{same-name & same-rank}
-__________MOVE,Lepilemur sp. RANO234,A.185590,=,B.185590,Lepilemur sp. RANO234,{same-name & same-rank}
-__________MOVE,Lepilemur sp. RANO235,A.185591,=,B.185591,Lepilemur sp. RANO235,{same-name & same-rank}
-__________MOVE,Lepilemur sp. hubbardi,A.400023,=,B.400023,Lepilemur sp. hubbardi,{same-name & same-rank}
-________NO CHANGE,Megaladapis,A.126593,=,B.126593,Megaladapis,{same-name & same-rank}
-__________NO CHANGE,Megaladapis edwardsi,A.185953,=,B.185953,Megaladapis edwardsi,{same-name & same-rank}
-__________GRAFT,,,,B.2620125,unclassified Megaladapis,
-__________MOVE,Megaladapis sp.,A.126594,=,B.126594,Megaladapis sp.,{same-name & same-rank}
-__________MOVE,Megaladapis sp. UA5482,A.322020,=,B.322020,Megaladapis sp. UA5482,{same-name & same-rank}
-__________MOVE,Megaladapis sp. UA4823,A.322021,=,B.322021,Megaladapis sp. UA4823,{same-name & same-rank}
-__________MOVE,Megaladapis sp. UA4821,A.322022,=,B.322022,Megaladapis sp. UA4821,{same-name & same-rank}
-__________MOVE,Megaladapis sp. UA4822,A.322023,=,B.322023,Megaladapis sp. UA4822,{same-name & same-rank}
-______NO CHANGE,Cheirogaleidae,A.30615,=,B.30615,Cheirogaleidae,{same-name & same-rank}
-________NO CHANGE,Cheirogaleus,A.9459,=,B.9459,Cheirogaleus,{same-name & same-rank}
-__________NO CHANGE,Cheirogaleus medius,A.9460,=,B.9460,Cheirogaleus medius,{same-name & same-rank}
-__________NO CHANGE,Cheirogaleus major,A.47177,=,B.47177,Cheirogaleus major,{same-name & same-rank}
-__________NO CHANGE,Cheirogaleus crossleyi,A.291259,=,B.291259,Cheirogaleus crossleyi,{same-name & same-rank}
-__________NO CHANGE,Cheirogaleus sibreei,A.752538,=,B.752538,Cheirogaleus sibreei,{same-name & same-rank}
-__________NO CHANGE,Cheirogaleus minusculus,A.867375,=,B.867375,Cheirogaleus minusculus,{same-name & same-rank}
+__________REFORM,,,><,B.2645584,unclassified Lepilemur,ext ~><
+__________MOVE,Lepilemur sp. RANO236,A.185458,=,B.185458,Lepilemur sp. RANO236,ext =
+__________MOVE,Lepilemur sp. RANO234,A.185590,=,B.185590,Lepilemur sp. RANO234,ext =
+__________MOVE,Lepilemur sp. RANO235,A.185591,=,B.185591,Lepilemur sp. RANO235,ext =
+__________MOVE,Lepilemur sp. hubbardi,A.400023,=,B.400023,Lepilemur sp. hubbardi,ext =
+________MULTIPLE,Megaladapis,A.126593,?,,,2 right nodes match this left node
+__________OPTION,,,=,B.126593,Megaladapis,ext =
+__________NO CHANGE,Megaladapis edwardsi,A.185953,=,B.185953,Megaladapis edwardsi,ext =
+__________REFORM,,,><,B.2620125,unclassified Megaladapis,ext ><
+__________MOVE,Megaladapis sp.,A.126594,=,B.126594,Megaladapis sp.,ext =
+__________MOVE,Megaladapis sp. UA5482,A.322020,=,B.322020,Megaladapis sp. UA5482,ext =
+__________MOVE,Megaladapis sp. UA4823,A.322021,=,B.322021,Megaladapis sp. UA4823,ext =
+__________MOVE,Megaladapis sp. UA4821,A.322022,=,B.322022,Megaladapis sp. UA4821,ext =
+__________MOVE,Megaladapis sp. UA4822,A.322023,=,B.322023,Megaladapis sp. UA4822,ext =
+______NO CHANGE,Cheirogaleidae,A.30615,=,B.30615,Cheirogaleidae,ext ~=
+________NO CHANGE,Cheirogaleus,A.9459,=,B.9459,Cheirogaleus,ext ~=
+__________NO CHANGE,Cheirogaleus medius,A.9460,=,B.9460,Cheirogaleus medius,ext =
+__________NO CHANGE,Cheirogaleus major,A.47177,=,B.47177,Cheirogaleus major,ext =
+__________NO CHANGE,Cheirogaleus crossleyi,A.291259,=,B.291259,Cheirogaleus crossleyi,ext =
+__________NO CHANGE,Cheirogaleus sibreei,A.752538,=,B.752538,Cheirogaleus sibreei,ext =
+__________NO CHANGE,Cheirogaleus minusculus,A.867375,=,B.867375,Cheirogaleus minusculus,ext =
 __________GRAFT,,,,B.1569974,Cheirogaleus lavasoensis,
-________NO CHANGE,Microcebus,A.13149,=,B.13149,Microcebus,{same-name & same-rank}
-__________NO CHANGE,Microcebus murinus,A.30608,=,B.30608,Microcebus murinus,{same-name & same-rank}
-__________NO CHANGE,Microcebus ravelobensis,A.122231,=,B.122231,Microcebus ravelobensis,{same-name & same-rank}
-__________NO CHANGE,Microcebus rufus,A.122232,=,B.122232,Microcebus rufus,{same-name & same-rank}
-__________NO CHANGE,Microcebus myoxinus,A.143283,=,B.143283,Microcebus myoxinus,{same-name & same-rank}
-__________NO CHANGE,Microcebus tavaratra,A.143351,=,B.143351,Microcebus tavaratra,{same-name & same-rank}
-__________NO CHANGE,Microcebus berthae,A.143352,=,B.143352,Microcebus berthae,{same-name & same-rank}
-__________NO CHANGE,Microcebus sambiranensis,A.143353,=,B.143353,Microcebus sambiranensis,{same-name & same-rank}
-__________NO CHANGE,Microcebus griseorufus,A.143354,=,B.143354,Microcebus griseorufus,{same-name & same-rank}
-__________NO CHANGE,Microcebus simmonsi,A.236272,=,B.236272,Microcebus simmonsi,{same-name & same-rank}
-__________NO CHANGE,Microcebus mittermeieri,A.236274,=,B.236274,Microcebus mittermeieri,{same-name & same-rank}
-__________NO CHANGE,Microcebus jollyae,A.236275,=,B.236275,Microcebus jollyae,{same-name & same-rank}
-__________NO CHANGE,Microcebus lehilahytsara,A.343908,=,B.343908,Microcebus lehilahytsara,{same-name & same-rank}
-__________NO CHANGE,Microcebus bongolavensis,A.412750,=,B.412750,Microcebus bongolavensis,{same-name & same-rank}
-__________NO CHANGE,Microcebus danfossi,A.412751,=,B.412751,Microcebus danfossi,{same-name & same-rank}
-__________NO CHANGE,Microcebus lokobensis,A.412752,=,B.412752,Microcebus lokobensis,{same-name & same-rank}
-__________NO CHANGE,Microcebus mamiratra,A.415757,=,B.415757,Microcebus mamiratra,{same-name & same-rank}
-__________NO CHANGE,Microcebus macarthurii,A.548481,=,B.548481,Microcebus macarthurii,{same-name & same-rank}
-__________NO CHANGE,Microcebus arnholdi,A.864580,=,B.864580,Microcebus arnholdi,{same-name & same-rank}
-__________NO CHANGE,Microcebus margotmarshae,A.864581,=,B.864581,Microcebus margotmarshae,{same-name & same-rank}
-__________NO CHANGE,Microcebus gerpi,A.1131379,=,B.1131379,Microcebus gerpi,{same-name & same-rank}
-__________NO CHANGE,Microcebus tanosi,A.1310123,=,B.1310123,Microcebus tanosi,{same-name & same-rank}
-__________NO CHANGE,Microcebus marohita,A.1310124,=,B.1310124,Microcebus marohita,{same-name & same-rank}
+________MULTIPLE,Microcebus,A.13149,?,,,2 right nodes match this left node
+__________OPTION,,,=,B.13149,Microcebus,ext ~=
+__________NO CHANGE,Microcebus murinus,A.30608,=,B.30608,Microcebus murinus,ext =
+__________NO CHANGE,Microcebus ravelobensis,A.122231,=,B.122231,Microcebus ravelobensis,ext =
+__________NO CHANGE,Microcebus rufus,A.122232,=,B.122232,Microcebus rufus,ext =
+__________NO CHANGE,Microcebus myoxinus,A.143283,=,B.143283,Microcebus myoxinus,ext =
+__________NO CHANGE,Microcebus tavaratra,A.143351,=,B.143351,Microcebus tavaratra,ext =
+__________NO CHANGE,Microcebus berthae,A.143352,=,B.143352,Microcebus berthae,ext =
+__________NO CHANGE,Microcebus sambiranensis,A.143353,=,B.143353,Microcebus sambiranensis,ext =
+__________NO CHANGE,Microcebus griseorufus,A.143354,=,B.143354,Microcebus griseorufus,ext =
+__________NO CHANGE,Microcebus simmonsi,A.236272,=,B.236272,Microcebus simmonsi,ext =
+__________NO CHANGE,Microcebus mittermeieri,A.236274,=,B.236274,Microcebus mittermeieri,ext =
+__________NO CHANGE,Microcebus jollyae,A.236275,=,B.236275,Microcebus jollyae,ext =
+__________NO CHANGE,Microcebus lehilahytsara,A.343908,=,B.343908,Microcebus lehilahytsara,ext =
+__________NO CHANGE,Microcebus bongolavensis,A.412750,=,B.412750,Microcebus bongolavensis,ext =
+__________NO CHANGE,Microcebus danfossi,A.412751,=,B.412751,Microcebus danfossi,ext =
+__________NO CHANGE,Microcebus lokobensis,A.412752,=,B.412752,Microcebus lokobensis,ext =
+__________NO CHANGE,Microcebus mamiratra,A.415757,=,B.415757,Microcebus mamiratra,ext =
+__________NO CHANGE,Microcebus macarthurii,A.548481,=,B.548481,Microcebus macarthurii,ext =
+__________NO CHANGE,Microcebus arnholdi,A.864580,=,B.864580,Microcebus arnholdi,ext =
+__________NO CHANGE,Microcebus margotmarshae,A.864581,=,B.864581,Microcebus margotmarshae,ext =
+__________NO CHANGE,Microcebus gerpi,A.1131379,=,B.1131379,Microcebus gerpi,ext =
+__________NO CHANGE,Microcebus tanosi,A.1310123,=,B.1310123,Microcebus tanosi,ext =
+__________NO CHANGE,Microcebus marohita,A.1310124,=,B.1310124,Microcebus marohita,ext =
 __________GRAFT,,,,B.2483760,Microcebus ganzhorni,
-__________GRAFT,,,,B.2630091,unclassified Microcebus,
-__________MOVE,Microcebus sp. EELHDZ M98,A.270538,=,B.270538,Microcebus sp. EELHDZ M98,{same-name & same-rank}
-__________MOVE,Microcebus sp. EELHDZ TAD23,A.270540,=,B.270540,Microcebus sp. EELHDZ TAD23,{same-name & same-rank}
-__________MOVE,Microcebus sp. EELHDZ VEV33,A.270674,=,B.270674,Microcebus sp. EELHDZ VEV33,{same-name & same-rank}
-__________MOVE,Microcebus sp. EELHDZ VEV35,A.270675,=,B.270675,Microcebus sp. EELHDZ VEV35,{same-name & same-rank}
-__________MOVE,Microcebus sp. ANT5.1,A.388736,=,B.388736,Microcebus sp. ANT5.1,{same-name & same-rank}
-__________MOVE,Microcebus sp. Ambongabe,A.412758,=,B.412758,Microcebus sp. Ambongabe,{same-name & same-rank}
-__________MOVE,Microcebus sp. Bora,A.412759,=,B.412759,Microcebus sp. Bora,{same-name & same-rank}
-__________MOVE,Microcebus sp. Mahajamba-Est,A.412760,=,B.412760,Microcebus sp. Mahajamba-Est,{same-name & same-rank}
-__________MOVE,Microcebus sp. Maroakata,A.412761,=,B.412761,Microcebus sp. Maroakata,{same-name & same-rank}
-__________MOVE,Microcebus sp. Anjiahely,A.548482,=,B.548482,Microcebus sp. Anjiahely,{same-name & same-rank}
-__________MOVE,Microcebus sp. DWW-2010a,A.764313,=,B.764313,Microcebus sp. DWW-2010a,{same-name & same-rank}
-__________MOVE,Microcebus sp. d'Ambre,A.1310125,=,B.1310125,Microcebus sp. d'Ambre,{same-name & same-rank}
-________NO CHANGE,Mirza,A.83691,=,B.83691,Mirza,{same-name & same-rank}
-__________NO CHANGE,Mirza coquereli,A.47180,=,B.47180,Mirza coquereli,{same-name & same-rank}
-__________NO CHANGE,Mirza zaza,A.339999,=,B.339999,Mirza zaza,{same-name & same-rank}
-__________GRAFT,,,,B.2628182,unclassified Mirza,
-__________MOVE,Mirza sp. 001y03,A.415977,=,B.415977,Mirza sp. 001y03,{same-name & same-rank}
-________NO CHANGE,Allocebus,A.122247,=,B.122247,Allocebus,{same-name & same-rank}
-__________...,,,,,,1 unchanged children
-________NO CHANGE,Phaner,A.261733,=,B.261733,Phaner,{same-name & same-rank}
+__________REFORM,,,><,B.2630091,unclassified Microcebus,ext ~><
+__________MOVE,Microcebus sp. EELHDZ M98,A.270538,=,B.270538,Microcebus sp. EELHDZ M98,ext =
+__________MOVE,Microcebus sp. EELHDZ TAD23,A.270540,=,B.270540,Microcebus sp. EELHDZ TAD23,ext =
+__________MOVE,Microcebus sp. EELHDZ VEV33,A.270674,=,B.270674,Microcebus sp. EELHDZ VEV33,ext =
+__________MOVE,Microcebus sp. EELHDZ VEV35,A.270675,=,B.270675,Microcebus sp. EELHDZ VEV35,ext =
+__________MOVE,Microcebus sp. ANT5.1,A.388736,=,B.388736,Microcebus sp. ANT5.1,ext =
+__________MOVE,Microcebus sp. Ambongabe,A.412758,=,B.412758,Microcebus sp. Ambongabe,ext =
+__________MOVE,Microcebus sp. Bora,A.412759,=,B.412759,Microcebus sp. Bora,ext =
+__________MOVE,Microcebus sp. Mahajamba-Est,A.412760,=,B.412760,Microcebus sp. Mahajamba-Est,ext =
+__________MOVE,Microcebus sp. Maroakata,A.412761,=,B.412761,Microcebus sp. Maroakata,ext =
+__________GRAFT,,,,B.418100,Microcebus sp. Antanosy,
+__________MOVE,Microcebus sp. Anjiahely,A.548482,=,B.548482,Microcebus sp. Anjiahely,ext =
+__________MOVE,Microcebus sp. DWW-2010a,A.764313,=,B.764313,Microcebus sp. DWW-2010a,ext =
+__________MOVE,Microcebus sp. d'Ambre,A.1310125,=,B.1310125,Microcebus sp. d'Ambre,ext =
+__________GRAFT,,,,B.2508170,Microcebus sp. 3 GT-2019,
+________NO CHANGE,Mirza,A.83691,=,B.83691,Mirza,ext =
+__________NO CHANGE,Mirza coquereli,A.47180,=,B.47180,Mirza coquereli,ext =
+__________NO CHANGE,Mirza zaza,A.339999,=,B.339999,Mirza zaza,ext =
+__________MULTIPLE,Mirza sp. 001y03,A.415977,?,,,2 right nodes match this left node
+____________ELIDE,,,<,B.2628182,unclassified Mirza,ext ~>-of
+____________OPTION,,,=,B.415977,Mirza sp. 001y03,ext =
+________INSERT,Allocebus,A.122247,>,B.122248,Allocebus trichotis,ext ~>
+__________MULTIPLE,Allocebus trichotis,A.122248,?,,,2 right nodes match this left node
+____________ELIDE,,,<,B.122247,Allocebus,ext ~>-of
+____________OPTION,,,=,B.122248,Allocebus trichotis,ext =
+________NO CHANGE,Phaner,A.261733,=,B.261733,Phaner,ext =
 __________...,,,,,,4 unchanged children
-______NO CHANGE,Paleopropithecidae,A.1513476,=,B.1513476,Paleopropithecidae,{same-name & same-rank}
-________NO CHANGE,Palaeopropithecus,A.322024,=,B.322024,Palaeopropithecus,{same-name & same-rank}
+______INSERT,Paleopropithecidae,A.1513476,>,B.2619300,unclassified Palaeopropithecus,ext ~>
+________MULTIPLE,Palaeopropithecus,A.322024,?,,,3 right nodes match this left node
+__________ELIDE,,,<,B.1513476,Paleopropithecidae,ext ~>-of
+__________ELIDE,,,<,B.322024,Palaeopropithecus,ext ~>-of
 __________GRAFT,,,,B.1513477,Palaeopropithecus ingens,
 __________GRAFT,,,,B.1597978,Palaeopropithecus maximus,
-__________GRAFT,,,,B.2619300,unclassified Palaeopropithecus,
-__________MOVE,Palaeopropithecus sp. UA4466,A.322025,=,B.322025,Palaeopropithecus sp. UA4466,{same-name & same-rank}
-__________MOVE,Palaeopropithecus sp. UA6184,A.322026,=,B.322026,Palaeopropithecus sp. UA6184,{same-name & same-rank}
-__________MOVE,Palaeopropithecus sp. KPK-2005,A.322027,=,B.322027,Palaeopropithecus sp. KPK-2005,{same-name & same-rank}
-____NO CHANGE,Chiromyiformes,A.376916,=,B.376916,Chiromyiformes,{same-name & same-rank}
-______NO CHANGE,Daubentoniidae,A.30613,=,B.30613,Daubentoniidae,{same-name & same-rank}
-________...,,,,,,2 unchanged children
-______MOVE,Lorisidae,A.9461,=,B.9461,Lorisidae,{same-name & same-rank}
-________NO CHANGE,Loris,A.9467,=,B.9467,Loris,{same-name & same-rank}
-__________NO CHANGE,Loris tardigradus,A.9468,=,B.9468,Loris tardigradus,{same-name & same-rank}
-____________NO CHANGE,Loris tardigradus nordicus,A.261740,=,B.261740,Loris tardigradus nordicus,{same-name & same-rank}
-____________GRAFT,,,,B.1738049,Loris tardigradus tardigradus,
-__________NO CHANGE,Loris lydekkerianus,A.300163,=,B.300163,Loris lydekkerianus,{same-name & same-rank}
-____________NO CHANGE,Loris lydekkerianus malabaricus,A.300166,=,B.300166,Loris lydekkerianus malabaricus,{same-name & same-rank}
-____________GRAFT,,,,B.1738050,Loris lydekkerianus lydekkerianus,
-________NO CHANGE,Nycticebus,A.9469,=,B.9469,Nycticebus,{same-name & same-rank}
-__________NO CHANGE,Nycticebus coucang,A.9470,=,B.9470,Nycticebus coucang,{same-name & same-rank}
-____________NO CHANGE,Nycticebus coucang coucang,A.310933,=,B.310933,Nycticebus coucang coucang,{same-name & same-rank}
-____________GRAFT,,,,B.2020906,Nycticebus coucang insularis,
-__________CHANGE NAME,Nycticebus intermedius,A.101277,=,B.101278,Nycticebus pygmaeus,[same-name → synonym-of]
-__________NO CHANGE,Nycticebus pygmaeus,A.101278,=,B.101278,Nycticebus pygmaeus,{same-name & same-rank}
-__________NO CHANGE,Nycticebus bengalensis,A.261741,=,B.261741,Nycticebus bengalensis,{same-name & same-rank}
-__________NO CHANGE,Nycticebus menagensis,A.310932,=,B.310932,Nycticebus menagensis,{same-name & same-rank}
-__________NO CHANGE,Nycticebus javanicus,A.310934,=,B.310934,Nycticebus javanicus,{same-name & same-rank}
-__________GRAFT,,,,B.2646861,unclassified Nycticebus,
-__________MOVE,Nycticebus sp.,A.108082,=,B.108082,Nycticebus sp.,{same-name & same-rank}
-________NO CHANGE,Perodicticus,A.9471,=,B.9471,Perodicticus,{same-name & same-rank}
-__________...,,,,,,2 unchanged children
-________NO CHANGE,Arctocebus,A.261738,=,B.261738,Arctocebus,{same-name & same-rank}
-__________...,,,,,,2 unchanged children
-____NO CHANGE,Lorisiformes,A.376917,=,B.376917,Lorisiformes,{same-name & same-rank}
-______NO CHANGE,Galagidae,A.40297,=,B.40297,Galagidae,{same-name & same-rank}
-________NO CHANGE,Galago,A.9462,=,B.9462,Galago,{same-name & same-rank}
-__________NO CHANGE,Galago senegalensis,A.9465,=,B.9465,Galago senegalensis,{same-name & same-rank}
+__________OPTION,,,=,B.2619300,unclassified Palaeopropithecus,ext =
+__________NO CHANGE,Palaeopropithecus sp. UA4466,A.322025,=,B.322025,Palaeopropithecus sp. UA4466,ext =
+__________NO CHANGE,Palaeopropithecus sp. UA6184,A.322026,=,B.322026,Palaeopropithecus sp. UA6184,ext =
+__________NO CHANGE,Palaeopropithecus sp. KPK-2005,A.322027,=,B.322027,Palaeopropithecus sp. KPK-2005,ext =
+____REFORM,,,><,B.376917,Lorisiformes,ext ~><
+____INSERT,Lorisiformes,A.376917,>,B.40297,Galagidae,ext ~>
+______MOVE,Galagidae,A.40297,=,B.40297,Galagidae,ext ~=
+________NO CHANGE,Galago,A.9462,=,B.9462,Galago,ext ~=
+__________REMOVE,Galago thomasi,A.867376,,,,0 right nodes match this left node
+__________NO CHANGE,Galago senegalensis,A.9465,=,B.9465,Galago senegalensis,ext ~=
 ____________GRAFT,,,,B.1738048,Galago senegalensis senegalensis,
 ____________GRAFT,,,,B.1738052,Galago senegalensis braccatus,
-__________NO CHANGE,Galago moholi,A.30609,=,B.30609,Galago moholi,{same-name & same-rank}
-__________NO CHANGE,Galago alleni,A.34830,=,B.34830,Galago alleni,{same-name & same-rank}
-__________NO CHANGE,Galago gallarum,A.111173,=,B.111173,Galago gallarum,{same-name & same-rank}
-__________NO CHANGE,Galago matschiei,A.135486,=,B.135486,Galago matschiei,{same-name & same-rank}
-__________NO CHANGE,Galago gabonensis,A.261731,=,B.261731,Galago gabonensis,{same-name & same-rank}
-__________NO CHANGE,Galago granti,A.261732,=,B.261732,Galago granti,{same-name & same-rank}
-__________GRAFT,,,,B.2628747,unclassified Galago,
-__________MOVE,Galago sp.,A.9464,=,B.9464,Galago sp.,{same-name & same-rank}
-__________MOVE,Galago thomasi,A.867376,=,B.867376,Galagoides thomasi,[same-name → synonym-of]
-________NO CHANGE,Otolemur,A.30610,=,B.30610,Otolemur,{same-name & same-rank}
-__________...,,,,,,5 unchanged children
-________NO CHANGE,Galagoides,A.89671,=,B.89671,Galagoides,{same-name & same-rank}
-__________NO CHANGE,Galagoides demidoff,A.89672,=,B.89672,Galagoides demidoff,{same-name & same-rank}
+__________NO CHANGE,Galago moholi,A.30609,=,B.30609,Galago moholi,ext =
+__________NO CHANGE,Galago alleni,A.34830,=,B.34830,Galago alleni,ext =
+__________NO CHANGE,Galago gallarum,A.111173,=,B.111173,Galago gallarum,ext =
+__________NO CHANGE,Galago matschiei,A.135486,=,B.135486,Galago matschiei,ext =
+__________NO CHANGE,Galago gabonensis,A.261731,=,B.261731,Galago gabonensis,ext =
+__________NO CHANGE,Galago granti,A.261732,=,B.261732,Galago granti,ext =
+__________MULTIPLE,Galago sp.,A.9464,?,,,2 right nodes match this left node
+____________ELIDE,,,<,B.2628747,unclassified Galago,ext ~>-of
+____________OPTION,,,=,B.9464,Galago sp.,ext =
+________NO CHANGE,Otolemur,A.30610,=,B.30610,Otolemur,ext =
+__________NO CHANGE,Otolemur crassicaudatus,A.9463,=,B.9463,Otolemur crassicaudatus,ext =
+__________INSERT,Otolemur garnettii,A.30611,>,B.477174,Otolemur garnettii garnettii,ext ~>
+____________MULTIPLE,Otolemur garnettii garnettii,A.477174,?,,,2 right nodes match this left node
+______________ELIDE,,,<,B.30611,Otolemur garnettii,ext ~>-of
+______________OPTION,,,=,B.477174,Otolemur garnettii garnettii,ext =
+__________NO CHANGE,Otolemur monteiri,A.337212,=,B.337212,Otolemur monteiri,ext =
+____________...,,,,,,2 unchanged children
+________NO CHANGE,Galagoides,A.89671,=,B.89671,Galagoides,ext ~=
+__________NO CHANGE,Galagoides demidoff,A.89672,=,B.89672,Galagoides demidoff,ext ~=
 ____________GRAFT,,,,B.1738051,Galagoides demidoff murinus,
-__________NO CHANGE,Galagoides zanzibaricus,A.111174,=,B.111174,Galagoides zanzibaricus,{same-name & same-rank}
+__________NO CHANGE,Galagoides zanzibaricus,A.111174,=,B.111174,Galagoides zanzibaricus,ext ~=
 ____________GRAFT,,,,B.1738046,Galagoides zanzibaricus udzungwensis,
 ____________GRAFT,,,,B.1738053,Galagoides zanzibaricus zanzibaricus,
-__________NO CHANGE,Galagoides orinus,A.337210,=,B.337210,Galagoides orinus,{same-name & same-rank}
+__________NO CHANGE,Galagoides orinus,A.337210,=,B.337210,Galagoides orinus,ext =
 __________GRAFT,,,,B.867376,Galagoides thomasi,
-__________NO CHANGE,Galagoides cocos,A.1487601,=,B.1487601,Galagoides cocos,{same-name & same-rank}
+__________NO CHANGE,Galagoides cocos,A.1487601,=,B.1487601,Galagoides cocos,ext =
 __________GRAFT,,,,B.1738047,Galagoides rondoensis,
-________NO CHANGE,Euoticus,A.261735,=,B.261735,Euoticus,{same-name & same-rank}
-__________...,,,,,,1 unchanged children
+________INSERT,Euoticus,A.261735,>,B.261736,Euoticus elegantulus,ext ~>
+__________MULTIPLE,Euoticus elegantulus,A.261736,?,,,2 right nodes match this left node
+____________ELIDE,,,<,B.261735,Euoticus,ext ~>-of
+____________OPTION,,,=,B.261736,Euoticus elegantulus,ext =
 ________GRAFT,,,,B.2604441,Paragalago,
-__NO CHANGE,Haplorrhini,A.376913,=,B.376913,Haplorrhini,{same-name & same-rank}
-____NO CHANGE,Simiiformes,A.314293,=,B.314293,Simiiformes,{same-name & same-rank}
-______NO CHANGE,Platyrrhini,A.9479,=,B.9479,Platyrrhini,{same-name & same-rank}
-________NO CHANGE,Cebidae,A.9498,=,B.9498,Cebidae,{same-name & same-rank}
-__________NO CHANGE,Callitrichinae,A.9480,=,B.9480,Callitrichinae,{same-name & same-rank}
-____________MULTIPLE,Callithrix,A.9481,?,,,4 right nodes match this left node
+__NO CHANGE,Haplorrhini,A.376913,=,B.376913,Haplorrhini,ext ~=
+____NO CHANGE,Simiiformes,A.314293,=,B.314293,Simiiformes,ext ~=
+______NO CHANGE,Platyrrhini,A.9479,=,B.9479,Platyrrhini,ext ~=
+________NO CHANGE,Cebidae,A.9498,=,B.9498,Cebidae,ext ~=
+__________NO CHANGE,Callitrichinae,A.9480,=,B.9480,Callitrichinae,ext ~=
+____________MULTIPLE,Callithrix,A.9481,?,,,3 right nodes match this left node
 ______________REMOVE,Callithrix argentata,A.9482,,,,0 right nodes match this left node
-________________MOVE,Callithrix argentata argentata,A.867362,=,B.867362,Mico argentatus argentatus,[same-name → synonym-of]
-______________OPTION,,,=,B.9481,Callithrix,{same-name & same-rank}
-______________OPTION,,,=,B.1965096,Callithrix,same-name
-______________MOVE,Callithrix jacchus,A.9483,=,B.9483,Callithrix jacchus,{same-name & same-rank}
-______________MOVE,Callithrix sp.,A.9485,=,B.9485,Callithrix sp.,{same-name & same-rank}
-______________MOVE,Callithrix geoffroyi,A.52231,=,B.52231,Callithrix geoffroyi,{same-name & same-rank}
-______________MOVE,Callithrix aurita,A.57375,=,B.57375,Callithrix aurita,{same-name & same-rank}
-______________MOVE,Callithrix penicillata,A.57378,=,B.57378,Callithrix penicillata,{same-name & same-rank}
-______________MOVE,Callithrix sp. DB-2003,A.217956,=,B.217956,Callithrix sp. DB-2003,{same-name & same-rank}
-______________MOVE,Callithrix kuhlii,A.867363,=,B.867363,Callithrix kuhlii,{same-name & same-rank}
-______________MOVE,Callithrix flaviceps,A.1346251,=,B.1346251,Callithrix flaviceps,{same-name & same-rank}
-______________MOVE,Callithrix jacchus x penicillata,A.1476500,=,B.1476500,Callithrix jacchus x penicillata,{same-name & same-rank}
-______________OPTION,,,=,B.1965109,Cebuella,[has-synonym → same-name]
-______________MOVE,Callithrix pygmaea,A.9493,=,B.9493,Callithrix pygmaea,{same-name & same-rank}
-______________GRAFT,,,,B.1965113,Calibella,
-______________MOVE,Callithrix humilis,A.666519,=,B.666519,Callithrix humilis,{same-name & same-rank}
-______________INSERT,,,>,B.1965102,Mico,[part-of → same-name]
+________________REMOVE,Callithrix argentata argentata,A.867362,,,,0 right nodes match this left node
+______________REMOVE,Callithrix melanura,A.1090896,,,,0 right nodes match this left node
+______________REFORM,,,><,B.9481,Callithrix,ext ~><
+______________REFORM,,,><,B.1965096,Callithrix,ext ~><
+______________MOVE,Callithrix jacchus,A.9483,=,B.9483,Callithrix jacchus,ext =
+______________MOVE,Callithrix sp.,A.9485,=,B.9485,Callithrix sp.,ext =
+______________MOVE,Callithrix geoffroyi,A.52231,=,B.52231,Callithrix geoffroyi,ext =
+______________MOVE,Callithrix aurita,A.57375,=,B.57375,Callithrix aurita,ext =
+______________MOVE,Callithrix penicillata,A.57378,=,B.57378,Callithrix penicillata,ext =
+______________MOVE,Callithrix sp. DB-2003,A.217956,=,B.217956,Callithrix sp. DB-2003,ext =
+______________MOVE,Callithrix kuhlii,A.867363,=,B.867363,Callithrix kuhlii,ext =
+______________MOVE,Callithrix flaviceps,A.1346251,=,B.1346251,Callithrix flaviceps,ext =
+______________MOVE,Callithrix jacchus x penicillata,A.1476500,=,B.1476500,Callithrix jacchus x penicillata,ext =
+______________MULTIPLE,Callithrix pygmaea,A.9493,?,,,2 right nodes match this left node
+________________ELIDE,,,<,B.1965109,Cebuella,ext ~>-of
+________________OPTION,,,=,B.9493,Callithrix pygmaea,ext =
+______________MULTIPLE,Callithrix humilis,A.666519,?,,,2 right nodes match this left node
+________________ELIDE,,,<,B.1965113,Calibella,ext ~>-of
+________________OPTION,,,=,B.666519,Callithrix humilis,ext =
+______________REFORM,,,><,B.1965102,Mico,ext ~><
 ______________GRAFT,,,,B.9482,Mico argentatus,
-______________MOVE,Callithrix emiliae,A.48842,=,B.48842,Mico emiliae,{[same-name → synonym-of] & ...}
-______________MOVE,Callithrix humeralifera,A.52232,=,B.52232,Mico humeralifer,{[same-name → synonym-of] & ...}
-______________MOVE,Callithrix mauesi,A.57377,=,B.57377,Mico mauesi,{[same-name → synonym-of] & ...}
-______________MOVE,Callithrix cf. emiliae,A.198701,=,B.198701,Mico cf. emiliae,{[same-name → synonym-of] & ...}
-______________MOVE,Callithrix saterei,A.198702,=,B.198702,Mico saterei,{[same-name → synonym-of] & ...}
-______________MOVE,Callithrix melanura,A.1090896,=,B.1090896,Mico melanurus,[same-name → synonym-of]
+______________MOVE,Callithrix emiliae,A.48842,=,B.48842,Mico emiliae,ext =
+______________MOVE,Callithrix humeralifera,A.52232,=,B.52232,Mico humeralifer,ext =
+______________MOVE,Callithrix mauesi,A.57377,=,B.57377,Mico mauesi,ext =
+______________MOVE,Callithrix cf. emiliae,A.198701,=,B.198701,Mico cf. emiliae,ext =
+______________MOVE,Callithrix saterei,A.198702,=,B.198702,Mico saterei,ext =
 ______________GRAFT,,,,B.1090896,Mico melanurus,
-______________MOVE,Callithrix rondoni,A.1127763,=,B.1127763,Mico rondoni,{[same-name → synonym-of] & ...}
+______________MOVE,Callithrix rondoni,A.1127763,=,B.1127763,Mico rondoni,ext =
 ______________GRAFT,,,,B.1758231,Mico chrysoleucus,
 ______________GRAFT,,,,B.2592805,Mico intermedius,
 ______________GRAFT,,,,B.2592806,Mico leucippe,
 ______________GRAFT,,,,B.2592807,Mico marcai,
 ______________GRAFT,,,,B.2592808,Mico munduruku,
-____________NO CHANGE,Saguinus,A.9486,=,B.9486,Saguinus,{same-name & same-rank}
+____________MULTIPLE,Saguinus,A.9486,?,,,2 right nodes match this left node
+______________REMOVE,Saguinus fuscicollis,A.9487,,,,0 right nodes match this left node
+________________REMOVE,Saguinus fuscicollis fuscicollis,A.48018,,,,0 right nodes match this left node
+________________REMOVE,Saguinus fuscicollis weddelli,A.343424,,,,0 right nodes match this left node
+________________REMOVE,Saguinus fuscicollis leucogenys,A.881946,,,,0 right nodes match this left node
+________________REMOVE,Saguinus fuscicollis illigeri,A.881947,,,,0 right nodes match this left node
+________________REMOVE,Saguinus fuscicollis nigrifrons,A.881949,,,,0 right nodes match this left node
+________________REMOVE,Saguinus fuscicollis lagonotus,A.881950,,,,0 right nodes match this left node
 ______________REMOVE,Saguinus nigricollis,A.9489,,,,0 right nodes match this left node
 ________________REMOVE,Saguinus nigricollis nigricollis,A.873070,,,,0 right nodes match this left node
 ______________REMOVE,Saguinus tripartitus,A.122388,,,,0 right nodes match this left node
-______________NO CHANGE,Saguinus mystax,A.9488,=,B.9488,Saguinus mystax,{same-name & same-rank}
-________________...,,,,,,1 unchanged children
-______________NO CHANGE,Saguinus oedipus,A.9490,=,B.9490,Saguinus oedipus,{same-name & same-rank}
-______________NO CHANGE,Saguinus imperator,A.9491,=,B.9491,Saguinus imperator,{same-name & same-rank}
-________________...,,,,,,1 unchanged children
-______________NO CHANGE,Saguinus midas,A.30586,=,B.30586,Saguinus midas,{same-name & same-rank}
-________________...,,,,,,1 unchanged children
-______________NO CHANGE,Saguinus bicolor,A.37588,=,B.37588,Saguinus bicolor,{same-name & same-rank}
-________________...,,,,,,1 unchanged children
-______________NO CHANGE,Saguinus geoffroyi,A.43778,=,B.43778,Saguinus geoffroyi,{same-name & same-rank}
-______________NO CHANGE,Saguinus labiatus,A.78454,=,B.78454,Saguinus labiatus,{same-name & same-rank}
-________________...,,,,,,1 unchanged children
-______________NO CHANGE,Saguinus leucopus,A.290597,=,B.290597,Saguinus leucopus,{same-name & same-rank}
-______________NO CHANGE,Saguinus niger,A.356665,=,B.356665,Saguinus niger,{same-name & same-rank}
-______________NO CHANGE,Saguinus martinsi,A.356666,=,B.356666,Saguinus martinsi,{same-name & same-rank}
-______________NO CHANGE,Saguinus melanoleucus,A.873067,=,B.873067,Saguinus melanoleucus,{same-name & same-rank}
-________________...,,,,,,1 unchanged children
-______________NO CHANGE,Saguinus graellsi,A.873073,=,B.873073,Saguinus graellsi,{same-name & same-rank}
-______________NO CHANGE,Saguinus inustus,A.1079039,=,B.1079039,Saguinus inustus,{same-name & same-rank}
+______________OPTION,,,=,B.9486,Saguinus,ext ~=
+______________INSERT,Saguinus mystax,A.9488,>,B.873069,Saguinus mystax mystax,ext ~>
+________________MULTIPLE,Saguinus mystax mystax,A.873069,?,,,2 right nodes match this left node
+__________________ELIDE,,,<,B.9488,Saguinus mystax,ext ~>-of
+__________________OPTION,,,=,B.873069,Saguinus mystax mystax,ext =
+______________NO CHANGE,Saguinus oedipus,A.9490,=,B.9490,Saguinus oedipus,ext =
+______________INSERT,Saguinus imperator,A.9491,>,B.881951,Saguinus imperator subgrisescens,ext ~>
+________________MULTIPLE,Saguinus imperator subgrisescens,A.881951,?,,,2 right nodes match this left node
+__________________ELIDE,,,<,B.9491,Saguinus imperator,ext ~>-of
+__________________OPTION,,,=,B.881951,Saguinus imperator subgrisescens,ext =
+______________INSERT,Saguinus midas,A.30586,>,B.78354,Saguinus midas midas,ext ~>
+________________MULTIPLE,Saguinus midas midas,A.78354,?,,,2 right nodes match this left node
+__________________ELIDE,,,<,B.30586,Saguinus midas,ext ~>-of
+__________________OPTION,,,=,B.78354,Saguinus midas midas,ext =
+______________INSERT,Saguinus bicolor,A.37588,>,B.37589,Saguinus bicolor bicolor,ext ~>
+________________MULTIPLE,Saguinus bicolor bicolor,A.37589,?,,,2 right nodes match this left node
+__________________ELIDE,,,<,B.37588,Saguinus bicolor,ext ~>-of
+__________________OPTION,,,=,B.37589,Saguinus bicolor bicolor,ext =
+______________NO CHANGE,Saguinus geoffroyi,A.43778,=,B.43778,Saguinus geoffroyi,ext =
+______________INSERT,Saguinus labiatus,A.78454,>,B.873066,Saguinus labiatus labiatus,ext ~>
+________________MULTIPLE,Saguinus labiatus labiatus,A.873066,?,,,2 right nodes match this left node
+__________________ELIDE,,,<,B.78454,Saguinus labiatus,ext ~>-of
+__________________OPTION,,,=,B.873066,Saguinus labiatus labiatus,ext =
+______________NO CHANGE,Saguinus leucopus,A.290597,=,B.290597,Saguinus leucopus,ext =
+______________NO CHANGE,Saguinus niger,A.356665,=,B.356665,Saguinus niger,ext =
+______________NO CHANGE,Saguinus martinsi,A.356666,=,B.356666,Saguinus martinsi,ext =
+______________INSERT,Saguinus melanoleucus,A.873067,>,B.873068,Saguinus melanoleucus melanoleucus,ext ~>
+________________MULTIPLE,Saguinus melanoleucus melanoleucus,A.873068,?,,,2 right nodes match this left node
+__________________ELIDE,,,<,B.873067,Saguinus melanoleucus,ext ~>-of
+__________________OPTION,,,=,B.873068,Saguinus melanoleucus melanoleucus,ext =
+______________NO CHANGE,Saguinus graellsi,A.873073,=,B.873073,Saguinus graellsi,ext =
+______________NO CHANGE,Saguinus inustus,A.1079039,=,B.1079039,Saguinus inustus,ext =
 ______________GRAFT,,,,B.2586293,Saguinus geoffroyi x Saguinus leucopus,
 ______________GRAFT,,,,B.2586294,Saguinus oedipus x Saguinus leucopus,
-______________GRAFT,,,,B.2642123,unclassified Saguinus,
-______________MOVE,Saguinus sp.,A.100754,=,B.100754,Saguinus sp.,{same-name & same-rank}
-______________MOVE,Saguinus sp. T1030,A.260575,=,B.260575,Saguinus sp. T1030,{same-name & same-rank}
-______________MOVE,Saguinus fuscicollis,A.9487,=,B.9487,Leontocebus fuscicollis,[same-name → synonym-of]
-________________REMOVE,Saguinus fuscicollis fuscicollis,A.48018,,,,0 right nodes match this left node
-________________CHANGE NAME,Saguinus fuscicollis weddelli,A.343424,=,B.343424,Leontocebus fuscicollis weddelli,[same-name → synonym-of]
-________________CHANGE NAME,Saguinus fuscicollis leucogenys,A.881946,=,B.881946,Leontocebus fuscicollis leucogenys,[same-name → synonym-of]
-________________CHANGE NAME,Saguinus fuscicollis illigeri,A.881947,=,B.881947,Leontocebus fuscicollis illigeri,[same-name → synonym-of]
-________________CHANGE NAME,Saguinus fuscicollis nigrifrons,A.881949,=,B.881949,Leontocebus fuscicollis nigrifrons,[same-name → synonym-of]
-________________CHANGE NAME,Saguinus fuscicollis lagonotus,A.881950,=,B.881950,Leontocebus fuscicollis lagonotus,[same-name → synonym-of]
-____________NO CHANGE,Callimico,A.9494,=,B.9494,Callimico,{same-name & same-rank}
-______________NO CHANGE,Callimico goeldii,A.9495,=,B.9495,Callimico goeldii,{same-name & same-rank}
-______________GRAFT,,,,B.2634122,unclassified Callimico,
-______________MOVE,Callimico sp. MAS-2011,A.1090914,=,B.1090914,Callimico sp. MAS-2011,{same-name & same-rank}
-____________NO CHANGE,Leontopithecus,A.30587,=,B.30587,Leontopithecus,{same-name & same-rank}
+______________REFORM,,,><,B.2642123,unclassified Saguinus,ext ~><
+______________MOVE,Saguinus sp.,A.100754,=,B.100754,Saguinus sp.,ext =
+______________MOVE,Saguinus sp. T1030,A.260575,=,B.260575,Saguinus sp. T1030,ext =
+______________GRAFT,,,,B.1967463,Saguinus sp. EG-2017,
+____________NO CHANGE,Callimico,A.9494,=,B.9494,Callimico,ext ~=
+______________NO CHANGE,Callimico goeldii,A.9495,=,B.9495,Callimico goeldii,ext =
+______________MULTIPLE,Callimico sp. MAS-2011,A.1090914,?,,,2 right nodes match this left node
+________________ELIDE,,,<,B.2634122,unclassified Callimico,ext ~>-of
+________________OPTION,,,=,B.1090914,Callimico sp. MAS-2011,ext =
+________________GRAFT,,,,B.1758239,Callimico sp.,
+____________NO CHANGE,Leontopithecus,A.30587,=,B.30587,Leontopithecus,ext =
 ______________...,,,,,,3 unchanged children
 ____________GRAFT,,,,B.2681187,Leontocebus,
-__________NO CHANGE,Cebinae,A.38070,=,B.38070,Cebinae,{same-name & same-rank}
-____________NO CHANGE,Cebus,A.9513,=,B.9513,Cebus,{same-name & same-rank}
-______________NO CHANGE,Cebus albifrons,A.9514,=,B.9514,Cebus albifrons,{same-name & same-rank}
-______________NO CHANGE,Cebus capucinus,A.9516,=,B.9516,Cebus capucinus,{same-name & same-rank}
+__________NO CHANGE,Cebinae,A.38070,=,B.38070,Cebinae,ext ~=
+____________MULTIPLE,Cebus,A.9513,?,,,2 right nodes match this left node
+______________OPTION,,,=,B.9513,Cebus,ext ~=
+______________NO CHANGE,Cebus albifrons,A.9514,=,B.9514,Cebus albifrons,ext =
+______________NO CHANGE,Cebus capucinus,A.9516,=,B.9516,Cebus capucinus,ext ~=
 ________________GRAFT,,,,B.1737458,Cebus capucinus imitator,
-______________NO CHANGE,Cebus kaapori,A.37294,=,B.37294,Cebus kaapori,{same-name & same-rank}
-______________NO CHANGE,Cebus olivaceus,A.37295,=,B.37295,Cebus olivaceus,{same-name & same-rank}
-________________NO CHANGE,Cebus olivaceus nigrivittatus,A.1090893,=,B.1090893,Cebus olivaceus nigrivittatus,{same-name & same-rank}
-________________GRAFT,,,,B.1985287,Cebus olivaceus castaneus,
+______________NO CHANGE,Cebus kaapori,A.37294,=,B.37294,Cebus kaapori,ext =
+______________INSERT,Cebus olivaceus,A.37295,>,B.1090893,Cebus olivaceus nigrivittatus,ext ~>
+________________MULTIPLE,Cebus olivaceus nigrivittatus,A.1090893,?,,,2 right nodes match this left node
+__________________ELIDE,,,<,B.37295,Cebus olivaceus,ext ~>-of
+__________________OPTION,,,=,B.1090893,Cebus olivaceus nigrivittatus,ext =
+__________________GRAFT,,,,B.1985287,Cebus olivaceus castaneus,
 ______________GRAFT,,,,B.1985288,Cebus unicolor,
 ______________GRAFT,,,,B.1985289,Cebus versicolor,
-______________GRAFT,,,,B.2618788,unclassified Cebus,
-______________MOVE,Cebus sp.,A.9517,=,B.9517,Cebus sp.,{same-name & same-rank}
-______________MOVE,Cebus sp. MAS-2011,A.1090916,=,B.1090916,Cebus sp. MAS-2011,{same-name & same-rank}
-____________NO CHANGE,Sapajus,A.1532884,=,B.1532884,Sapajus,{same-name & same-rank}
-______________NO CHANGE,Sapajus apella,A.9515,=,B.9515,Sapajus apella,{same-name & same-rank}
+______________REFORM,,,><,B.2618788,unclassified Cebus,ext ~><
+______________MOVE,Cebus sp.,A.9517,=,B.9517,Cebus sp.,ext =
+______________MOVE,Cebus sp. MAS-2011,A.1090916,=,B.1090916,Cebus sp. MAS-2011,ext =
+______________GRAFT,,,,B.1967451,Cebus sp. 1 EG-2017,
+______________GRAFT,,,,B.1967452,Cebus sp. 2 EG-2017,
+____________NO CHANGE,Sapajus,A.1532884,=,B.1532884,Sapajus,ext ~=
+______________NO CHANGE,Sapajus apella,A.9515,=,B.9515,Sapajus apella,ext =
 ________________...,,,,,,2 unchanged children
-______________NO CHANGE,Sapajus xanthosternos,A.174599,=,B.174599,Sapajus xanthosternos,{same-name & same-rank}
-______________NO CHANGE,Sapajus cay,A.649471,=,B.649471,Sapajus cay,{same-name & same-rank}
-______________NO CHANGE,Sapajus nigritus,A.867366,=,B.867366,Sapajus nigritus,{same-name & same-rank}
-________________...,,,,,,1 unchanged children
-______________NO CHANGE,Sapajus flavius,A.1112861,=,B.1112861,Sapajus flavius,{same-name & same-rank}
-______________NO CHANGE,Sapajus libidinosus,A.1126382,=,B.1126382,Sapajus libidinosus,{same-name & same-rank}
+______________NO CHANGE,Sapajus xanthosternos,A.174599,=,B.174599,Sapajus xanthosternos,ext =
+______________NO CHANGE,Sapajus cay,A.649471,=,B.649471,Sapajus cay,ext =
+______________INSERT,Sapajus nigritus,A.867366,>,B.867367,Sapajus nigritus robustus,ext ~>
+________________MULTIPLE,Sapajus nigritus robustus,A.867367,?,,,2 right nodes match this left node
+__________________ELIDE,,,<,B.867366,Sapajus nigritus,ext ~>-of
+__________________OPTION,,,=,B.867367,Sapajus nigritus robustus,ext =
+______________NO CHANGE,Sapajus flavius,A.1112861,=,B.1112861,Sapajus flavius,ext =
+______________NO CHANGE,Sapajus libidinosus,A.1126382,=,B.1126382,Sapajus libidinosus,ext =
 ______________GRAFT,,,,B.2619504,unclassified Sapajus,
-__________NO CHANGE,unclassified Cebidae,A.38071,=,B.38071,unclassified Cebidae,{same-name & same-rank}
-____________...,,,,,,1 unchanged children
-__________NO CHANGE,Saimiriinae,A.378850,=,B.378850,Saimiriinae,{same-name & same-rank}
-____________NO CHANGE,Saimiri,A.9520,=,B.9520,Saimiri,{same-name & same-rank}
-______________NO CHANGE,Saimiri sciureus,A.9521,=,B.9521,Saimiri sciureus,{same-name & same-rank}
+__________INSERT,unclassified Cebidae,A.38071,>,B.168015,Aotinae gen. sp.,ext ~>
+____________MULTIPLE,Aotinae gen. sp.,A.168015,?,,,2 right nodes match this left node
+______________ELIDE,,,<,B.38071,unclassified Cebidae,ext ~>-of
+______________OPTION,,,=,B.168015,Aotinae gen. sp.,ext =
+__________INSERT,Saimiriinae,A.378850,>,B.9520,Saimiri,ext ~>
+____________MULTIPLE,Saimiri,A.9520,?,,,3 right nodes match this left node
+______________ELIDE,,,<,B.378850,Saimiriinae,ext ~>-of
+______________OPTION,,,=,B.9520,Saimiri,ext ~=
+______________NO CHANGE,Saimiri sciureus,A.9521,=,B.9521,Saimiri sciureus,ext =
 ________________...,,,,,,5 unchanged children
-______________NO CHANGE,Saimiri boliviensis,A.27679,=,B.27679,Saimiri boliviensis,{same-name & same-rank}
+______________NO CHANGE,Saimiri boliviensis,A.27679,=,B.27679,Saimiri boliviensis,ext =
 ________________...,,,,,,2 unchanged children
-______________NO CHANGE,Saimiri ustus,A.66265,=,B.66265,Saimiri ustus,{same-name & same-rank}
-______________NO CHANGE,Saimiri oerstedii,A.70928,=,B.70928,Saimiri oerstedii,{same-name & same-rank}
+______________NO CHANGE,Saimiri ustus,A.66265,=,B.66265,Saimiri ustus,ext =
+______________NO CHANGE,Saimiri oerstedii,A.70928,=,B.70928,Saimiri oerstedii,ext =
 ________________...,,,,,,2 unchanged children
-______________NO CHANGE,Saimiri vanzolinii,A.1561161,=,B.1561161,Saimiri vanzolinii,{same-name & same-rank}
-______________GRAFT,,,,B.2635411,unclassified Saimiri,
-______________MOVE,Saimiri sp. MAS-2011,A.1090919,=,B.1090919,Saimiri sp. MAS-2011,{same-name & same-rank}
-______________MOVE,Saimiri sp.,A.1561164,=,B.1561164,Saimiri sp.,{same-name & same-rank}
-________NO CHANGE,Aotidae,A.376918,=,B.376918,Aotidae,{same-name & same-rank}
-__________NO CHANGE,Aotus,A.9504,=,B.9504,Aotus,{same-name & same-rank}
-____________NO CHANGE,Aotus trivirgatus,A.9505,=,B.9505,Aotus trivirgatus,{same-name & same-rank}
-____________NO CHANGE,Aotus azarai,A.30591,=,B.30591,Aotus azarai,{same-name & same-rank}
+______________NO CHANGE,Saimiri vanzolinii,A.1561161,=,B.1561161,Saimiri vanzolinii,ext =
+______________REFORM,,,><,B.2635411,unclassified Saimiri,ext ~><
+______________MOVE,Saimiri sp. MAS-2011,A.1090919,=,B.1090919,Saimiri sp. MAS-2011,ext =
+______________MOVE,Saimiri sp.,A.1561164,=,B.1561164,Saimiri sp.,ext =
+______________GRAFT,,,,B.1967464,Saimiri sp. 1 EG-2017,
+______________GRAFT,,,,B.1967465,Saimiri sp. 2 EG-2017,
+______________GRAFT,,,,B.1967466,Saimiri sp. 3 EG-2017,
+________INSERT,Aotidae,A.376918,>,B.9504,Aotus,ext ~>
+__________MULTIPLE,Aotus,A.9504,?,,,3 right nodes match this left node
+____________ELIDE,,,<,B.376918,Aotidae,ext ~>-of
+____________OPTION,,,=,B.9504,Aotus,ext =
+____________NO CHANGE,Aotus trivirgatus,A.9505,=,B.9505,Aotus trivirgatus,ext =
+____________NO CHANGE,Aotus azarai,A.30591,=,B.30591,Aotus azarai,ext =
 ______________...,,,,,,3 unchanged children
-____________NO CHANGE,Aotus nancymaae,A.37293,=,B.37293,Aotus nancymaae,{same-name & same-rank}
-____________NO CHANGE,Aotus lemurinus,A.43147,=,B.43147,Aotus lemurinus,{same-name & same-rank}
-____________NO CHANGE,Aotus nigriceps,A.57175,=,B.57175,Aotus nigriceps,{same-name & same-rank}
-____________NO CHANGE,Aotus vociferans,A.57176,=,B.57176,Aotus vociferans,{same-name & same-rank}
-____________NO CHANGE,Aotus griseimembra,A.292213,=,B.292213,Aotus griseimembra,{same-name & same-rank}
-____________NO CHANGE,Aotus brumbacki,A.361674,=,B.361674,Aotus brumbacki,{same-name & same-rank}
-____________NO CHANGE,Aotus zonalis,A.1263727,=,B.1263727,Aotus zonalis,{same-name & same-rank}
-____________GRAFT,,,,B.2688256,unclassified Aotus (in: Chordata),
-____________MOVE,Aotus sp. NIM-2003,A.222417,=,B.222417,Aotus sp. NIM-2003,{same-name & same-rank}
-____________MOVE,Aotus sp.,A.231953,=,B.231953,Aotus sp.,{same-name & same-rank}
-____________MOVE,Aotus sp. PDE-2004,A.261316,=,B.261316,Aotus sp. PDE-2004,{same-name & same-rank}
-____________MOVE,Aotus sp. Aot1,A.413234,=,B.413234,Aotus sp. Aot1,{same-name & same-rank}
-____________MOVE,Aotus sp. SHM-2010,A.940829,=,B.940829,Aotus sp. SHM-2010,{same-name & same-rank}
-____________MOVE,Aotus sp. AVB-2011,A.1002694,=,B.1002694,Aotus sp. AVB-2011,{same-name & same-rank}
-____________MOVE,Aotus sp. MAS-2011,A.1090913,=,B.1090913,Aotus sp. MAS-2011,{same-name & same-rank}
-____________MOVE,Aotus sp. LC-2012,A.1230482,=,B.1230482,Aotus sp. LC-2012,{same-name & same-rank}
-________NO CHANGE,Pitheciidae,A.376919,=,B.376919,Pitheciidae,{same-name & same-rank}
-__________NO CHANGE,Pitheciinae,A.38039,=,B.38039,Pitheciinae,{same-name & same-rank}
-____________NO CHANGE,Chiropotes,A.9524,=,B.9524,Chiropotes,{same-name & same-rank}
-______________NO CHANGE,Chiropotes satanas,A.9525,=,B.9525,Chiropotes satanas,{same-name & same-rank}
-______________NO CHANGE,Chiropotes albinasus,A.198627,=,B.198627,Chiropotes albinasus,{same-name & same-rank}
-______________NO CHANGE,Chiropotes satanas x albinasus,A.202458,=,B.202458,Chiropotes satanas x albinasus,{same-name & same-rank}
-______________CHANGE NAME,Chiropotes utahicki,A.280160,=,B.280160,Chiropotes utahickae,[same-name → synonym-of]
+____________NO CHANGE,Aotus nancymaae,A.37293,=,B.37293,Aotus nancymaae,ext =
+____________NO CHANGE,Aotus lemurinus,A.43147,=,B.43147,Aotus lemurinus,ext =
+____________NO CHANGE,Aotus nigriceps,A.57175,=,B.57175,Aotus nigriceps,ext =
+____________NO CHANGE,Aotus vociferans,A.57176,=,B.57176,Aotus vociferans,ext =
+____________NO CHANGE,Aotus griseimembra,A.292213,=,B.292213,Aotus griseimembra,ext =
+____________NO CHANGE,Aotus brumbacki,A.361674,=,B.361674,Aotus brumbacki,ext =
+____________NO CHANGE,Aotus zonalis,A.1263727,=,B.1263727,Aotus zonalis,ext =
+____________REFORM,,,><,B.2688256,unclassified Aotus (in: Chordata),ext ><
+____________MOVE,Aotus sp. NIM-2003,A.222417,=,B.222417,Aotus sp. NIM-2003,ext =
+____________MOVE,Aotus sp.,A.231953,=,B.231953,Aotus sp.,ext =
+____________MOVE,Aotus sp. PDE-2004,A.261316,=,B.261316,Aotus sp. PDE-2004,ext =
+____________MOVE,Aotus sp. Aot1,A.413234,=,B.413234,Aotus sp. Aot1,ext =
+____________MOVE,Aotus sp. SHM-2010,A.940829,=,B.940829,Aotus sp. SHM-2010,ext =
+____________MOVE,Aotus sp. AVB-2011,A.1002694,=,B.1002694,Aotus sp. AVB-2011,ext =
+____________MOVE,Aotus sp. MAS-2011,A.1090913,=,B.1090913,Aotus sp. MAS-2011,ext =
+____________MOVE,Aotus sp. LC-2012,A.1230482,=,B.1230482,Aotus sp. LC-2012,ext =
+________NO CHANGE,Pitheciidae,A.376919,=,B.376919,Pitheciidae,ext ~=
+__________NO CHANGE,Pitheciinae,A.38039,=,B.38039,Pitheciinae,ext ~=
+____________NO CHANGE,Chiropotes,A.9524,=,B.9524,Chiropotes,ext ~=
+______________REMOVE,Chiropotes utahicki,A.280160,,,,0 right nodes match this left node
+______________NO CHANGE,Chiropotes satanas,A.9525,=,B.9525,Chiropotes satanas,ext =
+______________NO CHANGE,Chiropotes albinasus,A.198627,=,B.198627,Chiropotes albinasus,ext =
+______________NO CHANGE,Chiropotes satanas x albinasus,A.202458,=,B.202458,Chiropotes satanas x albinasus,ext =
 ______________GRAFT,,,,B.280160,Chiropotes utahickae,
-______________NO CHANGE,Chiropotes israelita,A.280163,=,B.280163,Chiropotes israelita,{same-name & same-rank}
-______________NO CHANGE,Chiropotes albinasus x satanas,A.626367,=,B.626367,Chiropotes albinasus x satanas,{same-name & same-rank}
-______________NO CHANGE,Chiropotes chiropotes,A.658221,=,B.658221,Chiropotes chiropotes,{same-name & same-rank}
-________________...,,,,,,1 unchanged children
-______________GRAFT,,,,B.2649368,unclassified Chiropotes,
-______________MOVE,Chiropotes sp. MAS-2011,A.1090917,=,B.1090917,Chiropotes sp. MAS-2011,{same-name & same-rank}
-____________NO CHANGE,Cacajao,A.30595,=,B.30595,Cacajao,{same-name & same-rank}
+______________NO CHANGE,Chiropotes israelita,A.280163,=,B.280163,Chiropotes israelita,ext =
+______________NO CHANGE,Chiropotes albinasus x satanas,A.626367,=,B.626367,Chiropotes albinasus x satanas,ext =
+______________INSERT,Chiropotes chiropotes,A.658221,>,B.1560631,Chiropotes chiropotes sagulata,ext ~>
+________________MULTIPLE,Chiropotes chiropotes sagulata,A.1560631,?,,,2 right nodes match this left node
+__________________ELIDE,,,<,B.658221,Chiropotes chiropotes,ext ~>-of
+__________________OPTION,,,=,B.1560631,Chiropotes chiropotes sagulata,ext =
+______________MULTIPLE,Chiropotes sp. MAS-2011,A.1090917,?,,,2 right nodes match this left node
+________________ELIDE,,,<,B.2649368,unclassified Chiropotes,ext ~>-of
+________________OPTION,,,=,B.1090917,Chiropotes sp. MAS-2011,ext =
+________________GRAFT,,,,B.1472258,Chiropotes sp. ZFMK_2008.244,
+________________GRAFT,,,,B.1758238,Chiropotes sp.,
+____________NO CHANGE,Cacajao,A.30595,=,B.30595,Cacajao,ext =
 ______________...,,,,,,6 unchanged children
-____________NO CHANGE,Pithecia,A.30597,=,B.30597,Pithecia,{same-name & same-rank}
-______________NO CHANGE,Pithecia irrorata,A.30598,=,B.30598,Pithecia irrorata,{same-name & same-rank}
-______________NO CHANGE,Pithecia pithecia,A.43777,=,B.43777,Pithecia pithecia,{same-name & same-rank}
-________________...,,,,,,1 unchanged children
-______________NO CHANGE,Pithecia monachus,A.595220,=,B.595220,Pithecia monachus,{same-name & same-rank}
+____________NO CHANGE,Pithecia,A.30597,=,B.30597,Pithecia,ext ~=
+______________NO CHANGE,Pithecia irrorata,A.30598,=,B.30598,Pithecia irrorata,ext =
+______________INSERT,Pithecia pithecia,A.43777,>,B.285955,Pithecia pithecia pithecia,ext ~>
+________________MULTIPLE,Pithecia pithecia pithecia,A.285955,?,,,2 right nodes match this left node
+__________________ELIDE,,,<,B.43777,Pithecia pithecia,ext ~>-of
+__________________OPTION,,,=,B.285955,Pithecia pithecia pithecia,ext =
+______________NO CHANGE,Pithecia monachus,A.595220,=,B.595220,Pithecia monachus,ext =
 ______________GRAFT,,,,B.2646430,unclassified Pithecia,
-__________NO CHANGE,Callicebinae,A.38069,=,B.38069,Callicebinae,{same-name & same-rank}
-____________NO CHANGE,Callicebus,A.9522,=,B.9522,Callicebus,{same-name & same-rank}
-______________NO CHANGE,Callicebus personatus,A.70814,=,B.70814,Callicebus personatus,{same-name & same-rank}
+__________INSERT,Callicebinae,A.38069,>,B.9522,Callicebus,ext ~>
+____________MULTIPLE,Callicebus,A.9522,?,,,3 right nodes match this left node
+______________REMOVE,Callicebus moloch,A.9523,,,,0 right nodes match this left node
+______________REMOVE,Callicebus torquatus,A.30592,,,,0 right nodes match this left node
+______________REMOVE,Callicebus hoffmannsi,A.78255,,,,0 right nodes match this left node
+______________REMOVE,Callicebus cupreus,A.202457,,,,0 right nodes match this left node
+______________REMOVE,Callicebus lugens,A.210166,,,,0 right nodes match this left node
+______________REMOVE,Callicebus brunneus,A.221704,,,,0 right nodes match this left node
+______________REMOVE,Callicebus donacophilus,A.230833,,,,0 right nodes match this left node
+________________REMOVE,Callicebus donacophilus donacophilus,A.285954,,,,0 right nodes match this left node
+______________REMOVE,Callicebus caligatus,A.867332,,,,0 right nodes match this left node
+______________REMOVE,Callicebus purinus,A.1560619,,,,0 right nodes match this left node
+______________ELIDE,,,<,B.38069,Callicebinae,ext ~>-of
+______________OPTION,,,=,B.9522,Callicebus,ext ~=
+______________NO CHANGE,Callicebus personatus,A.70814,=,B.70814,Callicebus personatus,ext =
 ________________...,,,,,,2 unchanged children
-______________NO CHANGE,Callicebus coimbrai,A.867333,=,B.867333,Callicebus coimbrai,{same-name & same-rank}
-______________NO CHANGE,Callicebus nigrifrons,A.867334,=,B.867334,Callicebus nigrifrons,{same-name & same-rank}
+______________NO CHANGE,Callicebus coimbrai,A.867333,=,B.867333,Callicebus coimbrai,ext =
+______________NO CHANGE,Callicebus nigrifrons,A.867334,=,B.867334,Callicebus nigrifrons,ext =
 ______________GRAFT,,,,B.1290433,Callicebus dubius,
 ______________GRAFT,,,,B.1861701,Callicebus caquetensis,
 ______________GRAFT,,,,B.1861702,Callicebus ornatus,
 ______________GRAFT,,,,B.1861703,Callicebus discolor,
-______________GRAFT,,,,B.2627897,unclassified Callicebus,
-______________MOVE,Callicebus sp.,A.116962,=,B.116962,Callicebus sp.,{same-name & same-rank}
-______________MOVE,Callicebus sp. MAS-2011,A.1090915,=,B.1090915,Callicebus sp. MAS-2011,{same-name & same-rank}
-______________MOVE,Callicebus moloch,A.9523,=,B.9523,Plecturocebus moloch,[same-name → synonym-of]
-______________MOVE,Callicebus hoffmannsi,A.78255,=,B.78255,Plecturocebus hoffmannsi,[same-name → synonym-of]
-______________MOVE,Callicebus cupreus,A.202457,=,B.202457,Plecturocebus cupreus,[same-name → synonym-of]
-______________MOVE,Callicebus donacophilus,A.230833,=,B.230833,Plecturocebus donacophilus,[same-name → synonym-of]
-________________CHANGE NAME,Callicebus donacophilus donacophilus,A.285954,=,B.285954,Plecturocebus donacophilus donacophilus,[same-name → synonym-of]
-______________MOVE,Callicebus caligatus,A.867332,=,B.867332,Plecturocebus caligatus,[same-name → synonym-of]
-______________MOVE,Callicebus brunneus,A.221704,=,B.1812042,Plecturocebus brunneus,[same-name → synonym-of]
-______________MOVE,Callicebus torquatus,A.30592,=,B.30592,Cheracebus torquatus,[same-name → synonym-of]
-______________MOVE,Callicebus lugens,A.210166,=,B.210166,Cheracebus lugens,[same-name → synonym-of]
-______________MOVE,Callicebus purinus,A.1560619,=,B.1560619,Cheracebus purinus,[same-name → synonym-of]
-____________GRAFT,,,,B.1812035,Plecturocebus,
-____________GRAFT,,,,B.1812102,Cheracebus,
+______________REFORM,,,><,B.2627897,unclassified Callicebus,ext ~><
+______________MOVE,Callicebus sp.,A.116962,=,B.116962,Callicebus sp.,ext =
+______________MOVE,Callicebus sp. MAS-2011,A.1090915,=,B.1090915,Callicebus sp. MAS-2011,ext =
+______________GRAFT,,,,B.1861704,Callicebus sp. 1 MH-2016,
+______________GRAFT,,,,B.1861705,Callicebus sp. 2 MH-2016,
+______________GRAFT,,,,B.1812035,Plecturocebus,
+______________GRAFT,,,,B.1812102,Cheracebus,
 __________GRAFT,,,,B.2490929,Xenothricinae,
-________NO CHANGE,Atelidae,A.378855,=,B.378855,Atelidae,{same-name & same-rank}
-__________NO CHANGE,Alouattinae,A.38066,=,B.38066,Alouattinae,{same-name & same-rank}
-____________NO CHANGE,Alouatta,A.9499,=,B.9499,Alouatta,{same-name & same-rank}
-______________NO CHANGE,Alouatta caraya,A.9502,=,B.9502,Alouatta caraya,{same-name & same-rank}
-______________NO CHANGE,Alouatta seniculus,A.9503,=,B.9503,Alouatta seniculus,{same-name & same-rank}
+________NO CHANGE,Atelidae,A.378855,=,B.378855,Atelidae,ext ~=
+__________INSERT,Alouattinae,A.38066,>,B.9499,Alouatta,ext ~>
+____________MULTIPLE,Alouatta,A.9499,?,,,2 right nodes match this left node
+______________ELIDE,,,<,B.38066,Alouattinae,ext ~>-of
+______________OPTION,,,=,B.9499,Alouatta,ext ~=
+______________NO CHANGE,Alouatta caraya,A.9502,=,B.9502,Alouatta caraya,ext =
+______________NO CHANGE,Alouatta seniculus,A.9503,=,B.9503,Alouatta seniculus,ext =
 ________________...,,,,,,2 unchanged children
-______________NO CHANGE,Alouatta palliata,A.30589,=,B.30589,Alouatta palliata,{same-name & same-rank}
+______________NO CHANGE,Alouatta palliata,A.30589,=,B.30589,Alouatta palliata,ext =
 ________________...,,,,,,5 unchanged children
-______________NO CHANGE,Alouatta belzebul,A.30590,=,B.30590,Alouatta belzebul,{same-name & same-rank}
-________________...,,,,,,1 unchanged children
-______________NO CHANGE,Alouatta sara,A.121123,=,B.121123,Alouatta sara,{same-name & same-rank}
-______________NO CHANGE,Alouatta stramineus,A.163110,=,B.163110,Alouatta stramineus,{same-name & same-rank}
-______________NO CHANGE,Alouatta pigra,A.182253,=,B.182253,Alouatta pigra,{same-name & same-rank}
-______________NO CHANGE,Alouatta guariba,A.182256,=,B.182256,Alouatta guariba,{same-name & same-rank}
-________________...,,,,,,1 unchanged children
+______________INSERT,Alouatta belzebul,A.30590,>,B.182257,Alouatta belzebul belzebul,ext ~>
+________________MULTIPLE,Alouatta belzebul belzebul,A.182257,?,,,2 right nodes match this left node
+__________________ELIDE,,,<,B.30590,Alouatta belzebul,ext ~>-of
+__________________OPTION,,,=,B.182257,Alouatta belzebul belzebul,ext =
+______________NO CHANGE,Alouatta sara,A.121123,=,B.121123,Alouatta sara,ext =
+______________NO CHANGE,Alouatta stramineus,A.163110,=,B.163110,Alouatta stramineus,ext =
+______________NO CHANGE,Alouatta pigra,A.182253,=,B.182253,Alouatta pigra,ext =
+______________INSERT,Alouatta guariba,A.182256,>,B.183328,Alouatta guariba clamitans,ext ~>
+________________MULTIPLE,Alouatta guariba clamitans,A.183328,?,,,2 right nodes match this left node
+__________________ELIDE,,,<,B.182256,Alouatta guariba,ext ~>-of
+__________________OPTION,,,=,B.183328,Alouatta guariba clamitans,ext =
 ______________GRAFT,,,,B.2487933,Alouatta palliata x Alouatta pigra,
-__________NO CHANGE,Atelinae,A.38068,=,B.38068,Atelinae,{same-name & same-rank}
-____________NO CHANGE,Ateles,A.9506,=,B.9506,Ateles,{same-name & same-rank}
-______________NO CHANGE,Ateles belzebuth,A.9507,=,B.9507,Ateles belzebuth,{same-name & same-rank}
+__________NO CHANGE,Atelinae,A.38068,=,B.38068,Atelinae,ext ~=
+____________MULTIPLE,Ateles,A.9506,?,,,2 right nodes match this left node
+______________OPTION,,,=,B.9506,Ateles,ext ~=
+______________NO CHANGE,Ateles belzebuth,A.9507,=,B.9507,Ateles belzebuth,ext =
 ________________...,,,,,,2 unchanged children
-______________NO CHANGE,Ateles fusciceps,A.9508,=,B.9508,Ateles fusciceps,{same-name & same-rank}
+______________NO CHANGE,Ateles fusciceps,A.9508,=,B.9508,Ateles fusciceps,ext =
 ________________...,,,,,,2 unchanged children
-______________NO CHANGE,Ateles geoffroyi,A.9509,=,B.9509,Ateles geoffroyi,{same-name & same-rank}
+______________NO CHANGE,Ateles geoffroyi,A.9509,=,B.9509,Ateles geoffroyi,ext =
 ________________...,,,,,,6 unchanged children
-______________NO CHANGE,Ateles paniscus,A.9510,=,B.9510,Ateles paniscus,{same-name & same-rank}
-______________NO CHANGE,Ateles paniscus x Ateles fusciceps,A.36234,=,B.36234,Ateles paniscus x Ateles fusciceps,{same-name & same-rank}
-______________NO CHANGE,unclassified Ateles,A.120432,=,B.120432,unclassified Ateles,{same-name & same-rank}
-________________NO CHANGE,Ateles sp. haplotype Abh9,A.119628,=,B.119628,Ateles sp. haplotype Abh9,{same-name & same-rank}
-________________NO CHANGE,Ateles sp. haplotype Abh10,A.119629,=,B.119629,Ateles sp. haplotype Abh10,{same-name & same-rank}
-________________NO CHANGE,Ateles sp. haplotype Abh11,A.119630,=,B.119630,Ateles sp. haplotype Abh11,{same-name & same-rank}
-________________NO CHANGE,Ateles sp. haplotype Agsubspp. 16,A.119631,=,B.119631,Ateles sp. haplotype Agsubspp. 16,{same-name & same-rank}
-________________NO CHANGE,Ateles sp. haplotype Afr19,A.119632,=,B.119632,Ateles sp. haplotype Afr19,{same-name & same-rank}
-________________NO CHANGE,Ateles sp. haplotype Afr20,A.119633,=,B.119633,Ateles sp. haplotype Afr20,{same-name & same-rank}
-________________NO CHANGE,Ateles sp. haplotype Afr21,A.119634,=,B.119634,Ateles sp. haplotype Afr21,{same-name & same-rank}
-________________NO CHANGE,Ateles sp. haplotype Abh19,A.119638,=,B.119638,Ateles sp. haplotype Abh19,{same-name & same-rank}
-________________NO CHANGE,Ateles sp. haplotype Agp13,A.119639,=,B.119639,Ateles sp. haplotype Agp13,{same-name & same-rank}
-________________NO CHANGE,Ateles sp. haplotype Afr27,A.119640,=,B.119640,Ateles sp. haplotype Afr27,{same-name & same-rank}
-________________NO CHANGE,Ateles sp. KO-2004,A.269772,=,B.269772,Ateles sp. KO-2004,{same-name & same-rank}
-________________NO CHANGE,Ateles sp. JPV-2004,A.278713,=,B.278713,Ateles sp. JPV-2004,{same-name & same-rank}
-________________GRAFT,,,,B.1967450,Ateles sp. EG-2017,
-______________MOVE,Ateles sp.,A.9511,=,B.9511,Ateles sp.,{same-name & same-rank}
-______________NO CHANGE,Ateles hybridus,A.129801,=,B.129801,Ateles hybridus,{same-name & same-rank}
-________________...,,,,,,1 unchanged children
-______________NO CHANGE,Ateles marginatus,A.1529884,=,B.1529884,Ateles marginatus,{same-name & same-rank}
-____________NO CHANGE,Lagothrix,A.9518,=,B.9518,Lagothrix,{same-name & same-rank}
-______________NO CHANGE,Lagothrix lagotricha,A.9519,=,B.9519,Lagothrix lagotricha,{same-name & same-rank}
-______________NO CHANGE,Lagothrix lugens,A.767355,=,B.767355,Lagothrix lugens,{same-name & same-rank}
-______________NO CHANGE,Lagothrix poeppigii,A.767356,=,B.767356,Lagothrix poeppigii,{same-name & same-rank}
-______________NO CHANGE,Lagothrix cana,A.767357,=,B.767357,Lagothrix cana,{same-name & same-rank}
+______________NO CHANGE,Ateles paniscus,A.9510,=,B.9510,Ateles paniscus,ext =
+______________NO CHANGE,Ateles paniscus x Ateles fusciceps,A.36234,=,B.36234,Ateles paniscus x Ateles fusciceps,ext =
+______________BREAK,unclassified Ateles,A.120432,><,B.120432,unclassified Ateles,ext ~><
+________________...,,,,,,12 unchanged children
+______________REFORM,,,><,B.120432,unclassified Ateles,ext ~><
+______________MOVE,Ateles sp.,A.9511,=,B.9511,Ateles sp.,ext =
+______________GRAFT,,,,B.1967450,Ateles sp. EG-2017,
+______________INSERT,Ateles hybridus,A.129801,>,B.1230481,Ateles hybridus hybridus,ext ~>
+________________MULTIPLE,Ateles hybridus hybridus,A.1230481,?,,,2 right nodes match this left node
+__________________ELIDE,,,<,B.129801,Ateles hybridus,ext ~>-of
+__________________OPTION,,,=,B.1230481,Ateles hybridus hybridus,ext =
+______________NO CHANGE,Ateles marginatus,A.1529884,=,B.1529884,Ateles marginatus,ext =
+____________NO CHANGE,Lagothrix,A.9518,=,B.9518,Lagothrix,ext ~=
+______________NO CHANGE,Lagothrix lagotricha,A.9519,=,B.9519,Lagothrix lagotricha,ext =
+______________NO CHANGE,Lagothrix lugens,A.767355,=,B.767355,Lagothrix lugens,ext =
+______________NO CHANGE,Lagothrix poeppigii,A.767356,=,B.767356,Lagothrix poeppigii,ext =
+______________NO CHANGE,Lagothrix cana,A.767357,=,B.767357,Lagothrix cana,ext =
 ______________GRAFT,,,,B.2565305,Lagothrix flavicauda,
 ______________GRAFT,,,,B.2565306,Lagothrix tschudii,
-______________GRAFT,,,,B.2645779,unclassified Lagothrix,
-______________MOVE,Lagothrix sp. CCS-2009a,A.638937,=,B.638937,Lagothrix sp. CCS-2009a,{same-name & same-rank}
-____________NO CHANGE,Brachyteles,A.30593,=,B.30593,Brachyteles,{same-name & same-rank}
+______________MULTIPLE,Lagothrix sp. CCS-2009a,A.638937,?,,,2 right nodes match this left node
+________________ELIDE,,,<,B.2645779,unclassified Lagothrix,ext ~>-of
+________________OPTION,,,=,B.638937,Lagothrix sp. CCS-2009a,ext =
+________________GRAFT,,,,B.1967456,Lagothrix sp. EG-2017,
+____________NO CHANGE,Brachyteles,A.30593,=,B.30593,Brachyteles,ext =
 ______________...,,,,,,2 unchanged children
-______NO CHANGE,Catarrhini,A.9526,=,B.9526,Catarrhini,{same-name & same-rank}
-________NO CHANGE,Cercopithecoidea,A.314294,=,B.314294,Cercopithecoidea,{same-name & same-rank}
-__________NO CHANGE,Cercopithecidae,A.9527,=,B.9527,Cercopithecidae,{same-name & same-rank}
-____________NO CHANGE,Cercopithecinae,A.9528,=,B.9528,Cercopithecinae,{same-name & same-rank}
-______________NO CHANGE,Cercocebus,A.9529,=,B.9529,Cercocebus,{same-name & same-rank}
-________________NO CHANGE,Cercocebus torquatus,A.9530,=,B.9530,Cercocebus torquatus,{same-name & same-rank}
-__________________...,,,,,,1 unchanged children
-________________NO CHANGE,Cercocebus atys,A.9531,=,B.9531,Cercocebus atys,{same-name & same-rank}
-__________________NO CHANGE,Cercocebus atys lunulatus,A.75570,=,B.75570,Cercocebus atys lunulatus,{same-name & same-rank}
-__________________GRAFT,,,,B.1592215,Cercocebus atys atys,
-________________NO CHANGE,Cercocebus galeritus,A.9532,=,B.9532,Cercocebus galeritus,{same-name & same-rank}
-________________NO CHANGE,Cercocebus chrysogaster,A.75569,=,B.75569,Cercocebus chrysogaster,{same-name & same-rank}
-________________NO CHANGE,Cercocebus agilis,A.255237,=,B.255237,Cercocebus agilis,{same-name & same-rank}
-______________NO CHANGE,Cercopithecus,A.9533,=,B.9533,Cercopithecus,{same-name & same-rank}
-________________NO CHANGE,Cercopithecus cephus,A.9535,=,B.9535,Cercopithecus cephus,{same-name & same-rank}
+______NO CHANGE,Catarrhini,A.9526,=,B.9526,Catarrhini,ext ~=
+________INSERT,Cercopithecoidea,A.314294,>,B.9527,Cercopithecidae,ext ~>
+__________MULTIPLE,Cercopithecidae,A.9527,?,,,2 right nodes match this left node
+____________ELIDE,,,<,B.314294,Cercopithecoidea,ext ~>-of
+____________OPTION,,,=,B.9527,Cercopithecidae,ext ~=
+____________NO CHANGE,Cercopithecinae,A.9528,=,B.9528,Cercopithecinae,ext ~=
+______________NO CHANGE,Cercocebus,A.9529,=,B.9529,Cercocebus,ext ~=
+________________INSERT,Cercocebus torquatus,A.9530,>,B.81944,Cercocebus torquatus torquatus,ext ~>
+__________________MULTIPLE,Cercocebus torquatus torquatus,A.81944,?,,,2 right nodes match this left node
+____________________ELIDE,,,<,B.9530,Cercocebus torquatus,ext ~>-of
+____________________OPTION,,,=,B.81944,Cercocebus torquatus torquatus,ext =
+________________INSERT,Cercocebus atys,A.9531,>,B.75570,Cercocebus atys lunulatus,ext ~>
+__________________MULTIPLE,Cercocebus atys lunulatus,A.75570,?,,,2 right nodes match this left node
+____________________ELIDE,,,<,B.9531,Cercocebus atys,ext ~>-of
+____________________OPTION,,,=,B.75570,Cercocebus atys lunulatus,ext =
+____________________GRAFT,,,,B.1592215,Cercocebus atys atys,
+________________NO CHANGE,Cercocebus galeritus,A.9532,=,B.9532,Cercocebus galeritus,ext =
+________________NO CHANGE,Cercocebus chrysogaster,A.75569,=,B.75569,Cercocebus chrysogaster,ext =
+________________NO CHANGE,Cercocebus agilis,A.255237,=,B.255237,Cercocebus agilis,ext =
+______________NO CHANGE,Cercopithecus,A.9533,=,B.9533,Cercopithecus,ext ~=
+________________REMOVE,Cercopithecus lhoesti,A.100224,,,,0 right nodes match this left node
+________________REMOVE,Cercopithecus preussi,A.147649,,,,0 right nodes match this left node
+__________________REMOVE,Cercopithecus preussi insularis,A.1137512,,,,0 right nodes match this left node
+__________________REMOVE,Cercopithecus preussi preussi,A.1137513,,,,0 right nodes match this left node
+________________REMOVE,Cercopithecus solatus,A.147650,,,,0 right nodes match this left node
+________________NO CHANGE,Cercopithecus cephus,A.9535,=,B.9535,Cercopithecus cephus,ext =
 __________________...,,,,,,3 unchanged children
-________________NO CHANGE,Cercopithecus hamlyni,A.9536,=,B.9536,Cercopithecus hamlyni,{same-name & same-rank}
-__________________...,,,,,,1 unchanged children
-________________NO CHANGE,Cercopithecus ascanius,A.36223,=,B.36223,Cercopithecus ascanius,{same-name & same-rank}
+________________INSERT,Cercopithecus hamlyni,A.9536,>,B.867373,Cercopithecus hamlyni hamlyni,ext ~>
+__________________MULTIPLE,Cercopithecus hamlyni hamlyni,A.867373,?,,,2 right nodes match this left node
+____________________ELIDE,,,<,B.9536,Cercopithecus hamlyni,ext ~>-of
+____________________OPTION,,,=,B.867373,Cercopithecus hamlyni hamlyni,ext =
+________________NO CHANGE,Cercopithecus ascanius,A.36223,=,B.36223,Cercopithecus ascanius,ext =
 __________________...,,,,,,4 unchanged children
-________________NO CHANGE,Cercopithecus diana,A.36224,=,B.36224,Cercopithecus diana,{same-name & same-rank}
-________________NO CHANGE,Cercopithecus mitis,A.36225,=,B.36225,Cercopithecus mitis,{same-name & same-rank}
+________________NO CHANGE,Cercopithecus diana,A.36224,=,B.36224,Cercopithecus diana,ext =
+________________NO CHANGE,Cercopithecus mitis,A.36225,=,B.36225,Cercopithecus mitis,ext =
 __________________...,,,,,,5 unchanged children
-________________NO CHANGE,Cercopithecus mona,A.36226,=,B.36226,Cercopithecus mona,{same-name & same-rank}
+________________NO CHANGE,Cercopithecus mona,A.36226,=,B.36226,Cercopithecus mona,ext =
 __________________...,,,,,,2 unchanged children
-________________NO CHANGE,Cercopithecus neglectus,A.36227,=,B.36227,Cercopithecus neglectus,{same-name & same-rank}
-________________NO CHANGE,Cercopithecus nictitans,A.36228,=,B.36228,Cercopithecus nictitans,{same-name & same-rank}
+________________NO CHANGE,Cercopithecus neglectus,A.36227,=,B.36227,Cercopithecus neglectus,ext =
+________________NO CHANGE,Cercopithecus nictitans,A.36228,=,B.36228,Cercopithecus nictitans,ext =
 __________________...,,,,,,2 unchanged children
-________________NO CHANGE,Cercopithecus petaurista,A.100487,=,B.100487,Cercopithecus petaurista,{same-name & same-rank}
+________________NO CHANGE,Cercopithecus petaurista,A.100487,=,B.100487,Cercopithecus petaurista,ext =
 __________________...,,,,,,2 unchanged children
-________________NO CHANGE,Cercopithecus pogonias,A.102108,=,B.102108,Cercopithecus pogonias,{same-name & same-rank}
+________________NO CHANGE,Cercopithecus pogonias,A.102108,=,B.102108,Cercopithecus pogonias,ext =
 __________________...,,,,,,4 unchanged children
-________________NO CHANGE,Cercopithecus erythrogaster,A.161496,=,B.161496,Cercopithecus erythrogaster,{same-name & same-rank}
+________________NO CHANGE,Cercopithecus erythrogaster,A.161496,=,B.161496,Cercopithecus erythrogaster,ext =
 __________________...,,,,,,2 unchanged children
-________________NO CHANGE,Cercopithecus erythrotis,A.167130,=,B.167130,Cercopithecus erythrotis,{same-name & same-rank}
+________________NO CHANGE,Cercopithecus erythrotis,A.167130,=,B.167130,Cercopithecus erythrotis,ext =
 __________________...,,,,,,2 unchanged children
-________________NO CHANGE,Cercopithecus wolfi,A.263448,=,B.263448,Cercopithecus wolfi,{same-name & same-rank}
+________________NO CHANGE,Cercopithecus wolfi,A.263448,=,B.263448,Cercopithecus wolfi,ext =
 __________________...,,,,,,3 unchanged children
-________________NO CHANGE,Cercopithecus campbelli,A.303588,=,B.303588,Cercopithecus campbelli,{same-name & same-rank}
-__________________...,,,,,,1 unchanged children
-________________NO CHANGE,Cercopithecus albogularis,A.867370,=,B.867370,Cercopithecus albogularis,{same-name & same-rank}
+________________INSERT,Cercopithecus campbelli,A.303588,>,B.304410,Cercopithecus campbelli lowei,ext ~>
+__________________MULTIPLE,Cercopithecus campbelli lowei,A.304410,?,,,2 right nodes match this left node
+____________________ELIDE,,,<,B.303588,Cercopithecus campbelli,ext ~>-of
+____________________OPTION,,,=,B.304410,Cercopithecus campbelli lowei,ext =
+________________NO CHANGE,Cercopithecus albogularis,A.867370,=,B.867370,Cercopithecus albogularis,ext =
 __________________...,,,,,,7 unchanged children
-________________NO CHANGE,Cercopithecus dryas,A.1137048,=,B.1137048,Cercopithecus dryas,{same-name & same-rank}
-________________NO CHANGE,Cercopithecus roloway,A.1137049,=,B.1137049,Cercopithecus roloway,{same-name & same-rank}
-________________NO CHANGE,Cercopithecus doggetti,A.1137474,=,B.1137474,Cercopithecus doggetti,{same-name & same-rank}
-________________NO CHANGE,Cercopithecus kandti,A.1137481,=,B.1137481,Cercopithecus kandti,{same-name & same-rank}
-________________NO CHANGE,Cercopithecus denti,A.1137511,=,B.1137511,Cercopithecus denti,{same-name & same-rank}
-________________NO CHANGE,Cercopithecus lomamiensis,A.1191211,=,B.1191211,Cercopithecus lomamiensis,{same-name & same-rank}
+________________NO CHANGE,Cercopithecus dryas,A.1137048,=,B.1137048,Cercopithecus dryas,ext =
+________________NO CHANGE,Cercopithecus roloway,A.1137049,=,B.1137049,Cercopithecus roloway,ext =
+________________NO CHANGE,Cercopithecus doggetti,A.1137474,=,B.1137474,Cercopithecus doggetti,ext =
+________________NO CHANGE,Cercopithecus kandti,A.1137481,=,B.1137481,Cercopithecus kandti,ext =
+________________NO CHANGE,Cercopithecus denti,A.1137511,=,B.1137511,Cercopithecus denti,ext =
+________________NO CHANGE,Cercopithecus lomamiensis,A.1191211,=,B.1191211,Cercopithecus lomamiensis,ext =
 ________________GRAFT,,,,B.1579530,Cercopithecus sclateri,
-________________GRAFT,,,,B.2618071,unclassified Cercopithecus,
-________________MOVE,Cercopithecus sp. WMS-2012,A.1144881,=,B.1144881,Cercopithecus sp. WMS-2012,{same-name & same-rank}
-________________MOVE,Cercopithecus lhoesti,A.100224,=,B.100224,Allochrocebus lhoesti,[same-name → synonym-of]
-________________MOVE,Cercopithecus preussi,A.147649,=,B.147649,Allochrocebus preussi,[same-name → synonym-of]
-__________________CHANGE NAME,Cercopithecus preussi insularis,A.1137512,=,B.1137512,Allochrocebus preussi insularis,[same-name → synonym-of]
-__________________CHANGE NAME,Cercopithecus preussi preussi,A.1137513,=,B.1137513,Allochrocebus preussi preussi,[same-name → synonym-of]
-________________MOVE,Cercopithecus solatus,A.147650,=,B.147650,Allochrocebus solatus,[same-name → synonym-of]
-______________NO CHANGE,Erythrocebus,A.9537,=,B.9537,Erythrocebus,{same-name & same-rank}
-________________...,,,,,,1 unchanged children
-______________NO CHANGE,Macaca,A.9539,=,B.9539,Macaca,{same-name & same-rank}
-________________NO CHANGE,Macaca arctoides,A.9540,=,B.9540,Macaca arctoides,{same-name & same-rank}
-________________NO CHANGE,Macaca fascicularis,A.9541,=,B.9541,Macaca fascicularis,{same-name & same-rank}
-__________________NO CHANGE,Macaca fascicularis philippinensis,A.90386,=,B.90386,Macaca fascicularis philippinensis,{same-name & same-rank}
-__________________NO CHANGE,Macaca fascicularis fascicularis,A.1215360,=,B.1215360,Macaca fascicularis fascicularis,{same-name & same-rank}
+________________MULTIPLE,Cercopithecus sp. WMS-2012,A.1144881,?,,,2 right nodes match this left node
+__________________ELIDE,,,<,B.2618071,unclassified Cercopithecus,ext ~>-of
+__________________OPTION,,,=,B.1144881,Cercopithecus sp. WMS-2012,ext =
+______________INSERT,Erythrocebus,A.9537,>,B.9538,Erythrocebus patas,ext ~>
+________________MULTIPLE,Erythrocebus patas,A.9538,?,,,2 right nodes match this left node
+__________________ELIDE,,,<,B.9537,Erythrocebus,ext ~>-of
+__________________OPTION,,,=,B.9538,Erythrocebus patas,ext =
+______________NO CHANGE,Macaca,A.9539,=,B.9539,Macaca,ext ~=
+________________NO CHANGE,Macaca arctoides,A.9540,=,B.9540,Macaca arctoides,ext =
+________________NO CHANGE,Macaca fascicularis,A.9541,=,B.9541,Macaca fascicularis,ext ~=
+__________________NO CHANGE,Macaca fascicularis philippinensis,A.90386,=,B.90386,Macaca fascicularis philippinensis,ext =
+__________________NO CHANGE,Macaca fascicularis fascicularis,A.1215360,=,B.1215360,Macaca fascicularis fascicularis,ext =
 __________________GRAFT,,,,B.1747270,Macaca fascicularis aureus,
-________________NO CHANGE,Macaca fuscata,A.9542,=,B.9542,Macaca fuscata,{same-name & same-rank}
+________________NO CHANGE,Macaca fuscata,A.9542,=,B.9542,Macaca fuscata,ext =
 __________________...,,,,,,2 unchanged children
-________________NO CHANGE,Macaca mulatta,A.9544,=,B.9544,Macaca mulatta,{same-name & same-rank}
-__________________NO CHANGE,Macaca mulatta lasiotus,A.1449913,=,B.1449913,Macaca mulatta lasiotus,{same-name & same-rank}
-__________________GRAFT,,,,B.1654737,Macaca mulatta brevicaudus,
-__________________GRAFT,,,,B.2008792,Macaca mulatta vestita,
-________________NO CHANGE,Macaca nemestrina,A.9545,=,B.9545,Macaca nemestrina,{same-name & same-rank}
-__________________NO CHANGE,Macaca nemestrina nemestrina,A.90388,=,B.90388,Macaca nemestrina nemestrina,{same-name & same-rank}
-__________________MOVE,Macaca nemestrina leonina,A.90387,=,B.90387,Macaca leonina,[same-name → synonym-of]
-__________________MOVE,Macaca nemestrina siberu,A.244255,=,B.244255,Macaca siberu,[same-name → synonym-of]
-________________NO CHANGE,Macaca sylvanus,A.9546,=,B.9546,Macaca sylvanus,{same-name & same-rank}
-________________NO CHANGE,Macaca radiata,A.9548,=,B.9548,Macaca radiata,{same-name & same-rank}
-__________________...,,,,,,1 unchanged children
-________________NO CHANGE,Macaca assamensis,A.9551,=,B.9551,Macaca assamensis,{same-name & same-rank}
-__________________...,,,,,,1 unchanged children
-________________NO CHANGE,Macaca sinica,A.9552,=,B.9552,Macaca sinica,{same-name & same-rank}
-________________NO CHANGE,Macaca speciosa,A.9553,=,B.9553,Macaca speciosa,{same-name & same-rank}
-________________NO CHANGE,Macaca tonkeana,A.40843,=,B.40843,Macaca tonkeana,{same-name & same-rank}
-________________NO CHANGE,Macaca nigra,A.54600,=,B.54600,Macaca nigra,{same-name & same-rank}
-________________NO CHANGE,Macaca silenus,A.54601,=,B.54601,Macaca silenus,{same-name & same-rank}
-________________NO CHANGE,Macaca thibetana,A.54602,=,B.54602,Macaca thibetana,{same-name & same-rank}
-__________________...,,,,,,1 unchanged children
-________________NO CHANGE,Macaca cyclopis,A.78449,=,B.78449,Macaca cyclopis,{same-name & same-rank}
-________________NO CHANGE,Macaca brunnescens,A.90381,=,B.90381,Macaca brunnescens,{same-name & same-rank}
-________________NO CHANGE,Macaca hecki,A.90382,=,B.90382,Macaca hecki,{same-name & same-rank}
-________________NO CHANGE,Macaca maura,A.90383,=,B.90383,Macaca maura,{same-name & same-rank}
-________________NO CHANGE,Macaca nigrescens,A.90384,=,B.90384,Macaca nigrescens,{same-name & same-rank}
-________________NO CHANGE,Macaca ochreata,A.90385,=,B.90385,Macaca ochreata,{same-name & same-rank}
-________________CHANGE ID,Macaca leonina,A.285350,=,B.90387,Macaca leonina,{same-name & same-rank}
-________________NO CHANGE,Macaca maura x tonkeana,A.168259,=,B.168259,Macaca maura x tonkeana,{same-name & same-rank}
-________________NO CHANGE,Macaca hecki x tonkeana,A.171293,=,B.171293,Macaca hecki x tonkeana,{same-name & same-rank}
-________________NO CHANGE,Macaca pagensis,A.230653,=,B.230653,Macaca pagensis,{same-name & same-rank}
-________________CHANGE ID,Macaca siberu,A.867378,=,B.244255,Macaca siberu,{same-name & same-rank}
-________________NO CHANGE,Macaca balantak,A.281404,=,B.281404,Macaca balantak,{same-name & same-rank}
-________________NO CHANGE,Macaca balantak x tonkeana,A.281405,=,B.281405,Macaca balantak x tonkeana,{same-name & same-rank}
-________________NO CHANGE,Macaca munzala,A.402888,=,B.402888,Macaca munzala,{same-name & same-rank}
+________________INSERT,Macaca mulatta,A.9544,>,B.1449913,Macaca mulatta lasiotus,ext ~>
+__________________MULTIPLE,Macaca mulatta lasiotus,A.1449913,?,,,2 right nodes match this left node
+____________________ELIDE,,,<,B.9544,Macaca mulatta,ext ~>-of
+____________________OPTION,,,=,B.1449913,Macaca mulatta lasiotus,ext =
+____________________GRAFT,,,,B.1654737,Macaca mulatta brevicaudus,
+____________________GRAFT,,,,B.2008792,Macaca mulatta vestita,
+________________INSERT,Macaca nemestrina,A.9545,>,B.90388,Macaca nemestrina nemestrina,ext ~>
+__________________REMOVE,Macaca nemestrina leonina,A.90387,,,,0 right nodes match this left node
+__________________REMOVE,Macaca nemestrina siberu,A.244255,,,,0 right nodes match this left node
+__________________MULTIPLE,Macaca nemestrina nemestrina,A.90388,?,,,2 right nodes match this left node
+____________________ELIDE,,,<,B.9545,Macaca nemestrina,ext ~>-of
+____________________OPTION,,,=,B.90388,Macaca nemestrina nemestrina,ext =
+________________NO CHANGE,Macaca sylvanus,A.9546,=,B.9546,Macaca sylvanus,ext =
+________________INSERT,Macaca radiata,A.9548,>,B.439030,Macaca radiata radiata,ext ~>
+__________________MULTIPLE,Macaca radiata radiata,A.439030,?,,,2 right nodes match this left node
+____________________ELIDE,,,<,B.9548,Macaca radiata,ext ~>-of
+____________________OPTION,,,=,B.439030,Macaca radiata radiata,ext =
+________________INSERT,Macaca assamensis,A.9551,>,B.1411634,Macaca assamensis assamensis,ext ~>
+__________________MULTIPLE,Macaca assamensis assamensis,A.1411634,?,,,2 right nodes match this left node
+____________________ELIDE,,,<,B.9551,Macaca assamensis,ext ~>-of
+____________________OPTION,,,=,B.1411634,Macaca assamensis assamensis,ext =
+________________NO CHANGE,Macaca sinica,A.9552,=,B.9552,Macaca sinica,ext =
+________________NO CHANGE,Macaca speciosa,A.9553,=,B.9553,Macaca speciosa,ext =
+________________NO CHANGE,Macaca tonkeana,A.40843,=,B.40843,Macaca tonkeana,ext =
+________________NO CHANGE,Macaca nigra,A.54600,=,B.54600,Macaca nigra,ext =
+________________NO CHANGE,Macaca silenus,A.54601,=,B.54601,Macaca silenus,ext =
+________________INSERT,Macaca thibetana,A.54602,>,B.257877,Macaca thibetana thibetana,ext ~>
+__________________MULTIPLE,Macaca thibetana thibetana,A.257877,?,,,2 right nodes match this left node
+____________________ELIDE,,,<,B.54602,Macaca thibetana,ext ~>-of
+____________________OPTION,,,=,B.257877,Macaca thibetana thibetana,ext =
+________________NO CHANGE,Macaca cyclopis,A.78449,=,B.78449,Macaca cyclopis,ext =
+________________NO CHANGE,Macaca brunnescens,A.90381,=,B.90381,Macaca brunnescens,ext =
+________________NO CHANGE,Macaca hecki,A.90382,=,B.90382,Macaca hecki,ext =
+________________NO CHANGE,Macaca maura,A.90383,=,B.90383,Macaca maura,ext =
+________________NO CHANGE,Macaca nigrescens,A.90384,=,B.90384,Macaca nigrescens,ext =
+________________NO CHANGE,Macaca ochreata,A.90385,=,B.90385,Macaca ochreata,ext =
+________________CHANGE ID,Macaca leonina,A.285350,=,B.90387,Macaca leonina,ext =
+________________NO CHANGE,Macaca maura x tonkeana,A.168259,=,B.168259,Macaca maura x tonkeana,ext =
+________________NO CHANGE,Macaca hecki x tonkeana,A.171293,=,B.171293,Macaca hecki x tonkeana,ext =
+________________NO CHANGE,Macaca pagensis,A.230653,=,B.230653,Macaca pagensis,ext =
+________________CHANGE ID,Macaca siberu,A.867378,=,B.244255,Macaca siberu,ext =
+________________NO CHANGE,Macaca balantak,A.281404,=,B.281404,Macaca balantak,ext =
+________________NO CHANGE,Macaca balantak x tonkeana,A.281405,=,B.281405,Macaca balantak x tonkeana,ext =
+________________NO CHANGE,Macaca munzala,A.402888,=,B.402888,Macaca munzala,ext =
 ________________GRAFT,,,,B.1885588,Macaca leucogenys,
-________________GRAFT,,,,B.2623225,unclassified Macaca,
-________________MOVE,Macaca sp.,A.9549,=,B.9549,Macaca sp.,{same-name & same-rank}
-______________NO CHANGE,Papio,A.9554,=,B.9554,Papio,{same-name & same-rank}
-________________NO CHANGE,Papio anubis,A.9555,=,B.9555,Papio anubis,{same-name & same-rank}
-__________________...,,,,,,1 unchanged children
-________________NO CHANGE,Papio cynocephalus,A.9556,=,B.9556,Papio cynocephalus,{same-name & same-rank}
+________________MULTIPLE,Macaca sp.,A.9549,?,,,2 right nodes match this left node
+__________________ELIDE,,,<,B.2623225,unclassified Macaca,ext ~>-of
+__________________OPTION,,,=,B.9549,Macaca sp.,ext =
+______________MULTIPLE,Papio,A.9554,?,,,2 right nodes match this left node
+________________OPTION,,,=,B.9554,Papio,ext ~=
+________________INSERT,Papio anubis,A.9555,>,B.211508,Papio anubis anubis,ext ~>
+__________________MULTIPLE,Papio anubis anubis,A.211508,?,,,2 right nodes match this left node
+____________________ELIDE,,,<,B.9555,Papio anubis,ext ~>-of
+____________________OPTION,,,=,B.211508,Papio anubis anubis,ext =
+________________NO CHANGE,Papio cynocephalus,A.9556,=,B.9556,Papio cynocephalus,ext =
 __________________...,,,,,,2 unchanged children
-________________NO CHANGE,Papio hamadryas,A.9557,=,B.9557,Papio hamadryas,{same-name & same-rank}
-__________________...,,,,,,1 unchanged children
-________________NO CHANGE,Papio ursinus,A.36229,=,B.36229,Papio ursinus,{same-name & same-rank}
-__________________NO CHANGE,Papio ursinus ursinus,A.208089,=,B.208089,Papio ursinus ursinus,{same-name & same-rank}
-__________________GRAFT,,,,B.208090,Papio ursinus griseipes,
-________________NO CHANGE,Papio papio,A.100937,=,B.100937,Papio papio,{same-name & same-rank}
-________________NO CHANGE,Papio kindae,A.208091,=,B.208091,Papio kindae,{same-name & same-rank}
-________________NO CHANGE,Papio cynocephalus x Papio anubis,A.208510,=,B.208510,Papio cynocephalus x Papio anubis,{same-name & same-rank}
-________________NO CHANGE,Papio anubis x hamadryas,A.1560552,=,B.1560552,Papio anubis x hamadryas,{same-name & same-rank}
+________________INSERT,Papio hamadryas,A.9557,>,B.9562,Papio hamadryas hamadryas,ext ~>
+__________________MULTIPLE,Papio hamadryas hamadryas,A.9562,?,,,2 right nodes match this left node
+____________________ELIDE,,,<,B.9557,Papio hamadryas,ext ~>-of
+____________________OPTION,,,=,B.9562,Papio hamadryas hamadryas,ext =
+________________INSERT,Papio ursinus,A.36229,>,B.208089,Papio ursinus ursinus,ext ~>
+__________________MULTIPLE,Papio ursinus ursinus,A.208089,?,,,2 right nodes match this left node
+____________________ELIDE,,,<,B.36229,Papio ursinus,ext ~>-of
+____________________OPTION,,,=,B.208089,Papio ursinus ursinus,ext =
+____________________GRAFT,,,,B.208090,Papio ursinus griseipes,
+________________NO CHANGE,Papio papio,A.100937,=,B.100937,Papio papio,ext =
+________________NO CHANGE,Papio kindae,A.208091,=,B.208091,Papio kindae,ext =
+________________NO CHANGE,Papio cynocephalus x Papio anubis,A.208510,=,B.208510,Papio cynocephalus x Papio anubis,ext =
+________________NO CHANGE,Papio anubis x hamadryas,A.1560552,=,B.1560552,Papio anubis x hamadryas,ext =
 ________________GRAFT,,,,B.1945556,Papio anubis x Papio cynocephalus,
 ________________GRAFT,,,,B.1945557,Papio anubis x Papio ursinus,
 ________________GRAFT,,,,B.1945558,Papio kindae x Papio cynocephalus,
 ________________GRAFT,,,,B.1945559,Papio kindae x Papio ursinus griseipes,
-________________GRAFT,,,,B.2632072,unclassified Papio,
-________________MOVE,Papio sp.,A.61183,=,B.61183,Papio sp.,{same-name & same-rank}
-________________MOVE,Papio sp. Africa-2004,A.285280,=,B.285280,Papio sp. Africa-2004,{same-name & same-rank}
-________________MOVE,Papio sp. PS-2007,A.425246,=,B.425246,Papio sp. PS-2007,{same-name & same-rank}
-______________NO CHANGE,Theropithecus,A.9564,=,B.9564,Theropithecus,{same-name & same-rank}
-________________...,,,,,,1 unchanged children
-______________NO CHANGE,Mandrillus,A.9567,=,B.9567,Mandrillus,{same-name & same-rank}
+________________REFORM,,,><,B.2632072,unclassified Papio,ext ><
+________________MOVE,Papio sp.,A.61183,=,B.61183,Papio sp.,ext =
+________________MOVE,Papio sp. Africa-2004,A.285280,=,B.285280,Papio sp. Africa-2004,ext =
+________________MOVE,Papio sp. PS-2007,A.425246,=,B.425246,Papio sp. PS-2007,ext =
+______________INSERT,Theropithecus,A.9564,>,B.9565,Theropithecus gelada,ext ~>
+________________MULTIPLE,Theropithecus gelada,A.9565,?,,,2 right nodes match this left node
+__________________ELIDE,,,<,B.9564,Theropithecus,ext ~>-of
+__________________OPTION,,,=,B.9565,Theropithecus gelada,ext =
+______________NO CHANGE,Mandrillus,A.9567,=,B.9567,Mandrillus,ext =
 ________________...,,,,,,2 unchanged children
-______________NO CHANGE,Miopithecus,A.36230,=,B.36230,Miopithecus,{same-name & same-rank}
-________________...,,,,,,3 unchanged children
-______________NO CHANGE,Allenopithecus,A.54134,=,B.54134,Allenopithecus,{same-name & same-rank}
-________________...,,,,,,1 unchanged children
-______________NO CHANGE,Lophocebus,A.75565,=,B.75565,Lophocebus,{same-name & same-rank}
-________________...,,,,,,3 unchanged children
-______________NO CHANGE,Rungwecebus,A.371038,=,B.371038,Rungwecebus,{same-name & same-rank}
-________________...,,,,,,1 unchanged children
-______________NO CHANGE,Chlorocebus,A.392815,=,B.392815,Chlorocebus,{same-name & same-rank}
-________________NO CHANGE,Chlorocebus aethiops,A.9534,=,B.9534,Chlorocebus aethiops,{same-name & same-rank}
+______________NO CHANGE,Miopithecus,A.36230,=,B.36230,Miopithecus,ext =
+________________INSERT,Miopithecus talapoin,A.36231,>,B.560240,Miopithecus talapoin talapoin,ext ~>
+__________________MULTIPLE,Miopithecus talapoin talapoin,A.560240,?,,,2 right nodes match this left node
+____________________ELIDE,,,<,B.36231,Miopithecus talapoin,ext ~>-of
+____________________OPTION,,,=,B.560240,Miopithecus talapoin talapoin,ext =
+________________NO CHANGE,Miopithecus ogouensis,A.100488,=,B.100488,Miopithecus ogouensis,ext =
+______________INSERT,Allenopithecus,A.54134,>,B.54135,Allenopithecus nigroviridis,ext ~>
+________________MULTIPLE,Allenopithecus nigroviridis,A.54135,?,,,2 right nodes match this left node
+__________________ELIDE,,,<,B.54134,Allenopithecus,ext ~>-of
+__________________OPTION,,,=,B.54135,Allenopithecus nigroviridis,ext =
+______________NO CHANGE,Lophocebus,A.75565,=,B.75565,Lophocebus,ext =
+________________NO CHANGE,Lophocebus aterrimus,A.75566,=,B.75566,Lophocebus aterrimus,ext =
+________________INSERT,Lophocebus albigena,A.75567,>,B.75568,Lophocebus albigena albigena,ext ~>
+__________________MULTIPLE,Lophocebus albigena albigena,A.75568,?,,,2 right nodes match this left node
+____________________ELIDE,,,<,B.75567,Lophocebus albigena,ext ~>-of
+____________________OPTION,,,=,B.75568,Lophocebus albigena albigena,ext =
+______________INSERT,Rungwecebus,A.371038,>,B.371039,Rungwecebus kipunji,ext ~>
+________________MULTIPLE,Rungwecebus kipunji,A.371039,?,,,2 right nodes match this left node
+__________________ELIDE,,,<,B.371038,Rungwecebus,ext ~>-of
+__________________OPTION,,,=,B.371039,Rungwecebus kipunji,ext =
+______________MULTIPLE,Chlorocebus,A.392815,?,,,2 right nodes match this left node
+________________OPTION,,,=,B.392815,Chlorocebus,ext ~=
+________________NO CHANGE,Chlorocebus aethiops,A.9534,=,B.9534,Chlorocebus aethiops,ext =
 __________________...,,,,,,2 unchanged children
-________________NO CHANGE,Chlorocebus pygerythrus,A.60710,=,B.60710,Chlorocebus pygerythrus,{same-name & same-rank}
-__________________NO CHANGE,Chlorocebus pygerythrus pygerythrus,A.460674,=,B.460674,Chlorocebus pygerythrus pygerythrus,{same-name & same-rank}
-__________________NO CHANGE,Chlorocebus pygerythrus hilgerti,A.508712,=,B.508712,Chlorocebus pygerythrus hilgerti,{same-name & same-rank}
+________________NO CHANGE,Chlorocebus pygerythrus,A.60710,=,B.60710,Chlorocebus pygerythrus,ext ~=
+__________________NO CHANGE,Chlorocebus pygerythrus pygerythrus,A.460674,=,B.460674,Chlorocebus pygerythrus pygerythrus,ext =
+__________________NO CHANGE,Chlorocebus pygerythrus hilgerti,A.508712,=,B.508712,Chlorocebus pygerythrus hilgerti,ext =
 __________________GRAFT,,,,B.2269071,Chlorocebus pygerythrus x Chlorocebus aethiops,
-________________NO CHANGE,Chlorocebus sabaeus,A.60711,=,B.60711,Chlorocebus sabaeus,{same-name & same-rank}
-________________NO CHANGE,Chlorocebus tantalus,A.60712,=,B.60712,Chlorocebus tantalus,{same-name & same-rank}
-__________________...,,,,,,1 unchanged children
-________________NO CHANGE,Chlorocebus cynosuros,A.460675,=,B.460675,Chlorocebus cynosuros,{same-name & same-rank}
-________________NO CHANGE,Chlorocebus djamdjamensis,A.1284215,=,B.1284215,Chlorocebus djamdjamensis,{same-name & same-rank}
+________________NO CHANGE,Chlorocebus sabaeus,A.60711,=,B.60711,Chlorocebus sabaeus,ext =
+________________INSERT,Chlorocebus tantalus,A.60712,>,B.508710,Chlorocebus tantalus budgetti,ext ~>
+__________________MULTIPLE,Chlorocebus tantalus budgetti,A.508710,?,,,2 right nodes match this left node
+____________________ELIDE,,,<,B.60712,Chlorocebus tantalus,ext ~>-of
+____________________OPTION,,,=,B.508710,Chlorocebus tantalus budgetti,ext =
+________________NO CHANGE,Chlorocebus cynosuros,A.460675,=,B.460675,Chlorocebus cynosuros,ext =
+________________NO CHANGE,Chlorocebus djamdjamensis,A.1284215,=,B.1284215,Chlorocebus djamdjamensis,ext =
 ________________GRAFT,,,,B.1476079,Chlorocebus aethiops x djamdjamensis,
 ________________GRAFT,,,,B.1903316,Chlorocebus aethiops x Chlorocebus pygerythrus,
-________________GRAFT,,,,B.2685534,unclassified Chlorocebus,
-________________MOVE,Chlorocebus sp. MAS-2011,A.1090918,=,B.1090918,Chlorocebus sp. MAS-2011,{same-name & same-rank}
-________________MOVE,Chlorocebus sp. TH-2013,A.1284216,=,B.1284216,Chlorocebus sp. TH-2013,{same-name & same-rank}
+________________REFORM,,,><,B.2685534,unclassified Chlorocebus,ext ~><
+________________MOVE,Chlorocebus sp. MAS-2011,A.1090918,=,B.1090918,Chlorocebus sp. MAS-2011,ext =
+________________MOVE,Chlorocebus sp. TH-2013,A.1284216,=,B.1284216,Chlorocebus sp. TH-2013,ext =
+________________GRAFT,,,,B.2282232,Chlorocebus sp. LDS-2018,
 ______________GRAFT,,,,B.2059839,Allochrocebus,
-____________NO CHANGE,Colobinae,A.9569,=,B.9569,Colobinae,{same-name & same-rank}
-______________NO CHANGE,Colobus,A.9570,=,B.9570,Colobus,{same-name & same-rank}
-________________NO CHANGE,Colobus polykomos,A.9572,=,B.9572,Colobus polykomos,{same-name & same-rank}
-________________NO CHANGE,Colobus guereza,A.33548,=,B.33548,Colobus guereza,{same-name & same-rank}
+____________NO CHANGE,Colobinae,A.9569,=,B.9569,Colobinae,ext ~=
+______________MULTIPLE,Colobus,A.9570,?,,,2 right nodes match this left node
+________________OPTION,,,=,B.9570,Colobus,ext =
+________________NO CHANGE,Colobus polykomos,A.9572,=,B.9572,Colobus polykomos,ext =
+________________NO CHANGE,Colobus guereza,A.33548,=,B.33548,Colobus guereza,ext =
 __________________...,,,,,,4 unchanged children
-________________NO CHANGE,Colobus angolensis,A.54131,=,B.54131,Colobus angolensis,{same-name & same-rank}
-__________________...,,,,,,1 unchanged children
-________________NO CHANGE,Colobus vellerosus,A.378195,=,B.378195,Colobus vellerosus,{same-name & same-rank}
-________________NO CHANGE,Colobus vellerosus x angolensis,A.378196,=,B.378196,Colobus vellerosus x angolensis,{same-name & same-rank}
-________________NO CHANGE,Colobus satanas,A.517012,=,B.517012,Colobus satanas,{same-name & same-rank}
-__________________...,,,,,,1 unchanged children
-________________GRAFT,,,,B.2618863,unclassified Colobus,
-________________MOVE,Colobus sp.,A.34824,=,B.34824,Colobus sp.,{same-name & same-rank}
-________________MOVE,Colobus sp. DTG-2004,A.288544,=,B.288544,Colobus sp. DTG-2004,{same-name & same-rank}
-________________MOVE,Colobus sp. MB-2005,A.325172,=,B.325172,Colobus sp. MB-2005,{same-name & same-rank}
-______________NO CHANGE,Presbytis,A.9573,=,B.9573,Presbytis,{same-name & same-rank}
-________________NO CHANGE,Presbytis senex,A.66055,=,B.66055,Presbytis senex,{same-name & same-rank}
-________________NO CHANGE,Presbytis melalophos,A.78451,=,B.78451,Presbytis melalophos,{same-name & same-rank}
+________________INSERT,Colobus angolensis,A.54131,>,B.336983,Colobus angolensis palliatus,ext ~>
+__________________MULTIPLE,Colobus angolensis palliatus,A.336983,?,,,2 right nodes match this left node
+____________________ELIDE,,,<,B.54131,Colobus angolensis,ext ~>-of
+____________________OPTION,,,=,B.336983,Colobus angolensis palliatus,ext =
+________________NO CHANGE,Colobus vellerosus,A.378195,=,B.378195,Colobus vellerosus,ext =
+________________NO CHANGE,Colobus vellerosus x angolensis,A.378196,=,B.378196,Colobus vellerosus x angolensis,ext =
+________________INSERT,Colobus satanas,A.517012,>,B.517013,Colobus satanas satanas,ext ~>
+__________________MULTIPLE,Colobus satanas satanas,A.517013,?,,,2 right nodes match this left node
+____________________ELIDE,,,<,B.517012,Colobus satanas,ext ~>-of
+____________________OPTION,,,=,B.517013,Colobus satanas satanas,ext =
+________________REFORM,,,><,B.2618863,unclassified Colobus,ext ><
+________________MOVE,Colobus sp.,A.34824,=,B.34824,Colobus sp.,ext =
+________________MOVE,Colobus sp. DTG-2004,A.288544,=,B.288544,Colobus sp. DTG-2004,ext =
+________________MOVE,Colobus sp. MB-2005,A.325172,=,B.325172,Colobus sp. MB-2005,ext =
+______________NO CHANGE,Presbytis,A.9573,=,B.9573,Presbytis,ext ~=
+________________NO CHANGE,Presbytis senex,A.66055,=,B.66055,Presbytis senex,ext =
+________________NO CHANGE,Presbytis melalophos,A.78451,=,B.78451,Presbytis melalophos,ext =
 __________________...,,,,,,4 unchanged children
-________________NO CHANGE,Presbytis comata,A.78452,=,B.78452,Presbytis comata,{same-name & same-rank}
+________________NO CHANGE,Presbytis comata,A.78452,=,B.78452,Presbytis comata,ext =
 __________________...,,,,,,2 unchanged children
-________________NO CHANGE,Presbytis femoralis,A.78453,=,B.78453,Presbytis femoralis,{same-name & same-rank}
+________________NO CHANGE,Presbytis femoralis,A.78453,=,B.78453,Presbytis femoralis,ext ~=
 __________________GRAFT,,,,B.1840579,Presbytis femoralis femoralis,
-________________NO CHANGE,Presbytis chrysomelas,A.1046090,=,B.1046090,Presbytis chrysomelas,{same-name & same-rank}
-________________NO CHANGE,Presbytis frontata,A.1046092,=,B.1046092,Presbytis frontata,{same-name & same-rank}
-________________NO CHANGE,Presbytis hosei,A.1046093,=,B.1046093,Presbytis hosei,{same-name & same-rank}
-__________________...,,,,,,1 unchanged children
-________________NO CHANGE,Presbytis potenziani,A.1046098,=,B.1046098,Presbytis potenziani,{same-name & same-rank}
+________________NO CHANGE,Presbytis chrysomelas,A.1046090,=,B.1046090,Presbytis chrysomelas,ext =
+________________NO CHANGE,Presbytis frontata,A.1046092,=,B.1046092,Presbytis frontata,ext =
+________________INSERT,Presbytis hosei,A.1046093,>,B.1046094,Presbytis hosei hosei,ext ~>
+__________________MULTIPLE,Presbytis hosei hosei,A.1046094,?,,,2 right nodes match this left node
+____________________ELIDE,,,<,B.1046093,Presbytis hosei,ext ~>-of
+____________________OPTION,,,=,B.1046094,Presbytis hosei hosei,ext =
+________________NO CHANGE,Presbytis potenziani,A.1046098,=,B.1046098,Presbytis potenziani,ext =
 __________________...,,,,,,2 unchanged children
-________________NO CHANGE,Presbytis rubicunda,A.1046101,=,B.1046101,Presbytis rubicunda,{same-name & same-rank}
-__________________...,,,,,,1 unchanged children
-________________NO CHANGE,Presbytis thomasi,A.1046103,=,B.1046103,Presbytis thomasi,{same-name & same-rank}
-______________NO CHANGE,Nasalis,A.43779,=,B.43779,Nasalis,{same-name & same-rank}
-________________...,,,,,,1 unchanged children
-______________NO CHANGE,Pygathrix,A.54132,=,B.54132,Pygathrix,{same-name & same-rank}
-________________...,,,,,,6 unchanged children
-______________NO CHANGE,Trachypithecus,A.54136,=,B.54136,Trachypithecus,{same-name & same-rank}
-________________NO CHANGE,Trachypithecus vetulus,A.54137,=,B.54137,Trachypithecus vetulus,{same-name & same-rank}
-__________________...,,,,,,1 unchanged children
-________________NO CHANGE,Trachypithecus francoisi,A.54180,=,B.54180,Trachypithecus francoisi,{same-name & same-rank}
-__________________...,,,,,,1 unchanged children
-________________NO CHANGE,Trachypithecus obscurus,A.54181,=,B.54181,Trachypithecus obscurus,{same-name & same-rank}
-________________NO CHANGE,Trachypithecus phayrei,A.61618,=,B.61618,Trachypithecus phayrei,{same-name & same-rank}
+________________INSERT,Presbytis rubicunda,A.1046101,>,B.1046102,Presbytis rubicunda rubicunda,ext ~>
+__________________MULTIPLE,Presbytis rubicunda rubicunda,A.1046102,?,,,2 right nodes match this left node
+____________________ELIDE,,,<,B.1046101,Presbytis rubicunda,ext ~>-of
+____________________OPTION,,,=,B.1046102,Presbytis rubicunda rubicunda,ext =
+________________NO CHANGE,Presbytis thomasi,A.1046103,=,B.1046103,Presbytis thomasi,ext =
+______________INSERT,Nasalis,A.43779,>,B.43780,Nasalis larvatus,ext ~>
+________________MULTIPLE,Nasalis larvatus,A.43780,?,,,2 right nodes match this left node
+__________________ELIDE,,,<,B.43779,Nasalis,ext ~>-of
+__________________OPTION,,,=,B.43780,Nasalis larvatus,ext =
+______________NO CHANGE,Pygathrix,A.54132,=,B.54132,Pygathrix,ext =
+________________INSERT,Pygathrix nemaeus,A.54133,>,B.303485,Pygathrix nemaeus nemaeus,ext ~>
+__________________MULTIPLE,Pygathrix nemaeus nemaeus,A.303485,?,,,2 right nodes match this left node
+____________________ELIDE,,,<,B.54133,Pygathrix nemaeus,ext ~>-of
+____________________OPTION,,,=,B.303485,Pygathrix nemaeus nemaeus,ext =
+________________NO CHANGE,Pygathrix nigripes,A.310352,=,B.310352,Pygathrix nigripes,ext =
+________________NO CHANGE,Pygathrix cinerea,A.693712,=,B.693712,Pygathrix cinerea,ext =
+________________NO CHANGE,Pygathrix cinerea 1 RL-2012,A.1194332,=,B.1194332,Pygathrix cinerea 1 RL-2012,ext =
+________________NO CHANGE,Pygathrix cinerea 2 RL-2012,A.1194333,=,B.1194333,Pygathrix cinerea 2 RL-2012,ext =
+______________NO CHANGE,Trachypithecus,A.54136,=,B.54136,Trachypithecus,ext ~=
+________________INSERT,Trachypithecus vetulus,A.54137,>,B.614071,Trachypithecus vetulus vetulus,ext ~>
+__________________MULTIPLE,Trachypithecus vetulus vetulus,A.614071,?,,,2 right nodes match this left node
+____________________ELIDE,,,<,B.54137,Trachypithecus vetulus,ext ~>-of
+____________________OPTION,,,=,B.614071,Trachypithecus vetulus vetulus,ext =
+________________INSERT,Trachypithecus francoisi,A.54180,>,B.272119,Trachypithecus francoisi francoisi,ext ~>
+__________________MULTIPLE,Trachypithecus francoisi francoisi,A.272119,?,,,2 right nodes match this left node
+____________________ELIDE,,,<,B.54180,Trachypithecus francoisi,ext ~>-of
+____________________OPTION,,,=,B.272119,Trachypithecus francoisi francoisi,ext =
+________________NO CHANGE,Trachypithecus obscurus,A.54181,=,B.54181,Trachypithecus obscurus,ext =
+________________NO CHANGE,Trachypithecus phayrei,A.61618,=,B.61618,Trachypithecus phayrei,ext =
 __________________...,,,,,,4 unchanged children
-________________NO CHANGE,Trachypithecus johnii,A.66063,=,B.66063,Trachypithecus johnii,{same-name & same-rank}
-________________NO CHANGE,Trachypithecus cristatus,A.122765,=,B.122765,Trachypithecus cristatus,{same-name & same-rank}
-________________NO CHANGE,Trachypithecus geei,A.164650,=,B.164650,Trachypithecus geei,{same-name & same-rank}
-________________NO CHANGE,Trachypithecus pileatus,A.164651,=,B.164651,Trachypithecus pileatus,{same-name & same-rank}
-________________NO CHANGE,Trachypithecus auratus,A.222416,=,B.222416,Trachypithecus auratus,{same-name & same-rank}
+________________NO CHANGE,Trachypithecus johnii,A.66063,=,B.66063,Trachypithecus johnii,ext =
+________________NO CHANGE,Trachypithecus cristatus,A.122765,=,B.122765,Trachypithecus cristatus,ext =
+________________NO CHANGE,Trachypithecus geei,A.164650,=,B.164650,Trachypithecus geei,ext =
+________________NO CHANGE,Trachypithecus pileatus,A.164651,=,B.164651,Trachypithecus pileatus,ext =
+________________NO CHANGE,Trachypithecus auratus,A.222416,=,B.222416,Trachypithecus auratus,ext =
 __________________...,,,,,,3 unchanged children
-________________NO CHANGE,Trachypithecus germaini,A.271260,=,B.271260,Trachypithecus germaini,{same-name & same-rank}
-________________NO CHANGE,Trachypithecus barbei,A.271261,=,B.271261,Trachypithecus barbei,{same-name & same-rank}
-________________NO CHANGE,Trachypithecus delacouri,A.465717,=,B.465717,Trachypithecus delacouri,{same-name & same-rank}
-________________NO CHANGE,Trachypithecus laotum,A.465718,=,B.465718,Trachypithecus laotum,{same-name & same-rank}
-________________NO CHANGE,Trachypithecus poliocephalus,A.465719,=,B.465719,Trachypithecus poliocephalus,{same-name & same-rank}
+________________NO CHANGE,Trachypithecus germaini,A.271260,=,B.271260,Trachypithecus germaini,ext =
+________________NO CHANGE,Trachypithecus barbei,A.271261,=,B.271261,Trachypithecus barbei,ext =
+________________NO CHANGE,Trachypithecus delacouri,A.465717,=,B.465717,Trachypithecus delacouri,ext =
+________________NO CHANGE,Trachypithecus laotum,A.465718,=,B.465718,Trachypithecus laotum,ext =
+________________NO CHANGE,Trachypithecus poliocephalus,A.465719,=,B.465719,Trachypithecus poliocephalus,ext =
 __________________...,,,,,,2 unchanged children
-________________NO CHANGE,Trachypithecus francoisi x poliocephalus,A.744437,=,B.744437,Trachypithecus francoisi x poliocephalus,{same-name & same-rank}
-________________NO CHANGE,Trachypithecus hatinhensis,A.867383,=,B.867383,Trachypithecus hatinhensis,{same-name & same-rank}
-________________NO CHANGE,Trachypithecus shortridgei,A.1042121,=,B.1042121,Trachypithecus shortridgei,{same-name & same-rank}
+________________NO CHANGE,Trachypithecus francoisi x poliocephalus,A.744437,=,B.744437,Trachypithecus francoisi x poliocephalus,ext =
+________________NO CHANGE,Trachypithecus hatinhensis,A.867383,=,B.867383,Trachypithecus hatinhensis,ext =
+________________NO CHANGE,Trachypithecus shortridgei,A.1042121,=,B.1042121,Trachypithecus shortridgei,ext =
 ________________GRAFT,,,,B.1966384,Trachypithecus mauritius,
-________________GRAFT,,,,B.2623509,unclassified Trachypithecus,
-________________MOVE,Trachypithecus sp.,A.580599,=,B.580599,Trachypithecus sp.,{same-name & same-rank}
-______________NO CHANGE,Semnopithecus,A.88028,=,B.88028,Semnopithecus,{same-name & same-rank}
-________________NO CHANGE,Semnopithecus entellus,A.88029,=,B.88029,Semnopithecus entellus,{same-name & same-rank}
-__________________NO CHANGE,Semnopithecus entellus entellus,A.867381,=,B.867381,Semnopithecus entellus entellus,{same-name & same-rank}
-__________________MOVE,Semnopithecus entellus priam,A.272117,=,B.1208733,Semnopithecus priam,[same-name → synonym-of]
-________________NO CHANGE,Semnopithecus hector,A.867382,=,B.867382,Semnopithecus hector,{same-name & same-rank}
-________________NO CHANGE,Semnopithecus priam,A.1208733,=,B.1208733,Semnopithecus priam,{same-name & same-rank}
-________________NO CHANGE,Semnopithecus hypoleucos,A.1208734,=,B.1208734,Semnopithecus hypoleucos,{same-name & same-rank}
+________________MULTIPLE,Trachypithecus sp.,A.580599,?,,,2 right nodes match this left node
+__________________ELIDE,,,<,B.2623509,unclassified Trachypithecus,ext ~>-of
+__________________OPTION,,,=,B.580599,Trachypithecus sp.,ext =
+______________NO CHANGE,Semnopithecus,A.88028,=,B.88028,Semnopithecus,ext ~=
+________________INSERT,Semnopithecus entellus,A.88029,>,B.867381,Semnopithecus entellus entellus,ext ~>
+__________________REMOVE,Semnopithecus entellus priam,A.272117,,,,0 right nodes match this left node
+__________________MULTIPLE,Semnopithecus entellus entellus,A.867381,?,,,2 right nodes match this left node
+____________________ELIDE,,,<,B.88029,Semnopithecus entellus,ext ~>-of
+____________________OPTION,,,=,B.867381,Semnopithecus entellus entellus,ext =
+________________NO CHANGE,Semnopithecus hector,A.867382,=,B.867382,Semnopithecus hector,ext =
+________________NO CHANGE,Semnopithecus priam,A.1208733,=,B.1208733,Semnopithecus priam,ext =
+________________NO CHANGE,Semnopithecus hypoleucos,A.1208734,=,B.1208734,Semnopithecus hypoleucos,ext =
 ________________GRAFT,,,,B.2632571,unclassified Semnopithecus,
-______________NO CHANGE,Procolobus,A.164647,=,B.164647,Procolobus,{same-name & same-rank}
-________________...,,,,,,1 unchanged children
-______________NO CHANGE,Rhinopithecus,A.542827,=,B.542827,Rhinopithecus,{same-name & same-rank}
-________________NO CHANGE,Rhinopithecus bieti,A.61621,=,B.61621,Rhinopithecus bieti,{same-name & same-rank}
-________________NO CHANGE,Rhinopithecus roxellana,A.61622,=,B.61622,Rhinopithecus roxellana,{same-name & same-rank}
-________________NO CHANGE,Rhinopithecus avunculus,A.66062,=,B.66062,Rhinopithecus avunculus,{same-name & same-rank}
-________________NO CHANGE,Rhinopithecus brelichi,A.224329,=,B.224329,Rhinopithecus brelichi,{same-name & same-rank}
-________________NO CHANGE,Rhinopithecus bieti 1 RL-2012,A.1194334,=,B.1194334,Rhinopithecus bieti 1 RL-2012,{same-name & same-rank}
-________________NO CHANGE,Rhinopithecus bieti 2 RL-2012,A.1194335,=,B.1194335,Rhinopithecus bieti 2 RL-2012,{same-name & same-rank}
-________________NO CHANGE,Rhinopithecus strykeri,A.1194336,=,B.1194336,Rhinopithecus strykeri,{same-name & same-rank}
+______________INSERT,Procolobus,A.164647,>,B.373033,Procolobus verus,ext ~>
+________________MULTIPLE,Procolobus verus,A.373033,?,,,2 right nodes match this left node
+__________________ELIDE,,,<,B.164647,Procolobus,ext ~>-of
+__________________OPTION,,,=,B.373033,Procolobus verus,ext =
+______________NO CHANGE,Rhinopithecus,A.542827,=,B.542827,Rhinopithecus,ext ~=
+________________NO CHANGE,Rhinopithecus bieti,A.61621,=,B.61621,Rhinopithecus bieti,ext =
+________________NO CHANGE,Rhinopithecus roxellana,A.61622,=,B.61622,Rhinopithecus roxellana,ext =
+________________NO CHANGE,Rhinopithecus avunculus,A.66062,=,B.66062,Rhinopithecus avunculus,ext =
+________________NO CHANGE,Rhinopithecus brelichi,A.224329,=,B.224329,Rhinopithecus brelichi,ext =
+________________NO CHANGE,Rhinopithecus bieti 1 RL-2012,A.1194334,=,B.1194334,Rhinopithecus bieti 1 RL-2012,ext =
+________________NO CHANGE,Rhinopithecus bieti 2 RL-2012,A.1194335,=,B.1194335,Rhinopithecus bieti 2 RL-2012,ext =
+________________NO CHANGE,Rhinopithecus strykeri,A.1194336,=,B.1194336,Rhinopithecus strykeri,ext =
 ________________GRAFT,,,,B.2644350,unclassified Rhinopithecus,
-______________NO CHANGE,Piliocolobus,A.591932,=,B.591932,Piliocolobus,{same-name & same-rank}
+______________NO CHANGE,Piliocolobus,A.591932,=,B.591932,Piliocolobus,ext =
 ________________...,,,,,,10 unchanged children
-______________NO CHANGE,Simias,A.1203020,=,B.1203020,Simias,{same-name & same-rank}
-________________...,,,,,,1 unchanged children
-____________NO CHANGE,Cercopithecidae gen. sp.,A.9576,=,B.9576,Cercopithecidae gen. sp.,{same-name & same-rank}
-________NO CHANGE,Hominoidea,A.314295,=,B.314295,Hominoidea,{same-name & same-rank}
-__________NO CHANGE,Hylobatidae,A.9577,=,B.9577,Hylobatidae,{same-name & same-rank}
-____________NO CHANGE,Hylobates,A.9578,=,B.9578,Hylobates,{same-name & same-rank}
+______________INSERT,Simias,A.1203020,>,B.170207,Simias concolor,ext ~>
+________________MULTIPLE,Simias concolor,A.170207,?,,,2 right nodes match this left node
+__________________ELIDE,,,<,B.1203020,Simias,ext ~>-of
+__________________OPTION,,,=,B.170207,Simias concolor,ext =
+____________NO CHANGE,Cercopithecidae gen. sp.,A.9576,=,B.9576,Cercopithecidae gen. sp.,ext =
+________NO CHANGE,Hominoidea,A.314295,=,B.314295,Hominoidea,ext ~=
+__________NO CHANGE,Hylobatidae,A.9577,=,B.9577,Hylobatidae,ext ~=
+____________MULTIPLE,Hylobates,A.9578,?,,,2 right nodes match this left node
 ______________REMOVE,Hylobates alibarbis,A.716691,,,,0 right nodes match this left node
-______________NO CHANGE,Hylobates agilis,A.9579,=,B.9579,Hylobates agilis,{same-name & same-rank}
+______________OPTION,,,=,B.9578,Hylobates,ext ~=
+______________NO CHANGE,Hylobates agilis,A.9579,=,B.9579,Hylobates agilis,ext =
 ________________...,,,,,,2 unchanged children
-______________NO CHANGE,Hylobates lar,A.9580,=,B.9580,Hylobates lar,{same-name & same-rank}
+______________NO CHANGE,Hylobates lar,A.9580,=,B.9580,Hylobates lar,ext =
 ________________...,,,,,,4 unchanged children
-______________NO CHANGE,Hylobates klossii,A.9587,=,B.9587,Hylobates klossii,{same-name & same-rank}
-______________NO CHANGE,Hylobates muelleri,A.9588,=,B.9588,Hylobates muelleri,{same-name & same-rank}
+______________NO CHANGE,Hylobates klossii,A.9587,=,B.9587,Hylobates klossii,ext =
+______________NO CHANGE,Hylobates muelleri,A.9588,=,B.9588,Hylobates muelleri,ext =
 ________________...,,,,,,3 unchanged children
-______________NO CHANGE,Hylobates pileatus,A.9589,=,B.9589,Hylobates pileatus,{same-name & same-rank}
-______________NO CHANGE,Hylobates moloch,A.81572,=,B.81572,Hylobates moloch,{same-name & same-rank}
+______________NO CHANGE,Hylobates pileatus,A.9589,=,B.9589,Hylobates pileatus,ext =
+______________NO CHANGE,Hylobates moloch,A.81572,=,B.81572,Hylobates moloch,ext =
 ______________GRAFT,,,,B.716691,Hylobates albibarbis,
-______________GRAFT,,,,B.2647113,unclassified Hylobates,
-______________MOVE,Hylobates sp.,A.9581,=,B.9581,Hylobates sp.,{same-name & same-rank}
-______________MOVE,Hylobates sp. TIB-201,A.150249,=,B.150249,Hylobates sp. TIB-201,{same-name & same-rank}
-______________MOVE,Hylobates sp. IGL-2004,A.280856,=,B.280856,Hylobates sp. IGL-2004,{same-name & same-rank}
-______________MOVE,Hylobates sp. AMA-2004,A.288892,=,B.288892,Hylobates sp. AMA-2004,{same-name & same-rank}
-______________MOVE,Hylobates sp. ECACC MLA144,A.419588,=,B.419588,Hylobates sp. ECACC MLA144,{same-name & same-rank}
-______________MOVE,Hylobates sp. PS-2007,A.425245,=,B.425245,Hylobates sp. PS-2007,{same-name & same-rank}
-____________NO CHANGE,Nomascus,A.325165,=,B.325165,Nomascus,{same-name & same-rank}
-______________NO CHANGE,Nomascus siki,A.9586,=,B.9586,Nomascus siki,{same-name & same-rank}
-______________NO CHANGE,Nomascus concolor,A.29089,=,B.29089,Nomascus concolor,{same-name & same-rank}
+______________REFORM,,,><,B.2647113,unclassified Hylobates,ext ~><
+______________MOVE,Hylobates sp.,A.9581,=,B.9581,Hylobates sp.,ext =
+______________MOVE,Hylobates sp. TIB-201,A.150249,=,B.150249,Hylobates sp. TIB-201,ext =
+______________MOVE,Hylobates sp. IGL-2004,A.280856,=,B.280856,Hylobates sp. IGL-2004,ext =
+______________MOVE,Hylobates sp. AMA-2004,A.288892,=,B.288892,Hylobates sp. AMA-2004,ext =
+______________MOVE,Hylobates sp. ECACC MLA144,A.419588,=,B.419588,Hylobates sp. ECACC MLA144,ext =
+______________MOVE,Hylobates sp. PS-2007,A.425245,=,B.425245,Hylobates sp. PS-2007,ext =
+______________GRAFT,,,,B.2023128,Hylobates sp. OH-2017,
+____________NO CHANGE,Nomascus,A.325165,=,B.325165,Nomascus,ext ~=
+______________NO CHANGE,Nomascus siki,A.9586,=,B.9586,Nomascus siki,ext =
+______________NO CHANGE,Nomascus concolor,A.29089,=,B.29089,Nomascus concolor,ext =
 ________________...,,,,,,4 unchanged children
-______________NO CHANGE,Nomascus gabriellae,A.61852,=,B.61852,Nomascus gabriellae,{same-name & same-rank}
-______________NO CHANGE,Nomascus leucogenys,A.61853,=,B.61853,Nomascus leucogenys,{same-name & same-rank}
-______________NO CHANGE,Nomascus nasutus,A.327374,=,B.327374,Nomascus nasutus,{same-name & same-rank}
-______________NO CHANGE,Nomascus hainanus,A.693984,=,B.693984,Nomascus hainanus,{same-name & same-rank}
+______________NO CHANGE,Nomascus gabriellae,A.61852,=,B.61852,Nomascus gabriellae,ext =
+______________NO CHANGE,Nomascus leucogenys,A.61853,=,B.61853,Nomascus leucogenys,ext =
+______________NO CHANGE,Nomascus nasutus,A.327374,=,B.327374,Nomascus nasutus,ext =
+______________NO CHANGE,Nomascus hainanus,A.693984,=,B.693984,Nomascus hainanus,ext =
 ______________GRAFT,,,,B.1616038,Nomascus annamensis,
 ______________GRAFT,,,,B.2170372,Nomascus gabriellae x Nomascus siki,
 ______________GRAFT,,,,B.2170373,Nomascus leucogenys x Nomascus siki,
 ______________GRAFT,,,,B.2170374,Nomascus cf. leucogenys SSH-2018,
-____________NO CHANGE,Symphalangus,A.325166,=,B.325166,Symphalangus,{same-name & same-rank}
-______________...,,,,,,2 unchanged children
-____________NO CHANGE,Hoolock,A.325167,=,B.325167,Hoolock,{same-name & same-rank}
-______________NO CHANGE,Hoolock hoolock,A.61851,=,B.61851,Hoolock hoolock,{same-name & same-rank}
-______________NO CHANGE,Hoolock leuconedys,A.593543,=,B.593543,Hoolock leuconedys,{same-name & same-rank}
+____________INSERT,Symphalangus,A.325166,>,B.405039,Symphalangus syndactylus syndactylus,ext ~>
+______________INSERT,Symphalangus syndactylus,A.9590,>,B.405039,Symphalangus syndactylus syndactylus,ext ~>
+________________MULTIPLE,Symphalangus syndactylus syndactylus,A.405039,?,,,3 right nodes match this left node
+__________________ELIDE,,,<,B.325166,Symphalangus,ext ~>-of
+__________________ELIDE,,,<,B.9590,Symphalangus syndactylus,ext ~>-of
+__________________OPTION,,,=,B.405039,Symphalangus syndactylus syndactylus,ext =
+____________NO CHANGE,Hoolock,A.325167,=,B.325167,Hoolock,ext ~=
+______________NO CHANGE,Hoolock hoolock,A.61851,=,B.61851,Hoolock hoolock,ext =
+______________NO CHANGE,Hoolock leuconedys,A.593543,=,B.593543,Hoolock leuconedys,ext =
 ______________GRAFT,,,,B.1934190,Hoolock tianxing,
 ______________GRAFT,,,,B.1934191,Hoolock leuconedys x Hoolock tianxing,
-__________NO CHANGE,Hominidae,A.9604,=,B.9604,Hominidae,{same-name & same-rank}
-____________NO CHANGE,Homininae,A.207598,=,B.207598,Homininae,{same-name & same-rank}
-______________NO CHANGE,Gorilla,A.9592,=,B.9592,Gorilla,{same-name & same-rank}
+__________NO CHANGE,Hominidae,A.9604,=,B.9604,Hominidae,ext ~=
+____________NO CHANGE,Homininae,A.207598,=,B.207598,Homininae,ext ~=
+______________NO CHANGE,Gorilla,A.9592,=,B.9592,Gorilla,ext =
 ________________...,,,,,,4 unchanged children
-______________NO CHANGE,Pan,A.9596,=,B.9596,Pan,{same-name & same-rank}
+______________NO CHANGE,Pan,A.9596,=,B.9596,Pan,ext =
 ________________...,,,,,,3 unchanged children
-______________NO CHANGE,Homo,A.9605,=,B.9605,Homo,{same-name & same-rank}
-________________NO CHANGE,Homo sapiens,A.9606,=,B.9606,Homo sapiens,{same-name & same-rank}
-__________________NO CHANGE,Homo sapiens neanderthalensis,A.63221,=,B.63221,Homo sapiens neanderthalensis,{same-name & same-rank}
-__________________CHANGE NAME,Homo sapiens ssp. Denisova,A.741158,=,B.741158,Homo sapiens subsp. 'Denisova',[same-name → equivalent-name-of]
-__________________GRAFT,,,,B.741158,Homo sapiens subsp. 'Denisova',
-________________NO CHANGE,Homo heidelbergensis,A.1425170,=,B.1425170,Homo heidelbergensis,{same-name & same-rank}
-____________NO CHANGE,Ponginae,A.607660,=,B.607660,Ponginae,{same-name & same-rank}
-______________NO CHANGE,Pongo,A.9599,=,B.9599,Pongo,{same-name & same-rank}
-________________NO CHANGE,Pongo pygmaeus,A.9600,=,B.9600,Pongo pygmaeus,{same-name & same-rank}
-__________________...,,,,,,1 unchanged children
-________________NO CHANGE,Pongo abelii,A.9601,=,B.9601,Pongo abelii,{same-name & same-rank}
-________________NO CHANGE,Pongo abelii x pygmaeus,A.502961,=,B.502961,Pongo abelii x pygmaeus,{same-name & same-rank}
+______________NO CHANGE,Homo,A.9605,=,B.9605,Homo,ext ~=
+________________INSERT,Homo sapiens,A.9606,>,B.63221,Homo sapiens neanderthalensis,ext ~>
+__________________REMOVE,Homo sapiens ssp. Denisova,A.741158,,,,0 right nodes match this left node
+__________________MULTIPLE,Homo sapiens neanderthalensis,A.63221,?,,,2 right nodes match this left node
+____________________ELIDE,,,<,B.9606,Homo sapiens,ext ~>-of
+____________________OPTION,,,=,B.63221,Homo sapiens neanderthalensis,ext =
+____________________GRAFT,,,,B.741158,Homo sapiens subsp. 'Denisova',
+________________NO CHANGE,Homo heidelbergensis,A.1425170,=,B.1425170,Homo heidelbergensis,ext =
+____________INSERT,Ponginae,A.607660,>,B.9599,Pongo,ext ~>
+______________MULTIPLE,Pongo,A.9599,?,,,2 right nodes match this left node
+________________ELIDE,,,<,B.607660,Ponginae,ext ~>-of
+________________OPTION,,,=,B.9599,Pongo,ext ~=
+________________INSERT,Pongo pygmaeus,A.9600,>,B.9602,Pongo pygmaeus pygmaeus,ext ~>
+__________________MULTIPLE,Pongo pygmaeus pygmaeus,A.9602,?,,,2 right nodes match this left node
+____________________ELIDE,,,<,B.9600,Pongo pygmaeus,ext ~>-of
+____________________OPTION,,,=,B.9602,Pongo pygmaeus pygmaeus,ext =
+________________NO CHANGE,Pongo abelii,A.9601,=,B.9601,Pongo abelii,ext =
+________________NO CHANGE,Pongo abelii x pygmaeus,A.502961,=,B.502961,Pongo abelii x pygmaeus,ext =
 ________________GRAFT,,,,B.2051901,Pongo tapanuliensis,
-________________GRAFT,,,,B.2624844,unclassified Pongo,
-________________MOVE,Pongo sp.,A.9603,=,B.9603,Pongo sp.,{same-name & same-rank}
-____NO CHANGE,Tarsiiformes,A.376912,=,B.376912,Tarsiiformes,{same-name & same-rank}
-______NO CHANGE,Tarsiidae,A.9475,=,B.9475,Tarsiidae,{same-name & same-rank}
-________NO CHANGE,Tarsius,A.9476,=,B.9476,Tarsius,{same-name & same-rank}
-__________NO CHANGE,Tarsius dentatus,A.449501,=,B.449501,Tarsius dentatus,{same-name & same-rank}
-__________NO CHANGE,Tarsius lariang,A.630277,=,B.630277,Tarsius lariang,{same-name & same-rank}
-__________NO CHANGE,Tarsius dentatus x lariang,A.642591,=,B.642591,Tarsius dentatus x lariang,{same-name & same-rank}
-__________NO CHANGE,Tarsius tarsier,A.662464,=,B.662464,Tarsius tarsier,{same-name & same-rank}
-__________NO CHANGE,Tarsius sangirensis,A.905053,=,B.905053,Tarsius sangirensis,{same-name & same-rank}
-__________NO CHANGE,Tarsius wallacei,A.981131,=,B.981131,Tarsius wallacei,{same-name & same-rank}
+________________MULTIPLE,Pongo sp.,A.9603,?,,,2 right nodes match this left node
+__________________ELIDE,,,<,B.2624844,unclassified Pongo,ext ~>-of
+__________________OPTION,,,=,B.9603,Pongo sp.,ext =
+____INSERT,Tarsiiformes,A.376912,>,B.9476,Tarsius,ext ~>
+______INSERT,Tarsiidae,A.9475,>,B.9476,Tarsius,ext ~>
+________MULTIPLE,Tarsius,A.9476,?,,,4 right nodes match this left node
+__________REMOVE,Tarsius bancanus,A.9477,,,,0 right nodes match this left node
+__________REMOVE,Tarsius syrichta,A.9478,,,,0 right nodes match this left node
+__________ELIDE,,,<,B.376912,Tarsiiformes,ext ~>-of
+__________ELIDE,,,<,B.9475,Tarsiidae,ext ~>-of
+__________OPTION,,,=,B.9476,Tarsius,ext ~=
+__________NO CHANGE,Tarsius dentatus,A.449501,=,B.449501,Tarsius dentatus,ext =
+__________NO CHANGE,Tarsius lariang,A.630277,=,B.630277,Tarsius lariang,ext =
+__________NO CHANGE,Tarsius dentatus x lariang,A.642591,=,B.642591,Tarsius dentatus x lariang,ext =
+__________NO CHANGE,Tarsius tarsier,A.662464,=,B.662464,Tarsius tarsier,ext =
+__________NO CHANGE,Tarsius sangirensis,A.905053,=,B.905053,Tarsius sangirensis,ext =
+__________NO CHANGE,Tarsius wallacei,A.981131,=,B.981131,Tarsius wallacei,ext =
 __________GRAFT,,,,B.1748400,Tarsius fuscus,
-__________GRAFT,,,,B.2624233,unclassified Tarsius,
-__________MOVE,Tarsius sp.,A.30612,=,B.30612,Tarsius sp.,{same-name & same-rank}
-__________MOVE,Tarsius sp. FFA-2009a,A.662655,=,B.662655,Tarsius sp. FFA-2009a,{same-name & same-rank}
-__________MOVE,Tarsius syrichta,A.9478,=,B.1868482,Carlito syrichta,[same-name → synonym-of]
-__________MOVE,Tarsius bancanus,A.9477,=,B.9477,Cephalopachus bancanus,[same-name → synonym-of]
-________GRAFT,,,,B.1868481,Carlito,
-________GRAFT,,,,B.1971489,Cephalopachus,
+__________REFORM,,,><,B.2624233,unclassified Tarsius,ext ~><
+__________MOVE,Tarsius sp.,A.30612,=,B.30612,Tarsius sp.,ext =
+__________MOVE,Tarsius sp. FFA-2009a,A.662655,=,B.662655,Tarsius sp. FFA-2009a,ext =
+__________GRAFT,,,,B.1748402,Tarsius sp. CD-2015,
+__________GRAFT,,,,B.1868481,Carlito,
+__________GRAFT,,,,B.1971489,Cephalopachus,
