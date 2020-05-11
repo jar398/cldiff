@@ -7,13 +7,13 @@ import checklist as cl
 import relation as rel
 import articulation as art
 import eulerx
-import diff
+import analyze
 
 def main(c1, c1_tag, c2, c2_tag, out, format):
   A = cl.read_checklist(c1, c1_tag + ".", "checklist 1")
   B = cl.read_checklist(c2, c2_tag + ".", "checklist 2")
   print ("TNU counts:", len(cl.get_all_tnus(A)), len(cl.get_all_tnus(B)))
-  diff.start(A, B)
+  analyze.start(A, B)
   write_report(A, B, format, out)
 
 def write_report(A, B, format, outpath):
@@ -26,7 +26,7 @@ def write_report(A, B, format, outpath):
 
 def really_write_report(A, B, format, outfile):
   if format == "eulerx":
-    eulerx.dump_alignment(diff.finish_alignment(B, A), outfile)
+    eulerx.dump_alignment(analyze.finish_alignment(B, A), outfile)
   else:
     report_to_io(A, B, outfile)
 
@@ -96,15 +96,15 @@ def subreport(node, B, sink, indent):
   multiple = report_on_matches(node, B, sink, indent)
   sink = subsink(sink)
   def for_seq(node):
-    b = diff.good_candidate(node, B)
+    b = analyze.good_candidate(node, B)
     return b.cod if b else node
   def sort_key(triple):
     (B_node, which, arg) = triple
     return cl.get_sequence_number(B_node)
   agenda = \
-    [(for_seq(child), 0, child) for child in diff.get_children(node)] + \
+    [(for_seq(child), 0, child) for child in analyze.get_children(node)] + \
     [(option.cod, 1, option) for option in multiple] + \
-    [(B_node, 2, B_node) for B_node in diff.get_graftees(node)]
+    [(B_node, 2, B_node) for B_node in analyze.get_graftees(node)]
   indent = indent + "__"
   for (B_node, which, arg) in \
      sorted(agenda, key=sort_key):
@@ -122,7 +122,7 @@ def subreport(node, B, sink, indent):
   drain(sink)
 
 def report_on_matches(node, B, sink, indent):
-  matches = diff.good_candidates(node, B)      # cod is accepted
+  matches = analyze.good_candidates(node, B)      # cod is accepted
   if len(matches) == 0:
     proclaim(sink, indent, "REMOVE",
                      node,
@@ -157,7 +157,7 @@ def tag_for_match(match, splitp):
         tag = "ADD SYNONYM"
       else:
         tag = "OPTION"
-    elif diff.parent_changed(match):
+    elif analyze.parent_changed(match):
       tag = "MOVE"
     else:
       changes = []
@@ -183,10 +183,10 @@ if __name__ == '__main__':
   parser.add_argument('right', help='B checklist')
   parser.add_argument('--left-tag', default="A")
   parser.add_argument('--right-tag', default="B")
-  parser.add_argument('--idspace', default=False)
+  parser.add_argument('--share_ids', default=False)
   parser.add_argument('--out', help='file name for report', default='diff.csv')
   parser.add_argument('--format', help='report format', default='ad-hoc')
   args = parser.parse_args()
-  diff.shared_idspace = args.idspace
+  analyze.shared_idspace = args.share_ids
   main(args.left, args.left_tag, args.right, args.right_tag, args.out, args.format)
 

@@ -57,13 +57,14 @@ foo: $(C)/primates.csv
 SOURCES=src/report.py src/diff.py src/articulation.py src/relation.py src/checklist.py
 
 $(WORK)/ncbi-2015-2020.csv: $(SOURCES) $(A)/primates.csv $(B)/primates.csv
-	python3 src/report.py $(A)/primates.csv $(B)/primates.csv --out $@.new
+	python3 src/report.py $(A)/primates.csv $(B)/primates.csv \
+	  --out $@.new --share_ids
 	mv $@.new $@
 
 ex: $(WORK)/ncbi-2015-2020.ex
 $(WORK)/ncbi-2015-2020.ex: $(SOURCES) $(A)/primates.csv $(B)/primates.csv
 	python3 src/report.py $(A)/primates.csv $(B)/primates.csv \
-	  --out $@.new --format eulerx
+	  --out $@.new --share_ids --format eulerx
 	mv $@.new $@
 
 $(WORK)/ncbi-gbif.csv: $(SOURCES) $(B)/primates.csv $(C)/primates.csv
