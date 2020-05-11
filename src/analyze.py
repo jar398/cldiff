@@ -168,7 +168,7 @@ def how_related_extensionally(cross):
   atcha = cross_mrca(partner, here)
   assert atcha
   back = atcha.cod
-  diffs = diff.conjoin(cross.differences, atcha.differences)
+  diffs = diff.compose(cross.differences, atcha.differences)
   if cl.are_disjoint(tnu, back):
     re = rel.disjoint
   elif tnu == back:
@@ -248,7 +248,7 @@ def analyze_cross_mrcas(A, B):
         assert pmatch.dom == tnu
         if rel.is_variant(pmatch.relation, rel.eq):
           m = pmatch.cod
-          diffs = diff.note_unmatched_children(diffs)
+          diffs = diff.note_dropped_children(diffs)
           if debug:
            print("#   particle(%s) = %s" %\
                  (cl.get_unique(tnu), cl.get_unique(pmatch.cod)))
@@ -273,7 +273,7 @@ def analyze_cross_mrcas(A, B):
               if debug:
                 print("#   -> %s" % cl.get_unique(m))
             else:
-              diffs = diff.note_unmatched_children(diffs)
+              diffs = diff.note_dropped_children(diffs)
       if debug:
         print("#   cm(%s) = %s, diffs %o)" % \
               (cl.get_unique(tnu), cl.get_unique(m), diffs))
@@ -323,7 +323,7 @@ def find_particles(here, other):
       if subanalyze(inf, other):
         found_match = True
       else:
-        diffs = diff.note_unmatched_children(diffs)
+        diffs = diff.note_dropped_children(diffs)
     if found_match:    # Some descendant is a particle
       return True
     candidate = choose_best_match(matches_to_accepted(tnu, other))

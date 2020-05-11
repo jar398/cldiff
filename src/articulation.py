@@ -8,6 +8,7 @@
 import collections
 import relation as rel
 import checklist as cl
+import diff
 
 # Articulations
 
@@ -42,7 +43,7 @@ def compose(p, q):
   return _articulation(p.dom,
                        q.cod,
                        rel.compose(p.relation, q.relation),
-                       p.differences + q.differences)
+                       diff.compose(p.differences, q.differences))
 
 def composable(p, q):
   return (p.cod == q.dom and
@@ -55,7 +56,7 @@ def conjoin(p, q):
     assert False
   re = rel.conjoin(p.relation, q.relation)
   return Articulation(p.dom, p.cod, re,
-                      min(p.differences, q.differences))
+                      diff.conjoin(p.differences, q.differences))
 
 def conjoinable(p, q):
   return (p.dom == q.dom and
