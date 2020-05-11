@@ -6,7 +6,7 @@ import argparse
 import checklist as cl
 import relation as rel
 import articulation as art
-import eulerx
+import diff
 
 # ---------- OVERALL
 
@@ -168,7 +168,7 @@ def how_related_extensionally(cross):
   atcha = cross_mrca(partner, here)
   assert atcha
   back = atcha.cod
-  diffs = cross.differences | atcha.differences
+  diffs = diff.conjoin(cross.differences, atcha.differences)
   if cl.are_disjoint(tnu, back):
     re = rel.disjoint
   elif tnu == back:
@@ -242,13 +242,13 @@ def analyze_cross_mrcas(A, B):
   def half_analyze_cross_mrcas(checklist, other, checkp):
     def subanalyze_cross_mrcas(tnu, other):
       pmatch = particle_match(tnu, other)
-      diffs = 0     # Cumulative diffs for all descendants?
+      diffs = diff.no_diffs     # Cumulative diffs for all descendants?
       m = None      # is the identity for mrca
       if pmatch:
         assert pmatch.dom == tnu
         if rel.is_variant(pmatch.relation, rel.eq):
           m = pmatch.cod
-          diffs = note_unmatched_children(diffs)
+          diffs = diff.note_unmatched_children(diffs)
           if debug:
            print("#   particle(%s) = %s" %\
                  (cl.get_unique(tnu), cl.get_unique(pmatch.cod)))
@@ -269,11 +269,11 @@ def analyze_cross_mrcas(A, B):
               if debug:
                 print("#  Folding %s into %s" % (cl.get_unique(m2), cl.get_unique(m)))
               m = cl.mrca(m, m2) if m != None else m2
-              diffs |= cross.differences
+              diffs = diff.conjoin(diffs, cross.differences)
               if debug:
                 print("#   -> %s" % cl.get_unique(m))
             else:
-              diffs = note_unmatched_children(diffs)
+              diffs = diff.note_unmatched_children(diffs)
       if debug:
         print("#   cm(%s) = %s, diffs %o)" % \
               (cl.get_unique(tnu), cl.get_unique(m), diffs))
@@ -311,7 +311,7 @@ def find_particles(here, other):
        print("# fp(%s): %s" % (cl.get_unique(tnu), message))
       count[0] += 1
   def subanalyze(tnu, other):
-    diffs = 0
+    diffs = diff.no_diffs
     log(tnu, "subanalyze")
     if cl.get_accepted(tnu):
       print("# ** Child %s of %s has an accepted name" %
@@ -323,7 +323,7 @@ def find_particles(here, other):
       if subanalyze(inf, other):
         found_match = True
       else:
-        diffs = note_unmatched_children(diffs)
+        diffs = diff.note_unmatched_children(diffs)
     if found_match:    # Some descendant is a particle
       return True
     candidate = choose_best_match(matches_to_accepted(tnu, other))
@@ -350,9 +350,6 @@ def find_particles(here, other):
     log(root, "root")
     subanalyze(root, other)
   return particles
-
-def note_unmatched_children(diffs):
-  return diffs | (1 << 10)
 
 # ---------- Matches to accepted nodes
 
