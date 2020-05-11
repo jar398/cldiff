@@ -131,7 +131,7 @@ def extensional_matches(tnu, other):
   matches = [match]
   if debug: print("# an ext match")
 
-  if rel.is_variant(match.relation, rel.extension_eq):
+  if rel.is_variant(match.relation, rel.eq):
     # Scan upwards looking for nodes that return to us...
     scan = match.cod    # tnu -> partner
     here = cl.get_checklist(scan)
@@ -141,7 +141,7 @@ def extensional_matches(tnu, other):
       rev = extensional_match(scan, here)
       # rev: other -> here
       if not rev: break
-      if not rel.is_variant(rev.relation, rel.extension_eq): break
+      if not rel.is_variant(rev.relation, rel.eq): break
       if rev.cod != tnu: break
       matches.append(rel.reverse(rev))
   matches.reverse()    # hmm. for choose ?
@@ -153,49 +153,49 @@ def extensional_matches(tnu, other):
 def extensional_match(tnu, other):
   assert tnu > 0
   here = cl.get_checklist(tnu)
-  (partner, drops) = cross_mrca(tnu, other)     # TNU in other checklist
-  if not partner:
-    if debug: print("# no partner")
+  cross = cross_mrca(tnu, other)      # TNU in other checklist
+  if not cross:
     return None
-  if debug: print("# partner, bridging")
-  match = bridge(tnu,
-                 partner,
-                 how_related_extensionally(tnu, partner, drops))
+  match = how_related_extensionally(cross)
   return match_to_accepted(match)
 
-def how_related_extensionally(tnu, partner, drops):
+# Returns a match
+
+def how_related_extensionally(cross):
+  tnu = cross.dom
+  partner = cross.cod
   here = cl.get_checklist(tnu)
-  i = particle_match(tnu, partner)
-  if i:
-    (back, adds) = (0, 0)
-    re = i.relation
-  else:
-    (back, adds) = cross_mrca(partner, here)
-    if back == None:                # shouldn't happen
-      print("# ** No return cross-MRCA\n  %s -> %s -> ??" %\
-            (cl.get_unique(tnu), cl.get_unique(partner)))
-      assert False
-      re = rel.disjoint
-    elif cl.are_disjoint(tnu, back):
-      re = rel.disjoint
-    elif tnu == back:
-      re = rel.eq
-    elif cl.mrca(tnu, back) == tnu:
-      # Monotypic: back < tnu.
-      re = rel.gt
-      adds += 1     # ???
+  atcha = cross_mrca(partner, here)
+  assert atcha
+  back = atcha.cod
+  diffs = cross.differences | atcha.differences
+  if cl.are_disjoint(tnu, back):
+    re = rel.disjoint
+  elif tnu == back:
+    particle = particle_match(tnu, partner)
+    if particle:
+      return art.conjoin(particle,
+                         art.extensional(tnu, partner, rel.particle, particle.differences))
+    elif diffs == 0:
+      return art.extensional(tnu, partner, rel.identical, diffs)
     else:
-      re = rel.lt
-      for sub in get_children(partner):
-        (back, _) = cross_mrca(sub, here)
-        if back != None:
-          if cl.mrca(tnu, back) == tnu and cross_disjoint(tnu, partner):
-            re = rel.conflict
-  if drops + adds == 0:
-    re = rel.justify(re, rel.sharply, "ext " + rel.rcc5_name(re))
+      return art.extensional(tnu, partner, rel.same_extension, diffs)
+  elif cl.mrca(tnu, back) == tnu:
+    # Monotypic: back < tnu.
+    re = rel.monotypic_over
   else:
-    re = rel.justify(re, rel.extensionally, "ext ~" + rel.rcc5_name(re))
-  return re
+    re = rel.lt
+    for sub in get_children(partner):
+      cross_back = cross_mrca(sub, here)
+      back = cross_back.cod
+      if back != None:
+        if cl.mrca(tnu, back) == tnu and cross_disjoint(tnu, partner):
+          re = rel.conflict
+  re = extensionally(re)
+  return art.extensional(tnu, partner, re, diffs)
+
+def extensionally(re):
+  return rel.justify(re, rel.extensionally, "particles " + rel.rcc5_name(re))
 
 # ---------- Determine disjointness across checklists
 
@@ -204,7 +204,8 @@ def cross_disjoint(tnu, partner):
   assert partner > 0
   assert cl.get_checklist(tnu) != cl.get_checklist(partner)
 
-  (back, _) = cross_mrca(partner, cl.get_checklist(tnu))
+  cross = cross_mrca(partner, cl.get_checklist(tnu))
+  back = cross.cod
   if back == None:
     return True
   assert back > 0
@@ -233,25 +234,27 @@ def cross_mrca(tnu, other):
       print("# ** No cross-MRCA set for %s" % cl.get_unique(tnu))
   return (None, 1)
 
-# Returns (the-mrca, number-unmatched)
+# Returns match with diffs = dropped taxa (including
+# those of particles)
 
 def analyze_cross_mrcas(A, B):
-  cross_mrcas = {cl.forest_tnu: (cl.forest_tnu, 0, 0)}
+  cross_mrcas = {}
   def half_analyze_cross_mrcas(checklist, other, checkp):
     def subanalyze_cross_mrcas(tnu, other):
       pmatch = particle_match(tnu, other)
-      drops = 0     # How many branches do I prune as I go from A to B?
+      diffs = 0     # Cumulative diffs for all descendants?
       m = None      # is the identity for mrca
       if pmatch:
         assert pmatch.dom == tnu
         if rel.is_variant(pmatch.relation, rel.eq):
           m = pmatch.cod
-          drops = len(get_children(pmatch.dom))
+          diffs = note_unmatched_children(diffs)
           if debug:
-           print("#   particle(%s) = %s" % (cl.get_unique(tnu), cl.get_unique(pmatch.cod)))
+           print("#   particle(%s) = %s" %\
+                 (cl.get_unique(tnu), cl.get_unique(pmatch.cod)))
         else:
           # Can't happen
-          print("# ** Non-eq articulation from particle_match\n  %s" +
+          print("#** Non-eq articulation from particle_match\n  %s" +
                 art.express(pmatch))
           assert False
       else:
@@ -260,21 +263,23 @@ def analyze_cross_mrcas(A, B):
           for child in children:
             if debug:
               print("# Child %s of %s" % (cl.get_unique(child), cl.get_unique(tnu)))
-            (m2, d2) = subanalyze_cross_mrcas(child, other)
-            if m2 == None:
-              drops += 1
-            else:
-              drops += d2
+            cross = subanalyze_cross_mrcas(child, other)
+            if cross:
+              m2 = cross.cod
               if debug:
                 print("#  Folding %s into %s" % (cl.get_unique(m2), cl.get_unique(m)))
               m = cl.mrca(m, m2) if m != None else m2
+              diffs |= cross.differences
               if debug:
                 print("#   -> %s" % cl.get_unique(m))
+            else:
+              diffs = note_unmatched_children(diffs)
       if debug:
-        print("#   cm(%s) = (%s, %s)" % \
-              (cl.get_unique(tnu), cl.get_unique(m), drops))
-      result = (m, drops)
-      cross_mrcas[tnu] = result
+        print("#   cm(%s) = %s, diffs %o)" % \
+              (cl.get_unique(tnu), cl.get_unique(m), diffs))
+      result = art.cross_mrca(tnu, m, diffs)
+      if result:
+        cross_mrcas[tnu] = result
       if debug and checkp:
         probe = cross_mrcas.get(m)
         if not probe:
@@ -306,6 +311,7 @@ def find_particles(here, other):
        print("# fp(%s): %s" % (cl.get_unique(tnu), message))
       count[0] += 1
   def subanalyze(tnu, other):
+    diffs = 0
     log(tnu, "subanalyze")
     if cl.get_accepted(tnu):
       print("# ** Child %s of %s has an accepted name" %
@@ -316,7 +322,9 @@ def find_particles(here, other):
       log(tnu, "child %s" % inf)
       if subanalyze(inf, other):
         found_match = True
-    if found_match:    # Some descendant is an particle
+      else:
+        diffs = note_unmatched_children(diffs)
+    if found_match:    # Some descendant is a particle
       return True
     candidate = choose_best_match(matches_to_accepted(tnu, other))
     if candidate:
@@ -342,6 +350,9 @@ def find_particles(here, other):
     log(root, "root")
     subanalyze(root, other)
   return particles
+
+def note_unmatched_children(diffs):
+  return diffs | (1 << 10)
 
 # ---------- Matches to accepted nodes
 
@@ -398,18 +409,12 @@ def intensional_matches(node, other):
   hits = cl.get_tnus_with_value(other,
                                 cl.canonical_name_field,
                                 cl.get_name(node))
-  matches = [bridge(node, hit, rel.same_name) for hit in hits]
-  assert is_matches(matches) and True
   if shared_idspace:
     id_hit = cl.get_tnu_with_id(other, cl.get_tnu_id(node))
-  else: id_hit = None
-  if id_hit and not id_hit in hits:
-    matches = [bridge(node, id_hit, rel.same_id)] + matches
-  assert is_matches(matches)
-  rank_matches = [bridge(node, match.cod, rel.same_rank)
-                  for match in matches
-                  if cl.get_nominal_rank(match.cod) == cl.get_nominal_rank(node)]
-  return sort_by_badness(collapse_matches(matches + rank_matches))    # Should be cached.
+    if id_hit and not id_hit in hits:
+      hits = hits + [id_hit]
+  matches = [art.intensional(node, hit, 0) for hit in hits]
+  return sort_by_badness(matches)   # ? is sort needed ?
 
 # ---------- UNMATCHED
 
@@ -467,8 +472,7 @@ def has_accepted_locally(maybe_syn):   # goes from synonym to accepted
     accepted = cl.get_accepted(maybe_syn)
     if accepted:
       if accepted != maybe_syn:
-        status = rel.synonym_relation(maybe_syn_status(maybe_syn))
-        return art.art(maybe_syn, accepted, status)
+        return art.synonymy(maybe_syn, accepted)
       else:
         print("# ** Shouldn't happen", cl.get_unique(maybe_syn))
         return art.identity(maybe_syn)
@@ -477,11 +481,6 @@ def has_accepted_locally(maybe_syn):   # goes from synonym to accepted
       return None
   else:
     return None
-
-def maybe_syn_status(synonym):
-  return cl.get_value(synonym, cl.nomenclatural_status_field) or \
-         cl.get_value(synonym, cl.taxonomic_status_field) or \
-         "synonym"
 
 # ---------- Best match among a set with common domain
 
@@ -559,10 +558,6 @@ def collapse_matches(arts):
     matches.append(previous)
   assert len(matches) <= len(arts)
   return matches
-
-def bridge(dom, cod, re):
-  assert cl.get_checklist(dom) != cl.get_checklist(cod)
-  return art.art(dom, cod, re)
 
 # ---------- For debugging
 

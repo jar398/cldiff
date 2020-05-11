@@ -161,16 +161,9 @@ def tag_for_match(match, splitp):
       tag = "MOVE"
     else:
       changes = []
-      if cl.get_name(match.dom) != cl.get_name(match.cod):
-        changes.append("NAME")
-      if cl.get_nominal_rank(match.dom) != cl.get_nominal_rank(match.cod):
-        changes.append("RANK")
-      if cl.get_taxonomic_status(match.dom) != cl.get_taxonomic_status(match.cod):
-        changes.append("STATUS")
-      if len(changes) == 0 and cl.get_tnu_id(match.dom) != cl.get_tnu_id(match.cod):
-        changes.append("ID")
-      if changes:
-        tag = "CHANGE " + " & ".join(changes)
+      
+      if match.differences != 0:
+        tag = "CHANGED %o" % match.differences
       else:
         tag = "NO CHANGE"
   elif rel.is_variant(match.relation, rel.lt):

@@ -9,15 +9,11 @@ Rcc5 = \
 
 Relation = \
   collections.namedtuple('Relation',
-                         ['rcc5', 'goodness',
-                          'path_length', 'name', 'revname'])
+                         ['rcc5', 'goodness', 'name', 'revname'])
 
-strong = 1
 weak = 100
 
-def _relation(rcc5, goodness,
-              name, revname = None, path_length = weak):
-  assert path_length >= 0
+def _relation(rcc5, goodness, name, revname = None):
   assert name
   assert isinstance(rcc5, Rcc5)
   if revname == None:
@@ -25,29 +21,24 @@ def _relation(rcc5, goodness,
       revname = name
     else:
       revname = name + "-of"
-  return Relation(rcc5, goodness, path_length, name, revname)
+  return Relation(rcc5, goodness, name, revname)
 
-identity = _relation(Rcc5(1, 1), 0, 'identical', 'identical', 0)
+identity = _relation(Rcc5(1, 1), 0, 'identical', 'identical')
 
 def variant(re, goodness, name, revname = None):
   assert name or revname
-  return _relation(re.rcc5, goodness, name,
-                   revname, re.path_length)
+  return _relation(re.rcc5, goodness, name, revname)
 
 def is_variant(rel1, rel2):
   return rel1.rcc5 == rel2.rcc5
 
 def justify(re, bit, name, revname = None):
   return _relation(re.rcc5, re.goodness | bit,
-                   name, revname, re.path_length)
-
-def adjacently(re, name, revname = None):
-  return _relation(re.rcc5, re.goodness,
-                   name, revname, strong)
+                   name, revname)
 
 def reverse(re):
   rre = _relation(Rcc5(re.rcc5.a_given_b, re.rcc5.b_given_a), re.goodness,
-                  re.revname, re.name, re.path_length)
+                  re.revname, re.name)
   assert rre
   return rre
 
@@ -55,9 +46,8 @@ def compose(rel1, rel2):
   goodness = rel1.goodness & rel2.goodness
   name    = _compose_names(rel1.name, rel2.name)
   revname = _compose_names(rel2.revname, rel1.revname)
-  len = rel1.path_length + rel2.path_length
   return _relation(compose_rcc5(rel1.rcc5, rel2.rcc5), goodness,
-                   name, revname, len)
+                   name, revname)
   
 def _compose_names(name1, name2):
   if name1.startswith("["): name1 = name1[1:-1]
@@ -87,8 +77,7 @@ def conjoin(rel1, rel2):
   return _relation(rel1.rcc5,
                    rel1.goodness | rel2.goodness,
                    _conjoin_names(rel1.name, rel2.name),
-                   _conjoin_names(rel1.revname, rel2.revname),
-                   min(rel1.path_length, rel2.path_length))
+                   _conjoin_names(rel1.revname, rel2.revname))
 
 def _conjoin_names(name1, name2):
   if name1 == name2: return name1
@@ -112,8 +101,7 @@ def conjoinable(rel1, rel2):
 
 def sort_key(re):
   return (rcc5_key(re),    # distinguish < from >
-          -1-re.goodness,
-          re.path_length)
+          -1-re.goodness)
 
 def rcc5_key(re):
   assert re.name
@@ -137,21 +125,18 @@ lt        = _relation(Rcc5(1,   0.5), 0, '<', '>')
 eq        = _relation(Rcc5(1,   1),   0, '=')
 gt        = reverse(lt)
 
-child_of  = adjacently(lt, 'child of', 'parent of')
-parent_of = reverse(child_of)
-sibling_of = adjacently(disjoint, 'sibling of')  # ?
+le        = _relation(Rcc5(1,   0.7), 0, '<=', '>=')  # never composed
 
 # Intensional half-matches ?
 
 # Intensional matches
 
-same_rank          = justify(eq, bit(0), "same-rank")
-same_parent        = justify(eq, bit(1), "same-parent")
+similar_record     = justify(eq, bit(0), "similar-record")
+
 has_vernacular     = justify(eq, bit(2), "vernacular")
 has_synonym        = justify(eq, bit(3), "synonym")
-same_name          = justify(eq, bit(4), "same-name")
-same_id            = justify(eq, bit(5), "same-id")
-same_name_and_id = conjoin(same_name, same_id)
+
+same_record        = justify(eq, bit(10), "= record")
 
 # Individual half-matches?
 # Individual matches?
@@ -161,20 +146,23 @@ same_name_and_id = conjoin(same_name, same_id)
 # Justified extensionally (i.e. assuming nonentities don't matter)
 
 extensionally = bit(12)
-
-extension_disjoint  = justify(disjoint, extensionally, "ext !")
-extension_conflict  = justify(conflict, extensionally, "ext ><") 
-extension_lt        = justify(lt, extensionally, "ext <", "ext >")
-extension_eq        = justify(eq, extensionally, "ext !")
-extension_gt = reverse(extension_lt)
-
-sharply = bit(13)
+particle = justify(eq, extensionally, "particle")
+same_extension = justify(eq, extensionally, "extension =")
 
 # Monotypy is a tough one.  The extension is the same, but the
 # intension differs.
 
-monotypic_over = justify(gt, bit(14), "monotypic-over", "monotypic-in")
+monotypic_over = justify(gt, bit(14) | extensionally, "monotypic-over", "monotypic-in")
 monotypic_in   = reverse(monotypic_over)
+
+# Share all fields, transitively to all descendants
+
+identical      = justify(eq, bit(16), "= identically")
+
+similar_subtrees   = justify(eq, bit(11), "similar subtrees")
+identical_subtrees = justify(eq, bit(12), "identical subtrees")
+
+# Hack
 
 def rcc5_name(re):
   if is_variant(re, eq): return eq.name
@@ -183,13 +171,6 @@ def rcc5_name(re):
   if is_variant(re, conflict): return conflict.name
   if is_variant(re, disjoint): return disjoint.name
   else: return re.name
-
-def self_tests():
-  assert reverse(eq) == eq
-  assert compose(eq, eq) == eq
-  assert compose(lt, lt) == lt
-  assert compose(disjoint, gt) == disjoint
-  assert compose(eq, similar) == similar
 
 # -------------------- Synonyms 
 
@@ -235,7 +216,7 @@ def declare_synonym_relations():
   b("heterotypic synonym")      # GBIF
   b("misnomer")
   b("type material")
-  b("merged id")    # ?
+  b("merged id", revname = "split id")    # ?
 
   # Really dubious
   b("genbank common name", relation = has_vernacular)    # at most one per node
@@ -247,3 +228,9 @@ def declare_synonym_relations():
 
 declare_synonym_relations()
 
+def self_tests():
+  assert reverse(eq) == eq
+  assert compose(eq, eq) == eq
+  assert compose(lt, lt) == lt
+  assert compose(disjoint, gt) == disjoint
+  assert compose(eq, similar) == similar

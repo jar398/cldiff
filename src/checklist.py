@@ -19,23 +19,26 @@ def define_field(label):
   return field
 
 def field_label(field):
-  (label, position) = field
+  (label, _) = field
   return label
 
 def field_position(field):
-  (label, position) = field
+  (_, position) = field
   return position
 
 # Particular fields of interest here (not all possible DwC fields)
+# Ordered from least to most significant
 
-tnu_id_field               = define_field("taxonID")
-accepted_tnu_id_field      = define_field("acceptedNameUsageID")
-taxonomic_status_field     = define_field("taxonomicStatus")
 nomenclatural_status_field = define_field("nomenclaturalStatus")
-canonical_name_field       = define_field("canonicalName")    # without authority
-scientific_name_field      = define_field("scientificName")  # with authority
-parent_tnu_id_field        = define_field("parentNameUsageID")
+taxonomic_status_field     = define_field("taxonomicStatus")
 taxon_rank_field           = define_field("taxonRank")
+accepted_tnu_id_field      = define_field("acceptedNameUsageID")
+parent_tnu_id_field        = define_field("parentNameUsageID")
+tnu_id_field               = define_field("taxonID")
+canonical_name_field       = define_field("canonicalName")
+scientific_name_field      = define_field("scientificName")
+
+number_of_fields = len(the_fields)
 
 # ---------- Taxon registry and taxa
 
@@ -77,6 +80,21 @@ def fresh_tnu(checklist):
   registry[uid] = (record, checklist)
   return uid
 
+def differences(tnu1, tnu2):  # mask
+  r1 = _get_record(tnu1)
+  r2 = _get_record(tnu2)
+  dist = 0
+  for field in the_fields:
+    position = field_position(field)
+    v1 = r1[position]
+    v2 = r2[position]
+    if v1 and v2:
+      if v1 != v2: dist |= 1 << position
+  if debug:
+    print("# Differences(%s, %s) = %o (octal)" %\
+          (get_unique(tnu1), get_unique(tnu2), dist))
+  return dist
+
 # ---------- Checklists
 
 class Checklist:
@@ -96,7 +114,7 @@ class Checklist:
     self.tnus.append(tnu)
     return tnu
   def get_index(self, field):
-    (_, position) = field
+    position = field_position(field)
     # create the index if necessary, on demand
     if self.indexes[position] == None:
       index = {}
@@ -198,7 +216,6 @@ def get_tnu_with_id(checklist, id):
     return tnus[0]
   else:
     return None
-
   return get_value(tnu, tnu_id_field)
 
 # Create a dict mapping field values to lists of keys (uids, tnus)

@@ -1,4 +1,3 @@
-
 # Articulations must support:
 #   The basics: source and destination taxa, and an RCC-5 (or similar) relation
 #   A comment explaining the reason the articulation might be true
@@ -14,22 +13,24 @@ import checklist as cl
 
 Articulation = \
   collections.namedtuple('Articulation',
-                         ['dom', 'cod', 'relation'])
+                         ['dom', 'cod', 'relation', 'differences'])
 
-def art(dom, cod, re):
+def _articulation(dom, cod, re, differences):
   assert dom > 0
   assert cod > 0
   assert re
   assert re.name
-  return Articulation(dom, cod, re)
+  assert differences >= 0
+  return Articulation(dom, cod, re, differences)
 
 def express(ar):
-  return "%s %s %s" % (cl.get_unique(ar.dom),
-                       ar.relation.name,
-                       cl.get_unique(ar.cod))
+  return "%s %s %s (%s)" % (cl.get_unique(ar.dom),
+                            ar.relation.name,
+                            cl.get_unique(ar.cod),
+                            ar.differences)
 
 def identity(node):
-  return art(node, node, rel.eq)
+  return _articulation(node, node, rel.eq, 0)
 
 def compose(p, q):
   if not composable(p, q):
@@ -38,7 +39,10 @@ def compose(p, q):
     assert False
   if is_identity(p): return q
   if is_identity(q): return p
-  return Articulation(p.dom, q.cod, rel.compose(p.relation, q.relation))
+  return _articulation(p.dom,
+                       q.cod,
+                       rel.compose(p.relation, q.relation),
+                       p.differences + q.differences)
 
 def composable(p, q):
   return (p.cod == q.dom and
@@ -50,7 +54,8 @@ def conjoin(p, q):
           (express(p), express(q)))
     assert False
   re = rel.conjoin(p.relation, q.relation)
-  return Articulation(p.dom, p.cod, re)
+  return Articulation(p.dom, p.cod, re,
+                      min(p.differences, q.differences))
 
 def conjoinable(p, q):
   return (p.dom == q.dom and
@@ -61,7 +66,7 @@ def get_comment(art):
   return art.relation.name
 
 def reverse(art):
-  return Articulation(art.cod, art.dom, rel.reverse(art.relation))
+  return Articulation(art.cod, art.dom, rel.reverse(art.relation), art.differences)
 
 def is_identity(art):
   return art.dom == art.cod and art.relation == rel.eq
@@ -77,4 +82,34 @@ def conjoin_sort_key(ar):
 
 def badness(ar):
   return(rel.sort_key(ar.relation),
+         ar.differences,
          cl.get_mutex(ar.cod))
+
+# Synonymy relationship within one tree
+
+def synonymy(syn, accepted):
+  status = (cl.get_value(synonym, cl.nomenclatural_status_field) or \
+            cl.get_value(synonym, cl.taxonomic_status_field) or \
+            "synonym")
+  re = rel.synonym_relation(status)
+  return _articulation(syn, accepted, re, 1)
+
+different_subtrees = 1 << cl.number_of_fields
+
+def extensional(dom, cod, re, same_subtree):
+  diffs = 0
+  if not same_subtree:
+    diffs = different_subtrees
+  return bridge(dom, cod, re, diffs)
+
+def intensional(dom, cod, diffs):
+  re = rel.identical_subtrees if diffs == 0 else rel.similar_subtrees
+  return bridge(dom, cod, re, diffs)
+
+def bridge(dom, cod, re, diffs):
+  assert cl.get_checklist(dom) != cl.get_checklist(cod)
+  diffs |= cl.differences(dom, cod)
+  return _articulation(dom, cod, re, diffs)
+
+def cross_mrca(dom, cod, diffs):
+  return _articulation(dom, cod, rel.le, diffs)
