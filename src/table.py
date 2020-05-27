@@ -1,6 +1,6 @@
 import csv
 
-# A DwC table can be read and/or written
+# A table can be read and/or written
 # If a table is populated it can be indexed
 # The columns of a table have labels
 
@@ -30,6 +30,7 @@ class Table:
     for record in record_generator:
       # rerepresent ?  normalize ?
       self.records.append(record)
+      _register(record, self)
     # sort ??
 
   def populate_from_file(self, inpath):
@@ -56,9 +57,9 @@ class Table:
 
 def csv_parameters(path):
   if path.endswith(".csv"):
-    return (",", '"', csv.QUOTE_NONE)
+    return (",", '"', csv.QUOTE_MINIMAL)
   else:
-    return ("\t", "\a", csv.QUOTE_MINIMAL)
+    return ("\t", "\a", csv.QUOTE_NONE)
 
 def read_table(specifier):
   table = Table()
