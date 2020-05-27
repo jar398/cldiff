@@ -85,7 +85,7 @@ def good_match(node, other = None):
     # Happens way often in GBIF
     if False and not cl.is_accepted(match.cod):
       print("# ** Match has taxonomic status %s\n  %s" %
-            (cl.get_value(match.cod, cl.taxonomic_status_field),
+            (cl.get_value(match.cod, cl.taxonomic_status),
              art.express(match)))
   return match
 
@@ -404,7 +404,7 @@ def intensional_matches(node, other):
   assert node > 0
   assert cl.get_checklist(node) != other
   hits = cl.get_tnus_with_value(other,
-                                cl.canonical_name_field,
+                                cl.canonical_name,
                                 cl.get_name(node))
   if shared_idspace:
     id_hit = cl.get_tnu_with_id(other, cl.get_tnu_id(node))

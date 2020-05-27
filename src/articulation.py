@@ -9,6 +9,7 @@ import collections
 import relation as rel
 import checklist as cl
 import diff
+import property as prop
 
 # Articulations
 
@@ -95,7 +96,7 @@ def synonymy(syn, accepted):
   re = rel.synonym_relation(status)
   return _articulation(syn, accepted, re, 1)
 
-different_subtrees = 1 << cl.number_of_fields
+different_subtrees = 1 << prop.number_of_selectors
 
 def extensional(dom, cod, re, same_subtree):
   diffs = 0

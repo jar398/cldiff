@@ -32,10 +32,10 @@ def write_row(writer,
 def emit_dwc(nodes, names, scinames, authorities, merged, outpath):
   outdir = os.path.basename(outpath)
   if not os.path.isdir(outdir): os.mkdir(outdir)
-  (delimiter, quotechar) = choose_csv_parameters(outpath)
+  (delimiter, quotechar, mode) = csv_parameters(outpath)
   print ("Writing", outpath)
   with open(outpath, "w") as outfile:
-    writer = csv.writer(outfile, delimiter=delimiter, quotechar=quotechar)
+    writer = csv.writer(outfile, delimiter=delimiter, quotechar=quotechar, quoting=mode)
     write_row(writer,
               "taxonID", "parentNameUsageID", "taxonRank",
               "acceptedNameUsageID", "scientificName", "canonicalName",
@@ -102,7 +102,10 @@ def read_nodes(nodes_path):
   nodes = []
   # Read the nodes file
   with open(nodes_path, "r") as infile:
-    for row in csv.reader(infile, delimiter="\t", quotechar=quotechar_for_tab):
+    for row in csv.reader(infile,
+                          delimiter="\t",
+                          quotechar="\a",
+                          quoting=csv.QUOTE_NONE):
       # tax_id, |, parent tax_id, |, rank, ... other stuff we don't use ...
       nodes.append((row[0], row[2], row[4]))
   print (len(nodes), "nodes")
@@ -115,7 +118,10 @@ def read_names(names_path):
     # Depends on names being grouped by taxa
     previous_id = None
     spin = -1
-    for row in csv.reader(infile, delimiter='\t', quotechar=quotechar_for_tab):
+    for row in csv.reader(infile,
+                          delimiter="\t",
+                          quotechar="\a",
+                          quoting=csv.QUOTE_NONE):
       # tax_id, |, text, |, <unused>, |, name class, ... other stuff we don't use ...
       id = row[0]
       if str(id) != previous_id:
@@ -131,16 +137,22 @@ def read_merged(merged_path):
   merged = []
   # Read the merged file
   with open(merged_path, "r") as infile:
-    for row in csv.reader(infile, delimiter="\t", quotechar=quotechar_for_tab):
+    for row in csv.reader(infile,
+                          delimiter="\t",
+                          quotechar="\a",
+                          quoting=csv.QUOTE_NONE):
       # old_tax_id, |, new_tax_id
       merged.append((row[0], row[2]))
   print (len(merged), "merged")
   return merged
 
-def choose_csv_parameters(outpath):
-  _, extension = os.path.splitext(outpath)
-  return (',', '"') if extension == "csv" else ('\t', quotechar_for_tab)
-quotechar_for_tab = '\a'
+def csv_parameters(path):
+  if path.endswith(".csv"):
+    print("CSV")
+    return (",", '"', csv.QUOTE_MINIMAL)
+  else:
+    print("TSV")
+    return ("\t", "\a", csv.QUOTE_NONE)
 
 # When invoked from command line:
 

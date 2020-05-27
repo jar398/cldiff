@@ -5,95 +5,114 @@ import os, csv
 import relation as rel
 import rank
 import chaitin
+import property as prop
 
-# ---------- Fields
+# ---------- Fields (columns) in taxon table
 
-# Darwin Core field = (label, position)
+# Fields (columns in taxon table) are represented by selectors
 
-the_fields = []
-label_to_field = {}
-def define_field(label):
-  field = (label, len(the_fields))
-  the_fields.append(field)
-  label_to_field[label] = field
-  return field
-
-def field_label(field):
-  (label, _) = field
-  return label
+field_selectors = []    # list of (Selector, position)
+highest_priority = 0
 
 def field_position(field):
-  (_, position) = field
-  return position
+  (_, col) = field
+  return col
+
+def field_selector(field):
+  (sel, _) = field
+  return sel
+
+# Returns a field (selector, position)
+
+def field_by_name(name):
+  sel = prop.by_name(name)
+  if sel in field_selectors:
+    return (sel, field_selectors.index(sel))
+  else:
+    return None
 
 # Particular fields of interest here (not all possible DwC fields)
-# Ordered from least to most significant
 
-nomenclatural_status_field = define_field("nomenclaturalStatus")
-taxonomic_status_field     = define_field("taxonomicStatus")
-taxon_rank_field           = define_field("taxonRank")
-accepted_tnu_id_field      = define_field("acceptedNameUsageID")
-parent_tnu_id_field        = define_field("parentNameUsageID")
-tnu_id_field               = define_field("taxonID")
-canonical_name_field       = define_field("canonicalName")
-scientific_name_field      = define_field("scientificName")
+def reserve(name):
+  global highest_specificity
+  sel = prop.by_name(name)
+  assert sel
+  field = (sel, len(field_selectors))
+  field_selectors.append(sel)
+  highest_specificity = max(highest_priority, sel.specificity)
+  return field
 
-number_of_fields = len(the_fields)
+checklist_field      = reserve("source")
+nomenclatural_status = reserve("nomenclaturalStatus")
+taxonomic_status     = reserve("taxonomicStatus")
+taxon_rank           = reserve("taxonRank")
+parent_taxon_id      = reserve("parentNameUsageID")
+taxon_id             = reserve("taxonID")
+accepted_taxon_id    = reserve("acceptedNameUsageID")
+canonical_name       = reserve("canonicalName")
+scientific_name      = reserve("scientificName")
+
+number_of_fields = len(field_selectors)
 
 # ---------- Taxon registry and taxa
 
-# Registry = tnu uid -> (value vector, checklist)
-#  where value vector is a vector that parallels the `the_fields` list
+# Registry = tnu uid -> value vector
+#  where value vector is a vector that parallels the `field_selectors` list.
+#  (it contains a pointer to the originating checklist.)
 
 def is_tnu(x):
+  # change to be the list itself?... no
   return isinstance(x, int) and x >= 0
 
 forest_tnu = 0
-registry = {forest_tnu: "no forest record"}
+registry = ["no forest record"]
 sequence_numbers = {}
 
 # Get the value of a field of a TNU record (via global registry)
 
 def _get_record(uid):
   assert is_tnu(uid)
-  (record, _) = registry[uid]
-  return record
+  return registry[uid]     # checklist is in record
 
 def get_value(uid, field):
   if uid == forest_tnu: return None
   record = _get_record(uid)
   return record[field_position(field)]
 
+def set_value(uid, field, value):
+  record = _get_record(uid)
+  record[field_position(field)] = value
+         
 def get_checklist(uid):
   assert is_tnu(uid)               # Forest has no checklist
+  # get_value(uid, prop.source)
   if uid == forest_tnu: return None
-  (_, checklist) = registry[uid]
-  return checklist
+  return get_value(uid, checklist_field)
 
 def get_sequence_number(uid):
   assert uid                    # Forest has no checklist
   return sequence_numbers[uid]
 
-def fresh_tnu(checklist):
-  record = [None] * len(the_fields)
+def fresh_tnu():
+  record = [None] * number_of_fields
   uid = len(registry)
-  registry[uid] = (record, checklist)
+  registry.append(record)
   return uid
 
 def differences(tnu1, tnu2):  # mask
   r1 = _get_record(tnu1)
   r2 = _get_record(tnu2)
-  dist = 0
-  for field in the_fields:
-    position = field_position(field)
+  comp = 0
+  for position in range(number_of_fields):
+    sel = field_selectors[position]
     v1 = r1[position]
     v2 = r2[position]
     if v1 and v2:
-      if v1 != v2: dist |= 1 << position
+      if v1 != v2: comp |= 1 << position
   if debug:
     print("# Differences(%s, %s) = %o (octal)" %\
-          (get_unique(tnu1), get_unique(tnu2), dist))
-  return dist
+          (get_unique(tnu1), get_unique(tnu2), comp))
+  return comp
 
 # ---------- Checklists
 
@@ -102,7 +121,7 @@ class Checklist:
     assert prefix
     self.prefix = prefix
     self.tnus = []
-    self.indexes = [None] * len(the_fields)
+    self.indexes = [None] * number_of_fields
     self.metadata = None
     self.name = name
   def get_all_tnus(self):
@@ -110,7 +129,8 @@ class Checklist:
   def tnu_count(self):
     return len(self.tnus)
   def new_tnu(self):
-    tnu = fresh_tnu(self)
+    tnu = fresh_tnu()
+    set_value(tnu, checklist_field, self)
     self.tnus.append(tnu)
     return tnu
   def get_index(self, field):
@@ -120,7 +140,7 @@ class Checklist:
       index = {}
       for tnu in self.tnus:
         # Check each record
-        (record, _) = registry[tnu]
+        record = registry[tnu]
         value = record[position]
         if value:
           if value in index:
@@ -130,7 +150,7 @@ class Checklist:
       self.indexes[position] = index
     return self.indexes[position]
   def populate_from_directory(self, indirs):
-    self.populate_from_file(get_tnu_path(indir))
+    self.populate_from_file(get_taxon_file_path(indir))
   def populate_from_file(self, inpath):
     if '(' in inpath:
       rows = chaitin.parse(inpath)
@@ -141,21 +161,31 @@ class Checklist:
         self.populate_from_generator(reader)
   def populate_from_generator(self, row_generator):
     head = next(row_generator)
-    guide = {key: position for (key, position) in zip(head, range(len(head)))}
-    if guide.get("taxonID", None) == None:
+    guide = [None] * number_of_fields
+    for position_in_row in range(len(head)):
+      key = head[position_in_row]
+      f = field_by_name(key)
+      if f:
+        guide[field_position(f)] = position_in_row
+      else:
+        print("# ** Column label %s isn't recognized" % key)
+    if not "taxonID" in head:
       print("# ** Didn't find a column for taxonID")
       print("%s" % guide)
       assert False
     for row in row_generator:
       uid = self.new_tnu()
       record = _get_record(uid)
-      for (label, (_, position)) in label_to_field.items():
-        position_in_row = guide.get(label, None)
+      # Fill in fields in record in order left to right
+      for i in range(number_of_fields):
+        sel = field_selectors[i]
+        label = sel.pet_name
+        position_in_row = guide[i]
         # Idiot python treats 0 as false
         if position_in_row != None:
           value = row[position_in_row]
-          if value != '':
-            record[position] = value
+          if value != None and value != '':
+            record[i] = value
     self.assign_sequence_numbers()
   def assign_sequence_numbers(self):
     n = len(sequence_numbers)
@@ -183,16 +213,18 @@ def read_checklist(specifier, prefix, name):
 
 # Utility - copied from another file - really ought to be shared
 
-def get_tnu_path(dwca_dir):
+def get_taxon_file_path(dwca_dir):
   for name in ["taxon.tsv",
                "Taxon.tsv",
+               "taxon.tab",
+               "Taxon.tab",
                "taxa.txt",
                "taxon.txt",
                "Taxon.txt"]:
     path = os.path.join(dwca_dir, name)
     if os.path.exists(path):
       return path
-  raise ValueError("cannot find TNU file in this directory", dwca_dir)
+  raise ValueError("cannot find taxon file in this directory", dwca_dir)
 
 # -------------------- indexing
 
@@ -206,17 +238,19 @@ def get_tnus_with_value(checklist, field, value):
 # Get unique (we hope) TNU possessing a given identifier
 
 def get_tnu_id(tnu):
-  id = get_value(tnu, tnu_id_field)
-  assert id != None
+  id = get_value(tnu, taxon_id)
+  if id == None:
+    print("** No taxon id?? for %s" % _get_record(tnu))
+    assert False
   return id
 
 def get_tnu_with_id(checklist, id):
-  tnus = checklist.get_index(tnu_id_field).get(id, None)
+  tnus = checklist.get_index(taxon_id).get(id, None)
   if tnus:
     return tnus[0]
   else:
     return None
-  return get_value(tnu, tnu_id_field)
+  return get_value(tnu, taxon_id)
 
 # Create a dict mapping field values to lists of keys (uids, tnus)
 #  - deprecated
@@ -244,15 +278,15 @@ def index_unique_by_column(checklist, field):
 # The following is for display purposes
 
 def get_name(tnu):
-  name = get_value(tnu, canonical_name_field)
+  name = get_value(tnu, canonical_name)
   if name != None: return name
-  name = get_value(tnu, scientific_name_field)
+  name = get_value(tnu, scientific_name)
   if name != None: return name  
   return get_tnu_id(tnu)
 
 def get_nominal_rank(tnu):
   if is_container(tnu): return None
-  return get_value(tnu, taxon_rank_field)
+  return get_value(tnu, taxon_rank)
 
 # Unique name of the sort Nico likes
 
@@ -264,11 +298,11 @@ def get_spaceless(tnu):
   name = get_name(tnu)
 
   tnus_with_this_name = \
-    get_tnus_with_value(checklist, canonical_name_field, name)
+    get_tnus_with_value(checklist, canonical_name, name)
   if len(tnus_with_this_name) > 1:
     name = name + "#" + get_tnu_id(tnu)
 
-  status = get_value(tnu, taxonomic_status_field)
+  status = get_value(tnu, taxonomic_status)
   if status == "accepted" or not status:
     pass
   elif status == "synonym":
@@ -339,7 +373,7 @@ def get_superiors(tnu):
 def get_superiors_really(tnu):
   assert is_tnu(tnu)
   if tnu == forest_tnu: return (None, None)
-  parent_id = get_value(tnu, parent_tnu_id_field)
+  parent_id = get_value(tnu, parent_taxon_id)
   if parent_id == None:
     parent = forest_tnu
   else:
@@ -351,7 +385,7 @@ def get_superiors_really(tnu):
   
   # If id doesn't resolve, it's a root
 
-  accepted_id = get_value(tnu, accepted_tnu_id_field)
+  accepted_id = get_value(tnu, accepted_taxon_id)
   if accepted_id:
     accepted = to_accepted(get_tnu_with_id(get_checklist(tnu), accepted_id))
     if accepted:
@@ -390,7 +424,7 @@ def get_superiors_really(tnu):
 
 def get_children(parent):
   return get_tnus_with_value(get_checklist(parent),
-                             parent_tnu_id_field,
+                             parent_taxon_id,
                              get_tnu_id(parent))
 
 def to_accepted(tnu):
@@ -411,7 +445,7 @@ def get_accepted_really(tnu):
   if is_accepted(tnu):
     pass                        # This is normal
   else:
-    accepted_id = get_value(tnu, accepted_tnu_id_field)
+    accepted_id = get_value(tnu, accepted_taxon_id)
     if not accepted_id:
       pass                      # This is normal
     else:
@@ -431,12 +465,12 @@ def get_accepted_really(tnu):
 def get_synonyms(tnu):
   return [syn
           for syn in get_tnus_with_value(get_checklist(tnu),
-                                         accepted_tnu_id_field,
+                                         accepted_taxon_id,
                                          get_tnu_id(tnu))
           if not get_parent(tnu)]
 
 def get_taxonomic_status(tnu):
-  return get_value(tnu, taxonomic_status_field)
+  return get_value(tnu, taxonomic_status)
 
 def is_accepted(tnu):
   return get_taxonomic_status(tnu) == "accepted"
@@ -624,10 +658,10 @@ def is_container(tnu):
 if __name__ == '__main__':
   checklist = read_checklist("../../ncbi/2020-01-01/primates/")
   print (len(get_all_tnus(checklist)))
-  tnus = checklist.get_index(tnu_id_field)
+  tnus = checklist.get_index(taxon_id)
   tnu = get_tnu_with_id(checklist, '43777')
   print ("Specimen tnu:", tnu)
-  print (registry[tnu][0])
+  print (get_value(tnu, checklist_field))
   print ("Name:", get_name(tnu))
   print ("Superior:", get_superior(tnu))
   synos = get_synonyms(tnu)

@@ -1,3 +1,5 @@
+#!/bin/env python3
+
 debug = False
 
 import sys, csv

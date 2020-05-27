@@ -16,9 +16,9 @@ def main(checklist, tax_path, root_id, outpath):
 
 def write_subset(checklist, root_id, all, outpath):
 
-  (delimiter, quotechar) = choose_csv_parameters(checklist)
+  (delimiter, quotechar, mode) = csv_parameters(checklist)
   with open(checklist, "r") as infile:
-    reader = csv.reader(infile, delimiter=delimiter, quotechar=quotechar)
+    reader = csv.reader(infile, delimiter=delimiter, quotechar=quotechar, quoting=mode)
     head = next(reader)
 
     tid_column = None
@@ -32,8 +32,8 @@ def write_subset(checklist, root_id, all, outpath):
       print("No taxonID column found")
 
     with open(outpath, "w") as outfile:
-      (delimiter, quotechar) = choose_csv_parameters(outpath)
-      writer = csv.writer(outfile, delimiter=delimiter, quotechar=quotechar, quoting=csv.QUOTE_NONE)
+      (delimiter, quotechar, mode) = csv_parameters(outpath)
+      writer = csv.writer(outfile, delimiter=delimiter, quotechar=quotechar, quoting=mode)
       writer.writerow(head)
       for row in reader:
         if tid_column != None:
@@ -57,9 +57,9 @@ def closure(topo, root_id):
 
 def read_topology(tax_path):
   children = {}
-  (delimiter, quotechar) = choose_csv_parameters(tax_path)
+  (delimiter, quotechar, mode) = csv_parameters(tax_path)
   with open(tax_path, "r") as infile:
-    reader = csv.reader(infile, delimiter=delimiter, quotechar=quotechar)
+    reader = csv.reader(infile, delimiter=delimiter, quotechar=quotechar, quoting=mode)
     head = next(reader)
     print("Header row:", head)
     tid_column = head.index("taxonID") 
@@ -74,9 +74,13 @@ def read_topology(tax_path):
         children[parent_id] = [child_id]
   return children
 
-def choose_csv_parameters(outpath):
-  (_, extension) = os.path.splitext(outpath)
-  return (',', '"') if extension == "csv" else ('\t', '\a')
+def csv_parameters(path):
+  if path.endswith(".csv"):
+    print("CSV")
+    return (",", '"', csv.QUOTE_MINIMAL)
+  else:
+    print("TSV")
+    return ("\t", "\a", csv.QUOTE_NONE)
 
 # main(checklist, taxonomy, root_id, outfile)
 
