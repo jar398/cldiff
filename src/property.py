@@ -1,46 +1,48 @@
-# Properties (some of which will be used as fields)
+# Properties
 
 import collections
 
-# Selector: record * property -> value
+# Property: record -> value
 
-Selector = \
-  collections.namedtuple('Selector',
-                         ['uri',
+Property = \
+  collections.namedtuple('Property',
+                         ['uid',
+                          'uri',
                           'pet_name',     # local to this code base
                           'specificity']) # with regard to taxon identity
 
-selectors_by_uri = {}
-selectors_by_pet_name = {}
-selectors_by_specificity = []
+properties_by_uri = {}
+properties_by_pet_name = {}
+properties_by_specificity = []
 
 def by_specificity(specificity):
-  return selectors_by_specificity[specificity]  
+  return properties_by_specificity[specificity]  
 
 def by_name(name):
-  return selectors_by_pet_name.get(name)
+  return properties_by_pet_name.get(name)
 
 def uri_to_pet_name(uri):
   return uri.split('/')[-1]
 
-def uri_to_selector(uri):
-  probe = selectors_by_uri.get(uri)
+def uri_to_property(uri):
+  probe = properties_by_uri.get(uri)
   if probe: return probe
   pet_name = uri_to_pet_name(uri)
-  spec = len(selectors_by_specificity)
-  sel = Selector(uri, pet_name, spec)
-  selectors_by_uri[uri] = sel
-  selectors_by_pet_name[pet_name] = sel
-  selectors_by_specificity.append(sel)
+  uid = len(properties_by_specificity)
+  spec = uid
+  sel = Property(uid, uri, pet_name, spec)
+  properties_by_uri[uri] = sel
+  properties_by_pet_name[pet_name] = sel
+  properties_by_specificity.append(sel)
   return sel
 
 def alias(this, to_that):
   if this in pet_name_to_uri_table:
     raise "URI pet_name collision:  \n%s  \n%s" % (to_that, this)
   sel = by_name(to_that)
-  selectors_by_pet_name[this] = sel
+  properties_by_pet_name[this] = sel
 
-# Initialize non-field selectors
+# Initialize non-field properties
 
 # We do this in order from least specific to most specific,
 # for simplicity... low order bits first
@@ -48,7 +50,7 @@ def alias(this, to_that):
 # dwciri: (http://rs.tdwg.org/dwc/iri/)
 
 # The entire record for the taxon in the checklist
-record    = uri_to_selector("data:,property/record")
+record    = uri_to_property("data:,property/record")
 
 # dwc:TaxonID - "This term is no longer recommended for use."
 #   http://rs.tdwg.org/dwc/terms
@@ -77,12 +79,11 @@ uris = [
         "http://rs.tdwg.org/dwc/terms/acceptedNameUsageID",
         "http://rs.gbif.org/terms/1.0/canonicalName",
         "http://rs.tdwg.org/dwc/terms/scientificName",
-        "https://github.com/jar398/biodiversity/wiki/division",    # Extension, etc.
-        "http://rs.tdwg.org/dwc/terms/taxonConceptID",
+        "https://github.com/jar398/biodiversity/wiki/taxon",
 ]
-for uri in uris: uri_to_selector(uri)
+for uri in uris: uri_to_property(uri)
   
-number_of_selectors = len(selectors_by_specificity)
+number_of_properties = len(properties_by_specificity)
 
 if __name__ == '__main__':
   import sys

@@ -258,19 +258,6 @@ def get_tnu_with_id(checklist, id):
 def index_by_column(checklist, field):
   return checklist.get_index(field)
 
-# You could use this for, say, taxonID, or maybe authority (scientificName)
-# Sort of a kludge, we really shouldn't have to copy the dict
-#  - deprecated
-
-def index_unique_by_column(checklist, field):
-  index = checklist.get_index(field)
-  unique = {}
-  for key, tnus in index.items():
-    if len(tnus) != 1:
-      raise ValueError("conflict in supposedly unique index: %s -> %s, %s" % (key, tnus, field))
-    unique[key] = tnus[0]
-  return unique
-
 # ----------------------------------------
 
 # Logic for particular fields

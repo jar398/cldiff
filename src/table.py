@@ -1,4 +1,5 @@
 import csv
+import property
 
 # A table can be read and/or written
 # If a table is populated it can be indexed
@@ -19,9 +20,13 @@ class Table:
   def process_header(self, header):
     self.header = header
     self.position_index = {}
+    self.methods = [not_present] * property.number_of_properties
     for position in range(len(header)):
       label = header[position]
       self.position_index[label] = position
+      propnum = property.by_name(label)
+      if propnum:
+        self.methods[propnum] = lambda r:r[position]
     print(self.position_index)
     self.indexes = [None] * len(header)
 
@@ -36,7 +41,6 @@ class Table:
   def populate_from_file(self, inpath):
     # Look for a meta.xml file in same directory?
     (delim, qc, qu) = csv_parameters(inpath)
-    print ("delimiter: %s quote char: %s" % (delim, qc))
     with open(inpath, "r") as infile:
       reader = csv.reader(infile, delimiter=delim, quotechar=qc, quoting=qu)
       self.populate_from_generator(reader)
@@ -76,15 +80,24 @@ _registry = ["there is no record 0"]
 # We store a pair (record, table) where table is the table that "owns"
 # the record.
 
-def record_and_table(uid):    # returns (record, table)
-  return _registry[uid]
+def record_and_table(record_id):    # returns (record, table)
+  return _registry[record_id]
 
 def _register(record, table):
-  uid = len(_registry)
+  record_id = len(_registry)
   _registry.append((record, table))
-  return uid
+  return record_id
 
+def not_present(record):
+  return None
 
+def get_value(record_id, prp):
+  (r, t) = record_and_table(record_id)
+  return t.methods[prp.uid](r)
+
+def get_table(record_id):
+  (r, t) = record_and_table(record_id)
+  return t
 
 if __name__ == '__main__':
   table = read_table("work/ncbi/2020-01-01/primates.csv")

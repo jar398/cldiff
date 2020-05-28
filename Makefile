@@ -54,7 +54,7 @@ $(C)/primates.csv: src/subset_dwc.py $(C)/dump/Taxon.tsv
 	python3 src/subset_dwc.py $(C)/dump/Taxon.tsv 798 --out $@
 foo: $(C)/primates.csv
 
-SOURCES=src/report.py src/report.py src/articulation.py src/relation.py src/checklist.py
+SOURCES=src/report.py src/analyze.py src/articulation.py src/relation.py src/checklist.py
 
 $(WORK)/ncbi-2015-2020.csv: $(SOURCES) $(A)/primates.csv $(B)/primates.csv
 	python3 src/report.py $(A)/primates.csv $(B)/primates.csv \
