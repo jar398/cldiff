@@ -24,9 +24,9 @@ class Table:
     for position in range(len(header)):
       label = header[position]
       self.position_index[label] = position
-      propnum = property.by_name(label)
-      if propnum:
-        self.methods[propnum] = lambda r:r[position]
+      prop = property.by_name(label)
+      if prop:
+        self.methods[prop.uid] = lambda r:r[position]
     print(self.position_index)
     self.indexes = [None] * len(header)
 

@@ -252,12 +252,6 @@ def get_tnu_with_id(checklist, id):
     return None
   return get_value(tnu, taxon_id)
 
-# Create a dict mapping field values to lists of keys (uids, tnus)
-#  - deprecated
-
-def index_by_column(checklist, field):
-  return checklist.get_index(field)
-
 # ----------------------------------------
 
 # Logic for particular fields
