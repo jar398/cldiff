@@ -7,36 +7,43 @@ import property
 
 class Table:
   def __init__(self):
-    self.records = []
+    self.record_ids = []
     pass
 
   def header(self):
     return self.header
 
-  # Position in record of column having given label
-  def get_position(self, label):
-    return self.position_index.get(label)
+  # Position in record of column for given property
+  def get_position(self, prop):
+    return self.position_index[prop.uid]
 
   def process_header(self, header):
     self.header = header
-    self.position_index = {}
+    self.position_index = [None] * property.number_of_properties
     self.methods = [not_present] * property.number_of_properties
+    # TBD: If there is a meta.xml, get the properties that way
+    self.properties = [property.by_name(label) for label in header]
+    self.indexes = [None] * property.number_of_properties
     for position in range(len(header)):
-      label = header[position]
-      self.position_index[label] = position
-      prop = property.by_name(label)
+      # position is column position within record (table specific)
+      prop = self.properties[position]
       if prop:
-        self.methods[prop.uid] = lambda r:r[position]
-    print(self.position_index)
-    self.indexes = [None] * len(header)
+        self.position_index[prop.uid] = position
+        self.methods[prop.uid] = self.fetcher(prop, position)
+      else:
+        print("** Unrecognized property %s" % prop)
+
+  def fetcher(self, prop, position):
+    def fetch(r):
+      if r[position] == '': return None
+      return r[position]
+    return fetch
 
   def populate_from_generator(self, record_generator):
     self.process_header(next(record_generator))
     for record in record_generator:
-      # rerepresent ?  normalize ?
-      self.records.append(record)
-      _register(record, self)
-    # sort ??
+      id = _register(record, self)
+      self.record_ids.append(id)
 
   def populate_from_file(self, inpath):
     # Look for a meta.xml file in same directory?
@@ -45,19 +52,21 @@ class Table:
       reader = csv.reader(infile, delimiter=delim, quotechar=qc, quoting=qu)
       self.populate_from_generator(reader)
 
-  # Create indexes on demand
-  def get_index(self, position):
-    if self.indexes[position] == None:
+  # Create indexes on demand.  Position is column position specific to
+  # this table, which can be determined using get_position.
+
+  def get_index(self, prop):
+    if self.indexes[prop.uid] == None:
       index = {}
-      for record in self.records:
-        value = record[position]
-        if value:
+      for id in self.record_ids:
+        value = get_value(id, prop)
+        if value != None:
           if value in index:
-            index[value].append(record)
+            index[value].append(id)
           else:
-            index[value] = [record]
-      self.indexes[position] = index
-    return self.indexes[position]
+            index[value] = [id]
+      self.indexes[prop.uid] = index
+    return self.indexes[prop.uid]
 
 def csv_parameters(path):
   if path.endswith(".csv"):
@@ -72,7 +81,7 @@ def read_table(specifier):
 
 # Record registry
 
-def is_record_id(x):
+def is_record(x):
   return isinstance(x, int) and x > 0
 
 _registry = ["there is no record 0"]
@@ -91,18 +100,63 @@ def _register(record, table):
 def not_present(record):
   return None
 
-def get_value(record_id, prp):
+def get_value(record_id, prop):
   (r, t) = record_and_table(record_id)
-  return t.methods[prp.uid](r)
+  return t.methods[prop.uid](r)
 
 def get_table(record_id):
   (r, t) = record_and_table(record_id)
   return t
 
-if __name__ == '__main__':
+# ---------- Record comparison.
+
+# Degrees of freedom:
+#  - columns to consider: only shared, or all of them?
+#  - how many columns to report: only most specific, or all of them?
+
+def differences(tnu1, tnu2):  # mask
+  (r1, t1) = record_and_table(tnu1)
+  (r2, t2) = record_and_table(tnu2)
+
+  comparison = 0
+  most_specific = None
+  for pos1 in range(len(t1.properties)):
+    prop = t1.properties[pos1]
+    pos2 = t2.position_index[prop.uid]
+    if pos2 != None:
+      # Property is provided in both tables
+      v1 = r1[pos1]
+      v2 = r2[pos2]
+      if v1 != None and v2 != None:
+        if v1 != v2:
+          comparison |= 1 << prop.specificity
+          if most_specific and \
+             prop.specificity > most_specific.specificity:
+            most_specific = prop
+  if debug:
+    print("# Differences(%s, %s) = %o (octal)" %\
+          (get_unique(tnu1), get_unique(tnu2), comparison))
+  return comparison
+
+# ---------- Self-test
+
+def self_test():
   table = read_table("work/ncbi/2020-01-01/primates.csv")
-  print (len(table.records))
-  pos = table.get_position("taxonID")    # column number
+  print ("Records read: %s" % len(table.record_ids))
+  prop = property.by_name("taxonID")
+  pos = table.get_position(prop)    # column number
+  print ("taxonID position in table is %s" % pos)
   assert pos != None
-  idx = table.get_index(pos)
+  print ("taxonID position in properties is %s" % prop.uid)
+
+  rec = table.record_ids[0]
+  (r, _) = record_and_table(rec)
+  print ("Sample record: %s" % r)
+  print ("Taxon id of sample record: %s" % get_value(rec, prop))
+
+  idx = table.get_index(prop)
+  print ("Ids indexed: %s" % len(idx))
   print (idx["9443"])
+
+if __name__ == '__main__':
+  self_test()

@@ -57,8 +57,8 @@ record    = uri_to_property("data:,property/record")
 
 # URIs (columns) I'm considering adding:
 #   - one URI for each table I set up in the analysis
-#     - something for what I'm currently calling TNU id or 
-#       'sequence number' (unique record key across all inputs)
+#     - something for what I'm currently calling record id
+#       (unique record key across all inputs)...
 #     - mutexes
 
 uris = [
