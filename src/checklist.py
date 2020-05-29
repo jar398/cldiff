@@ -64,9 +64,9 @@ class Checklist(table.Table):
     return len(self.record_ids)
 
   def assign_sequence_numbers(self):
-    n = len(sequence_numbers)    # dict
+    n = len(self.sequence_numbers)    # dict
     def process(tnu, n):
-      sequence_numbers[tnu] = n
+      self.sequence_numbers[tnu] = n
       n = n + 1
       for inf in get_inferiors(tnu):
         n = process(inf, n)
@@ -194,7 +194,7 @@ def get_roots(checklist):
   roots = []
   for tnu in get_all_tnus(checklist):
     assert tnu > 0
-    if not get_accepted(tnu) and not get_parent(tnu):
+    if to_accepted(tnu) == tnu and get_parent(tnu) == forest_tnu:
       roots.append(tnu)
   return roots
 
@@ -208,101 +208,47 @@ def get_inferiors(tnu):
 # ----------
 # Parent/children and accepted/synonyms
 
-superiors_cache = {}
-
-def get_superior(tnu):
-  (accepted, parent) = get_superiors(tnu)
-  return parent or accepted
-
 def get_parent(tnu):
-  assert table.is_record(tnu)
-  assert tnu
-  (_, parent) = get_superiors(tnu)
-  return parent
-
-def get_accepted(tnu):
-  assert table.is_record(tnu)
-  (accepted, _) = get_superiors(tnu)
-  assert accepted != forest_tnu
-  return accepted
-
-# Returns (accepted, parent)
-
-def get_superiors(tnu):
-  assert table.is_record(tnu)
-  probe = superiors_cache.get(tnu)
-  if probe: return probe
-  result = get_superiors_really(tnu)
-  superiors_cache[tnu] = result
-  if debug:
-    print("# Cached gs(%s) = (%s, %s)" % \
-          (get_unique(tnu), get_unique(result[0]), get_unique(result[1])))
-  return result
-
-def get_superiors_really(tnu):
-  assert table.is_record(tnu)
-  if tnu == forest_tnu: return (None, None)
+  # There are two checks here, and if the order of the checks matters,
+  # the input checklist is ill-formed
   parent_id = get_value(tnu, parent_taxon_id)
-  if parent_id == None:
-    parent = forest_tnu
+  if parent_id != None:
+    parent = get_record_with_taxon_id(get_checklist(tnu), parent_id)
+    if parent != None:
+      return to_accepted(parent)
+  probe = get_accepted(tnu)
+  if probe != None:
+    return get_parent(probe)
   else:
-    parent_uid = get_record_with_taxon_id(get_checklist(tnu), parent_id)
-    if parent_uid == None:
-      parent = forest_tnu
-    else:
-      parent = to_accepted(parent_uid)
-  
-  # If id doesn't resolve, it's a root
-
-  accepted_id = get_value(tnu, accepted_taxon_id)
-  if accepted_id:
-    accepted = to_accepted(get_record_with_taxon_id(get_checklist(tnu), accepted_id))
-    if accepted:
-      accepted_taxo_status = get_taxonomic_status(accepted)
-      if accepted_taxo_status and accepted_taxo_status != "accepted":
-        # Example: GBIF backbone:
-        # C.?Hylobates sericus#8955169 -> C.Bunopithecus_sericus_(doubtful)
-        print("# ** Putative accepted has wrong taxonomic status %s\n  %s -> %s" % \
-              (accepted_taxo_status, get_unique(tnu), get_unique(accepted)))
-      # Iterate???
-    else:
-      print("# ** Id %s for accepted of %s doesn't resolve" % \
-            (accepted_id, get_unique(tnu)))
-  else:
-    n_status = get_taxonomic_status(tnu)
-    if n_status == "synonym":
-      print("# ** Node with status = 'synonym' has no accepted node\n  %s" % \
-            (get_unique(tnu)))
-
-    accepted = None
-
-  if parent and accepted:
-    parent_taxo_status = get_taxonomic_status(parent)
-    if parent_taxo_status == "accepted" and accepted_taxo_status == "accepted":
-      if False:
-        print("# ** Taxon has both accepted and parent links\n  %s -> %s, %s" % \
-              (get_unique(tnu), get_unique(accepted), get_unique(parent)))
-        print("# ** Preferring parent to accepted")
-      parent = None
-    else:
-      # This case is common in GBIF files
-      accepted = None
-  if parent != None: parent = to_accepted(parent)
-  if accepted != None: accepted = to_accepted(accepted)
-  return (accepted, parent)
+    return forest_tnu
 
 def get_children(parent):
   return get_records_with_value(get_checklist(parent),
-                             parent_taxon_id,
-                             get_taxon_id(parent))
+                                parent_taxon_id,
+                                get_taxon_id(parent))
+
+# Get canonical record among a set of equivalent records
 
 def to_accepted(tnu):
-  assert table.is_record(tnu)
-  probe = get_accepted(tnu)     # cached
+  if not table.is_record(tnu):
+    print ("Not a record: %s" % tnu)
+    assert False
+  probe = get_accepted(tnu)
   if probe:
-    return probe
+    # Some input checklist have chains of accepted records.
+    # The chain ends at the canonical representative of the 
+    # equivalence class.
+    return to_accepted(probe)
   else:
     return tnu
+
+# Returns None if this record has no accepted record
+
+def get_accepted(tnu):
+  probe = get_value(tnu, accepted_taxon_id)
+  if probe != None:
+    return get_record_with_taxon_id(get_checklist(tnu), probe)
+  return None
 
 # ----------
 # Accepted/synonyms
@@ -335,8 +281,7 @@ def get_synonyms(tnu):
   return [syn
           for syn in get_records_with_value(get_checklist(tnu),
                                             accepted_taxon_id,
-                                            get_taxon_id(tnu))
-          if not get_parent(tnu)]
+                                            get_taxon_id(tnu))]
 
 def get_taxonomic_status(tnu):
   return get_value(tnu, taxonomic_status)
@@ -473,9 +418,7 @@ def get_mutex(tnu):
 # Parent's level > child's level for all children.
 
 def get_mutex_really(tnu):
-
-  probe = get_accepted(tnu)
-  if probe: return get_mutex(probe)
+  tnu = to_accepted(tnu)
 
   # Findest most rootward mutex of all the children
   children_mutex = rank.atom     # identity for min
@@ -526,15 +469,17 @@ def is_container(tnu):
 
 # Test
 
-if __name__ == '__main__':
-  checklist = read_checklist("../../ncbi/2020-01-01/primates/")
-  print (len(get_all_tnus(checklist)))
+def self_test():
+  checklist = read_checklist("work/ncbi/2020-01-01/primates.csv", "A.", "name")
+  print ("Nodes:", len(get_all_tnus(checklist)))
+  print ("Roots:", get_roots(checklist))
   tnus = checklist.get_index(taxon_id)
-  tnu = get_record_with_taxon_id(checklist, '43777')
+  tnu = get_record_with_taxon_id(checklist, '9455')
   print ("Specimen tnu:", tnu)
   print ("Name:", get_name(tnu))
-  print ("Superior:", get_superior(tnu))
   synos = get_synonyms(tnu)
-  print ("Synonyms:", list(map(get_name, synos)))
+  print ("Synonyms:", list(map(get_taxon_id, synos)))
   print ("Back atcha:", [get_accepted(syno) for syno in synos])
-  print ("Roots:", get_roots(checklist))
+
+if __name__ == '__main__':
+  self_test()

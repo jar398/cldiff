@@ -136,7 +136,7 @@ def extensional_matches(tnu, other):
     scan = match.cod    # tnu -> partner
     here = cl.get_checklist(scan)
     while True:
-      scan = cl.get_superior(scan)    # in other
+      scan = cl.get_parent(scan)    # in other
       if not scan: break
       rev = extensional_match(scan, here)
       # rev: other -> here
