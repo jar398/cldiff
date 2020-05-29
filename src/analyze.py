@@ -401,15 +401,7 @@ def match_to_accepted(m):
 # This ought to be cached I think?
 
 def intensional_matches(node, other):
-  assert node > 0
-  assert cl.get_checklist(node) != other
-  hits = cl.get_tnus_with_value(other,
-                                cl.canonical_name,
-                                cl.get_name(node))
-  if shared_idspace:
-    id_hit = cl.get_tnu_with_id(other, cl.get_tnu_id(node))
-    if id_hit and not id_hit in hits:
-      hits = hits + [id_hit]
+  hits = cl.get_similar_records(other, node, shared_idspace)
   matches = [art.intensional(node, hit, 0) for hit in hits]
   return sort_by_badness(matches)   # ? is sort needed ?
 

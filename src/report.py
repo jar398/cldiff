@@ -14,7 +14,7 @@ import analyze
 def main(c1, c1_tag, c2, c2_tag, out, format):
   A = cl.read_checklist(c1, c1_tag + ".", "checklist 1")
   B = cl.read_checklist(c2, c2_tag + ".", "checklist 2")
-  print ("TNU counts:", len(cl.get_all_tnus(A)), len(cl.get_all_tnus(B)))
+  print ("Taxname counts:", len(cl.get_all_taxnames(A)), len(cl.get_all_taxnames(B)))
   analyze.start(A, B)
   write_report(A, B, format, out)
 
@@ -73,20 +73,20 @@ def proclaim_row(row, sink):
     rows.append(row)
   else:
     (indent, tag, dom, re, cod, remark) = row
-    (dom_name, dom_id) = get_tnu_info(dom)
-    (cod_name, cod_id) = get_tnu_info(cod)
+    (dom_name, dom_id) = get_taxname_info(dom)
+    (cod_name, cod_id) = get_taxname_info(cod)
     writer.writerow([indent + tag, dom_name, dom_id, re, cod_id, cod_name, remark])
 
 def write_header(writer):
   writer.writerow(["tag", "left name", "left id", "rcc5", "right id", "right name", "justification"])
 
-def get_tnu_info(tnu):
+def get_taxname_info(tnu):
   if tnu:
     prefix = cl.get_checklist(tnu).prefix
     status = cl.get_taxonomic_status(tnu)
     modifiers = "?" if status == "synonym" else ""
     return (cl.get_name(tnu),
-            prefix + cl.get_tnu_id(tnu) + modifiers)
+            prefix + cl.get_taxname_id(tnu) + modifiers)
   else:
     return (None, None)
 

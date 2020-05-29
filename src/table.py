@@ -7,7 +7,7 @@ import property
 
 class Table:
   def __init__(self):
-    self.record_ids = []
+    self.record_uids = []
     pass
 
   def header(self):
@@ -43,7 +43,7 @@ class Table:
     self.process_header(next(record_generator))
     for record in record_generator:
       id = _register(record, self)
-      self.record_ids.append(id)
+      self.record_uids.append(id)
 
   def populate_from_file(self, inpath):
     # Look for a meta.xml file in same directory?
@@ -58,7 +58,7 @@ class Table:
   def get_index(self, prop):
     if self.indexes[prop.uid] == None:
       index = {}
-      for id in self.record_ids:
+      for id in self.record_uids:
         value = get_value(id, prop)
         if value != None:
           if value in index:
@@ -89,23 +89,23 @@ _registry = ["there is no record 0"]
 # We store a pair (record, table) where table is the table that "owns"
 # the record.
 
-def record_and_table(record_id):    # returns (record, table)
-  return _registry[record_id]
+def record_and_table(record_uid):    # returns (record, table)
+  return _registry[record_uid]
 
 def _register(record, table):
-  record_id = len(_registry)
+  record_uid = len(_registry)
   _registry.append((record, table))
-  return record_id
+  return record_uid
 
 def not_present(record):
   return None
 
-def get_value(record_id, prop):
-  (r, t) = record_and_table(record_id)
+def get_value(record_uid, prop):
+  (r, t) = record_and_table(record_uid)
   return t.methods[prop.uid](r)
 
-def get_table(record_id):
-  (r, t) = record_and_table(record_id)
+def get_table(record_uid):
+  (r, t) = record_and_table(record_uid)
   return t
 
 # ---------- Record comparison.
@@ -142,14 +142,14 @@ def differences(tnu1, tnu2):  # mask
 
 def self_test():
   table = read_table("work/ncbi/2020-01-01/primates.csv")
-  print ("Records read: %s" % len(table.record_ids))
+  print ("Records read: %s" % len(table.record_uids))
   prop = property.by_name("taxonID")
   pos = table.get_position(prop)    # column number
   print ("taxonID position in table is %s" % pos)
   assert pos != None
   print ("taxonID position in properties is %s" % prop.uid)
 
-  rec = table.record_ids[0]
+  rec = table.record_uids[0]
   (r, _) = record_and_table(rec)
   print ("Sample record: %s" % r)
   print ("Taxon id of sample record: %s" % get_value(rec, prop))

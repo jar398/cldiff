@@ -96,7 +96,7 @@ def synonymy(syn, accepted):
   re = rel.synonym_relation(status)
   return _articulation(syn, accepted, re, 1)
 
-different_subtrees = 1 << prop.number_of_selectors
+different_subtrees = 1 << prop.number_of_properties
 
 def extensional(dom, cod, re, same_subtree):
   diffs = 0
