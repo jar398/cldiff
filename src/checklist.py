@@ -10,23 +10,19 @@ import table
 
 # ---------- Fields (columns, properties) in taxon table
 
-highest_specificity = 0
-
 # Particular fields of interest here (not all possible DwC fields)
 
 def field(label):
-  global highest_specificity
   sel = property.by_name(label)
   assert sel
-  highest_specificity = max(highest_specificity, sel.specificity)
   return sel
 
 nomenclatural_status = field("nomenclaturalStatus")
 taxonomic_status     = field("taxonomicStatus")    # flush?
 taxon_rank           = field("taxonRank")
-parent_taxname_id      = field("parentNameUsageID")
-taxname_id             = field("taxonID")
-accepted_taxname_id    = field("acceptedNameUsageID")
+parent_taxname_id    = field("parentNameUsageID")
+taxname_id           = field("taxonID")
+accepted_taxname_id  = field("acceptedNameUsageID")
 canonical_name       = field("canonicalName")
 scientific_name      = field("scientificName")
 
@@ -160,8 +156,8 @@ def get_nominal_rank(tnu):
 
 def get_spaceless(tnu):
   if tnu == None: return "none"
-  assert table.is_record(tnu)
   if tnu == forest_tnu: return "forest"
+  assert table.is_record(tnu)
   checklist = get_checklist(tnu)
   name = get_name(tnu)
 
@@ -170,7 +166,7 @@ def get_spaceless(tnu):
   if len(tnus_with_this_name) > 1:
     name = name + "#" + get_taxname_id(tnu)
 
-  status = get_value(tnu, taxonomic_status)
+  status = get_taxonomic_status(tnu)
   if status == "accepted" or not status:
     pass
   elif status == "synonym":
@@ -234,7 +230,7 @@ def to_accepted(tnu):
     assert False
   probe = get_accepted(tnu)
   if probe:
-    # Some input checklist have chains of accepted records.
+    # Some input checklists have chains of accepted records.
     # The chain ends at the canonical representative of the 
     # equivalence class.
     return to_accepted(probe)
@@ -261,11 +257,8 @@ def get_synonyms(tnu):
 def get_taxonomic_status(tnu):
   return get_value(tnu, taxonomic_status)
 
-def is_accepted(tnu):
-  return get_taxonomic_status(tnu) == "accepted"
-
-def is_synonym(tnu):
-  return get_taxonomic_status(tnu) == "synonym"
+def get_nomenclatural_status(tnu):
+  return get_value(tnu, nomenclatural_status)
 
 # ---------- Hierarchy analyzers
 
@@ -439,15 +432,10 @@ def get_similar_records(checklist, record, shared_idspace=False):
                                  canonical_name,
                                  get_name(record))
   if shared_idspace:
-    id_hit = cl.get_record_with_taxon_id(checklist, cl.get_taxname_id(record))
+    id_hit = get_record_with_taxname_id(checklist, get_taxname_id(record))
     if id_hit and not id_hit in hits:
       hits = hits + [id_hit]
   return hits
-
-# ---------- Differences between two records
-
-def differences(r1, r2):
-  return 0
 
 # ---------- General utility that doesn't really belong here
 
@@ -467,7 +455,7 @@ def self_test():
   print ("Nodes:", len(get_all_taxnames(checklist)))
   print ("Roots:", get_roots(checklist))
   tnus = checklist.get_index(taxon_id)
-  tnu = get_record_with_taxon_id(checklist, '9455')
+  tnu = get_record_with_taxname_id(checklist, '9455')
   print ("Specimen tnu:", tnu)
   print ("Name:", get_name(tnu))
   synos = get_synonyms(tnu)

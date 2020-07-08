@@ -9,16 +9,51 @@ import checklist as cl
 import relation as rel
 import articulation as art
 import eulerx
-import analyze
+import alignment
+import diff
+
+def start(A, B):
+  global inverse_good_candidates
+  global grafts
+  global the_alignment
+  (the_alignment, grafts) = alignment.align(B, A)
+  inverse_good_candidates = invert_dict_by_cod(the_alignment)
+
+# Partners list for reporting (A->B articulations)
+
+def good_candidate(tnu, other):  # for children sort order
+  return alignment.choose_best_match(good_candidates(tnu, other))
+
+def good_candidates(tnu, other):
+  matches = inverse_good_candidates.get(tnu) or []
+  if len(matches) == 0:
+    if debug:
+      print("# matching: B-node", cl.get_unique(tnu))
+    investigate = alignment.articulate(tnu, other, ...)
+    if investigate: matches = [investigate]
+  return [match for match in matches if not cl.get_accepted(match.cod)]
+
+def invert_dict_by_cod(alignment):
+  inv = {}
+  for (node, ar) in alignment.items():
+    if ar:
+      ar = art.reverse(ar)
+      if ar.dom in inv:
+        inv[ar.dom].append(ar)
+      else:
+        inv[ar.dom] = [ar]
+  return inv
+
+# --------------------
 
 def main(c1, c1_tag, c2, c2_tag, out, format):
   A = cl.read_checklist(c1, c1_tag + ".", "checklist 1")
   B = cl.read_checklist(c2, c2_tag + ".", "checklist 2")
   print ("Taxname counts:", len(cl.get_all_taxnames(A)), len(cl.get_all_taxnames(B)))
-  analyze.start(A, B)
   write_report(A, B, format, out)
 
 def write_report(A, B, format, outpath):
+  start(A, B)
   if outpath == "-":
     really_write_report(A, B, format, sys.stdout)
   else:
@@ -28,7 +63,8 @@ def write_report(A, B, format, outpath):
 
 def really_write_report(A, B, format, outfile):
   if format == "eulerx":
-    eulerx.dump_alignment(analyze.finish_alignment(B, A), outfile)
+    eulerx.dump_alignment(alignment.finish_alignment(B, A, cross_mrcas),
+                          outfile)
   else:
     report_to_io(A, B, outfile)
 
@@ -98,15 +134,15 @@ def subreport(node, B, sink, indent):
   multiple = report_on_matches(node, B, sink, indent)
   sink = subsink(sink)
   def for_seq(node):
-    b = analyze.good_candidate(node, B)
+    b = good_candidate(node, B)
     return b.cod if b else node
   def sort_key(triple):
     (B_node, which, arg) = triple
     return cl.get_sequence_number(B_node)
   agenda = \
-    [(for_seq(child), 0, child) for child in analyze.get_children(node)] + \
+    [(for_seq(child), 0, child) for child in alignment.get_children(node)] + \
     [(option.cod, 1, option) for option in multiple] + \
-    [(B_node, 2, B_node) for B_node in analyze.get_graftees(node)]
+    [(B_node, 2, B_node) for B_node in get_graftees(node)]
   indent = indent + "__"
   for (B_node, which, arg) in \
      sorted(agenda, key=sort_key):
@@ -123,8 +159,11 @@ def subreport(node, B, sink, indent):
                        "")
   drain(sink)
 
+def get_graftees(A_node):
+  return (grafts.get(A_node) or [])     # global
+
 def report_on_matches(node, B, sink, indent):
-  matches = analyze.good_candidates(node, B)      # cod is accepted
+  matches = good_candidates(node, B)      # cod is accepted
   if len(matches) == 0:
     proclaim(sink, indent, "REMOVE",
                      node,
@@ -159,13 +198,12 @@ def tag_for_match(match, splitp):
         tag = "ADD SYNONYM"
       else:
         tag = "OPTION"
-    elif analyze.parent_changed(match):
+    elif parent_changed(match):
       tag = "MOVE"
     else:
-      changes = []
-      
       if match.differences != 0:
-        tag = "CHANGED %o" % match.differences
+        prop = diff.unpack(match.differences)
+        tag = ("CHANGED %s" % prop.pet_name)
       else:
         tag = "NO CHANGE"
   elif rel.is_variant(match.relation, rel.lt):
@@ -178,6 +216,20 @@ def tag_for_match(match, splitp):
     tag = "MUTEX"    # shouldn't happen ...
   return tag
 
+# X aligns to Y.  Does parent X align to parent Y?
+
+def parent_changed(match):
+  parent = cl.get_parent(match.dom)
+  coparent = cl.get_parent(match.cod)
+  if not parent and not coparent:
+    return False
+  if not parent or not coparent:
+    return True
+  other = cl.get_checklist(coparent)
+  match = good_candidate(parent, other)
+  if not match: return True
+  # if relation is not = : return True
+  return match.cod != coparent
 
 if __name__ == '__main__':
   parser = argparse.ArgumentParser()
@@ -189,6 +241,6 @@ if __name__ == '__main__':
   parser.add_argument('--out', help='file name for report', default='diff.csv')
   parser.add_argument('--format', help='report format', default='ad-hoc')
   args = parser.parse_args()
-  analyze.shared_idspace = args.share_ids
+  alignment.shared_idspace = args.share_ids
   main(args.left, args.left_tag, args.right, args.right_tag, args.out, args.format)
 

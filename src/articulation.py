@@ -9,7 +9,7 @@ import collections
 import relation as rel
 import checklist as cl
 import diff
-import property as prop
+import property
 
 # Articulations
 
@@ -73,45 +73,72 @@ def reverse(art):
 def is_identity(art):
   return art.dom == art.cod and art.relation == rel.eq
 
+# ---------- Synonymy relationship within one tree
+
+def synonymy(synonym, accepted):
+  status = (cl.get_nomenclatural_status(synonym) or \
+            cl.get_taxonomic_status(synonym) or \
+            "synonym")
+  re = rel.synonym_relation(status)
+  return _articulation(synonym, accepted, re, 1)
+
+# ---------- Different kinds of articulation
+
+different_subtrees = 1 << property.by_name("subtree").specificity
+
+def extensional(dom, cod, re, diffs = diff.no_diffs):
+  if re == rel.same_particles and diffs == diff.no_diffs:
+    re = rel.identical
+  return bridge(dom, cod, re, diffs)
+
+def intensional(dom, cod):
+  return bridge(dom, cod, rel.eq, diff.no_diffs)
+
+def bridge(dom, cod, re, diffs):
+  assert cl.get_checklist(dom) != cl.get_checklist(cod)
+  diffs |= diff.differences(dom, cod)
+  return _articulation(dom, cod, re, diffs)
+
+def cross_mrca(dom, cod, diffs):
+  return _articulation(dom, cod, rel.le, diffs)
+
+# ---------- Utility: collapsing a set of matches
+
+# Reduce a set of articulations grouped first by RCC5 relation, then
+# within each group, collapsed (conjoined) so that the codomains are
+# all different.
+
+def collapse_matches(arts):
+  if len(arts) <= 1: return arts
+  arts = sorted(arts, key=conjoin_sort_key)
+  previous = None
+  matches = []
+  for ar in arts:
+    if previous and conjoinable(previous, ar):
+      previous = conjoin(previous, ar)
+    else:
+      if previous:
+        matches.append(previous)
+      previous = ar
+  if previous:
+    matches.append(previous)
+  assert len(matches) <= len(arts)
+  return matches
+
 # This one is for deduplication (grouping by codomain)
 
 def conjoin_sort_key(ar):
   assert ar.dom
-  return (ar.cod,
-          rel.rcc5_key(ar.relation))
+  return (rel.rcc5_key(ar.relation),
+          ar.cod)
 
-# This one is for tie breaking (when codomains differ)
+# ---------- This one is for tie breaking (when codomains differ)
 
 def badness(ar):
   return(rel.sort_key(ar.relation),
          ar.differences,
          cl.get_mutex(ar.cod))
 
-# Synonymy relationship within one tree
+def sort_by_badness(arts):
+  return sorted(arts, key=badness)
 
-def synonymy(syn, accepted):
-  status = (cl.get_value(synonym, cl.nomenclatural_status_field) or \
-            cl.get_value(synonym, cl.taxonomic_status_field) or \
-            "synonym")
-  re = rel.synonym_relation(status)
-  return _articulation(syn, accepted, re, 1)
-
-different_subtrees = 1 << prop.number_of_properties
-
-def extensional(dom, cod, re, same_subtree):
-  diffs = 0
-  if not same_subtree:
-    diffs = different_subtrees
-  return bridge(dom, cod, re, diffs)
-
-def intensional(dom, cod, diffs):
-  re = rel.identical_subtrees if diffs == 0 else rel.similar_subtrees
-  return bridge(dom, cod, re, diffs)
-
-def bridge(dom, cod, re, diffs):
-  assert cl.get_checklist(dom) != cl.get_checklist(cod)
-  diffs |= cl.differences(dom, cod)
-  return _articulation(dom, cod, re, diffs)
-
-def cross_mrca(dom, cod, diffs):
-  return _articulation(dom, cod, rel.le, diffs)

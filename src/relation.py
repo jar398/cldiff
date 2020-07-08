@@ -37,10 +37,8 @@ def justify(re, bit, name, revname = None):
                    name, revname)
 
 def reverse(re):
-  rre = _relation(Rcc5(re.rcc5.a_given_b, re.rcc5.b_given_a), re.goodness,
-                  re.revname, re.name)
-  assert rre
-  return rre
+  return _relation(Rcc5(re.rcc5.a_given_b, re.rcc5.b_given_a),
+                   re.goodness, re.revname, re.name)
 
 def compose(rel1, rel2):
   goodness = rel1.goodness & rel2.goodness
@@ -111,57 +109,6 @@ def rcc5_key(re):
 def better(re1, re2):
   return sort_key(re1) < sort_key(re2)
 
-# Goodness represented as bit manipulation
-
-def bit(b): return (1 << b)
-
-# Unjustified
-
-noinfo_species = Rcc5(-1, -1)
-noinfo    = _relation(noinfo_species,   0, 'noinfo')
-disjoint  = _relation(Rcc5(0,   0),   0, '!')
-conflict  = _relation(Rcc5(0.5, 0.5), 0, '><') 
-lt        = _relation(Rcc5(1,   0.5), 0, '<', '>')
-eq        = _relation(Rcc5(1,   1),   0, '=')
-gt        = reverse(lt)
-
-le        = _relation(Rcc5(1,   0.7), 0, '<=', '>=')  # never composed
-
-# Intensional half-matches ?
-
-# Intensional matches
-
-similar_record     = justify(eq, bit(0), "similar-record")
-
-has_vernacular     = justify(eq, bit(2), "vernacular")
-has_synonym        = justify(eq, bit(3), "synonym")
-
-same_record        = justify(eq, bit(10), "= record")
-
-# Individual half-matches?
-# Individual matches?
-# Cross-mrca half-matches ??
-# Cross-mrca matches ???
-
-# Justified extensionally (i.e. assuming nonentities don't matter)
-
-extensionally = bit(12)
-particle = justify(eq, extensionally, "particle")
-same_extension = justify(eq, extensionally, "extension =")
-
-# Monotypy is a tough one.  The extension is the same, but the
-# intension differs.
-
-monotypic_over = justify(gt, bit(14) | extensionally, "monotypic-over", "monotypic-in")
-monotypic_in   = reverse(monotypic_over)
-
-# Share all fields, transitively to all descendants
-
-identical      = justify(eq, bit(16), "= identically")
-
-similar_subtrees   = justify(eq, bit(11), "similar subtrees")
-identical_subtrees = justify(eq, bit(12), "identical subtrees")
-
 # Hack
 
 def rcc5_name(re):
@@ -171,6 +118,41 @@ def rcc5_name(re):
   if is_variant(re, conflict): return conflict.name
   if is_variant(re, disjoint): return disjoint.name
   else: return re.name
+
+# Basic RCC-5 relations
+
+noinfo_rcc5 = _relation(Rcc5(-1, -1),   0, 'noinfo')    # error
+disjoint    = _relation(Rcc5(0,   0),   0, '!')
+conflict    = _relation(Rcc5(0.5, 0.5), 0, '><') 
+lt          = _relation(Rcc5(1,   0.5), 0, '<', '>')
+eq          = _relation(Rcc5(1,   1),   0, '=')
+gt          = reverse(lt)
+
+# For cross-mrcas
+
+le        = _relation(Rcc5(1,   0.7), 0, '<=', '>=')  # never composed
+
+# ----------
+# Goodness represented as bit manipulation.  Higher numbered bits are 'better'.
+
+def bit(b): return (1 << b)
+
+# Intensional matches
+
+has_vernacular     = justify(eq, bit(2), "vernacular")
+has_synonym        = justify(eq, bit(3), "synonym")
+
+# Justified by particle set (split?)
+
+extensionally = bit(10)
+same_particle  = justify(eq, extensionally, "particle")
+same_particles = justify(eq, extensionally, "same particles")
+
+# Share all fields, transitively to all descendants
+
+similar_subtrees   = justify(eq, bit(11), "similar subtrees")
+identical_subtrees = justify(eq, bit(12), "identical subtrees")
+identical          = justify(eq, bit(16), "= identically")
 
 # -------------------- Synonyms 
 

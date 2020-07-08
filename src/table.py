@@ -108,36 +108,6 @@ def get_table(record_uid):
   (r, t) = record_and_table(record_uid)
   return t
 
-# ---------- Record comparison.
-
-# Degrees of freedom:
-#  - columns to consider: only shared, or all of them?
-#  - how many columns to report: only most specific, or all of them?
-
-def differences(tnu1, tnu2):  # mask
-  (r1, t1) = record_and_table(tnu1)
-  (r2, t2) = record_and_table(tnu2)
-
-  comparison = 0
-  most_specific = None
-  for pos1 in range(len(t1.properties)):
-    prop = t1.properties[pos1]
-    pos2 = t2.position_index[prop.uid]
-    if pos2 != None:
-      # Property is provided in both tables
-      v1 = r1[pos1]
-      v2 = r2[pos2]
-      if v1 != None and v2 != None:
-        if v1 != v2:
-          comparison |= 1 << prop.specificity
-          if most_specific and \
-             prop.specificity > most_specific.specificity:
-            most_specific = prop
-  if debug:
-    print("# Differences(%s, %s) = %o (octal)" %\
-          (get_unique(tnu1), get_unique(tnu2), comparison))
-  return comparison
-
 # ---------- Self-test
 
 def self_test():

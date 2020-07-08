@@ -62,14 +62,17 @@ record    = uri_to_property("data:,property/record")
 #     - mutexes
 
 uris = [
-        "http://purl.org/dc/terms/source",     # checklist
-        "http://rs.tdwg.org/dwc/terms/nomenclaturalStatus",
+        # "http://purl.org/dc/terms/source",     # checklist  ??
+        "https://github.com/jar398/biodiversity/wiki/subtree",  # subtree identity
+        "https://github.com/jar398/biodiversity/wiki/tips",     # same tips
+        "https://github.com/jar398/biodiversity/wiki/direct",   # not via synonym
         "http://rs.tdwg.org/dwc/terms/taxonomicStatus",     # flush?
+        "http://rs.tdwg.org/dwc/terms/nomenclaturalStatus",
         "http://rs.tdwg.org/dwc/terms/verbatimTaxonRank",   # don't use this URI...
         "http://rs.tdwg.org/dwc/terms/taxonRank",
         "http://rs.tdwg.org/dwc/terms/scientificNameAuthorship",
         "http://rs.tdwg.org/dwc/terms/nameAccordingToID",
-        "http://rs.tdwg.org/dwc/terms/taxonID",     # at the source!?  misused
+        "http://rs.tdwg.org/dwc/terms/taxonID",
         "http://rs.tdwg.org/dwc/terms/vernacularName",
         "http://rs.tdwg.org/dwc/terms/parentNameUsageID",
         "http://rs.tdwg.org/dwc/terms/namePublishedInYear",
@@ -79,7 +82,7 @@ uris = [
         "http://rs.tdwg.org/dwc/terms/acceptedNameUsageID",
         "http://rs.gbif.org/terms/1.0/canonicalName",
         "http://rs.tdwg.org/dwc/terms/scientificName",
-        "https://github.com/jar398/biodiversity/wiki/taxon",
+        "https://github.com/jar398/biodiversity/wiki/particles",
 ]
 for uri in uris: uri_to_property(uri)
   
