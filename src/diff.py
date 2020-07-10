@@ -2,6 +2,7 @@ debug = False
 
 import table
 import property
+import checklist as cl
 
 # Difference report.
 # Each bit position is 1 for a mismatch, 0 for a match.
@@ -23,9 +24,6 @@ def conjoin(d1, d2):
   return min(d1, d2)
 
 tip_prop = property.by_name("tips")
-
-def note_dropped_children(diffs):
-  return conjoin(diffs, (1 << tip_prop.specificity))
 
 # Fix later
 
@@ -56,23 +54,27 @@ def differences(uid1, uid2):  # mask
       v2 = r2[pos2]
       if v1 != None and v2 != None:
         if v1 != v2:
-          import checklist as cl
           if debug:
             print("difference: %s %s %s" %
                   (cl.get_unique(uid1), prop.pet_name,
                    cl.get_unique(uid2)))
           comparison |= 1 << prop.specificity
+  if len(cl.get_children(uid1)) != len(cl.get_children(uid2)):
+    comparison |= 1 << number_of_children.specificity
   return comparison
+
+number_of_children = property.by_name("number_of_children")
+number_of_synonyms = property.by_name("number_of_synonyms")
+
+# Returns a list of properties ... ?
 
 def unpack(comparison):
   if comparison == 0:
-    return None
+    return []
   else:
+    props = []
     for prop in property.properties_by_specificity:
       spec = prop.specificity
-      mask = 1 << spec
-      comparison &= ~mask
-      if comparison == 0:
-        return prop
-
-    print ("shouldn't happen: %o" % comparison)
+      if comparison & (1 << spec) != 0:
+        props.append(prop)
+    return props

@@ -8,31 +8,28 @@
 import collections
 import relation as rel
 import checklist as cl
-import diff
 import property
 
 # Articulations
 
 Articulation = \
   collections.namedtuple('Articulation',
-                         ['dom', 'cod', 'relation', 'differences'])
+                         ['dom', 'cod', 'relation'])
 
-def _articulation(dom, cod, re, differences):
+def _articulation(dom, cod, re):
   assert dom > 0
   assert cod > 0
   assert re
   assert re.name
-  assert differences >= 0
-  return Articulation(dom, cod, re, differences)
+  return Articulation(dom, cod, re)
 
 def express(ar):
-  return "%s %s %s (%s)" % (cl.get_unique(ar.dom),
+  return "%s %s %s" % (cl.get_unique(ar.dom),
                             ar.relation.name,
-                            cl.get_unique(ar.cod),
-                            ar.differences)
+                            cl.get_unique(ar.cod))
 
 def identity(node):
-  return _articulation(node, node, rel.eq, 0)
+  return _articulation(node, node, rel.eq)
 
 def compose(p, q):
   if not composable(p, q):
@@ -43,8 +40,7 @@ def compose(p, q):
   if is_identity(q): return p
   return _articulation(p.dom,
                        q.cod,
-                       rel.compose(p.relation, q.relation),
-                       diff.compose(p.differences, q.differences))
+                       rel.compose(p.relation, q.relation))
 
 def composable(p, q):
   return (p.cod == q.dom and
@@ -56,8 +52,7 @@ def conjoin(p, q):
           (express(p), express(q)))
     assert False
   re = rel.conjoin(p.relation, q.relation)
-  return Articulation(p.dom, p.cod, re,
-                      diff.conjoin(p.differences, q.differences))
+  return Articulation(p.dom, p.cod, re)
 
 def conjoinable(p, q):
   return (p.dom == q.dom and
@@ -68,7 +63,7 @@ def get_comment(art):
   return art.relation.name
 
 def reverse(art):
-  return Articulation(art.cod, art.dom, rel.reverse(art.relation), art.differences)
+  return Articulation(art.cod, art.dom, rel.reverse(art.relation))
 
 def is_identity(art):
   return art.dom == art.cod and art.relation == rel.eq
@@ -80,27 +75,24 @@ def synonymy(synonym, accepted):
             cl.get_taxonomic_status(synonym) or \
             "synonym")
   re = rel.synonym_relation(status)
-  return _articulation(synonym, accepted, re, 1)
+  return _articulation(synonym, accepted, re)
 
 # ---------- Different kinds of articulation
 
-different_subtrees = 1 << property.by_name("subtree").specificity
-
-def extensional(dom, cod, re, diffs = diff.no_diffs):
-  if re == rel.same_particles and diffs == diff.no_diffs:
+def extensional(dom, cod, re):
+  if re == rel.same_particles:
     re = rel.identical
-  return bridge(dom, cod, re, diffs)
+  return bridge(dom, cod, re)
 
 def intensional(dom, cod):
-  return bridge(dom, cod, rel.eq, diff.no_diffs)
+  return bridge(dom, cod, rel.eq)
 
-def bridge(dom, cod, re, diffs):
+def bridge(dom, cod, re):
   assert cl.get_checklist(dom) != cl.get_checklist(cod)
-  diffs |= diff.differences(dom, cod)
-  return _articulation(dom, cod, re, diffs)
+  return _articulation(dom, cod, re)
 
-def cross_mrca(dom, cod, diffs):
-  return _articulation(dom, cod, rel.le, diffs)
+def cross_mrca(dom, cod):
+  return _articulation(dom, cod, rel.le)
 
 # ---------- Utility: collapsing a set of matches
 
@@ -136,7 +128,6 @@ def conjoin_sort_key(ar):
 
 def badness(ar):
   return(rel.sort_key(ar.relation),
-         ar.differences,
          cl.get_mutex(ar.cod))
 
 def sort_by_badness(arts):

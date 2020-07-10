@@ -5,7 +5,6 @@ import sys, csv
 import checklist as cl
 import relation as rel
 import articulation as art
-import diff
 
 # For each B-record, we choose an articulation with the closest
 # A-record that it matches (preferably but not necessarily an '='
@@ -63,7 +62,13 @@ def good_matches(node, other):
     print("# matching B-node", cl.get_unique(node))
   exties = extensional_matches(node, other)    #monotypic chain
 
-  if len(exties) > 0:
+  namies = matches_to_accepted(node, other)
+  targets = [extie.cod for extie in exties]
+  namies = [match for match in namies if match.cod in targets]
+
+  if len(namies) > 0:
+    matches = namies
+  elif len(exties) > 0:
     if debug: print("# %s exties to %s" % (len(exties), cl.get_unique(node)))
     matches = exties
   else:
@@ -114,24 +119,10 @@ def extensional_matches(tnu, other):       # B-node to A
         break
       if debug: print("# adding return match %s" %
                       (cl.get_unique(scan)))
-      #matches.append(art.extensional(tnu, scan, rel.same_particles, back.differences))
-      matches.append(art.extensional(tnu, scan, rel.same_particles, diff.no_diffs))
+      matches.append(art.extensional(tnu, scan, rel.same_particles))
     if debug: print("# %s matches %s nodes extensionally" %
                     (cl.get_unique(tnu), len(matches)))
-  return [annotate_match(match, other) for match in matches]
-
-def annotate_match(match, other):
-  candidates = [candidate
-                for candidate in matches_to_accepted(match.dom, other)
-                if candidate.cod == match.cod]
-  winner = choose_best_match(candidates)
-  if winner:
-    if debug:
-      print ("# Winner: %s %s" % (cl.get_unique(match.dom),
-                                  cl.get_unique(winner.cod)))
-    return winner
-  else:
-    return match
+  return matches
 
 # Guaranteed invertible, except for monotypic node chains
 
@@ -143,11 +134,10 @@ def extensional_match(tnu, other):
   here = cl.get_checklist(tnu)
   atcha = cross_mrca(partner, here)
   back = atcha.cod
-  diffs = diff.combine(cross.differences, atcha.differences)
   if cl.are_disjoint(tnu, back):
     re = rel.disjoint
   elif cl.mrca(tnu, back) == tnu:
-    return art.extensional(tnu, partner, rel.same_particles, diffs)
+    re = rel.same_particles
   else:
     re = rel.lt
     for sub in get_children(partner):
@@ -157,7 +147,7 @@ def extensional_match(tnu, other):
         if cl.mrca(tnu, back) == tnu and cross_disjoint(tnu, partner):
           re = rel.conflict
   re = extensionally(re)
-  return art.extensional(tnu, partner, re, diffs)
+  return art.extensional(tnu, partner, re)
 
 def extensionally(re):
   return rel.justify(re, rel.extensionally, "extension " + rel.rcc5_name(re))
@@ -197,9 +187,6 @@ def cross_mrca(tnu, other):
     return probe
   return None
 
-# Returns match with diffs = dropped taxa (including
-# those of particles)
-
 def analyze_cross_mrcas(A, B, particles):
   cross_mrcas = {}
   def half_analyze_cross_mrcas(checklist, other, checkp):
@@ -213,7 +200,6 @@ def analyze_cross_mrcas(A, B, particles):
                 (cl.get_unique(tnu), cl.get_unique(result.cod)))
       else:
         children = get_children(tnu)
-        diffs = diff.no_diffs     # Cumulative diffs for all descendants?
         if children:
           m = None      # is the identity for mrca
           for child in children:
@@ -226,16 +212,13 @@ def analyze_cross_mrcas(A, B, particles):
                 print("#  Folding %s into %s" % (cl.get_unique(m2), cl.get_unique(m)))
               m = cl.mrca(m, m2) if m != None else m2
               # ?????
-              diffs = diff.combine(diffs, cross.differences)
               if debug:
                 print("#   -> %s" % cl.get_unique(m))
-            else:
-              diffs = diff.note_dropped_children(diffs)
           if m != None:
-            result = art.cross_mrca(tnu, m, diffs)
+            result = art.cross_mrca(tnu, m)
             if debug:
-              print("#   cm(%s) = %s, diffs %o)" % \
-                    (cl.get_unique(tnu), cl.get_unique(m), diffs))
+              print("#   cm(%s) = %s)" % \
+                    (cl.get_unique(tnu), cl.get_unique(m)))
       if result:
         cross_mrcas[tnu] = result
         if debug and checkp:
@@ -268,7 +251,6 @@ def find_particles(here, other):
        print("# fp(%s): %s" % (cl.get_unique(tnu), message))
       count[0] += 1
   def subanalyze(tnu, other):
-    diffs = diff.no_diffs
     log(tnu, "subanalyze")
     if cl.get_accepted(tnu):
       print("# ** Child %s of %s has an accepted taxname" %
@@ -279,8 +261,6 @@ def find_particles(here, other):
       log(tnu, "child %s" % inf)
       if subanalyze(inf, other):
         found_match = True
-      else:
-        diffs = diff.note_dropped_children(diffs)
     if found_match:    # Some descendant is a particle
       return True
     candidate = choose_best_match(matches_to_accepted(tnu, other))

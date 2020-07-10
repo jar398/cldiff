@@ -83,6 +83,7 @@ uris = [
         "http://rs.gbif.org/terms/1.0/canonicalName",
         "http://rs.tdwg.org/dwc/terms/scientificName",
         "https://github.com/jar398/biodiversity/wiki/particles",
+        "https://github.com/jar398/biodiversity/wiki/number_of_children",
 ]
 for uri in uris: uri_to_property(uri)
   

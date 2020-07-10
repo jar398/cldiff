@@ -16,8 +16,10 @@ def start(A, B):
   global inverse_good_candidates
   global grafts
   global the_alignment
+  global change_status
   (the_alignment, grafts) = alignment.align(B, A)
   inverse_good_candidates = invert_dict_by_cod(the_alignment)
+  change_status = find_unchanged_subtrees(A, inverse_good_candidates)
 
 # Partners list for reporting (A->B articulations)
 
@@ -43,6 +45,27 @@ def invert_dict_by_cod(alignment):
       else:
         inv[ar.dom] = [ar]
   return inv
+
+def find_unchanged_subtrees(A, inverse_good_candidates):
+  status = {}
+  def process(node):
+    changed = True
+    matches = inverse_good_candidates.get(node)
+    if matches and len(matches) == 1:
+      match = matches[0]
+      if rel.is_variant(match.relation, rel.eq):
+        comparison = diff.differences(match.dom, match.cod)
+        if comparison == 0:
+          changed = False
+    chch = False
+    for child in alignment.get_children(node):
+      if process(child):
+        chch = True
+    status[node] = chch       # Cache it
+    return changed
+  for root in cl.get_roots(A):
+    process(root)
+  return status
 
 # --------------------
 
@@ -139,8 +162,13 @@ def subreport(node, B, sink, indent):
   def sort_key(triple):
     (B_node, which, arg) = triple
     return cl.get_sequence_number(B_node)
-  agenda = \
-    [(for_seq(child), 0, child) for child in alignment.get_children(node)] + \
+
+  if change_status[node] == False:
+    ch = []
+  else:
+    ch = [(for_seq(child), 0, child) for child in alignment.get_children(node)]
+
+  agenda = ch + \
     [(option.cod, 1, option) for option in multiple] + \
     [(B_node, 2, B_node) for B_node in get_graftees(node)]
   indent = indent + "__"
@@ -198,14 +226,20 @@ def tag_for_match(match, splitp):
         tag = "ADD SYNONYM"
       else:
         tag = "OPTION"
-    elif parent_changed(match):
-      tag = "MOVE"
     else:
-      if match.differences != 0:
-        prop = diff.unpack(match.differences)
-        tag = ("CHANGED %s" % prop.pet_name)
+      comparison = diff.differences(match.dom, match.cod)
+      if change_status[match.dom] == False:
+        if len(alignment.get_children(match.dom)) == 0:
+          tag = "KEEP-TIP"
+        else:
+          tag = "KEEP-SUBTREE"
       else:
-        tag = "NO CHANGE"
+        tag = "KEEP"
+      if comparison > 0:
+        props = diff.unpack(comparison)
+        tag = "%s (change %s)" % (tag,
+                                  "; ".join(map(lambda x:x.pet_name, props)))
+      # Make a list of changes: parent, name, etc.
   elif rel.is_variant(match.relation, rel.lt):
     tag = "ELIDE"
   elif rel.is_variant(match.relation, rel.gt):
