@@ -9,19 +9,23 @@ import collections
 import relation as rel
 import checklist as cl
 import property
+import diff
 
 # Articulations
 
 Articulation = \
   collections.namedtuple('Articulation',
-                         ['dom', 'cod', 'relation'])
+                         ['dom', 'cod', 'relation', 'diff'])
 
 def _articulation(dom, cod, re):
   assert dom > 0
   assert cod > 0
   assert re
   assert re.name
-  return Articulation(dom, cod, re)
+  dif = diff.all_diffs
+  if cl.is_accepted(dom) and cl.is_accepted(cod):
+    dif = diff.differences(dom, cod)
+  return Articulation(dom, cod, re, dif)
 
 def express(ar):
   return "%s %s %s" % (cl.get_unique(ar.dom),
@@ -52,18 +56,18 @@ def conjoin(p, q):
           (express(p), express(q)))
     assert False
   re = rel.conjoin(p.relation, q.relation)
-  return Articulation(p.dom, p.cod, re)
+  return Articulation(p.dom, p.cod, re, p.diff)    # ?
 
 def conjoinable(p, q):
   return (p.dom == q.dom and
-          q.cod == q.cod and
+          p.cod == q.cod and
           rel.conjoinable(p.relation, q.relation))
 
 def get_comment(art):
   return art.relation.name
 
 def reverse(art):
-  return Articulation(art.cod, art.dom, rel.reverse(art.relation))
+  return _articulation(art.cod, art.dom, rel.reverse(art.relation))
 
 def is_identity(art):
   return art.dom == art.cod and art.relation == rel.eq
@@ -106,12 +110,13 @@ def collapse_matches(arts):
   previous = None
   matches = []
   for ar in arts:
-    if previous and conjoinable(previous, ar):
+    if not previous:
+      previous = ar
+    elif conjoinable(previous, ar):
       previous = conjoin(previous, ar)
     else:
-      if previous:
-        matches.append(previous)
-      previous = ar
+      matches.append(previous)
+      previous = None
   if previous:
     matches.append(previous)
   assert len(matches) <= len(arts)
@@ -127,7 +132,17 @@ def conjoin_sort_key(ar):
 # ---------- This one is for tie breaking (when codomains differ)
 
 def badness(ar):
-  return(rel.sort_key(ar.relation),
+  (drop, add) = ar.diff
+  return(
+         # Hmm, this is calculated wrong
+         # rel.sort_key(ar.relation),
+         # Changes are bad
+         # Low-bit changes are better than high-bit changes
+         -(drop & add),
+         -drop,
+         -add,
+         # Added fields are benign
+         # Dropped fields are so-so
          cl.get_mutex(ar.cod))
 
 def sort_by_badness(arts):

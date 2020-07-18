@@ -29,6 +29,7 @@ def finish_alignment(B, A, xmrcas):
     m = articulate(node, A, xmrcas)
     if m:
       alignment[node] = m
+      # alignment[m.cod] = art.reverse(m)  ??
     for child in get_children(node):
       process(child)
   for root in cl.get_roots(B):

@@ -102,7 +102,8 @@ def not_present(record):
 
 def get_value(record_uid, prop):
   (r, t) = record_and_table(record_uid)
-  return t.methods[prop.uid](r)
+  val = t.methods[prop.uid](r)
+  return val
 
 def get_table(record_uid):
   (r, t) = record_and_table(record_uid)

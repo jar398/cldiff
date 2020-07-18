@@ -10,25 +10,8 @@ import checklist as cl
 # The bit mask is a 'badness' measure and can be used to sort
 # options for matching.
 
-no_diffs = 0
-
-# Among d1 and d2, the worst of both
-# (this still isn't right)
-
-def compose(d1, d2):
-  return d1 | d2
-
-# Among d1 and d2, whichever is better
-
-def conjoin(d1, d2):
-  return min(d1, d2)
-
-tip_prop = property.by_name("tips")
-
-# Fix later
-
-def combine(d1, d2):
-  return d1 | d2
+no_diffs = (0, 0)
+all_diffs = (-1, -1)
 
 # ---------- Record comparison.
 
@@ -40,41 +23,41 @@ def combine(d1, d2):
 #       add info from A to B, only when consistent with B?
 #  - should diff report be threaded?
 
-def differences(uid1, uid2):  # mask
-  (r1, t1) = table.record_and_table(uid1)
-  (r2, t2) = table.record_and_table(uid2)
+# TBD: filter out taxonID if idspaces are different
 
-  comparison = 0
-  for pos1 in range(len(t1.properties)):
-    prop = t1.properties[pos1]
-    pos2 = t2.position_index[prop.uid]
-    if pos2 != None:
-      # Property is provided in both tables
-      v1 = r1[pos1]
-      v2 = r2[pos2]
-      if v1 != None and v2 != None:
-        if v1 != v2:
-          if debug:
-            print("difference: %s %s %s" %
-                  (cl.get_unique(uid1), prop.pet_name,
-                   cl.get_unique(uid2)))
-          comparison |= 1 << prop.specificity
+def differences(uid1, uid2):  # mask
+  drop = 0
+  add = 0
+  for prop in table.get_table(uid2).properties:
+    v1 = cl.get_value(uid1, prop)
+    v2 = cl.get_value(uid2, prop)
+
+    if v1 != v2:
+      if v1 != None:
+        drop |= 1 << prop.specificity
+      if v2 != None:
+        add |= 1 << prop.specificity
   if len(cl.get_children(uid1)) != len(cl.get_children(uid2)):
-    comparison |= 1 << number_of_children.specificity
-  return comparison
+    drop |= 1 << number_of_children.specificity
+    add |= 1 << number_of_children.specificity
+  return (drop, add)
 
 number_of_children = property.by_name("number_of_children")
 number_of_synonyms = property.by_name("number_of_synonyms")
 
+def same(comparison):
+  return comparison == (0,0)
+
 # Returns a list of properties ... ?
 
 def unpack(comparison):
-  if comparison == 0:
+  if same(comparison):
     return []
   else:
     props = []
     for prop in property.properties_by_specificity:
       spec = prop.specificity
-      if comparison & (1 << spec) != 0:
+      (drop, add) = comparison
+      if ((drop | add) & (1 << spec)) != 0:
         props.append(prop)
     return props

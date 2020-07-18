@@ -12,12 +12,16 @@ import eulerx
 import alignment
 import diff
 
+# A is lower priority
+
 def start(A, B):
   global inverse_good_candidates
   global grafts
   global the_alignment
   global change_status
+  # Map each B to a corresponding A
   (the_alignment, grafts) = alignment.align(B, A)
+  # Find all As that align to any given B
   inverse_good_candidates = invert_dict_by_cod(the_alignment)
   change_status = find_unchanged_subtrees(A, inverse_good_candidates)
 
@@ -38,7 +42,7 @@ def good_candidates(tnu, other):
 def invert_dict_by_cod(alignment):
   inv = {}
   for (node, ar) in alignment.items():
-    if ar:
+    if ar:      # ar: B -> A
       ar = art.reverse(ar)
       if ar.dom in inv:
         inv[ar.dom].append(ar)
@@ -55,14 +59,14 @@ def find_unchanged_subtrees(A, inverse_good_candidates):
       match = matches[0]
       if rel.is_variant(match.relation, rel.eq):
         comparison = diff.differences(match.dom, match.cod)
-        if comparison == 0:
+        if diff.same(comparison):
           changed = False
     chch = False
     for child in alignment.get_children(node):
       if process(child):
         chch = True
     status[node] = chch       # Cache it
-    return changed
+    return chch or changed
   for root in cl.get_roots(A):
     process(root)
   return status
@@ -70,13 +74,13 @@ def find_unchanged_subtrees(A, inverse_good_candidates):
 # --------------------
 
 def main(c1, c1_tag, c2, c2_tag, out, format):
-  A = cl.read_checklist(c1, c1_tag + ".", "checklist 1")
-  B = cl.read_checklist(c2, c2_tag + ".", "checklist 2")
+  A = cl.read_checklist(c1, c1_tag + ".", "left-checklist")
+  B = cl.read_checklist(c2, c2_tag + ".", "right-checklist")
   print ("Taxname counts:", len(cl.get_all_taxnames(A)), len(cl.get_all_taxnames(B)))
   write_report(A, B, format, out)
 
 def write_report(A, B, format, outpath):
-  start(A, B)
+  start(A, B)    # sets the_alignment etc.
   if outpath == "-":
     really_write_report(A, B, format, sys.stdout)
   else:
@@ -86,8 +90,7 @@ def write_report(A, B, format, outpath):
 
 def really_write_report(A, B, format, outfile):
   if format == "eulerx":
-    eulerx.dump_alignment(alignment.finish_alignment(B, A, cross_mrcas),
-                          outfile)
+    eulerx.dump_alignment(the_alignment, outfile)
   else:
     report_to_io(A, B, outfile)
 
@@ -150,11 +153,15 @@ def get_taxname_info(tnu):
     return (None, None)
 
 # Report generation
+# TBD:
+#  1. Separate nodes that match this one into = vs. other
+#  2. Show all = matches preceding children and grafts
 
 def subreport(node, B, sink, indent):
   A = cl.get_checklist(node)
   assert A != B
-  multiple = report_on_matches(node, B, sink, indent)
+  friends = report_on_matches(node, B, sink, indent)
+
   sink = subsink(sink)
   def for_seq(node):
     b = good_candidate(node, B)
@@ -169,65 +176,69 @@ def subreport(node, B, sink, indent):
     ch = [(for_seq(child), 0, child) for child in alignment.get_children(node)]
 
   agenda = ch + \
-    [(option.cod, 1, option) for option in multiple] + \
+    [(friend.cod, 1, friend) for friend in friends] + \
     [(B_node, 2, B_node) for B_node in get_graftees(node)]
   indent = indent + "__"
   for (B_node, which, arg) in \
      sorted(agenda, key=sort_key):
-    if which == 0:
+    if which == 0:              # child
       subreport(arg, B, sink, indent)
-    elif which == 1:
-      report_on_match(arg, True, sink, indent)    # split
-    elif which == 2:
+    elif which == 1:            # friend
+      report_on_match(arg, True, sink, indent)
+    elif which == 2:            # graft / addition
       proclaim(sink,
-               indent, "GRAFT",
-                       "",
-                       "",
-                       arg,
-                       "")
+               indent,
+               "ADD",    # tbd: add "-SUBTREE" when not tip
+               "", "", arg, "")
   drain(sink)
-
-def get_graftees(A_node):
-  return (grafts.get(A_node) or [])     # global
 
 def report_on_matches(node, B, sink, indent):
   matches = good_candidates(node, B)      # cod is accepted
-  if len(matches) == 0:
-    proclaim(sink, indent, "REMOVE",
-                     node,
-                     "",
-                     "",
-                     "%s right nodes match this left node" % len(matches))
-    return []
-  elif len(matches) == 1:
-    report_on_match(matches[0], False, sink, indent)
-    return []
+  options = [m for m in matches if rel.is_variant(m.relation, rel.eq)]
+  friends = [m for m in matches if not rel.is_variant(m.relation, rel.eq)]
+  if len(options) > 0:
+    best = alignment.choose_best_match(options)
+    if best:
+      options = [best]
+      friends = [ok for ok in options if ok != best] + friends
+  if len(options) == 0:
+    proclaim(sink, indent, "DELETE",
+                   node,
+                   "",
+                   "",
+                   "%s right nodes match this left node" % len(matches))
+  elif len(options) == 1:
+    report_on_match(options[0], False, sink, indent)
   else:
-    proclaim(sink, indent, "MULTIPLE",
-                     node,
-                     "?",
-                     "",
-                     "%s right nodes match this left node" % len(matches))
-    return matches
+    proclaim(sink, indent, "MULTIPLE", node,
+             "?", "",
+             "%s right nodes match this left node" % len(matches))
+    for option in options:
+      report_on_match(option, True, sink, indent)
+  return friends
 
-def report_on_match(match, splitp, sink, indent):
-  tag = tag_for_match(match, splitp)
+def get_graftees(A_node):
+  return (grafts.get(A_node) or [])     # grafts is global
+
+# optionsp means ... it's part of a multiple-match set
+
+def report_on_match(match, optionsp, sink, indent):
+  tag = tag_for_match(match, optionsp)
   proclaim(sink, indent, tag,
-                   None if splitp else match.dom,
-                   rel.rcc5_name(match.relation),
-                   match.cod,
-                   art.get_comment(match))
+           None if optionsp else match.dom,
+           rel.rcc5_name(match.relation),
+           match.cod,
+           art.get_comment(match))
 
-def tag_for_match(match, splitp):
+def tag_for_match(match, optionsp):
   tag = "?"
   if rel.is_variant(match.relation, rel.eq):
-    if splitp:
+    if optionsp:
       if cl.get_accepted(match.cod):
-        tag = "ADD SYNONYM"
+        tag = "ADD-SYNONYM"
       else:
         tag = "OPTION"
     else:
-      comparison = diff.differences(match.dom, match.cod)
       if change_status[match.dom] == False:
         if len(alignment.get_children(match.dom)) == 0:
           tag = "KEEP-TIP"
@@ -235,7 +246,8 @@ def tag_for_match(match, splitp):
           tag = "KEEP-SUBTREE"
       else:
         tag = "KEEP"
-      if comparison > 0:
+      comparison = diff.differences(match.dom, match.cod)
+      if not diff.same(comparison):
         props = diff.unpack(comparison)
         tag = "%s (change %s)" % (tag,
                                   "; ".join(map(lambda x:x.pet_name, props)))
@@ -245,7 +257,7 @@ def tag_for_match(match, splitp):
   elif rel.is_variant(match.relation, rel.gt):
     tag = "INSERT"
   elif rel.is_variant(match.relation, rel.conflict):
-    tag = "REFORM" if splitp else "BREAK"
+    tag = "REFORM" if optionsp else "BREAK"
   elif rel.is_variant(match.relation, rel.disjoint):
     tag = "MUTEX"    # shouldn't happen ...
   return tag
@@ -267,8 +279,8 @@ def parent_changed(match):
 
 if __name__ == '__main__':
   parser = argparse.ArgumentParser()
-  parser.add_argument('left', help='A checklist')
-  parser.add_argument('right', help='B checklist')
+  parser.add_argument('left', help='A checklist')    # Lower priority
+  parser.add_argument('right', help='B checklist')   # Higher priority
   parser.add_argument('--left-tag', default="A")
   parser.add_argument('--right-tag', default="B")
   parser.add_argument('--share_ids', default=False)

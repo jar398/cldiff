@@ -80,6 +80,9 @@ def conjoin(rel1, rel2):
 def _conjoin_names(name1, name2):
   if name1 == name2: return name1
   if not name1: return name2
+  if True: return name1
+
+  # Clever stuff that now I think I don't want
   if not name2: return name1
   elif name1.endswith(" ...}"):
     return name1                # Discard lesser reasons

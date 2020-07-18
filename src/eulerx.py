@@ -57,7 +57,7 @@ def dump_alignment(alignment, out):
   for key in alignment:
     look = alignment[key]
     break
-  out.write("articulation %s %s" % \
+  out.write("articulation %s %s\n" % \
             (cl.get_checklist(look.dom).name,
              cl.get_checklist(look.cod).name))
   def sort_key(a):

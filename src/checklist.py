@@ -166,13 +166,8 @@ def get_spaceless(tnu):
   if len(tnus_with_this_name) > 1:
     name = name + "#" + get_taxname_id(tnu)
 
-  status = get_taxonomic_status(tnu)
-  if status == "accepted" or not status:
-    pass
-  elif status == "synonym":
+  if not is_accepted(tnu):
     name = "?" + name
-  else:
-    name = "%s (%s)" % (name, status)
 
   name = name.replace(" ", "_")
   return name
@@ -259,6 +254,9 @@ def get_taxonomic_status(tnu):
 
 def get_nomenclatural_status(tnu):
   return get_value(tnu, nomenclatural_status)
+
+def is_accepted(tnu):
+  return not get_value(tnu, accepted_taxname_id)
 
 # ---------- Hierarchy analyzers
 
