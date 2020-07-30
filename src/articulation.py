@@ -15,9 +15,9 @@ import diff
 
 Articulation = \
   collections.namedtuple('Articulation',
-                         ['dom', 'cod', 'relation', 'diff'])
+                         ['dom', 'cod', 'relation', 'factors', 'diff'])
 
-def _articulation(dom, cod, re):
+def _articulation(dom, cod, re, factors = None):
   assert dom > 0
   assert cod > 0
   assert re
@@ -25,7 +25,10 @@ def _articulation(dom, cod, re):
   dif = diff.all_diffs
   if cl.is_accepted(dom) and cl.is_accepted(cod):
     dif = diff.differences(dom, cod)
-  return Articulation(dom, cod, re, dif)
+  if factors == None: factors = []
+  ar = Articulation(dom, cod, re, factors, dif)
+  if len(factors) == 0: factors.append(ar)
+  return ar
 
 def express(ar):
   return "%s %s %s" % (cl.get_unique(ar.dom),
@@ -44,7 +47,8 @@ def compose(p, q):
   if is_identity(q): return p
   return _articulation(p.dom,
                        q.cod,
-                       rel.compose(p.relation, q.relation))
+                       rel.compose(p.relation, q.relation),
+                       p.factors + q.factors)
 
 def composable(p, q):
   return (p.cod == q.dom and
@@ -55,8 +59,7 @@ def conjoin(p, q):
     print("** Not conjoinable:\n  %s &\n  %s" %
           (express(p), express(q)))
     assert False
-  re = rel.conjoin(p.relation, q.relation)
-  return Articulation(p.dom, p.cod, re, p.diff)    # ?
+  return p                      # ???
 
 def conjoinable(p, q):
   return (p.dom == q.dom and
@@ -67,7 +70,8 @@ def get_comment(art):
   return art.relation.name
 
 def reverse(art):
-  return _articulation(art.cod, art.dom, rel.reverse(art.relation))
+  f = list(reversed(art.factors))
+  return _articulation(art.cod, art.dom, rel.reverse(art.relation), f)
 
 def is_identity(art):
   return art.dom == art.cod and art.relation == rel.eq
@@ -78,14 +82,69 @@ def synonymy(synonym, accepted):
   status = (cl.get_nomenclatural_status(synonym) or \
             cl.get_taxonomic_status(synonym) or \
             "synonym")
-  re = rel.synonym_relation(status)
+  re = synonym_relation(status)
   return _articulation(synonym, accepted, re)
+
+# I don't understand this
+
+def synonym_relation(nom_status):
+  if nom_status == None:
+    return rel.eq
+  re = synonym_relations.get(nom_status)
+  if re: return re
+  print("Unrecognized nomenclatural status: %s" % nom_status)
+  return reverse(rel.eq)
+
+# These relations go from synonym to accepted (the "has x" form)
+# TBD: Put these back into the articulation somehow
+
+synonym_relations = {}
+
+def declare_synonym_relations():
+
+  def b(nstatus, rcc5 = rel.eq, name = None, revname = None, relation = rel.eq):
+    if False:
+      if name == None: name = "has-" + nstatus.replace(" ", "-")
+      if revname == None: revname = nstatus.replace(" ", "-") + "-of"
+    re = rel.reverse(rcc5)
+    synonym_relations[nstatus] = re
+    return re
+
+  b("homotypic synonym")    # GBIF
+  b("authority")
+  b("scientific name")        # (actually canonical) exactly one per node
+  b("equivalent name")        # synonym but not nomenclaturally
+  b("misspelling")
+  b("unpublished name")    # non-code synonym
+  b("genbank synonym")        # at most one per node; first among equals
+  b("anamorph")
+  b("genbank anamorph")    # at most one per node
+  b("teleomorph")
+  b("acronym")
+  b("blast name")             # large well-known taxa
+  b("genbank acronym")      # at most one per node
+  b("BOLD id")
+
+  # More dubious
+  synonym = b("synonym")
+  b("heterotypic synonym")      # GBIF
+  b("misnomer")
+  b("type material")
+  b("merged id", revname = "split id")    # ?
+
+  # Really dubious
+  b("genbank common name")    # at most one per node
+  b("common name")
+
+  b("includes", rcc5=rel.gt, name="part-of", revname="included-in")
+  b("in-part",  rcc5=rel.lt, name="included-in", revname="part-of")  # part of a polyphyly
+  b("proparte synonym", rcc5=rel.lt)
+
+declare_synonym_relations()
 
 # ---------- Different kinds of articulation
 
 def extensional(dom, cod, re):
-  if re == rel.same_particles:
-    re = rel.identical
   return bridge(dom, cod, re)
 
 def intensional(dom, cod):
@@ -94,9 +153,6 @@ def intensional(dom, cod):
 def bridge(dom, cod, re):
   assert cl.get_checklist(dom) != cl.get_checklist(cod)
   return _articulation(dom, cod, re)
-
-def cross_mrca(dom, cod):
-  return _articulation(dom, cod, rel.le)
 
 # ---------- Utility: collapsing a set of matches
 
@@ -126,25 +182,27 @@ def collapse_matches(arts):
 
 def conjoin_sort_key(ar):
   assert ar.dom
-  return (rel.rcc5_key(ar.relation),
+  return (rel.sort_key(ar.relation),
           ar.cod)
 
 # ---------- This one is for tie breaking (when codomains differ)
 
+# Less-bad articulations first.
+
 def badness(ar):
   (drop, add) = ar.diff
   return(
-         # Hmm, this is calculated wrong
-         # rel.sort_key(ar.relation),
+         rel.sort_key(ar.relation),     # '=' sorts earliest
          # Changes are bad
          # Low-bit changes are better than high-bit changes
-         -(drop & add),
-         -drop,
-         -add,
+         drop & add,
+         drop,
+         # Using synonym is bad, using two is worse
+         len(ar.factors),
          # Added fields are benign
          # Dropped fields are so-so
+         # What is this about?
          cl.get_mutex(ar.cod))
 
-def sort_by_badness(arts):
+def sort_matches(arts):
   return sorted(arts, key=badness)
-

@@ -12,34 +12,17 @@ import eulerx
 import alignment
 import diff
 
+# Generate commands to transform A into B (or B into A??)
 # A is lower priority
 
 def start(A, B):
-  global inverse_good_candidates
   global grafts
   global the_alignment
-  global change_status
   # Map each B to a corresponding A
   (the_alignment, grafts) = alignment.align(B, A)
-  # Find all As that align to any given B
-  inverse_good_candidates = invert_dict_by_cod(the_alignment)
-  change_status = find_unchanged_subtrees(A, inverse_good_candidates)
+  return the_alignment
 
-# Partners list for reporting (A->B articulations)
-
-def good_candidate(tnu, other):  # for children sort order
-  return alignment.choose_best_match(good_candidates(tnu, other))
-
-def good_candidates(tnu, other):
-  matches = inverse_good_candidates.get(tnu) or []
-  if len(matches) == 0:
-    if debug:
-      print("# matching: B-node", cl.get_unique(tnu))
-    investigate = alignment.articulate(tnu, other, ...)
-    if investigate: matches = [investigate]
-  return [match for match in matches if not cl.get_accepted(match.cod)]
-
-def invert_dict_by_cod(alignment):
+def invert_alignment(alignment):
   inv = {}
   for (node, ar) in alignment.items():
     if ar:      # ar: B -> A
@@ -50,11 +33,11 @@ def invert_dict_by_cod(alignment):
         inv[ar.dom] = [ar]
   return inv
 
-def find_unchanged_subtrees(A, inverse_good_candidates):
+def find_unchanged_subtrees(A, inverse_alignment):
   status = {}
   def process(node):
     changed = True
-    matches = inverse_good_candidates.get(node)
+    matches = inverse_alignment.get(node)
     if matches and len(matches) == 1:
       match = matches[0]
       if rel.is_variant(match.relation, rel.eq):
@@ -80,26 +63,32 @@ def main(c1, c1_tag, c2, c2_tag, out, format):
   write_report(A, B, format, out)
 
 def write_report(A, B, format, outpath):
-  start(A, B)    # sets the_alignment etc.
+  al = start(A, B)
   if outpath == "-":
-    really_write_report(A, B, format, sys.stdout)
+    really_write_report(A, al, format, sys.stdout)
   else:
     with open(outpath, "w") as outfile:
       print ("Writing:", outpath)
-      really_write_report(A, B, format, outfile)
+      really_write_report(A, al, format, outfile)
 
-def really_write_report(A, B, format, outfile):
+def really_write_report(A, al, format, outfile):
   if format == "eulerx":
-    eulerx.dump_alignment(the_alignment, outfile)
+    eulerx.dump_alignment(al, outfile)
   else:
-    report_to_io(A, B, outfile)
+    report_to_io(A, al, outfile)
 
-def report_to_io(A, B, outfile):
+def report_to_io(A, al, outfile):
+  global change_status
+
+  # For each node, find all nodes that align to it
+  inverse_alignment = invert_alignment(al)
+  change_status = find_unchanged_subtrees(A, al)
+
   writer = csv.writer(outfile)
   write_header(writer)
   sink = make_sink(writer, None)
   for root in cl.get_roots(A):
-    subreport(root, B, sink, "")
+    subreport(root, al, inverse_alignment, sink, "")
   drain(sink)
 
 def make_sink(writer, parent):
@@ -123,6 +112,9 @@ def drain(sink):
     proclaim(parent, indent, "...", None, None, None,
              "%s unchanged children" % len(rows))
 
+def write_header(writer):
+  writer.writerow(["tag", "left name", "left id", "rcc5", "right id", "right name", "justification"])
+
 no_change_tags = ["NO CHANGE", "CHANGED ID", "..."]
 
 def proclaim(sink, indent, tag, dom, re, cod, remark):
@@ -139,9 +131,6 @@ def proclaim_row(row, sink):
     (cod_name, cod_id) = get_taxname_info(cod)
     writer.writerow([indent + tag, dom_name, dom_id, re, cod_id, cod_name, remark])
 
-def write_header(writer):
-  writer.writerow(["tag", "left name", "left id", "rcc5", "right id", "right name", "justification"])
-
 def get_taxname_info(tnu):
   if tnu:
     prefix = cl.get_checklist(tnu).prefix
@@ -157,14 +146,12 @@ def get_taxname_info(tnu):
 #  1. Separate nodes that match this one into = vs. other
 #  2. Show all = matches preceding children and grafts
 
-def subreport(node, B, sink, indent):
-  A = cl.get_checklist(node)
-  assert A != B
-  friends = report_on_matches(node, B, sink, indent)
+def subreport(node, al, inv, sink, indent):
+  friends = report_on_matches(node, al, inv, sink, indent)
 
   sink = subsink(sink)
   def for_seq(node):
-    b = good_candidate(node, B)
+    b = al[node]
     return b.cod if b else node
   def sort_key(triple):
     (B_node, which, arg) = triple
@@ -182,9 +169,9 @@ def subreport(node, B, sink, indent):
   for (B_node, which, arg) in \
      sorted(agenda, key=sort_key):
     if which == 0:              # child
-      subreport(arg, B, sink, indent)
+      subreport(arg, al, inv, sink, indent)
     elif which == 1:            # friend
-      report_on_match(arg, True, sink, indent)
+      report_on_match(arg, al, sink, indent)
     elif which == 2:            # graft / addition
       proclaim(sink,
                indent,
@@ -192,53 +179,56 @@ def subreport(node, B, sink, indent):
                "", "", arg, "")
   drain(sink)
 
-def report_on_matches(node, B, sink, indent):
-  matches = good_candidates(node, B)      # cod is accepted
-  options = [m for m in matches if rel.is_variant(m.relation, rel.eq)]
-  friends = [m for m in matches if not rel.is_variant(m.relation, rel.eq)]
-  if len(options) > 0:
-    best = alignment.choose_best_match(options)
-    if best:
-      options = [best]
-      friends = [ok for ok in options if ok != best] + friends
-  if len(options) == 0:
-    proclaim(sink, indent, "DELETE",
-                   node,
-                   "",
-                   "",
-                   "%s right nodes match this left node" % len(matches))
-  elif len(options) == 1:
-    report_on_match(options[0], False, sink, indent)
-  else:
-    proclaim(sink, indent, "MULTIPLE", node,
-             "?", "",
-             "%s right nodes match this left node" % len(matches))
-    for option in options:
-      report_on_match(option, True, sink, indent)
-  return friends
-
 def get_graftees(A_node):
   return (grafts.get(A_node) or [])     # grafts is global
 
-# optionsp means ... it's part of a multiple-match set
+# optionsp means ... it's not mutual
+#
+# Return value is a list of articulations that will get reported on
+# separate lines, as "friends".
+# Node is in A, matches are in B...
+# Either (1) assume B is already populated, or
+#        (2) explicitly add things B has that A doesn't
 
-def report_on_match(match, optionsp, sink, indent):
-  tag = tag_for_match(match, optionsp)
+def report_on_matches(node, al, inv, sink, indent):
+  matches = art.sort_matches(inv.get(node) or [])
+
+  options = [m for m in matches if rel.is_variant(m.relation, rel.eq)]
+  friends = [m for m in matches if not rel.is_variant(m.relation, rel.eq)]
+  if len(options) == 0:
+    # friends are the non-= matches
+    if len(friends) == 0:
+      proclaim(sink, indent, "DELETE",
+               node, "", None, None)
+    else:
+      # Friends are non-=
+      # Error or something if there are multiple equal B-nodes?
+      b = friends[0]
+      friend = b.cod if b != None else None
+      proclaim(sink, indent, "LUMP",
+               node, "", friend, None)
+    return []
+  else:
+    for option in options:
+      report_on_match(option, al, sink, indent)
+    return friends
+
+# optionsp means ... it's not mutual
+
+def report_on_match(match, al, sink, indent):
+  tag = tag_for_match(match, al)
   proclaim(sink, indent, tag,
-           None if optionsp else match.dom,
-           rel.rcc5_name(match.relation),
+           # None if optionsp else
+           match.dom,
+           match.relation.name,
            match.cod,
            art.get_comment(match))
 
-def tag_for_match(match, optionsp):
+def tag_for_match(match, al):
+  mutualp = alignment.is_mutual(match, al)
   tag = "?"
   if rel.is_variant(match.relation, rel.eq):
-    if optionsp:
-      if cl.get_accepted(match.cod):
-        tag = "ADD-SYNONYM"
-      else:
-        tag = "OPTION"
-    else:
+    if mutualp:
       if change_status[match.dom] == False:
         if len(alignment.get_children(match.dom)) == 0:
           tag = "KEEP-TIP"
@@ -251,31 +241,36 @@ def tag_for_match(match, optionsp):
         props = diff.unpack(comparison)
         tag = "%s (change %s)" % (tag,
                                   "; ".join(map(lambda x:x.pet_name, props)))
+    else:
       # Make a list of changes: parent, name, etc.
+      if cl.is_accepted(match.cod):
+        tag = "SPLIT"
+      else:
+        tag = "ADD-SYNONYM"
   elif rel.is_variant(match.relation, rel.lt):
     tag = "ELIDE"
   elif rel.is_variant(match.relation, rel.gt):
     tag = "INSERT"
   elif rel.is_variant(match.relation, rel.conflict):
-    tag = "REFORM" if optionsp else "BREAK"
+    tag = "BREAK" if mutualp else "REFORM"
   elif rel.is_variant(match.relation, rel.disjoint):
     tag = "MUTEX"    # shouldn't happen ...
   return tag
 
 # X aligns to Y.  Does parent X align to parent Y?
 
-def parent_changed(match):
-  parent = cl.get_parent(match.dom)
-  coparent = cl.get_parent(match.cod)
-  if not parent and not coparent:
-    return False
-  if not parent or not coparent:
-    return True
-  other = cl.get_checklist(coparent)
-  match = good_candidate(parent, other)
-  if not match: return True
-  # if relation is not = : return True
-  return match.cod != coparent
+# def parent_changed(match):
+#   parent = cl.get_parent(match.dom)
+#   coparent = cl.get_parent(match.cod)
+#   if not parent and not coparent:
+#     return False
+#   if not parent or not coparent:
+#     return True
+#   other = cl.get_checklist(coparent)
+#   match = good_candidate(parent, ?other?)
+#   if not match: return True
+#   # if relation is not = : return True
+#   return match.cod != coparent
 
 if __name__ == '__main__':
   parser = argparse.ArgumentParser()

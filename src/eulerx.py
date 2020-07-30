@@ -67,7 +67,7 @@ def dump_alignment(alignment, out):
   for arts in sorted(alignment.values(), key=sort_key):
     a = alignment[arts[0]]
     out.write("[%s %s %s]\n" % (cl.get_unique(a.dom),
-                                rel.rcc5_name(a.relation),
+                                a.relation.name,
                                 cl.get_unique(a.cod)))
   out.write("\n")
 

@@ -1,6 +1,6 @@
 WORK=work
 
-all: $(WORK)/ncbi-2015-2020.csv $(WORK)/ncbi-2015-2020.ex
+all: $(WORK)/ncbi-2015-2020.ex $(WORK)/ncbi-2015-2020.csv 
 
 # A (NCBI 2015)
 

@@ -119,12 +119,13 @@ def get_taxnames_with_value(checklist, field, value):
   return checklist.get_index(field).get(value, canonical_empty_list)
 
 # Get unique (we hope) taxon record possessing a given identifier
+# Can return None
 
 def get_taxname_id(tnu):
   id = get_value(tnu, taxname_id)
   if id == None:
-    print("** No taxon id?? for %s %s" % record_and_table(tnu))
-    assert False
+    #print("** No node id for %s %s" % table.record_and_table(tnu))
+    return None
   return id
 
 def get_record_with_taxname_id(checklist, id):
@@ -164,6 +165,7 @@ def get_spaceless(tnu):
   tnus_with_this_name = \
     get_taxnames_with_value(checklist, canonical_name, name)
   if len(tnus_with_this_name) > 1:
+    # TBD: what if id is None?  Use id of accepted?
     name = name + "#" + get_taxname_id(tnu)
 
   if not is_accepted(tnu):

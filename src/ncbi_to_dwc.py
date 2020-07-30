@@ -58,7 +58,10 @@ def emit_dwc(nodes, names, scinames, authorities, merged, outpath):
       if not (kind == "scientific name" or kind == "authority"):
         # synonym is a taxonomic status, not a nomenclatural status
         if kind == "synonym": kind = None
-        minted = id + "." + str(spin)
+        if False:
+          minted = id + "." + str(spin)
+        else:
+          minted = None
         write_row(writer,
                   minted, None, None,
                   id, None, text,

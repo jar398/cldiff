@@ -11,73 +11,82 @@ import articulation as art
 # articulation).
 
 def align(B, A):
+  global intensional_matches_cache
+  intensional_matches_cache = {}
   particles = find_particles(B, A)
   print ("# Number of particles:", len(particles)>>1)
+
   cross_mrcas = analyze_cross_mrcas(B, A, particles)
   print ("# Number of cross-mrcas:", len(cross_mrcas))
+
   the_alignment = finish_alignment(B, A, cross_mrcas)
   print ("# Number of articulations in alignment:", len(the_alignment))
+
   grafts = analyze_unmatched(B, A, cross_mrcas)
   print ("# Number of grafts: %s\n" % len(grafts))
+
   return (the_alignment, grafts)
 
 def finish_alignment(B, A, xmrcas):
   global cross_mrcas
   cross_mrcas = xmrcas
   alignment = {}
-  def process(node):
-    m = articulate(node, A, xmrcas)
-    if m:
-      alignment[node] = m
-      # alignment[m.cod] = art.reverse(m)  ??
-    for child in get_children(node):
-      process(child)
-  for root in cl.get_roots(B):
-    process(root)
+  def half_finish(B, A):
+    def process(node):
+      m = articulate(node, A, xmrcas)
+      if m:
+        assert cl.is_accepted(m.cod)
+        alignment[node] = m
+      else:
+        # Otherwise, what?
+        pass
+      for child in get_children(node):
+        process(child)
+    for root in cl.get_roots(B):
+      process(root)
+  half_finish(B, A)
+  half_finish(A, B)
   return alignment
+
+def mutual_match(tnu, alignment):
+  m1 = alignment[tnu]
+  if m1:
+    m2 = alignment[m1.cod]
+    if m2 and m2.cod == tnu:
+      return m1
+  return None
+
+def is_mutual(m1, al):
+  m2 = al[m1.cod]
+  return m2 and m2.cod == m1.dom
 
 # ---------- One-sided best match
 
 def articulate(node, other, xmrcas):     # B-node to A
   assert node > 0
-  assert not cl.get_accepted(node)
+  assert cl.is_accepted(node)
   assert other
   assert cl.get_checklist(node) != other
-  matches = good_matches(node, other)
-  match = choose_best_match(matches)
-  if match:
-    if cl.get_accepted(match.cod) and not cl.get_accepted(match.dom):
-      print("# ** Match is supposed to be terminal:\n  %s" %
-            (art.express(match)))
-  return match
-
-good_matches_cache = {}
-
-def good_matches(node, other):
-  assert node > 0
-  assert not cl.get_accepted(node)
-  assert cl.get_checklist(node) != other
-  if node in good_matches_cache: return good_matches_cache[node]
 
   if debug:
     print("# matching B-node", cl.get_unique(node))
   exties = extensional_matches(node, other)    #monotypic chain
 
-  namies = matches_to_accepted(node, other)
+  # Filter out intentionals that aren't extensional matches
+  namies = intensional_matches(node, other)
   targets = [extie.cod for extie in exties]
-  namies = [match for match in namies if match.cod in targets]
+  bothies = [match for match in namies if match.cod in targets]
 
-  if len(namies) > 0:
-    matches = namies
+  if len(bothies) > 0:
+    match = choose_best_match(bothies)
   elif len(exties) > 0:
     if debug: print("# %s exties to %s" % (len(exties), cl.get_unique(node)))
-    matches = exties
+    match = choose_best_match(exties)
   else:
     if debug: print("# no extie")
-    matches = matches_to_accepted(node, other)
+    match = choose_best_match(namies)
 
-  good_matches_cache[node] = matches
-  return matches
+  return match
 
 # ---------- EXTENSIONALITY / by split
 
@@ -96,7 +105,7 @@ def extensional_matches(tnu, other):       # B-node to A
   if rel.is_variant(match.relation, rel.eq):
 
     here = cl.get_checklist(tnu)
-    anchor = cross_mrca(match.cod, here).cod
+    anchor = cross_mrca(match.cod, here)
 
     # Scan upwards from match.code looking for nodes that return back to anchor
     scan = match.cod    # tnu -> partner
@@ -114,13 +123,13 @@ def extensional_matches(tnu, other):       # B-node to A
       if debug:
         print("# considering %s" % cl.get_unique(scan))
       back = cross_mrca(scan, here)
-      if back.cod != anchor:
+      if back != anchor:
         if debug: print("# goes back to %s not %s, breaking out" %
-                        (cl.get_unique(back.cod), cl.get_unique(anchor)))
+                        (cl.get_unique(back), cl.get_unique(anchor)))
         break
       if debug: print("# adding return match %s" %
                       (cl.get_unique(scan)))
-      matches.append(art.extensional(tnu, scan, rel.same_particles))
+      matches.append(art.extensional(tnu, scan, rel.eq))
     if debug: print("# %s matches %s nodes extensionally" %
                     (cl.get_unique(tnu), len(matches)))
   return matches
@@ -128,30 +137,23 @@ def extensional_matches(tnu, other):       # B-node to A
 # Guaranteed invertible, except for monotypic node chains
 
 def extensional_match(tnu, other):
-  cross = cross_mrca(tnu, other)      # TNU in other checklist
-  if not cross:
+  partner = cross_mrca(tnu, other)      # TNU in other checklist
+  if not partner:
     return None
-  partner = cross.cod
   here = cl.get_checklist(tnu)
-  atcha = cross_mrca(partner, here)
-  back = atcha.cod
+  back = cross_mrca(partner, here)
   if cl.are_disjoint(tnu, back):
     re = rel.disjoint
   elif cl.mrca(tnu, back) == tnu:
-    re = rel.same_particles
+    re = rel.eq
   else:
     re = rel.lt
     for sub in get_children(partner):
       cross_back = cross_mrca(sub, here)
       if cross_back != None:
-        back = cross_back.cod
-        if cl.mrca(tnu, back) == tnu and cross_disjoint(tnu, partner):
+        if cl.mrca(tnu, cross_back) == tnu and cross_disjoint(tnu, partner):
           re = rel.conflict
-  re = extensionally(re)
   return art.extensional(tnu, partner, re)
-
-def extensionally(re):
-  return rel.justify(re, rel.extensionally, "extension " + rel.rcc5_name(re))
 
 # ---------- Determine disjointness across checklists
 
@@ -160,10 +162,9 @@ def cross_disjoint(tnu, partner):
   assert partner > 0
   assert cl.get_checklist(tnu) != cl.get_checklist(partner)
 
-  cross = cross_mrca(partner, cl.get_checklist(tnu))
-  if cross == None:
+  back = cross_mrca(partner, cl.get_checklist(tnu))
+  if back == None:
     return True
-  back = cross.cod
   assert back > 0
   assert cl.get_checklist(back) == cl.get_checklist(tnu)
   if cl.are_disjoint(tnu, back):
@@ -178,37 +179,28 @@ def cross_disjoint(tnu, partner):
 
 # ---------- Cross-MRCAs
 
-# Returns an accepted/accepted articulation
-
-def cross_mrca(tnu, other):
-  assert tnu > 0
-  assert not cl.get_accepted(tnu)
-  probe = cross_mrcas.get(tnu, 17)
-  if probe != 17:
-    return probe
-  return None
-
 def analyze_cross_mrcas(A, B, particles):
   cross_mrcas = {}
   def half_analyze_cross_mrcas(checklist, other, checkp):
     def subanalyze_cross_mrcas(tnu, other):
-      result = particles.get(tnu)
-      if result:
-        assert result.dom == tnu
-        assert not cl.get_accepted(result.cod)
+      result = None
+      probe = particles.get(tnu)
+      if probe:
+        assert probe.dom == tnu
+        assert cl.is_accepted(probe.cod)
         if debug:
           print("#   particle(%s) = %s" %\
-                (cl.get_unique(tnu), cl.get_unique(result.cod)))
+                (cl.get_unique(tnu), cl.get_unique(probe.cod)))
+        result = probe.cod
       else:
         children = get_children(tnu)
         if children:
-          m = None      # is the identity for mrca
+          m = None      # None is the identity for mrca
           for child in children:
             if debug:
               print("# Child %s of %s" % (cl.get_unique(child), cl.get_unique(tnu)))
-            cross = subanalyze_cross_mrcas(child, other)
-            if cross:
-              m2 = cross.cod
+            m2 = subanalyze_cross_mrcas(child, other)
+            if m2 != None:
               if debug:
                 print("#  Folding %s into %s" % (cl.get_unique(m2), cl.get_unique(m)))
               m = cl.mrca(m, m2) if m != None else m2
@@ -216,18 +208,16 @@ def analyze_cross_mrcas(A, B, particles):
               if debug:
                 print("#   -> %s" % cl.get_unique(m))
           if m != None:
-            result = art.cross_mrca(tnu, m)
+            result = m
             if debug:
               print("#   cm(%s) = %s)" % \
                     (cl.get_unique(tnu), cl.get_unique(m)))
-      if result:
-        cross_mrcas[tnu] = result
-        if debug and checkp:
-          m = result.cod
-          probe = cross_mrcas.get(m)
-          if not probe:
-            print("# ** No return cross-MRCA for %s -> %s -> ..." %\
-                  (cl.get_unique(tnu), cl.get_unique(m)))
+      cross_mrcas[tnu] = result
+      if debug and checkp and result:
+        probe = cross_mrcas.get(result)
+        if not probe:
+          print("# ** No return cross-MRCA for %s -> %s -> ..." %\
+                (cl.get_unique(tnu), cl.get_unique(result)))
       return result
     for root in cl.get_roots(checklist):
       subanalyze_cross_mrcas(root, other)
@@ -235,7 +225,16 @@ def analyze_cross_mrcas(A, B, particles):
   half_analyze_cross_mrcas(B, A, True)
   return cross_mrcas
 
-cross_mrcas = {}
+# Returns an accepted/accepted articulation
+
+def cross_mrca(tnu, other):
+  global cross_mrcas
+  assert tnu > 0
+  assert cl.is_accepted(tnu)
+  probe = cross_mrcas.get(tnu, 17)
+  if probe != 17:
+    return probe
+  return None
 
 # ---------- Particles
 
@@ -253,7 +252,7 @@ def find_particles(here, other):
       count[0] += 1
   def subanalyze(tnu, other):
     log(tnu, "subanalyze")
-    if cl.get_accepted(tnu):
+    if not cl.is_accepted(tnu):
       print("# ** Child %s of %s has an accepted taxname" %
             (cl.get_unique(tnu), cl.get_unique(cl.get_parent(tnu))))
       return False
@@ -264,12 +263,12 @@ def find_particles(here, other):
         found_match = True
     if found_match:    # Some descendant is a particle
       return True
-    candidate = choose_best_match(matches_to_accepted(tnu, other))
+    candidate = best_intensional_match(tnu, other)
     if candidate:
-      rematch = choose_best_match(matches_to_accepted(candidate.cod, here))
+      rematch = best_intensional_match(candidate.cod, here)
       if rematch:
         if rematch.cod == tnu:
-          if cl.get_accepted(candidate.cod):
+          if not cl.is_accepted(candidate.cod):
             print("# ** Candidate is synonymlike: %s" % cl.get_unique(candidate.cod))
           particles[tnu] = candidate    # here -> other
           particles[candidate.cod] = art.reverse(candidate)  # other -> here
@@ -289,55 +288,60 @@ def find_particles(here, other):
     subanalyze(root, other)
   return particles
 
-# ---------- Matches to accepted nodes
+# ---------- 'Intensional' matches to accepted nodes
+
+# The source node ('tnu') may be accepted or a synonym.
 
 # Three components: synonym-or-self o intensional o synonym-of-or-self
 # from_accepted_articulations o intensional_matches o [to_accepted_articulation]
 
+def best_intensional_match(tnu, other):
+  matches = intensional_matches(tnu, other)
+  return choose_best_match(matches)
+
 # Matches where the target is accepted.
 
-def matches_to_accepted(tnu, other):
-  return weak_matches_to_accepted(tnu, other)
+def intensional_matches(tnu, other):
+  global intensional_matches_cache
+  probe = intensional_matches_cache.get(tnu)
+  if probe: return probe
+  matches = weak_intensional_matches(tnu, other)
+  matches = art.collapse_matches(matches)
+  intensional_matches_cache[tnu] = matches
+  return matches
 
-def weak_matches_to_accepted(tnu, other):
-  matches = strong_matches_to_accepted(tnu, other)
+# Like strong matches, but adds matches via source synonyms
+
+def weak_intensional_matches(tnu, other):
+  matches = strong_intensional_matches(tnu, other)
   syns = synonyms_locally(tnu)
   assert not syns or syns[0].dom == tnu
   matches = matches + [art.compose(syn, match)
                        for syn in syns
-                       for match in strong_matches_to_accepted(syn.cod, other)
+                       for match in strong_intensional_matches(syn.cod, other)
                        if art.composable(syn, match)]
   assert is_matches(matches)
-  return art.collapse_matches(matches)
+  return matches
 
-def strong_matches_to_accepted(tnu, other):
-  # (a) Go intensional (by name) to accepted
-  # (b) Go intensional from synonym to synonym, then up to accepted
-  # (c) Go from synonym to accepted, then intensional to accepted
-
-  matches = intensional_matches(tnu, other)
+def strong_intensional_matches(tnu, other):
+  matches = direct_matches(tnu, other)
   assert is_matches(matches)
   matches = [match_to_accepted(match) for match in matches]
   assert is_matches(matches)
-  if cl.get_accepted(tnu):
-    accept = has_accepted_locally(tnu)
-    assert accept.dom == tnu
-    more = [art.compose(accept, match) for match in intensional_matches(accept.cod, other)]
-    matches = matches + more
-  return art.collapse_matches(matches)
+  return matches
 
 # Convert match a->b to a->b' where b' is accepted (maybe b=b')
 
 def match_to_accepted(m):
-  if cl.get_accepted(m.cod):
-    return art.compose(m, has_accepted_locally(m.cod))
-  else:
+  if cl.is_accepted(m.cod):
     return m
+  else:
+    return art.compose(m, has_accepted_locally(m.cod))
 
 # Intensional matches by name (no synonym following)
 # This ought to be cached I think?
 
-def intensional_matches(node, other):
+def direct_matches(node, other):
   hits = cl.get_similar_records(other, node, shared_idspace)
   return [art.intensional(node, hit) for hit in hits]
 
@@ -352,7 +356,7 @@ def intensional_matches(node, other):
 def analyze_unmatched(B, A, xmrcas):
   graft_points = {}
   def process(B_tnu):
-    if not cl.get_accepted(B_tnu) and not articulate(B_tnu, A, xmrcas):
+    if cl.is_accepted(B_tnu) and not articulate(B_tnu, A, xmrcas):
       point = get_graft_point(B_tnu, A, xmrcas)    # in A
       if point:
         graft_points[B_tnu] = point    # in A
@@ -381,11 +385,11 @@ def get_graft_point(B_tnu, A, xmrcas):
 # An accepted name can have many synonyms
 
 def synonyms_locally(tnu):
-  if cl.get_accepted(tnu):
-    return []
-  else:
+  if cl.is_accepted(tnu):
     hases = [has_accepted_locally(syn) for syn in cl.get_synonyms(tnu)]
     return art.collapse_matches([art.reverse(ar) for ar in hases if ar])
+  else:
+    return []
 
 # A synonym has only one accepted name
 
@@ -422,7 +426,7 @@ def choose_best_matches(arts):
   if len(arts) == 0:
     return []
   else:
-    sorted_matches = art.sort_by_badness(art.collapse_matches(arts))
+    sorted_matches = art.sort_matches(art.collapse_matches(arts))
     badness = art.badness(sorted_matches[0])
     matches = []
     for match in sorted_matches:
@@ -437,7 +441,7 @@ def choose_best_matches(arts):
 def get_children(node):
   return [node
           for node in cl.get_children(node) + cl.get_synonyms(node)
-          if not cl.get_accepted(node)]
+          if cl.is_accepted(node)]
 
 # ---------- For debugging
 
