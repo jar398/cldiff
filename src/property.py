@@ -19,7 +19,10 @@ def by_specificity(specificity):
   return properties_by_specificity[specificity]  
 
 def by_name(name):
-  return properties_by_pet_name.get(name)
+  prop = properties_by_pet_name.get(name)
+  if not prop:
+    print("No such property: %s" % name)
+  return prop
 
 def uri_to_pet_name(uri):
   return uri.split('/')[-1]

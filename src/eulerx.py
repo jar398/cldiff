@@ -31,6 +31,7 @@ import io
 import argparse
 import checklist as cl
 import relation as rel
+import alignment
 
 def load(s, prefix = ""):
   ch = cl.Checklist(prefix)
@@ -53,22 +54,21 @@ def dump(ch, out):
     process(root)
   out.write("\n")
 
-def dump_alignment(alignment, out):
-  for key in alignment:
-    look = alignment[key]
-    break
-  out.write("articulation %s %s\n" % \
-            (cl.get_checklist(look.dom).name,
-             cl.get_checklist(look.cod).name))
-  def sort_key(a):
-    p = cl.get_parent(a.dom)
-    return (cl.get_sequence_number(p) if p else 0,
-            cl.get_sequence_number(a.cod))
-  for arts in sorted(alignment.values(), key=sort_key):
-    a = alignment[arts[0]]
-    out.write("[%s %s %s]\n" % (cl.get_unique(a.dom),
-                                a.relation.name,
-                                cl.get_unique(a.cod)))
+def dump_alignment(al, out):
+  articulations = [ar for ar in al.values()
+                   if (ar.dom < ar.cod or
+                       not alignment.is_mutual(ar, al))]
+  def sort_key(ar):
+    if ar.dom < ar.cod:
+      return (ar.dom, ar.cod)
+    else:
+      return (ar.cod, ar.dom)
+  articulations = sorted(articulations, key=sort_key)
+
+  for ar in articulations:
+    out.write("[%s %s %s]\n" % (cl.get_unique(ar.dom),
+                                ar.relation.name,
+                                cl.get_unique(ar.cod)))
   out.write("\n")
 
 if __name__ == '__main__':

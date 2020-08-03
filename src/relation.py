@@ -44,6 +44,10 @@ def is_variant(re, other):
 def reverse(re):
   return _relation(re.a_given_b, re.b_given_a)
 
+def inverses(r1, r2):
+  return (r1.b_given_a == r2.a_given_b and
+          r1.a_given_b == r2.b_given_a)
+
 # Conjuction of two relations.  The 5 RCC-5 relations are mutually exclusive
 
 def conjoinable(rel1, rel2):

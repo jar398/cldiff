@@ -26,6 +26,7 @@ def _articulation(dom, cod, re, factors = None):
   if cl.is_accepted(dom) and cl.is_accepted(cod):
     dif = diff.differences(dom, cod)
   if factors == None: factors = []
+  assert isinstance(factors, list)
   ar = Articulation(dom, cod, re, factors, dif)
   if len(factors) == 0: factors.append(ar)
   return ar
@@ -75,6 +76,17 @@ def reverse(art):
 
 def is_identity(art):
   return art.dom == art.cod and art.relation == rel.eq
+
+def inverses(ar1, ar2):
+  return (ar1.cod == ar2.dom and 
+          ar1.dom == ar2.cod and 
+          rel.inverses(ar1.relation, ar2.relation))
+
+def graft(parent, child):
+  return _articulation(parent, child, rel.gt)
+
+def merge(child, parent):
+  return _articulation(child, parent, rel.lt)
 
 # ---------- Synonymy relationship within one tree
 

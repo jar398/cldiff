@@ -37,6 +37,7 @@ def get_value(uid, field):
   return table.get_value(uid, field)
 
 def get_checklist(uid):
+  assert uid > 0
   return table.get_table(uid)
 
 # ---------- Checklists
@@ -201,6 +202,7 @@ def get_inferiors(tnu):
 # Parent/children and accepted/synonyms
 
 def get_parent(tnu):
+  assert tnu > 0
   # There are two checks here, and if the order of the checks matters,
   # the input checklist is ill-formed
   parent_id = get_value(tnu, parent_taxname_id)
@@ -216,8 +218,8 @@ def get_parent(tnu):
 
 def get_children(parent):
   return get_taxnames_with_value(get_checklist(parent),
-                                parent_taxname_id,
-                                get_taxname_id(parent))
+                                 parent_taxname_id,
+                                 get_taxname_id(parent))
 
 # Get canonical record among a set of equivalent records
 

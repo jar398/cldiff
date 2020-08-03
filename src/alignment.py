@@ -22,10 +22,7 @@ def align(B, A):
   the_alignment = finish_alignment(B, A, cross_mrcas)
   print ("# Number of articulations in alignment:", len(the_alignment))
 
-  grafts = analyze_unmatched(B, A, cross_mrcas)
-  print ("# Number of grafts: %s\n" % len(grafts))
-
-  return (the_alignment, grafts)
+  return (the_alignment, cross_mrcas)
 
 def finish_alignment(B, A, xmrcas):
   global cross_mrcas
@@ -58,7 +55,7 @@ def mutual_match(tnu, alignment):
 
 def is_mutual(m1, al):
   m2 = al[m1.cod]
-  return m2 and m2.cod == m1.dom
+  return m2 and art.inverses(m1, m2)
 
 # ---------- One-sided best match
 
@@ -105,7 +102,7 @@ def extensional_matches(tnu, other):       # B-node to A
   if rel.is_variant(match.relation, rel.eq):
 
     here = cl.get_checklist(tnu)
-    anchor = cross_mrca(match.cod, here)
+    anchor = cross_mrca(match.cod)
 
     # Scan upwards from match.code looking for nodes that return back to anchor
     scan = match.cod    # tnu -> partner
@@ -122,7 +119,7 @@ def extensional_matches(tnu, other):       # B-node to A
         break
       if debug:
         print("# considering %s" % cl.get_unique(scan))
-      back = cross_mrca(scan, here)
+      back = cross_mrca(scan)
       if back != anchor:
         if debug: print("# goes back to %s not %s, breaking out" %
                         (cl.get_unique(back), cl.get_unique(anchor)))
@@ -137,11 +134,11 @@ def extensional_matches(tnu, other):       # B-node to A
 # Guaranteed invertible, except for monotypic node chains
 
 def extensional_match(tnu, other):
-  partner = cross_mrca(tnu, other)      # TNU in other checklist
+  partner = cross_mrca(tnu)      # TNU in other checklist
   if not partner:
     return None
   here = cl.get_checklist(tnu)
-  back = cross_mrca(partner, here)
+  back = cross_mrca(partner)
   if cl.are_disjoint(tnu, back):
     re = rel.disjoint
   elif cl.mrca(tnu, back) == tnu:
@@ -149,7 +146,7 @@ def extensional_match(tnu, other):
   else:
     re = rel.lt
     for sub in get_children(partner):
-      cross_back = cross_mrca(sub, here)
+      cross_back = cross_mrca(sub)
       if cross_back != None:
         if cl.mrca(tnu, cross_back) == tnu and cross_disjoint(tnu, partner):
           re = rel.conflict
@@ -162,7 +159,7 @@ def cross_disjoint(tnu, partner):
   assert partner > 0
   assert cl.get_checklist(tnu) != cl.get_checklist(partner)
 
-  back = cross_mrca(partner, cl.get_checklist(tnu))
+  back = cross_mrca(partner)
   if back == None:
     return True
   assert back > 0
@@ -227,14 +224,11 @@ def analyze_cross_mrcas(A, B, particles):
 
 # Returns an accepted/accepted articulation
 
-def cross_mrca(tnu, other):
+def cross_mrca(tnu):
   global cross_mrcas
   assert tnu > 0
   assert cl.is_accepted(tnu)
-  probe = cross_mrcas.get(tnu, 17)
-  if probe != 17:
-    return probe
-  return None
+  return cross_mrcas.get(tnu)
 
 # ---------- Particles
 
@@ -345,36 +339,6 @@ def direct_matches(node, other):
   hits = cl.get_similar_records(other, node, shared_idspace)
   return [art.intensional(node, hit) for hit in hits]
 
-# ---------- UNMATCHED (grafts)
-
-# Unmatched - TBD: ought to be folded into alignment
-# (but we need to distinguish grafts from insertions)
-# Find nodes in B (?) that are not mutually matched to nodes in A
-
-# A B_node that is not the best_match of any A_node ...
-
-def analyze_unmatched(B, A, xmrcas):
-  graft_points = {}
-  def process(B_tnu):
-    if cl.is_accepted(B_tnu) and not articulate(B_tnu, A, xmrcas):
-      point = get_graft_point(B_tnu, A, xmrcas)    # in A
-      if point:
-        graft_points[B_tnu] = point    # in A
-    else:
-      for child in cl.get_inferiors(B_tnu):
-        process(child)
-  for root in cl.get_roots(B):
-    process(root)
-  return cl.invert_dict(graft_points)
-
-def get_graft_point(B_tnu, A, xmrcas):
-  B_parent = cl.get_parent(B_tnu)
-  if B_parent:
-    B_parent_match = articulate(B_parent, A, xmrcas)
-    if B_parent_match:
-      return B_parent_match.cod
-  return None
-
 # ---------- Within-checklist articulations
 
 # Handy for composing paths.
@@ -439,6 +403,7 @@ def choose_best_matches(arts):
 # Random
 
 def get_children(node):
+  assert node > 0
   return [node
           for node in cl.get_children(node) + cl.get_synonyms(node)
           if cl.is_accepted(node)]
