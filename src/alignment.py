@@ -248,7 +248,7 @@ def find_particles(here, other):
   def subanalyze(tnu, other):
     log(tnu, "subanalyze")
     if not cl.is_accepted(tnu):
-      print("# ** Child %s of %s has an accepted taxname" %
+      print("# ** Child %s of %s has an accepted name" %
             (cl.get_unique(tnu), cl.get_unique(cl.get_parent(tnu))))
       return False
     found_match = False

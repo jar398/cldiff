@@ -20,9 +20,9 @@ def field(label):
 nomenclatural_status = field("nomenclaturalStatus")
 taxonomic_status     = field("taxonomicStatus")    # flush?
 taxon_rank           = field("taxonRank")
-parent_taxname_id    = field("parentNameUsageID")
-taxname_id           = field("taxonID")
-accepted_taxname_id  = field("acceptedNameUsageID")
+parent_node_id    = field("parentNameUsageID")
+node_id           = field("taxonID")
+accepted_node_id  = field("acceptedNameUsageID")
 canonical_name       = field("canonicalName")
 scientific_name      = field("scientificName")
 
@@ -51,7 +51,7 @@ class Checklist(table.Table):
     self.name = name    # not used?
     self.sequence_numbers = {}
 
-  def get_all_taxnames(self):
+  def get_all_nodes(self):
     return self.record_uids
 
   def tnu_count(self):
@@ -68,11 +68,6 @@ class Checklist(table.Table):
     for root in get_roots(self):
       n = process(root, n)
 
-# A checklist's TNU list
-
-def get_all_taxnames(checklist):
-  return checklist.record_uids
-
 # Sequence number within this checklist
 
 def get_sequence_number(uid):
@@ -88,7 +83,7 @@ def read_checklist(specifier, prefix, name):
   else:
     checklist.populate_from_file(specifier)
 
-  assert checklist.get_position(taxname_id) != None
+  assert checklist.get_position(node_id) != None
   assert checklist.get_position(canonical_name) != None
 
   checklist.assign_sequence_numbers()
@@ -98,7 +93,7 @@ def read_checklist(specifier, prefix, name):
 # Utility - copied from another file - really ought to be shared
 # Is this used?  Could be
 
-def get_taxname_file_path(dwca_dir):
+def get_nodes_file_path(dwca_dir):
   for name in ["taxon.tsv",
                "Taxon.tsv",
                "taxon.tab",
@@ -117,26 +112,22 @@ def get_taxname_file_path(dwca_dir):
 
 canonical_empty_list = []
 
-def get_taxnames_with_value(checklist, field, value):
+def get_nodes_with_value(checklist, field, value):
   return checklist.get_index(field).get(value, canonical_empty_list)
 
 # Get unique (we hope) taxon record possessing a given identifier
 # Can return None
 
-def get_taxname_id(tnu):
-  id = get_value(tnu, taxname_id)
-  if id == None:
-    #print("** No node id for %s %s" % table.record_and_table(tnu))
-    return None
-  return id
+def get_node_id(tnu):
+  return get_value(tnu, node_id)
 
-def get_record_with_taxname_id(checklist, id):
-  records = checklist.get_index(taxname_id).get(id, None)
+def get_record_with_node_id(checklist, id):
+  records = checklist.get_index(node_id).get(id, None)
   if records:
     return records[0]
   else:
     return None
-  return get_value(tnu, taxname_id)
+  return get_value(tnu, node_id)
 
 # ----------------------------------------
 
@@ -149,7 +140,7 @@ def get_name(tnu):
   if name != None: return name
   name = get_value(tnu, scientific_name)
   if name != None: return name  
-  return get_taxname_id(tnu)
+  return get_node_id(tnu)
 
 def get_nominal_rank(tnu):
   if is_container(tnu): return None
@@ -165,10 +156,10 @@ def get_spaceless(tnu):
   name = get_name(tnu)
 
   tnus_with_this_name = \
-    get_taxnames_with_value(checklist, canonical_name, name)
+    get_nodes_with_value(checklist, canonical_name, name)
   if len(tnus_with_this_name) > 1:
     # TBD: what if id is None?  Use id of accepted?
-    name = name + "#" + get_taxname_id(tnu)
+    name = name + "#" + get_node_id(tnu)
 
   if not is_accepted(tnu):
     name = "?" + name
@@ -186,7 +177,7 @@ def get_unique(tnu):
 
 def get_roots(checklist):
   roots = []
-  for tnu in get_all_taxnames(checklist):
+  for tnu in checklist.get_all_nodes():
     assert tnu > 0
     if to_accepted(tnu) == tnu and get_parent(tnu) == forest_tnu:
       roots.append(tnu)
@@ -206,9 +197,9 @@ def get_parent(tnu):
   assert tnu > 0
   # There are two checks here, and if the order of the checks matters,
   # the input checklist is ill-formed
-  parent_id = get_value(tnu, parent_taxname_id)
+  parent_id = get_value(tnu, parent_node_id)
   if parent_id != None:
-    parent = get_record_with_taxname_id(get_checklist(tnu), parent_id)
+    parent = get_record_with_node_id(get_checklist(tnu), parent_id)
     if parent != None:
       return to_accepted(parent)
   probe = get_accepted(tnu)
@@ -218,9 +209,9 @@ def get_parent(tnu):
     return forest_tnu
 
 def get_children(parent):
-  return get_taxnames_with_value(get_checklist(parent),
-                                 parent_taxname_id,
-                                 get_taxname_id(parent))
+  return get_nodes_with_value(get_checklist(parent),
+                                 parent_node_id,
+                                 get_node_id(parent))
 
 # Get canonical record among a set of equivalent records
 
@@ -243,16 +234,16 @@ def to_accepted(tnu):
 # Returns None if this record has no accepted record
 
 def get_accepted(tnu):
-  probe = get_value(tnu, accepted_taxname_id)
+  probe = get_value(tnu, accepted_node_id)
   if probe != None:
-    return get_record_with_taxname_id(get_checklist(tnu), probe)
+    return get_record_with_node_id(get_checklist(tnu), probe)
   return None
 
 def get_synonyms(tnu):
   return [syn
-          for syn in get_taxnames_with_value(get_checklist(tnu),
-                                             accepted_taxname_id,
-                                             get_taxname_id(tnu))]
+          for syn in get_nodes_with_value(get_checklist(tnu),
+                                             accepted_node_id,
+                                             get_node_id(tnu))]
 
 def get_taxonomic_status(tnu):
   return get_value(tnu, taxonomic_status)
@@ -261,7 +252,7 @@ def get_nomenclatural_status(tnu):
   return get_value(tnu, nomenclatural_status)
 
 def is_accepted(tnu):
-  return not get_value(tnu, accepted_taxname_id)
+  return not get_value(tnu, accepted_node_id)
 
 # ---------- Hierarchy analyzers
 
@@ -431,11 +422,11 @@ def get_similar_records(checklist, record, shared_idspace=False):
   assert record > 0
   assert get_checklist(record) != checklist
   # TBD: search on scientific_name epithet, etc. as well
-  hits = get_taxnames_with_value(checklist,
+  hits = get_nodes_with_value(checklist,
                                  canonical_name,
                                  get_name(record))
   if shared_idspace:
-    id_hit = get_record_with_taxname_id(checklist, get_taxname_id(record))
+    id_hit = get_record_with_node_id(checklist, get_node_id(record))
     if id_hit and not id_hit in hits:
       hits = hits + [id_hit]
   return hits
@@ -455,10 +446,10 @@ def invert_dict(d):
 
 def self_test():
   checklist = read_checklist("work/ncbi/2020-01-01/primates.csv", "A.", "name")
-  print ("Nodes:", len(get_all_taxnames(checklist)))
+  print ("Nodes:", len(checklist.get_all_nodes()))
   print ("Roots:", get_roots(checklist))
   tnus = checklist.get_index(taxon_id)
-  tnu = get_record_with_taxname_id(checklist, '9455')
+  tnu = get_record_with_node_id(checklist, '9455')
   print ("Specimen tnu:", tnu)
   print ("Name:", get_name(tnu))
   synos = get_synonyms(tnu)

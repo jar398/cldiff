@@ -18,7 +18,7 @@ import merge
 def main(c1, c1_tag, c2, c2_tag, out, format):
   A = cl.read_checklist(c1, c1_tag + ".", "left-checklist")
   B = cl.read_checklist(c2, c2_tag + ".", "right-checklist")
-  print ("Taxname counts:", len(cl.get_all_taxnames(A)), len(cl.get_all_taxnames(B)))
+  print ("Node counts:", len(A.get_all_nodes()), len(B.get_all_nodes()))
   write_report(A, B, format, out)
 
 def write_report(A, B, format, outpath):
@@ -106,19 +106,19 @@ def report_one_articulation(op, ch, x, re, y, writer, indent):
   if x and y:
     writer.writerow([indent, op, ch,
                      cl.get_unique(x),
-                     cl.get_taxname_id(x),
+                     cl.get_node_id(x),
                      re,
-                     cl.get_taxname_id(y),
+                     cl.get_node_id(y),
                      cl.get_unique(y)])
   elif x:
       writer.writerow([indent, op, ch,
                        cl.get_unique(x),
-                       cl.get_taxname_id(x),
+                       cl.get_node_id(x),
                        re, None, None])
   else:
     writer.writerow([indent, op, ch,
                      None, None, re,
-                     cl.get_taxname_id(y),
+                     cl.get_node_id(y),
                      cl.get_unique(y)])
 
 # --------------------
@@ -327,17 +327,17 @@ def proclaim_row(row, sink):
     rows.append(row)
   else:
     (indent, tag, dom, re, cod, remark) = row
-    (dom_name, dom_id) = get_taxname_info(dom)
-    (cod_name, cod_id) = get_taxname_info(cod)
+    (dom_name, dom_id) = get_node_info(dom)
+    (cod_name, cod_id) = get_node_info(cod)
     writer.writerow([indent + tag, dom_name, dom_id, re, cod_id, cod_name, remark])
 
-def get_taxname_info(tnu):
+def get_node_info(tnu):
   if tnu:
     prefix = cl.get_checklist(tnu).prefix
     status = cl.get_taxonomic_status(tnu)
     modifiers = "?" if status == "synonym" else ""
     return (cl.get_name(tnu),
-            prefix + cl.get_taxname_id(tnu) + modifiers)
+            prefix + cl.get_node_id(tnu) + modifiers)
   else:
     return (None, None)
 
