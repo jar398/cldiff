@@ -139,6 +139,7 @@ def extensional_match(tnu, other):
     return None
   here = cl.get_checklist(tnu)
   back = cross_mrca(partner)
+  if not back: return None      # ?
   if cl.are_disjoint(tnu, back):
     re = rel.disjoint
   elif cl.mrca(tnu, back) == tnu:

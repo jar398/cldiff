@@ -33,6 +33,7 @@ forest_tnu = 0
 # Get the value of a field of a TNU record (via global registry)
 
 def get_value(uid, field):
+  assert field
   if uid == forest_tnu: return None
   return table.get_value(uid, field)
 

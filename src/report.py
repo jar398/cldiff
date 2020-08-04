@@ -51,74 +51,75 @@ def really_write_report(A, B, format, outfile):
 
 def report(A, B, al, roots, parents, outfile):
   inv = invert_alignment(al)
-  changed = find_changed_subtrees(A, inv)
   writer = csv.writer(outfile)
-  writer.writerow(["indent", "note", "dom", "dom id", "relation", "cod id", "cod"])
+  writer.writerow(["indent", "operation", "unchanged", "dom", "dom id", "relation", "cod id", "cod"])
   children = cl.invert_dict(parents)
+  changed = find_changed_merged_subtrees(roots, children)
   def process(mnode, indent):
     (x, y) = mnode
     childs = children.get(mnode, [])
     re = None
-    if x:
+    if x and y:
+      op = "KEEP"
+      # TBD: Add info about changed properties and parent
+    elif x:
+      op = "DELETE A"
       ar = al.get(x)
       if ar:
         re = ar.relation.name
         # Equivalence, usually, but sometimes not
-        if y == ar.cod:
-          # Mutual
-          tag = "KEEP"
-        elif y:
-          # Nonmutual
-          tag = "NONMUTUAL"       # doesn't happen?
-        else:
-          y = ar.cod
-          tag = "MERGE"
-      else:
-        tag = "DELETE"
-    else:
+        y = ar.cod
+
+        if rel.is_variant(ar.relation, rel.eq):
+          op += " (merge)"
+        elif rel.is_variant(ar.relation, rel.conflict):
+          op += " (conflict)"
+        elif rel.is_variant(ar.relation, rel.lt):
+          op += " (loss of resolution)"
+    else:                       # y
+      op = "ADD B"
       ar = al.get(y)
       if ar:
         re = ar.relation.revname
         x = ar.cod
         if rel.is_variant(ar.relation, rel.eq):
-          tag = "SPLIT"
+          op += " (split)"
         elif rel.is_variant(ar.relation, rel.conflict):
-          tag = "REORG"
+          op += " (reorganization)"
         elif rel.is_variant(ar.relation, rel.lt):
-          tag = "INSERTION"
-        else:
-          tag = "WHA"
+          op += " (increased resolution)"
+
+    status = changed.get(mnode)
+    ch = None
+    if not status:
+      if len(childs) == 0:
+        ch = "tip"
       else:
-        tag = "ADD"
-    report_one_articulation(x, re, y, childs, changed, tag, writer, indent)
+        ch = "subtree="
+
+    report_one_articulation(op, ch, x, re, y, writer, indent)
     jndent = indent + "__"
-    if changed.get(x):
+    if ch:
       for child in childs:
         process(child, jndent)
   for root in roots:
     process(root, "")
 
-def report_one_articulation(x, re, y, childs, changed, op, writer, indent):
-  if x:
-    if not changed.get(x):
-      if len(childs) == 0:
-        op = "%s TIP" % op
-      else:
-        op = "%s SUBTREE" % op
-    if y:
-      writer.writerow([indent, op,
-                       cl.get_unique(x),
-                       cl.get_taxname_id(x),
-                       re,
-                       cl.get_taxname_id(y),
-                       cl.get_unique(y)])
-    else:
-      writer.writerow([indent, op,
+def report_one_articulation(op, ch, x, re, y, writer, indent):
+  if x and y:
+    writer.writerow([indent, op, ch,
+                     cl.get_unique(x),
+                     cl.get_taxname_id(x),
+                     re,
+                     cl.get_taxname_id(y),
+                     cl.get_unique(y)])
+  elif x:
+      writer.writerow([indent, op, ch,
                        cl.get_unique(x),
                        cl.get_taxname_id(x),
                        re, None, None])
   else:
-    writer.writerow([indent, op,
+    writer.writerow([indent, op, ch,
                      None, None, re,
                      cl.get_taxname_id(y),
                      cl.get_unique(y)])
@@ -135,6 +136,27 @@ def invert_alignment(alignment):
     else:
       inv[rev.dom] = [rev]
   return inv
+
+# Returns table with True for merged nodes all of whose descendants are
+# unchanged
+
+def find_changed_merged_subtrees(roots, children):
+  status = {}
+  def process(node):
+    node_changed = False
+    (x, y) = node
+    if not x or not y:
+      node_changed = True
+    descendant_changed = False
+    for child in children.get(node, []):
+      if process(child):
+        descendant_changed = True
+    status[node] = descendant_changed       # Cache it
+    return descendant_changed or node_changed
+  for root in roots:
+    process(root)
+  return status
+
 
 # Returns table with True for nodes all of whose descendants are
 # unchanged

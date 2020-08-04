@@ -31,7 +31,7 @@ class Table:
         self.position_index[prop.uid] = position
         self.methods[prop.uid] = self.fetcher(prop, position)
       else:
-        print("** Unrecognized property %s" % prop)
+        print("** Unrecognized property %s" % position)
 
   def fetcher(self, prop, position):
     def fetch(r):

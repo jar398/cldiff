@@ -29,14 +29,15 @@ def differences(uid1, uid2):  # mask
   drop = 0
   add = 0
   for prop in table.get_table(uid2).properties:
-    v1 = cl.get_value(uid1, prop)
-    v2 = cl.get_value(uid2, prop)
+    if prop:
+      v1 = cl.get_value(uid1, prop)
+      v2 = cl.get_value(uid2, prop)
 
-    if v1 != v2:
-      if v1 != None:
-        drop |= 1 << prop.specificity
-      if v2 != None:
-        add |= 1 << prop.specificity
+      if v1 != v2:
+        if v1 != None:
+          drop |= 1 << prop.specificity
+        if v2 != None:
+          add |= 1 << prop.specificity
   if len(cl.get_children(uid1)) != len(cl.get_children(uid2)):
     drop |= 1 << number_of_children.specificity
     add |= 1 << number_of_children.specificity
