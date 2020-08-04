@@ -63,7 +63,7 @@ def report(A, B, al, roots, parents, outfile):
       op = "KEEP"
       # TBD: Add info about changed properties and parent
     elif x:
-      op = "DELETE A"
+      op = "DELETE"
       ar = al.get(x)
       if ar:
         re = ar.relation.name
@@ -77,7 +77,7 @@ def report(A, B, al, roots, parents, outfile):
         elif rel.is_variant(ar.relation, rel.lt):
           op += " (loss of resolution)"
     else:                       # y
-      op = "ADD B"
+      op = "ADD"
       ar = al.get(y)
       if ar:
         re = ar.relation.revname
@@ -91,15 +91,12 @@ def report(A, B, al, roots, parents, outfile):
 
     status = changed.get(mnode)
     ch = None
-    if not status:
-      if len(childs) == 0:
-        ch = "tip"
-      else:
-        ch = "subtree="
+    if not status and len(childs) > 0:
+      ch = "subtree="
 
     report_one_articulation(op, ch, x, re, y, writer, indent)
     jndent = indent + "__"
-    if ch:
+    if status:
       for child in childs:
         process(child, jndent)
   for root in roots:
@@ -154,7 +151,11 @@ def find_changed_merged_subtrees(roots, children):
     status[node] = descendant_changed       # Cache it
     return descendant_changed or node_changed
   for root in roots:
-    process(root)
+    status[root] = process(root)
+  count = 0
+  for key in status:
+    if status[key]: count += 1
+  print("# Changed status: %s, changed: %s" % (len(status), count))
   return status
 
 
