@@ -58,18 +58,18 @@ SOURCES=src/report.py src/alignment.py src/articulation.py src/relation.py src/c
 
 $(WORK)/ncbi-2015-2020.csv: $(SOURCES) $(A)/primates.csv $(B)/primates.csv
 	python3 src/report.py $(A)/primates.csv $(B)/primates.csv \
-	  --out $@.new --share_ids true
+	  --out $@.new 
 	mv $@.new $@
 
 ex: $(WORK)/ncbi-2015-2020.ex
 $(WORK)/ncbi-2015-2020.ex: $(SOURCES) $(A)/primates.csv $(B)/primates.csv
 	python3 src/report.py $(A)/primates.csv $(B)/primates.csv \
-	  --out $@.new --share_ids true --format eulerx
+	  --out $@.new --format eulerx
 	mv $@.new $@
 
 $(WORK)/ncbi-gbif.csv: $(SOURCES) $(B)/primates.csv $(C)/primates.csv
-	python3 src/report.py $(B)/primates.csv --left-tag=B \
-			      $(C)/primates.csv --right-tag=C --out $@.new
+	python3 src/report.py $(B)/primates.csv --low-tag=B \
+			      $(C)/primates.csv --high-tag=C --out $@.new
 	mv $@.new $@
 
 publish: doc/ncbi-2015-2020.csv doc/ncbi-gbif.csv

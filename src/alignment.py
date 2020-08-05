@@ -380,7 +380,7 @@ def match_to_accepted(m):
 # This ought to be cached I think?
 
 def direct_matches(node, other):
-  hits = cl.get_similar_records(other, node, shared_idspace)
+  hits = cl.get_similar_records(other, node)
   return [art.intensional(node, hit) for hit in hits]
 
 # ---------- Within-checklist articulations
@@ -489,6 +489,5 @@ if __name__ == '__main__':
   parser.add_argument('--out', help='file name for report', default='diff.csv')
   parser.add_argument('--format', help='report format', default='ad-hoc')
   args = parser.parse_args()
-  shared_idspace = args.idspace # global
   main(args.left, args.left_tag, args.right, args.right_tag, args.out, args.format)
 

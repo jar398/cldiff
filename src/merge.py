@@ -81,7 +81,7 @@ def inject_A(node, al):
   if m1:
     if rel.is_variant(m1.relation, rel.eq):
       m2 = al.get(m1.cod)
-      if rel.is_variant(m2.relation, rel.eq):
+      if m2 and rel.is_variant(m2.relation, rel.eq):
         if m2.cod == node:
           return (node, m1.cod)
   return (node, None)

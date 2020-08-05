@@ -1,663 +1,716 @@
-indent,operation,unchanged,dom,dom id,relation,cod id,cod
-,KEEP,,A.Primates,9443,,9443,B.Primates
-__,KEEP,,A.unclassified_Primates,57118,,57118,B.unclassified_Primates
-____,DELETE (merge),,A.Japanese_monkeys,36513,=,9542,B.Macaca_fuscata
-____,KEEP,,A.marmosets,38020,,38020,B.marmosets
-____,KEEP,,A.unidentified_monkey,70699,,70699,B.unidentified_monkey
-____,KEEP,,A.Primates_sp._BOLD:AAA0001,976298,,976298,B.Primates_sp._BOLD:AAA0001
-____,KEEP,,A.Primates_sp._BOLD:AAC9009,976299,,976299,B.Primates_sp._BOLD:AAC9009
-____,KEEP,,A.Primates_sp._BOLD:AAE4744,976300,,976300,B.Primates_sp._BOLD:AAE4744
-____,KEEP,,A.Primates_sp._BOLD:AAJ7304,976301,,976301,B.Primates_sp._BOLD:AAJ7304
-____,KEEP,,A.Primates_sp._BOLD:AAO0053,976302,,976302,B.Primates_sp._BOLD:AAO0053
-____,KEEP,,A.Primates_sp._BOLD:AAC7735,1068292,,1068292,B.Primates_sp._BOLD:AAC7735
-____,KEEP,,A.Primates_sp._BOLD:AAD0215,1068293,,1068293,B.Primates_sp._BOLD:AAD0215
-____,KEEP,,A.Primates_sp._BOLD:AAF0367,1068294,,1068294,B.Primates_sp._BOLD:AAF0367
-__,KEEP,,A.Strepsirrhini,376911,,376911,B.Strepsirrhini
-____,KEEP,,A.Lemuriformes,376915,,376915,B.Lemuriformes
-______,KEEP,,A.Lemuridae,9445,,9445,B.Lemuridae
-________,KEEP,,A.Lemur,9446,,9446,B.Lemur
-__________,KEEP,,A.Lemur_catta,9447,,9447,B.Lemur_catta
-__________,ADD (split),subtree=,A.Lemur_sp.,69491,=,2641939,B.unclassified_Lemur
-________,KEEP,subtree=,A.Varecia,9454,,9454,B.Varecia
-________,KEEP,,A.Eulemur,13513,,13513,B.Eulemur
-__________,KEEP,,A.Eulemur_coronatus,13514,,13514,B.Eulemur_coronatus
-__________,KEEP,subtree=,A.Eulemur_fulvus,13515,,13515,B.Eulemur_fulvus
-__________,KEEP,subtree=,A.Eulemur_macaco,30602,,30602,B.Eulemur_macaco
-__________,KEEP,,A.Eulemur_mongoz,34828,,34828,B.Eulemur_mongoz
-__________,KEEP,,A.Eulemur_rubriventer,34829,,34829,B.Eulemur_rubriventer
-__________,KEEP,,A.Eulemur_flavifrons,87288,,87288,B.Eulemur_flavifrons
-__________,KEEP,,A.Eulemur_sanfordi,122225,,122225,B.Eulemur_sanfordi
-__________,KEEP,,A.Eulemur_cinereiceps,639525,,639525,B.Eulemur_cinereiceps
-__________,KEEP,,A.Eulemur_rufus,859983,,859983,B.Eulemur_rufus
-__________,KEEP,,A.Eulemur_rufifrons,859984,,859984,B.Eulemur_rufifrons
-__________,KEEP,,A.Eulemur_albifrons,1215604,,1215604,B.Eulemur_albifrons
-__________,DELETE (conflict),,A.Eulemur_hybrids,1417238,><,13513,B.Eulemur
-__________,KEEP,,A.Eulemur_albifrons_x_rufifrons,1417231,,1417231,B.Eulemur_albifrons_x_rufifrons
-__________,KEEP,,A.Eulemur_albifrons_x_cinereiceps,1417236,,1417236,B.Eulemur_albifrons_x_cinereiceps
-__________,KEEP,,A.Eulemur_cinereiceps_x_rufifrons,1417237,,1417237,B.Eulemur_cinereiceps_x_rufifrons
-________,KEEP,subtree=,A.Hapalemur,13556,,13556,B.Hapalemur
-________,KEEP,subtree=,A.Prolemur,1328069,,1328069,B.Prolemur
-________,ADD,,,,,1513474,B.Pachylemur
-__________,ADD,,,,,1513475,B.Pachylemur_jullyi
-______,KEEP,,A.Indriidae,30599,,30599,B.Indriidae
-________,KEEP,,A.Propithecus,30600,,30600,B.Propithecus
-__________,KEEP,,A.Propithecus_tattersalli,30601,,30601,B.Propithecus_tattersalli
-__________,KEEP,subtree=,A.Propithecus_verreauxi,34825,,34825,B.Propithecus_verreauxi
-__________,KEEP,subtree=,A.Propithecus_diadema,83281,,83281,B.Propithecus_diadema
-__________,KEEP,,A.Propithecus_coquereli,379532,,379532,B.Propithecus_coquereli
-__________,KEEP,subtree=,A.Propithecus_deckenii,475618,,475618,B.Propithecus_deckenii
-__________,KEEP,,A.Propithecus_edwardsi,543559,,543559,B.Propithecus_edwardsi
-__________,KEEP,,A.Propithecus_candidus,543560,,543560,B.Propithecus_candidus
-__________,KEEP,,A.Propithecus_perrieri,989338,,989338,B.Propithecus_perrieri
-__________,ADD (split),subtree=,A.Propithecus_sp.,39582,=,2677806,B.unclassified_Propithecus
-________,KEEP,subtree=,A.Indri,34826,,34826,B.Indri
-________,KEEP,subtree=,A.Avahi,122245,,122245,B.Avahi
-________,KEEP,subtree=,A.Archaeolemur,523820,,523820,B.Archaeolemur
-________,KEEP,subtree=,A.Hadropithecus,523824,,523824,B.Hadropithecus
-______,KEEP,,A.Lepilemuridae,30614,,30614,B.Lepilemuridae
-________,KEEP,,A.Lepilemur,9452,,9452,B.Lepilemur
-__________,KEEP,,A.Lepilemur_mustelinus,9453,,9453,B.Lepilemur_mustelinus
-__________,KEEP,,A.Lepilemur_dorsalis,78583,,78583,B.Lepilemur_dorsalis
-__________,KEEP,,A.Lepilemur_septentrionalis,78584,,78584,B.Lepilemur_septentrionalis
-__________,KEEP,,A.Lepilemur_ruficaudatus,78866,,78866,B.Lepilemur_ruficaudatus
-__________,KEEP,,A.Lepilemur_leucopus,100475,,100475,B.Lepilemur_leucopus
-__________,KEEP,,A.Lepilemur_edwardsi,122230,,122230,B.Lepilemur_edwardsi
-__________,KEEP,,A.Lepilemur_microdon,185457,,185457,B.Lepilemur_microdon
-__________,KEEP,,A.Lepilemur_mitsinjoensis,236287,,236287,B.Lepilemur_mitsinjoensis
-__________,KEEP,,A.Lepilemur_seali,236288,,236288,B.Lepilemur_seali
-__________,KEEP,,A.Lepilemur_sahamalazensis,342398,,342398,B.Lepilemur_sahamalazensis
-__________,KEEP,,A.Lepilemur_aeeclis,342399,,342399,B.Lepilemur_aeeclis
-__________,KEEP,,A.Lepilemur_ankaranensis,342401,,342401,B.Lepilemur_ankaranensis
-__________,KEEP,,A.Lepilemur_mittermeieri,378517,,378517,B.Lepilemur_mittermeieri
-__________,KEEP,,A.Lepilemur_manasamody,458171,,458171,B.Lepilemur_manasamody
-__________,KEEP,,A.Lepilemur_otto,458173,,458173,B.Lepilemur_otto
-__________,KEEP,,A.Lepilemur_jamesi,486960,,486960,B.Lepilemur_jamesorum
-__________,KEEP,,A.Lepilemur_hubbardorum,756882,,756882,B.Lepilemur_hubbardorum
-__________,KEEP,,A.Lepilemur_petteri,886964,,886964,B.Lepilemur_petteri
-__________,KEEP,,A.Lepilemur_randrianasoloi,886965,,886965,B.Lepilemur_randrianasoloi
-__________,ADD,,,,,886957,B.Lepilemur_ahmansonorum
-__________,ADD,,,,,886958,B.Lepilemur_betsileo
-__________,ADD,,,,,886959,B.Lepilemur_fleuretae
-__________,ADD,,,,,886960,B.Lepilemur_grewcockorum
-__________,ADD,,,,,886961,B.Lepilemur_hollandorum
-__________,ADD,,,,,886963,B.Lepilemur_milanoii
-__________,ADD,,,,,886966,B.Lepilemur_scottorum
-__________,ADD,,,,,886967,B.Lepilemur_tymerlachsoni
-__________,ADD,,,,,886968,B.Lepilemur_wrightae
-__________,ADD (reorganization),subtree=,A.Lepilemur,9452,><,2645584,B.unclassified_Lepilemur
-________,KEEP,,A.Megaladapis,126593,,126593,B.Megaladapis
-__________,KEEP,,A.Megaladapis_edwardsi,185953,,185953,B.Megaladapis_edwardsi
-__________,ADD (reorganization),subtree=,A.Megaladapis,126593,><,2620125,B.unclassified_Megaladapis
-______,KEEP,,A.Cheirogaleidae,30615,,30615,B.Cheirogaleidae
-________,KEEP,,A.Cheirogaleus,9459,,9459,B.Cheirogaleus
-__________,KEEP,,A.Cheirogaleus_medius,9460,,9460,B.Cheirogaleus_medius
-__________,KEEP,,A.Cheirogaleus_major,47177,,47177,B.Cheirogaleus_major
-__________,KEEP,,A.Cheirogaleus_crossleyi,291259,,291259,B.Cheirogaleus_crossleyi
-__________,KEEP,,A.Cheirogaleus_sibreei,752538,,752538,B.Cheirogaleus_sibreei
-__________,KEEP,,A.Cheirogaleus_minusculus,867375,,867375,B.Cheirogaleus_minusculus
-__________,ADD,,,,,1569974,B.Cheirogaleus_lavasoensis
-________,KEEP,,A.Microcebus,13149,,13149,B.Microcebus
-__________,KEEP,,A.Microcebus_murinus,30608,,30608,B.Microcebus_murinus
-__________,KEEP,,A.Microcebus_ravelobensis,122231,,122231,B.Microcebus_ravelobensis
-__________,KEEP,,A.Microcebus_rufus,122232,,122232,B.Microcebus_rufus
-__________,KEEP,,A.Microcebus_myoxinus,143283,,143283,B.Microcebus_myoxinus
-__________,KEEP,,A.Microcebus_tavaratra,143351,,143351,B.Microcebus_tavaratra
-__________,KEEP,,A.Microcebus_berthae,143352,,143352,B.Microcebus_berthae
-__________,KEEP,,A.Microcebus_sambiranensis,143353,,143353,B.Microcebus_sambiranensis
-__________,KEEP,,A.Microcebus_griseorufus,143354,,143354,B.Microcebus_griseorufus
-__________,KEEP,,A.Microcebus_simmonsi,236272,,236272,B.Microcebus_simmonsi
-__________,KEEP,,A.Microcebus_mittermeieri,236274,,236274,B.Microcebus_mittermeieri
-__________,KEEP,,A.Microcebus_jollyae,236275,,236275,B.Microcebus_jollyae
-__________,KEEP,,A.Microcebus_lehilahytsara,343908,,343908,B.Microcebus_lehilahytsara
-__________,KEEP,,A.Microcebus_bongolavensis,412750,,412750,B.Microcebus_bongolavensis
-__________,KEEP,,A.Microcebus_danfossi,412751,,412751,B.Microcebus_danfossi
-__________,KEEP,,A.Microcebus_lokobensis,412752,,412752,B.Microcebus_lokobensis
-__________,KEEP,,A.Microcebus_mamiratra,415757,,415757,B.Microcebus_mamiratra
-__________,KEEP,,A.Microcebus_macarthurii,548481,,548481,B.Microcebus_macarthurii
-__________,KEEP,,A.Microcebus_arnholdi,864580,,864580,B.Microcebus_arnholdi
-__________,KEEP,,A.Microcebus_margotmarshae,864581,,864581,B.Microcebus_margotmarshae
-__________,KEEP,,A.Microcebus_gerpi,1131379,,1131379,B.Microcebus_gerpi
-__________,KEEP,,A.Microcebus_tanosi,1310123,,1310123,B.Microcebus_tanosi
-__________,KEEP,,A.Microcebus_marohita,1310124,,1310124,B.Microcebus_marohita
-__________,ADD,,,,,2483760,B.Microcebus_ganzhorni
-__________,ADD (reorganization),,A.Microcebus,13149,><,2630091,B.unclassified_Microcebus
-____________,KEEP,,A.Microcebus_sp._EELHDZ_M98,270538,,270538,B.Microcebus_sp._EELHDZ_M98
-____________,KEEP,,A.Microcebus_sp._EELHDZ_TAD23,270540,,270540,B.Microcebus_sp._EELHDZ_TAD23
-____________,KEEP,,A.Microcebus_sp._EELHDZ_VEV33,270674,,270674,B.Microcebus_sp._EELHDZ_VEV33
-____________,KEEP,,A.Microcebus_sp._EELHDZ_VEV35,270675,,270675,B.Microcebus_sp._EELHDZ_VEV35
-____________,KEEP,,A.Microcebus_sp._ANT5.1,388736,,388736,B.Microcebus_sp._ANT5.1
-____________,KEEP,,A.Microcebus_sp._Ambongabe,412758,,412758,B.Microcebus_sp._Ambongabe
-____________,KEEP,,A.Microcebus_sp._Bora,412759,,412759,B.Microcebus_sp._Bora
-____________,KEEP,,A.Microcebus_sp._Mahajamba-Est,412760,,412760,B.Microcebus_sp._Mahajamba-Est
-____________,KEEP,,A.Microcebus_sp._Maroakata,412761,,412761,B.Microcebus_sp._Maroakata
-____________,KEEP,,A.Microcebus_sp._Anjiahely,548482,,548482,B.Microcebus_sp._Anjiahely
-____________,KEEP,,A.Microcebus_sp._DWW-2010a,764313,,764313,B.Microcebus_sp._DWW-2010a
-____________,KEEP,,A.Microcebus_sp._d'Ambre,1310125,,1310125,B.Microcebus_sp._d'Ambre
-____________,ADD,,,,,418100,B.Microcebus_sp._Antanosy
-____________,ADD,,,,,2508170,B.Microcebus_sp._3_GT-2019
-________,KEEP,,A.Mirza,83691,,83691,B.Mirza
-__________,KEEP,,A.Mirza_coquereli,47180,,47180,B.Mirza_coquereli
-__________,KEEP,,A.Mirza_zaza,339999,,339999,B.Mirza_zaza
-__________,ADD (split),subtree=,A.Mirza_sp._001y03,415977,=,2628182,B.unclassified_Mirza
-________,KEEP,subtree=,A.Allocebus,122247,,122247,B.Allocebus
-________,KEEP,subtree=,A.Phaner,261733,,261733,B.Phaner
-______,KEEP,,A.Paleopropithecidae,1513476,,1513476,B.Paleopropithecidae
-________,KEEP,,A.Palaeopropithecus,322024,,322024,B.Palaeopropithecus
-__________,KEEP,,A.Palaeopropithecus_sp._UA4466,322025,,322025,B.Palaeopropithecus_sp._UA4466
-__________,KEEP,,A.Palaeopropithecus_sp._UA6184,322026,,322026,B.Palaeopropithecus_sp._UA6184
-__________,KEEP,,A.Palaeopropithecus_sp._KPK-2005,322027,,322027,B.Palaeopropithecus_sp._KPK-2005
-__________,ADD,,,,,1513477,B.Palaeopropithecus_ingens
-__________,ADD,,,,,1597978,B.Palaeopropithecus_maximus
-__________,ADD (split),,A.Palaeopropithecus,322024,=,2619300,B.unclassified_Palaeopropithecus
-____,DELETE (conflict),,A.Chiromyiformes,376916,><,376911,B.Strepsirrhini
-____,DELETE (merge),,A.Lorisiformes,376917,=,40297,B.Galagidae
-______,KEEP,,A.Galagidae,40297,,40297,B.Galagidae
-________,DELETE (conflict),,A.Galago,9462,><,40297,B.Galagidae
-________,KEEP,subtree=,A.Otolemur,30610,,30610,B.Otolemur
-________,DELETE (merge),,A.Galagoides,89671,=,89671,B.Galagoides
-__________,KEEP,,A.Galagoides_demidoff,89672,,89672,B.Galagoides_demidoff
-____________,ADD,,,,,1738051,B.Galagoides_demidoff_murinus
-__________,KEEP,,A.Galagoides_zanzibaricus,111174,,111174,B.Galagoides_zanzibaricus
-____________,ADD,,,,,1738046,B.Galagoides_zanzibaricus_udzungwensis
-____________,ADD,,,,,1738053,B.Galagoides_zanzibaricus_zanzibaricus
-__________,KEEP,,A.Galagoides_orinus,337210,,337210,B.Galagoides_orinus
-__________,KEEP,,A.Galagoides_cocos,1487601,,1487601,B.Galagoides_cocos
-________,KEEP,subtree=,A.Euoticus,261735,,261735,B.Euoticus
-________,ADD (split),,A.Galago,9462,=,9462,B.Galago
-__________,KEEP,,A.Galago_senegalensis,9465,,9465,B.Galago_senegalensis
-____________,ADD,,,,,1738048,B.Galago_senegalensis_senegalensis
-____________,ADD,,,,,1738052,B.Galago_senegalensis_braccatus
-__________,KEEP,,A.Galago_moholi,30609,,30609,B.Galago_moholi
-__________,KEEP,,A.Galago_alleni,34830,,34830,B.Galago_alleni
-__________,KEEP,,A.Galago_gallarum,111173,,111173,B.Galago_gallarum
-__________,KEEP,,A.Galago_matschiei,135486,,135486,B.Galago_matschiei
-__________,KEEP,,A.Galago_gabonensis,261731,,261731,B.Galago_gabonensis
-__________,KEEP,,A.Galago_granti,261732,,261732,B.Galago_granti
-__________,ADD (split),subtree=,A.Galago_sp.,9464,=,2628747,B.unclassified_Galago
-________,ADD (reorganization),,A.Galagidae,40297,><,89671,B.Galagoides
-__________,KEEP,,A.Galago_thomasi,867376,,867376,B.Galagoides_thomasi
-__________,ADD,,,,,1738047,B.Galagoides_rondoensis
-________,ADD,,,,,2604441,B.Paragalago
-__________,ADD,,,,,2604442,B.Paragalago_cocos
-__________,ADD,,,,,2604443,B.Paragalago_zanzibaricus
-____,ADD (split),subtree=,A.Daubentonia,13038,=,376916,B.Chiromyiformes
-____,ADD (reorganization),,A.Strepsirrhini,376911,><,376917,B.Lorisiformes
-______,KEEP,,A.Lorisidae,9461,,9461,B.Lorisidae
-________,KEEP,,A.Loris,9467,,9467,B.Loris
-__________,KEEP,,A.Loris_tardigradus,9468,,9468,B.Loris_tardigradus
-____________,KEEP,,A.Loris_tardigradus_nordicus,261740,,261740,B.Loris_tardigradus_nordicus
-____________,ADD,,,,,1738049,B.Loris_tardigradus_tardigradus
-__________,KEEP,,A.Loris_lydekkerianus,300163,,300163,B.Loris_lydekkerianus
-____________,KEEP,,A.Loris_lydekkerianus_malabaricus,300166,,300166,B.Loris_lydekkerianus_malabaricus
-____________,ADD,,,,,1738050,B.Loris_lydekkerianus_lydekkerianus
-________,KEEP,,A.Nycticebus,9469,,9469,B.Nycticebus
-__________,KEEP,,A.Nycticebus_coucang,9470,,9470,B.Nycticebus_coucang
-____________,KEEP,,A.Nycticebus_coucang_coucang,310933,,310933,B.Nycticebus_coucang_coucang
-____________,ADD,,,,,2020906,B.Nycticebus_coucang_insularis
-__________,KEEP,,A.Nycticebus_intermedius,101277,,101278,B.Nycticebus_pygmaeus
-__________,DELETE (merge),,A.Nycticebus_pygmaeus,101278,=,101278,B.Nycticebus_pygmaeus
-__________,KEEP,,A.Nycticebus_bengalensis,261741,,261741,B.Nycticebus_bengalensis
-__________,KEEP,,A.Nycticebus_menagensis,310932,,310932,B.Nycticebus_menagensis
-__________,KEEP,,A.Nycticebus_javanicus,310934,,310934,B.Nycticebus_javanicus
-__________,ADD (split),subtree=,A.Nycticebus_sp.,108082,=,2646861,B.unclassified_Nycticebus
-________,KEEP,subtree=,A.Perodicticus,9471,,9471,B.Perodicticus
-________,KEEP,subtree=,A.Arctocebus,261738,,261738,B.Arctocebus
-__,KEEP,,A.Haplorrhini,376913,,376913,B.Haplorrhini
-____,KEEP,,A.Simiiformes,314293,,314293,B.Simiiformes
-______,KEEP,,A.Platyrrhini,9479,,9479,B.Platyrrhini
-________,KEEP,,A.Cebidae,9498,,9498,B.Cebidae
-__________,KEEP,,A.Callitrichinae,9480,,9480,B.Callitrichinae
-____________,DELETE (conflict),,A.Callithrix,9481,><,9480,B.Callitrichinae
-____________,DELETE (conflict),,A.Saguinus,9486,><,9480,B.Callitrichinae
-____________,KEEP,,A.Callimico,9494,,9494,B.Callimico
-______________,KEEP,,A.Callimico_goeldii,9495,,9495,B.Callimico_goeldii
-______________,ADD (split),,A.Callimico_sp._MAS-2011,1090914,=,2634122,B.unclassified_Callimico
-________________,KEEP,,A.Callimico_sp._MAS-2011,1090914,,1090914,B.Callimico_sp._MAS-2011
-________________,ADD,,,,,1758239,B.Callimico_sp.
-____________,KEEP,subtree=,A.Leontopithecus,30587,,30587,B.Leontopithecus
-____________,ADD (split),,A.Callithrix,9481,=,9481,B.Callithrix#9481
-______________,ADD (split),subtree=,A.Callithrix,9481,=,1965096,B.Callithrix#1965096
-______________,ADD (split),subtree=,A.Callithrix_pygmaea,9493,=,1965109,B.Cebuella
-______________,ADD (split),subtree=,A.Callithrix_humilis,666519,=,1965113,B.Calibella
-____________,ADD (split),,A.Saguinus,9486,=,9486,B.Saguinus
-______________,KEEP,subtree=,A.Saguinus_mystax,9488,,9488,B.Saguinus_mystax
-______________,KEEP,,A.Saguinus_oedipus,9490,,9490,B.Saguinus_oedipus
-______________,KEEP,subtree=,A.Saguinus_imperator,9491,,9491,B.Saguinus_imperator
-______________,KEEP,subtree=,A.Saguinus_midas,30586,,30586,B.Saguinus_midas
-______________,KEEP,subtree=,A.Saguinus_bicolor,37588,,37588,B.Saguinus_bicolor
-______________,KEEP,,A.Saguinus_geoffroyi,43778,,43778,B.Saguinus_geoffroyi
-______________,KEEP,subtree=,A.Saguinus_labiatus,78454,,78454,B.Saguinus_labiatus
-______________,KEEP,,A.Saguinus_leucopus,290597,,290597,B.Saguinus_leucopus
-______________,KEEP,,A.Saguinus_niger,356665,,356665,B.Saguinus_niger
-______________,KEEP,,A.Saguinus_martinsi,356666,,356666,B.Saguinus_martinsi
-______________,KEEP,subtree=,A.Saguinus_melanoleucus,873067,,873067,B.Saguinus_melanoleucus
-______________,KEEP,,A.Saguinus_graellsi,873073,,873073,B.Saguinus_graellsi
-______________,KEEP,,A.Saguinus_inustus,1079039,,1079039,B.Saguinus_inustus
-______________,ADD,,,,,2586293,B.Saguinus_geoffroyi_x_Saguinus_leucopus
-______________,ADD,,,,,2586294,B.Saguinus_oedipus_x_Saguinus_leucopus
-______________,ADD (reorganization),,A.Saguinus,9486,><,2642123,B.unclassified_Saguinus
-________________,KEEP,,A.Saguinus_sp.,100754,,100754,B.Saguinus_sp.
-________________,KEEP,,A.Saguinus_sp._T1030,260575,,260575,B.Saguinus_sp._T1030
-________________,ADD,,,,,1967463,B.Saguinus_sp._EG-2017
-____________,ADD (increased resolution),,A.Callithrix,9481,>,1965102,B.Mico
-______________,KEEP,subtree=,A.Callithrix_argentata,9482,,9482,B.Mico_argentatus
-______________,KEEP,,A.Callithrix_emiliae,48842,,48842,B.Mico_emiliae
-______________,KEEP,,A.Callithrix_humeralifera,52232,,52232,B.Mico_humeralifer
-______________,KEEP,,A.Callithrix_mauesi,57377,,57377,B.Mico_mauesi
-______________,KEEP,,A.Callithrix_cf._emiliae,198701,,198701,B.Mico_cf._emiliae
-______________,KEEP,,A.Callithrix_saterei,198702,,198702,B.Mico_saterei
-______________,KEEP,,A.Callithrix_melanura,1090896,,1090896,B.Mico_melanurus
-______________,KEEP,,A.Callithrix_rondoni,1127763,,1127763,B.Mico_rondoni
-______________,ADD,,,,,1758231,B.Mico_chrysoleucus
-______________,ADD,,,,,2592805,B.Mico_intermedius
-______________,ADD,,,,,2592806,B.Mico_leucippe
-______________,ADD,,,,,2592807,B.Mico_marcai
-______________,ADD,,,,,2592808,B.Mico_munduruku
-____________,ADD (reorganization),,A.Saguinus,9486,><,2681187,B.Leontocebus
-______________,KEEP,subtree=,A.Saguinus_fuscicollis,9487,,9487,B.Leontocebus_fuscicollis
-______________,KEEP,subtree=,A.Saguinus_nigricollis,9489,,9489,B.Leontocebus_nigricollis
-______________,KEEP,,A.Saguinus_tripartitus,122388,,122388,B.Leontocebus_tripartitus
-______________,ADD,,,,,1618156,B.Leontocebus_cruzlimai
-__________,KEEP,,A.Cebinae,38070,,38070,B.Cebinae
-____________,KEEP,,A.Cebus,9513,,9513,B.Cebus
-______________,KEEP,,A.Cebus_albifrons,9514,,9514,B.Cebus_albifrons
-______________,KEEP,,A.Cebus_capucinus,9516,,9516,B.Cebus_capucinus
-________________,ADD,,,,,1737458,B.Cebus_capucinus_imitator
-______________,KEEP,,A.Cebus_kaapori,37294,,37294,B.Cebus_kaapori
-______________,KEEP,,A.Cebus_olivaceus,37295,,37295,B.Cebus_olivaceus
-________________,KEEP,,A.Cebus_olivaceus_nigrivittatus,1090893,,1090893,B.Cebus_olivaceus_nigrivittatus
-________________,ADD,,,,,1985287,B.Cebus_olivaceus_castaneus
-______________,ADD,,,,,1985288,B.Cebus_unicolor
-______________,ADD,,,,,1985289,B.Cebus_versicolor
-______________,ADD (reorganization),,A.Cebus,9513,><,2618788,B.unclassified_Cebus
-________________,KEEP,,A.Cebus_sp.,9517,,9517,B.Cebus_sp.
-________________,KEEP,,A.Cebus_sp._MAS-2011,1090916,,1090916,B.Cebus_sp._MAS-2011
-________________,ADD,,,,,1967451,B.Cebus_sp._1_EG-2017
-________________,ADD,,,,,1967452,B.Cebus_sp._2_EG-2017
-____________,KEEP,,A.Sapajus,1532884,,1532884,B.Sapajus
-______________,KEEP,subtree=,A.Sapajus_apella,9515,,9515,B.Sapajus_apella
-______________,KEEP,,A.Sapajus_xanthosternos,174599,,174599,B.Sapajus_xanthosternos
-______________,KEEP,,A.Sapajus_cay,649471,,649471,B.Sapajus_cay
-______________,KEEP,subtree=,A.Sapajus_nigritus,867366,,867366,B.Sapajus_nigritus
-______________,KEEP,,A.Sapajus_flavius,1112861,,1112861,B.Sapajus_flavius
-______________,KEEP,,A.Sapajus_libidinosus,1126382,,1126382,B.Sapajus_libidinosus
-______________,ADD,,,,,2619504,B.unclassified_Sapajus
-________________,ADD,,,,,1874197,B.Sapajus_sp.
-________________,ADD,,,,,2093835,B.Sapajus_sp._9_FD-2018
-________________,ADD,,,,,2093836,B.Sapajus_sp._10_FD-2018
-________________,ADD,,,,,2093837,B.Sapajus_sp._22_FD-2018
-________________,ADD,,,,,2093838,B.Sapajus_sp._M5_FD-2018
-________________,ADD,,,,,2093839,B.Sapajus_sp._M12_FD-2018
-________________,ADD,,,,,2093840,B.Sapajus_sp._M39_FD-2018
-__________,KEEP,subtree=,A.unclassified_Cebidae,38071,,38071,B.unclassified_Cebidae
-__________,KEEP,,A.Saimiriinae,378850,,378850,B.Saimiriinae
-____________,KEEP,,A.Saimiri,9520,,9520,B.Saimiri
-______________,KEEP,subtree=,A.Saimiri_sciureus,9521,,9521,B.Saimiri_sciureus
-______________,KEEP,,A.Saimiri_boliviensis,27679,,27679,B.Saimiri_boliviensis
-________________,DELETE (merge),,A.Saimiri_boliviensis_boliviensis,39432,=,27679,B.Saimiri_boliviensis
-________________,KEEP,,A.Saimiri_boliviensis_peruviensis,495297,,495297,B.Saimiri_boliviensis_peruviensis
-________________,ADD (split),,A.Saimiri_boliviensis,27679,=,39432,B.Saimiri_boliviensis_boliviensis
-______________,KEEP,,A.Saimiri_ustus,66265,,66265,B.Saimiri_ustus
-______________,KEEP,subtree=,A.Saimiri_oerstedii,70928,,70928,B.Saimiri_oerstedii
-______________,KEEP,,A.Saimiri_vanzolinii,1561161,,1561161,B.Saimiri_vanzolinii
-______________,ADD (reorganization),,A.Saimiri,9520,><,2635411,B.unclassified_Saimiri
-________________,KEEP,,A.Saimiri_sp._MAS-2011,1090919,,1090919,B.Saimiri_sp._MAS-2011
-________________,KEEP,,A.Saimiri_sp.,1561164,,1561164,B.Saimiri_sp.
-________________,ADD,,,,,1967464,B.Saimiri_sp._1_EG-2017
-________________,ADD,,,,,1967465,B.Saimiri_sp._2_EG-2017
-________________,ADD,,,,,1967466,B.Saimiri_sp._3_EG-2017
-________,KEEP,,A.Aotidae,376918,,376918,B.Aotidae
-__________,KEEP,,A.Aotus,9504,,9504,B.Aotus
-____________,KEEP,,A.Aotus_trivirgatus,9505,,9505,B.Aotus_trivirgatus
-____________,KEEP,subtree=,A.Aotus_azarai,30591,,30591,B.Aotus_azarai
-____________,KEEP,,A.Aotus_nancymaae,37293,,37293,B.Aotus_nancymaae
-____________,KEEP,,A.Aotus_lemurinus,43147,,43147,B.Aotus_lemurinus
-____________,KEEP,,A.Aotus_nigriceps,57175,,57175,B.Aotus_nigriceps
-____________,KEEP,,A.Aotus_vociferans,57176,,57176,B.Aotus_vociferans
-____________,KEEP,,A.Aotus_griseimembra,292213,,292213,B.Aotus_griseimembra
-____________,KEEP,,A.Aotus_brumbacki,361674,,361674,B.Aotus_brumbacki
-____________,KEEP,,A.Aotus_zonalis,1263727,,1263727,B.Aotus_zonalis
-____________,ADD (reorganization),subtree=,A.Aotus,9504,><,2688256,B.unclassified_Aotus_(in:_Chordata)
-________,KEEP,,A.Pitheciidae,376919,,376919,B.Pitheciidae
-__________,KEEP,,A.Pitheciinae,38039,,38039,B.Pitheciinae
-____________,KEEP,,A.Chiropotes,9524,,9524,B.Chiropotes
-______________,KEEP,,A.Chiropotes_satanas,9525,,9525,B.Chiropotes_satanas
-______________,KEEP,,A.Chiropotes_albinasus,198627,,198627,B.Chiropotes_albinasus
-______________,KEEP,,A.Chiropotes_satanas_x_albinasus,202458,,202458,B.Chiropotes_satanas_x_albinasus
-______________,KEEP,,A.Chiropotes_utahicki,280160,,280160,B.Chiropotes_utahickae
-______________,KEEP,,A.Chiropotes_israelita,280163,,280163,B.Chiropotes_israelita
-______________,KEEP,,A.Chiropotes_albinasus_x_satanas,626367,,626367,B.Chiropotes_albinasus_x_satanas
-______________,KEEP,subtree=,A.Chiropotes_chiropotes,658221,,658221,B.Chiropotes_chiropotes
-______________,ADD (split),,A.Chiropotes_sp._MAS-2011,1090917,=,2649368,B.unclassified_Chiropotes
-________________,KEEP,,A.Chiropotes_sp._MAS-2011,1090917,,1090917,B.Chiropotes_sp._MAS-2011
-________________,ADD,,,,,1472258,B.Chiropotes_sp._ZFMK_2008.244
-________________,ADD,,,,,1758238,B.Chiropotes_sp.
-____________,KEEP,subtree=,A.Cacajao,30595,,30595,B.Cacajao
-____________,KEEP,,A.Pithecia,30597,,30597,B.Pithecia
-______________,KEEP,,A.Pithecia_irrorata,30598,,30598,B.Pithecia_irrorata
-______________,KEEP,subtree=,A.Pithecia_pithecia,43777,,43777,B.Pithecia_pithecia
-______________,KEEP,,A.Pithecia_monachus,595220,,595220,B.Pithecia_monachus
-______________,ADD,,,,,2646430,B.unclassified_Pithecia
-________________,ADD,,,,,1758237,B.Pithecia_sp.
-__________,KEEP,,A.Callicebinae,38069,,38069,B.Callicebinae
-____________,DELETE (merge),,A.Callicebus,9522,=,38069,B.Callicebinae
-____________,ADD (split),,A.Callicebus,9522,=,9522,B.Callicebus
-______________,KEEP,subtree=,A.Callicebus_personatus,70814,,70814,B.Callicebus_personatus
-______________,KEEP,,A.Callicebus_coimbrai,867333,,867333,B.Callicebus_coimbrai
-______________,KEEP,,A.Callicebus_nigrifrons,867334,,867334,B.Callicebus_nigrifrons
-______________,ADD,,,,,1290433,B.Callicebus_dubius
-______________,ADD,,,,,1861701,B.Callicebus_caquetensis
-______________,ADD,,,,,1861702,B.Callicebus_ornatus
-______________,ADD,,,,,1861703,B.Callicebus_discolor
-______________,ADD (reorganization),,A.Callicebus,9522,><,2627897,B.unclassified_Callicebus
-________________,KEEP,,A.Callicebus_sp.,116962,,116962,B.Callicebus_sp.
-________________,KEEP,,A.Callicebus_sp._MAS-2011,1090915,,1090915,B.Callicebus_sp._MAS-2011
-________________,ADD,,,,,1861704,B.Callicebus_sp._1_MH-2016
-________________,ADD,,,,,1861705,B.Callicebus_sp._2_MH-2016
-____________,ADD (reorganization),,A.Callicebus,9522,><,1812035,B.Plecturocebus
-______________,KEEP,,A.Callicebus_moloch,9523,,9523,B.Plecturocebus_moloch
-______________,KEEP,,A.Callicebus_hoffmannsi,78255,,78255,B.Plecturocebus_hoffmannsi
-______________,KEEP,,A.Callicebus_cupreus,202457,,202457,B.Plecturocebus_cupreus
-______________,KEEP,,A.Callicebus_brunneus,221704,,1812042,B.Plecturocebus_brunneus
-______________,KEEP,subtree=,A.Callicebus_donacophilus,230833,,230833,B.Plecturocebus_donacophilus
-______________,KEEP,,A.Callicebus_caligatus,867332,,867332,B.Plecturocebus_caligatus
-______________,ADD,,,,,1812036,B.Plecturocebus_bernhardi
-______________,ADD,,,,,1812037,B.Plecturocebus_cinerascens
-______________,ADD,,,,,1812038,B.Plecturocebus_miltoni
-______________,ADD,,,,,2487713,B.Plecturocebus_vieirai
-______________,ADD,,,,,2488670,B.Plecturocebus_grovesi
-____________,ADD (reorganization),,A.Callicebus,9522,><,1812102,B.Cheracebus
-______________,KEEP,,A.Callicebus_torquatus,30592,,30592,B.Cheracebus_torquatus
-______________,KEEP,,A.Callicebus_lugens,210166,,210166,B.Cheracebus_lugens
-______________,KEEP,,A.Callicebus_purinus,1560619,,1560619,B.Cheracebus_purinus
-______________,ADD,,,,,2487712,B.Cheracebus_lucifer
-__________,ADD,,,,,2490929,B.Xenothricinae
-____________,ADD,,,,,2490930,B.Xenothrix
-______________,ADD,,,,,2490931,B.Xenothrix_mcgregori
-________,KEEP,,A.Atelidae,378855,,378855,B.Atelidae
-__________,KEEP,,A.Alouattinae,38066,,38066,B.Alouattinae
-____________,KEEP,,A.Alouatta,9499,,9499,B.Alouatta
-______________,KEEP,,A.Alouatta_caraya,9502,,9502,B.Alouatta_caraya
-______________,KEEP,subtree=,A.Alouatta_seniculus,9503,,9503,B.Alouatta_seniculus
-______________,KEEP,subtree=,A.Alouatta_palliata,30589,,30589,B.Alouatta_palliata
-______________,KEEP,subtree=,A.Alouatta_belzebul,30590,,30590,B.Alouatta_belzebul
-______________,KEEP,,A.Alouatta_sara,121123,,121123,B.Alouatta_sara
-______________,KEEP,,A.Alouatta_stramineus,163110,,163110,B.Alouatta_stramineus
-______________,KEEP,,A.Alouatta_pigra,182253,,182253,B.Alouatta_pigra
-______________,KEEP,subtree=,A.Alouatta_guariba,182256,,182256,B.Alouatta_guariba
-______________,ADD,,,,,2487933,B.Alouatta_palliata_x_Alouatta_pigra
-__________,KEEP,,A.Atelinae,38068,,38068,B.Atelinae
-____________,KEEP,,A.Ateles,9506,,9506,B.Ateles
-______________,KEEP,subtree=,A.Ateles_belzebuth,9507,,9507,B.Ateles_belzebuth
-______________,KEEP,subtree=,A.Ateles_fusciceps,9508,,9508,B.Ateles_fusciceps
-______________,KEEP,subtree=,A.Ateles_geoffroyi,9509,,9509,B.Ateles_geoffroyi
-______________,KEEP,,A.Ateles_paniscus,9510,,9510,B.Ateles_paniscus
-______________,KEEP,,A.Ateles_paniscus_x_Ateles_fusciceps,36234,,36234,B.Ateles_paniscus_x_Ateles_fusciceps
-______________,DELETE (merge),subtree=,A.unclassified_Ateles,120432,=,120432,B.unclassified_Ateles
-______________,KEEP,subtree=,A.Ateles_hybridus,129801,,129801,B.Ateles_hybridus
-______________,KEEP,,A.Ateles_marginatus,1529884,,1529884,B.Ateles_marginatus
-______________,ADD (reorganization),,A.Ateles,9506,><,120432,B.unclassified_Ateles
-________________,KEEP,,A.Ateles_sp.,9511,,9511,B.Ateles_sp.
-________________,ADD,,,,,1967450,B.Ateles_sp._EG-2017
-____________,KEEP,,A.Lagothrix,9518,,9518,B.Lagothrix
-______________,KEEP,,A.Lagothrix_lagotricha,9519,,9519,B.Lagothrix_lagotricha
-______________,KEEP,,A.Lagothrix_lugens,767355,,767355,B.Lagothrix_lugens
-______________,KEEP,,A.Lagothrix_poeppigii,767356,,767356,B.Lagothrix_poeppigii
-______________,KEEP,,A.Lagothrix_cana,767357,,767357,B.Lagothrix_cana
-______________,ADD,,,,,2565305,B.Lagothrix_flavicauda
-______________,ADD,,,,,2565306,B.Lagothrix_tschudii
-______________,ADD (split),,A.Lagothrix_sp._CCS-2009a,638937,=,2645779,B.unclassified_Lagothrix
-________________,KEEP,,A.Lagothrix_sp._CCS-2009a,638937,,638937,B.Lagothrix_sp._CCS-2009a
-________________,ADD,,,,,1967456,B.Lagothrix_sp._EG-2017
-____________,KEEP,subtree=,A.Brachyteles,30593,,30593,B.Brachyteles
-______,KEEP,,A.Catarrhini,9526,,9526,B.Catarrhini
-________,KEEP,,A.Cercopithecoidea,314294,,314294,B.Cercopithecoidea
-__________,KEEP,,A.Cercopithecidae,9527,,9527,B.Cercopithecidae
-____________,KEEP,,A.Cercopithecinae,9528,,9528,B.Cercopithecinae
-______________,KEEP,,A.Cercocebus,9529,,9529,B.Cercocebus
-________________,KEEP,subtree=,A.Cercocebus_torquatus,9530,,9530,B.Cercocebus_torquatus
-________________,KEEP,,A.Cercocebus_atys,9531,,9531,B.Cercocebus_atys
-__________________,KEEP,,A.Cercocebus_atys_lunulatus,75570,,75570,B.Cercocebus_atys_lunulatus
-__________________,ADD,,,,,1592215,B.Cercocebus_atys_atys
-________________,KEEP,,A.Cercocebus_galeritus,9532,,9532,B.Cercocebus_galeritus
-________________,KEEP,,A.Cercocebus_chrysogaster,75569,,75569,B.Cercocebus_chrysogaster
-________________,KEEP,,A.Cercocebus_agilis,255237,,255237,B.Cercocebus_agilis
-______________,DELETE (conflict),,A.Cercopithecus,9533,><,9528,B.Cercopithecinae
-______________,KEEP,subtree=,A.Erythrocebus,9537,,9537,B.Erythrocebus
-______________,KEEP,,A.Macaca,9539,,9539,B.Macaca
-________________,KEEP,,A.Macaca_arctoides,9540,,9540,B.Macaca_arctoides
-________________,KEEP,,A.Macaca_fascicularis,9541,,9541,B.Macaca_fascicularis
-__________________,KEEP,,A.Macaca_fascicularis_philippinensis,90386,,90386,B.Macaca_fascicularis_philippinensis
-__________________,KEEP,,A.Macaca_fascicularis_fascicularis,1215360,,1215360,B.Macaca_fascicularis_fascicularis
-__________________,ADD,,,,,1747270,B.Macaca_fascicularis_aureus
-________________,KEEP,,A.Macaca_fuscata,9542,,9542,B.Macaca_fuscata
-__________________,DELETE (merge),,A.Macaca_fuscata_fuscata,9543,=,9542,B.Macaca_fuscata
-__________________,KEEP,,A.Macaca_fuscata_yakui,179089,,179089,B.Macaca_fuscata_yakui
-__________________,ADD (split),,A.Macaca_fuscata,9542,=,9543,B.Macaca_fuscata_fuscata
-________________,KEEP,,A.Macaca_mulatta,9544,,9544,B.Macaca_mulatta
-__________________,KEEP,,A.Macaca_mulatta_lasiotus,1449913,,1449913,B.Macaca_mulatta_lasiotus
-__________________,ADD,,,,,1654737,B.Macaca_mulatta_brevicaudus
-__________________,ADD,,,,,2008792,B.Macaca_mulatta_vestita
-________________,DELETE (conflict),,A.Macaca_nemestrina,9545,><,9539,B.Macaca
-________________,KEEP,,A.Macaca_nemestrina_leonina,90387,,90387,B.Macaca_leonina
-________________,KEEP,,A.Macaca_nemestrina_siberu,244255,,244255,B.Macaca_siberu
-________________,KEEP,,A.Macaca_sylvanus,9546,,9546,B.Macaca_sylvanus
-________________,KEEP,subtree=,A.Macaca_radiata,9548,,9548,B.Macaca_radiata
-________________,KEEP,subtree=,A.Macaca_assamensis,9551,,9551,B.Macaca_assamensis
-________________,KEEP,,A.Macaca_sinica,9552,,9552,B.Macaca_sinica
-________________,KEEP,,A.Macaca_speciosa,9553,,9553,B.Macaca_speciosa
-________________,KEEP,,A.Macaca_tonkeana,40843,,40843,B.Macaca_tonkeana
-________________,KEEP,,A.Macaca_nigra,54600,,54600,B.Macaca_nigra
-________________,KEEP,,A.Macaca_silenus,54601,,54601,B.Macaca_silenus
-________________,KEEP,subtree=,A.Macaca_thibetana,54602,,54602,B.Macaca_thibetana
-________________,KEEP,,A.Macaca_cyclopis,78449,,78449,B.Macaca_cyclopis
-________________,KEEP,,A.Macaca_brunnescens,90381,,90381,B.Macaca_brunnescens
-________________,KEEP,,A.Macaca_hecki,90382,,90382,B.Macaca_hecki
-________________,KEEP,,A.Macaca_maura,90383,,90383,B.Macaca_maura
-________________,KEEP,,A.Macaca_nigrescens,90384,,90384,B.Macaca_nigrescens
-________________,KEEP,,A.Macaca_ochreata,90385,,90385,B.Macaca_ochreata
-________________,KEEP,,A.Macaca_maura_x_tonkeana,168259,,168259,B.Macaca_maura_x_tonkeana
-________________,KEEP,,A.Macaca_hecki_x_tonkeana,171293,,171293,B.Macaca_hecki_x_tonkeana
-________________,KEEP,,A.Macaca_pagensis,230653,,230653,B.Macaca_pagensis
-________________,KEEP,,A.Macaca_balantak,281404,,281404,B.Macaca_balantak
-________________,KEEP,,A.Macaca_balantak_x_tonkeana,281405,,281405,B.Macaca_balantak_x_tonkeana
-________________,DELETE (merge),,A.Macaca_leonina,285350,=,90387,B.Macaca_leonina
-________________,KEEP,,A.Macaca_munzala,402888,,402888,B.Macaca_munzala
-________________,DELETE (merge),,A.Macaca_siberu,867378,=,244255,B.Macaca_siberu
-________________,ADD (split),subtree=,A.Macaca_nemestrina_nemestrina,90388,=,9545,B.Macaca_nemestrina
-________________,ADD,,,,,1885588,B.Macaca_leucogenys
-________________,ADD (split),subtree=,A.Macaca_sp.,9549,=,2623225,B.unclassified_Macaca
-______________,KEEP,,A.Papio,9554,,9554,B.Papio
-________________,KEEP,subtree=,A.Papio_anubis,9555,,9555,B.Papio_anubis
-________________,KEEP,subtree=,A.Papio_cynocephalus,9556,,9556,B.Papio_cynocephalus
-________________,KEEP,subtree=,A.Papio_hamadryas,9557,,9557,B.Papio_hamadryas
-________________,KEEP,,A.Papio_ursinus,36229,,36229,B.Papio_ursinus
-__________________,KEEP,,A.Papio_ursinus_ursinus,208089,,208089,B.Papio_ursinus_ursinus
-__________________,ADD,,,,,208090,B.Papio_ursinus_griseipes
-________________,KEEP,,A.Papio_papio,100937,,100937,B.Papio_papio
-________________,KEEP,,A.Papio_kindae,208091,,208091,B.Papio_kindae
-________________,KEEP,,A.Papio_cynocephalus_x_Papio_anubis,208510,,208510,B.Papio_cynocephalus_x_Papio_anubis
-________________,KEEP,,A.Papio_anubis_x_hamadryas,1560552,,1560552,B.Papio_anubis_x_hamadryas
-________________,ADD,,,,,1945556,B.Papio_anubis_x_Papio_cynocephalus
-________________,ADD,,,,,1945557,B.Papio_anubis_x_Papio_ursinus
-________________,ADD,,,,,1945558,B.Papio_kindae_x_Papio_cynocephalus
-________________,ADD,,,,,1945559,B.Papio_kindae_x_Papio_ursinus_griseipes
-________________,ADD (reorganization),subtree=,A.Papio,9554,><,2632072,B.unclassified_Papio
-______________,KEEP,subtree=,A.Theropithecus,9564,,9564,B.Theropithecus
-______________,KEEP,subtree=,A.Mandrillus,9567,,9567,B.Mandrillus
-______________,KEEP,subtree=,A.Miopithecus,36230,,36230,B.Miopithecus
-______________,KEEP,subtree=,A.Allenopithecus,54134,,54134,B.Allenopithecus
-______________,KEEP,subtree=,A.Lophocebus,75565,,75565,B.Lophocebus
-______________,KEEP,subtree=,A.Rungwecebus,371038,,371038,B.Rungwecebus
-______________,KEEP,,A.Chlorocebus,392815,,392815,B.Chlorocebus
-________________,KEEP,subtree=,A.Chlorocebus_aethiops,9534,,9534,B.Chlorocebus_aethiops
-________________,KEEP,,A.Chlorocebus_pygerythrus,60710,,60710,B.Chlorocebus_pygerythrus
-__________________,KEEP,,A.Chlorocebus_pygerythrus_pygerythrus,460674,,460674,B.Chlorocebus_pygerythrus_pygerythrus
-__________________,KEEP,,A.Chlorocebus_pygerythrus_hilgerti,508712,,508712,B.Chlorocebus_pygerythrus_hilgerti
-__________________,ADD,,,,,2269071,B.Chlorocebus_pygerythrus_x_Chlorocebus_aethiops
-________________,KEEP,,A.Chlorocebus_sabaeus,60711,,60711,B.Chlorocebus_sabaeus
-________________,KEEP,subtree=,A.Chlorocebus_tantalus,60712,,60712,B.Chlorocebus_tantalus
-________________,KEEP,,A.Chlorocebus_cynosuros,460675,,460675,B.Chlorocebus_cynosuros
-________________,KEEP,,A.Chlorocebus_djamdjamensis,1284215,,1284215,B.Chlorocebus_djamdjamensis
-________________,ADD,,,,,1476079,B.Chlorocebus_aethiops_x_djamdjamensis
-________________,ADD,,,,,1903316,B.Chlorocebus_aethiops_x_Chlorocebus_pygerythrus
-________________,ADD (reorganization),,A.Chlorocebus,392815,><,2685534,B.unclassified_Chlorocebus
-__________________,KEEP,,A.Chlorocebus_sp._MAS-2011,1090918,,1090918,B.Chlorocebus_sp._MAS-2011
-__________________,KEEP,,A.Chlorocebus_sp._TH-2013,1284216,,1284216,B.Chlorocebus_sp._TH-2013
-__________________,ADD,,,,,2282232,B.Chlorocebus_sp._LDS-2018
-______________,ADD (split),,A.Cercopithecus,9533,=,9533,B.Cercopithecus
-________________,KEEP,subtree=,A.Cercopithecus_cephus,9535,,9535,B.Cercopithecus_cephus
-________________,KEEP,subtree=,A.Cercopithecus_hamlyni,9536,,9536,B.Cercopithecus_hamlyni
-________________,KEEP,subtree=,A.Cercopithecus_ascanius,36223,,36223,B.Cercopithecus_ascanius
-________________,KEEP,,A.Cercopithecus_diana,36224,,36224,B.Cercopithecus_diana
-________________,KEEP,subtree=,A.Cercopithecus_mitis,36225,,36225,B.Cercopithecus_mitis
-________________,KEEP,subtree=,A.Cercopithecus_mona,36226,,36226,B.Cercopithecus_mona
-________________,KEEP,,A.Cercopithecus_neglectus,36227,,36227,B.Cercopithecus_neglectus
-________________,KEEP,subtree=,A.Cercopithecus_nictitans,36228,,36228,B.Cercopithecus_nictitans
-________________,KEEP,subtree=,A.Cercopithecus_petaurista,100487,,100487,B.Cercopithecus_petaurista
-________________,KEEP,subtree=,A.Cercopithecus_pogonias,102108,,102108,B.Cercopithecus_pogonias
-________________,KEEP,subtree=,A.Cercopithecus_erythrogaster,161496,,161496,B.Cercopithecus_erythrogaster
-________________,KEEP,subtree=,A.Cercopithecus_erythrotis,167130,,167130,B.Cercopithecus_erythrotis
-________________,KEEP,subtree=,A.Cercopithecus_wolfi,263448,,263448,B.Cercopithecus_wolfi
-________________,KEEP,subtree=,A.Cercopithecus_campbelli,303588,,303588,B.Cercopithecus_campbelli
-________________,KEEP,subtree=,A.Cercopithecus_albogularis,867370,,867370,B.Cercopithecus_albogularis
-________________,KEEP,,A.Cercopithecus_dryas,1137048,,1137048,B.Cercopithecus_dryas
-________________,KEEP,,A.Cercopithecus_roloway,1137049,,1137049,B.Cercopithecus_roloway
-________________,KEEP,,A.Cercopithecus_doggetti,1137474,,1137474,B.Cercopithecus_doggetti
-________________,KEEP,,A.Cercopithecus_kandti,1137481,,1137481,B.Cercopithecus_kandti
-________________,KEEP,,A.Cercopithecus_denti,1137511,,1137511,B.Cercopithecus_denti
-________________,KEEP,,A.Cercopithecus_lomamiensis,1191211,,1191211,B.Cercopithecus_lomamiensis
-________________,ADD,,,,,1579530,B.Cercopithecus_sclateri
-________________,ADD (split),subtree=,A.Cercopithecus_sp._WMS-2012,1144881,=,2618071,B.unclassified_Cercopithecus
-______________,ADD (reorganization),subtree=,A.Cercopithecus,9533,><,2059839,B.Allochrocebus
-____________,KEEP,,A.Colobinae,9569,,9569,B.Colobinae
-______________,KEEP,,A.Colobus,9570,,9570,B.Colobus
-________________,KEEP,,A.Colobus_polykomos,9572,,9572,B.Colobus_polykomos
-________________,KEEP,subtree=,A.Colobus_guereza,33548,,33548,B.Colobus_guereza
-________________,KEEP,subtree=,A.Colobus_angolensis,54131,,54131,B.Colobus_angolensis
-________________,KEEP,,A.Colobus_vellerosus,378195,,378195,B.Colobus_vellerosus
-________________,KEEP,,A.Colobus_vellerosus_x_angolensis,378196,,378196,B.Colobus_vellerosus_x_angolensis
-________________,KEEP,subtree=,A.Colobus_satanas,517012,,517012,B.Colobus_satanas
-________________,ADD (reorganization),subtree=,A.Colobus,9570,><,2618863,B.unclassified_Colobus
-______________,KEEP,,A.Presbytis,9573,,9573,B.Presbytis
-________________,KEEP,,A.Presbytis_senex,66055,,66055,B.Presbytis_senex
-________________,KEEP,subtree=,A.Presbytis_melalophos,78451,,78451,B.Presbytis_melalophos
-________________,KEEP,subtree=,A.Presbytis_comata,78452,,78452,B.Presbytis_comata
-________________,KEEP,,A.Presbytis_femoralis,78453,,78453,B.Presbytis_femoralis
-__________________,ADD,,,,,1840579,B.Presbytis_femoralis_femoralis
-________________,KEEP,,A.Presbytis_chrysomelas,1046090,,1046090,B.Presbytis_chrysomelas
-________________,KEEP,,A.Presbytis_frontata,1046092,,1046092,B.Presbytis_frontata
-________________,KEEP,subtree=,A.Presbytis_hosei,1046093,,1046093,B.Presbytis_hosei
-________________,KEEP,subtree=,A.Presbytis_potenziani,1046098,,1046098,B.Presbytis_potenziani
-________________,KEEP,subtree=,A.Presbytis_rubicunda,1046101,,1046101,B.Presbytis_rubicunda
-________________,KEEP,,A.Presbytis_thomasi,1046103,,1046103,B.Presbytis_thomasi
-______________,KEEP,subtree=,A.Nasalis,43779,,43779,B.Nasalis
-______________,KEEP,subtree=,A.Pygathrix,54132,,54132,B.Pygathrix
-______________,KEEP,,A.Trachypithecus,54136,,54136,B.Trachypithecus
-________________,KEEP,subtree=,A.Trachypithecus_vetulus,54137,,54137,B.Trachypithecus_vetulus
-________________,KEEP,subtree=,A.Trachypithecus_francoisi,54180,,54180,B.Trachypithecus_francoisi
-________________,KEEP,,A.Trachypithecus_obscurus,54181,,54181,B.Trachypithecus_obscurus
-________________,KEEP,subtree=,A.Trachypithecus_phayrei,61618,,61618,B.Trachypithecus_phayrei
-________________,KEEP,,A.Trachypithecus_johnii,66063,,66063,B.Trachypithecus_johnii
-________________,KEEP,,A.Trachypithecus_cristatus,122765,,122765,B.Trachypithecus_cristatus
-________________,KEEP,,A.Trachypithecus_geei,164650,,164650,B.Trachypithecus_geei
-________________,KEEP,,A.Trachypithecus_pileatus,164651,,164651,B.Trachypithecus_pileatus
-________________,KEEP,subtree=,A.Trachypithecus_auratus,222416,,222416,B.Trachypithecus_auratus
-________________,KEEP,,A.Trachypithecus_germaini,271260,,271260,B.Trachypithecus_germaini
-________________,KEEP,,A.Trachypithecus_barbei,271261,,271261,B.Trachypithecus_barbei
-________________,KEEP,,A.Trachypithecus_delacouri,465717,,465717,B.Trachypithecus_delacouri
-________________,KEEP,,A.Trachypithecus_laotum,465718,,465718,B.Trachypithecus_laotum
-________________,KEEP,subtree=,A.Trachypithecus_poliocephalus,465719,,465719,B.Trachypithecus_poliocephalus
-________________,KEEP,,A.Trachypithecus_francoisi_x_poliocephalus,744437,,744437,B.Trachypithecus_francoisi_x_poliocephalus
-________________,KEEP,,A.Trachypithecus_hatinhensis,867383,,867383,B.Trachypithecus_hatinhensis
-________________,KEEP,,A.Trachypithecus_shortridgei,1042121,,1042121,B.Trachypithecus_shortridgei
-________________,ADD,,,,,1966384,B.Trachypithecus_mauritius
-________________,ADD (split),subtree=,A.Trachypithecus_sp.,580599,=,2623509,B.unclassified_Trachypithecus
-______________,KEEP,,A.Semnopithecus,88028,,88028,B.Semnopithecus
-________________,DELETE (conflict),,A.Semnopithecus_entellus,88029,><,88028,B.Semnopithecus
-________________,KEEP,,A.Semnopithecus_entellus_priam,272117,,1208733,B.Semnopithecus_priam
-________________,KEEP,,A.Semnopithecus_hector,867382,,867382,B.Semnopithecus_hector
-________________,DELETE (merge),,A.Semnopithecus_priam,1208733,=,1208733,B.Semnopithecus_priam
-________________,KEEP,,A.Semnopithecus_hypoleucos,1208734,,1208734,B.Semnopithecus_hypoleucos
-________________,ADD (split),subtree=,A.Semnopithecus_entellus_entellus,867381,=,88029,B.Semnopithecus_entellus
-________________,ADD,,,,,2632571,B.unclassified_Semnopithecus
-__________________,ADD,,,,,1778600,B.Semnopithecus_sp.
-______________,KEEP,subtree=,A.Procolobus,164647,,164647,B.Procolobus
-______________,KEEP,,A.Rhinopithecus,542827,,542827,B.Rhinopithecus
-________________,KEEP,,A.Rhinopithecus_bieti,61621,,61621,B.Rhinopithecus_bieti
-________________,KEEP,,A.Rhinopithecus_roxellana,61622,,61622,B.Rhinopithecus_roxellana
-________________,KEEP,,A.Rhinopithecus_avunculus,66062,,66062,B.Rhinopithecus_avunculus
-________________,KEEP,,A.Rhinopithecus_brelichi,224329,,224329,B.Rhinopithecus_brelichi
-________________,KEEP,,A.Rhinopithecus_bieti_1_RL-2012,1194334,,1194334,B.Rhinopithecus_bieti_1_RL-2012
-________________,KEEP,,A.Rhinopithecus_bieti_2_RL-2012,1194335,,1194335,B.Rhinopithecus_bieti_2_RL-2012
-________________,KEEP,,A.Rhinopithecus_strykeri,1194336,,1194336,B.Rhinopithecus_strykeri
-________________,ADD,,,,,2644350,B.unclassified_Rhinopithecus
-__________________,ADD,,,,,1859147,B.Rhinopithecus_sp.
-______________,KEEP,subtree=,A.Piliocolobus,591932,,591932,B.Piliocolobus
-______________,KEEP,subtree=,A.Simias,1203020,,1203020,B.Simias
-____________,KEEP,,A.Cercopithecidae_gen._sp.,9576,,9576,B.Cercopithecidae_gen._sp.
-________,KEEP,,A.Hominoidea,314295,,314295,B.Hominoidea
-__________,KEEP,,A.Hylobatidae,9577,,9577,B.Hylobatidae
-____________,KEEP,,A.Hylobates,9578,,9578,B.Hylobates
-______________,KEEP,subtree=,A.Hylobates_agilis,9579,,9579,B.Hylobates_agilis
-______________,KEEP,subtree=,A.Hylobates_lar,9580,,9580,B.Hylobates_lar
-______________,KEEP,,A.Hylobates_klossii,9587,,9587,B.Hylobates_klossii
-______________,KEEP,subtree=,A.Hylobates_muelleri,9588,,9588,B.Hylobates_muelleri
-______________,KEEP,,A.Hylobates_pileatus,9589,,9589,B.Hylobates_pileatus
-______________,KEEP,,A.Hylobates_moloch,81572,,81572,B.Hylobates_moloch
-______________,KEEP,,A.Hylobates_alibarbis,716691,,716691,B.Hylobates_albibarbis
-______________,ADD (reorganization),,A.Hylobates,9578,><,2647113,B.unclassified_Hylobates
-________________,KEEP,,A.Hylobates_sp.,9581,,9581,B.Hylobates_sp.
-________________,KEEP,,A.Hylobates_sp._TIB-201,150249,,150249,B.Hylobates_sp._TIB-201
-________________,KEEP,,A.Hylobates_sp._IGL-2004,280856,,280856,B.Hylobates_sp._IGL-2004
-________________,KEEP,,A.Hylobates_sp._AMA-2004,288892,,288892,B.Hylobates_sp._AMA-2004
-________________,KEEP,,A.Hylobates_sp._ECACC_MLA144,419588,,419588,B.Hylobates_sp._ECACC_MLA144
-________________,KEEP,,A.Hylobates_sp._PS-2007,425245,,425245,B.Hylobates_sp._PS-2007
-________________,ADD,,,,,2023128,B.Hylobates_sp._OH-2017
-____________,KEEP,,A.Nomascus,325165,,325165,B.Nomascus
-______________,KEEP,,A.Nomascus_siki,9586,,9586,B.Nomascus_siki
-______________,KEEP,subtree=,A.Nomascus_concolor,29089,,29089,B.Nomascus_concolor
-______________,KEEP,,A.Nomascus_gabriellae,61852,,61852,B.Nomascus_gabriellae
-______________,KEEP,,A.Nomascus_leucogenys,61853,,61853,B.Nomascus_leucogenys
-______________,KEEP,,A.Nomascus_nasutus,327374,,327374,B.Nomascus_nasutus
-______________,KEEP,,A.Nomascus_hainanus,693984,,693984,B.Nomascus_hainanus
-______________,ADD,,,,,1616038,B.Nomascus_annamensis
-______________,ADD,,,,,2170372,B.Nomascus_gabriellae_x_Nomascus_siki
-______________,ADD,,,,,2170373,B.Nomascus_leucogenys_x_Nomascus_siki
-______________,ADD,,,,,2170374,B.Nomascus_cf._leucogenys_SSH-2018
-____________,KEEP,subtree=,A.Symphalangus,325166,,325166,B.Symphalangus
-____________,KEEP,,A.Hoolock,325167,,325167,B.Hoolock
-______________,KEEP,,A.Hoolock_hoolock,61851,,61851,B.Hoolock_hoolock
-______________,KEEP,,A.Hoolock_leuconedys,593543,,593543,B.Hoolock_leuconedys
-______________,ADD,,,,,1934190,B.Hoolock_tianxing
-______________,ADD,,,,,1934191,B.Hoolock_leuconedys_x_Hoolock_tianxing
-__________,KEEP,,A.Hominidae,9604,,9604,B.Hominidae
-____________,KEEP,subtree=,A.Homininae,207598,,207598,B.Homininae
-____________,KEEP,,A.Ponginae,607660,,607660,B.Ponginae
-______________,KEEP,,A.Pongo,9599,,9599,B.Pongo
-________________,KEEP,subtree=,A.Pongo_pygmaeus,9600,,9600,B.Pongo_pygmaeus
-________________,DELETE (merge),,A.Pongo_abelii,9601,=,9600,B.Pongo_pygmaeus
-________________,KEEP,,A.Pongo_abelii_x_pygmaeus,502961,,502961,B.Pongo_abelii_x_pygmaeus
-________________,ADD (split),,A.Pongo_pygmaeus,9600,=,9601,B.Pongo_abelii
-________________,ADD,,,,,2051901,B.Pongo_tapanuliensis
-________________,ADD (split),subtree=,A.Pongo_sp.,9603,=,2624844,B.unclassified_Pongo
-____,KEEP,,A.Tarsiiformes,376912,,376912,B.Tarsiiformes
-______,KEEP,,A.Tarsiidae,9475,,9475,B.Tarsiidae
-________,DELETE (merge),,A.Tarsius,9476,=,9475,B.Tarsiidae
-________,ADD (split),,A.Tarsius,9476,=,9476,B.Tarsius
-__________,KEEP,,A.Tarsius_dentatus,449501,,449501,B.Tarsius_dentatus
-__________,KEEP,,A.Tarsius_lariang,630277,,630277,B.Tarsius_lariang
-__________,KEEP,,A.Tarsius_dentatus_x_lariang,642591,,642591,B.Tarsius_dentatus_x_lariang
-__________,KEEP,,A.Tarsius_tarsier,662464,,662464,B.Tarsius_tarsier
-__________,KEEP,,A.Tarsius_sangirensis,905053,,905053,B.Tarsius_sangirensis
-__________,KEEP,,A.Tarsius_wallacei,981131,,981131,B.Tarsius_wallacei
-__________,ADD,,,,,1748400,B.Tarsius_fuscus
-__________,ADD (reorganization),,A.Tarsius,9476,><,2624233,B.unclassified_Tarsius
-____________,KEEP,,A.Tarsius_sp.,30612,,30612,B.Tarsius_sp.
-____________,KEEP,,A.Tarsius_sp._FFA-2009a,662655,,662655,B.Tarsius_sp._FFA-2009a
-____________,ADD,,,,,1748402,B.Tarsius_sp._CD-2015
-________,ADD (split),subtree=,A.Tarsius_syrichta,9478,=,1868481,B.Carlito
-________,ADD (split),,A.Tarsius_bancanus,9477,=,1971489,B.Cephalopachus
-__________,KEEP,,A.Tarsius_bancanus,9477,,9477,B.Cephalopachus_bancanus
-____________,ADD,,,,,1971490,B.Cephalopachus_bancanus_bancanus
-____________,ADD,,,,,2567999,B.Cephalopachus_bancanus_borneanus
+indent,operation,dom,dom id,relation,cod id,cod,unchanged,changed_props,reason
+,KEEP,A.Primates,9443,,9443,B.Primates,,,extension
+__,KEEP,A.unclassified_Primates,57118,,57118,B.unclassified_Primates,,number_of_children,extension
+____,DELETE (merge),A.Japanese_monkeys,36513,=,9542,B.Macaca_fuscata,,,
+____,KEEP,A.marmosets,38020,,38020,B.marmosets,,,name
+____,KEEP,A.unidentified_monkey,70699,,70699,B.unidentified_monkey,,,name
+____,KEEP,A.Primates_sp._BOLD:AAA0001,976298,,976298,B.Primates_sp._BOLD:AAA0001,,,name
+____,KEEP,A.Primates_sp._BOLD:AAC9009,976299,,976299,B.Primates_sp._BOLD:AAC9009,,,name
+____,KEEP,A.Primates_sp._BOLD:AAE4744,976300,,976300,B.Primates_sp._BOLD:AAE4744,,,name
+____,KEEP,A.Primates_sp._BOLD:AAJ7304,976301,,976301,B.Primates_sp._BOLD:AAJ7304,,,name
+____,KEEP,A.Primates_sp._BOLD:AAO0053,976302,,976302,B.Primates_sp._BOLD:AAO0053,,,name
+____,KEEP,A.Primates_sp._BOLD:AAC7735,1068292,,1068292,B.Primates_sp._BOLD:AAC7735,,,name
+____,KEEP,A.Primates_sp._BOLD:AAD0215,1068293,,1068293,B.Primates_sp._BOLD:AAD0215,,,name
+____,KEEP,A.Primates_sp._BOLD:AAF0367,1068294,,1068294,B.Primates_sp._BOLD:AAF0367,,,name
+__,KEEP,A.Strepsirrhini,376911,,376911,B.Strepsirrhini,,,extension
+____,KEEP,A.Lemuriformes,376915,,376915,B.Lemuriformes,,,extension
+______,KEEP,A.Lemuridae,9445,,9445,B.Lemuridae,,number_of_children,extension
+________,KEEP,A.Lemur,9446,,9446,B.Lemur,,,extension
+__________,KEEP,A.Lemur_catta,9447,,9447,B.Lemur_catta,,,name
+__________,ADD (split),A.Lemur_sp.,69491,=,2641939,B.unclassified_Lemur,subtree=,,
+________,KEEP,A.Varecia,9454,,9454,B.Varecia,subtree=,,extension
+________,KEEP,A.Eulemur,13513,,13513,B.Eulemur,,number_of_children,extension
+__________,KEEP,A.Eulemur_coronatus,13514,,13514,B.Eulemur_coronatus,,,name
+__________,KEEP,A.Eulemur_fulvus,13515,,13515,B.Eulemur_fulvus,subtree=,,extension
+__________,KEEP,A.Eulemur_macaco,30602,,30602,B.Eulemur_macaco,subtree=,,monotypic
+__________,KEEP,A.Eulemur_mongoz,34828,,34828,B.Eulemur_mongoz,,,name
+__________,KEEP,A.Eulemur_rubriventer,34829,,34829,B.Eulemur_rubriventer,,,name
+__________,KEEP,A.Eulemur_flavifrons,87288,,87288,B.Eulemur_flavifrons,,,name
+__________,KEEP,A.Eulemur_sanfordi,122225,,122225,B.Eulemur_sanfordi,,,name
+__________,KEEP,A.Eulemur_cinereiceps,639525,,639525,B.Eulemur_cinereiceps,,,name
+__________,KEEP,A.Eulemur_rufus,859983,,859983,B.Eulemur_rufus,,,name
+__________,KEEP,A.Eulemur_rufifrons,859984,,859984,B.Eulemur_rufifrons,,,name
+__________,KEEP,A.Eulemur_albifrons,1215604,,1215604,B.Eulemur_albifrons,,,name
+__________,DELETE (conflict),A.Eulemur_hybrids,1417238,><,13513,B.Eulemur,,,
+__________,KEEP,A.Eulemur_albifrons_x_rufifrons,1417231,,1417231,B.Eulemur_albifrons_x_rufifrons,,,name
+__________,KEEP,A.Eulemur_albifrons_x_cinereiceps,1417236,,1417236,B.Eulemur_albifrons_x_cinereiceps,,,name
+__________,KEEP,A.Eulemur_cinereiceps_x_rufifrons,1417237,,1417237,B.Eulemur_cinereiceps_x_rufifrons,,,name
+________,KEEP,A.Hapalemur,13556,,13556,B.Hapalemur,subtree=,,extension
+________,KEEP,A.Prolemur,1328069,,1328069,B.Prolemur,subtree=,,monotypic
+________,ADD,,,,1513474,B.Pachylemur,,,
+__________,ADD,,,,1513475,B.Pachylemur_jullyi,,,
+______,KEEP,A.Indriidae,30599,,30599,B.Indriidae,,,extension
+________,KEEP,A.Propithecus,30600,,30600,B.Propithecus,,,extension
+__________,KEEP,A.Propithecus_tattersalli,30601,,30601,B.Propithecus_tattersalli,,,name
+__________,KEEP,A.Propithecus_verreauxi,34825,,34825,B.Propithecus_verreauxi,subtree=,,monotypic
+__________,KEEP,A.Propithecus_diadema,83281,,83281,B.Propithecus_diadema,subtree=,,extension
+__________,KEEP,A.Propithecus_coquereli,379532,,379532,B.Propithecus_coquereli,,,name
+__________,KEEP,A.Propithecus_deckenii,475618,,475618,B.Propithecus_deckenii,subtree=,,extension
+__________,KEEP,A.Propithecus_edwardsi,543559,,543559,B.Propithecus_edwardsi,,,name
+__________,KEEP,A.Propithecus_candidus,543560,,543560,B.Propithecus_candidus,,,name
+__________,KEEP,A.Propithecus_perrieri,989338,,989338,B.Propithecus_perrieri,,,name
+__________,ADD (split),A.Propithecus_sp.,39582,=,2677806,B.unclassified_Propithecus,subtree=,,
+________,KEEP,A.Indri,34826,,34826,B.Indri,subtree=,,monotypic
+________,KEEP,A.Avahi,122245,,122245,B.Avahi,subtree=,,extension
+________,KEEP,A.Archaeolemur,523820,,523820,B.Archaeolemur,subtree=,,extension
+________,KEEP,A.Hadropithecus,523824,,523824,B.Hadropithecus,subtree=,,monotypic
+______,KEEP,A.Lepilemuridae,30614,,30614,B.Lepilemuridae,,,extension
+________,KEEP,A.Lepilemur,9452,,9452,B.Lepilemur,,number_of_children,extension
+__________,KEEP,A.Lepilemur_mustelinus,9453,,9453,B.Lepilemur_mustelinus,,,name
+__________,KEEP,A.Lepilemur_dorsalis,78583,,78583,B.Lepilemur_dorsalis,,,name
+__________,KEEP,A.Lepilemur_septentrionalis,78584,,78584,B.Lepilemur_septentrionalis,,,name
+__________,KEEP,A.Lepilemur_ruficaudatus,78866,,78866,B.Lepilemur_ruficaudatus,,,name
+__________,KEEP,A.Lepilemur_leucopus,100475,,100475,B.Lepilemur_leucopus,,,name
+__________,KEEP,A.Lepilemur_edwardsi,122230,,122230,B.Lepilemur_edwardsi,,,name
+__________,KEEP,A.Lepilemur_microdon,185457,,185457,B.Lepilemur_microdon,,,name
+__________,KEEP,A.Lepilemur_mitsinjoensis,236287,,236287,B.Lepilemur_mitsinjoensis,,,name
+__________,KEEP,A.Lepilemur_seali,236288,,236288,B.Lepilemur_seali,,,name
+__________,KEEP,A.Lepilemur_sahamalazensis,342398,,342398,B.Lepilemur_sahamalazensis,,,name
+__________,KEEP,A.Lepilemur_aeeclis,342399,,342399,B.Lepilemur_aeeclis,,,name
+__________,KEEP,A.Lepilemur_ankaranensis,342401,,342401,B.Lepilemur_ankaranensis,,,name
+__________,KEEP,A.Lepilemur_mittermeieri,378517,,378517,B.Lepilemur_mittermeieri,,,name
+__________,KEEP,A.Lepilemur_manasamody,458171,,458171,B.Lepilemur_manasamody,,,name
+__________,KEEP,A.Lepilemur_otto,458173,,458173,B.Lepilemur_otto,,,name
+__________,KEEP,A.Lepilemur_jamesi,486960,,486960,B.Lepilemur_jamesorum,,canonicalName,synonym+name+synonym
+__________,KEEP,A.Lepilemur_hubbardorum,756882,,756882,B.Lepilemur_hubbardorum,,,name
+__________,KEEP,A.Lepilemur_petteri,886964,,886964,B.Lepilemur_petteri,,,name
+__________,KEEP,A.Lepilemur_randrianasoloi,886965,,886965,B.Lepilemur_randrianasoloi,,,name
+__________,ADD,,,,886957,B.Lepilemur_ahmansonorum,,,
+__________,ADD,,,,886958,B.Lepilemur_betsileo,,,
+__________,ADD,,,,886959,B.Lepilemur_fleuretae,,,
+__________,ADD,,,,886960,B.Lepilemur_grewcockorum,,,
+__________,ADD,,,,886961,B.Lepilemur_hollandorum,,,
+__________,ADD,,,,886963,B.Lepilemur_milanoii,,,
+__________,ADD,,,,886966,B.Lepilemur_scottorum,,,
+__________,ADD,,,,886967,B.Lepilemur_tymerlachsoni,,,
+__________,ADD,,,,886968,B.Lepilemur_wrightae,,,
+__________,ADD (reorganization),A.Lepilemur,9452,><,2645584,B.unclassified_Lepilemur,subtree=,,
+________,KEEP,A.Megaladapis,126593,,126593,B.Megaladapis,,number_of_children,extension
+__________,KEEP,A.Megaladapis_edwardsi,185953,,185953,B.Megaladapis_edwardsi,,,name
+__________,ADD (reorganization),A.Megaladapis,126593,><,2620125,B.unclassified_Megaladapis,subtree=,,
+______,KEEP,A.Cheirogaleidae,30615,,30615,B.Cheirogaleidae,,,extension
+________,KEEP,A.Cheirogaleus,9459,,9459,B.Cheirogaleus,,number_of_children,extension
+__________,KEEP,A.Cheirogaleus_medius,9460,,9460,B.Cheirogaleus_medius,,,name
+__________,KEEP,A.Cheirogaleus_major,47177,,47177,B.Cheirogaleus_major,,,name
+__________,KEEP,A.Cheirogaleus_crossleyi,291259,,291259,B.Cheirogaleus_crossleyi,,,name
+__________,KEEP,A.Cheirogaleus_sibreei,752538,,752538,B.Cheirogaleus_sibreei,,,name
+__________,KEEP,A.Cheirogaleus_minusculus,867375,,867375,B.Cheirogaleus_minusculus,,,name
+__________,ADD,,,,1569974,B.Cheirogaleus_lavasoensis,,,
+________,KEEP,A.Microcebus,13149,,13149,B.Microcebus,,number_of_children,extension
+__________,KEEP,A.Microcebus_murinus,30608,,30608,B.Microcebus_murinus,,,name
+__________,KEEP,A.Microcebus_ravelobensis,122231,,122231,B.Microcebus_ravelobensis,,,name
+__________,KEEP,A.Microcebus_rufus,122232,,122232,B.Microcebus_rufus,,,name
+__________,KEEP,A.Microcebus_myoxinus,143283,,143283,B.Microcebus_myoxinus,,,name
+__________,KEEP,A.Microcebus_tavaratra,143351,,143351,B.Microcebus_tavaratra,,,name
+__________,KEEP,A.Microcebus_berthae,143352,,143352,B.Microcebus_berthae,,,name
+__________,KEEP,A.Microcebus_sambiranensis,143353,,143353,B.Microcebus_sambiranensis,,,name
+__________,KEEP,A.Microcebus_griseorufus,143354,,143354,B.Microcebus_griseorufus,,,name
+__________,KEEP,A.Microcebus_simmonsi,236272,,236272,B.Microcebus_simmonsi,,,name
+__________,KEEP,A.Microcebus_mittermeieri,236274,,236274,B.Microcebus_mittermeieri,,,name
+__________,KEEP,A.Microcebus_jollyae,236275,,236275,B.Microcebus_jollyae,,,name
+__________,KEEP,A.Microcebus_lehilahytsara,343908,,343908,B.Microcebus_lehilahytsara,,,name
+__________,KEEP,A.Microcebus_bongolavensis,412750,,412750,B.Microcebus_bongolavensis,,,name
+__________,KEEP,A.Microcebus_danfossi,412751,,412751,B.Microcebus_danfossi,,,name
+__________,KEEP,A.Microcebus_lokobensis,412752,,412752,B.Microcebus_lokobensis,,,name
+__________,KEEP,A.Microcebus_mamiratra,415757,,415757,B.Microcebus_mamiratra,,,name
+__________,KEEP,A.Microcebus_macarthurii,548481,,548481,B.Microcebus_macarthurii,,,name
+__________,KEEP,A.Microcebus_arnholdi,864580,,864580,B.Microcebus_arnholdi,,,name
+__________,KEEP,A.Microcebus_margotmarshae,864581,,864581,B.Microcebus_margotmarshae,,,name
+__________,KEEP,A.Microcebus_gerpi,1131379,,1131379,B.Microcebus_gerpi,,,name
+__________,KEEP,A.Microcebus_tanosi,1310123,,1310123,B.Microcebus_tanosi,,,name
+__________,KEEP,A.Microcebus_marohita,1310124,,1310124,B.Microcebus_marohita,,,name
+__________,ADD,,,,2483760,B.Microcebus_ganzhorni,,,
+__________,ADD (reorganization),A.Microcebus,13149,><,2630091,B.unclassified_Microcebus,,,
+____________,KEEP,A.Microcebus_sp._EELHDZ_M98,270538,,270538,B.Microcebus_sp._EELHDZ_M98,,,name
+____________,KEEP,A.Microcebus_sp._EELHDZ_TAD23,270540,,270540,B.Microcebus_sp._EELHDZ_TAD23,,,name
+____________,KEEP,A.Microcebus_sp._EELHDZ_VEV33,270674,,270674,B.Microcebus_sp._EELHDZ_VEV33,,,name
+____________,KEEP,A.Microcebus_sp._EELHDZ_VEV35,270675,,270675,B.Microcebus_sp._EELHDZ_VEV35,,,name
+____________,KEEP,A.Microcebus_sp._ANT5.1,388736,,388736,B.Microcebus_sp._ANT5.1,,,name
+____________,KEEP,A.Microcebus_sp._Ambongabe,412758,,412758,B.Microcebus_sp._Ambongabe,,,name
+____________,KEEP,A.Microcebus_sp._Bora,412759,,412759,B.Microcebus_sp._Bora,,,name
+____________,KEEP,A.Microcebus_sp._Mahajamba-Est,412760,,412760,B.Microcebus_sp._Mahajamba-Est,,,name
+____________,KEEP,A.Microcebus_sp._Maroakata,412761,,412761,B.Microcebus_sp._Maroakata,,,name
+____________,KEEP,A.Microcebus_sp._Anjiahely,548482,,548482,B.Microcebus_sp._Anjiahely,,,name
+____________,KEEP,A.Microcebus_sp._DWW-2010a,764313,,764313,B.Microcebus_sp._DWW-2010a,,,name
+____________,KEEP,A.Microcebus_sp._d'Ambre,1310125,,1310125,B.Microcebus_sp._d'Ambre,,,name
+____________,ADD,,,,418100,B.Microcebus_sp._Antanosy,,,
+____________,ADD,,,,2508170,B.Microcebus_sp._3_GT-2019,,,
+________,KEEP,A.Mirza,83691,,83691,B.Mirza,,,extension
+__________,KEEP,A.Mirza_coquereli,47180,,47180,B.Mirza_coquereli,,,name
+__________,KEEP,A.Mirza_zaza,339999,,339999,B.Mirza_zaza,,,name
+__________,ADD (split),A.Mirza_sp._001y03,415977,=,2628182,B.unclassified_Mirza,subtree=,,
+________,KEEP,A.Allocebus,122247,,122247,B.Allocebus,subtree=,,monotypic
+________,KEEP,A.Phaner,261733,,261733,B.Phaner,subtree=,,extension
+______,KEEP,A.Paleopropithecidae,1513476,,1513476,B.Paleopropithecidae,,,monotypic
+________,KEEP,A.Palaeopropithecus,322024,,322024,B.Palaeopropithecus,,,monotypic
+__________,KEEP,A.Palaeopropithecus_sp._UA4466,322025,,322025,B.Palaeopropithecus_sp._UA4466,,,name
+__________,KEEP,A.Palaeopropithecus_sp._UA6184,322026,,322026,B.Palaeopropithecus_sp._UA6184,,,name
+__________,KEEP,A.Palaeopropithecus_sp._KPK-2005,322027,,322027,B.Palaeopropithecus_sp._KPK-2005,,,name
+__________,ADD,,,,1513477,B.Palaeopropithecus_ingens,,,
+__________,ADD,,,,1597978,B.Palaeopropithecus_maximus,,,
+__________,ADD (split),A.Palaeopropithecus,322024,=,2619300,B.unclassified_Palaeopropithecus,,,
+____,DELETE (conflict),A.Chiromyiformes,376916,><,376911,B.Strepsirrhini,,,
+____,DELETE (merge),A.Lorisiformes,376917,=,40297,B.Galagidae,,,
+______,KEEP,A.Galagidae,40297,,40297,B.Galagidae,,number_of_children,extension
+________,DELETE (conflict),A.Galago,9462,><,40297,B.Galagidae,,,
+________,KEEP,A.Otolemur,30610,,30610,B.Otolemur,,,extension
+__________,KEEP,A.Otolemur_crassicaudatus,9463,,9463,B.Otolemur_crassicaudatus,,,name
+__________,KEEP,A.Otolemur_garnettii,30611,,30611,B.Otolemur_garnettii,subtree=,,monotypic
+__________,KEEP,A.Otolemur_monteiri,337212,,337212,B.Otolemur_monteiri,subtree=,,extension
+________,DELETE (conflict),A.Galagoides,89671,><,89671,B.Galagoides,,,
+________,KEEP,A.Euoticus,261735,,261735,B.Euoticus,subtree=,,monotypic
+________,ADD (reorganization),A.Galago,9462,><,9462,B.Galago,,,
+__________,KEEP,A.Galago_senegalensis,9465,,9465,B.Galago_senegalensis,,number_of_children,name
+____________,ADD,,,,1738048,B.Galago_senegalensis_senegalensis,,,
+____________,ADD,,,,1738052,B.Galago_senegalensis_braccatus,,,
+__________,KEEP,A.Galago_moholi,30609,,30609,B.Galago_moholi,,,name
+__________,KEEP,A.Galago_alleni,34830,,34830,B.Galago_alleni,,,name
+__________,KEEP,A.Galago_gallarum,111173,,111173,B.Galago_gallarum,,,name
+__________,KEEP,A.Galago_matschiei,135486,,135486,B.Galago_matschiei,,,name
+__________,KEEP,A.Galago_gabonensis,261731,,261731,B.Galago_gabonensis,,,name
+__________,KEEP,A.Galago_granti,261732,,261732,B.Galago_granti,,,name
+__________,ADD (split),A.Galago_sp.,9464,=,2628747,B.unclassified_Galago,subtree=,,
+________,ADD (reorganization),A.Galagidae,40297,><,89671,B.Galagoides,,,
+__________,KEEP,A.Galago_thomasi,867376,,867376,B.Galagoides_thomasi,,canonicalName,synonym+name+synonym
+__________,KEEP,A.Galagoides_demidoff,89672,,89672,B.Galagoides_demidoff,,number_of_children,name
+____________,ADD,,,,1738051,B.Galagoides_demidoff_murinus,,,
+__________,KEEP,A.Galagoides_zanzibaricus,111174,,111174,B.Galagoides_zanzibaricus,,number_of_children,name
+____________,ADD,,,,1738046,B.Galagoides_zanzibaricus_udzungwensis,,,
+____________,ADD,,,,1738053,B.Galagoides_zanzibaricus_zanzibaricus,,,
+__________,KEEP,A.Galagoides_orinus,337210,,337210,B.Galagoides_orinus,,,name
+__________,KEEP,A.Galagoides_cocos,1487601,,1487601,B.Galagoides_cocos,,,name
+__________,ADD,,,,1738047,B.Galagoides_rondoensis,,,
+________,ADD,,,,2604441,B.Paragalago,,,
+__________,ADD,,,,2604442,B.Paragalago_cocos,,,
+__________,ADD,,,,2604443,B.Paragalago_zanzibaricus,,,
+____,ADD (split),A.Daubentonia,13038,=,376916,B.Chiromyiformes,subtree=,,
+____,ADD (reorganization),A.Strepsirrhini,376911,><,376917,B.Lorisiformes,,,
+______,KEEP,A.Lorisidae,9461,,9461,B.Lorisidae,,,extension
+________,KEEP,A.Loris,9467,,9467,B.Loris,,,extension
+__________,KEEP,A.Loris_tardigradus,9468,,9468,B.Loris_tardigradus,,number_of_children,monotypic
+____________,KEEP,A.Loris_tardigradus_nordicus,261740,,261740,B.Loris_tardigradus_nordicus,,,name
+____________,ADD,,,,1738049,B.Loris_tardigradus_tardigradus,,,
+__________,KEEP,A.Loris_lydekkerianus,300163,,300163,B.Loris_lydekkerianus,,number_of_children,monotypic
+____________,KEEP,A.Loris_lydekkerianus_malabaricus,300166,,300166,B.Loris_lydekkerianus_malabaricus,,,name
+____________,ADD,,,,1738050,B.Loris_lydekkerianus_lydekkerianus,,,
+________,KEEP,A.Nycticebus,9469,,9469,B.Nycticebus,,number_of_children,extension
+__________,KEEP,A.Nycticebus_coucang,9470,,9470,B.Nycticebus_coucang,,number_of_children,monotypic
+____________,KEEP,A.Nycticebus_coucang_coucang,310933,,310933,B.Nycticebus_coucang_coucang,,,name
+____________,ADD,,,,2020906,B.Nycticebus_coucang_insularis,,,
+__________,DELETE (merge),A.Nycticebus_intermedius,101277,=,101278,B.Nycticebus_pygmaeus,,,
+__________,KEEP,A.Nycticebus_pygmaeus,101278,,101278,B.Nycticebus_pygmaeus,,,name
+__________,KEEP,A.Nycticebus_bengalensis,261741,,261741,B.Nycticebus_bengalensis,,,name
+__________,KEEP,A.Nycticebus_menagensis,310932,,310932,B.Nycticebus_menagensis,,,name
+__________,KEEP,A.Nycticebus_javanicus,310934,,310934,B.Nycticebus_javanicus,,,name
+__________,ADD (split),A.Nycticebus_sp.,108082,=,2646861,B.unclassified_Nycticebus,subtree=,,
+________,KEEP,A.Perodicticus,9471,,9471,B.Perodicticus,,,monotypic
+__________,KEEP,A.Perodicticus_potto,9472,,9472,B.Perodicticus_potto,,,extension
+____________,KEEP,A.Perodicticus_potto_edwarsi,9473,,9473,B.Perodicticus_potto_edwarsi,,,name
+____________,KEEP,A.Perodicticus_potto_ibeanus,261737,,261737,B.Perodicticus_potto_ibeanus,,,name
+________,KEEP,A.Arctocebus,261738,,261738,B.Arctocebus,subtree=,,extension
+__,KEEP,A.Haplorrhini,376913,,376913,B.Haplorrhini,,,extension
+____,KEEP,A.Simiiformes,314293,,314293,B.Simiiformes,,,extension
+______,KEEP,A.Platyrrhini,9479,,9479,B.Platyrrhini,,,extension
+________,KEEP,A.Cebidae,9498,,9498,B.Cebidae,,,extension
+__________,KEEP,A.Callitrichinae,9480,,9480,B.Callitrichinae,,number_of_children,extension
+____________,DELETE (conflict),A.Callithrix,9481,><,9480,B.Callitrichinae,,,
+____________,DELETE (conflict),A.Saguinus,9486,><,9480,B.Callitrichinae,,,
+____________,KEEP,A.Callimico,9494,,9494,B.Callimico,,,extension
+______________,KEEP,A.Callimico_goeldii,9495,,9495,B.Callimico_goeldii,,,name
+______________,ADD (split),A.Callimico_sp._MAS-2011,1090914,=,2634122,B.unclassified_Callimico,,,
+________________,KEEP,A.Callimico_sp._MAS-2011,1090914,,1090914,B.Callimico_sp._MAS-2011,,,name
+________________,ADD,,,,1758239,B.Callimico_sp.,,,
+____________,KEEP,A.Leontopithecus,30587,,30587,B.Leontopithecus,subtree=,,extension
+____________,ADD (reorganization),A.Callithrix,9481,><,9481,B.Callithrix#9481,,,
+______________,ADD (reorganization),A.Callithrix,9481,><,1965096,B.Callithrix#1965096,subtree=,,
+______________,ADD (split),A.Callithrix_pygmaea,9493,=,1965109,B.Cebuella,subtree=,,
+______________,ADD (split),A.Callithrix_humilis,666519,=,1965113,B.Calibella,subtree=,,
+____________,ADD (reorganization),A.Saguinus,9486,><,9486,B.Saguinus,,,
+______________,KEEP,A.Saguinus_mystax,9488,,9488,B.Saguinus_mystax,subtree=,,monotypic
+______________,KEEP,A.Saguinus_oedipus,9490,,9490,B.Saguinus_oedipus,,,name
+______________,KEEP,A.Saguinus_imperator,9491,,9491,B.Saguinus_imperator,subtree=,,monotypic
+______________,KEEP,A.Saguinus_midas,30586,,30586,B.Saguinus_midas,subtree=,,monotypic
+______________,KEEP,A.Saguinus_bicolor,37588,,37588,B.Saguinus_bicolor,subtree=,,monotypic
+______________,KEEP,A.Saguinus_geoffroyi,43778,,43778,B.Saguinus_geoffroyi,,,name
+______________,KEEP,A.Saguinus_labiatus,78454,,78454,B.Saguinus_labiatus,subtree=,,monotypic
+______________,KEEP,A.Saguinus_leucopus,290597,,290597,B.Saguinus_leucopus,,,name
+______________,KEEP,A.Saguinus_niger,356665,,356665,B.Saguinus_niger,,,name
+______________,KEEP,A.Saguinus_martinsi,356666,,356666,B.Saguinus_martinsi,,,name
+______________,KEEP,A.Saguinus_melanoleucus,873067,,873067,B.Saguinus_melanoleucus,subtree=,,monotypic
+______________,KEEP,A.Saguinus_graellsi,873073,,873073,B.Saguinus_graellsi,,,name
+______________,KEEP,A.Saguinus_inustus,1079039,,1079039,B.Saguinus_inustus,,,name
+______________,ADD,,,,2586293,B.Saguinus_geoffroyi_x_Saguinus_leucopus,,,
+______________,ADD,,,,2586294,B.Saguinus_oedipus_x_Saguinus_leucopus,,,
+______________,ADD (reorganization),A.Saguinus,9486,><,2642123,B.unclassified_Saguinus,,,
+________________,KEEP,A.Saguinus_sp.,100754,,100754,B.Saguinus_sp.,,,name
+________________,KEEP,A.Saguinus_sp._T1030,260575,,260575,B.Saguinus_sp._T1030,,,name
+________________,ADD,,,,1967463,B.Saguinus_sp._EG-2017,,,
+____________,ADD (reorganization),A.Callithrix,9481,><,1965102,B.Mico,,,
+______________,KEEP,A.Callithrix_argentata,9482,,9482,B.Mico_argentatus,,canonicalName,synonym+name+synonym
+________________,DELETE (merge),A.Callithrix_argentata_argentata,867362,=,867362,B.Mico_argentatus_argentatus,,,
+________________,ADD,,,,867362,B.Mico_argentatus_argentatus,,,
+______________,KEEP,A.Callithrix_emiliae,48842,,48842,B.Mico_emiliae,,canonicalName,name+synonym
+______________,KEEP,A.Callithrix_humeralifera,52232,,52232,B.Mico_humeralifer,,canonicalName; scientificName,name+synonym
+______________,KEEP,A.Callithrix_mauesi,57377,,57377,B.Mico_mauesi,,canonicalName,name+synonym
+______________,KEEP,A.Callithrix_cf._emiliae,198701,,198701,B.Mico_cf._emiliae,,canonicalName,name+synonym
+______________,KEEP,A.Callithrix_saterei,198702,,198702,B.Mico_saterei,,canonicalName,name+synonym
+______________,KEEP,A.Callithrix_melanura,1090896,,1090896,B.Mico_melanurus,,canonicalName; scientificName,synonym+name+synonym
+______________,KEEP,A.Callithrix_rondoni,1127763,,1127763,B.Mico_rondoni,,canonicalName,name+synonym
+______________,ADD,,,,1758231,B.Mico_chrysoleucus,,,
+______________,ADD,,,,2592805,B.Mico_intermedius,,,
+______________,ADD,,,,2592806,B.Mico_leucippe,,,
+______________,ADD,,,,2592807,B.Mico_marcai,,,
+______________,ADD,,,,2592808,B.Mico_munduruku,,,
+____________,ADD (reorganization),A.Saguinus,9486,><,2681187,B.Leontocebus,,,
+______________,KEEP,A.Saguinus_fuscicollis,9487,,9487,B.Leontocebus_fuscicollis,,canonicalName,monotypic
+________________,DELETE,A.Saguinus_fuscicollis_fuscicollis,48018,,,,,,
+________________,KEEP,A.Saguinus_fuscicollis_weddelli,343424,,343424,B.Leontocebus_fuscicollis_weddelli,,canonicalName,synonym+name
+________________,DELETE (merge),A.Saguinus_fuscicollis_leucogenys,881946,=,881946,B.Leontocebus_fuscicollis_leucogenys,,,
+________________,DELETE (merge),A.Saguinus_fuscicollis_illigeri,881947,=,881947,B.Leontocebus_fuscicollis_illigeri,,,
+________________,DELETE (merge),A.Saguinus_fuscicollis_nigrifrons,881949,=,881949,B.Leontocebus_fuscicollis_nigrifrons,,,
+________________,DELETE (merge),A.Saguinus_fuscicollis_lagonotus,881950,=,881950,B.Leontocebus_fuscicollis_lagonotus,,,
+________________,ADD,,,,48018,B.Leontocebus_fuscicollis_fuscicollis,,,
+________________,ADD,,,,881946,B.Leontocebus_fuscicollis_leucogenys,,,
+________________,ADD,,,,881947,B.Leontocebus_fuscicollis_illigeri,,,
+________________,ADD,,,,881949,B.Leontocebus_fuscicollis_nigrifrons,,,
+________________,ADD,,,,881950,B.Leontocebus_fuscicollis_lagonotus,,,
+______________,KEEP,A.Saguinus_nigricollis,9489,,9489,B.Leontocebus_nigricollis,,canonicalName,synonym+name+synonym
+________________,DELETE,A.Saguinus_nigricollis_nigricollis,873070,,,,,,
+________________,ADD,,,,873070,B.Leontocebus_nigricollis_nigricollis,,,
+______________,KEEP,A.Saguinus_tripartitus,122388,,122388,B.Leontocebus_tripartitus,,canonicalName,synonym+name+synonym
+______________,ADD,,,,1618156,B.Leontocebus_cruzlimai,,,
+__________,KEEP,A.Cebinae,38070,,38070,B.Cebinae,,,extension
+____________,KEEP,A.Cebus,9513,,9513,B.Cebus,,number_of_children,extension
+______________,KEEP,A.Cebus_albifrons,9514,,9514,B.Cebus_albifrons,,,name
+______________,KEEP,A.Cebus_capucinus,9516,,9516,B.Cebus_capucinus,,number_of_children,name
+________________,ADD,,,,1737458,B.Cebus_capucinus_imitator,,,
+______________,KEEP,A.Cebus_kaapori,37294,,37294,B.Cebus_kaapori,,,name
+______________,KEEP,A.Cebus_olivaceus,37295,,37295,B.Cebus_olivaceus,,number_of_children,monotypic
+________________,KEEP,A.Cebus_olivaceus_nigrivittatus,1090893,,1090893,B.Cebus_olivaceus_nigrivittatus,,,name
+________________,ADD,,,,1985287,B.Cebus_olivaceus_castaneus,,,
+______________,ADD,,,,1985288,B.Cebus_unicolor,,,
+______________,ADD,,,,1985289,B.Cebus_versicolor,,,
+______________,ADD (reorganization),A.Cebus,9513,><,2618788,B.unclassified_Cebus,,,
+________________,KEEP,A.Cebus_sp.,9517,,9517,B.Cebus_sp.,,,name
+________________,KEEP,A.Cebus_sp._MAS-2011,1090916,,1090916,B.Cebus_sp._MAS-2011,,,name
+________________,ADD,,,,1967451,B.Cebus_sp._1_EG-2017,,,
+________________,ADD,,,,1967452,B.Cebus_sp._2_EG-2017,,,
+____________,KEEP,A.Sapajus,1532884,,1532884,B.Sapajus,,number_of_children,extension
+______________,KEEP,A.Sapajus_apella,9515,,9515,B.Sapajus_apella,subtree=,,extension
+______________,KEEP,A.Sapajus_xanthosternos,174599,,174599,B.Sapajus_xanthosternos,,,name
+______________,KEEP,A.Sapajus_cay,649471,,649471,B.Sapajus_cay,,,name
+______________,KEEP,A.Sapajus_nigritus,867366,,867366,B.Sapajus_nigritus,subtree=,,monotypic
+______________,KEEP,A.Sapajus_flavius,1112861,,1112861,B.Sapajus_flavius,,,name
+______________,KEEP,A.Sapajus_libidinosus,1126382,,1126382,B.Sapajus_libidinosus,,,name
+______________,ADD,,,,2619504,B.unclassified_Sapajus,,,
+________________,ADD,,,,1874197,B.Sapajus_sp.,,,
+________________,ADD,,,,2093835,B.Sapajus_sp._9_FD-2018,,,
+________________,ADD,,,,2093836,B.Sapajus_sp._10_FD-2018,,,
+________________,ADD,,,,2093837,B.Sapajus_sp._22_FD-2018,,,
+________________,ADD,,,,2093838,B.Sapajus_sp._M5_FD-2018,,,
+________________,ADD,,,,2093839,B.Sapajus_sp._M12_FD-2018,,,
+________________,ADD,,,,2093840,B.Sapajus_sp._M39_FD-2018,,,
+__________,KEEP,A.unclassified_Cebidae,38071,,38071,B.unclassified_Cebidae,subtree=,,monotypic
+__________,KEEP,A.Saimiriinae,378850,,378850,B.Saimiriinae,,,monotypic
+____________,KEEP,A.Saimiri,9520,,9520,B.Saimiri,,number_of_children,extension
+______________,KEEP,A.Saimiri_sciureus,9521,,9521,B.Saimiri_sciureus,subtree=,,extension
+______________,KEEP,A.Saimiri_boliviensis,27679,,27679,B.Saimiri_boliviensis,,,monotypic
+________________,DELETE (merge),A.Saimiri_boliviensis_boliviensis,39432,=,27679,B.Saimiri_boliviensis,,,
+________________,KEEP,A.Saimiri_boliviensis_peruviensis,495297,,495297,B.Saimiri_boliviensis_peruviensis,,,name
+________________,ADD (split),A.Saimiri_boliviensis,27679,=,39432,B.Saimiri_boliviensis_boliviensis,,,
+______________,KEEP,A.Saimiri_ustus,66265,,66265,B.Saimiri_ustus,,,name
+______________,KEEP,A.Saimiri_oerstedii,70928,,70928,B.Saimiri_oerstedii,subtree=,,extension
+______________,KEEP,A.Saimiri_vanzolinii,1561161,,1561161,B.Saimiri_vanzolinii,,,name
+______________,ADD (reorganization),A.Saimiri,9520,><,2635411,B.unclassified_Saimiri,,,
+________________,KEEP,A.Saimiri_sp._MAS-2011,1090919,,1090919,B.Saimiri_sp._MAS-2011,,,name
+________________,KEEP,A.Saimiri_sp.,1561164,,1561164,B.Saimiri_sp.,,,name
+________________,ADD,,,,1967464,B.Saimiri_sp._1_EG-2017,,,
+________________,ADD,,,,1967465,B.Saimiri_sp._2_EG-2017,,,
+________________,ADD,,,,1967466,B.Saimiri_sp._3_EG-2017,,,
+________,KEEP,A.Aotidae,376918,,376918,B.Aotidae,,,monotypic
+__________,KEEP,A.Aotus,9504,,9504,B.Aotus,,number_of_children,extension
+____________,KEEP,A.Aotus_trivirgatus,9505,,9505,B.Aotus_trivirgatus,,,name
+____________,KEEP,A.Aotus_azarai,30591,,30591,B.Aotus_azarai,subtree=,,extension
+____________,KEEP,A.Aotus_nancymaae,37293,,37293,B.Aotus_nancymaae,,,name
+____________,KEEP,A.Aotus_lemurinus,43147,,43147,B.Aotus_lemurinus,,,name
+____________,KEEP,A.Aotus_nigriceps,57175,,57175,B.Aotus_nigriceps,,,name
+____________,KEEP,A.Aotus_vociferans,57176,,57176,B.Aotus_vociferans,,,name
+____________,KEEP,A.Aotus_griseimembra,292213,,292213,B.Aotus_griseimembra,,,name
+____________,KEEP,A.Aotus_brumbacki,361674,,361674,B.Aotus_brumbacki,,,name
+____________,KEEP,A.Aotus_zonalis,1263727,,1263727,B.Aotus_zonalis,,,name
+____________,ADD (reorganization),A.Aotus,9504,><,2688256,B.unclassified_Aotus_(in:_Chordata),subtree=,,
+________,KEEP,A.Pitheciidae,376919,,376919,B.Pitheciidae,,number_of_children,extension
+__________,KEEP,A.Pitheciinae,38039,,38039,B.Pitheciinae,,,extension
+____________,KEEP,A.Chiropotes,9524,,9524,B.Chiropotes,,,extension
+______________,KEEP,A.Chiropotes_satanas,9525,,9525,B.Chiropotes_satanas,,,name
+______________,KEEP,A.Chiropotes_albinasus,198627,,198627,B.Chiropotes_albinasus,,,name
+______________,KEEP,A.Chiropotes_satanas_x_albinasus,202458,,202458,B.Chiropotes_satanas_x_albinasus,,,name
+______________,KEEP,A.Chiropotes_utahicki,280160,,280160,B.Chiropotes_utahickae,,canonicalName,synonym+name+synonym
+______________,KEEP,A.Chiropotes_israelita,280163,,280163,B.Chiropotes_israelita,,,name
+______________,KEEP,A.Chiropotes_albinasus_x_satanas,626367,,626367,B.Chiropotes_albinasus_x_satanas,,,name
+______________,KEEP,A.Chiropotes_chiropotes,658221,,658221,B.Chiropotes_chiropotes,subtree=,,monotypic
+______________,ADD (split),A.Chiropotes_sp._MAS-2011,1090917,=,2649368,B.unclassified_Chiropotes,,,
+________________,KEEP,A.Chiropotes_sp._MAS-2011,1090917,,1090917,B.Chiropotes_sp._MAS-2011,,,name
+________________,ADD,,,,1472258,B.Chiropotes_sp._ZFMK_2008.244,,,
+________________,ADD,,,,1758238,B.Chiropotes_sp.,,,
+____________,KEEP,A.Cacajao,30595,,30595,B.Cacajao,subtree=,,extension
+____________,KEEP,A.Pithecia,30597,,30597,B.Pithecia,,number_of_children,extension
+______________,KEEP,A.Pithecia_irrorata,30598,,30598,B.Pithecia_irrorata,,,name
+______________,KEEP,A.Pithecia_pithecia,43777,,43777,B.Pithecia_pithecia,subtree=,,monotypic
+______________,KEEP,A.Pithecia_monachus,595220,,595220,B.Pithecia_monachus,,,name
+______________,ADD,,,,2646430,B.unclassified_Pithecia,,,
+________________,ADD,,,,1758237,B.Pithecia_sp.,,,
+__________,KEEP,A.Callicebinae,38069,,38069,B.Callicebinae,,number_of_children,extension
+____________,DELETE (merge),A.Callicebus,9522,=,38069,B.Callicebinae,,,
+______________,DELETE (merge),A.Callicebus_torquatus,30592,=,30592,B.Cheracebus_torquatus,,,
+____________,ADD (reorganization),A.Callicebus,9522,><,9522,B.Callicebus,,,
+______________,KEEP,A.Callicebus_personatus,70814,,70814,B.Callicebus_personatus,subtree=,,extension
+______________,KEEP,A.Callicebus_coimbrai,867333,,867333,B.Callicebus_coimbrai,,,name
+______________,KEEP,A.Callicebus_nigrifrons,867334,,867334,B.Callicebus_nigrifrons,,,name
+______________,ADD,,,,1290433,B.Callicebus_dubius,,,
+______________,ADD,,,,1861701,B.Callicebus_caquetensis,,,
+______________,ADD,,,,1861702,B.Callicebus_ornatus,,,
+______________,ADD,,,,1861703,B.Callicebus_discolor,,,
+______________,ADD (reorganization),A.Callicebus,9522,><,2627897,B.unclassified_Callicebus,,,
+________________,KEEP,A.Callicebus_sp.,116962,,116962,B.Callicebus_sp.,,,name
+________________,KEEP,A.Callicebus_sp._MAS-2011,1090915,,1090915,B.Callicebus_sp._MAS-2011,,,name
+________________,ADD,,,,1861704,B.Callicebus_sp._1_MH-2016,,,
+________________,ADD,,,,1861705,B.Callicebus_sp._2_MH-2016,,,
+____________,ADD (reorganization),A.Callicebus,9522,><,1812035,B.Plecturocebus,,,
+______________,KEEP,A.Callicebus_moloch,9523,,9523,B.Plecturocebus_moloch,,canonicalName,synonym+name+synonym
+______________,KEEP,A.Callicebus_hoffmannsi,78255,,78255,B.Plecturocebus_hoffmannsi,,canonicalName,synonym+name
+______________,KEEP,A.Callicebus_cupreus,202457,,202457,B.Plecturocebus_cupreus,,canonicalName,synonym+name
+______________,KEEP,A.Callicebus_brunneus,221704,,1812042,B.Plecturocebus_brunneus,,NCBI Taxonomy ID; canonicalName,synonym+name+synonym
+______________,KEEP,A.Callicebus_donacophilus,230833,,230833,B.Plecturocebus_donacophilus,,canonicalName,monotypic
+________________,KEEP,A.Callicebus_donacophilus_donacophilus,285954,,285954,B.Plecturocebus_donacophilus_donacophilus,,canonicalName,synonym+name
+______________,KEEP,A.Callicebus_caligatus,867332,,867332,B.Plecturocebus_caligatus,,canonicalName,synonym+name
+______________,ADD,,,,1812036,B.Plecturocebus_bernhardi,,,
+______________,ADD,,,,1812037,B.Plecturocebus_cinerascens,,,
+______________,ADD,,,,1812038,B.Plecturocebus_miltoni,,,
+______________,ADD,,,,2487713,B.Plecturocebus_vieirai,,,
+______________,ADD,,,,2488670,B.Plecturocebus_grovesi,,,
+____________,ADD (reorganization),A.Callicebus,9522,><,1812102,B.Cheracebus,,,
+______________,KEEP,A.Callicebus_lugens,210166,,210166,B.Cheracebus_lugens,,canonicalName,synonym+name
+______________,KEEP,A.Callicebus_purinus,1560619,,1560619,B.Cheracebus_purinus,,canonicalName,synonym+name
+______________,ADD,,,,30592,B.Cheracebus_torquatus,,,
+______________,ADD,,,,2487712,B.Cheracebus_lucifer,,,
+__________,ADD,,,,2490929,B.Xenothricinae,,,
+____________,ADD,,,,2490930,B.Xenothrix,,,
+______________,ADD,,,,2490931,B.Xenothrix_mcgregori,,,
+________,KEEP,A.Atelidae,378855,,378855,B.Atelidae,,,extension
+__________,KEEP,A.Alouattinae,38066,,38066,B.Alouattinae,,,monotypic
+____________,KEEP,A.Alouatta,9499,,9499,B.Alouatta,,number_of_children,extension
+______________,KEEP,A.Alouatta_caraya,9502,,9502,B.Alouatta_caraya,,,name
+______________,KEEP,A.Alouatta_seniculus,9503,,9503,B.Alouatta_seniculus,subtree=,,extension
+______________,KEEP,A.Alouatta_palliata,30589,,30589,B.Alouatta_palliata,subtree=,,extension
+______________,KEEP,A.Alouatta_belzebul,30590,,30590,B.Alouatta_belzebul,subtree=,,monotypic
+______________,KEEP,A.Alouatta_sara,121123,,121123,B.Alouatta_sara,,,name
+______________,KEEP,A.Alouatta_stramineus,163110,,163110,B.Alouatta_stramineus,,,name
+______________,KEEP,A.Alouatta_pigra,182253,,182253,B.Alouatta_pigra,,,name
+______________,KEEP,A.Alouatta_guariba,182256,,182256,B.Alouatta_guariba,subtree=,,monotypic
+______________,ADD,,,,2487933,B.Alouatta_palliata_x_Alouatta_pigra,,,
+__________,KEEP,A.Atelinae,38068,,38068,B.Atelinae,,,extension
+____________,KEEP,A.Ateles,9506,,9506,B.Ateles,,number_of_children,extension
+______________,KEEP,A.Ateles_belzebuth,9507,,9507,B.Ateles_belzebuth,subtree=,,extension
+______________,KEEP,A.Ateles_fusciceps,9508,,9508,B.Ateles_fusciceps,subtree=,,extension
+______________,KEEP,A.Ateles_geoffroyi,9509,,9509,B.Ateles_geoffroyi,subtree=,,extension
+______________,KEEP,A.Ateles_paniscus,9510,,9510,B.Ateles_paniscus,,,name
+______________,KEEP,A.Ateles_paniscus_x_Ateles_fusciceps,36234,,36234,B.Ateles_paniscus_x_Ateles_fusciceps,,,name
+______________,DELETE (conflict),A.unclassified_Ateles,120432,><,120432,B.unclassified_Ateles,,,
+______________,KEEP,A.Ateles_hybridus,129801,,129801,B.Ateles_hybridus,subtree=,,monotypic
+______________,KEEP,A.Ateles_marginatus,1529884,,1529884,B.Ateles_marginatus,,,name
+______________,ADD (reorganization),A.Ateles,9506,><,120432,B.unclassified_Ateles,,,
+________________,KEEP,A.Ateles_sp.,9511,,9511,B.Ateles_sp.,,,name
+________________,KEEP,A.Ateles_sp._haplotype_Abh9,119628,,119628,B.Ateles_sp._haplotype_Abh9,,,name
+________________,KEEP,A.Ateles_sp._haplotype_Abh10,119629,,119629,B.Ateles_sp._haplotype_Abh10,,,name
+________________,KEEP,A.Ateles_sp._haplotype_Abh11,119630,,119630,B.Ateles_sp._haplotype_Abh11,,,name
+________________,KEEP,A.Ateles_sp._haplotype_Agsubspp._16,119631,,119631,B.Ateles_sp._haplotype_Agsubspp._16,,,name
+________________,KEEP,A.Ateles_sp._haplotype_Afr19,119632,,119632,B.Ateles_sp._haplotype_Afr19,,,name
+________________,KEEP,A.Ateles_sp._haplotype_Afr20,119633,,119633,B.Ateles_sp._haplotype_Afr20,,,name
+________________,KEEP,A.Ateles_sp._haplotype_Afr21,119634,,119634,B.Ateles_sp._haplotype_Afr21,,,name
+________________,KEEP,A.Ateles_sp._haplotype_Abh19,119638,,119638,B.Ateles_sp._haplotype_Abh19,,,name
+________________,KEEP,A.Ateles_sp._haplotype_Agp13,119639,,119639,B.Ateles_sp._haplotype_Agp13,,,name
+________________,KEEP,A.Ateles_sp._haplotype_Afr27,119640,,119640,B.Ateles_sp._haplotype_Afr27,,,name
+________________,KEEP,A.Ateles_sp._KO-2004,269772,,269772,B.Ateles_sp._KO-2004,,,name
+________________,KEEP,A.Ateles_sp._JPV-2004,278713,,278713,B.Ateles_sp._JPV-2004,,,name
+________________,ADD,,,,1967450,B.Ateles_sp._EG-2017,,,
+____________,KEEP,A.Lagothrix,9518,,9518,B.Lagothrix,,number_of_children,extension
+______________,KEEP,A.Lagothrix_lagotricha,9519,,9519,B.Lagothrix_lagotricha,,,name
+______________,KEEP,A.Lagothrix_lugens,767355,,767355,B.Lagothrix_lugens,,,name
+______________,KEEP,A.Lagothrix_poeppigii,767356,,767356,B.Lagothrix_poeppigii,,,name
+______________,KEEP,A.Lagothrix_cana,767357,,767357,B.Lagothrix_cana,,,name
+______________,ADD,,,,2565305,B.Lagothrix_flavicauda,,,
+______________,ADD,,,,2565306,B.Lagothrix_tschudii,,,
+______________,ADD (split),A.Lagothrix_sp._CCS-2009a,638937,=,2645779,B.unclassified_Lagothrix,,,
+________________,KEEP,A.Lagothrix_sp._CCS-2009a,638937,,638937,B.Lagothrix_sp._CCS-2009a,,,name
+________________,ADD,,,,1967456,B.Lagothrix_sp._EG-2017,,,
+____________,KEEP,A.Brachyteles,30593,,30593,B.Brachyteles,subtree=,,extension
+______,KEEP,A.Catarrhini,9526,,9526,B.Catarrhini,,,extension
+________,KEEP,A.Cercopithecoidea,314294,,314294,B.Cercopithecoidea,,,monotypic
+__________,KEEP,A.Cercopithecidae,9527,,9527,B.Cercopithecidae,,,extension
+____________,KEEP,A.Cercopithecinae,9528,,9528,B.Cercopithecinae,,number_of_children,extension
+______________,KEEP,A.Cercocebus,9529,,9529,B.Cercocebus,,,extension
+________________,KEEP,A.Cercocebus_torquatus,9530,,9530,B.Cercocebus_torquatus,subtree=,,monotypic
+________________,KEEP,A.Cercocebus_atys,9531,,9531,B.Cercocebus_atys,,number_of_children,monotypic
+__________________,KEEP,A.Cercocebus_atys_lunulatus,75570,,75570,B.Cercocebus_atys_lunulatus,,,name
+__________________,ADD,,,,1592215,B.Cercocebus_atys_atys,,,
+________________,KEEP,A.Cercocebus_galeritus,9532,,9532,B.Cercocebus_galeritus,,,name
+________________,KEEP,A.Cercocebus_chrysogaster,75569,,75569,B.Cercocebus_chrysogaster,,,name
+________________,KEEP,A.Cercocebus_agilis,255237,,255237,B.Cercocebus_agilis,,,name
+______________,DELETE (conflict),A.Cercopithecus,9533,><,9528,B.Cercopithecinae,,,
+______________,KEEP,A.Erythrocebus,9537,,9537,B.Erythrocebus,subtree=,,monotypic
+______________,KEEP,A.Macaca,9539,,9539,B.Macaca,,number_of_children,extension
+________________,KEEP,A.Macaca_arctoides,9540,,9540,B.Macaca_arctoides,,,name
+________________,KEEP,A.Macaca_fascicularis,9541,,9541,B.Macaca_fascicularis,,number_of_children,extension
+__________________,KEEP,A.Macaca_fascicularis_philippinensis,90386,,90386,B.Macaca_fascicularis_philippinensis,,,name
+__________________,KEEP,A.Macaca_fascicularis_fascicularis,1215360,,1215360,B.Macaca_fascicularis_fascicularis,,,name
+__________________,ADD,,,,1747270,B.Macaca_fascicularis_aureus,,,
+________________,KEEP,A.Macaca_fuscata,9542,,9542,B.Macaca_fuscata,,,monotypic
+__________________,DELETE (merge),A.Macaca_fuscata_fuscata,9543,=,9542,B.Macaca_fuscata,,,
+__________________,KEEP,A.Macaca_fuscata_yakui,179089,,179089,B.Macaca_fuscata_yakui,,,name
+__________________,ADD (split),A.Macaca_fuscata,9542,=,9543,B.Macaca_fuscata_fuscata,,,
+________________,KEEP,A.Macaca_mulatta,9544,,9544,B.Macaca_mulatta,,number_of_children,monotypic
+__________________,KEEP,A.Macaca_mulatta_lasiotus,1449913,,1449913,B.Macaca_mulatta_lasiotus,,,name
+__________________,ADD,,,,1654737,B.Macaca_mulatta_brevicaudus,,,
+__________________,ADD,,,,2008792,B.Macaca_mulatta_vestita,,,
+________________,DELETE (conflict),A.Macaca_nemestrina,9545,><,9539,B.Macaca,,,
+________________,KEEP,A.Macaca_nemestrina_leonina,90387,,90387,B.Macaca_leonina,,taxonRank; canonicalName,synonym+name
+________________,KEEP,A.Macaca_nemestrina_siberu,244255,,244255,B.Macaca_siberu,,taxonRank; canonicalName,synonym+name
+________________,KEEP,A.Macaca_sylvanus,9546,,9546,B.Macaca_sylvanus,,,name
+________________,KEEP,A.Macaca_radiata,9548,,9548,B.Macaca_radiata,subtree=,,monotypic
+________________,KEEP,A.Macaca_assamensis,9551,,9551,B.Macaca_assamensis,subtree=,,monotypic
+________________,KEEP,A.Macaca_sinica,9552,,9552,B.Macaca_sinica,,,name
+________________,KEEP,A.Macaca_speciosa,9553,,9553,B.Macaca_speciosa,,,name
+________________,KEEP,A.Macaca_tonkeana,40843,,40843,B.Macaca_tonkeana,,,name
+________________,KEEP,A.Macaca_nigra,54600,,54600,B.Macaca_nigra,,,name
+________________,KEEP,A.Macaca_silenus,54601,,54601,B.Macaca_silenus,,,name
+________________,KEEP,A.Macaca_thibetana,54602,,54602,B.Macaca_thibetana,subtree=,,monotypic
+________________,KEEP,A.Macaca_cyclopis,78449,,78449,B.Macaca_cyclopis,,,name
+________________,KEEP,A.Macaca_brunnescens,90381,,90381,B.Macaca_brunnescens,,,name
+________________,KEEP,A.Macaca_hecki,90382,,90382,B.Macaca_hecki,,,name
+________________,KEEP,A.Macaca_maura,90383,,90383,B.Macaca_maura,,,name
+________________,KEEP,A.Macaca_nigrescens,90384,,90384,B.Macaca_nigrescens,,,name
+________________,KEEP,A.Macaca_ochreata,90385,,90385,B.Macaca_ochreata,,,name
+________________,KEEP,A.Macaca_maura_x_tonkeana,168259,,168259,B.Macaca_maura_x_tonkeana,,,name
+________________,KEEP,A.Macaca_hecki_x_tonkeana,171293,,171293,B.Macaca_hecki_x_tonkeana,,,name
+________________,KEEP,A.Macaca_pagensis,230653,,230653,B.Macaca_pagensis,,,name
+________________,KEEP,A.Macaca_balantak,281404,,281404,B.Macaca_balantak,,,name
+________________,KEEP,A.Macaca_balantak_x_tonkeana,281405,,281405,B.Macaca_balantak_x_tonkeana,,,name
+________________,DELETE (merge),A.Macaca_leonina,285350,=,90387,B.Macaca_leonina,,,
+________________,KEEP,A.Macaca_munzala,402888,,402888,B.Macaca_munzala,,,name
+________________,DELETE (merge),A.Macaca_siberu,867378,=,244255,B.Macaca_siberu,,,
+________________,ADD (split),A.Macaca_nemestrina_nemestrina,90388,=,9545,B.Macaca_nemestrina,subtree=,,
+________________,ADD,,,,1885588,B.Macaca_leucogenys,,,
+________________,ADD (split),A.Macaca_sp.,9549,=,2623225,B.unclassified_Macaca,subtree=,,
+______________,KEEP,A.Papio,9554,,9554,B.Papio,,number_of_children,extension
+________________,KEEP,A.Papio_anubis,9555,,9555,B.Papio_anubis,subtree=,,monotypic
+________________,KEEP,A.Papio_cynocephalus,9556,,9556,B.Papio_cynocephalus,subtree=,,extension
+________________,KEEP,A.Papio_hamadryas,9557,,9557,B.Papio_hamadryas,subtree=,,monotypic
+________________,KEEP,A.Papio_ursinus,36229,,36229,B.Papio_ursinus,,number_of_children,monotypic
+__________________,KEEP,A.Papio_ursinus_ursinus,208089,,208089,B.Papio_ursinus_ursinus,,,name
+__________________,ADD,,,,208090,B.Papio_ursinus_griseipes,,,
+________________,KEEP,A.Papio_papio,100937,,100937,B.Papio_papio,,,name
+________________,KEEP,A.Papio_kindae,208091,,208091,B.Papio_kindae,,,name
+________________,KEEP,A.Papio_cynocephalus_x_Papio_anubis,208510,,208510,B.Papio_cynocephalus_x_Papio_anubis,,,name
+________________,KEEP,A.Papio_anubis_x_hamadryas,1560552,,1560552,B.Papio_anubis_x_hamadryas,,,name
+________________,ADD,,,,1945556,B.Papio_anubis_x_Papio_cynocephalus,,,
+________________,ADD,,,,1945557,B.Papio_anubis_x_Papio_ursinus,,,
+________________,ADD,,,,1945558,B.Papio_kindae_x_Papio_cynocephalus,,,
+________________,ADD,,,,1945559,B.Papio_kindae_x_Papio_ursinus_griseipes,,,
+________________,ADD (reorganization),A.Papio,9554,><,2632072,B.unclassified_Papio,subtree=,,
+______________,KEEP,A.Theropithecus,9564,,9564,B.Theropithecus,subtree=,,monotypic
+______________,KEEP,A.Mandrillus,9567,,9567,B.Mandrillus,subtree=,,extension
+______________,KEEP,A.Miopithecus,36230,,36230,B.Miopithecus,subtree=,,extension
+______________,KEEP,A.Allenopithecus,54134,,54134,B.Allenopithecus,subtree=,,monotypic
+______________,KEEP,A.Lophocebus,75565,,75565,B.Lophocebus,subtree=,,extension
+______________,KEEP,A.Rungwecebus,371038,,371038,B.Rungwecebus,subtree=,,monotypic
+______________,KEEP,A.Chlorocebus,392815,,392815,B.Chlorocebus,,number_of_children,extension
+________________,KEEP,A.Chlorocebus_aethiops,9534,,9534,B.Chlorocebus_aethiops,subtree=,,extension
+________________,KEEP,A.Chlorocebus_pygerythrus,60710,,60710,B.Chlorocebus_pygerythrus,,number_of_children,extension
+__________________,KEEP,A.Chlorocebus_pygerythrus_pygerythrus,460674,,460674,B.Chlorocebus_pygerythrus_pygerythrus,,,name
+__________________,KEEP,A.Chlorocebus_pygerythrus_hilgerti,508712,,508712,B.Chlorocebus_pygerythrus_hilgerti,,,name
+__________________,ADD,,,,2269071,B.Chlorocebus_pygerythrus_x_Chlorocebus_aethiops,,,
+________________,KEEP,A.Chlorocebus_sabaeus,60711,,60711,B.Chlorocebus_sabaeus,,,name
+________________,KEEP,A.Chlorocebus_tantalus,60712,,60712,B.Chlorocebus_tantalus,subtree=,,monotypic
+________________,KEEP,A.Chlorocebus_cynosuros,460675,,460675,B.Chlorocebus_cynosuros,,,name
+________________,KEEP,A.Chlorocebus_djamdjamensis,1284215,,1284215,B.Chlorocebus_djamdjamensis,,,name
+________________,ADD,,,,1476079,B.Chlorocebus_aethiops_x_djamdjamensis,,,
+________________,ADD,,,,1903316,B.Chlorocebus_aethiops_x_Chlorocebus_pygerythrus,,,
+________________,ADD (reorganization),A.Chlorocebus,392815,><,2685534,B.unclassified_Chlorocebus,,,
+__________________,KEEP,A.Chlorocebus_sp._MAS-2011,1090918,,1090918,B.Chlorocebus_sp._MAS-2011,,,name
+__________________,KEEP,A.Chlorocebus_sp._TH-2013,1284216,,1284216,B.Chlorocebus_sp._TH-2013,,,name
+__________________,ADD,,,,2282232,B.Chlorocebus_sp._LDS-2018,,,
+______________,ADD (reorganization),A.Cercopithecus,9533,><,9533,B.Cercopithecus,,,
+________________,KEEP,A.Cercopithecus_cephus,9535,,9535,B.Cercopithecus_cephus,subtree=,,extension
+________________,KEEP,A.Cercopithecus_hamlyni,9536,,9536,B.Cercopithecus_hamlyni,subtree=,,monotypic
+________________,KEEP,A.Cercopithecus_ascanius,36223,,36223,B.Cercopithecus_ascanius,subtree=,,extension
+________________,KEEP,A.Cercopithecus_diana,36224,,36224,B.Cercopithecus_diana,,,name
+________________,KEEP,A.Cercopithecus_mitis,36225,,36225,B.Cercopithecus_mitis,subtree=,,extension
+________________,KEEP,A.Cercopithecus_mona,36226,,36226,B.Cercopithecus_mona,subtree=,,extension
+________________,KEEP,A.Cercopithecus_neglectus,36227,,36227,B.Cercopithecus_neglectus,,,name
+________________,KEEP,A.Cercopithecus_nictitans,36228,,36228,B.Cercopithecus_nictitans,subtree=,,extension
+________________,KEEP,A.Cercopithecus_petaurista,100487,,100487,B.Cercopithecus_petaurista,subtree=,,extension
+________________,KEEP,A.Cercopithecus_pogonias,102108,,102108,B.Cercopithecus_pogonias,subtree=,,extension
+________________,KEEP,A.Cercopithecus_erythrogaster,161496,,161496,B.Cercopithecus_erythrogaster,subtree=,,extension
+________________,KEEP,A.Cercopithecus_erythrotis,167130,,167130,B.Cercopithecus_erythrotis,subtree=,,extension
+________________,KEEP,A.Cercopithecus_wolfi,263448,,263448,B.Cercopithecus_wolfi,subtree=,,extension
+________________,KEEP,A.Cercopithecus_campbelli,303588,,303588,B.Cercopithecus_campbelli,subtree=,,monotypic
+________________,KEEP,A.Cercopithecus_albogularis,867370,,867370,B.Cercopithecus_albogularis,subtree=,,extension
+________________,KEEP,A.Cercopithecus_dryas,1137048,,1137048,B.Cercopithecus_dryas,,,name
+________________,KEEP,A.Cercopithecus_roloway,1137049,,1137049,B.Cercopithecus_roloway,,,name
+________________,KEEP,A.Cercopithecus_doggetti,1137474,,1137474,B.Cercopithecus_doggetti,,,name
+________________,KEEP,A.Cercopithecus_kandti,1137481,,1137481,B.Cercopithecus_kandti,,,name
+________________,KEEP,A.Cercopithecus_denti,1137511,,1137511,B.Cercopithecus_denti,,,name
+________________,KEEP,A.Cercopithecus_lomamiensis,1191211,,1191211,B.Cercopithecus_lomamiensis,,scientificName,name
+________________,ADD,,,,1579530,B.Cercopithecus_sclateri,,,
+________________,ADD (split),A.Cercopithecus_sp._WMS-2012,1144881,=,2618071,B.unclassified_Cercopithecus,subtree=,,
+______________,ADD (reorganization),A.Cercopithecus,9533,><,2059839,B.Allochrocebus,,,
+________________,KEEP,A.Cercopithecus_lhoesti,100224,,100224,B.Allochrocebus_lhoesti,,canonicalName,synonym+name
+________________,KEEP,A.Cercopithecus_preussi,147649,,147649,B.Allochrocebus_preussi,,canonicalName; scientificName,extension
+__________________,KEEP,A.Cercopithecus_preussi_insularis,1137512,,1137512,B.Allochrocebus_preussi_insularis,,canonicalName,synonym+name
+__________________,KEEP,A.Cercopithecus_preussi_preussi,1137513,,1137513,B.Allochrocebus_preussi_preussi,,canonicalName,synonym+name
+________________,KEEP,A.Cercopithecus_solatus,147650,,147650,B.Allochrocebus_solatus,,canonicalName; scientificName,synonym+name+synonym
+____________,KEEP,A.Colobinae,9569,,9569,B.Colobinae,,,extension
+______________,KEEP,A.Colobus,9570,,9570,B.Colobus,,number_of_children,extension
+________________,KEEP,A.Colobus_polykomos,9572,,9572,B.Colobus_polykomos,,,name
+________________,KEEP,A.Colobus_guereza,33548,,33548,B.Colobus_guereza,subtree=,,extension
+________________,KEEP,A.Colobus_angolensis,54131,,54131,B.Colobus_angolensis,subtree=,,monotypic
+________________,KEEP,A.Colobus_vellerosus,378195,,378195,B.Colobus_vellerosus,,,name
+________________,KEEP,A.Colobus_vellerosus_x_angolensis,378196,,378196,B.Colobus_vellerosus_x_angolensis,,,name
+________________,KEEP,A.Colobus_satanas,517012,,517012,B.Colobus_satanas,subtree=,,monotypic
+________________,ADD (reorganization),A.Colobus,9570,><,2618863,B.unclassified_Colobus,subtree=,,
+______________,KEEP,A.Presbytis,9573,,9573,B.Presbytis,,,extension
+________________,KEEP,A.Presbytis_senex,66055,,66055,B.Presbytis_senex,,,name
+________________,KEEP,A.Presbytis_melalophos,78451,,78451,B.Presbytis_melalophos,,,extension
+__________________,KEEP,A.Presbytis_melalophos_mitrata,272115,,272115,B.Presbytis_melalophos_mitrata,,,name
+__________________,KEEP,A.Presbytis_melalophos_bicolor,1046095,,1046095,B.Presbytis_melalophos_bicolor,,,name
+__________________,KEEP,A.Presbytis_melalophos_melalophos,1046096,,1046096,B.Presbytis_melalophos_melalophos,,,name
+__________________,KEEP,A.Presbytis_melalophos_sumatranus,1046097,,1046097,B.Presbytis_melalophos_sumatranus,,,name
+________________,KEEP,A.Presbytis_comata,78452,,78452,B.Presbytis_comata,subtree=,,extension
+________________,KEEP,A.Presbytis_femoralis,78453,,78453,B.Presbytis_femoralis,,number_of_children,name
+__________________,ADD,,,,1840579,B.Presbytis_femoralis_femoralis,,,
+________________,KEEP,A.Presbytis_chrysomelas,1046090,,1046090,B.Presbytis_chrysomelas,,,name
+________________,KEEP,A.Presbytis_frontata,1046092,,1046092,B.Presbytis_frontata,,,name
+________________,KEEP,A.Presbytis_hosei,1046093,,1046093,B.Presbytis_hosei,subtree=,,monotypic
+________________,KEEP,A.Presbytis_potenziani,1046098,,1046098,B.Presbytis_potenziani,subtree=,,extension
+________________,KEEP,A.Presbytis_rubicunda,1046101,,1046101,B.Presbytis_rubicunda,subtree=,,monotypic
+________________,KEEP,A.Presbytis_thomasi,1046103,,1046103,B.Presbytis_thomasi,,,name
+______________,KEEP,A.Nasalis,43779,,43779,B.Nasalis,subtree=,,monotypic
+______________,KEEP,A.Pygathrix,54132,,54132,B.Pygathrix,subtree=,,extension
+______________,KEEP,A.Trachypithecus,54136,,54136,B.Trachypithecus,,number_of_children,extension
+________________,KEEP,A.Trachypithecus_vetulus,54137,,54137,B.Trachypithecus_vetulus,subtree=,,monotypic
+________________,KEEP,A.Trachypithecus_francoisi,54180,,54180,B.Trachypithecus_francoisi,subtree=,,monotypic
+________________,KEEP,A.Trachypithecus_obscurus,54181,,54181,B.Trachypithecus_obscurus,,,name
+________________,KEEP,A.Trachypithecus_phayrei,61618,,61618,B.Trachypithecus_phayrei,subtree=,,extension
+________________,KEEP,A.Trachypithecus_johnii,66063,,66063,B.Trachypithecus_johnii,,,name
+________________,KEEP,A.Trachypithecus_cristatus,122765,,122765,B.Trachypithecus_cristatus,,,name
+________________,KEEP,A.Trachypithecus_geei,164650,,164650,B.Trachypithecus_geei,,,name
+________________,KEEP,A.Trachypithecus_pileatus,164651,,164651,B.Trachypithecus_pileatus,,,name
+________________,KEEP,A.Trachypithecus_auratus,222416,,222416,B.Trachypithecus_auratus,subtree=,,extension
+________________,KEEP,A.Trachypithecus_germaini,271260,,271260,B.Trachypithecus_germaini,,,name
+________________,KEEP,A.Trachypithecus_barbei,271261,,271261,B.Trachypithecus_barbei,,,name
+________________,KEEP,A.Trachypithecus_delacouri,465717,,465717,B.Trachypithecus_delacouri,,,name
+________________,KEEP,A.Trachypithecus_laotum,465718,,465718,B.Trachypithecus_laotum,,,name
+________________,KEEP,A.Trachypithecus_poliocephalus,465719,,465719,B.Trachypithecus_poliocephalus,subtree=,,extension
+________________,KEEP,A.Trachypithecus_francoisi_x_poliocephalus,744437,,744437,B.Trachypithecus_francoisi_x_poliocephalus,,,name
+________________,KEEP,A.Trachypithecus_hatinhensis,867383,,867383,B.Trachypithecus_hatinhensis,,,name
+________________,KEEP,A.Trachypithecus_shortridgei,1042121,,1042121,B.Trachypithecus_shortridgei,,,name
+________________,ADD,,,,1966384,B.Trachypithecus_mauritius,,,
+________________,ADD (split),A.Trachypithecus_sp.,580599,=,2623509,B.unclassified_Trachypithecus,subtree=,,
+______________,KEEP,A.Semnopithecus,88028,,88028,B.Semnopithecus,,number_of_children,extension
+________________,DELETE (conflict),A.Semnopithecus_entellus,88029,><,88028,B.Semnopithecus,,,
+________________,KEEP,A.Semnopithecus_entellus_priam,272117,,1208733,B.Semnopithecus_priam,,taxonRank; NCBI Taxonomy ID; canonicalName,synonym+name
+________________,KEEP,A.Semnopithecus_hector,867382,,867382,B.Semnopithecus_hector,,,name
+________________,DELETE (merge),A.Semnopithecus_priam,1208733,=,1208733,B.Semnopithecus_priam,,,
+________________,KEEP,A.Semnopithecus_hypoleucos,1208734,,1208734,B.Semnopithecus_hypoleucos,,,name
+________________,ADD (split),A.Semnopithecus_entellus_entellus,867381,=,88029,B.Semnopithecus_entellus,subtree=,,
+________________,ADD,,,,2632571,B.unclassified_Semnopithecus,,,
+__________________,ADD,,,,1778600,B.Semnopithecus_sp.,,,
+______________,KEEP,A.Procolobus,164647,,164647,B.Procolobus,,,monotypic
+________________,KEEP,A.Procolobus_verus,373033,,373033,B.Procolobus_verus,,,name
+______________,KEEP,A.Rhinopithecus,542827,,542827,B.Rhinopithecus,,number_of_children,extension
+________________,KEEP,A.Rhinopithecus_bieti,61621,,61621,B.Rhinopithecus_bieti,,,name
+________________,KEEP,A.Rhinopithecus_roxellana,61622,,61622,B.Rhinopithecus_roxellana,,,name
+________________,KEEP,A.Rhinopithecus_avunculus,66062,,66062,B.Rhinopithecus_avunculus,,,name
+________________,KEEP,A.Rhinopithecus_brelichi,224329,,224329,B.Rhinopithecus_brelichi,,,name
+________________,KEEP,A.Rhinopithecus_bieti_1_RL-2012,1194334,,1194334,B.Rhinopithecus_bieti_1_RL-2012,,,name
+________________,KEEP,A.Rhinopithecus_bieti_2_RL-2012,1194335,,1194335,B.Rhinopithecus_bieti_2_RL-2012,,,name
+________________,KEEP,A.Rhinopithecus_strykeri,1194336,,1194336,B.Rhinopithecus_strykeri,,,name
+________________,ADD,,,,2644350,B.unclassified_Rhinopithecus,,,
+__________________,ADD,,,,1859147,B.Rhinopithecus_sp.,,,
+______________,KEEP,A.Piliocolobus,591932,,591932,B.Piliocolobus,subtree=,,extension
+______________,KEEP,A.Simias,1203020,,1203020,B.Simias,subtree=,,monotypic
+____________,KEEP,A.Cercopithecidae_gen._sp.,9576,,9576,B.Cercopithecidae_gen._sp.,,,name
+________,KEEP,A.Hominoidea,314295,,314295,B.Hominoidea,,,extension
+__________,KEEP,A.Hylobatidae,9577,,9577,B.Hylobatidae,,,extension
+____________,KEEP,A.Hylobates,9578,,9578,B.Hylobates,,number_of_children,extension
+______________,KEEP,A.Hylobates_agilis,9579,,9579,B.Hylobates_agilis,subtree=,,extension
+______________,KEEP,A.Hylobates_lar,9580,,9580,B.Hylobates_lar,subtree=,,extension
+______________,KEEP,A.Hylobates_klossii,9587,,9587,B.Hylobates_klossii,,,name
+______________,KEEP,A.Hylobates_muelleri,9588,,9588,B.Hylobates_muelleri,subtree=,,extension
+______________,KEEP,A.Hylobates_pileatus,9589,,9589,B.Hylobates_pileatus,,,name
+______________,KEEP,A.Hylobates_moloch,81572,,81572,B.Hylobates_moloch,,,name
+______________,KEEP,A.Hylobates_alibarbis,716691,,716691,B.Hylobates_albibarbis,,canonicalName; scientificName,synonym+name+synonym
+______________,ADD (reorganization),A.Hylobates,9578,><,2647113,B.unclassified_Hylobates,,,
+________________,KEEP,A.Hylobates_sp.,9581,,9581,B.Hylobates_sp.,,,name
+________________,KEEP,A.Hylobates_sp._TIB-201,150249,,150249,B.Hylobates_sp._TIB-201,,,name
+________________,KEEP,A.Hylobates_sp._IGL-2004,280856,,280856,B.Hylobates_sp._IGL-2004,,,name
+________________,KEEP,A.Hylobates_sp._AMA-2004,288892,,288892,B.Hylobates_sp._AMA-2004,,,name
+________________,KEEP,A.Hylobates_sp._ECACC_MLA144,419588,,419588,B.Hylobates_sp._ECACC_MLA144,,,name
+________________,KEEP,A.Hylobates_sp._PS-2007,425245,,425245,B.Hylobates_sp._PS-2007,,,name
+________________,ADD,,,,2023128,B.Hylobates_sp._OH-2017,,,
+____________,KEEP,A.Nomascus,325165,,325165,B.Nomascus,,number_of_children,extension
+______________,KEEP,A.Nomascus_siki,9586,,9586,B.Nomascus_siki,,,name
+______________,KEEP,A.Nomascus_concolor,29089,,29089,B.Nomascus_concolor,subtree=,,extension
+______________,KEEP,A.Nomascus_gabriellae,61852,,61852,B.Nomascus_gabriellae,,,name
+______________,KEEP,A.Nomascus_leucogenys,61853,,61853,B.Nomascus_leucogenys,,,name
+______________,KEEP,A.Nomascus_nasutus,327374,,327374,B.Nomascus_nasutus,,,name
+______________,KEEP,A.Nomascus_hainanus,693984,,693984,B.Nomascus_hainanus,,,name
+______________,ADD,,,,1616038,B.Nomascus_annamensis,,,
+______________,ADD,,,,2170372,B.Nomascus_gabriellae_x_Nomascus_siki,,,
+______________,ADD,,,,2170373,B.Nomascus_leucogenys_x_Nomascus_siki,,,
+______________,ADD,,,,2170374,B.Nomascus_cf._leucogenys_SSH-2018,,,
+____________,KEEP,A.Symphalangus,325166,,325166,B.Symphalangus,subtree=,,monotypic
+____________,KEEP,A.Hoolock,325167,,325167,B.Hoolock,,number_of_children,extension
+______________,KEEP,A.Hoolock_hoolock,61851,,61851,B.Hoolock_hoolock,,,name
+______________,KEEP,A.Hoolock_leuconedys,593543,,593543,B.Hoolock_leuconedys,,,name
+______________,ADD,,,,1934190,B.Hoolock_tianxing,,,
+______________,ADD,,,,1934191,B.Hoolock_leuconedys_x_Hoolock_tianxing,,,
+__________,KEEP,A.Hominidae,9604,,9604,B.Hominidae,,,extension
+____________,KEEP,A.Homininae,207598,,207598,B.Homininae,,,extension
+______________,KEEP,A.Gorilla,9592,,9592,B.Gorilla,subtree=,,extension
+______________,KEEP,A.Pan,9596,,9596,B.Pan,subtree=,,extension
+______________,KEEP,A.Homo,9605,,9605,B.Homo,,,extension
+________________,KEEP,A.Homo_sapiens,9606,,9606,B.Homo_sapiens,,,extension
+__________________,KEEP,A.Homo_sapiens_neanderthalensis,63221,,63221,B.Homo_sapiens_neanderthalensis,,,name
+__________________,KEEP,A.Homo_sapiens_ssp._Denisova,741158,,741158,B.Homo_sapiens_subsp._'Denisova',,canonicalName,synonym+name+synonym
+________________,KEEP,A.Homo_heidelbergensis,1425170,,1425170,B.Homo_heidelbergensis,,,name
+____________,KEEP,A.Ponginae,607660,,607660,B.Ponginae,,,monotypic
+______________,KEEP,A.Pongo,9599,,9599,B.Pongo,,number_of_children,extension
+________________,KEEP,A.Pongo_pygmaeus,9600,,9600,B.Pongo_pygmaeus,subtree=,,monotypic
+________________,DELETE (merge),A.Pongo_abelii,9601,=,9600,B.Pongo_pygmaeus,,,
+________________,KEEP,A.Pongo_abelii_x_pygmaeus,502961,,502961,B.Pongo_abelii_x_pygmaeus,,,name
+________________,ADD (split),A.Pongo_pygmaeus,9600,=,9601,B.Pongo_abelii,,,
+________________,ADD,,,,2051901,B.Pongo_tapanuliensis,,,
+________________,ADD (split),A.Pongo_sp.,9603,=,2624844,B.unclassified_Pongo,subtree=,,
+____,KEEP,A.Tarsiiformes,376912,,376912,B.Tarsiiformes,,,monotypic
+______,KEEP,A.Tarsiidae,9475,,9475,B.Tarsiidae,,number_of_children,extension
+________,DELETE (merge),A.Tarsius,9476,=,9475,B.Tarsiidae,,,
+________,ADD (reorganization),A.Tarsius,9476,><,9476,B.Tarsius,,,
+__________,KEEP,A.Tarsius_dentatus,449501,,449501,B.Tarsius_dentatus,,,name
+__________,KEEP,A.Tarsius_lariang,630277,,630277,B.Tarsius_lariang,,,name
+__________,KEEP,A.Tarsius_dentatus_x_lariang,642591,,642591,B.Tarsius_dentatus_x_lariang,,,name
+__________,KEEP,A.Tarsius_tarsier,662464,,662464,B.Tarsius_tarsier,,,name
+__________,KEEP,A.Tarsius_sangirensis,905053,,905053,B.Tarsius_sangirensis,,,name
+__________,KEEP,A.Tarsius_wallacei,981131,,981131,B.Tarsius_wallacei,,,name
+__________,ADD,,,,1748400,B.Tarsius_fuscus,,,
+__________,ADD (reorganization),A.Tarsius,9476,><,2624233,B.unclassified_Tarsius,,,
+____________,KEEP,A.Tarsius_sp.,30612,,30612,B.Tarsius_sp.,,,name
+____________,KEEP,A.Tarsius_sp._FFA-2009a,662655,,662655,B.Tarsius_sp._FFA-2009a,,,name
+____________,ADD,,,,1748402,B.Tarsius_sp._CD-2015,,,
+________,ADD (split),A.Tarsius_syrichta,9478,=,1868481,B.Carlito,,,
+__________,KEEP,A.Tarsius_syrichta,9478,,1868482,B.Carlito_syrichta,,NCBI Taxonomy ID; canonicalName,synonym+name+synonym
+________,ADD (split),A.Tarsius_bancanus,9477,=,1971489,B.Cephalopachus,,,
+__________,KEEP,A.Tarsius_bancanus,9477,,9477,B.Cephalopachus_bancanus,,number_of_children; canonicalName; scientificName,synonym+name+synonym
+____________,ADD,,,,1971490,B.Cephalopachus_bancanus_bancanus,,,
+____________,ADD,,,,2567999,B.Cephalopachus_bancanus_borneanus,,,

@@ -15,13 +15,13 @@ import merge
 
 # A is lower priority, B is higher
 
-def main(c1, c1_tag, c2, c2_tag, share_ids, out, format):
+def main(c1, c1_tag, c2, c2_tag, out, format):
   A = cl.read_checklist(c1, c1_tag + ".", "low-checklist")
   B = cl.read_checklist(c2, c2_tag + ".", "high-checklist")
   print ("Node counts:", len(A.get_all_nodes()), len(B.get_all_nodes()))
-  write_report(A, B, share_ids, format, out)
+  write_report(A, B, format, out)
 
-def write_report(A, B, share_ids, format, outpath):
+def write_report(A, B, format, outpath):
   if outpath == "-":
     really_write_report(A, B, format, sys.stdout)
   else:
@@ -171,7 +171,6 @@ if __name__ == '__main__':
   parser.add_argument('--out', help='file name for report', default='diff.csv')
   parser.add_argument('--format', help='report format', default='ad-hoc')
   args = parser.parse_args()
-  alignment.shared_idspace = args.share_ids
   main(args.low, args.low_tag, args.high, args.high_tag,
-       args.share_ids, args.out, args.format)
+       args.out, args.format)
 
