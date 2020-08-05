@@ -52,7 +52,7 @@ $(B)/primates.csv: src/subset_dwc.py $(B)/converted.csv
 
 $(C)/primates.csv: src/subset_dwc.py $(C)/dump/Taxon.tsv
 	python3 src/subset_dwc.py $(C)/dump/Taxon.tsv 798 --out $@
-foo: $(C)/primates.csv
+p: $(C)/primates.csv
 
 SOURCES=src/report.py src/alignment.py src/articulation.py src/relation.py src/checklist.py src/diff.py src/merge.py src/eulerx.py
 
@@ -84,3 +84,41 @@ gbif: $(WORK)/ncbi-gbif.csv
 
 test:
 	python3 src/report.py "(l(pab)c)" "(l(qab)c)" --out -
+
+
+# ----------------------------------------------------------------------
+
+# Trillium
+
+$(A)/trillium.csv: src/subset_dwc.py $(A)/converted.csv
+	python3 src/subset_dwc.py $(A)/converted.csv 49674 --out $@
+
+$(B)/trillium.csv: src/subset_dwc.py $(B)/converted.csv
+	python3 src/subset_dwc.py $(B)/converted.csv 49674 --out $@
+
+$(C)/trillium.csv: src/subset_dwc.py $(C)/dump/Taxon.tsv
+	python3 src/subset_dwc.py $(C)/dump/Taxon.tsv 2742182 --out $@
+
+$(WORK)/trillium-ncbi-2015-2020.csv: $(SOURCES) $(A)/trillium.csv $(B)/trillium.csv
+	python3 src/report.py $(A)/trillium.csv $(B)/trillium.csv \
+	  --out $@.new 
+	mv $@.new $@
+t: $(WORK)/trillium-ncbi-2015-2020.csv
+
+
+$(A)/mag.csv: src/subset_dwc.py $(A)/converted.csv
+	python3 src/subset_dwc.py $(A)/converted.csv 3401 --out $@
+
+$(B)/mag.csv: src/subset_dwc.py $(B)/converted.csv
+	python3 src/subset_dwc.py $(B)/converted.csv 3401 --out $@
+
+$(C)/mag.csv: src/subset_dwc.py $(C)/dump/Taxon.tsv
+	python3 src/subset_dwc.py $(C)/dump/Taxon.tsv 4690 --out $@
+
+$(WORK)/mag-ncbi-2015-2020.csv: $(SOURCES) $(A)/mag.csv $(B)/mag.csv
+	python3 src/report.py $(A)/mag.csv $(B)/mag.csv \
+	  --out $@.new 
+	mv $@.new $@
+
+m: $(WORK)/mag-ncbi-2015-2020.csv
+
