@@ -1,22 +1,8 @@
-jar@corvus:~/g/cldiff$ make gbif
-python3 src/ncbi_to_dwc.py work/ncbi/2020-01-01/dump --out work/ncbi/2020-01-01/converted.csv
-2211727 accepteds
-3127117 names
-55969 merged
-2211727 canonicalNames (NCBI scientific names)
-407483 scientificNames (NCBI authorities)
-CSV
-Writing work/ncbi/2020-01-01/converted.csv
-python3 src/subset_dwc.py work/ncbi/2020-01-01/converted.csv 9443 --out work/ncbi/2020-01-01/primates.csv
-CSV
-Header row: ['taxonID', 'NCBI Taxonomy ID', 'parentNameUsageID', 'taxonRank', 'acceptedNameUsageID', 'scientificName', 'canonicalName', 'taxonomicStatus', 'nomenclaturalStatus']
-Nodes with children: 190794
-Nodes in subset: 968
-CSV
-CSV
-python3 src/report.py work/ncbi/2020-01-01/primates.csv --left-tag=B \
-		      work/gbif/2019-09-16/primates.csv --right-tag=C --out work/ncbi-gbif.csv.new
-No such property: number_of_synonyms
+jar@corvus:~/g/cldiff$ make publish
+python3 src/report.py work/ncbi/2020-01-01/primates.csv --low-tag=B \
+		      work/gbif/2019-09-16/primates.csv --high-tag=C --out work/ncbi-gbif.csv.new
+** Parameters , " 0
+** Parameters , " 0
 No such property: datasetID
 No such property: originalNameUsageID
 No such property: genericName
@@ -27,115 +13,107 @@ No such property: kingdom
 No such property: phylum
 No such property: class
 No such property: order
-Node counts: 2079 7459
+Node counts: 2079 5073
 Preparing: work/ncbi-gbif.csv.new
-# Number of particles: 496
-# Number of cross-mrcas: 3139
+# Number of particles: 488
+# Number of cross-mrcas: 3127
 # bailing out, forest
 # C.Lemuridae conflicts with B.Lemuriformes because:
-#   child B.Indriidae is disjoint while another child isn't
+#   child B.Indriidae is disjoint while B.Lemuridae isn't
 # C.Atelidae conflicts with B.Platyrrhini because:
-#   child B.Cebidae is disjoint while another child isn't
+#   child B.Cebidae is disjoint while B.Atelidae isn't
 # C.Lagothrix_lagothricha conflicts with B.Lagothrix because:
-#   child B.Lagothrix_flavicauda is disjoint while another child isn't
+#   child B.Lagothrix_poeppigii is disjoint while B.Lagothrix_lugens isn't
 # C.Pitheciidae conflicts with B.Pitheciidae because:
-#   child B.Xenothricinae is disjoint while another child isn't
+#   child B.Callicebinae is disjoint while B.Pitheciinae isn't
 # C.Plecturocebus conflicts with B.Callicebinae because:
-#   child B.Callicebus is disjoint while another child isn't
+#   child B.Callicebus is disjoint while B.Plecturocebus isn't
 # C.Callicebus conflicts with B.Callicebus because:
-#   child B.Callicebus_caquetensis is disjoint while another child isn't
+#   child B.Callicebus_coimbrai is disjoint while B.Callicebus_personatus isn't
 # C.Cercopithecidae conflicts with B.Cercopithecidae because:
-#   child B.Cercopithecinae is disjoint while another child isn't
+#   child B.Cercopithecinae is disjoint while none isn't
 # C.Trachypithecus conflicts with B.Trachypithecus because:
-#   child B.Trachypithecus_vetulus is disjoint while another child isn't
+#   child B.Trachypithecus_vetulus is disjoint while B.Trachypithecus_francoisi isn't
 # C.Trachypithecus_phayrei conflicts with B.Trachypithecus because:
-#   child B.Trachypithecus_vetulus is disjoint while another child isn't
+#   child B.Trachypithecus_vetulus is disjoint while B.Trachypithecus_barbei isn't
 # C.Cercocebus_torquatus conflicts with B.Cercocebus because:
-#   child B.Cercocebus_atys is disjoint while another child isn't
+#   child B.Cercocebus_atys is disjoint while B.Cercocebus_torquatus isn't
 # C.Macaca_nemestrina conflicts with B.Macaca because:
-#   child B.Macaca_arctoides is disjoint while another child isn't
+#   child B.Macaca_arctoides is disjoint while B.Macaca_nemestrina isn't
 # C.Semnopithecus conflicts with B.Colobinae because:
-#   child B.Colobus is disjoint while another child isn't
-# C.Callitrichidae conflicts with B.Cebidae because:
-#   child B.Callitrichinae is disjoint while another child isn't
-# C.Callithrix#2436453 conflicts with B.Cebidae because:
-#   child B.Callitrichinae is disjoint while another child isn't
+#   child B.Colobus is disjoint while B.Semnopithecus isn't
 # C.Loris_lydekkerianus conflicts with B.Loris because:
-#   child B.Loris_tardigradus is disjoint while another child isn't
+#   child B.Loris_tardigradus is disjoint while none isn't
 # C.Loris_tardigradus conflicts with B.Loris because:
-#   child B.Loris_tardigradus is disjoint while another child isn't
+#   child B.Loris_tardigradus is disjoint while none isn't
 # C.Cebidae conflicts with B.Simiiformes because:
-#   child B.Platyrrhini is disjoint while another child isn't
-# C.Cebus conflicts with B.Cebus because:
-#   child B.Cebus_albifrons is disjoint while another child isn't
+#   child B.Platyrrhini is disjoint while none isn't
 # bailing out, forest
 # B.Strepsirrhini conflicts with C.Primates because:
-#   child C.Callithricidae is disjoint while another child isn't
+#   child C.Callithricidae is disjoint while C.Galagonidae isn't
 # B.Lemuriformes conflicts with C.Primates because:
-#   child C.Galagonidae is disjoint while another child isn't
+#   child C.Galagonidae is disjoint while C.Lemuridae isn't
 # B.Lemuridae conflicts with C.Lemuridae because:
-#   child C.Megaladapis is disjoint while another child isn't
+#   child C.Hapalemur is disjoint while C.Eulemur#2436417 isn't
 # B.Hapalemur_griseus conflicts with C.Hapalemur because:
-#   child C.Hapalemur_occidentalis is disjoint while another child isn't
+#   child C.Hapalemur_occidentalis is disjoint while C.Hapalemur_meridionalis isn't
 # B.Lepilemuridae conflicts with C.Primates because:
-#   child C.Galagonidae is disjoint while another child isn't
+#   child C.Galagonidae is disjoint while C.Lepilemuridae isn't
 # B.Lorisiformes conflicts with C.Primates because:
-#   child C.Callithricidae is disjoint while another child isn't
+#   child C.Callithricidae is disjoint while C.Galagonidae isn't
 # B.Loris_tardigradus conflicts with C.Loris because:
-#   child C.Loris_lydekkerianus is disjoint while another child isn't
+#   child C.Loris_lydekkerianus is disjoint while none isn't
 # B.Loris_lydekkerianus conflicts with C.Loris because:
-#   child C.Loris_lydekkerianus is disjoint while another child isn't
+#   child C.Loris_lydekkerianus is disjoint while none isn't
 # B.Haplorrhini conflicts with C.Primates because:
-#   child C.Galagonidae is disjoint while another child isn't
+#   child C.Galagonidae is disjoint while C.Callithricidae isn't
 # B.Simiiformes conflicts with C.Primates because:
-#   child C.Galagonidae is disjoint while another child isn't
+#   child C.Galagonidae is disjoint while C.Callithricidae isn't
 # B.Platyrrhini conflicts with C.Primates because:
-#   child C.Galagonidae is disjoint while another child isn't
+#   child C.Galagonidae is disjoint while C.Callithricidae isn't
 # B.Cebidae conflicts with C.Primates because:
-#   child C.Galagonidae is disjoint while another child isn't
-# B.Cebinae conflicts with C.Primates because:
-#   child C.Galagonidae is disjoint while another child isn't
-# B.Cebus conflicts with C.Primates because:
-#   child C.Galagonidae is disjoint while another child isn't
+#   child C.Galagonidae is disjoint while C.Callithricidae isn't
+# B.Cebinae conflicts with C.Cebidae because:
+#   child C.Saimiri is disjoint while C.Cebus isn't
 # B.Pitheciidae conflicts with C.Primates because:
-#   child C.Galagonidae is disjoint while another child isn't
+#   child C.Galagonidae is disjoint while C.Pitheciidae isn't
 # B.Pitheciinae conflicts with C.Pitheciidae because:
-#   child C.Cheracebus is disjoint while another child isn't
+#   child C.Cheracebus is disjoint while C.Pithecia isn't
 # B.Callicebinae conflicts with C.Pitheciidae because:
-#   child C.Pithecia is disjoint while another child isn't
+#   child C.Pithecia is disjoint while C.Cheracebus isn't
 # B.Callicebus conflicts with C.Pitheciidae because:
-#   child C.Pithecia is disjoint while another child isn't
+#   child C.Pithecia is disjoint while C.Callicebus isn't
 # B.Plecturocebus conflicts with C.Plecturocebus because:
-#   child C.Plecturocebus_ornatus is disjoint while another child isn't
+#   child C.Plecturocebus_grovesi is disjoint while C.Plecturocebus_vieirai isn't
 # B.Atelidae conflicts with C.Atelidae because:
-#   child C.Xenothrix is disjoint while another child isn't
+#   child C.Xenothrix is disjoint while C.Brachyteles isn't
 # B.Alouatta_seniculus conflicts with C.Alouatta because:
-#   child C.Alouatta_sara is disjoint while another child isn't
+#   child C.Alouatta_sara is disjoint while C.Alouatta_macconnelli#7913455 isn't
 # B.Atelinae conflicts with C.Atelidae because:
-#   child C.Xenothrix is disjoint while another child isn't
+#   child C.Xenothrix is disjoint while C.Brachyteles isn't
 # B.Catarrhini conflicts with C.Primates because:
-#   child C.Galagonidae is disjoint while another child isn't
+#   child C.Galagonidae is disjoint while C.Hylobatidae isn't
 # B.Cercopithecoidea conflicts with C.Primates because:
-#   child C.Galagonidae is disjoint while another child isn't
+#   child C.Galagonidae is disjoint while C.Cercopithecidae isn't
 # B.Cercopithecidae conflicts with C.Primates because:
-#   child C.Galagonidae is disjoint while another child isn't
+#   child C.Galagonidae is disjoint while C.Cercopithecidae isn't
 # B.Cercopithecinae conflicts with C.Primates because:
-#   child C.Galagonidae is disjoint while another child isn't
+#   child C.Galagonidae is disjoint while none isn't
 # B.Colobinae conflicts with C.Primates because:
-#   child C.Galagonidae is disjoint while another child isn't
+#   child C.Galagonidae is disjoint while C.Presbytis#7237060 isn't
 # B.Trachypithecus conflicts with C.Cercopithecidae because:
-#   child C.Rhinopithecus is disjoint while another child isn't
+#   child C.Rhinopithecus is disjoint while C.Trachypithecus isn't
 # B.Trachypithecus_phayrei conflicts with C.Trachypithecus because:
-#   child C.Trachypithecus_hatinhensis is disjoint while another child isn't
+#   child C.Trachypithecus_hatinhensis is disjoint while C.Trachypithecus_crepusculus isn't
 # B.Semnopithecus conflicts with C.Semnopithecus because:
-#   child C.Semnopithecus_vetulus is disjoint while another child isn't
+#   child C.Semnopithecus_hypoleucos is disjoint while C.Semnopithecus_priam isn't
 # B.Hominoidea conflicts with C.Primates because:
-#   child C.Galagonidae is disjoint while another child isn't
+#   child C.Galagonidae is disjoint while C.Hylobatidae isn't
 # B.Homininae conflicts with C.Hominidae because:
-#   child C.Pongo#5219531 is disjoint while another child isn't
-# Number of articulations in alignment: 1445
+#   child C.Pongo#5219531 is disjoint while C.Pan isn't
+# Number of articulations in alignment: 1429
 # Number of roots in merge: 1
-# Number of non-roots in merge: 3019
-# Changed status: 3020, changed: 739
+# Number of non-roots in merge: 3026
+# Changed status: 3027, changed: 737
 mv work/ncbi-gbif.csv.new work/ncbi-gbif.csv
-jar@corvus:~/g/cldiff$ 
+cp -p work/ncbi-gbif.csv doc/ncbi-gbif.csv
