@@ -16,8 +16,8 @@ import merge
 # A is lower priority, B is higher
 
 def main(c1, c1_tag, c2, c2_tag, share_ids, out, format):
-  A = cl.read_checklist(c1, c1_tag + ".", "left-checklist")
-  B = cl.read_checklist(c2, c2_tag + ".", "right-checklist")
+  A = cl.read_checklist(c1, c1_tag + ".", "low-checklist")
+  B = cl.read_checklist(c2, c2_tag + ".", "high-checklist")
   print ("Node counts:", len(A.get_all_nodes()), len(B.get_all_nodes()))
   write_report(A, B, share_ids, format, out)
 
@@ -164,15 +164,14 @@ def find_changed_merged_subtrees(roots, children, all_props):
 
 if __name__ == '__main__':
   parser = argparse.ArgumentParser()
-  parser.add_argument('left', help='A checklist')    # Lower priority
-  parser.add_argument('right', help='B checklist')   # Higher priority
-  parser.add_argument('--left-tag', default="A")
-  parser.add_argument('--right-tag', default="B")
-  parser.add_argument('--share_ids', default=False)
+  parser.add_argument('low', help='lower priority checklist')
+  parser.add_argument('high', help='higher priority checklist')
+  parser.add_argument('--low-tag', default="A")
+  parser.add_argument('--high-tag', default="B")
   parser.add_argument('--out', help='file name for report', default='diff.csv')
   parser.add_argument('--format', help='report format', default='ad-hoc')
   args = parser.parse_args()
   alignment.shared_idspace = args.share_ids
-  main(args.left, args.left_tag, args.right, args.right_tag,
+  main(args.low, args.low_tag, args.high, args.high_tag,
        args.share_ids, args.out, args.format)
 

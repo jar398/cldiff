@@ -288,15 +288,15 @@ disjointness in the hierarchies.  But the other three RCC-5 relations
 all express useful information that cannot be derived from equivalence
 articulations.
 
-We obtain an articulation (a, <, b) when the a taxon "splits" the b
-taxon: in a merged checklist, b ought to be the parent of a.  In a
-split, the a taxon is maximal, so (a', <, b) shouldn't go in the
-alignment if a' is an ancestor or a descendant of a.
+We obtain an articulation (a, >, b) when the high priority taxon b "splits" the 
+low priority taxon a.  In the merged checklist, b is the parent of a.  In a
+split, b is maximal, so (a, >, b') shouldn't go in the
+alignment if b' is a descendant of b.
 
-Also useful is the articulation (a, <>, b) where a is maximal (in the
+Also useful is the articulation (a, ><, b) where a is maximal (in the
 same manner as above).  This says that the low priority node a cannot
-be included in a merged checklist because it is incompatible with a
-high priority node.
+be included in a merged checklist because it is inconsistent with a
+hierarchy containing the high priority node.
 
 ## Merge
 
@@ -320,6 +320,8 @@ inverted to obtain the set of children of each node in the merged hierarchy.
 
 All outputs are driven off the merged hierarchy.
 
+[2020-08-04 TBD: only the diff report is ready right now.]
+
 ### Diff
 
 The output is an abridged version of the merged hierarchy in a human readable CSV form.
@@ -333,7 +335,7 @@ taxonomic action.  This can result in a substantially smaller file.
 
 The output is simply the articulations of the alignment, with reversals removed (there is no reason to have both x = y and y = x).
 
-[2020-08-04 TBD: Need to render the two checklists in Euler/X taxonomy format.]
+[2020-08-04 TBD: Also need to render the two checklists in Euler/X taxonomy format.]
 
 ### 'Underlay' - adding low-priority nodes to high-priority checklist
 
