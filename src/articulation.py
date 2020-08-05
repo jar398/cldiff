@@ -15,9 +15,9 @@ import diff
 
 Articulation = \
   collections.namedtuple('Articulation',
-                         ['dom', 'cod', 'relation', 'factors', 'diff'])
+                         ['dom', 'cod', 'relation', 'factors', 'reason', 'diff'])
 
-def _articulation(dom, cod, re, factors = None):
+def _articulation(dom, cod, re, factors = None, reason = None):
   assert dom > 0
   assert cod > 0
   assert re
@@ -27,17 +27,14 @@ def _articulation(dom, cod, re, factors = None):
     dif = diff.differences(dom, cod)
   if factors == None: factors = []
   assert isinstance(factors, list)
-  ar = Articulation(dom, cod, re, factors, dif)
+  ar = Articulation(dom, cod, re, factors, reason, dif)
   if len(factors) == 0: factors.append(ar)
   return ar
 
 def express(ar):
   return "%s %s %s" % (cl.get_unique(ar.dom),
-                            ar.relation.name,
-                            cl.get_unique(ar.cod))
-
-def identity(node):
-  return _articulation(node, node, rel.eq)
+                       ar.relation.name,
+                       cl.get_unique(ar.cod))
 
 def compose(p, q):
   if not composable(p, q):
@@ -49,7 +46,8 @@ def compose(p, q):
   return _articulation(p.dom,
                        q.cod,
                        rel.compose(p.relation, q.relation),
-                       p.factors + q.factors)
+                       p.factors + q.factors,
+                       p.reason + "+" + q.reason)
 
 def composable(p, q):
   return (p.cod == q.dom and
@@ -72,7 +70,8 @@ def get_comment(art):
 
 def reverse(art):
   f = list(reversed(art.factors))
-  return _articulation(art.cod, art.dom, rel.reverse(art.relation), f)
+  return _articulation(art.cod, art.dom, rel.reverse(art.relation), f,
+                       art.reason)    # Reason
 
 def is_identity(art):
   return art.dom == art.cod and art.relation == rel.eq
@@ -82,20 +81,17 @@ def inverses(ar1, ar2):
           ar1.dom == ar2.cod and 
           rel.inverses(ar1.relation, ar2.relation))
 
-def graft(parent, child):
-  return _articulation(parent, child, rel.gt)
-
-def merge(child, parent):
-  return _articulation(child, parent, rel.lt)
-
 # ---------- Synonymy relationship within one tree
 
 def synonymy(synonym, accepted):
+  assert synonym > 0
+  assert accepted > 0
   status = (cl.get_nomenclatural_status(synonym) or \
             cl.get_taxonomic_status(synonym) or \
             "synonym")
   re = synonym_relation(status)
-  return _articulation(synonym, accepted, re)
+  return _articulation(synonym, accepted, re,
+                       reason="synonym")
 
 # I don't understand this
 
@@ -105,7 +101,7 @@ def synonym_relation(nom_status):
   re = synonym_relations.get(nom_status)
   if re: return re
   print("Unrecognized nomenclatural status: %s" % nom_status)
-  return reverse(rel.eq)
+  return rel.reverse(rel.eq)    # foo
 
 # These relations go from synonym to accepted (the "has x" form)
 # TBD: Put these back into the articulation somehow
@@ -143,6 +139,8 @@ def declare_synonym_relations():
   b("misnomer")
   b("type material")
   b("merged id", revname = "split id")    # ?
+  b("accepted")    # EOL
+  b("invalid")     # EOL
 
   # Really dubious
   b("genbank common name")    # at most one per node
@@ -157,14 +155,17 @@ declare_synonym_relations()
 # ---------- Different kinds of articulation
 
 def extensional(dom, cod, re):
-  return bridge(dom, cod, re)
+  return bridge(dom, cod, re, "extension")
+
+def monotypic(dom, cod, re):
+  return bridge(dom, cod, re, "monotypic")
 
 def intensional(dom, cod):
-  return bridge(dom, cod, rel.eq)
+  return bridge(dom, cod, rel.eq, "name")
 
-def bridge(dom, cod, re):
+def bridge(dom, cod, re, reason):
   assert cl.get_checklist(dom) != cl.get_checklist(cod)
-  return _articulation(dom, cod, re)
+  return _articulation(dom, cod, re, reason=reason)
 
 # ---------- Utility: collapsing a set of matches
 
@@ -202,12 +203,13 @@ def conjoin_sort_key(ar):
 # Less-bad articulations first.
 
 def badness(ar):
-  (drop, add) = ar.diff
+  (drop, change, add) = ar.diff
   return(
          rel.sort_key(ar.relation),     # '=' sorts earliest
          # Changes are bad
          # Low-bit changes are better than high-bit changes
-         drop & add,
+         # Additions don't matter
+         change,
          drop,
          # Using synonym is bad, using two is worse
          len(ar.factors),

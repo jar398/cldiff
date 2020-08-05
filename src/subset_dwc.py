@@ -40,6 +40,7 @@ def write_subset(checklist, root_id, all, outpath):
           tid = row[tid_column]
           if tid in all: 
             writer.writerow(row)
+            continue
         if aid_column != None:
           aid = row[aid_column]
           if aid in all:

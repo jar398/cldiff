@@ -18,10 +18,13 @@ class Table:
     return self.position_index[prop.uid]
 
   def process_header(self, header):
+    assert not "\t" in header[0]
+    assert not "," in header[0]
     self.header = header
     self.position_index = [None] * property.number_of_properties
     self.methods = [not_present] * property.number_of_properties
-    # TBD: If there is a meta.xml, get the properties that way
+    # TBD: If there is a meta.xml, get the properties that way.
+    # NB: by_name returns None if label is unrecognized
     self.properties = [property.by_name(label) for label in header]
     self.indexes = [None] * property.number_of_properties
     for position in range(len(header)):
@@ -30,8 +33,6 @@ class Table:
       if prop:
         self.position_index[prop.uid] = position
         self.methods[prop.uid] = self.fetcher(prop, position)
-      else:
-        print("** Unrecognized property %s" % position)
 
   def fetcher(self, prop, position):
     def fetch(r):
@@ -48,6 +49,7 @@ class Table:
   def populate_from_file(self, inpath):
     # Look for a meta.xml file in same directory?
     (delim, qc, qu) = csv_parameters(inpath)
+    print("** Parameters %s %s %s" % (delim, qc, qu))
     with open(inpath, "r") as infile:
       reader = csv.reader(infile, delimiter=delim, quotechar=qc, quoting=qu)
       self.populate_from_generator(reader)

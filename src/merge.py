@@ -97,37 +97,3 @@ def inject_B(node, al):
         if m2.cod == node:
           return (m1.cod, node)
   return (None, node)
-
-# ---------- UNMATCHED (grafts)  - OBSOLETE
-
-# Unmatched - TBD: ought to be folded into alignment
-# (but we need to distinguish grafts from insertions)
-# Find nodes in B (?) that are not mutually matched to nodes in A
-
-# A B_node that is not the best_match of any A_node ...
-
-def analyze_unmatched(B, A, al):
-  graft_points = {}
-  def process(B_tnu):
-    if not al.get(B_tnu):
-      point = get_graft_point(B_tnu, al)    # in A
-      if point:
-        graft_points[B_tnu] = point    # in A
-    else:
-      for child in alignment.get_children(B_tnu):
-        process(child)
-  for root in cl.get_roots(B):
-    process(root)
-  return cl.invert_dict(graft_points)
-
-# There are many places it might be attached: based on parent, based on siblings.
-# Maybe look at xmrca analysis of siblings?
-
-def get_graft_point(B_tnu, al):
-  B_parent = cl.get_parent(B_tnu)
-  if B_parent:
-    parent_in_A = al.get(B_parent)
-    if parent_in_A:
-      return parent_in_A.cod    # or art.graft(parent_in_A, B_tnu)
-  return None
-

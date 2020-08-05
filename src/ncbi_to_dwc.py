@@ -15,21 +15,21 @@ import sys, os, csv, argparse
 
 def main(indir, outpath):
   assert os.path.exists(indir)
-  nodes = read_nodes(os.path.join(indir, "nodes.dmp"))
+  accepteds = read_accepteds(os.path.join(indir, "nodes.dmp"))
   names = read_names(os.path.join(indir, "names.dmp"))
   merged = read_merged(os.path.join(indir, "merged.dmp"))
-  (names, scinames, authorities) = move_names_to_nodes(names, nodes)
-  emit_dwc(nodes, names, scinames, authorities, merged, outpath)
+  (synonyms, scinames, authorities) = collate_names(names, accepteds)
+  emit_dwc(accepteds, synonyms, scinames, authorities, merged, outpath)
 
 def write_row(writer,
-              taxonID, parentNameUsageID, taxonRank,
+              taxonID, ncbi_id, parentNameUsageID, taxonRank,
               acceptedNameUsageID, scientificName, canonicalName,
               taxonomicStatus, nomenclaturalStatus):
-  writer.writerow([taxonID, parentNameUsageID, taxonRank,
+  writer.writerow([taxonID, ncbi_id, parentNameUsageID, taxonRank,
                    acceptedNameUsageID, scientificName, canonicalName,
                    taxonomicStatus, nomenclaturalStatus])
 
-def emit_dwc(nodes, names, scinames, authorities, merged, outpath):
+def emit_dwc(accepteds, synonyms, scinames, authorities, merged, outpath):
   outdir = os.path.basename(outpath)
   if not os.path.isdir(outdir): os.mkdir(outdir)
   (delimiter, quotechar, mode) = csv_parameters(outpath)
@@ -37,44 +37,48 @@ def emit_dwc(nodes, names, scinames, authorities, merged, outpath):
   with open(outpath, "w") as outfile:
     writer = csv.writer(outfile, delimiter=delimiter, quotechar=quotechar, quoting=mode)
     write_row(writer,
-              "taxonID", "parentNameUsageID", "taxonRank",
+              "taxonID", "NCBI Taxonomy ID", "parentNameUsageID", "taxonRank",
               "acceptedNameUsageID", "scientificName", "canonicalName",
               "taxonomicStatus", "nomenclaturalStatus")
-    for (id, parent_id, rank) in nodes:
+    for (id, parent_id, rank) in accepteds:
+      sci = scinames.get(id, None)
       write_row(writer,
-                id, parent_id, rank,
-                None, authorities.get(id, None), scinames.get(id, None),
+                id, id, parent_id, rank,
+                None, authorities.get(id, None), sci,
                 "accepted", None)
-    for (id, text, kind, spin) in names:
-      if "BOLD:" in text or "bold:" in text:
-        z = text.split("BOLD:")
-        if len(z) == 2:
-          write_row(writer,
-                    id + ".BOLD", None, None,
-                    id, None, "BOLD:" + z[1],
-                    "synonym", "BOLD id")
-        else:
-          print("** Malformed BOLD: name, %s" % z)
-      if not (kind == "scientific name" or kind == "authority"):
-        # synonym is a taxonomic status, not a nomenclatural status
-        if kind == "synonym": kind = None
-        if False:
-          minted = id + "." + str(spin)
-        else:
-          minted = None
+      if sci and "BOLD:" in sci:
+        z = sci.split("BOLD:")
         write_row(writer,
-                  minted, None, None,
-                  id, None, text,
-                  "synonym", kind)
+                  id + ".BOLD", None, None, None,
+                  id, None, "BOLD:" + z[-1],
+                  "synonym", "BOLD id")
+    for (id, text, kind, spin) in synonyms:
+      if "BOLD:" in text:
+        z = text.split("BOLD:")
+        write_row(writer,
+                  id + ".BOLD", None, None, None,
+                  id, None, "BOLD:" + z[-1],
+                  "synonym", "BOLD id")
+      # synonym is a taxonomic status, not a nomenclatural status
+      elif kind == "synonym": kind = None
+      node_id = id + "." + str(spin)
+      write_row(writer,
+                node_id, None, None, None,
+                id, None, text,
+                "synonym", kind)
     for (old_id, new_id) in merged:
       canonical = "%s merged into %s" % (old_id, new_id)
       write_row(writer,
-                old_id, None, None,
+                old_id, old_id, None, None,
                 new_id, None, canonical,
                 "synonym", "merged id")
 
+# Input: list of (id, text, kind, spin) from names.txt file
+# Output: list of (id, text, kind, spin); 
+#         dict: id -> text [canonical names];
+#         dict: id -> text [authorities]
 
-def move_names_to_nodes(names, nodes):
+def collate_names(names, accepteds):
   keep = []
   scinames = {}
   for row in names:
@@ -83,26 +87,28 @@ def move_names_to_nodes(names, nodes):
       scinames[id] = text
     else:
       keep.append(row)
-  names = keep
+  # Remove the canonical names, keep the rest
+  names2 = keep
+  keep = None #GC
   print (len(scinames), "canonicalNames (NCBI scientific names)")
-  keep = []
+  synonyms = []
   authorities = {}
-  for row in names:
+  for row in names2:
     (id, text, kind, spin) = row
     if kind == "authority":
       probe = scinames.get(id, None)
       if probe and text.startswith(probe):
         authorities[id] = text
       else:
-        keep.append(row)
+        synonyms.append(row)
     else:
-      keep.append(row)
-  names = keep
-  print (len(authorities), "authorities")
-  return (names, scinames, authorities)
+      synonyms.append(row)
+  # Remove authorities (= scientific names), keep the rest
+  print (len(authorities), "scientificNames (NCBI authorities)")
+  return (synonyms, scinames, authorities)
 
-def read_nodes(nodes_path):
-  nodes = []
+def read_accepteds(nodes_path):
+  accepteds = []
   # Read the nodes file
   with open(nodes_path, "r") as infile:
     for row in csv.reader(infile,
@@ -110,9 +116,9 @@ def read_nodes(nodes_path):
                           quotechar="\a",
                           quoting=csv.QUOTE_NONE):
       # tax_id, |, parent tax_id, |, rank, ... other stuff we don't use ...
-      nodes.append((row[0], row[2], row[4]))
-  print (len(nodes), "nodes")
-  return nodes
+      accepteds.append((row[0], row[2], row[4]))
+  print (len(accepteds), "accepteds")
+  return accepteds
 
 def read_names(names_path):
   names = []

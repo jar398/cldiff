@@ -19,6 +19,7 @@ def by_specificity(specificity):
   return properties_by_specificity[specificity]  
 
 def by_name(name):
+  assert not "\t" in name
   prop = properties_by_pet_name.get(name)
   if not prop:
     print("No such property: %s" % name)
@@ -64,6 +65,23 @@ record    = uri_to_property("data:,property/record")
 #       (unique record key across all inputs)...
 #     - mutexes
 
+"""
+GBIF properties...
+  number_of_synonyms
+  datasetID
+  originalNameUsageID
+  genericName
+  nameAccordingTo
+  namePublishedIn
+  taxonRemarks
+  kingdom
+  phylum
+  class
+  order
+  family
+  genus
+"""
+
 uris = [
         # "http://purl.org/dc/terms/source",     # checklist  ??
         "https://github.com/jar398/biodiversity/wiki/subtree",  # subtree identity
@@ -71,14 +89,20 @@ uris = [
         "https://github.com/jar398/biodiversity/wiki/direct",   # not via synonym
         "http://rs.tdwg.org/dwc/terms/taxonomicStatus",     # flush?
         "http://rs.tdwg.org/dwc/terms/nomenclaturalStatus",
+        "https://github.com/jar398/biodiversity/wiki/number_of_children",
+        "https://github.com/jar398/biodiversity/wiki/number_of_synonyms",
         "http://rs.tdwg.org/dwc/terms/verbatimTaxonRank",   # don't use this URI...
         "http://rs.tdwg.org/dwc/terms/taxonRank",
         "http://rs.tdwg.org/dwc/terms/scientificNameAuthorship",
         "http://rs.tdwg.org/dwc/terms/nameAccordingToID",
+        "http://rs.tdwg.org/dwc/terms/gbif_id",
+        "http://rs.tdwg.org/dwc/terms/NCBI Taxonomy ID",
         "http://rs.tdwg.org/dwc/terms/taxonID",
         "http://rs.tdwg.org/dwc/terms/vernacularName",
         "http://rs.tdwg.org/dwc/terms/parentNameUsageID",
         "http://rs.tdwg.org/dwc/terms/namePublishedInYear",
+        "http://rs.tdwg.org/dwc/terms/family",    # GBIF
+        "http://rs.tdwg.org/dwc/terms/genus",    # GBIF
         "http://rs.tdwg.org/dwc/terms/specificEpithet",
         "http://rs.tdwg.org/dwc/terms/infraspecificEpithet",
         "https://github.com/jar398/biodiversity/wiki/quasi_epithet",
@@ -86,7 +110,6 @@ uris = [
         "http://rs.gbif.org/terms/1.0/canonicalName",
         "http://rs.tdwg.org/dwc/terms/scientificName",
         "https://github.com/jar398/biodiversity/wiki/particles",
-        "https://github.com/jar398/biodiversity/wiki/number_of_children",
 ]
 for uri in uris: uri_to_property(uri)
   

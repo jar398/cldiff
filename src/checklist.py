@@ -83,8 +83,10 @@ def read_checklist(specifier, prefix, name):
   else:
     checklist.populate_from_file(specifier)
 
-  assert checklist.get_position(node_id) != None
   assert checklist.get_position(canonical_name) != None
+  if checklist.get_position(node_id) == None:
+    print (checklist.header())
+    assert False
 
   checklist.assign_sequence_numbers()
 
@@ -204,9 +206,20 @@ def get_parent(tnu):
       return to_accepted(parent)
   probe = get_accepted(tnu)
   if probe != None:
-    return get_parent(probe)
+    return get_direct_parent(probe)
   else:
     return forest_tnu
+
+def get_direct_parent(tnu):
+  assert tnu > 0
+  # There are two checks here, and if the order of the checks matters,
+  # the input checklist is ill-formed
+  parent_id = get_value(tnu, parent_node_id)
+  if parent_id != None:
+    parent = get_record_with_node_id(get_checklist(tnu), parent_id)
+    if parent != None:
+      return to_accepted(parent)
+  return None
 
 def get_children(parent):
   return get_nodes_with_value(get_checklist(parent),
@@ -221,10 +234,7 @@ def to_accepted(tnu):
     assert False
   probe = get_accepted(tnu)
   if probe:
-    # Some input checklists have chains of accepted records.
-    # The chain ends at the canonical representative of the 
-    # equivalence class.
-    return to_accepted(probe)
+    return probe
   else:
     return tnu
 

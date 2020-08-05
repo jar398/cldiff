@@ -1,5 +1,8 @@
 debug = False
 
+# Temporary hack for experimenting with poorly formed EOL checklists
+EOL = False
+
 import sys, csv
 
 import checklist as cl
@@ -19,20 +22,21 @@ def align(B, A):
   cross_mrcas = analyze_cross_mrcas(B, A, particles)
   print ("# Number of cross-mrcas:", len(cross_mrcas))
 
-  the_alignment = finish_alignment(B, A, cross_mrcas)
+  the_alignment = finish_alignment(B, A, particles, cross_mrcas)
   print ("# Number of articulations in alignment:", len(the_alignment))
 
   return (the_alignment, cross_mrcas)
 
-def finish_alignment(B, A, xmrcas):
+def finish_alignment(B, A, particles, xmrcas):
   global cross_mrcas
   cross_mrcas = xmrcas
   alignment = {}
   def half_finish(B, A):
     def process(node):
-      m = articulate(node, A, xmrcas)
+      m = articulate(node, A, particles, xmrcas)
       if m:
-        assert cl.is_accepted(m.cod)
+        if not EOL:
+          assert cl.is_accepted(m.cod)
         alignment[node] = m
       else:
         # Otherwise, what?
@@ -59,7 +63,7 @@ def is_mutual(m1, al):
 
 # ---------- One-sided best match
 
-def articulate(node, other, xmrcas):     # B-node to A
+def articulate(node, other, particles, xmrcas):     # B-node to A
   assert node > 0
   assert cl.is_accepted(node)
   assert other
@@ -67,21 +71,26 @@ def articulate(node, other, xmrcas):     # B-node to A
 
   if debug:
     print("# matching B-node", cl.get_unique(node))
-  exties = extensional_matches(node, other)    #monotypic chain
+  exties = extensional_matches(node, particles, other)    #monotypic chain
 
-  # Filter out intentionals that aren't extensional matches
-  namies = intensional_matches(node, other)
-  targets = [extie.cod for extie in exties]
-  bothies = [match for match in namies if match.cod in targets]
-
-  if len(bothies) > 0:
-    match = choose_best_match(bothies)
-  elif len(exties) > 0:
-    if debug: print("# %s exties to %s" % (len(exties), cl.get_unique(node)))
-    match = choose_best_match(exties)
+  if len(exties) == 1:
+    match = exties[0]
   else:
-    if debug: print("# no extie")
-    match = choose_best_match(namies)
+    # Filter out intensionals that aren't extensional (or v.v.)
+    namies = intensional_matches(node, other)
+    targets = [namie.cod for namie in namies]
+    #         [extie.cod for extie in exties]
+    #bothies = [match for match in namies if match.cod in targets]
+    bothies = [match for match in exties if match.cod in targets]
+
+    if len(bothies) > 0:
+      match = choose_best_match(bothies)
+    elif len(exties) > 0:
+      if debug: print("# %s exties to %s" % (len(exties), cl.get_unique(node)))
+      match = choose_best_match(exties)
+    else:
+      if debug: print("# no extie")
+      match = choose_best_match(namies)
 
   return match
 
@@ -90,10 +99,10 @@ def articulate(node, other, xmrcas):     # B-node to A
 # Starting with one match, extend to a set of matches by adding
 # 'monotypic' ancestors
 
-def extensional_matches(tnu, other):       # B-node to A
+def extensional_matches(tnu, particles, other):       # B-node to A
   assert cl.get_checklist(tnu) != other
 
-  match = extensional_match(tnu, other)    # Single B/A extensional match
+  match = extensional_match(tnu, particles, other)    # Single B/A extensional match
   if not match:
     return []
   matches = [match]
@@ -126,18 +135,19 @@ def extensional_matches(tnu, other):       # B-node to A
         break
       if debug: print("# adding return match %s" %
                       (cl.get_unique(scan)))
-      matches.append(art.extensional(tnu, scan, rel.eq))
+      matches.append(art.monotypic(tnu, scan, rel.eq))
     if debug: print("# %s matches %s nodes extensionally" %
                     (cl.get_unique(tnu), len(matches)))
   return matches
 
 # Guaranteed invertible, except for monotypic node chains
 
-def extensional_match(tnu, other):
+def extensional_match(tnu, particles, other):
+  part = particles.get(tnu)
+  if part: return part
   partner = cross_mrca(tnu)      # TNU in other checklist
   if not partner:
     return None
-  here = cl.get_checklist(tnu)
   back = cross_mrca(partner)
   if not back: return None      # ?
   if cl.are_disjoint(tnu, back):
@@ -146,14 +156,34 @@ def extensional_match(tnu, other):
     re = rel.eq
   else:
     re = rel.lt
-    for sub in get_children(partner):
-      cross_back = cross_mrca(sub)
-      if cross_back != None:
-        if cl.mrca(tnu, cross_back) == tnu and cross_disjoint(tnu, partner):
-          re = rel.conflict
+    # See reference-taxonomy/org/opentreeoflife/conflict/ConflictAnalysis.java
+    within = None
+    without = None
+    conflict = False
+    for child in get_children(partner):
+      child_back = cross_mrca(child)
+      if child_back == None:
+        pass
+      elif not(within) and cl.mrca(tnu, child_back) == tnu:
+        # ^^^ was !=
+        within = child
+        if without: break
+      elif not(without) and cross_disjoint(tnu, child):
+        # ^^^ was (tnu, partner)
+        without = child
+        if within: break
+    if without:
+      re = rel.conflict
+      print("# %s conflicts with %s because:\n#   child %s is disjoint while %s isn't" %
+            (cl.get_unique(tnu),
+             cl.get_unique(partner),
+             cl.get_unique(without),
+             cl.get_unique(within)))
   return art.extensional(tnu, partner, re)
 
 # ---------- Determine disjointness across checklists
+
+ddebug = False
 
 def cross_disjoint(tnu, partner):
   assert tnu > 0
@@ -162,17 +192,28 @@ def cross_disjoint(tnu, partner):
 
   back = cross_mrca(partner)
   if back == None:
+    # ???
+    if ddebug:
+      print("** 1. %s -> %s == None ergo disjoint from %s" %
+            (cl.get_unique(partner), cl.get_unique(back), cl.get_unique(tnu)))
     return True
   assert back > 0
   assert cl.get_checklist(back) == cl.get_checklist(tnu)
   if cl.are_disjoint(tnu, back):
+    if ddebug:
+      print("** 2. %s -> %s ! %s" %
+            (cl.get_unique(partner), cl.get_unique(back), cl.get_unique(tnu)))
     return True
   for child in get_children(partner):
     assert child > 0
     if not cross_disjoint(tnu, child):
-      print("# ** Test %s ! %s failed because not ! %s" %\
-            (cl.get_unique(tnu), cl.get_unique(partner), cl.get_unique(child)))
+      if ddebug:
+        print("# ** 3. Test %s ! %s failed because not ! %s" %\
+              (cl.get_unique(tnu), cl.get_unique(partner), cl.get_unique(child)))
       return False
+  if ddebug:
+    print("** 4. %s -> %s ! %s" %
+          (cl.get_unique(partner), cl.get_unique(back), cl.get_unique(tnu)))
   return True
 
 # ---------- Cross-MRCAs
@@ -185,7 +226,8 @@ def analyze_cross_mrcas(A, B, particles):
       probe = particles.get(tnu)
       if probe:
         assert probe.dom == tnu
-        assert cl.is_accepted(probe.cod)
+        if not EOL:
+          assert cl.is_accepted(probe.cod)
         if debug:
           print("#   particle(%s) = %s" %\
                 (cl.get_unique(tnu), cl.get_unique(probe.cod)))
@@ -228,7 +270,8 @@ def analyze_cross_mrcas(A, B, particles):
 def cross_mrca(tnu):
   global cross_mrcas
   assert tnu > 0
-  assert cl.is_accepted(tnu)
+  if not EOL:
+    assert cl.is_accepted(tnu)
   return cross_mrcas.get(tnu)
 
 # ---------- Particles
@@ -263,7 +306,7 @@ def find_particles(here, other):
       rematch = best_intensional_match(candidate.cod, here)
       if rematch:
         if rematch.cod == tnu:
-          if not cl.is_accepted(candidate.cod):
+          if not EOL and not cl.is_accepted(candidate.cod):
             print("# ** Candidate is synonymlike: %s" % cl.get_unique(candidate.cod))
           particles[tnu] = candidate    # here -> other
           particles[candidate.cod] = art.reverse(candidate)  # other -> here
@@ -362,11 +405,9 @@ def has_accepted_locally(maybe_syn):   # goes from synonym to accepted
   assert maybe_syn > 0
   accepted = cl.get_accepted(maybe_syn)
   if accepted:
-    if accepted != maybe_syn:
-      return art.synonymy(maybe_syn, accepted)
-    else:
-      print("# ** Shouldn't happen", cl.get_unique(maybe_syn))
-      return art.identity(maybe_syn)
+    if not EOL:
+      assert accepted != maybe_syn
+    return art.synonymy(maybe_syn, accepted)
   else:
     return None
 
