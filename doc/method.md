@@ -9,44 +9,27 @@ The tool has three inputs: two checklists and a set (perhaps empty) of
 currently implemented 2020-08-04].  (The curated relationships allow
 interventions to augment or override what the automated process would
 come up with.)  One checklist is "low priority" and the other is "high
-priority".  The following operations are supported:
-
- 1. Report on how the two checklists compare ("diff")
- 1. Provide an alignment in Euler/X format for use with reasoning tools
- 1. "Underlay mode":
-    Generate commands to modify the high-priority checklist
-    to add information provided by the low-priority checklist
-    (high priority takes precedence in case of conflict)
- 1. "Overlay mode":
-    Generate commands to modify the low-priority checklist
-    to add information provided by the high-priority checklist
-    (high priority takes precedence in case of conflict)
- 1. "Update mode":
-    Generate commands to transform an instance of the low-priority checklist
-    into the high-priority checklist, removing information that's 
-    only in the low-priority checklist
-
-[2020-08-04 Only the first of these is implemented; the second is
-partially implemented]
+priority".
 
 The method has some features in common with the "smasher" tool from
 the Open Tree of Life project [ref], whose merge operation is an
 "underlay".
 
-All operations proceed as follows:
+All operations on checklists proceed as follows:
 
  1. Ingest the two checklists (see section 'Checklists')
  1. Align the two checklists (see 'Alignments')
  1. Merge the two checklists into a single annotated hierarchy (see 'Merge')
- 1. Generate output: report, script, etc.
+ 1. Generate output: report, alignment, script, etc.
 
 
 ## Checklists
 
 A checklist is a set of taxon records or "nodes" (I use the two words
-more or less interchangeably).  Each node is intended to correspond to some
-taxon (in the extensional sense - set of organisms), but multiple
-nodes can correspond to the same taxon (synonyms).
+more or less interchangeably).  Each node is intended to correspond to
+some taxon (in the extensional sense - set of organisms), but multiple
+nodes can correspond to the same taxon.  In this case one of the
+taxon's nodes is 'accepted' and all the others are 'synonyms'.
 
 A taxonomy connotes a checklist where hierarchy information
 (parent/child) is important.  I'll use the words "checklist" and
@@ -153,9 +136,9 @@ in either A or B, or errors in the alignment.
 In the case of a 'tie' among extensional matches, 
 
 
-## Alignment
+### Alignment ideal
 
-Given the particle and extension analyses, an alignment can be
+Given the particle and extension analyses, a set of matches can be
 proposed.
 
 There are certain desirable properties of alignments (when considered
@@ -168,16 +151,16 @@ in logical conjunction with the two checklists):
  1. A complete alignment is a "basis" if removing any alignment would
     make it incomplete.
 
-Because some information is missing, and the biological meaning of
-information in the checklists is not always clear, this ideal is not
-always possible, but we can try to approach it as best we can through
-an automated process, based on the intensional and hierarchical
-information in the two checklists.
+Because some biological information is missing from the checklists,
+and the biological meaning of information in the checklists is not
+always clear, this ideal is not always possible, but we can try to
+approach it as best we can through an automated process, based on the
+intensional and hierarchical information in the two checklists.
 
 The generated alignment will never contain a disjointness
 articulation, although the curation list might.
 
-### Aligning particles
+### Matching particles
 
 The alignment we seek contains all of the particles (a, =, b), except
 where one of these would be inconsistent with the curated
@@ -192,87 +175,59 @@ Nodes drawn from one or both checklists are said to be
 'co-extensional' if they subtend the same (nonempty) particle set.
 As a special case, the nodes of a particle are co-extensional.
 
-Co-extension is not computed exactly but rather by using a
-'cross-mrca' calculation.  The cross-mrca of a node is the mrca in the
-opposite checklist of the node's subtended particles.  Co-extensional
-nodes are one another's cross-mrcas; cases where the converse fails to
-hold can be calculated via a quick search, making extension analysis
-linear when the two checklists have similar hierarchies.
+Co-extension is computed via a 'cross-MRCA' calculation.  The
+cross-MRCA of a node X is the MRCA in the opposite checklist of the
+nodes corresponding to X's subtended particles.  Co-extensional nodes
+are one another's cross-MRCAs, but the converse doesn't always hold.
+However, cases where the converse fails to hold
+can be calculated via a quick search, making extension analysis nearly linear
+when the two checklists have similar hierarchies.
 
 Co-extension is strong evidence that nodes should be aligned, but
 co-extension in terms of particle sets doesn't automatically imply
-identity of the intended taxa.  The taxa may be distinguishable
-according to members belonging to the unmatched (non-particle)
-descendants, or descendants that are simply not recorded in a
-checklist at all.  But since the checklist representation is missing
-this information, there is little to be done to account for it.
+identity _of the intended taxa_.  The intended taxa may be
+distinguishable or identifiable according to members belonging to the
+unmatched (non-particle) descendants, or in some other way.  But since
+the checklist representation is missing this information, there is
+little to be done to resolve such situations automatically.
 
-CHECK THIS
+A node's 'co-extensionality class' is the set of nodes in either
+checklist that have the same particle extension.  If the checklists
+are similar enough, each such class will contain one node from each
+checklist (two total), and we can posit an articulation between the
+two nodes.  But in case any equivalence class contains three or more
+nodes, care must be taken.
 
-Nodes form equivalence classes according to co-extensionality (one
-equivalence class per distinct particle set).  If the checklists are
-similar enough, each equivalence class will contain one node from each
-checklist, and we can posit an articulation between the two nodes.
-But in case any equivalence class contains three or more nodes, care
-must be taken.
+Within a single checklist, co-extensional accepted nodes should be
+presumed distinct.  They can be distinguished either by their
+non-particle descendants (e.g. tips not matched to the other
+checklist) or by their properties (intension) such as canonical name.
 
-Within a single checklist, co-extensional non-synonym nodes should be
-presumed distinct.  They can be distinguished either by their other
-children (those not in the co-extensional set), which do not share
-particles with the other checklist, or simply by intension
-(properties).
+Co-extensional nodes in a checklist are related by ancestry; they form
+a partial lineage.  A similarly co-extensional node in the other
+checklist can potentially be matched to any member of the chain.  An
+attempt is made to match the node to a chain node intensionally.  If
+this fails, an ambiguity remains that may require manual intervention.
 
-For an equivalence class C, ideally we would like those nodes of A
-that are in C to match those nodes of B that are in C.  This can be
-often done via intension.
-
-Some of the nodes in chains may not have any match by intension, or
-may not have an unambiguous match.  If a low priority node in a chain
-has only one child, and doesn't match a high priority node
-unambiguously, it can be left unaligned (it appears to be a synonym,
-and perhaps is too troublesome to warrant a merge).  But in general
-these situations probably require manual intervention.
 
 ### Splitting and merging
 
-DELETE ME
+If multiple low priority nodes match a high priority node, we have
+'lumping' or 'merging' and the 'extra' low priority nodes can be
+safely dropped.
 
-A node x may have an intensional best match, say y, that is not y's
-intensional best match.  There is then an opportunity for lumping or
-splitting, similar to that for co-extensional node sets.
+If multiple high priority nodes match a low priority node, we have
+an instance of 'splitting'.
 
-This situation is quite unclear.  A low-priority node, say x, could
-have high priority y as its best match, while high priority z
-(different from y) could have x as its best match.  It is hard to come
-up with such an example, but it should probably be detected and
-flagged as a curation demand.
-
-### Synonyms
-
-DELETE ME
-
-A merged checklist should contain all synonyms from both sources.
-If b is the best match of a, then a and a's synonyms should all be
-represented by synonyms of b in the merged checklist.  Therefore,
-synonyms in b need to be matched to nodes in a, perhaps other
-synonyms, with articulations added to the alignment as needed.
-
-An identity articulation ("same node in both checklists") needs to be
-distinguished from a synonym articulation ("a in A is a synonym of b
-in B"); the basis for such a judgment is not completely clear, but it
-can probably be done by simply comparing canonical names, assuming
-that any changes in authority are corrections, and that there is no
-harm in considering corrected canonical name misspellings to synonyms
-new to checklist A.
 
 ### Conflict between intensional and extensional matches
 
-If x has y has its best intensional match, and z different from y as
+If x has y has its best intensional match, and z (different from y) as
 an extensional match, we have an exceptional situation that should
 probably get manual review.  While in many cases this means that one
 higher priority checklist is a better reflection of evolutionary and
 taxonomic truth than the other checklist, it might also reflect an
-error introduced into in the high priority checklist by a typo,
+error introduced into the high priority checklist by a typo,
 clerical error, or overzealous match elsewhere in the trees.
 
 [TBD: the tool should detect and report on these situations]
@@ -280,13 +235,8 @@ clerical error, or overzealous match elsewhere in the trees.
 ### Non-equivalence articulations
 
 Extension analysis creates opportunities to record articulations other
-than equivalences.
-
-As mentioned above, disjointness is so pervasive that it does not help
-much to express it - it is almost alway already implied by sibling
-disjointness in the hierarchies.  But the other three RCC-5 relations
-all express useful information that cannot be derived from equivalence
-articulations.
+than equivalences.  The other three RCC-5 relations all express useful
+information that cannot be derived from equivalence articulations.
 
 We obtain an articulation (a, >, b) when the high priority taxon b "splits" the 
 low priority taxon a.  In the merged checklist, b is the parent of a.  In a
@@ -298,7 +248,11 @@ same manner as above).  This says that the low priority node a cannot
 be included in a merged checklist because it is inconsistent with a
 hierarchy containing the high priority node.
 
-## Merge
+As mentioned above, disjointness is so pervasive that it does not help
+much to express it - it is almost always already implied by automatic
+sibling disjointness captured in the hierarchies.
+
+## Merged hierarchy
 
 With an alignment in hand, it is possible to internally construct a
 merged hierarchy.  Each node in the merged hierarchy is either 'kept'
@@ -314,49 +268,3 @@ parents is chosen according to the extension analysis.
 
 Once parents are determined, the child-parent relationship can be
 inverted to obtain the set of children of each node in the merged hierarchy.
-
-
-## Outputs
-
-All outputs are driven off the merged hierarchy.
-
-[2020-08-04 TBD: only the diff report is ready right now.]
-
-### Diff
-
-The output is an abridged version of the merged hierarchy in a human readable CSV form.
-
-Subtrees that are identical between the low and high priority
-checklists are elided in order to focus attention where there is
-taxonomic action.  This can result in a substantially smaller file.
-
-
-### Alignment
-
-The output is simply the articulations of the alignment, with reversals removed (there is no reason to have both x = y and y = x).
-
-[2020-08-04 TBD: Also need to render the two checklists in Euler/X taxonomy format.]
-
-### 'Underlay' - adding low-priority nodes to high-priority checklist
-
-The command set consists of
-
-  1. Node additions for the 'low only' nodes in the merged hierarchy,
-     excluding those that are inconsistent (`><`) with the high priority checklist
-  1. Node field additions ?  for situations where a low only node has
-     property values that are missing from the high only node that is
-     matched?
-
-### 'Overlay'
-
-The command set consists of
-
-  1. Node additions for the 'high only' nodes
-  1. Node field changes to modify matched low nodes so that they have information from high nodes
-  1. Removal of inconsistent 'low only' nodes, taking care to update parent pointers
-
-### Update
-
-  1. Node additions for the 'high only' nodes
-  1. Node field changes to modify matched low nodes so that they have information from high nodes
-  1. Removal of all 'low only' nodes

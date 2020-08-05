@@ -1,5 +1,24 @@
 # User guide to the 'diff' tool
 
+The following modes of operation are supported:
+[2020-08-04 Only the first of these is implemented; the second is
+partially implemented; the rest should be easy given the infrastucture]
+
+ 1. Report on how the two checklists compare ("diff")
+ 1. Provide an alignment in Euler/X format for use with reasoning tools
+ 1. "Underlay mode":
+    Generate commands to modify the high-priority checklist
+    to add information provided by the low-priority checklist
+    (high priority takes precedence in case of conflict)
+ 1. "Overlay mode":
+    Generate commands to modify the low-priority checklist
+    to add information provided by the high-priority checklist
+    (high priority takes precedence in case of conflict)
+ 1. "Update mode":
+    Generate commands to transform an instance of the low-priority checklist
+    into the high-priority checklist, removing information that's 
+    only in the low-priority checklist
+
 ## Input
 
 Command line:
@@ -123,3 +142,49 @@ with children Pongo and Pan, and Pongo is contained in Hominoidea
 while Pan is not (by analysis of extensions based on 'particle'
 matches).
 
+
+
+## Output modes
+
+All outputs are driven off the merged hierarchy.
+
+[2020-08-05 TBD: only the diff report is ready right now.]
+
+### Diff
+
+The output is an abridged version of the merged hierarchy in a human readable CSV form.
+
+Subtrees that are identical between the low and high priority
+checklists are elided in order to focus attention where there is
+taxonomic action.  This can result in a substantially smaller file.
+
+
+### Alignment
+
+The output is simply the articulations of the alignment, with reversals removed (there is no reason to have both x = y and y = x).
+
+[2020-08-04 TBD: Also need to render the two checklists in Euler/X taxonomy format.]
+
+### 'Underlay' - adding low-priority nodes to high-priority checklist
+
+The command set consists of
+
+  1. Node additions for the 'low only' nodes in the merged hierarchy,
+     excluding those that are inconsistent (`><`) with the high priority checklist
+  1. Node field additions ?  for situations where a low only node has
+     property values that are missing from the high only node that is
+     matched?
+
+### 'Overlay'
+
+The command set consists of
+
+  1. Node additions for the 'high only' nodes
+  1. Node field changes to modify matched low nodes so that they have information from high nodes
+  1. Removal of inconsistent 'low only' nodes, taking care to update parent pointers
+
+### Update
+
+  1. Node additions for the 'high only' nodes
+  1. Node field changes to modify matched low nodes so that they have information from high nodes
+  1. Removal of all 'low only' nodes
