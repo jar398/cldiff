@@ -77,9 +77,17 @@ utility for extracting a single clade from a checklist.
       --taxonomy TAXONOMY  taxonomy from which to extract hierarchy; defaults to source
       --out OUT            where to store the subset
 
+Source is a CSV or TSV file containing a larger checklist, and root is
+a `taxonID` for a record in the source.  The checklist stored at the
+given path is a subset of the source where a row is kept if the root
+node is reachable from it via parent links.  If source is not a
+taxonomy (a source of parent pointers), a taxonomy over the same
+taxonIDs can be provided with `--taxonomy {taxonomy}`.
+
 ### Converting an NCBI Taxonomy dump to CSV
 
-[Documentation to be written!]
+NCBI has its own taxonomy dump format, which needs to be converted to
+DwCA.  There's a tool for this purpose:
 
     python3 src/ncbi_to_dwc.py --help
     usage: ncbi_to_dwc.py [-h] [--out OUT] dump
@@ -90,6 +98,13 @@ utility for extracting a single clade from a checklist.
     optional arguments:
       -h, --help  show this help message and exit
       --out OUT   where to store the DwC version
+
+E.g.
+
+    python3 src/ncbi_to_dwca.py work/ncbi/2020-01-01/dump \
+      --out work/ncbi/2020-01-01/converted.csv
+
+(The GBIF files are DwCA format already, so they can be used directly.)
 
 ## Output
 
