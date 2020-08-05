@@ -2,7 +2,8 @@
 
 The following modes of operation are supported:
 [2020-08-04 Only the first of these is implemented; the second is
-partially implemented; the rest should be easy given the infrastucture]
+partially implemented; the rest should be straightforward given 
+the existing infrastucture]
 
  1. Report on how the two checklists compare ("diff")
  1. Provide an alignment in Euler/X format for use with reasoning tools
@@ -53,6 +54,8 @@ headings (mostly Darwin Core) are known to the program:
     nomenclaturalStatus
     taxonomicStatus
 
+Other columns may be present, but they are ignored by the program.
+
 
 ### Extracting a subset of a checklist
 
@@ -93,15 +96,15 @@ utility for extracting a single clade from a checklist.
 The 'diff' operation generates a single CSV file that is intended to
 be human readable.  Each row gives information about a node (taxon) in the merged taxonomy.
 
-I continue to experiment with the columns quite a bit but as of 5
-August the diff report has these columns:
+I continue to experiment with the columns quite a bit but as of 2020-08-05
+the diff report has these columns:
 
  1. `indent` - shows the hierarchical structure of the merged taxonomy;
     this can be interpreted as specifying the parent pointer of each node
     (the parent is the closest row going upwards whose indentation is less than that of the current row)
  1. `operation` - `KEEP` (taxon in both low and high priority checklists),
     `DELETE` (low only), `ADD` (high only)
- 1. The next five columns show either an articulation, or a single low or high priority taxon.
+ 1. The next five columns show either an articulation, or a single low or high priority node.
      * `dom` - domain - the left hand node of the articulation (low priority)
      * `dom id` - the taxonID of the domain
      * `relation` - an RCC-5 relation, defaulting to `=`
@@ -113,8 +116,9 @@ August the diff report has these columns:
     articulation provided just for documentation.
  1. `unchanged` - if the value in this column is `subtree=` then all
     descendants have been suppressed because the subtrees of the two
-    checklists at the point are identical
- 1. `changed_props` - a list of properties (record fields) that differ between the two checklists
+    checklists at this point are identical
+ 1. `changed_props` - a list of properties (record fields) that differ 
+    between the two records (`KEEP` only)
  1. `reason` - the justification for this match.
      * `extension` means they have the same subtended particles
      * `name` means they have the same name
@@ -136,10 +140,10 @@ be inconsistent.  Example:
 
 Here B is low priority and C is high, and these comments explain why
 B.Hominoidea and B.Homininae are determined to be excluded from the
-merged hierarchy (`DELETE`).  For example, low priority Homininae is
-excluded because the high priority checklist has a taxon Hominidae
-with children Pongo and Pan, and Pongo is contained in Hominoidea
-while Pan is not (by analysis of extensions based on 'particle'
+merged hierarchy (`DELETE`).  For example, low priority _Homininae_ is
+excluded because the high priority checklist has a taxon _Hominidae_
+with children _Pongo_ and _Pan_, and _Pongo_ is contained in _Hominoidea_
+while _Pan_ is not (by analysis of extensions based on 'particle'
 matches).
 
 
@@ -152,16 +156,16 @@ All outputs are driven off the merged hierarchy.
 
 ### Diff
 
-The output is an abridged version of the merged hierarchy in a human readable CSV form.
+The output is an abridged version of the merged hierarchy in a human readable CSV form.  See above.
 
 Subtrees that are identical between the low and high priority
 checklists are elided in order to focus attention where there is
-taxonomic action.  This can result in a substantially smaller file.
+taxonomic action.  This can result in a file that is substantially smaller than one covering the entire merged hierarchy would be.
 
 
 ### Alignment
 
-The output is simply the articulations of the alignment, with reversals removed (there is no reason to have both x = y and y = x).
+The output is simply the articulations of the alignment, with reversals left out (there is no reason to have both x = y and y = x).
 
 [2020-08-04 TBD: Also need to render the two checklists in Euler/X taxonomy format.]
 

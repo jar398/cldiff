@@ -96,12 +96,12 @@ are 'terminal' or 'most tipward' in both checklists' hierarchies, and provide a 
 a membership-based ('extensional') comparison of the two checklists.
 
 A particle has the following properties.
-  
-     1. No particle in A or B is the descendant of another particle.
-     1. A particle's nodes are a 'best mutual intensional match' i.e.
-         1. nodes a and b 'match' intensionally 
-         1. a and b are one another's best intensional match, mutually, under a quality
-            ordering.
+
+  1. No particle in A or B is the descendant of another particle.
+  1. A particle's nodes are a 'best mutual intensional match' i.e.
+      1. nodes a and b 'match' intensionally 
+      1. a and b are one another's best intensional match, mutually, under a quality
+         ordering.
 
 The nodes of a particle match 'intensionally', according to their
 properties (most importantly their names) and the properties of their
@@ -109,11 +109,11 @@ synonyms.
 
 The quality ordering is a bit in flux, but roughly involves
 
-     1. relying on the fewest possible synonyms
-     1. having node fields in common; the fields have a
-        priority order (e.g. matching on 'scientific name' is
-        better than matching on 'canonical name', and more generic 
-        properties such as rank can be used as tie-breakers)
+  1. relying on the fewest possible synonyms
+  1. having node fields in common; the fields have a
+     priority order (e.g. matching on 'scientific name' is
+     better than matching on 'canonical name', and more generic 
+     properties such as rank can be used as tie-breakers)
 
 
 ### Extension (membership) analysis
