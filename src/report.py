@@ -30,17 +30,19 @@ def write_report(A, B, format, outpath):
       really_write_report(A, B, format, outfile)
 
 def really_write_report(A, B, format, outfile):
-  # Map each B to a corresponding A
-  (al, xmrcas) = alignment.align(B, A)
-  # Where to xmrcas come from?
+  with open("dribble.txt", "w") as dribfile:
 
-  if format == "eulerx":
-    eulerx.dump_alignment(al, outfile)
-  else:
-    (parents, roots) = merge.merge_checklists(A, B, al, xmrcas)
-    print ("# Number of roots in merge: %s" % len(roots))
-    print ("# Number of non-roots in merge: %s" % len(parents))
-    report(A, B, al, roots, parents, outfile)
+    # Map each B to a corresponding A
+    (al, xmrcas) = alignment.align(B, A, dribfile)
+    # Where to xmrcas come from?
+
+    if format == "eulerx":
+      eulerx.dump_alignment(al, outfile)
+    else:
+      (parents, roots) = merge.merge_checklists(A, B, al, xmrcas)
+      print ("# Number of roots in merge: %s" % len(roots))
+      print ("# Number of non-roots in merge: %s" % len(parents))
+      report(A, B, al, roots, parents, outfile)
 
 # Default (simplified) report format
 

@@ -13,8 +13,10 @@ import articulation as art
 # A-record that it matches (preferably but not necessarily an '='
 # articulation).
 
-def align(B, A):
+def align(B, A, dribfile=None):
   global intensional_matches_cache
+  global dribble_file
+  dribble_file = dribfile if dribfile else sys.stdout
   intensional_matches_cache = {}
   particles = find_particles(B, A)
   print ("# Number of particles:", len(particles)>>1)
@@ -174,11 +176,19 @@ def extensional_match(tnu, particles, other):
         if within: break
     if without:
       re = rel.conflict
-      print("# %s conflicts with %s because:\n#   child %s is disjoint while %s isn't" %
-            (cl.get_unique(tnu),
-             cl.get_unique(partner),
-             cl.get_unique(without),
-             cl.get_unique(within)))
+      if within:
+        print("# %s conflicts with %s because:\n#   child %s is disjoint while %s isn't" %
+              (cl.get_unique(tnu),
+               cl.get_unique(partner),
+               cl.get_unique(without),
+               cl.get_unique(within)),
+              file=dribble_file)
+      else:
+        print("# %s conflicts with %s because child %s conflicts" %
+              (cl.get_unique(tnu),
+               cl.get_unique(partner),
+               cl.get_unique(without)),
+              file=dribble_file)
   return art.extensional(tnu, partner, re)
 
 # ---------- Determine disjointness across checklists

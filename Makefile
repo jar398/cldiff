@@ -74,6 +74,7 @@ $(WORK)/ncbi-gbif.csv: $(SOURCES) $(N20)/primates.csv $(C)/primates.csv
 	python3 src/report.py $(N20)/primates.csv --low-tag=N20 \
 			      $(C)/primates.csv --high-tag=G --out $@.new
 	mv $@.new $@
+	mv dribble.txt $(WORK)/primates-ncbi-2015-2020-dribble.txt
 
 pri: $(WORK)/primates-ncbi-2015-2020.csv
 
@@ -90,6 +91,9 @@ $(WORK)/mammalia-ncbi-2015-2020.csv: $(SOURCES) $(N15)/mammalia.csv $(N20)/mamma
 	python3 src/report.py $(N15)/mammalia.csv $(N20)/mammalia.csv \
 	  --out $@.new 
 	mv $@.new $@
+	mv dribble.txt $(WORK)/mammalia-ncbi-2015-2020-dribble.txt
+
+$(WORK)/mammalia-ncbi-2015-2020-dribble.txt: $(WORK)/mammalia-ncbi-2015-2020.csv
 
 mam: $(WORK)/mammalia-ncbi-2015-2020.csv
 
@@ -97,14 +101,19 @@ mam: $(WORK)/mammalia-ncbi-2015-2020.csv
 
 publish: doc/primates-ncbi-2015-2020.csv \
 	 doc/primates-ncbi-2015-2020.ex \
-	 $(WORK)/mammalia-ncbi-2015-2020.csv \
+	 doc/mammalia-ncbi-2015-2020.csv \
+	 doc/mammalia-ncbi-2015-2020-dribble.txt \
 	 doc/ncbi-gbif.csv
 
 doc/primates-ncbi-2015-2020.csv: $(WORK)/primates-ncbi-2015-2020.csv
 	cp -p $< $@
+doc/primates-ncbi-2015-2020-dribble.txt: $(WORK)/primates-ncbi-2015-2020-dribble.txt
+	cp -p $< $@
 doc/primates-ncbi-2015-2020.ex: $(WORK)/primates-ncbi-2015-2020.ex
 	cp -p $< $@
 doc/mammalia-ncbi-2015-2020.csv: $(WORK)/mammalia-ncbi-2015-2020.csv
+	cp -p $< $@
+doc/mammalia-ncbi-2015-2020-dribble.txt: $(WORK)/mammalia-ncbi-2015-2020-dribble.txt
 	cp -p $< $@
 doc/ncbi-gbif.csv: $(WORK)/ncbi-gbif.csv
 	cp -p $< $@
