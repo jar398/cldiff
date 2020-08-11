@@ -58,14 +58,14 @@ def report(A, B, al, roots, parents, outfile):
     d = None
     reason = None
     if x and y:
-      op = "KEEP"
+      op = "SHARED"
       comparison = diff.differences(x, y, all_props)
       if not diff.same(comparison):
         props = diff.unpack(comparison)
         d = ("; ".join(map(lambda x:x.pet_name, props)))
       reason = al[x].reason
     elif x:
-      op = "DELETE"
+      op = "A ONLY"
       ar = al.get(x)
       if ar:
         re = ar.relation.name
@@ -79,7 +79,7 @@ def report(A, B, al, roots, parents, outfile):
         elif rel.is_variant(ar.relation, rel.lt):
           op += " (loss of resolution)"
     else:                       # y
-      op = "ADD"
+      op = "B ONLY"
       ar = al.get(y)
       if ar:
         re = ar.relation.revname

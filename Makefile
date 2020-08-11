@@ -1,34 +1,37 @@
 WORK=work
 
+SOURCES=src/report.py src/alignment.py src/articulation.py src/relation.py \
+        src/checklist.py src/diff.py src/merge.py src/eulerx.py
+
 all: $(WORK)/ncbi-2015-2020.ex $(WORK)/ncbi-2015-2020.csv 
 
-# A (NCBI 2015)
+# N15 (NCBI 2015)
 
-A=$(WORK)/ncbi/2015-01-01
-$(A)/dump.zip:
-	mkdir -p $(A)/dump
-	wget -O $@ ftp://ftp.ncbi.nlm.nih.gov/pub/taxonomy/taxdump_archive/taxdmp_2015-01-01.zip
-$(A)/dump/names.dmp: $(A)/dump.zip
-	mkdir -p $(A)/dump
-	unzip -d $(A)/dump $(A)/dump.zip
-	touch $(A)/dump/*
+N15=$(WORK)/ncbi/2015-05-01
+$(N15)/dump.zip:
+	mkdir -p $(N15)/dump
+	wget -O $@ ftp://ftp.ncbi.nlm.nih.gov/pub/taxonomy/taxdump_archive/taxdmp_2015-05-01.zip
+$(N15)/dump/names.dmp: $(N15)/dump.zip
+	mkdir -p $(N15)/dump
+	unzip -d $(N15)/dump $(N15)/dump.zip
+	touch $(N15)/dump/*
 # Convert to DwC form
-$(A)/converted.csv: src/ncbi_to_dwc.py $(A)/dump/names.dmp
-	python3 src/ncbi_to_dwc.py $(A)/dump --out $@
+$(N15)/converted.csv: src/ncbi_to_dwc.py $(N15)/dump/names.dmp
+	python3 src/ncbi_to_dwc.py $(N15)/dump --out $@
 
-# B (NCBI 2020)
+# N20 (NCBI 2020)
 
-B=$(WORK)/ncbi/2020-01-01
-$(B)/dump.zip:
-	mkdir -p $(B)/dump
-	wget -O $@ ftp://ftp.ncbi.nlm.nih.gov/pub/taxonomy/taxdump_archive/taxdmp_2020-01-01.zip
-$(B)/dump/names.dmp: $(B)/dump.zip
-	mkdir -p $(B)/dump
-	unzip -d $(B)/dump $(B)/dump.zip
-	touch $(B)/dump/*
+N20=$(WORK)/ncbi/2020-08-01
+$(N20)/dump.zip:
+	mkdir -p $(N20)/dump
+	wget -O $@ ftp://ftp.ncbi.nlm.nih.gov/pub/taxonomy/taxdump_archive/taxdmp_2020-08-01.zip
+$(N20)/dump/names.dmp: $(N20)/dump.zip
+	mkdir -p $(N20)/dump
+	unzip -d $(N20)/dump $(N20)/dump.zip
+	touch $(N20)/dump/*
 # Convert to DwC form
-$(B)/converted.csv: src/ncbi_to_dwc.py $(B)/dump/names.dmp
-	python3 src/ncbi_to_dwc.py $(B)/dump --out $@
+$(N20)/converted.csv: src/ncbi_to_dwc.py $(N20)/dump/names.dmp
+	python3 src/ncbi_to_dwc.py $(N20)/dump --out $@
 
 # C (GBIF)
 
@@ -42,41 +45,67 @@ $(C)/dump/Taxon.tsv: $(C)/backbone.zip
 	touch $(C)/dump/*
 # No conversion needed
 
-# Extract Primates from each
+# --------------------
+# Extract Primates from each, and compare
 
-$(A)/primates.csv: src/subset_dwc.py $(A)/converted.csv
-	python3 src/subset_dwc.py $(A)/converted.csv 9443 --out $@
+$(N15)/primates.csv: src/subset_dwc.py $(N15)/converted.csv
+	python3 src/subset_dwc.py $(N15)/converted.csv 9443 --out $@
 
-$(B)/primates.csv: src/subset_dwc.py $(B)/converted.csv
-	python3 src/subset_dwc.py $(B)/converted.csv 9443 --out $@
+$(N20)/primates.csv: src/subset_dwc.py $(N20)/converted.csv
+	python3 src/subset_dwc.py $(N20)/converted.csv 9443 --out $@
 
 $(C)/primates.csv: src/subset_dwc.py $(C)/dump/Taxon.tsv
 	python3 src/subset_dwc.py $(C)/dump/Taxon.tsv 798 --out $@
 p: $(C)/primates.csv
 
-SOURCES=src/report.py src/alignment.py src/articulation.py src/relation.py src/checklist.py src/diff.py src/merge.py src/eulerx.py
-
-$(WORK)/ncbi-2015-2020.csv: $(SOURCES) $(A)/primates.csv $(B)/primates.csv
-	python3 src/report.py $(A)/primates.csv $(B)/primates.csv \
+$(WORK)/primates-ncbi-2015-2020.csv: $(SOURCES) $(N15)/primates.csv $(N20)/primates.csv
+	python3 src/report.py $(N15)/primates.csv --low-tag=N15 \
+	                      $(N20)/primates.csv --high-tag=N20\
 	  --out $@.new 
 	mv $@.new $@
 
-ex: $(WORK)/ncbi-2015-2020.ex
-$(WORK)/ncbi-2015-2020.ex: $(SOURCES) $(A)/primates.csv $(B)/primates.csv
-	python3 src/report.py $(A)/primates.csv $(B)/primates.csv \
+$(WORK)/primates-ncbi-2015-2020.ex: $(SOURCES) $(N15)/primates.csv $(N20)/primates.csv
+	python3 src/report.py $(N15)/primates.csv --low-tag=N15 \
+	                      $(N20)/primates.csv --high-tag=N20\
 	  --out $@.new --format eulerx
 	mv $@.new $@
 
-$(WORK)/ncbi-gbif.csv: $(SOURCES) $(B)/primates.csv $(C)/primates.csv
-	python3 src/report.py $(B)/primates.csv --low-tag=B \
-			      $(C)/primates.csv --high-tag=C --out $@.new
+$(WORK)/ncbi-gbif.csv: $(SOURCES) $(N20)/primates.csv $(C)/primates.csv
+	python3 src/report.py $(N20)/primates.csv --low-tag=N20 \
+			      $(C)/primates.csv --high-tag=G --out $@.new
 	mv $@.new $@
 
-publish: doc/ncbi-2015-2020.csv doc/ncbi-gbif.csv
+pri: $(WORK)/primates-ncbi-2015-2020.csv
 
-doc/ncbi-2015-2020.csv: $(WORK)/ncbi-2015-2020.csv
+# ----------------------------------------------------------------------
+# Mammalia = NCBI 40674
+
+$(N15)/mammalia.csv: src/subset_dwc.py $(N15)/converted.csv
+	python3 src/subset_dwc.py $(N15)/converted.csv 40674 --out $@
+
+$(N20)/mammalia.csv: src/subset_dwc.py $(N20)/converted.csv
+	python3 src/subset_dwc.py $(N20)/converted.csv 40674 --out $@
+
+$(WORK)/mammalia-ncbi-2015-2020.csv: $(SOURCES) $(N15)/mammalia.csv $(N20)/mammalia.csv
+	python3 src/report.py $(N15)/mammalia.csv $(N20)/mammalia.csv \
+	  --out $@.new 
+	mv $@.new $@
+
+mam: $(WORK)/mammalia-ncbi-2015-2020.csv
+
+# --------------------
+
+publish: doc/primates-ncbi-2015-2020.csv \
+	 doc/primates-ncbi-2015-2020.ex \
+	 $(WORK)/mammalia-ncbi-2015-2020.csv \
+	 doc/ncbi-gbif.csv
+
+doc/primates-ncbi-2015-2020.csv: $(WORK)/primates-ncbi-2015-2020.csv
 	cp -p $< $@
-
+doc/primates-ncbi-2015-2020.ex: $(WORK)/primates-ncbi-2015-2020.ex
+	cp -p $< $@
+doc/mammalia-ncbi-2015-2020.csv: $(WORK)/mammalia-ncbi-2015-2020.csv
+	cp -p $< $@
 doc/ncbi-gbif.csv: $(WORK)/ncbi-gbif.csv
 	cp -p $< $@
 
@@ -85,40 +114,42 @@ gbif: $(WORK)/ncbi-gbif.csv
 test:
 	python3 src/report.py "(l(pab)c)" "(l(qab)c)" --out -
 
-
 # ----------------------------------------------------------------------
+# Other groups to play with
 
 # Trillium
 
-$(A)/trillium.csv: src/subset_dwc.py $(A)/converted.csv
-	python3 src/subset_dwc.py $(A)/converted.csv 49674 --out $@
+$(N15)/trillium.csv: src/subset_dwc.py $(N15)/converted.csv
+	python3 src/subset_dwc.py $(N15)/converted.csv 49674 --out $@
 
-$(B)/trillium.csv: src/subset_dwc.py $(B)/converted.csv
-	python3 src/subset_dwc.py $(B)/converted.csv 49674 --out $@
+$(N20)/trillium.csv: src/subset_dwc.py $(N20)/converted.csv
+	python3 src/subset_dwc.py $(N20)/converted.csv 49674 --out $@
 
 $(C)/trillium.csv: src/subset_dwc.py $(C)/dump/Taxon.tsv
 	python3 src/subset_dwc.py $(C)/dump/Taxon.tsv 2742182 --out $@
 
-$(WORK)/trillium-ncbi-2015-2020.csv: $(SOURCES) $(A)/trillium.csv $(B)/trillium.csv
-	python3 src/report.py $(A)/trillium.csv $(B)/trillium.csv \
+$(WORK)/trillium-ncbi-2015-2020.csv: $(SOURCES) $(N15)/trillium.csv $(N20)/trillium.csv
+	python3 src/report.py $(N15)/trillium.csv $(N20)/trillium.csv \
 	  --out $@.new 
 	mv $@.new $@
 t: $(WORK)/trillium-ncbi-2015-2020.csv
 
 
-$(A)/mag.csv: src/subset_dwc.py $(A)/converted.csv
-	python3 src/subset_dwc.py $(A)/converted.csv 3401 --out $@
+$(N15)/mag.csv: src/subset_dwc.py $(N15)/converted.csv
+	python3 src/subset_dwc.py $(N15)/converted.csv 3401 --out $@
 
-$(B)/mag.csv: src/subset_dwc.py $(B)/converted.csv
-	python3 src/subset_dwc.py $(B)/converted.csv 3401 --out $@
+$(N20)/mag.csv: src/subset_dwc.py $(N20)/converted.csv
+	python3 src/subset_dwc.py $(N20)/converted.csv 3401 --out $@
 
 $(C)/mag.csv: src/subset_dwc.py $(C)/dump/Taxon.tsv
 	python3 src/subset_dwc.py $(C)/dump/Taxon.tsv 4690 --out $@
 
-$(WORK)/mag-ncbi-2015-2020.csv: $(SOURCES) $(A)/mag.csv $(B)/mag.csv
-	python3 src/report.py $(A)/mag.csv $(B)/mag.csv \
+$(WORK)/mag-ncbi-2015-2020.csv: $(SOURCES) $(N15)/mag.csv $(N20)/mag.csv
+	python3 src/report.py $(N15)/mag.csv $(N20)/mag.csv \
 	  --out $@.new 
 	mv $@.new $@
 
-m: $(WORK)/mag-ncbi-2015-2020.csv
+mag: $(WORK)/mag-ncbi-2015-2020.csv
 
+clean:
+	rm -rf $(WORK)
