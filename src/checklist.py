@@ -267,19 +267,19 @@ def is_accepted(tnu):
 # ---------- Hierarchy analyzers
 
 def how_related(tnu1, tnu2):
-  assert table.is_record(tnu1)
-  assert table.is_record(tnu2)
   if tnu1 == tnu2:
     # If in differently checklists, this could be an incompatibility
     return rel.eq
+  assert table.is_record(tnu1)
+  assert table.is_record(tnu2)
+  assert get_checklist(tnu1) == get_checklist(tnu2)
   (peer1, peer2) = find_peers(tnu1, tnu2)  
-  if peer1 != peer2:
-    return rel.disjoint
-  if peer1 == tnu1:
-    return rel.gt
-  if peer2 == tnu2:
-    return rel.lt
-  assert False
+  if peer1 == peer2:
+    if peer1 == tnu1:
+      return rel.gt
+    elif peer2 == tnu2:
+      return rel.lt
+  return rel.disjoint
 
 def are_disjoint(tnu1, tnu2):
   assert table.is_record(tnu1)

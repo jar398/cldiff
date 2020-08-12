@@ -116,7 +116,10 @@ def read_accepteds(nodes_path):
                           quotechar="\a",
                           quoting=csv.QUOTE_NONE):
       # tax_id, |, parent tax_id, |, rank, ... other stuff we don't use ...
-      accepteds.append((row[0], row[2], row[4]))
+      rank = row[4]
+      if rank == "clade" or rank == "no rank":
+        rank = None
+      accepteds.append((row[0], row[2], rank))
   print (len(accepteds), "accepteds")
   return accepteds
 

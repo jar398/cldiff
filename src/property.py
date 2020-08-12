@@ -95,9 +95,9 @@ uris = [
         "http://rs.tdwg.org/dwc/terms/taxonRank",
         "http://rs.tdwg.org/dwc/terms/scientificNameAuthorship",
         "http://rs.tdwg.org/dwc/terms/nameAccordingToID",
+        "http://rs.tdwg.org/dwc/terms/taxonID",    # exclude from diff?
         "http://rs.tdwg.org/dwc/terms/gbif_id",
         "http://rs.tdwg.org/dwc/terms/NCBI Taxonomy ID",
-        "http://rs.tdwg.org/dwc/terms/taxonID",
         "http://rs.tdwg.org/dwc/terms/vernacularName",
         "http://rs.tdwg.org/dwc/terms/parentNameUsageID",
         "http://rs.tdwg.org/dwc/terms/namePublishedInYear",

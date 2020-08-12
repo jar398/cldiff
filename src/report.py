@@ -61,6 +61,9 @@ def report(A, B, al, roots, parents, outfile):
     reason = None
     if x and y:
       op = "SHARED"
+      px = cl.get_parent(x)
+      if px and al[px].cod != cl.get_parent(y):
+        op = op + (" (moved from %s)" % cl.get_node_id(px))
       comparison = diff.differences(x, y, all_props)
       if not diff.same(comparison):
         props = diff.unpack(comparison)
@@ -71,6 +74,7 @@ def report(A, B, al, roots, parents, outfile):
       ar = al.get(x)
       if ar:
         re = ar.relation.name
+        reason = ar.reason
         # Equivalence, usually, but sometimes not
         y = ar.cod
 
@@ -85,6 +89,7 @@ def report(A, B, al, roots, parents, outfile):
       ar = al.get(y)
       if ar:
         re = ar.relation.revname
+        reason = ar.reason
         x = ar.cod
         if rel.is_variant(ar.relation, rel.eq):
           op += " (split)"

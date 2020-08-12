@@ -154,8 +154,8 @@ declare_synonym_relations()
 
 # ---------- Different kinds of articulation
 
-def extensional(dom, cod, re):
-  return bridge(dom, cod, re, "extension")
+def extensional(dom, cod, re, reason):
+  return bridge(dom, cod, re, reason)
 
 def monotypic(dom, cod, re):
   return bridge(dom, cod, re, "monotypic")

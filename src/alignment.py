@@ -143,88 +143,105 @@ def extensional_matches(tnu, particles, other):       # B-node to A
   return matches
 
 # Guaranteed invertible, except for monotypic node chains
+# This code is derived from 
+#   reference-taxonomy/org/opentreeoflife/conflict/ConflictAnalysis.java
 
-def extensional_match(tnu, particles, other):
-  part = particles.get(tnu)
-  if part: return part
-  partner = cross_mrca(tnu)      # TNU in other checklist
+def extensional_match(node, particles, other):
+  part = particles.get(node)
+  if part:
+    return part
+  partner = cross_mrca(node)      # node in other checklist; 'conode'
   if not partner:
     return None
-  back = cross_mrca(partner)
-  if not back: return None      # ?
-  if cl.are_disjoint(tnu, back):
-    re = rel.disjoint
-  elif cl.mrca(tnu, back) == tnu:
-    re = rel.eq
-  else:
+  back = cross_mrca(partner)    # 'bounce'
+  if not back:
+    return None    # Not sure how this can happen but it does (NCBI vs. GBIF)
+  how = cl.how_related(node, back)
+  # assert how != rel.disjoint - oddly, not always true
+  if how == rel.eq:
+    # Could be part of a 'monotypic' chain; fix later
+    re = how
+    reason = "same particle set"
+  elif how != rel.lt:
+    re = how
+    reason = "particle set comparison"
+  else:               # must be rel.lt
+    # Assume resolution (<) until conflict is proven
     re = rel.lt
-    # See reference-taxonomy/org/opentreeoflife/conflict/ConflictAnalysis.java
-    within = None
-    without = None
-    conflict = False
-    for child in get_children(partner):
-      child_back = cross_mrca(child)
-      if child_back == None:
-        pass
-      elif not(within) and cl.mrca(tnu, child_back) == tnu:
-        # ^^^ was !=
-        within = child
-        if without: break
-      elif not(without) and cross_disjoint(tnu, child):
-        # ^^^ was (tnu, partner)
-        without = child
-        if within: break
-    if without:
-      re = rel.conflict
-      if within:
-        print("# %s conflicts with %s because:\n#   child %s is disjoint while %s isn't" %
-              (cl.get_unique(tnu),
-               cl.get_unique(partner),
-               cl.get_unique(without),
-               cl.get_unique(within)),
-              file=dribble_file)
+    reason = "particle set containment"
+
+    # Look for an intersection between any partner-child and node
+    x_seen = None
+    y_seen = None
+    for pchild in get_children(partner):
+      pchild_back = cross_mrca(pchild)
+      if pchild_back == None:
+        graft = pchild
       else:
-        print("# %s conflicts with %s because child %s conflicts" %
-              (cl.get_unique(tnu),
-               cl.get_unique(partner),
-               cl.get_unique(without)),
-              file=dribble_file)
-  return art.extensional(tnu, partner, re)
+        (x, y) = cross_compare(node, pchild)
+        if x and y:
+          re = rel.conflict
+          reason = ("%s is in; %s is outside" %
+                    (cl.get_unique(x), cl.get_unique(y)))
+          break
+        elif y:
+          y_seen = y
+        elif x:
+          x_seen = x
+    if not reason:
+      reason = ("%s is in; %s is outside" % (cl.get_unique(x), cl.get_unique(y)))
+
+  return art.extensional(node, partner, re, reason)
 
 # ---------- Determine disjointness across checklists
 
-ddebug = False
+# node bears any relationship to conode.
+# We're looking for two things
+#  1. whether they intersect (if so then parent conflict can be detected) -
+#      i.e. a conode descendant that *is* a node descendant.
+#      There may not be one.
+#  2. why they are not equal (goes to conflict diagnosis) - example of
+#      conode descendant that is *not* a node descendant.
+#      There is always one of these.
 
-def cross_disjoint(tnu, partner):
-  assert tnu > 0
-  assert partner > 0
-  assert cl.get_checklist(tnu) != cl.get_checklist(partner)
+# On each recursive call, we can provide one or the other of these, or both.
+# Or maybe none.
 
-  back = cross_mrca(partner)
+# Returns (x, y) where x (under conode) is contained in node,
+# and y (also under conode) is disjoint with node.  Either can be None.
+
+def cross_compare(node, conode):
+  back = cross_mrca(conode)
   if back == None:
-    # ???
-    if ddebug:
-      print("** 1. %s -> %s == None ergo disjoint from %s" %
-            (cl.get_unique(partner), cl.get_unique(back), cl.get_unique(tnu)))
-    return True
-  assert back > 0
-  assert cl.get_checklist(back) == cl.get_checklist(tnu)
-  if cl.are_disjoint(tnu, back):
-    if ddebug:
-      print("** 2. %s -> %s ! %s" %
-            (cl.get_unique(partner), cl.get_unique(back), cl.get_unique(tnu)))
-    return True
-  for child in get_children(partner):
-    assert child > 0
-    if not cross_disjoint(tnu, child):
-      if ddebug:
-        print("# ** 3. Test %s ! %s failed because not ! %s" %\
-              (cl.get_unique(tnu), cl.get_unique(partner), cl.get_unique(child)))
-      return False
-  if ddebug:
-    print("** 4. %s -> %s ! %s" %
-          (cl.get_unique(partner), cl.get_unique(back), cl.get_unique(tnu)))
-  return True
+    return (None, None)
+  re = cl.how_related(node, back)
+  assert re != rel.conflict
+  if re == rel.eq:
+    return (conode, None)
+  elif re == rel.gt:
+    return (conode, None)
+  elif re == rel.disjoint:
+    return (None, conode)
+  assert re == rel.lt
+  x_seen = None
+  y_seen = None
+  for child in get_children(conode):
+    saw = cross_compare(node, child)
+    if saw:
+      (x, y) = saw
+      if x and y:
+        return saw
+      elif x:
+        if y_seen:
+          return (x, y_seen)
+        else:
+          x_seen = x
+      elif y:
+        if x_seen:
+          return (x_seen, y)
+        else:
+          y_seen = y
+  return (x_seen, y_seen)
 
 # ---------- Cross-MRCAs
 
@@ -429,11 +446,12 @@ def choose_best_match(arts):     # => art
   arts = choose_best_matches(arts)
   b = arts[0]
   if len(arts) == 1: return b
-  print("# ** Multiple least-bad matches. Need to find more tie-breakers.")
+  print("# ** Multiple least-bad matches. Need to find more tie-breakers.",
+        file=dribble_file)
   print("   %s -> %s" %
         (cl.get_unique(b.dom),
-         [cl.get_unique(a.cod) for a in arts]))
-  print(', '.join(["%s" % ar.relation.name for ar in arts]))
+         [cl.get_unique(a.cod) for a in arts]),
+        file=dribble_file)
   return None
 
 # There can be multiple best matches

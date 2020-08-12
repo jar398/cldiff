@@ -1,9 +1,9 @@
 WORK=work
 
 SOURCES=src/report.py src/alignment.py src/articulation.py src/relation.py \
-        src/checklist.py src/diff.py src/merge.py src/eulerx.py
+        src/checklist.py src/diff.py src/merge.py src/report.py src/eulerx.py
 
-all: $(WORK)/ncbi-2015-2020.ex $(WORK)/ncbi-2015-2020.csv 
+all: $(WORK)/primates-ncbi-2015-2020.csv 
 
 # N15 (NCBI 2015)
 
