@@ -36,17 +36,15 @@ def differences(uid1, uid2, props = None):  # mask
   add = 0
   for prop in props:
     if prop and prop != taxonID and prop != parentNameUsageID:
-      # TBD: ignore taxonID difference when different idspaces
       v1 = cl.get_value(uid1, prop)
       v2 = cl.get_value(uid2, prop)
-
       if v1 != v2:
         if v1 != None:
           if v2 != None:
             change |= 1 << prop.specificity
           else:
             drop |= 1 << prop.specificity
-        if v2 != None:
+        elif v2 != None:
           add |= 1 << prop.specificity
   if len(cl.get_children(uid1)) != len(cl.get_children(uid2)):
     change |= 1 << number_of_children.specificity

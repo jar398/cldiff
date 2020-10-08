@@ -81,8 +81,7 @@ def composable(r1, r2):
 # Main thing is to sort '=' ahead of everything else
 
 def sort_key(re):
-  return (-(re.a_given_b + re.b_given_a),
-          re.b_given_a - re.a_given_b)    # distinguish < from >
+  return (-re.b_given_a, -re.a_given_b) # distinguish < from >
 
 def self_tests():
   assert reverse(eq) == eq

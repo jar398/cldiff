@@ -1,818 +1,811 @@
-indent,operation,dom,dom id,relation,cod id,cod,unchanged,changed_props,reason
-,SHARED,N15.Primates,9443,,9443,N20.Primates,,,same particle set
-__,SHARED,N15.unclassified_Primates,57118,,57118,N20.unclassified_Primates,,number_of_children,same particle set
-____,A ONLY (merge),N15.Japanese_monkeys,36513,=,9542,N20.Macaca_fuscata,,,name+synonym
-____,SHARED,N15.marmosets,38020,,38020,N20.marmosets,,,name
-____,SHARED,N15.unidentified_monkey,70699,,70699,N20.unidentified_monkey,,,name
-____,SHARED,N15.Primates_sp._BOLD:AAA0001,976298,,976298,N20.Primates_sp._BOLD:AAA0001,,,name
-____,SHARED,N15.Primates_sp._BOLD:AAC9009,976299,,976299,N20.Primates_sp._BOLD:AAC9009,,,name
-____,SHARED,N15.Primates_sp._BOLD:AAE4744,976300,,976300,N20.Primates_sp._BOLD:AAE4744,,,name
-____,SHARED,N15.Primates_sp._BOLD:AAJ7304,976301,,976301,N20.Primates_sp._BOLD:AAJ7304,,,name
-____,SHARED,N15.Primates_sp._BOLD:AAO0053,976302,,976302,N20.Primates_sp._BOLD:AAO0053,,,name
-____,SHARED,N15.Primates_sp._BOLD:AAC7735,1068292,,1068292,N20.Primates_sp._BOLD:AAC7735,,,name
-____,SHARED,N15.Primates_sp._BOLD:AAD0215,1068293,,1068293,N20.Primates_sp._BOLD:AAD0215,,,name
-____,SHARED,N15.Primates_sp._BOLD:AAF0367,1068294,,1068294,N20.Primates_sp._BOLD:AAF0367,,,name
-__,SHARED,N15.Strepsirrhini,376911,,376911,N20.Strepsirrhini,,,same particle set
-____,SHARED,N15.Lemuriformes,376915,,376915,N20.Lemuriformes,,,same particle set
-______,SHARED,N15.Lemuridae,9445,,9445,N20.Lemuridae,,,same particle set
-________,SHARED,N15.Lemur,9446,,9446,N20.Lemur,,,same particle set
-__________,SHARED,N15.Lemur_catta,9447,,9447,N20.Lemur_catta,,,name
-__________,B ONLY,N15.Lemur_sp.,69491,<,2641939,N20.unclassified_Lemur,subtree=,,particle set comparison
-________,SHARED,N15.Varecia,9454,,9454,N20.Varecia,,,same particle set
-__________,A ONLY,N15.Varecia_variegata,9455,>,87289,N20.Varecia_variegata_variegata,subtree=,,particle set comparison
-__________,SHARED,N15.Varecia_rubra,554167,,554167,N20.Varecia_rubra,,,name
-__________,B ONLY,N15.Varecia_variegata_variegata,87289,<,9455,N20.Varecia_variegata,,,particle set comparison
-________,SHARED,N15.Eulemur,13513,,13513,N20.Eulemur,,number_of_children,same particle set
-__________,SHARED,N15.Eulemur_coronatus,13514,,13514,N20.Eulemur_coronatus,,,name
-__________,SHARED,N15.Eulemur_fulvus,13515,,13515,N20.Eulemur_fulvus,subtree=,,same particle set
-__________,A ONLY,N15.Eulemur_macaco,30602,>,30603,N20.Eulemur_macaco_macaco,subtree=,,particle set comparison
-__________,SHARED,N15.Eulemur_mongoz,34828,,34828,N20.Eulemur_mongoz,,,name
-__________,SHARED,N15.Eulemur_rubriventer,34829,,34829,N20.Eulemur_rubriventer,,,name
-__________,SHARED,N15.Eulemur_flavifrons,87288,,87288,N20.Eulemur_flavifrons,,,name
-__________,SHARED,N15.Eulemur_sanfordi,122225,,122225,N20.Eulemur_sanfordi,,,name
-__________,SHARED,N15.Eulemur_cinereiceps,639525,,639525,N20.Eulemur_cinereiceps,,,name
-__________,SHARED,N15.Eulemur_rufus,859983,,859983,N20.Eulemur_rufus,,,name
-__________,SHARED,N15.Eulemur_rufifrons,859984,,859984,N20.Eulemur_rufifrons,,,name
-__________,SHARED,N15.Eulemur_albifrons,1215604,,1215604,N20.Eulemur_albifrons,,,name
-__________,A ONLY (loss of resolution),N15.Eulemur_hybrids,1417238,<,13513,N20.Eulemur,subtree=,,particle set containment
-__________,B ONLY,N15.Eulemur_macaco_macaco,30603,<,30602,N20.Eulemur_macaco,,,particle set comparison
-________,SHARED,N15.Hapalemur,13556,,13556,N20.Hapalemur,,,same particle set
-__________,SHARED,N15.Hapalemur_griseus,13557,,13557,N20.Hapalemur_griseus,subtree=,,same particle set
-__________,SHARED,N15.Hapalemur_aureus,122222,,122222,N20.Hapalemur_aureus,,,name
-__________,SHARED,N15.Hapalemur_occidentalis,867377,,867377,N20.Hapalemur_occidentalis,,,name
-________,A ONLY,N15.Prolemur,1328069,>,1328070,N20.Prolemur_simus,subtree=,,particle set comparison
-________,A ONLY,N15.Pachylemur,1513474,>,1513475,N20.Pachylemur_jullyi,subtree=,,particle set comparison
-________,B ONLY,N15.Prolemur_simus,1328070,<,1328069,N20.Prolemur,,,particle set comparison
-________,B ONLY,N15.Pachylemur_jullyi,1513475,<,1513474,N20.Pachylemur,,,particle set comparison
-______,SHARED,N15.Indriidae,30599,,30599,N20.Indriidae,,,same particle set
-________,SHARED,N15.Propithecus,30600,,30600,N20.Propithecus,,,same particle set
-__________,SHARED,N15.Propithecus_tattersalli,30601,,30601,N20.Propithecus_tattersalli,,,name
-__________,A ONLY,N15.Propithecus_verreauxi,34825,>,122229,N20.Propithecus_verreauxi_verreauxi,subtree=,,particle set comparison
-__________,SHARED,N15.Propithecus_diadema,83281,,83281,N20.Propithecus_diadema,subtree=,,same particle set
-__________,SHARED,N15.Propithecus_coquereli,379532,,379532,N20.Propithecus_coquereli,,,name
-__________,SHARED,N15.Propithecus_deckenii,475618,,475618,N20.Propithecus_deckenii,subtree=,,same particle set
-__________,SHARED,N15.Propithecus_edwardsi,543559,,543559,N20.Propithecus_edwardsi,,,name
-__________,SHARED,N15.Propithecus_candidus,543560,,543560,N20.Propithecus_candidus,,,name
-__________,SHARED,N15.Propithecus_perrieri,989338,,989338,N20.Propithecus_perrieri,,,name
-__________,B ONLY,N15.Propithecus_verreauxi_verreauxi,122229,<,34825,N20.Propithecus_verreauxi,,,particle set comparison
-__________,B ONLY,N15.Propithecus_sp.,39582,<,2677806,N20.unclassified_Propithecus,subtree=,,particle set comparison
-________,A ONLY,N15.Indri,34826,>,34827,N20.Indri_indri,subtree=,,particle set comparison
-________,SHARED,N15.Avahi,122245,,122245,N20.Avahi,,,same particle set
-__________,SHARED,N15.Avahi_laniger,122246,,122246,N20.Avahi_laniger,,,name
-__________,SHARED,N15.Avahi_occidentalis,132108,,132108,N20.Avahi_occidentalis,,,name
-__________,SHARED,N15.Avahi_unicolor,402239,,402239,N20.Avahi_unicolor,,,name
-__________,SHARED,N15.Avahi_cleesei,402244,,402244,N20.Avahi_cleesei,,,name
-__________,SHARED,N15.Avahi_peyrierasi,1313323,,1313323,N20.Avahi_peyrierasi,,scientificName,name
-________,SHARED,N15.Archaeolemur,523820,,523820,N20.Archaeolemur,subtree=,,same particle set
-________,A ONLY,N15.Hadropithecus,523824,>,523825,N20.Hadropithecus_stenognathus,subtree=,,particle set comparison
-________,B ONLY,N15.Indri_indri,34827,<,34826,N20.Indri,,,particle set comparison
-________,B ONLY,N15.Hadropithecus_stenognathus,523825,<,523824,N20.Hadropithecus,,,particle set comparison
-______,SHARED,N15.Lepilemuridae,30614,,30614,N20.Lepilemuridae,,,same particle set
-________,SHARED,N15.Lepilemur,9452,,9452,N20.Lepilemur,,number_of_children,same particle set
-__________,SHARED,N15.Lepilemur_mustelinus,9453,,9453,N20.Lepilemur_mustelinus,,,name
-__________,SHARED,N15.Lepilemur_dorsalis,78583,,78583,N20.Lepilemur_dorsalis,,,name
-__________,SHARED,N15.Lepilemur_septentrionalis,78584,,78584,N20.Lepilemur_septentrionalis,,,name
-__________,SHARED,N15.Lepilemur_ruficaudatus,78866,,78866,N20.Lepilemur_ruficaudatus,,,name
-__________,SHARED,N15.Lepilemur_leucopus,100475,,100475,N20.Lepilemur_leucopus,,,name
-__________,SHARED,N15.Lepilemur_edwardsi,122230,,122230,N20.Lepilemur_edwardsi,,,name
-__________,SHARED,N15.Lepilemur_microdon,185457,,185457,N20.Lepilemur_microdon,,,name
-__________,SHARED,N15.Lepilemur_mitsinjoensis,236287,,236287,N20.Lepilemur_mitsinjoensis,,,name
-__________,SHARED,N15.Lepilemur_seali,236288,,236288,N20.Lepilemur_seali,,,name
-__________,SHARED,N15.Lepilemur_sahamalazensis,342398,,342398,N20.Lepilemur_sahamalazensis,,,name
-__________,SHARED,N15.Lepilemur_aeeclis,342399,,342399,N20.Lepilemur_aeeclis,,,name
-__________,SHARED,N15.Lepilemur_ankaranensis,342401,,342401,N20.Lepilemur_ankaranensis,,,name
-__________,SHARED,N15.Lepilemur_mittermeieri,378517,,378517,N20.Lepilemur_mittermeieri,,,name
-__________,SHARED,N15.Lepilemur_manasamody,458171,,458171,N20.Lepilemur_manasamody,,,name
-__________,SHARED,N15.Lepilemur_otto,458173,,458173,N20.Lepilemur_otto,,,name
-__________,SHARED,N15.Lepilemur_jamesi,486960,,486960,N20.Lepilemur_jamesorum,,canonicalName,synonym+name+synonym
-__________,SHARED,N15.Lepilemur_hubbardorum,756882,,756882,N20.Lepilemur_hubbardorum,,,name
-__________,SHARED,N15.Lepilemur_petteri,886964,,886964,N20.Lepilemur_petteri,,,name
-__________,SHARED,N15.Lepilemur_randrianasoloi,886965,,886965,N20.Lepilemur_randrianasoloi,,,name
-__________,B ONLY,,,,886957,N20.Lepilemur_ahmansonorum,,,
-__________,B ONLY,,,,886958,N20.Lepilemur_betsileo,,,
-__________,B ONLY,,,,886959,N20.Lepilemur_fleuretae,,,
-__________,B ONLY,,,,886960,N20.Lepilemur_grewcockorum,,,
-__________,B ONLY,,,,886961,N20.Lepilemur_hollandorum,,,
-__________,B ONLY,,,,886963,N20.Lepilemur_milanoii,,,
-__________,B ONLY,,,,886966,N20.Lepilemur_scottorum,,,
-__________,B ONLY,,,,886967,N20.Lepilemur_tymerlachsoni,,,
-__________,B ONLY,,,,886968,N20.Lepilemur_wrightae,,,
-__________,B ONLY (increased resolution),N15.Lepilemur,9452,>,2645584,N20.unclassified_Lepilemur,subtree=,,particle set containment
-________,SHARED,N15.Megaladapis,126593,,126593,N20.Megaladapis,,number_of_children,same particle set
-__________,SHARED,N15.Megaladapis_edwardsi,185953,,185953,N20.Megaladapis_edwardsi,,,name
-__________,B ONLY (increased resolution),N15.Megaladapis,126593,>,2620125,N20.unclassified_Megaladapis,subtree=,,particle set containment
-______,SHARED,N15.Cheirogaleidae,30615,,30615,N20.Cheirogaleidae,,,same particle set
-________,SHARED,N15.Cheirogaleus,9459,,9459,N20.Cheirogaleus,,number_of_children,same particle set
-__________,SHARED,N15.Cheirogaleus_medius,9460,,9460,N20.Cheirogaleus_medius,,scientificName,name
-__________,SHARED,N15.Cheirogaleus_major,47177,,47177,N20.Cheirogaleus_major,,scientificName,name
-__________,SHARED,N15.Cheirogaleus_crossleyi,291259,,291259,N20.Cheirogaleus_crossleyi,,scientificName,name
-__________,SHARED,N15.Cheirogaleus_sibreei,752538,,752538,N20.Cheirogaleus_sibreei,,,name
-__________,SHARED,N15.Cheirogaleus_minusculus,867375,,867375,N20.Cheirogaleus_minusculus,,,name
-__________,SHARED,N15.Cheirogaleus_lavasoensis,1569974,,1569974,N20.Cheirogaleus_lavasoensis,,scientificName,name
-__________,B ONLY,,,,2563322,N20.Cheirogaleus_cf._medius_RW-2019,,,
-________,SHARED,N15.Microcebus,13149,,13149,N20.Microcebus,,number_of_children,same particle set
-__________,SHARED,N15.Microcebus_murinus,30608,,30608,N20.Microcebus_murinus,,,name
-__________,SHARED,N15.Microcebus_ravelobensis,122231,,122231,N20.Microcebus_ravelobensis,,,name
-__________,SHARED,N15.Microcebus_rufus,122232,,122232,N20.Microcebus_rufus,,,name
-__________,SHARED,N15.Microcebus_myoxinus,143283,,143283,N20.Microcebus_myoxinus,,,name
-__________,SHARED,N15.Microcebus_tavaratra,143351,,143351,N20.Microcebus_tavaratra,,,name
-__________,SHARED,N15.Microcebus_berthae,143352,,143352,N20.Microcebus_berthae,,scientificName,name
-__________,SHARED,N15.Microcebus_sambiranensis,143353,,143353,N20.Microcebus_sambiranensis,,,name
-__________,SHARED,N15.Microcebus_griseorufus,143354,,143354,N20.Microcebus_griseorufus,,,name
-__________,SHARED,N15.Microcebus_simmonsi,236272,,236272,N20.Microcebus_simmonsi,,,name
-__________,SHARED,N15.Microcebus_mittermeieri,236274,,236274,N20.Microcebus_mittermeieri,,,name
-__________,SHARED,N15.Microcebus_jollyae,236275,,236275,N20.Microcebus_jollyae,,,name
-__________,SHARED,N15.Microcebus_lehilahytsara,343908,,343908,N20.Microcebus_lehilahytsara,,,name
-__________,SHARED,N15.Microcebus_bongolavensis,412750,,412750,N20.Microcebus_bongolavensis,,,name
-__________,SHARED,N15.Microcebus_danfossi,412751,,412751,N20.Microcebus_danfossi,,,name
-__________,SHARED,N15.Microcebus_lokobensis,412752,,412752,N20.Microcebus_lokobensis,,,name
-__________,SHARED,N15.Microcebus_mamiratra,415757,,415757,N20.Microcebus_mamiratra,,,name
-__________,SHARED,N15.Microcebus_macarthurii,548481,,548481,N20.Microcebus_macarthurii,,,name
-__________,SHARED,N15.Microcebus_arnholdi,864580,,864580,N20.Microcebus_arnholdi,,,name
-__________,SHARED,N15.Microcebus_margotmarshae,864581,,864581,N20.Microcebus_margotmarshae,,,name
-__________,SHARED,N15.Microcebus_gerpi,1131379,,1131379,N20.Microcebus_gerpi,,,name
-__________,SHARED,N15.Microcebus_tanosi,1310123,,1310123,N20.Microcebus_tanosi,,,name
-__________,SHARED,N15.Microcebus_marohita,1310124,,1310124,N20.Microcebus_marohita,,,name
-__________,B ONLY,,,,2483760,N20.Microcebus_ganzhorni,,,
-__________,B ONLY (increased resolution),N15.Microcebus,13149,>,2630091,N20.unclassified_Microcebus,,,particle set containment
-____________,SHARED (moved from 13149),N15.Microcebus_sp._EELHDZ_M98,270538,,270538,N20.Microcebus_sp._EELHDZ_M98,,,name
-____________,SHARED (moved from 13149),N15.Microcebus_sp._EELHDZ_TAD23,270540,,270540,N20.Microcebus_sp._EELHDZ_TAD23,,,name
-____________,SHARED (moved from 13149),N15.Microcebus_sp._EELHDZ_VEV33,270674,,270674,N20.Microcebus_sp._EELHDZ_VEV33,,,name
-____________,SHARED (moved from 13149),N15.Microcebus_sp._EELHDZ_VEV35,270675,,270675,N20.Microcebus_sp._EELHDZ_VEV35,,,name
-____________,SHARED (moved from 13149),N15.Microcebus_sp._ANT5.1,388736,,388736,N20.Microcebus_sp._ANT5.1,,,name
-____________,SHARED (moved from 13149),N15.Microcebus_sp._Ambongabe,412758,,412758,N20.Microcebus_sp._Ambongabe,,,name
-____________,SHARED (moved from 13149),N15.Microcebus_sp._Bora,412759,,412759,N20.Microcebus_sp._Bora,,,name
-____________,SHARED (moved from 13149),N15.Microcebus_sp._Mahajamba-Est,412760,,412760,N20.Microcebus_sp._Mahajamba-Est,,,name
-____________,SHARED (moved from 13149),N15.Microcebus_sp._Maroakata,412761,,412761,N20.Microcebus_sp._Maroakata,,,name
-____________,SHARED (moved from 13149),N15.Microcebus_sp._Anjiahely,548482,,548482,N20.Microcebus_sp._Anjiahely,,,name
-____________,SHARED (moved from 13149),N15.Microcebus_sp._DWW-2010a,764313,,764313,N20.Microcebus_sp._DWW-2010a,,,name
-____________,SHARED (moved from 13149),N15.Microcebus_sp._d'Ambre,1310125,,1310125,N20.Microcebus_sp._d'Ambre,,,name
-____________,B ONLY,,,,418100,N20.Microcebus_sp._Antanosy,,,
-____________,B ONLY,,,,2508170,N20.Microcebus_sp._3_GT-2019,,,
-____________,B ONLY,,,,2683930,N20.Microcebus_sp._south_Manambery,,,
-________,SHARED,N15.Mirza,83691,,83691,N20.Mirza,,,same particle set
-__________,SHARED,N15.Mirza_coquereli,47180,,47180,N20.Mirza_coquereli,,,name
-__________,SHARED,N15.Mirza_zaza,339999,,339999,N20.Mirza_zaza,,,name
-__________,B ONLY,N15.Mirza_sp._001y03,415977,<,2628182,N20.unclassified_Mirza,subtree=,,particle set comparison
-________,A ONLY,N15.Allocebus,122247,>,122248,N20.Allocebus_trichotis,subtree=,,particle set comparison
-________,SHARED,N15.Phaner,261733,,261733,N20.Phaner,,,same particle set
-__________,SHARED,N15.Phaner_furcifer,261734,,261734,N20.Phaner_furcifer,,,name
-__________,SHARED,N15.Phaner_pallescens,568393,,568393,N20.Phaner_pallescens,,scientificName,name
-__________,SHARED,N15.Phaner_electromontis,1313324,,1313324,N20.Phaner_electromontis,,scientificName,name
-__________,SHARED,N15.Phaner_parienti,1313325,,1313325,N20.Phaner_parienti,,scientificName,name
-________,B ONLY,N15.Allocebus_trichotis,122248,<,122247,N20.Allocebus,,,particle set comparison
-______,A ONLY,N15.Paleopropithecidae,1513476,>,322024,N20.Palaeopropithecus,,,particle set comparison
-________,SHARED (moved from 1513476),N15.Palaeopropithecus,322024,,322024,N20.Palaeopropithecus,,number_of_children,same particle set
-__________,SHARED,N15.Palaeopropithecus_ingens,1513477,,1513477,N20.Palaeopropithecus_ingens,,,name
-__________,SHARED,N15.Palaeopropithecus_maximus,1597978,,1597978,N20.Palaeopropithecus_maximus,,,name
-__________,B ONLY (increased resolution),N15.Palaeopropithecus,322024,>,2619300,N20.unclassified_Palaeopropithecus,subtree=,,particle set containment
-______,B ONLY,N15.Palaeopropithecus,322024,<,1513476,N20.Paleopropithecidae,,,particle set comparison
-____,A ONLY (conflict),N15.Chiromyiformes,376916,><,376911,N20.Strepsirrhini,,,N20.Lorisidae is in; N20.Galagidae is outside
-____,A ONLY,N15.Daubentoniidae,30613,>,31869,N20.Daubentonia_madagascariensis,,,particle set comparison
-______,A ONLY,N15.Daubentonia,13038,>,31869,N20.Daubentonia_madagascariensis,subtree=,,particle set comparison
-____,A ONLY,N15.Lorisiformes,376917,>,40297,N20.Galagidae,,,particle set comparison
-______,SHARED (moved from 376917),N15.Galagidae,40297,,40297,N20.Galagidae,,number_of_children,same particle set
-________,A ONLY (conflict),N15.Galago,9462,><,40297,N20.Galagidae,,,N20.Galagoides_thomasi is in; N20.Galagoides_orinus is outside
-________,SHARED,N15.Otolemur,30610,,30610,N20.Otolemur,,,same particle set
-__________,SHARED,N15.Otolemur_crassicaudatus,9463,,9463,N20.Otolemur_crassicaudatus,,,name
-__________,A ONLY,N15.Otolemur_garnettii,30611,>,477174,N20.Otolemur_garnettii_garnettii,subtree=,,particle set comparison
-__________,SHARED,N15.Otolemur_monteiri,337212,,337212,N20.Otolemur_monteiri,subtree=,,same particle set
-__________,B ONLY,N15.Otolemur_garnettii_garnettii,477174,<,30611,N20.Otolemur_garnettii,,,particle set comparison
-________,A ONLY (loss of resolution),N15.Galagoides,89671,<,89671,N20.Galagoides,,,particle set containment
-__________,SHARED,N15.Galagoides_demidoff,89672,,89672,N20.Galagoides_demidoff,,number_of_children,name
-____________,B ONLY,,,,1738051,N20.Galagoides_demidoff_murinus,,,
-__________,SHARED,N15.Galagoides_zanzibaricus,111174,,111174,N20.Galagoides_zanzibaricus,,number_of_children,name
-____________,B ONLY,,,,1738046,N20.Galagoides_zanzibaricus_udzungwensis,,,
-____________,B ONLY,,,,1738053,N20.Galagoides_zanzibaricus_zanzibaricus,,,
-__________,SHARED,N15.Galagoides_orinus,337210,,337210,N20.Galagoides_orinus,,,name
-__________,SHARED,N15.Galagoides_cocos,1487601,,1487601,N20.Galagoides_cocos,,,name
-________,A ONLY,N15.Euoticus,261735,>,261736,N20.Euoticus_elegantulus,subtree=,,particle set comparison
-________,B ONLY (increased resolution),N15.Galago,9462,>,9462,N20.Galago,,,particle set containment
-__________,SHARED (moved from 9462),N15.Galago_senegalensis,9465,,9465,N20.Galago_senegalensis,,number_of_children,name
-____________,B ONLY,,,,1738048,N20.Galago_senegalensis_senegalensis,,,
-____________,B ONLY,,,,1738052,N20.Galago_senegalensis_braccatus,,,
-__________,SHARED (moved from 9462),N15.Galago_moholi,30609,,30609,N20.Galago_moholi,,scientificName,name
-__________,SHARED (moved from 9462),N15.Galago_alleni,34830,,34830,N20.Galago_alleni,,,name
-__________,SHARED (moved from 9462),N15.Galago_gallarum,111173,,111173,N20.Galago_gallarum,,,name
-__________,SHARED (moved from 9462),N15.Galago_matschiei,135486,,135486,N20.Galago_matschiei,,,name
-__________,SHARED (moved from 9462),N15.Galago_gabonensis,261731,,261731,N20.Galago_gabonensis,,,name
-__________,SHARED (moved from 9462),N15.Galago_granti,261732,,261732,N20.Galago_granti,,,name
-__________,B ONLY,N15.Galago_sp.,9464,<,2628747,N20.unclassified_Galago,subtree=,,particle set comparison
-________,B ONLY (reorganization),N15.Galagidae,40297,><,89671,N20.Galagoides,,,N15.Galago_thomasi is in; N15.Galago_granti is outside
-__________,SHARED (moved from 9462),N15.Galago_thomasi,867376,,867376,N20.Galagoides_thomasi,,canonicalName,synonym+name+synonym
-__________,B ONLY,,,,1738047,N20.Galagoides_rondoensis,,,
-________,B ONLY,N15.Euoticus_elegantulus,261736,<,261735,N20.Euoticus,,,particle set comparison
-________,B ONLY,,,,2604441,N20.Paragalago,,,
-__________,B ONLY,,,,2604442,N20.Paragalago_cocos,,,
-__________,B ONLY,,,,2604443,N20.Paragalago_zanzibaricus,,,
-____,B ONLY,N15.Daubentonia_madagascariensis,31869,<,376916,N20.Chiromyiformes,,,particle set comparison
-______,B ONLY,N15.Daubentonia_madagascariensis,31869,<,30613,N20.Daubentoniidae,,,particle set comparison
-________,B ONLY,N15.Daubentonia_madagascariensis,31869,<,13038,N20.Daubentonia,,,particle set comparison
-____,B ONLY (reorganization),N15.Strepsirrhini,376911,><,376917,N20.Lorisiformes,,,N15.Lorisidae is in; N15.Daubentoniidae is outside
-______,SHARED (moved from 376916),N15.Lorisidae,9461,,9461,N20.Lorisidae,,,same particle set
-________,SHARED,N15.Loris,9467,,9467,N20.Loris,,,same particle set
-__________,A ONLY,N15.Loris_tardigradus,9468,>,261740,N20.Loris_tardigradus_nordicus,subtree=,,particle set comparison
-__________,A ONLY,N15.Loris_lydekkerianus,300163,>,300166,N20.Loris_lydekkerianus_malabaricus,subtree=,,particle set comparison
-__________,B ONLY,N15.Loris_tardigradus_nordicus,261740,<,9468,N20.Loris_tardigradus,,,particle set comparison
-____________,B ONLY,,,,1738049,N20.Loris_tardigradus_tardigradus,,,
-__________,B ONLY,N15.Loris_lydekkerianus_malabaricus,300166,<,300163,N20.Loris_lydekkerianus,,,particle set comparison
-____________,B ONLY,,,,1738050,N20.Loris_lydekkerianus_lydekkerianus,,,
-________,SHARED,N15.Nycticebus,9469,,9469,N20.Nycticebus,,number_of_children,same particle set
-__________,A ONLY,N15.Nycticebus_coucang,9470,>,310933,N20.Nycticebus_coucang_coucang,subtree=,,particle set comparison
-__________,A ONLY (merge),N15.Nycticebus_intermedius,101277,=,101278,N20.Nycticebus_pygmaeus,,,name+synonym
-__________,SHARED,N15.Nycticebus_pygmaeus,101278,,101278,N20.Nycticebus_pygmaeus,,,name
-__________,SHARED,N15.Nycticebus_bengalensis,261741,,261741,N20.Nycticebus_bengalensis,,,name
-__________,SHARED,N15.Nycticebus_menagensis,310932,,310932,N20.Nycticebus_menagensis,,,name
-__________,SHARED,N15.Nycticebus_javanicus,310934,,310934,N20.Nycticebus_javanicus,,,name
-__________,B ONLY,N15.Nycticebus_coucang_coucang,310933,<,9470,N20.Nycticebus_coucang,,,particle set comparison
-____________,B ONLY,,,,2020906,N20.Nycticebus_coucang_insularis,,,
-__________,B ONLY,N15.Nycticebus_sp.,108082,<,2646861,N20.unclassified_Nycticebus,subtree=,,particle set comparison
-________,A ONLY,N15.Perodicticus,9471,>,9472,N20.Perodicticus_potto,,,particle set comparison
-__________,SHARED (moved from 9471),N15.Perodicticus_potto,9472,,9472,N20.Perodicticus_potto,,,same particle set
-____________,SHARED,N15.Perodicticus_potto_edwarsi,9473,,9473,N20.Perodicticus_potto_edwarsi,,,name
-____________,SHARED,N15.Perodicticus_potto_ibeanus,261737,,261737,N20.Perodicticus_potto_ibeanus,,,name
-________,SHARED,N15.Arctocebus,261738,,261738,N20.Arctocebus,,,same particle set
-__________,SHARED,N15.Arctocebus_calabarensis,261739,,261739,N20.Arctocebus_calabarensis,,,name
-__________,SHARED,N15.Arctocebus_aureus,300161,,300161,N20.Arctocebus_aureus,,,name
-________,B ONLY,N15.Perodicticus_potto,9472,<,9471,N20.Perodicticus,,,particle set comparison
-__,SHARED,N15.Haplorrhini,376913,,376913,N20.Haplorrhini,,,same particle set
-____,SHARED,N15.Simiiformes,314293,,314293,N20.Simiiformes,,,same particle set
-______,SHARED,N15.Platyrrhini,9479,,9479,N20.Platyrrhini,,,same particle set
-________,SHARED,N15.Cebidae,9498,,9498,N20.Cebidae,,,same particle set
-__________,SHARED,N15.Callitrichinae,9480,,9480,N20.Callitrichinae,,number_of_children,same particle set
-____________,A ONLY (loss of resolution),N15.Callithrix,9481,<,9480,N20.Callitrichinae,,,particle set containment
-____________,A ONLY (loss of resolution),N15.Saguinus,9486,<,9480,N20.Callitrichinae,,,particle set containment
-______________,A ONLY,N15.Saguinus_fuscicollis,9487,>,343424,N20.Leontocebus_fuscicollis_weddelli,,,particle set comparison
-________________,A ONLY,N15.Saguinus_fuscicollis_fuscicollis,48018,,,,,,
-________________,SHARED (moved from 9487),N15.Saguinus_fuscicollis_weddelli,343424,,343424,N20.Leontocebus_fuscicollis_weddelli,,canonicalName,synonym+name
-________________,A ONLY (merge),N15.Saguinus_fuscicollis_leucogenys,881946,=,881946,N20.Leontocebus_fuscicollis_leucogenys,,,name+synonym
-________________,A ONLY (merge),N15.Saguinus_fuscicollis_illigeri,881947,=,881947,N20.Leontocebus_fuscicollis_illigeri,,,name+synonym
-________________,A ONLY (merge),N15.Saguinus_fuscicollis_nigrifrons,881949,=,881949,N20.Leontocebus_fuscicollis_nigrifrons,,,name+synonym
-________________,A ONLY (merge),N15.Saguinus_fuscicollis_lagonotus,881950,=,881950,N20.Leontocebus_fuscicollis_lagonotus,,,name+synonym
-______________,A ONLY,N15.Saguinus_mystax,9488,>,873069,N20.Saguinus_mystax_mystax,subtree=,,particle set comparison
-______________,A ONLY,N15.Saguinus_imperator,9491,>,881951,N20.Saguinus_imperator_subgrisescens,subtree=,,particle set comparison
-______________,A ONLY,N15.Saguinus_midas,30586,>,78354,N20.Saguinus_midas_midas,subtree=,,particle set comparison
-______________,A ONLY,N15.Saguinus_bicolor,37588,>,37589,N20.Saguinus_bicolor_bicolor,subtree=,,particle set comparison
-______________,A ONLY,N15.Saguinus_labiatus,78454,>,873066,N20.Saguinus_labiatus_labiatus,subtree=,,particle set comparison
-______________,A ONLY,N15.Saguinus_melanoleucus,873067,>,873068,N20.Saguinus_melanoleucus_melanoleucus,subtree=,,particle set comparison
-____________,SHARED,N15.Callimico,9494,,9494,N20.Callimico,,,same particle set
-______________,SHARED,N15.Callimico_goeldii,9495,,9495,N20.Callimico_goeldii,,,name
-______________,B ONLY,N15.Callimico_sp._MAS-2011,1090914,<,2634122,N20.unclassified_Callimico,,,particle set comparison
-________________,SHARED (moved from 9494),N15.Callimico_sp._MAS-2011,1090914,,1090914,N20.Callimico_sp._MAS-2011,,,name
-________________,B ONLY,,,,1758239,N20.Callimico_sp.,,,
-____________,SHARED,N15.Leontopithecus,30587,,30587,N20.Leontopithecus,subtree=,,same particle set
-____________,B ONLY (increased resolution),N15.Callithrix,9481,>,9481,N20.Callithrix#9481,,,particle set containment
-______________,B ONLY (increased resolution),N15.Callithrix,9481,>,1965096,N20.Callithrix#1965096,subtree=,,particle set containment
-______________,B ONLY,N15.Callithrix_pygmaea,9493,<,1965109,N20.Cebuella,subtree=,,particle set comparison
-______________,B ONLY,N15.Callithrix_humilis,666519,<,1965113,N20.Calibella,subtree=,,particle set comparison
-____________,B ONLY (increased resolution),N15.Saguinus,9486,>,9486,N20.Saguinus,,,particle set containment
-______________,SHARED (moved from 9486),N15.Saguinus_oedipus,9490,,9490,N20.Saguinus_oedipus,,,name
-______________,SHARED (moved from 9486),N15.Saguinus_geoffroyi,43778,,43778,N20.Saguinus_geoffroyi,,,name
-______________,SHARED (moved from 9486),N15.Saguinus_leucopus,290597,,290597,N20.Saguinus_leucopus,,,name
-______________,SHARED (moved from 9486),N15.Saguinus_niger,356665,,356665,N20.Saguinus_niger,,,name
-______________,SHARED (moved from 9486),N15.Saguinus_martinsi,356666,,356666,N20.Saguinus_martinsi,,,name
-______________,SHARED (moved from 9486),N15.Saguinus_graellsi,873073,,873073,N20.Saguinus_graellsi,,,name
-______________,SHARED (moved from 9486),N15.Saguinus_inustus,1079039,,1079039,N20.Saguinus_inustus,,,name
-______________,B ONLY,N15.Saguinus_mystax_mystax,873069,<,9488,N20.Saguinus_mystax,,,particle set comparison
-______________,B ONLY,N15.Saguinus_imperator_subgrisescens,881951,<,9491,N20.Saguinus_imperator,,,particle set comparison
-______________,B ONLY,N15.Saguinus_midas_midas,78354,<,30586,N20.Saguinus_midas,,,particle set comparison
-______________,B ONLY,N15.Saguinus_bicolor_bicolor,37589,<,37588,N20.Saguinus_bicolor,,,particle set comparison
-______________,B ONLY,N15.Saguinus_labiatus_labiatus,873066,<,78454,N20.Saguinus_labiatus,,,particle set comparison
-______________,B ONLY,N15.Saguinus_melanoleucus_melanoleucus,873068,<,873067,N20.Saguinus_melanoleucus,,,particle set comparison
-______________,B ONLY,,,,2586293,N20.Saguinus_geoffroyi_x_Saguinus_leucopus,,,
-______________,B ONLY,,,,2586294,N20.Saguinus_oedipus_x_Saguinus_leucopus,,,
-______________,B ONLY (increased resolution),N15.Saguinus,9486,>,2642123,N20.unclassified_Saguinus,,,particle set containment
-________________,SHARED (moved from 9486),N15.Saguinus_sp.,100754,,100754,N20.Saguinus_sp.,,,name
-________________,SHARED (moved from 9486),N15.Saguinus_sp._T1030,260575,,260575,N20.Saguinus_sp._T1030,,,name
-________________,B ONLY,,,,1967463,N20.Saguinus_sp._EG-2017,,,
-____________,B ONLY (increased resolution),N15.Callithrix,9481,>,1965102,N20.Mico,,,particle set containment
-______________,SHARED (moved from 9481),N15.Callithrix_argentata,9482,,9482,N20.Mico_argentatus,,canonicalName,synonym+name
-________________,A ONLY (merge),N15.Callithrix_argentata_argentata,867362,=,867362,N20.Mico_argentatus_argentatus,,,name+synonym
-________________,B ONLY,,,,867362,N20.Mico_argentatus_argentatus,,,
-______________,SHARED (moved from 9481),N15.Callithrix_emiliae,48842,,48842,N20.Mico_emiliae,,canonicalName,name+synonym
-______________,SHARED (moved from 9481),N15.Callithrix_humeralifera,52232,,52232,N20.Mico_humeralifer,,canonicalName; scientificName,name+synonym
-______________,SHARED (moved from 9481),N15.Callithrix_mauesi,57377,,57377,N20.Mico_mauesi,,canonicalName,name+synonym
-______________,SHARED (moved from 9481),N15.Callithrix_cf._emiliae,198701,,198701,N20.Mico_cf._emiliae,,canonicalName,name+synonym
-______________,SHARED (moved from 9481),N15.Callithrix_saterei,198702,,198702,N20.Mico_saterei,,canonicalName,name+synonym
-______________,SHARED (moved from 9481),N15.Callithrix_melanura,1090896,,1090896,N20.Mico_melanurus,,canonicalName; scientificName,synonym+name+synonym
-______________,SHARED (moved from 9481),N15.Callithrix_rondoni,1127763,,1127763,N20.Mico_rondoni,,canonicalName,name+synonym
-______________,B ONLY,,,,1758231,N20.Mico_chrysoleucus,,,
-______________,B ONLY,,,,2592805,N20.Mico_intermedius,,,
-______________,B ONLY,,,,2592806,N20.Mico_leucippe,,,
-______________,B ONLY,,,,2592807,N20.Mico_marcai,,,
-______________,B ONLY,,,,2592808,N20.Mico_munduruku,,,
-____________,B ONLY (increased resolution),N15.Saguinus,9486,>,2681187,N20.Leontocebus,,,particle set containment
-______________,SHARED (moved from 9486),N15.Saguinus_nigricollis,9489,,9489,N20.Leontocebus_nigricollis,,canonicalName,synonym+name+synonym
-________________,A ONLY,N15.Saguinus_nigricollis_nigricollis,873070,,,,,,
-________________,B ONLY,,,,873070,N20.Leontocebus_nigricollis_nigricollis,,,
-______________,SHARED (moved from 9486),N15.Saguinus_tripartitus,122388,,122388,N20.Leontocebus_tripartitus,,canonicalName,synonym+name+synonym
-______________,SHARED (moved from 9486),N15.Saguinus_cruzlimai,1618156,,1618156,N20.Leontocebus_cruzlimai,,canonicalName,name+synonym
-______________,B ONLY,N15.Saguinus_fuscicollis_weddelli,343424,<,9487,N20.Leontocebus_fuscicollis,,,particle set comparison
-________________,B ONLY,,,,48018,N20.Leontocebus_fuscicollis_fuscicollis,,,
-________________,B ONLY,,,,881946,N20.Leontocebus_fuscicollis_leucogenys,,,
-________________,B ONLY,,,,881947,N20.Leontocebus_fuscicollis_illigeri,,,
-________________,B ONLY,,,,881949,N20.Leontocebus_fuscicollis_nigrifrons,,,
-________________,B ONLY,,,,881950,N20.Leontocebus_fuscicollis_lagonotus,,,
-__________,SHARED,N15.Cebinae,38070,,38070,N20.Cebinae,,,same particle set
-____________,SHARED,N15.Cebus,9513,,9513,N20.Cebus,,number_of_children,same particle set
-______________,SHARED,N15.Cebus_albifrons,9514,,9514,N20.Cebus_albifrons,,,name
-______________,SHARED,N15.Cebus_capucinus,9516,,9516,N20.Cebus_capucinus,,number_of_children,name
-________________,B ONLY,,,,1737458,N20.Cebus_capucinus_imitator,,,
-______________,SHARED,N15.Cebus_kaapori,37294,,37294,N20.Cebus_kaapori,,,name
-______________,A ONLY,N15.Cebus_olivaceus,37295,>,1090893,N20.Cebus_olivaceus_nigrivittatus,subtree=,,particle set comparison
-______________,B ONLY,N15.Cebus_olivaceus_nigrivittatus,1090893,<,37295,N20.Cebus_olivaceus,,,particle set comparison
-________________,B ONLY,,,,1985287,N20.Cebus_olivaceus_castaneus,,,
-______________,B ONLY,,,,1985288,N20.Cebus_unicolor,,,
-______________,B ONLY,,,,1985289,N20.Cebus_versicolor,,,
-______________,B ONLY (increased resolution),N15.Cebus,9513,>,2618788,N20.unclassified_Cebus,,,particle set containment
-________________,SHARED (moved from 9513),N15.Cebus_sp.,9517,,9517,N20.Cebus_sp.,,,name
-________________,SHARED (moved from 9513),N15.Cebus_sp._MAS-2011,1090916,,1090916,N20.Cebus_sp._MAS-2011,,,name
-________________,B ONLY,,,,1967451,N20.Cebus_sp._1_EG-2017,,,
-________________,B ONLY,,,,1967452,N20.Cebus_sp._2_EG-2017,,,
-____________,SHARED,N15.Sapajus,1532884,,1532884,N20.Sapajus,,number_of_children,same particle set
-______________,SHARED,N15.Sapajus_apella,9515,,9515,N20.Sapajus_apella,subtree=,,same particle set
-______________,SHARED,N15.Sapajus_xanthosternos,174599,,174599,N20.Sapajus_xanthosternos,,,name
-______________,SHARED,N15.Sapajus_cay,649471,,649471,N20.Sapajus_cay,,,name
-______________,A ONLY,N15.Sapajus_nigritus,867366,>,867367,N20.Sapajus_nigritus_robustus,subtree=,,particle set comparison
-______________,SHARED,N15.Sapajus_flavius,1112861,,1112861,N20.Sapajus_flavius,,,name
-______________,SHARED,N15.Sapajus_libidinosus,1126382,,1126382,N20.Sapajus_libidinosus,,,name
-______________,B ONLY,N15.Sapajus_nigritus_robustus,867367,<,867366,N20.Sapajus_nigritus,,,particle set comparison
-______________,B ONLY,,,,2619504,N20.unclassified_Sapajus,,,
-________________,B ONLY,,,,1874197,N20.Sapajus_sp.,,,
-________________,B ONLY,,,,2093835,N20.Sapajus_sp._9_FD-2018,,,
-________________,B ONLY,,,,2093836,N20.Sapajus_sp._10_FD-2018,,,
-________________,B ONLY,,,,2093837,N20.Sapajus_sp._22_FD-2018,,,
-________________,B ONLY,,,,2093838,N20.Sapajus_sp._M5_FD-2018,,,
-________________,B ONLY,,,,2093839,N20.Sapajus_sp._M12_FD-2018,,,
-________________,B ONLY,,,,2093840,N20.Sapajus_sp._M39_FD-2018,,,
-__________,A ONLY,N15.unclassified_Cebidae,38071,>,168015,N20.Aotinae_gen._sp.,subtree=,,particle set comparison
-__________,A ONLY,N15.Saimiriinae,378850,>,9520,N20.Saimiri,,,particle set comparison
-____________,SHARED (moved from 378850),N15.Saimiri,9520,,9520,N20.Saimiri,,number_of_children,same particle set
-______________,SHARED,N15.Saimiri_sciureus,9521,,9521,N20.Saimiri_sciureus,subtree=,,same particle set
-______________,A ONLY,N15.Saimiri_boliviensis,27679,>,495297,N20.Saimiri_boliviensis_peruviensis,,,particle set comparison
-________________,A ONLY (merge),N15.Saimiri_boliviensis_boliviensis,39432,=,27679,N20.Saimiri_boliviensis,,,synonym+name+synonym
-________________,SHARED (moved from 27679),N15.Saimiri_boliviensis_peruviensis,495297,,495297,N20.Saimiri_boliviensis_peruviensis,,,name
-______________,SHARED,N15.Saimiri_ustus,66265,,66265,N20.Saimiri_ustus,,,name
-______________,SHARED,N15.Saimiri_oerstedii,70928,,70928,N20.Saimiri_oerstedii,subtree=,,same particle set
-______________,SHARED,N15.Saimiri_vanzolinii,1561161,,1561161,N20.Saimiri_vanzolinii,,,name
-______________,B ONLY,N15.Saimiri_boliviensis_peruviensis,495297,<,27679,N20.Saimiri_boliviensis,,,particle set comparison
-________________,B ONLY (split),N15.Saimiri_boliviensis,27679,=,39432,N20.Saimiri_boliviensis_boliviensis,,,synonym+name+synonym
-______________,B ONLY (increased resolution),N15.Saimiri,9520,>,2635411,N20.unclassified_Saimiri,,,particle set containment
-________________,SHARED (moved from 9520),N15.Saimiri_sp._MAS-2011,1090919,,1090919,N20.Saimiri_sp._MAS-2011,,,name
-________________,SHARED (moved from 9520),N15.Saimiri_sp.,1561164,,1561164,N20.Saimiri_sp.,,,name
-________________,B ONLY,,,,1967464,N20.Saimiri_sp._1_EG-2017,,,
-________________,B ONLY,,,,1967465,N20.Saimiri_sp._2_EG-2017,,,
-________________,B ONLY,,,,1967466,N20.Saimiri_sp._3_EG-2017,,,
-__________,B ONLY,N15.Aotinae_gen._sp.,168015,<,38071,N20.unclassified_Cebidae,,,particle set comparison
-__________,B ONLY,N15.Saimiri,9520,<,378850,N20.Saimiriinae,,,particle set comparison
-________,A ONLY,N15.Aotidae,376918,>,9504,N20.Aotus,,,particle set comparison
-__________,SHARED (moved from 376918),N15.Aotus,9504,,9504,N20.Aotus,,number_of_children,same particle set
-____________,SHARED,N15.Aotus_trivirgatus,9505,,9505,N20.Aotus_trivirgatus,,,name
-____________,SHARED,N15.Aotus_azarai,30591,,30591,N20.Aotus_azarai,subtree=,,same particle set
-____________,SHARED,N15.Aotus_nancymaae,37293,,37293,N20.Aotus_nancymaae,,,name
-____________,SHARED,N15.Aotus_lemurinus,43147,,43147,N20.Aotus_lemurinus,,,name
-____________,SHARED,N15.Aotus_nigriceps,57175,,57175,N20.Aotus_nigriceps,,,name
-____________,SHARED,N15.Aotus_vociferans,57176,,57176,N20.Aotus_vociferans,,,name
-____________,SHARED,N15.Aotus_griseimembra,292213,,292213,N20.Aotus_griseimembra,,,name
-____________,SHARED,N15.Aotus_brumbacki,361674,,361674,N20.Aotus_brumbacki,,,name
-____________,SHARED,N15.Aotus_zonalis,1263727,,1263727,N20.Aotus_zonalis,,,name
-____________,B ONLY (increased resolution),N15.Aotus,9504,>,2688256,N20.unclassified_Aotus_(in:_Chordata),subtree=,,particle set containment
-________,SHARED,N15.Pitheciidae,376919,,376919,N20.Pitheciidae,,number_of_children,same particle set
-__________,SHARED,N15.Pitheciinae,38039,,38039,N20.Pitheciinae,,,same particle set
-____________,SHARED,N15.Chiropotes,9524,,9524,N20.Chiropotes,,number_of_children,same particle set
-______________,SHARED,N15.Chiropotes_satanas,9525,,9525,N20.Chiropotes_satanas,,,name
-______________,SHARED,N15.Chiropotes_albinasus,198627,,198627,N20.Chiropotes_albinasus,,,name
-______________,SHARED,N15.Chiropotes_satanas_x_albinasus,202458,,202458,N20.Chiropotes_satanas_x_albinasus,,,name
-______________,SHARED,N15.Chiropotes_utahickae,280160,,280160,N20.Chiropotes_utahickae,,,name
-______________,SHARED,N15.Chiropotes_israelita,280163,,280163,N20.Chiropotes_israelita,,,name
-______________,SHARED,N15.Chiropotes_albinasus_x_satanas,626367,,626367,N20.Chiropotes_albinasus_x_satanas,,,name
-______________,A ONLY,N15.Chiropotes_chiropotes,658221,>,1560631,N20.Chiropotes_chiropotes_sagulata,subtree=,,particle set comparison
-______________,B ONLY,N15.Chiropotes_chiropotes_sagulata,1560631,<,658221,N20.Chiropotes_chiropotes,,,particle set comparison
-______________,B ONLY (increased resolution),N15.Chiropotes,9524,>,2649368,N20.unclassified_Chiropotes,,,particle set containment
-________________,SHARED (moved from 9524),N15.Chiropotes_sp._MAS-2011,1090917,,1090917,N20.Chiropotes_sp._MAS-2011,,,name
-________________,SHARED (moved from 9524),N15.Chiropotes_sp._ZFMK_2008.244,1472258,,1472258,N20.Chiropotes_sp._ZFMK_2008.244,,,name
-________________,B ONLY,,,,1758238,N20.Chiropotes_sp.,,,
-________________,B ONLY,,,,2704455,N20.Chiropotes_sp._CTGAM5663,,,
-________________,B ONLY,,,,2736752,N20.Chiropotes_sp._CTGAM5363,,,
-____________,SHARED,N15.Cacajao,30595,,30595,N20.Cacajao,,number_of_children,same particle set
-______________,SHARED,N15.Cacajao_calvus,30596,,30596,N20.Cacajao_calvus,subtree=,,same particle set
-______________,SHARED,N15.Cacajao_melanocephalus,70825,,70825,N20.Cacajao_melanocephalus,,,name
-______________,SHARED,N15.Cacajao_rubicundus,70927,,70927,N20.Cacajao_rubicundus,,,name
-______________,SHARED,N15.Cacajao_ayresi,535896,,535896,N20.Cacajao_ayresi,,,name
-______________,SHARED,N15.Cacajao_hosomi,535897,,535897,N20.Cacajao_hosomi,,,name
-______________,B ONLY,,,,2704456,N20.unclassified_Cacajao,,,
-________________,B ONLY,,,,2704457,N20.Cacajao_sp._CTGAM5666,,,
-____________,SHARED,N15.Pithecia,30597,,30597,N20.Pithecia,,number_of_children,same particle set
-______________,SHARED,N15.Pithecia_irrorata,30598,,30598,N20.Pithecia_irrorata,,,name
-______________,A ONLY,N15.Pithecia_pithecia,43777,>,285955,N20.Pithecia_pithecia_pithecia,subtree=,,particle set comparison
-______________,SHARED,N15.Pithecia_monachus,595220,,595220,N20.Pithecia_monachus,,,name
-______________,B ONLY,N15.Pithecia_pithecia_pithecia,285955,<,43777,N20.Pithecia_pithecia,,,particle set comparison
-______________,B ONLY,,,,2646430,N20.unclassified_Pithecia,,,
-________________,B ONLY,,,,1758237,N20.Pithecia_sp.,,,
-________________,B ONLY,,,,2704458,N20.Pithecia_sp._UFPA_Pit22,,,
-__________,A ONLY,N15.Callicebinae,38069,>,38069,N20.Callicebinae,,,particle set comparison
-____________,A ONLY (merge),N15.Callicebus,9522,=,38069,N20.Callicebinae,,,same particle set
-______________,A ONLY (merge),N15.Callicebus_torquatus,30592,=,30592,N20.Cheracebus_torquatus,,,name+synonym
-______________,A ONLY,N15.Callicebus_donacophilus,230833,>,285954,N20.Plecturocebus_donacophilus_donacophilus,,,particle set comparison
-________________,SHARED (moved from 230833),N15.Callicebus_donacophilus_donacophilus,285954,,285954,N20.Plecturocebus_donacophilus_donacophilus,,canonicalName,synonym+name
-__________,B ONLY (split),N15.Callicebinae,38069,=,38069,N20.Callicebinae,,,monotypic
-____________,B ONLY (increased resolution),N15.Callicebus,9522,>,9522,N20.Callicebus,,,particle set containment
-______________,SHARED (moved from 9522),N15.Callicebus_personatus,70814,,70814,N20.Callicebus_personatus,subtree=,,same particle set
-______________,SHARED (moved from 9522),N15.Callicebus_coimbrai,867333,,867333,N20.Callicebus_coimbrai,,,name
-______________,SHARED (moved from 9522),N15.Callicebus_nigrifrons,867334,,867334,N20.Callicebus_nigrifrons,,,name
-______________,B ONLY,,,,1290433,N20.Callicebus_dubius,,,
-______________,B ONLY,,,,1861701,N20.Callicebus_caquetensis,,,
-______________,B ONLY,,,,1861702,N20.Callicebus_ornatus,,,
-______________,B ONLY,,,,1861703,N20.Callicebus_discolor,,,
-______________,B ONLY (increased resolution),N15.Callicebus,9522,>,2627897,N20.unclassified_Callicebus,,,particle set containment
-________________,SHARED (moved from 9522),N15.Callicebus_sp.,116962,,116962,N20.Callicebus_sp.,,,name
-________________,SHARED (moved from 9522),N15.Callicebus_sp._MAS-2011,1090915,,1090915,N20.Callicebus_sp._MAS-2011,,,name
-________________,B ONLY,,,,1861704,N20.Callicebus_sp._1_MH-2016,,,
-________________,B ONLY,,,,1861705,N20.Callicebus_sp._2_MH-2016,,,
-____________,B ONLY (increased resolution),N15.Callicebus,9522,>,1812035,N20.Plecturocebus,,,particle set containment
-______________,SHARED (moved from 9522),N15.Callicebus_moloch,9523,,9523,N20.Plecturocebus_moloch,,canonicalName,synonym+name+synonym
-______________,SHARED (moved from 9522),N15.Callicebus_hoffmannsi,78255,,78255,N20.Plecturocebus_hoffmannsi,,canonicalName,synonym+name
-______________,SHARED (moved from 9522),N15.Callicebus_cupreus,202457,,202457,N20.Plecturocebus_cupreus,,canonicalName,synonym+name
-______________,SHARED (moved from 9522),N15.Callicebus_brunneus,221704,,1812042,N20.Plecturocebus_brunneus,,NCBI Taxonomy ID; canonicalName,synonym+name+synonym
-______________,SHARED (moved from 9522),N15.Callicebus_caligatus,867332,,867332,N20.Plecturocebus_caligatus,,canonicalName,synonym+name
-______________,B ONLY,N15.Callicebus_donacophilus_donacophilus,285954,<,230833,N20.Plecturocebus_donacophilus,,,particle set comparison
-______________,B ONLY,,,,1812036,N20.Plecturocebus_bernhardi,,,
-______________,B ONLY,,,,1812037,N20.Plecturocebus_cinerascens,,,
-______________,B ONLY,,,,1812038,N20.Plecturocebus_miltoni,,,
-______________,B ONLY,,,,2487713,N20.Plecturocebus_vieirai,,,
-______________,B ONLY,,,,2488670,N20.Plecturocebus_grovesi,,,
-____________,B ONLY (increased resolution),N15.Callicebus,9522,>,1812102,N20.Cheracebus,,,particle set containment
-______________,SHARED (moved from 9522),N15.Callicebus_lugens,210166,,210166,N20.Cheracebus_lugens,,canonicalName,synonym+name
-______________,SHARED (moved from 9522),N15.Callicebus_purinus,1560619,,1560619,N20.Cheracebus_purinus,,canonicalName,synonym+name
-______________,B ONLY,,,,30592,N20.Cheracebus_torquatus,,,
-______________,B ONLY,,,,1812110,N20.Cheracebus_regulus,,,
-______________,B ONLY,,,,2487712,N20.Cheracebus_lucifer,,,
-__________,B ONLY,,,,2490929,N20.Xenothricinae,,,
-____________,B ONLY,,,,2490930,N20.Xenothrix,,,
-______________,B ONLY,,,,2490931,N20.Xenothrix_mcgregori,,,
-________,SHARED,N15.Atelidae,378855,,378855,N20.Atelidae,,,same particle set
-__________,A ONLY,N15.Alouattinae,38066,>,9499,N20.Alouatta,,,particle set comparison
-____________,SHARED (moved from 38066),N15.Alouatta,9499,,9499,N20.Alouatta,,number_of_children,same particle set
-______________,SHARED,N15.Alouatta_caraya,9502,,9502,N20.Alouatta_caraya,,,name
-______________,A ONLY (loss of resolution),N15.Alouatta_seniculus,9503,<,9499,N20.Alouatta,,,particle set containment
-________________,SHARED,N15.Alouatta_seniculus_macconnelli,198115,,198115,N20.Alouatta_macconnelli,,taxonRank; canonicalName,name+synonym
-______________,SHARED,N15.Alouatta_palliata,30589,,30589,N20.Alouatta_palliata,subtree=,,same particle set
-______________,A ONLY,N15.Alouatta_belzebul,30590,>,182257,N20.Alouatta_belzebul_belzebul,subtree=,,particle set comparison
-______________,SHARED,N15.Alouatta_sara,121123,,121123,N20.Alouatta_sara,,,name
-______________,SHARED,N15.Alouatta_stramineus,163110,,163110,N20.Alouatta_stramineus,,,name
-______________,SHARED,N15.Alouatta_pigra,182253,,182253,N20.Alouatta_pigra,,,name
-______________,A ONLY,N15.Alouatta_guariba,182256,>,183328,N20.Alouatta_guariba_clamitans,subtree=,,particle set comparison
-______________,B ONLY,N15.Alouatta_seniculus_seniculus,182254,<,9503,N20.Alouatta_seniculus,subtree=,,particle set comparison
-______________,B ONLY,N15.Alouatta_belzebul_belzebul,182257,<,30590,N20.Alouatta_belzebul,,,particle set comparison
-______________,B ONLY,N15.Alouatta_guariba_clamitans,183328,<,182256,N20.Alouatta_guariba,,,particle set comparison
-______________,B ONLY,,,,2487933,N20.Alouatta_palliata_x_Alouatta_pigra,,,
-__________,SHARED,N15.Atelinae,38068,,38068,N20.Atelinae,,,same particle set
-____________,SHARED,N15.Ateles,9506,,9506,N20.Ateles,,number_of_children,same particle set
-______________,SHARED,N15.Ateles_belzebuth,9507,,9507,N20.Ateles_belzebuth,subtree=,,same particle set
-______________,SHARED,N15.Ateles_fusciceps,9508,,9508,N20.Ateles_fusciceps,subtree=,,same particle set
-______________,SHARED,N15.Ateles_geoffroyi,9509,,9509,N20.Ateles_geoffroyi,subtree=,,same particle set
-______________,SHARED,N15.Ateles_paniscus,9510,,9510,N20.Ateles_paniscus,,,name
-______________,SHARED,N15.Ateles_paniscus_x_Ateles_fusciceps,36234,,36234,N20.Ateles_paniscus_x_Ateles_fusciceps,,,name
-______________,A ONLY (loss of resolution),N15.unclassified_Ateles,120432,<,120432,N20.unclassified_Ateles,subtree=,,particle set containment
-______________,A ONLY,N15.Ateles_hybridus,129801,>,1230481,N20.Ateles_hybridus_hybridus,subtree=,,particle set comparison
-______________,SHARED,N15.Ateles_marginatus,1529884,,1529884,N20.Ateles_marginatus,,scientificName,name
-______________,B ONLY (increased resolution),N15.Ateles,9506,>,120432,N20.unclassified_Ateles,,,particle set containment
-________________,SHARED (moved from 9506),N15.Ateles_sp.,9511,,9511,N20.Ateles_sp.,,,name
-________________,B ONLY,,,,1967450,N20.Ateles_sp._EG-2017,,,
-______________,B ONLY,N15.Ateles_hybridus_hybridus,1230481,<,129801,N20.Ateles_hybridus,,,particle set comparison
-____________,SHARED,N15.Lagothrix,9518,,9518,N20.Lagothrix,,number_of_children,same particle set
-______________,SHARED,N15.Lagothrix_lagotricha,9519,,9519,N20.Lagothrix_lagotricha,,,name
-______________,SHARED,N15.Lagothrix_lugens,767355,,767355,N20.Lagothrix_lugens,,,name
-______________,SHARED,N15.Lagothrix_poeppigii,767356,,767356,N20.Lagothrix_poeppigii,,,name
-______________,SHARED,N15.Lagothrix_cana,767357,,767357,N20.Lagothrix_cana,,,name
-______________,B ONLY,,,,2565305,N20.Lagothrix_flavicauda,,,
-______________,B ONLY,,,,2565306,N20.Lagothrix_tschudii,,,
-______________,B ONLY,N15.Lagothrix_sp._CCS-2009a,638937,<,2645779,N20.unclassified_Lagothrix,,,particle set comparison
-________________,SHARED (moved from 9518),N15.Lagothrix_sp._CCS-2009a,638937,,638937,N20.Lagothrix_sp._CCS-2009a,,,name
-________________,B ONLY,,,,1967456,N20.Lagothrix_sp._EG-2017,,,
-____________,SHARED,N15.Brachyteles,30593,,30593,N20.Brachyteles,subtree=,,same particle set
-__________,B ONLY,N15.Alouatta,9499,<,38066,N20.Alouattinae,,,particle set comparison
-________,B ONLY,N15.Aotus,9504,<,376918,N20.Aotidae,,,particle set comparison
-______,SHARED,N15.Catarrhini,9526,,9526,N20.Catarrhini,,,same particle set
-________,A ONLY,N15.Cercopithecoidea,314294,>,9527,N20.Cercopithecidae,,,particle set comparison
-__________,SHARED (moved from 314294),N15.Cercopithecidae,9527,,9527,N20.Cercopithecidae,,,same particle set
-____________,SHARED,N15.Cercopithecinae,9528,,9528,N20.Cercopithecinae,,number_of_children,same particle set
-______________,SHARED,N15.Cercocebus,9529,,9529,N20.Cercocebus,,,same particle set
-________________,A ONLY,N15.Cercocebus_torquatus,9530,>,81944,N20.Cercocebus_torquatus_torquatus,subtree=,,particle set comparison
-________________,SHARED,N15.Cercocebus_atys,9531,,9531,N20.Cercocebus_atys,subtree=,,same particle set
-________________,SHARED,N15.Cercocebus_galeritus,9532,,9532,N20.Cercocebus_galeritus,,,name
-________________,SHARED,N15.Cercocebus_chrysogaster,75569,,75569,N20.Cercocebus_chrysogaster,,,name
-________________,SHARED,N15.Cercocebus_agilis,255237,,255237,N20.Cercocebus_agilis,,,name
-________________,B ONLY,N15.Cercocebus_torquatus_torquatus,81944,<,9530,N20.Cercocebus_torquatus,,,particle set comparison
-______________,A ONLY (loss of resolution),N15.Cercopithecus,9533,<,9528,N20.Cercopithecinae,,,particle set containment
-________________,A ONLY,N15.Cercopithecus_hamlyni,9536,>,867373,N20.Cercopithecus_hamlyni_hamlyni,subtree=,,particle set comparison
-________________,A ONLY,N15.Cercopithecus_campbelli,303588,>,304410,N20.Cercopithecus_campbelli_lowei,subtree=,,particle set comparison
-______________,A ONLY,N15.Erythrocebus,9537,>,9538,N20.Erythrocebus_patas,subtree=,,particle set comparison
-______________,SHARED,N15.Macaca,9539,,9539,N20.Macaca,,number_of_children,same particle set
-________________,SHARED,N15.Macaca_arctoides,9540,,9540,N20.Macaca_arctoides,,,name
-________________,SHARED,N15.Macaca_fascicularis,9541,,9541,N20.Macaca_fascicularis,,number_of_children,same particle set
-__________________,SHARED,N15.Macaca_fascicularis_philippinensis,90386,,90386,N20.Macaca_fascicularis_philippinensis,,,name
-__________________,SHARED,N15.Macaca_fascicularis_fascicularis,1215360,,1215360,N20.Macaca_fascicularis_fascicularis,,,name
-__________________,B ONLY,,,,1747270,N20.Macaca_fascicularis_aureus,,,
-________________,A ONLY,N15.Macaca_fuscata,9542,>,179089,N20.Macaca_fuscata_yakui,,,particle set comparison
-__________________,A ONLY (merge),N15.Macaca_fuscata_fuscata,9543,=,9542,N20.Macaca_fuscata,,,synonym+name+synonym
-__________________,SHARED (moved from 9542),N15.Macaca_fuscata_yakui,179089,,179089,N20.Macaca_fuscata_yakui,,,name
-________________,A ONLY,N15.Macaca_mulatta,9544,>,1449913,N20.Macaca_mulatta_lasiotus,subtree=,,particle set comparison
-________________,A ONLY (loss of resolution),N15.Macaca_nemestrina,9545,<,9539,N20.Macaca,,,particle set containment
-__________________,SHARED,N15.Macaca_nemestrina_leonina,90387,,90387,N20.Macaca_leonina,,taxonRank; canonicalName,synonym+name
-__________________,SHARED,N15.Macaca_nemestrina_siberu,244255,,244255,N20.Macaca_siberu,,taxonRank; canonicalName,synonym+name
-________________,SHARED,N15.Macaca_sylvanus,9546,,9546,N20.Macaca_sylvanus,,,name
-________________,A ONLY,N15.Macaca_radiata,9548,>,439030,N20.Macaca_radiata_radiata,subtree=,,particle set comparison
-________________,A ONLY,N15.Macaca_assamensis,9551,>,1411634,N20.Macaca_assamensis_assamensis,subtree=,,particle set comparison
-________________,SHARED,N15.Macaca_sinica,9552,,9552,N20.Macaca_sinica,,,name
-________________,SHARED,N15.Macaca_speciosa,9553,,9553,N20.Macaca_speciosa,,,name
-________________,SHARED,N15.Macaca_tonkeana,40843,,40843,N20.Macaca_tonkeana,,,name
-________________,SHARED,N15.Macaca_nigra,54600,,54600,N20.Macaca_nigra,,,name
-________________,SHARED,N15.Macaca_silenus,54601,,54601,N20.Macaca_silenus,,,name
-________________,A ONLY,N15.Macaca_thibetana,54602,>,257877,N20.Macaca_thibetana_thibetana,subtree=,,particle set comparison
-________________,SHARED,N15.Macaca_cyclopis,78449,,78449,N20.Macaca_cyclopis,,,name
-________________,SHARED,N15.Macaca_brunnescens,90381,,90381,N20.Macaca_brunnescens,,,name
-________________,SHARED,N15.Macaca_hecki,90382,,90382,N20.Macaca_hecki,,,name
-________________,SHARED,N15.Macaca_maura,90383,,90383,N20.Macaca_maura,,,name
-________________,SHARED,N15.Macaca_nigrescens,90384,,90384,N20.Macaca_nigrescens,,,name
-________________,SHARED,N15.Macaca_ochreata,90385,,90385,N20.Macaca_ochreata,,,name
-________________,SHARED,N15.Macaca_maura_x_tonkeana,168259,,168259,N20.Macaca_maura_x_tonkeana,,,name
-________________,SHARED,N15.Macaca_hecki_x_tonkeana,171293,,171293,N20.Macaca_hecki_x_tonkeana,,,name
-________________,SHARED,N15.Macaca_pagensis,230653,,230653,N20.Macaca_pagensis,,,name
-________________,SHARED,N15.Macaca_balantak,281404,,281404,N20.Macaca_balantak,,,name
-________________,SHARED,N15.Macaca_balantak_x_tonkeana,281405,,281405,N20.Macaca_balantak_x_tonkeana,,,name
-________________,A ONLY (merge),N15.Macaca_leonina,285350,=,90387,N20.Macaca_leonina,,,name
-________________,SHARED,N15.Macaca_munzala,402888,,402888,N20.Macaca_munzala,,,name
-________________,A ONLY (merge),N15.Macaca_siberu,867378,=,244255,N20.Macaca_siberu,,,name
-________________,B ONLY,N15.Macaca_fuscata_yakui,179089,<,9542,N20.Macaca_fuscata,,,particle set comparison
-__________________,B ONLY (split),N15.Macaca_fuscata,9542,=,9543,N20.Macaca_fuscata_fuscata,,,synonym+name+synonym
-________________,B ONLY,N15.Macaca_mulatta_lasiotus,1449913,<,9544,N20.Macaca_mulatta,,,particle set comparison
-__________________,B ONLY,,,,1654737,N20.Macaca_mulatta_brevicaudus,,,
-__________________,B ONLY,,,,2008792,N20.Macaca_mulatta_vestita,,,
-________________,B ONLY,N15.Macaca_nemestrina_nemestrina,90388,<,9545,N20.Macaca_nemestrina,subtree=,,particle set comparison
-________________,B ONLY,N15.Macaca_radiata_radiata,439030,<,9548,N20.Macaca_radiata,,,particle set comparison
-________________,B ONLY,N15.Macaca_assamensis_assamensis,1411634,<,9551,N20.Macaca_assamensis,,,particle set comparison
-________________,B ONLY,N15.Macaca_thibetana_thibetana,257877,<,54602,N20.Macaca_thibetana,,,particle set comparison
-________________,B ONLY,,,,1885588,N20.Macaca_leucogenys,,,
-________________,B ONLY,N15.Macaca_sp.,9549,<,2623225,N20.unclassified_Macaca,subtree=,,particle set comparison
-______________,SHARED,N15.Papio,9554,,9554,N20.Papio,,number_of_children,same particle set
-________________,A ONLY,N15.Papio_anubis,9555,>,211508,N20.Papio_anubis_anubis,subtree=,,particle set comparison
-________________,SHARED,N15.Papio_cynocephalus,9556,,9556,N20.Papio_cynocephalus,subtree=,,same particle set
-________________,A ONLY,N15.Papio_hamadryas,9557,>,9562,N20.Papio_hamadryas_hamadryas,subtree=,,particle set comparison
-________________,A ONLY,N15.Papio_ursinus,36229,>,208089,N20.Papio_ursinus_ursinus,subtree=,,particle set comparison
-________________,SHARED,N15.Papio_papio,100937,,100937,N20.Papio_papio,,,name
-________________,SHARED,N15.Papio_kindae,208091,,208091,N20.Papio_kindae,,,name
-________________,SHARED,N15.Papio_cynocephalus_x_Papio_anubis,208510,,208510,N20.Papio_cynocephalus_x_Papio_anubis,,,name
-________________,SHARED,N15.Papio_anubis_x_hamadryas,1560552,,1560552,N20.Papio_anubis_x_hamadryas,,,name
-________________,B ONLY,N15.Papio_anubis_anubis,211508,<,9555,N20.Papio_anubis,,,particle set comparison
-________________,B ONLY,N15.Papio_hamadryas_hamadryas,9562,<,9557,N20.Papio_hamadryas,,,particle set comparison
-________________,B ONLY,N15.Papio_ursinus_ursinus,208089,<,36229,N20.Papio_ursinus,,,particle set comparison
-__________________,B ONLY,,,,208090,N20.Papio_ursinus_griseipes,,,
-________________,B ONLY,,,,1945556,N20.Papio_anubis_x_Papio_cynocephalus,,,
-________________,B ONLY,,,,1945557,N20.Papio_anubis_x_Papio_ursinus,,,
-________________,B ONLY,,,,1945558,N20.Papio_kindae_x_Papio_cynocephalus,,,
-________________,B ONLY,,,,1945559,N20.Papio_kindae_x_Papio_ursinus_griseipes,,,
-________________,B ONLY (increased resolution),N15.Papio,9554,>,2632072,N20.unclassified_Papio,subtree=,,particle set containment
-______________,A ONLY,N15.Theropithecus,9564,>,9565,N20.Theropithecus_gelada,subtree=,,particle set comparison
-______________,SHARED,N15.Mandrillus,9567,,9567,N20.Mandrillus,subtree=,,same particle set
-______________,SHARED,N15.Miopithecus,36230,,36230,N20.Miopithecus,,,same particle set
-________________,A ONLY,N15.Miopithecus_talapoin,36231,>,560240,N20.Miopithecus_talapoin_talapoin,subtree=,,particle set comparison
-________________,SHARED,N15.Miopithecus_ogouensis,100488,,100488,N20.Miopithecus_ogouensis,,,name
-________________,B ONLY,N15.Miopithecus_talapoin_talapoin,560240,<,36231,N20.Miopithecus_talapoin,,,particle set comparison
-______________,A ONLY,N15.Allenopithecus,54134,>,54135,N20.Allenopithecus_nigroviridis,subtree=,,particle set comparison
-______________,SHARED,N15.Lophocebus,75565,,75565,N20.Lophocebus,,,same particle set
-________________,SHARED,N15.Lophocebus_aterrimus,75566,,75566,N20.Lophocebus_aterrimus,,,name
-________________,A ONLY,N15.Lophocebus_albigena,75567,>,75568,N20.Lophocebus_albigena_albigena,subtree=,,particle set comparison
-________________,B ONLY,N15.Lophocebus_albigena_albigena,75568,<,75567,N20.Lophocebus_albigena,,,particle set comparison
-______________,A ONLY,N15.Rungwecebus,371038,>,371039,N20.Rungwecebus_kipunji,subtree=,,particle set comparison
-______________,SHARED,N15.Chlorocebus,392815,,392815,N20.Chlorocebus,,,same particle set
-________________,SHARED,N15.Chlorocebus_aethiops,9534,,9534,N20.Chlorocebus_aethiops,subtree=,,same particle set
-________________,SHARED,N15.Chlorocebus_pygerythrus,60710,,60710,N20.Chlorocebus_pygerythrus,,number_of_children,same particle set
-__________________,SHARED,N15.Chlorocebus_pygerythrus_pygerythrus,460674,,460674,N20.Chlorocebus_pygerythrus_pygerythrus,,,name
-__________________,SHARED,N15.Chlorocebus_pygerythrus_hilgerti,508712,,508712,N20.Chlorocebus_pygerythrus_hilgerti,,,name
-__________________,B ONLY,,,,2269071,N20.Chlorocebus_pygerythrus_x_Chlorocebus_aethiops,,,
-________________,SHARED,N15.Chlorocebus_sabaeus,60711,,60711,N20.Chlorocebus_sabaeus,,,name
-________________,A ONLY,N15.Chlorocebus_tantalus,60712,>,508710,N20.Chlorocebus_tantalus_budgetti,subtree=,,particle set comparison
-________________,SHARED,N15.Chlorocebus_cynosuros,460675,,460675,N20.Chlorocebus_cynosuros,,,name
-________________,SHARED,N15.Chlorocebus_djamdjamensis,1284215,,1284215,N20.Chlorocebus_djamdjamensis,,,name
-________________,SHARED,N15.Chlorocebus_aethiops_x_djamdjamensis,1476079,,1476079,N20.Chlorocebus_aethiops_x_djamdjamensis,,,name
-________________,B ONLY,N15.Chlorocebus_tantalus_budgetti,508710,<,60712,N20.Chlorocebus_tantalus,,,particle set comparison
-________________,B ONLY,,,,1903316,N20.Chlorocebus_aethiops_x_Chlorocebus_pygerythrus,,,
-________________,B ONLY (increased resolution),N15.Chlorocebus,392815,>,2685534,N20.unclassified_Chlorocebus,,,particle set containment
-__________________,SHARED (moved from 392815),N15.Chlorocebus_sp._MAS-2011,1090918,,1090918,N20.Chlorocebus_sp._MAS-2011,,,name
-__________________,SHARED (moved from 392815),N15.Chlorocebus_sp._TH-2013,1284216,,1284216,N20.Chlorocebus_sp._TH-2013,,,name
-__________________,B ONLY,,,,2282232,N20.Chlorocebus_sp._LDS-2018,,,
-______________,B ONLY (increased resolution),N15.Cercopithecus,9533,>,9533,N20.Cercopithecus,,,particle set containment
-________________,SHARED (moved from 9533),N15.Cercopithecus_cephus,9535,,9535,N20.Cercopithecus_cephus,subtree=,,same particle set
-________________,SHARED (moved from 9533),N15.Cercopithecus_ascanius,36223,,36223,N20.Cercopithecus_ascanius,subtree=,,same particle set
-________________,SHARED (moved from 9533),N15.Cercopithecus_diana,36224,,36224,N20.Cercopithecus_diana,,,name
-________________,SHARED (moved from 9533),N15.Cercopithecus_mitis,36225,,36225,N20.Cercopithecus_mitis,subtree=,,same particle set
-________________,SHARED (moved from 9533),N15.Cercopithecus_mona,36226,,36226,N20.Cercopithecus_mona,subtree=,,same particle set
-________________,SHARED (moved from 9533),N15.Cercopithecus_neglectus,36227,,36227,N20.Cercopithecus_neglectus,,,name
-________________,SHARED (moved from 9533),N15.Cercopithecus_nictitans,36228,,36228,N20.Cercopithecus_nictitans,subtree=,,same particle set
-________________,SHARED (moved from 9533),N15.Cercopithecus_petaurista,100487,,100487,N20.Cercopithecus_petaurista,subtree=,,same particle set
-________________,SHARED (moved from 9533),N15.Cercopithecus_pogonias,102108,,102108,N20.Cercopithecus_pogonias,subtree=,,same particle set
-________________,SHARED (moved from 9533),N15.Cercopithecus_erythrogaster,161496,,161496,N20.Cercopithecus_erythrogaster,subtree=,,same particle set
-________________,SHARED (moved from 9533),N15.Cercopithecus_erythrotis,167130,,167130,N20.Cercopithecus_erythrotis,subtree=,,same particle set
-________________,SHARED (moved from 9533),N15.Cercopithecus_wolfi,263448,,263448,N20.Cercopithecus_wolfi,subtree=,scientificName,same particle set
-________________,SHARED (moved from 9533),N15.Cercopithecus_albogularis,867370,,867370,N20.Cercopithecus_albogularis,subtree=,,same particle set
-________________,SHARED (moved from 9533),N15.Cercopithecus_dryas,1137048,,1137048,N20.Cercopithecus_dryas,,scientificName,name
-________________,SHARED (moved from 9533),N15.Cercopithecus_roloway,1137049,,1137049,N20.Cercopithecus_roloway,,,name
-________________,SHARED (moved from 9533),N15.Cercopithecus_doggetti,1137474,,1137474,N20.Cercopithecus_doggetti,,,name
-________________,SHARED (moved from 9533),N15.Cercopithecus_kandti,1137481,,1137481,N20.Cercopithecus_kandti,,,name
-________________,SHARED (moved from 9533),N15.Cercopithecus_denti,1137511,,1137511,N20.Cercopithecus_denti,,,name
-________________,SHARED (moved from 9533),N15.Cercopithecus_lomamiensis,1191211,,1191211,N20.Cercopithecus_lomamiensis,,scientificName,name
-________________,B ONLY,N15.Cercopithecus_hamlyni_hamlyni,867373,<,9536,N20.Cercopithecus_hamlyni,,,particle set comparison
-________________,B ONLY,N15.Cercopithecus_campbelli_lowei,304410,<,303588,N20.Cercopithecus_campbelli,,,particle set comparison
-________________,B ONLY,,,,1579530,N20.Cercopithecus_sclateri,,,
-________________,B ONLY,N15.Cercopithecus_sp._WMS-2012,1144881,<,2618071,N20.unclassified_Cercopithecus,subtree=,,particle set comparison
-______________,B ONLY,N15.Erythrocebus_patas,9538,<,9537,N20.Erythrocebus,,,particle set comparison
-______________,B ONLY,N15.Theropithecus_gelada,9565,<,9564,N20.Theropithecus,,,particle set comparison
-______________,B ONLY,N15.Allenopithecus_nigroviridis,54135,<,54134,N20.Allenopithecus,,,particle set comparison
-______________,B ONLY,N15.Rungwecebus_kipunji,371039,<,371038,N20.Rungwecebus,,,particle set comparison
-______________,B ONLY (increased resolution),N15.Cercopithecus,9533,>,2059839,N20.Allochrocebus,,,particle set containment
-________________,SHARED (moved from 9533),N15.Cercopithecus_lhoesti,100224,,100224,N20.Allochrocebus_lhoesti,,canonicalName,synonym+name
-________________,SHARED (moved from 9533),N15.Cercopithecus_preussi,147649,,147649,N20.Allochrocebus_preussi,,canonicalName; scientificName,same particle set
-__________________,SHARED,N15.Cercopithecus_preussi_insularis,1137512,,1137512,N20.Allochrocebus_preussi_insularis,,canonicalName,synonym+name
-__________________,SHARED,N15.Cercopithecus_preussi_preussi,1137513,,1137513,N20.Allochrocebus_preussi_preussi,,canonicalName,synonym+name
-________________,SHARED (moved from 9533),N15.Cercopithecus_solatus,147650,,147650,N20.Allochrocebus_solatus,,canonicalName; scientificName,synonym+name+synonym
-____________,SHARED,N15.Colobinae,9569,,9569,N20.Colobinae,,,same particle set
-______________,SHARED,N15.Colobus,9570,,9570,N20.Colobus,,number_of_children,same particle set
-________________,SHARED,N15.Colobus_polykomos,9572,,9572,N20.Colobus_polykomos,,,name
-________________,SHARED,N15.Colobus_guereza,33548,,33548,N20.Colobus_guereza,subtree=,scientificName,same particle set
-________________,A ONLY,N15.Colobus_angolensis,54131,>,336983,N20.Colobus_angolensis_palliatus,subtree=,,particle set comparison
-________________,SHARED,N15.Colobus_vellerosus,378195,,378195,N20.Colobus_vellerosus,,,name
-________________,SHARED,N15.Colobus_vellerosus_x_angolensis,378196,,378196,N20.Colobus_vellerosus_x_angolensis,,,name
-________________,A ONLY,N15.Colobus_satanas,517012,>,517013,N20.Colobus_satanas_satanas,subtree=,,particle set comparison
-________________,B ONLY,N15.Colobus_angolensis_palliatus,336983,<,54131,N20.Colobus_angolensis,,,particle set comparison
-________________,B ONLY,N15.Colobus_satanas_satanas,517013,<,517012,N20.Colobus_satanas,,,particle set comparison
-________________,B ONLY (increased resolution),N15.Colobus,9570,>,2618863,N20.unclassified_Colobus,subtree=,,particle set containment
-______________,SHARED,N15.Presbytis,9573,,9573,N20.Presbytis,,,same particle set
-________________,SHARED,N15.Presbytis_senex,66055,,66055,N20.Presbytis_senex,,,name
-________________,SHARED,N15.Presbytis_melalophos,78451,,78451,N20.Presbytis_melalophos,,,same particle set
-__________________,SHARED,N15.Presbytis_melalophos_mitrata,272115,,272115,N20.Presbytis_melalophos_mitrata,,,name
-__________________,SHARED,N15.Presbytis_melalophos_bicolor,1046095,,1046095,N20.Presbytis_melalophos_bicolor,,,name
-__________________,SHARED,N15.Presbytis_melalophos_melalophos,1046096,,1046096,N20.Presbytis_melalophos_melalophos,,,name
-__________________,SHARED,N15.Presbytis_melalophos_sumatranus,1046097,,1046097,N20.Presbytis_melalophos_sumatranus,,,name
-________________,SHARED,N15.Presbytis_comata,78452,,78452,N20.Presbytis_comata,subtree=,,same particle set
-________________,SHARED,N15.Presbytis_femoralis,78453,,78453,N20.Presbytis_femoralis,,number_of_children,name
-__________________,B ONLY,,,,1840579,N20.Presbytis_femoralis_femoralis,,,
-________________,SHARED,N15.Presbytis_chrysomelas,1046090,,1046090,N20.Presbytis_chrysomelas,,,name
-________________,SHARED,N15.Presbytis_frontata,1046092,,1046092,N20.Presbytis_frontata,,,name
-________________,A ONLY,N15.Presbytis_hosei,1046093,>,1046094,N20.Presbytis_hosei_hosei,subtree=,,particle set comparison
-________________,SHARED,N15.Presbytis_potenziani,1046098,,1046098,N20.Presbytis_potenziani,subtree=,,same particle set
-________________,A ONLY,N15.Presbytis_rubicunda,1046101,>,1046102,N20.Presbytis_rubicunda_rubicunda,subtree=,,particle set comparison
-________________,SHARED,N15.Presbytis_thomasi,1046103,,1046103,N20.Presbytis_thomasi,,,name
-________________,B ONLY,N15.Presbytis_hosei_hosei,1046094,<,1046093,N20.Presbytis_hosei,,,particle set comparison
-________________,B ONLY,N15.Presbytis_rubicunda_rubicunda,1046102,<,1046101,N20.Presbytis_rubicunda,,,particle set comparison
-______________,A ONLY,N15.Nasalis,43779,>,43780,N20.Nasalis_larvatus,subtree=,,particle set comparison
-______________,SHARED,N15.Pygathrix,54132,,54132,N20.Pygathrix,,,same particle set
-________________,A ONLY,N15.Pygathrix_nemaeus,54133,>,303485,N20.Pygathrix_nemaeus_nemaeus,subtree=,,particle set comparison
-________________,SHARED,N15.Pygathrix_nigripes,310352,,310352,N20.Pygathrix_nigripes,,,name
-________________,SHARED,N15.Pygathrix_cinerea,693712,,693712,N20.Pygathrix_cinerea,,,name
-________________,SHARED,N15.Pygathrix_cinerea_1_RL-2012,1194332,,1194332,N20.Pygathrix_cinerea_1_RL-2012,,,name
-________________,SHARED,N15.Pygathrix_cinerea_2_RL-2012,1194333,,1194333,N20.Pygathrix_cinerea_2_RL-2012,,,name
-________________,B ONLY,N15.Pygathrix_nemaeus_nemaeus,303485,<,54133,N20.Pygathrix_nemaeus,,,particle set comparison
-______________,SHARED,N15.Trachypithecus,54136,,54136,N20.Trachypithecus,,number_of_children,same particle set
-________________,A ONLY,N15.Trachypithecus_vetulus,54137,>,614071,N20.Trachypithecus_vetulus_vetulus,subtree=,,particle set comparison
-________________,A ONLY,N15.Trachypithecus_francoisi,54180,>,272119,N20.Trachypithecus_francoisi_francoisi,subtree=,,particle set comparison
-________________,SHARED,N15.Trachypithecus_obscurus,54181,,54181,N20.Trachypithecus_obscurus,,,name
-________________,SHARED,N15.Trachypithecus_phayrei,61618,,61618,N20.Trachypithecus_phayrei,subtree=,,same particle set
-________________,SHARED,N15.Trachypithecus_johnii,66063,,66063,N20.Trachypithecus_johnii,,,name
-________________,SHARED,N15.Trachypithecus_cristatus,122765,,122765,N20.Trachypithecus_cristatus,,,name
-________________,SHARED,N15.Trachypithecus_geei,164650,,164650,N20.Trachypithecus_geei,,,name
-________________,SHARED,N15.Trachypithecus_pileatus,164651,,164651,N20.Trachypithecus_pileatus,,,name
-________________,SHARED,N15.Trachypithecus_auratus,222416,,222416,N20.Trachypithecus_auratus,subtree=,,same particle set
-________________,SHARED,N15.Trachypithecus_germaini,271260,,271260,N20.Trachypithecus_germaini,,,name
-________________,SHARED,N15.Trachypithecus_barbei,271261,,271261,N20.Trachypithecus_barbei,,,name
-________________,SHARED,N15.Trachypithecus_delacouri,465717,,465717,N20.Trachypithecus_delacouri,,,name
-________________,SHARED,N15.Trachypithecus_laotum,465718,,465718,N20.Trachypithecus_laotum,,,name
-________________,SHARED,N15.Trachypithecus_poliocephalus,465719,,465719,N20.Trachypithecus_poliocephalus,subtree=,,same particle set
-________________,SHARED,N15.Trachypithecus_francoisi_x_poliocephalus,744437,,744437,N20.Trachypithecus_francoisi_x_poliocephalus,,,name
-________________,SHARED,N15.Trachypithecus_hatinhensis,867383,,867383,N20.Trachypithecus_hatinhensis,,,name
-________________,SHARED,N15.Trachypithecus_shortridgei,1042121,,1042121,N20.Trachypithecus_shortridgei,,,name
-________________,B ONLY,N15.Trachypithecus_vetulus_vetulus,614071,<,54137,N20.Trachypithecus_vetulus,,,particle set comparison
-________________,B ONLY,N15.Trachypithecus_francoisi_francoisi,272119,<,54180,N20.Trachypithecus_francoisi,,,particle set comparison
-________________,B ONLY,,,,1966384,N20.Trachypithecus_mauritius,,,
-________________,B ONLY,N15.Trachypithecus_sp.,580599,<,2623509,N20.unclassified_Trachypithecus,subtree=,,particle set comparison
-______________,SHARED,N15.Semnopithecus,88028,,88028,N20.Semnopithecus,,number_of_children,same particle set
-________________,A ONLY (loss of resolution),N15.Semnopithecus_entellus,88029,<,88028,N20.Semnopithecus,,,particle set containment
-__________________,SHARED,N15.Semnopithecus_entellus_priam,272117,,1208733,N20.Semnopithecus_priam,,taxonRank; NCBI Taxonomy ID; canonicalName,synonym+name
-________________,SHARED,N15.Semnopithecus_hector,867382,,867382,N20.Semnopithecus_hector,,,name
-________________,A ONLY (merge),N15.Semnopithecus_priam,1208733,=,1208733,N20.Semnopithecus_priam,,,name
-________________,SHARED,N15.Semnopithecus_hypoleucos,1208734,,1208734,N20.Semnopithecus_hypoleucos,,,name
-________________,B ONLY,N15.Semnopithecus_entellus_entellus,867381,<,88029,N20.Semnopithecus_entellus,subtree=,,particle set comparison
-________________,B ONLY,,,,2632571,N20.unclassified_Semnopithecus,,,
-__________________,B ONLY,,,,1778600,N20.Semnopithecus_sp.,,,
-______________,A ONLY,N15.Procolobus,164647,>,373033,N20.Procolobus_verus,,,particle set comparison
-________________,SHARED (moved from 164647),N15.Procolobus_verus,373033,,373033,N20.Procolobus_verus,,,name
-______________,SHARED,N15.Rhinopithecus,542827,,542827,N20.Rhinopithecus,,number_of_children,same particle set
-________________,SHARED,N15.Rhinopithecus_bieti,61621,,61621,N20.Rhinopithecus_bieti,,,name
-________________,SHARED,N15.Rhinopithecus_roxellana,61622,,61622,N20.Rhinopithecus_roxellana,,,name
-________________,SHARED,N15.Rhinopithecus_avunculus,66062,,66062,N20.Rhinopithecus_avunculus,,scientificName,name
-________________,SHARED,N15.Rhinopithecus_brelichi,224329,,224329,N20.Rhinopithecus_brelichi,,,name
-________________,SHARED,N15.Rhinopithecus_bieti_1_RL-2012,1194334,,1194334,N20.Rhinopithecus_bieti_1_RL-2012,,,name
-________________,SHARED,N15.Rhinopithecus_bieti_2_RL-2012,1194335,,1194335,N20.Rhinopithecus_bieti_2_RL-2012,,,name
-________________,SHARED,N15.Rhinopithecus_strykeri,1194336,,1194336,N20.Rhinopithecus_strykeri,,,name
-________________,B ONLY,,,,2644350,N20.unclassified_Rhinopithecus,,,
-__________________,B ONLY,,,,1859147,N20.Rhinopithecus_sp.,,,
-______________,SHARED,N15.Piliocolobus,591932,,591932,N20.Piliocolobus,,,same particle set
-________________,SHARED,N15.Piliocolobus_badius,164648,,164648,N20.Piliocolobus_badius,subtree=,,same particle set
-________________,SHARED,N15.Piliocolobus_gordonorum,591933,,591933,N20.Piliocolobus_gordonorum,,,name
-________________,SHARED,N15.Piliocolobus_rufomitratus,591934,,591934,N20.Piliocolobus_rufomitratus,,,name
-________________,SHARED,N15.Piliocolobus_tholloni,591935,,591935,N20.Piliocolobus_tholloni,,,name
-________________,SHARED,N15.Piliocolobus_tephrosceles,591936,,591936,N20.Piliocolobus_tephrosceles,,,name
-________________,SHARED,N15.Piliocolobus_kirkii,591937,,591937,N20.Piliocolobus_kirkii,,,name
-________________,SHARED,N15.Piliocolobus_foai,591938,,591938,N20.Piliocolobus_foai,,,name
-________________,SHARED,N15.Piliocolobus_pennantii,591944,,591944,N20.Piliocolobus_pennantii,,,name
-________________,SHARED,N15.Piliocolobus_preussi,591945,,591945,N20.Piliocolobus_preussi,,,name
-______________,A ONLY,N15.Simias,1203020,>,170207,N20.Simias_concolor,subtree=,,particle set comparison
-______________,B ONLY,N15.Nasalis_larvatus,43780,<,43779,N20.Nasalis,,,particle set comparison
-______________,B ONLY,N15.Procolobus_verus,373033,<,164647,N20.Procolobus,,,particle set comparison
-______________,B ONLY,N15.Simias_concolor,170207,<,1203020,N20.Simias,,,particle set comparison
-____________,SHARED,N15.Cercopithecidae_gen._sp.,9576,,9576,N20.Cercopithecidae_gen._sp.,,,name
-________,SHARED,N15.Hominoidea,314295,,314295,N20.Hominoidea,,,same particle set
-__________,SHARED,N15.Hylobatidae,9577,,9577,N20.Hylobatidae,,,same particle set
-____________,SHARED,N15.Hylobates,9578,,9578,N20.Hylobates,,number_of_children,same particle set
-______________,SHARED,N15.Hylobates_agilis,9579,,9579,N20.Hylobates_agilis,subtree=,,same particle set
-______________,SHARED,N15.Hylobates_lar,9580,,9580,N20.Hylobates_lar,subtree=,,same particle set
-______________,SHARED,N15.Hylobates_klossii,9587,,9587,N20.Hylobates_klossii,,,name
-______________,SHARED,N15.Hylobates_muelleri,9588,,9588,N20.Hylobates_muelleri,subtree=,,same particle set
-______________,SHARED,N15.Hylobates_pileatus,9589,,9589,N20.Hylobates_pileatus,,,name
-______________,SHARED,N15.Hylobates_moloch,81572,,81572,N20.Hylobates_moloch,,,name
-______________,SHARED,N15.Hylobates_alibarbis,716691,,716691,N20.Hylobates_albibarbis,,canonicalName; scientificName,synonym+name+synonym
-______________,B ONLY (increased resolution),N15.Hylobates,9578,>,2647113,N20.unclassified_Hylobates,,,particle set containment
-________________,SHARED (moved from 9578),N15.Hylobates_sp.,9581,,9581,N20.Hylobates_sp.,,,name
-________________,SHARED (moved from 9578),N15.Hylobates_sp._TIB-201,150249,,150249,N20.Hylobates_sp._TIB-201,,,name
-________________,SHARED (moved from 9578),N15.Hylobates_sp._IGL-2004,280856,,280856,N20.Hylobates_sp._IGL-2004,,,name
-________________,SHARED (moved from 9578),N15.Hylobates_sp._AMA-2004,288892,,288892,N20.Hylobates_sp._AMA-2004,,,name
-________________,SHARED (moved from 9578),N15.Hylobates_sp._ECACC_MLA144,419588,,419588,N20.Hylobates_sp._ECACC_MLA144,,,name
-________________,SHARED (moved from 9578),N15.Hylobates_sp._PS-2007,425245,,425245,N20.Hylobates_sp._PS-2007,,,name
-________________,B ONLY,,,,2023128,N20.Hylobates_sp._OH-2017,,,
-____________,SHARED,N15.Nomascus,325165,,325165,N20.Nomascus,,number_of_children,same particle set
-______________,SHARED,N15.Nomascus_siki,9586,,9586,N20.Nomascus_siki,,,name
-______________,SHARED,N15.Nomascus_concolor,29089,,29089,N20.Nomascus_concolor,subtree=,,same particle set
-______________,SHARED,N15.Nomascus_gabriellae,61852,,61852,N20.Nomascus_gabriellae,,,name
-______________,SHARED,N15.Nomascus_leucogenys,61853,,61853,N20.Nomascus_leucogenys,,,name
-______________,SHARED,N15.Nomascus_nasutus,327374,,327374,N20.Nomascus_nasutus,,,name
-______________,SHARED,N15.Nomascus_hainanus,693984,,693984,N20.Nomascus_hainanus,,,name
-______________,B ONLY,,,,1616038,N20.Nomascus_annamensis,,,
-______________,B ONLY,,,,2170372,N20.Nomascus_gabriellae_x_Nomascus_siki,,,
-______________,B ONLY,,,,2170373,N20.Nomascus_leucogenys_x_Nomascus_siki,,,
-______________,B ONLY,,,,2170374,N20.Nomascus_cf._leucogenys_SSH-2018,,,
-____________,A ONLY,N15.Symphalangus,325166,>,405039,N20.Symphalangus_syndactylus_syndactylus,,,particle set comparison
-______________,A ONLY,N15.Symphalangus_syndactylus,9590,>,405039,N20.Symphalangus_syndactylus_syndactylus,subtree=,,particle set comparison
-____________,SHARED,N15.Hoolock,325167,,325167,N20.Hoolock,,number_of_children,same particle set
-______________,SHARED,N15.Hoolock_hoolock,61851,,61851,N20.Hoolock_hoolock,,,name
-______________,SHARED,N15.Hoolock_leuconedys,593543,,593543,N20.Hoolock_leuconedys,,,name
-______________,B ONLY,,,,1934190,N20.Hoolock_tianxing,,,
-______________,B ONLY,,,,1934191,N20.Hoolock_leuconedys_x_Hoolock_tianxing,,,
-____________,B ONLY,N15.Symphalangus_syndactylus_syndactylus,405039,<,325166,N20.Symphalangus,,,particle set comparison
-______________,B ONLY,N15.Symphalangus_syndactylus_syndactylus,405039,<,9590,N20.Symphalangus_syndactylus,,,particle set comparison
-__________,SHARED,N15.Hominidae,9604,,9604,N20.Hominidae,,,same particle set
-____________,SHARED,N15.Homininae,207598,,207598,N20.Homininae,,,same particle set
-______________,SHARED,N15.Gorilla,9592,,9592,N20.Gorilla,subtree=,,same particle set
-______________,SHARED,N15.Pan,9596,,9596,N20.Pan,,,same particle set
-________________,SHARED,N15.Pan_paniscus,9597,,9597,N20.Pan_paniscus,,,name
-________________,SHARED,N15.Pan_troglodytes,9598,,9598,N20.Pan_troglodytes,subtree=,,same particle set
-______________,SHARED,N15.Homo,9605,,9605,N20.Homo,,number_of_children,same particle set
-________________,SHARED,N15.Homo_sapiens,9606,,9606,N20.Homo_sapiens,,,same particle set
-__________________,SHARED,N15.Homo_sapiens_neanderthalensis,63221,,63221,N20.Homo_sapiens_neanderthalensis,,,name
-__________________,SHARED,N15.Homo_sapiens_ssp._Denisova,741158,,741158,N20.Homo_sapiens_subsp._'Denisova',,canonicalName,synonym+name+synonym
-________________,SHARED,N15.Homo_heidelbergensis,1425170,,1425170,N20.Homo_heidelbergensis,,,name
-________________,B ONLY,,,,2665952,N20.environmental_samples,,,
-__________________,B ONLY,,,,2665953,N20.Homo_sapiens_environmental_sample,,,
-____________,A ONLY,N15.Ponginae,607660,>,9599,N20.Pongo,,,particle set comparison
-______________,SHARED (moved from 607660),N15.Pongo,9599,,9599,N20.Pongo,,number_of_children,same particle set
-________________,A ONLY,N15.Pongo_pygmaeus,9600,>,9602,N20.Pongo_pygmaeus_pygmaeus,subtree=,,particle set comparison
-________________,A ONLY (merge),N15.Pongo_abelii,9601,=,9600,N20.Pongo_pygmaeus,,,synonym+name+synonym
-________________,SHARED,N15.Pongo_abelii_x_pygmaeus,502961,,502961,N20.Pongo_abelii_x_pygmaeus,,,name
-________________,B ONLY,N15.Pongo_pygmaeus_pygmaeus,9602,<,9600,N20.Pongo_pygmaeus,,,particle set comparison
-________________,B ONLY (split),N15.Pongo_pygmaeus,9600,=,9601,N20.Pongo_abelii,,,synonym+name+synonym
-________________,B ONLY,,,,2051901,N20.Pongo_tapanuliensis,,,
-________________,B ONLY,N15.Pongo_sp.,9603,<,2624844,N20.unclassified_Pongo,subtree=,,particle set comparison
-____________,B ONLY,N15.Pongo,9599,<,607660,N20.Ponginae,,,particle set comparison
-________,B ONLY,N15.Cercopithecidae,9527,<,314294,N20.Cercopithecoidea,,,particle set comparison
-____,A ONLY,N15.Tarsiiformes,376912,>,9475,N20.Tarsiidae,,,particle set comparison
-______,A ONLY,N15.Tarsiidae,9475,>,9475,N20.Tarsiidae,,,particle set comparison
-________,A ONLY (merge),N15.Tarsius,9476,=,9475,N20.Tarsiidae,,,same particle set
-____,B ONLY,N15.Tarsius,9476,<,376912,N20.Tarsiiformes,,,particle set comparison
-______,B ONLY (split),N15.Tarsiidae,9475,=,9475,N20.Tarsiidae,,,monotypic
-________,B ONLY (increased resolution),N15.Tarsius,9476,>,9476,N20.Tarsius,,,particle set containment
-__________,SHARED (moved from 9476),N15.Tarsius_dentatus,449501,,449501,N20.Tarsius_dentatus,,,name
-__________,SHARED (moved from 9476),N15.Tarsius_lariang,630277,,630277,N20.Tarsius_lariang,,,name
-__________,SHARED (moved from 9476),N15.Tarsius_dentatus_x_lariang,642591,,642591,N20.Tarsius_dentatus_x_lariang,,,name
-__________,SHARED (moved from 9476),N15.Tarsius_tarsier,662464,,662464,N20.Tarsius_tarsier,,,name
-__________,SHARED (moved from 9476),N15.Tarsius_sangirensis,905053,,905053,N20.Tarsius_sangirensis,,,name
-__________,SHARED (moved from 9476),N15.Tarsius_wallacei,981131,,981131,N20.Tarsius_wallacei,,,name
-__________,B ONLY,,,,1748400,N20.Tarsius_fuscus,,,
-__________,B ONLY (increased resolution),N15.Tarsius,9476,>,2624233,N20.unclassified_Tarsius,,,particle set containment
-____________,SHARED (moved from 9476),N15.Tarsius_sp.,30612,,30612,N20.Tarsius_sp.,,,name
-____________,SHARED (moved from 9476),N15.Tarsius_sp._FFA-2009a,662655,,662655,N20.Tarsius_sp._FFA-2009a,,,name
-____________,B ONLY,,,,1748402,N20.Tarsius_sp._CD-2015,,,
-________,B ONLY,N15.Tarsius_syrichta,9478,<,1868481,N20.Carlito,,,particle set comparison
-__________,SHARED (moved from 9476),N15.Tarsius_syrichta,9478,,1868482,N20.Carlito_syrichta,,NCBI Taxonomy ID; canonicalName,synonym+name+synonym
-________,B ONLY,N15.Tarsius_bancanus,9477,<,1971489,N20.Cephalopachus,,,particle set comparison
-__________,SHARED (moved from 9476),N15.Tarsius_bancanus,9477,,9477,N20.Cephalopachus_bancanus,,number_of_children; canonicalName; scientificName,synonym+name+synonym
-____________,B ONLY,,,,1971490,N20.Cephalopachus_bancanus_bancanus,,,
-____________,B ONLY,,,,2567999,N20.Cephalopachus_bancanus_borneanus,,,
+indent,operation,dom,dom id,relation,cod id,cod,unchanged,changed_props,reason,rank
+,SHARED,N15.Primates,9443,=,9443,N20.Primates,,,particle set =,order
+__,SHARED,N15.unclassified_Primates,57118,=,57118,N20.unclassified_Primates,,number_of_children,particle set =,
+____,A ONLY (loss of resolution),N15.Japanese_monkeys,36513,<,9542,N20.Macaca_fuscata,,,canonicalName+synonym,species
+____,SHARED,N15.marmosets,38020,=,38020,N20.marmosets,,,canonicalName,species
+____,SHARED,N15.unidentified_monkey,70699,=,70699,N20.unidentified_monkey,,,canonicalName,species
+____,SHARED,N15.Primates_sp._BOLD:AAA0001,976298,=,976298,N20.Primates_sp._BOLD:AAA0001,,,canonicalName,species
+____,SHARED,N15.Primates_sp._BOLD:AAC9009,976299,=,976299,N20.Primates_sp._BOLD:AAC9009,,,canonicalName,species
+____,SHARED,N15.Primates_sp._BOLD:AAE4744,976300,=,976300,N20.Primates_sp._BOLD:AAE4744,,,canonicalName,species
+____,SHARED,N15.Primates_sp._BOLD:AAJ7304,976301,=,976301,N20.Primates_sp._BOLD:AAJ7304,,,canonicalName,species
+____,SHARED,N15.Primates_sp._BOLD:AAO0053,976302,=,976302,N20.Primates_sp._BOLD:AAO0053,,,canonicalName,species
+____,SHARED,N15.Primates_sp._BOLD:AAC7735,1068292,=,1068292,N20.Primates_sp._BOLD:AAC7735,,,canonicalName,species
+____,SHARED,N15.Primates_sp._BOLD:AAD0215,1068293,=,1068293,N20.Primates_sp._BOLD:AAD0215,,,canonicalName,species
+____,SHARED,N15.Primates_sp._BOLD:AAF0367,1068294,=,1068294,N20.Primates_sp._BOLD:AAF0367,,,canonicalName,species
+__,SHARED,N15.Strepsirrhini,376911,=,376911,N20.Strepsirrhini,,,particle set =,suborder
+____,SHARED,N15.Lemuriformes,376915,=,376915,N20.Lemuriformes,,,particle set =,infraorder
+______,SHARED,N15.Lemuridae,9445,=,9445,N20.Lemuridae,,,particle set =,family
+________,SHARED,N15.Lemur,9446,=,9446,N20.Lemur,,,particle set =,genus
+__________,SHARED,N15.Lemur_catta,9447,=,9447,N20.Lemur_catta,,,canonicalName,species
+__________,B ONLY,N15.Lemur_sp.,69491,<,2641939,N20.unclassified_Lemur,subtree=,,particle set >,
+________,SHARED,N15.Varecia,9454,=,9454,N20.Varecia,,,particle set =,genus
+__________,A ONLY,N15.Varecia_variegata,9455,>,87289,N20.Varecia_variegata_variegata,subtree=,,particle set >,subspecies
+__________,SHARED,N15.Varecia_rubra,554167,=,554167,N20.Varecia_rubra,,,canonicalName,species
+__________,B ONLY,N15.Varecia_variegata_variegata,87289,<,9455,N20.Varecia_variegata,,,particle set >,species
+________,SHARED,N15.Eulemur,13513,=,13513,N20.Eulemur,,number_of_children,particle set =,genus
+__________,SHARED,N15.Eulemur_coronatus,13514,=,13514,N20.Eulemur_coronatus,,,scientificName,species
+__________,SHARED,N15.Eulemur_fulvus,13515,=,13515,N20.Eulemur_fulvus,subtree=,,particle set =,species
+__________,A ONLY,N15.Eulemur_macaco,30602,>,30603,N20.Eulemur_macaco_macaco,subtree=,,particle set >,subspecies
+__________,SHARED,N15.Eulemur_mongoz,34828,=,34828,N20.Eulemur_mongoz,,,canonicalName,species
+__________,SHARED,N15.Eulemur_rubriventer,34829,=,34829,N20.Eulemur_rubriventer,,,canonicalName,species
+__________,SHARED,N15.Eulemur_flavifrons,87288,=,87288,N20.Eulemur_flavifrons,,,scientificName,species
+__________,SHARED,N15.Eulemur_sanfordi,122225,=,122225,N20.Eulemur_sanfordi,,,scientificName,species
+__________,SHARED,N15.Eulemur_cinereiceps,639525,=,639525,N20.Eulemur_cinereiceps,,,scientificName,species
+__________,SHARED,N15.Eulemur_rufus,859983,=,859983,N20.Eulemur_rufus,,,scientificName,species
+__________,SHARED,N15.Eulemur_rufifrons,859984,=,859984,N20.Eulemur_rufifrons,,,scientificName,species
+__________,SHARED,N15.Eulemur_albifrons,1215604,=,1215604,N20.Eulemur_albifrons,,,scientificName,species
+__________,A ONLY (loss of resolution),N15.Eulemur_hybrids,1417238,<,13513,N20.Eulemur,subtree=,,N20.Eulemur_albifrons is not in the A taxon,genus
+__________,B ONLY,N15.Eulemur_macaco_macaco,30603,<,30602,N20.Eulemur_macaco,,,particle set >,species
+________,SHARED,N15.Hapalemur,13556,=,13556,N20.Hapalemur,,,particle set =,genus
+__________,SHARED,N15.Hapalemur_griseus,13557,=,13557,N20.Hapalemur_griseus,subtree=,,particle set =,species
+__________,SHARED,N15.Hapalemur_aureus,122222,=,122222,N20.Hapalemur_aureus,,,canonicalName,species
+__________,SHARED,N15.Hapalemur_occidentalis,867377,=,867377,N20.Hapalemur_occidentalis,,,scientificName,species
+________,A ONLY,N15.Prolemur,1328069,>,1328070,N20.Prolemur_simus,subtree=,,particle set >,species
+________,A ONLY,N15.Pachylemur,1513474,>,1513475,N20.Pachylemur_jullyi,subtree=,,particle set >,species
+________,B ONLY,N15.Prolemur_simus,1328070,<,1328069,N20.Prolemur,,,particle set >,genus
+________,B ONLY,N15.Pachylemur_jullyi,1513475,<,1513474,N20.Pachylemur,,,particle set >,genus
+______,SHARED,N15.Indriidae,30599,=,30599,N20.Indriidae,,,particle set =,family
+________,SHARED,N15.Propithecus,30600,=,30600,N20.Propithecus,,,particle set =,genus
+__________,SHARED,N15.Propithecus_tattersalli,30601,=,30601,N20.Propithecus_tattersalli,,,canonicalName,species
+__________,A ONLY,N15.Propithecus_verreauxi,34825,>,122229,N20.Propithecus_verreauxi_verreauxi,subtree=,,particle set >,subspecies
+__________,SHARED,N15.Propithecus_diadema,83281,=,83281,N20.Propithecus_diadema,subtree=,,particle set =,species
+__________,SHARED,N15.Propithecus_coquereli,379532,=,379532,N20.Propithecus_coquereli,,,scientificName,species
+__________,SHARED,N15.Propithecus_deckenii,475618,=,475618,N20.Propithecus_deckenii,subtree=,,particle set =,species
+__________,SHARED,N15.Propithecus_edwardsi,543559,=,543559,N20.Propithecus_edwardsi,,,canonicalName,species
+__________,SHARED,N15.Propithecus_candidus,543560,=,543560,N20.Propithecus_candidus,,,canonicalName,species
+__________,SHARED,N15.Propithecus_perrieri,989338,=,989338,N20.Propithecus_perrieri,,,scientificName,species
+__________,B ONLY,N15.Propithecus_verreauxi_verreauxi,122229,<,34825,N20.Propithecus_verreauxi,,,particle set >,species
+__________,B ONLY,N15.Propithecus_sp.,39582,<,2677806,N20.unclassified_Propithecus,subtree=,,particle set >,
+________,A ONLY,N15.Indri,34826,>,34827,N20.Indri_indri,subtree=,,particle set >,species
+________,SHARED,N15.Avahi,122245,=,122245,N20.Avahi,,,particle set =,genus
+__________,SHARED,N15.Avahi_laniger,122246,=,122246,N20.Avahi_laniger,,,canonicalName,species
+__________,SHARED,N15.Avahi_occidentalis,132108,=,132108,N20.Avahi_occidentalis,,,canonicalName,species
+__________,SHARED,N15.Avahi_unicolor,402239,=,402239,N20.Avahi_unicolor,,,canonicalName,species
+__________,SHARED,N15.Avahi_cleesei,402244,=,402244,N20.Avahi_cleesei,,,canonicalName,species
+__________,SHARED,N15.Avahi_peyrierasi,1313323,=,1313323,N20.Avahi_peyrierasi,,scientificName,canonicalName,species
+________,SHARED,N15.Archaeolemur,523820,=,523820,N20.Archaeolemur,subtree=,,particle set =,genus
+________,A ONLY,N15.Hadropithecus,523824,>,523825,N20.Hadropithecus_stenognathus,subtree=,,particle set >,species
+________,B ONLY,N15.Indri_indri,34827,<,34826,N20.Indri,,,particle set >,genus
+________,B ONLY,N15.Hadropithecus_stenognathus,523825,<,523824,N20.Hadropithecus,,,particle set >,genus
+______,SHARED,N15.Lepilemuridae,30614,=,30614,N20.Lepilemuridae,,,particle set =,family
+________,SHARED,N15.Lepilemur,9452,=,9452,N20.Lepilemur,,number_of_children,particle set =,genus
+__________,SHARED,N15.Lepilemur_mustelinus,9453,=,9453,N20.Lepilemur_mustelinus,,,canonicalName,species
+__________,SHARED,N15.Lepilemur_dorsalis,78583,=,78583,N20.Lepilemur_dorsalis,,,canonicalName,species
+__________,SHARED,N15.Lepilemur_septentrionalis,78584,=,78584,N20.Lepilemur_septentrionalis,,,canonicalName,species
+__________,SHARED,N15.Lepilemur_ruficaudatus,78866,=,78866,N20.Lepilemur_ruficaudatus,,,canonicalName,species
+__________,SHARED,N15.Lepilemur_leucopus,100475,=,100475,N20.Lepilemur_leucopus,,,canonicalName,species
+__________,SHARED,N15.Lepilemur_edwardsi,122230,=,122230,N20.Lepilemur_edwardsi,,,canonicalName,species
+__________,SHARED,N15.Lepilemur_microdon,185457,=,185457,N20.Lepilemur_microdon,,,canonicalName,species
+__________,SHARED,N15.Lepilemur_mitsinjoensis,236287,=,236287,N20.Lepilemur_mitsinjoensis,,,canonicalName,species
+__________,SHARED,N15.Lepilemur_seali,236288,=,236288,N20.Lepilemur_seali,,,scientificName,species
+__________,SHARED,N15.Lepilemur_sahamalazensis,342398,=,342398,N20.Lepilemur_sahamalazensis,,,canonicalName,species
+__________,SHARED,N15.Lepilemur_aeeclis,342399,=,342399,N20.Lepilemur_aeeclis,,,canonicalName,species
+__________,SHARED,N15.Lepilemur_ankaranensis,342401,=,342401,N20.Lepilemur_ankaranensis,,,canonicalName,species
+__________,SHARED,N15.Lepilemur_mittermeieri,378517,=,378517,N20.Lepilemur_mittermeieri,,,canonicalName,species
+__________,SHARED,N15.Lepilemur_manasamody,458171,=,458171,N20.Lepilemur_manasamody,,,canonicalName,species
+__________,SHARED,N15.Lepilemur_otto,458173,=,458173,N20.Lepilemur_otto,,,canonicalName,species
+__________,SHARED,N15.Lepilemur_jamesi,486960,=,486960,N20.Lepilemur_jamesorum,,canonicalName,ncbi_id,species
+__________,SHARED,N15.Lepilemur_hubbardorum,756882,=,756882,N20.Lepilemur_hubbardorum,,,scientificName,species
+__________,SHARED,N15.Lepilemur_petteri,886964,=,886964,N20.Lepilemur_petteri,,,scientificName,species
+__________,SHARED,N15.Lepilemur_randrianasoloi,886965,=,886965,N20.Lepilemur_randrianasoloi,,,scientificName,species
+__________,B ONLY,,,,886957,N20.Lepilemur_ahmansonorum,,,,species
+__________,B ONLY,,,,886958,N20.Lepilemur_betsileo,,,,species
+__________,B ONLY,,,,886959,N20.Lepilemur_fleuretae,,,,species
+__________,B ONLY,,,,886960,N20.Lepilemur_grewcockorum,,,,species
+__________,B ONLY,,,,886961,N20.Lepilemur_hollandorum,,,,species
+__________,B ONLY,,,,886963,N20.Lepilemur_milanoii,,,,species
+__________,B ONLY,,,,886966,N20.Lepilemur_scottorum,,,,species
+__________,B ONLY,,,,886967,N20.Lepilemur_tymerlachsoni,,,,species
+__________,B ONLY,,,,886968,N20.Lepilemur_wrightae,,,,species
+__________,B ONLY (increased resolution),N15.Lepilemur,9452,>,2645584,N20.unclassified_Lepilemur,subtree=,,N15.Lepilemur_randrianasoloi is not in the A taxon,
+________,SHARED,N15.Megaladapis,126593,=,126593,N20.Megaladapis,,number_of_children,particle set =,genus
+__________,SHARED,N15.Megaladapis_edwardsi,185953,=,185953,N20.Megaladapis_edwardsi,,,canonicalName,species
+__________,B ONLY (increased resolution),N15.Megaladapis,126593,>,2620125,N20.unclassified_Megaladapis,subtree=,,N15.Megaladapis_edwardsi is not in the A taxon,
+______,SHARED,N15.Cheirogaleidae,30615,=,30615,N20.Cheirogaleidae,,,particle set =,family
+________,SHARED,N15.Cheirogaleus,9459,=,9459,N20.Cheirogaleus,,number_of_children,particle set =,genus
+__________,SHARED,N15.Cheirogaleus_medius,9460,=,9460,N20.Cheirogaleus_medius,,scientificName,canonicalName,species
+__________,SHARED,N15.Cheirogaleus_major,47177,=,47177,N20.Cheirogaleus_major,,scientificName,canonicalName,species
+__________,SHARED,N15.Cheirogaleus_crossleyi,291259,=,291259,N20.Cheirogaleus_crossleyi,,scientificName,canonicalName,species
+__________,SHARED,N15.Cheirogaleus_sibreei,752538,=,752538,N20.Cheirogaleus_sibreei,,,scientificName,species
+__________,SHARED,N15.Cheirogaleus_minusculus,867375,=,867375,N20.Cheirogaleus_minusculus,,,scientificName,species
+__________,SHARED,N15.Cheirogaleus_lavasoensis,1569974,=,1569974,N20.Cheirogaleus_lavasoensis,,scientificName,canonicalName,species
+__________,B ONLY,,,,2563322,N20.Cheirogaleus_cf._medius_RW-2019,,,,species
+________,SHARED,N15.Microcebus,13149,=,13149,N20.Microcebus,,number_of_children,particle set =,genus
+__________,SHARED,N15.Microcebus_murinus,30608,=,30608,N20.Microcebus_murinus,,,canonicalName,species
+__________,SHARED,N15.Microcebus_ravelobensis,122231,=,122231,N20.Microcebus_ravelobensis,,,canonicalName,species
+__________,SHARED,N15.Microcebus_rufus,122232,=,122232,N20.Microcebus_rufus,,,canonicalName,species
+__________,SHARED,N15.Microcebus_myoxinus,143283,=,143283,N20.Microcebus_myoxinus,,,canonicalName,species
+__________,SHARED,N15.Microcebus_tavaratra,143351,=,143351,N20.Microcebus_tavaratra,,,canonicalName,species
+__________,SHARED,N15.Microcebus_berthae,143352,=,143352,N20.Microcebus_berthae,,scientificName,canonicalName,species
+__________,SHARED,N15.Microcebus_sambiranensis,143353,=,143353,N20.Microcebus_sambiranensis,,,canonicalName,species
+__________,SHARED,N15.Microcebus_griseorufus,143354,=,143354,N20.Microcebus_griseorufus,,,canonicalName,species
+__________,SHARED,N15.Microcebus_simmonsi,236272,=,236272,N20.Microcebus_simmonsi,,,canonicalName,species
+__________,SHARED,N15.Microcebus_mittermeieri,236274,=,236274,N20.Microcebus_mittermeieri,,,canonicalName,species
+__________,SHARED,N15.Microcebus_jollyae,236275,=,236275,N20.Microcebus_jollyae,,,canonicalName,species
+__________,SHARED,N15.Microcebus_lehilahytsara,343908,=,343908,N20.Microcebus_lehilahytsara,,,canonicalName,species
+__________,SHARED,N15.Microcebus_bongolavensis,412750,=,412750,N20.Microcebus_bongolavensis,,,canonicalName,species
+__________,SHARED,N15.Microcebus_danfossi,412751,=,412751,N20.Microcebus_danfossi,,,canonicalName,species
+__________,SHARED,N15.Microcebus_lokobensis,412752,=,412752,N20.Microcebus_lokobensis,,,canonicalName,species
+__________,SHARED,N15.Microcebus_mamiratra,415757,=,415757,N20.Microcebus_mamiratra,,,canonicalName,species
+__________,SHARED,N15.Microcebus_macarthurii,548481,=,548481,N20.Microcebus_macarthurii,,,canonicalName,species
+__________,SHARED,N15.Microcebus_arnholdi,864580,=,864580,N20.Microcebus_arnholdi,,,scientificName,species
+__________,SHARED,N15.Microcebus_margotmarshae,864581,=,864581,N20.Microcebus_margotmarshae,,,scientificName,species
+__________,SHARED,N15.Microcebus_gerpi,1131379,=,1131379,N20.Microcebus_gerpi,,,scientificName,species
+__________,SHARED,N15.Microcebus_tanosi,1310123,=,1310123,N20.Microcebus_tanosi,,,scientificName,species
+__________,SHARED,N15.Microcebus_marohita,1310124,=,1310124,N20.Microcebus_marohita,,,scientificName,species
+__________,B ONLY,,,,2483760,N20.Microcebus_ganzhorni,,,,species
+__________,B ONLY (increased resolution),N15.Microcebus,13149,>,2630091,N20.unclassified_Microcebus,,,N15.Microcebus_marohita is not in the A taxon,
+____________,SHARED (moved from 13149),N15.Microcebus_sp._EELHDZ_M98,270538,=,270538,N20.Microcebus_sp._EELHDZ_M98,,,canonicalName,species
+____________,SHARED (moved from 13149),N15.Microcebus_sp._EELHDZ_TAD23,270540,=,270540,N20.Microcebus_sp._EELHDZ_TAD23,,,canonicalName,species
+____________,SHARED (moved from 13149),N15.Microcebus_sp._EELHDZ_VEV33,270674,=,270674,N20.Microcebus_sp._EELHDZ_VEV33,,,canonicalName,species
+____________,SHARED (moved from 13149),N15.Microcebus_sp._EELHDZ_VEV35,270675,=,270675,N20.Microcebus_sp._EELHDZ_VEV35,,,canonicalName,species
+____________,SHARED (moved from 13149),N15.Microcebus_sp._ANT5.1,388736,=,388736,N20.Microcebus_sp._ANT5.1,,,canonicalName,species
+____________,SHARED (moved from 13149),N15.Microcebus_sp._Ambongabe,412758,=,412758,N20.Microcebus_sp._Ambongabe,,,canonicalName,species
+____________,SHARED (moved from 13149),N15.Microcebus_sp._Bora,412759,=,412759,N20.Microcebus_sp._Bora,,,canonicalName,species
+____________,SHARED (moved from 13149),N15.Microcebus_sp._Mahajamba-Est,412760,=,412760,N20.Microcebus_sp._Mahajamba-Est,,,canonicalName,species
+____________,SHARED (moved from 13149),N15.Microcebus_sp._Maroakata,412761,=,412761,N20.Microcebus_sp._Maroakata,,,canonicalName,species
+____________,SHARED (moved from 13149),N15.Microcebus_sp._Anjiahely,548482,=,548482,N20.Microcebus_sp._Anjiahely,,,canonicalName,species
+____________,SHARED (moved from 13149),N15.Microcebus_sp._DWW-2010a,764313,=,764313,N20.Microcebus_sp._DWW-2010a,,,canonicalName,species
+____________,SHARED (moved from 13149),N15.Microcebus_sp._d'Ambre,1310125,=,1310125,N20.Microcebus_sp._d'Ambre,,,canonicalName,species
+____________,B ONLY,,,,418100,N20.Microcebus_sp._Antanosy,,,,species
+____________,B ONLY,,,,2508170,N20.Microcebus_sp._3_GT-2019,,,,species
+____________,B ONLY,,,,2683930,N20.Microcebus_sp._south_Manambery,,,,species
+________,SHARED,N15.Mirza,83691,=,83691,N20.Mirza,,,particle set =,genus
+__________,SHARED,N15.Mirza_coquereli,47180,=,47180,N20.Mirza_coquereli,,,canonicalName,species
+__________,SHARED,N15.Mirza_zaza,339999,=,339999,N20.Mirza_zaza,,,canonicalName,species
+__________,B ONLY,N15.Mirza_sp._001y03,415977,<,2628182,N20.unclassified_Mirza,subtree=,,particle set >,
+________,A ONLY,N15.Allocebus,122247,>,122248,N20.Allocebus_trichotis,subtree=,,particle set >,species
+________,SHARED,N15.Phaner,261733,=,261733,N20.Phaner,,,particle set =,genus
+__________,SHARED,N15.Phaner_furcifer,261734,=,261734,N20.Phaner_furcifer,,,canonicalName,species
+__________,SHARED,N15.Phaner_pallescens,568393,=,568393,N20.Phaner_pallescens,,scientificName,canonicalName,species
+__________,SHARED,N15.Phaner_electromontis,1313324,=,1313324,N20.Phaner_electromontis,,scientificName,canonicalName,species
+__________,SHARED,N15.Phaner_parienti,1313325,=,1313325,N20.Phaner_parienti,,scientificName,canonicalName,species
+________,B ONLY,N15.Allocebus_trichotis,122248,<,122247,N20.Allocebus,,,particle set >,genus
+______,A ONLY,N15.Paleopropithecidae,1513476,>,322024,N20.Palaeopropithecus,,,particle set >,genus
+________,SHARED (moved from 1513476),N15.Palaeopropithecus,322024,=,322024,N20.Palaeopropithecus,,number_of_children,particle set =,genus
+__________,SHARED,N15.Palaeopropithecus_ingens,1513477,=,1513477,N20.Palaeopropithecus_ingens,,,scientificName,species
+__________,SHARED,N15.Palaeopropithecus_maximus,1597978,=,1597978,N20.Palaeopropithecus_maximus,,,scientificName,species
+__________,B ONLY (increased resolution),N15.Palaeopropithecus,322024,>,2619300,N20.unclassified_Palaeopropithecus,subtree=,,N15.Palaeopropithecus_maximus is not in the A taxon,
+______,B ONLY,N15.Palaeopropithecus,322024,<,1513476,N20.Paleopropithecidae,,,particle set >,family
+____,A ONLY (conflict),N15.Chiromyiformes,376916,><,376911,N20.Strepsirrhini,,,N20.Lorisidae is in the A taxon; B-sibling N20.Galagidae is not,suborder
+____,A ONLY,N15.Daubentoniidae,30613,>,31869,N20.Daubentonia_madagascariensis,,,particle set >,species
+______,A ONLY,N15.Daubentonia,13038,>,31869,N20.Daubentonia_madagascariensis,subtree=,,particle set >,species
+____,A ONLY,N15.Lorisiformes,376917,>,40297,N20.Galagidae,,,particle set >,family
+______,SHARED (moved from 376917),N15.Galagidae,40297,=,40297,N20.Galagidae,,number_of_children,particle set =,family
+________,A ONLY (conflict),N15.Galago,9462,><,40297,N20.Galagidae,,,N20.Galagoides_thomasi is in the A taxon; B-sibling N20.Galagoides_orinus is not,family
+________,SHARED,N15.Otolemur,30610,=,30610,N20.Otolemur,,,particle set =,genus
+__________,SHARED,N15.Otolemur_crassicaudatus,9463,=,9463,N20.Otolemur_crassicaudatus,,,canonicalName,species
+__________,A ONLY,N15.Otolemur_garnettii,30611,>,477174,N20.Otolemur_garnettii_garnettii,subtree=,,particle set >,subspecies
+__________,SHARED,N15.Otolemur_monteiri,337212,=,337212,N20.Otolemur_monteiri,subtree=,,particle set =,species
+__________,B ONLY,N15.Otolemur_garnettii_garnettii,477174,<,30611,N20.Otolemur_garnettii,,,particle set >,species
+________,A ONLY (loss of resolution),N15.Galagoides,89671,<,89671,N20.Galagoides,,,N20.Galagoides_thomasi is not in the A taxon,genus
+__________,SHARED,N15.Galagoides_demidoff,89672,=,89672,N20.Galagoides_demidoff,,number_of_children,canonicalName,species
+____________,B ONLY,,,,1738051,N20.Galagoides_demidoff_murinus,,,,subspecies
+__________,SHARED,N15.Galagoides_zanzibaricus,111174,=,111174,N20.Galagoides_zanzibaricus,,number_of_children,canonicalName,species
+____________,B ONLY,,,,1738046,N20.Galagoides_zanzibaricus_udzungwensis,,,,subspecies
+____________,B ONLY,,,,1738053,N20.Galagoides_zanzibaricus_zanzibaricus,,,,subspecies
+__________,SHARED,N15.Galagoides_orinus,337210,=,337210,N20.Galagoides_orinus,,,canonicalName,species
+__________,SHARED,N15.Galagoides_cocos,1487601,=,1487601,N20.Galagoides_cocos,,,canonicalName,species
+________,A ONLY,N15.Euoticus,261735,>,261736,N20.Euoticus_elegantulus,subtree=,,particle set >,species
+________,B ONLY (increased resolution),N15.Galago,9462,>,9462,N20.Galago,,,N15.Galago_thomasi is not in the A taxon,genus
+__________,SHARED (moved from 9462),N15.Galago_senegalensis,9465,=,9465,N20.Galago_senegalensis,,number_of_children,canonicalName,species
+____________,B ONLY,,,,1738048,N20.Galago_senegalensis_senegalensis,,,,subspecies
+____________,B ONLY,,,,1738052,N20.Galago_senegalensis_braccatus,,,,subspecies
+__________,SHARED (moved from 9462),N15.Galago_moholi,30609,=,30609,N20.Galago_moholi,,scientificName,canonicalName,species
+__________,SHARED (moved from 9462),N15.Galago_alleni,34830,=,34830,N20.Galago_alleni,,,canonicalName,species
+__________,SHARED (moved from 9462),N15.Galago_gallarum,111173,=,111173,N20.Galago_gallarum,,,canonicalName,species
+__________,SHARED (moved from 9462),N15.Galago_matschiei,135486,=,135486,N20.Galago_matschiei,,,canonicalName,species
+__________,SHARED (moved from 9462),N15.Galago_gabonensis,261731,=,261731,N20.Galago_gabonensis,,,canonicalName,species
+__________,SHARED (moved from 9462),N15.Galago_granti,261732,=,261732,N20.Galago_granti,,,canonicalName,species
+__________,B ONLY,N15.Galago_sp.,9464,<,2628747,N20.unclassified_Galago,subtree=,,particle set >,
+________,B ONLY (reorganization),N15.Galagidae,40297,><,89671,N20.Galagoides,,,N15.Galago_thomasi is in the A taxon; B-sibling N15.Galago_granti is not,genus
+__________,SHARED (moved from 9462),N15.Galago_thomasi,867376,=,867376,N20.Galagoides_thomasi,,canonicalName,ncbi_id,species
+__________,B ONLY,,,,1738047,N20.Galagoides_rondoensis,,,,species
+________,B ONLY,N15.Euoticus_elegantulus,261736,<,261735,N20.Euoticus,,,particle set >,genus
+________,B ONLY,,,,2604441,N20.Paragalago,,,,genus
+__________,B ONLY,,,,2604442,N20.Paragalago_cocos,,,,species
+__________,B ONLY,,,,2604443,N20.Paragalago_zanzibaricus,,,,species
+____,B ONLY,N15.Daubentonia_madagascariensis,31869,<,376916,N20.Chiromyiformes,,,particle set >,infraorder
+______,B ONLY,N15.Daubentonia_madagascariensis,31869,<,30613,N20.Daubentoniidae,,,particle set >,family
+________,B ONLY,N15.Daubentonia_madagascariensis,31869,<,13038,N20.Daubentonia,,,particle set >,genus
+____,B ONLY (reorganization),N15.Strepsirrhini,376911,><,376917,N20.Lorisiformes,,,N15.Lorisidae is in the A taxon; B-sibling N15.Daubentoniidae is not,infraorder
+______,SHARED (moved from 376916),N15.Lorisidae,9461,=,9461,N20.Lorisidae,,,particle set =,family
+________,SHARED,N15.Loris,9467,=,9467,N20.Loris,,,particle set =,genus
+__________,A ONLY,N15.Loris_tardigradus,9468,>,261740,N20.Loris_tardigradus_nordicus,subtree=,,particle set >,subspecies
+__________,A ONLY,N15.Loris_lydekkerianus,300163,>,300166,N20.Loris_lydekkerianus_malabaricus,subtree=,,particle set >,subspecies
+__________,B ONLY,N15.Loris_tardigradus_nordicus,261740,<,9468,N20.Loris_tardigradus,,,particle set >,species
+____________,B ONLY,,,,1738049,N20.Loris_tardigradus_tardigradus,,,,subspecies
+__________,B ONLY,N15.Loris_lydekkerianus_malabaricus,300166,<,300163,N20.Loris_lydekkerianus,,,particle set >,species
+____________,B ONLY,,,,1738050,N20.Loris_lydekkerianus_lydekkerianus,,,,subspecies
+________,SHARED,N15.Nycticebus,9469,=,9469,N20.Nycticebus,,number_of_children,particle set =,genus
+__________,A ONLY,N15.Nycticebus_coucang,9470,>,310933,N20.Nycticebus_coucang_coucang,subtree=,,particle set >,subspecies
+__________,A ONLY (merge),N15.Nycticebus_intermedius,101277,=,101278,N20.Nycticebus_pygmaeus,,,canonicalName+synonym,species
+__________,SHARED,N15.Nycticebus_pygmaeus,101278,=,101278,N20.Nycticebus_pygmaeus,,,canonicalName,species
+__________,SHARED,N15.Nycticebus_bengalensis,261741,=,261741,N20.Nycticebus_bengalensis,,,canonicalName,species
+__________,SHARED,N15.Nycticebus_menagensis,310932,=,310932,N20.Nycticebus_menagensis,,,canonicalName,species
+__________,SHARED,N15.Nycticebus_javanicus,310934,=,310934,N20.Nycticebus_javanicus,,,canonicalName,species
+__________,B ONLY,N15.Nycticebus_coucang_coucang,310933,<,9470,N20.Nycticebus_coucang,,,particle set >,species
+____________,B ONLY,,,,2020906,N20.Nycticebus_coucang_insularis,,,,subspecies
+__________,B ONLY,N15.Nycticebus_sp.,108082,<,2646861,N20.unclassified_Nycticebus,subtree=,,particle set >,
+________,A ONLY,N15.Perodicticus,9471,>,9472,N20.Perodicticus_potto,,,particle set >,species
+__________,SHARED (moved from 9471),N15.Perodicticus_potto,9472,=,9472,N20.Perodicticus_potto,,,particle set =,species
+____________,SHARED,N15.Perodicticus_potto_edwarsi,9473,=,9473,N20.Perodicticus_potto_edwarsi,,,scientificName,subspecies
+____________,SHARED,N15.Perodicticus_potto_ibeanus,261737,=,261737,N20.Perodicticus_potto_ibeanus,,,canonicalName,subspecies
+________,SHARED,N15.Arctocebus,261738,=,261738,N20.Arctocebus,,,particle set =,genus
+__________,SHARED,N15.Arctocebus_calabarensis,261739,=,261739,N20.Arctocebus_calabarensis,,,canonicalName,species
+__________,SHARED,N15.Arctocebus_aureus,300161,=,300161,N20.Arctocebus_aureus,,,canonicalName,species
+________,B ONLY,N15.Perodicticus_potto,9472,<,9471,N20.Perodicticus,,,particle set >,genus
+__,SHARED,N15.Haplorrhini,376913,=,376913,N20.Haplorrhini,,,particle set =,suborder
+____,SHARED,N15.Simiiformes,314293,=,314293,N20.Simiiformes,,,particle set =,infraorder
+______,SHARED,N15.Platyrrhini,9479,=,9479,N20.Platyrrhini,,,particle set =,parvorder
+________,SHARED,N15.Cebidae,9498,=,9498,N20.Cebidae,,,particle set =,family
+__________,SHARED,N15.Callitrichinae,9480,=,9480,N20.Callitrichinae,,number_of_children,particle set =,subfamily
+____________,A ONLY (loss of resolution),N15.Callithrix,9481,<,9480,N20.Callitrichinae,,,N20.Leontocebus is not in the A taxon,subfamily
+______________,A ONLY,N15.Callithrix_argentata,9482,>,867362,N20.Mico_argentatus_argentatus,,,particle set >,subspecies
+________________,SHARED (moved from 9482),N15.Callithrix_argentata_argentata,867362,=,867362,N20.Mico_argentatus_argentatus,,canonicalName,ncbi_id,subspecies
+____________,A ONLY (loss of resolution),N15.Saguinus,9486,<,9480,N20.Callitrichinae,,,N20.Mico is not in the A taxon,subfamily
+______________,A ONLY,N15.Saguinus_mystax,9488,>,873069,N20.Saguinus_mystax_mystax,subtree=,,particle set >,subspecies
+______________,A ONLY,N15.Saguinus_nigricollis,9489,>,873070,N20.Leontocebus_nigricollis_nigricollis,,,particle set >,subspecies
+________________,SHARED (moved from 9489),N15.Saguinus_nigricollis_nigricollis,873070,=,873070,N20.Leontocebus_nigricollis_nigricollis,,canonicalName,ncbi_id,subspecies
+______________,A ONLY,N15.Saguinus_imperator,9491,>,881951,N20.Saguinus_imperator_subgrisescens,subtree=,,particle set >,subspecies
+______________,A ONLY,N15.Saguinus_midas,30586,>,78354,N20.Saguinus_midas_midas,subtree=,,particle set >,subspecies
+______________,A ONLY,N15.Saguinus_bicolor,37588,>,37589,N20.Saguinus_bicolor_bicolor,subtree=,,particle set >,subspecies
+______________,A ONLY,N15.Saguinus_labiatus,78454,>,873066,N20.Saguinus_labiatus_labiatus,subtree=,,particle set >,subspecies
+______________,A ONLY,N15.Saguinus_melanoleucus,873067,>,873068,N20.Saguinus_melanoleucus_melanoleucus,subtree=,,particle set >,subspecies
+____________,SHARED,N15.Callimico,9494,=,9494,N20.Callimico,,,particle set =,genus
+______________,SHARED,N15.Callimico_goeldii,9495,=,9495,N20.Callimico_goeldii,,,canonicalName,species
+______________,B ONLY,N15.Callimico_sp._MAS-2011,1090914,<,2634122,N20.unclassified_Callimico,,,particle set >,
+________________,SHARED (moved from 9494),N15.Callimico_sp._MAS-2011,1090914,=,1090914,N20.Callimico_sp._MAS-2011,,,canonicalName,species
+________________,B ONLY,,,,1758239,N20.Callimico_sp.,,,,species
+____________,SHARED,N15.Leontopithecus,30587,=,30587,N20.Leontopithecus,subtree=,,particle set =,genus
+____________,B ONLY (increased resolution),N15.Callithrix,9481,>,9481,N20.Callithrix#9481,,,N15.Callithrix_rondoni is not in the A taxon,genus
+______________,B ONLY (increased resolution),N15.Callithrix,9481,>,1965096,N20.Callithrix#1965096,subtree=,,N15.Callithrix_rondoni is not in the A taxon,subgenus
+______________,B ONLY,N15.Callithrix_pygmaea,9493,<,1965109,N20.Cebuella,subtree=,,particle set >,subgenus
+______________,B ONLY,N15.Callithrix_humilis,666519,<,1965113,N20.Calibella,subtree=,,particle set >,subgenus
+____________,B ONLY (increased resolution),N15.Saguinus,9486,>,9486,N20.Saguinus,,,N15.Saguinus_cruzlimai is not in the A taxon,genus
+______________,SHARED (moved from 9486),N15.Saguinus_oedipus,9490,=,9490,N20.Saguinus_oedipus,,,canonicalName,species
+______________,SHARED (moved from 9486),N15.Saguinus_geoffroyi,43778,=,43778,N20.Saguinus_geoffroyi,,,canonicalName,species
+______________,SHARED (moved from 9486),N15.Saguinus_leucopus,290597,=,290597,N20.Saguinus_leucopus,,,canonicalName,species
+______________,SHARED (moved from 9486),N15.Saguinus_niger,356665,=,356665,N20.Saguinus_niger,,,canonicalName,species
+______________,SHARED (moved from 9486),N15.Saguinus_martinsi,356666,=,356666,N20.Saguinus_martinsi,,,scientificName,species
+______________,SHARED (moved from 9486),N15.Saguinus_graellsi,873073,=,873073,N20.Saguinus_graellsi,,,scientificName,species
+______________,SHARED (moved from 9486),N15.Saguinus_inustus,1079039,=,1079039,N20.Saguinus_inustus,,,scientificName,species
+______________,B ONLY,N15.Saguinus_mystax_mystax,873069,<,9488,N20.Saguinus_mystax,,,particle set >,species
+______________,B ONLY,N15.Saguinus_imperator_subgrisescens,881951,<,9491,N20.Saguinus_imperator,,,particle set >,species
+______________,B ONLY,N15.Saguinus_midas_midas,78354,<,30586,N20.Saguinus_midas,,,particle set >,species
+______________,B ONLY,N15.Saguinus_bicolor_bicolor,37589,<,37588,N20.Saguinus_bicolor,,,particle set >,species
+______________,B ONLY,N15.Saguinus_labiatus_labiatus,873066,<,78454,N20.Saguinus_labiatus,,,particle set >,species
+______________,B ONLY,N15.Saguinus_melanoleucus_melanoleucus,873068,<,873067,N20.Saguinus_melanoleucus,,,particle set >,species
+______________,B ONLY,,,,2586293,N20.Saguinus_geoffroyi_x_Saguinus_leucopus,,,,species
+______________,B ONLY,,,,2586294,N20.Saguinus_oedipus_x_Saguinus_leucopus,,,,species
+______________,B ONLY (increased resolution),N15.Saguinus,9486,>,2642123,N20.unclassified_Saguinus,,,N15.Saguinus_cruzlimai is not in the A taxon,
+________________,SHARED (moved from 9486),N15.Saguinus_sp.,100754,=,100754,N20.Saguinus_sp.,,,canonicalName,species
+________________,SHARED (moved from 9486),N15.Saguinus_sp._T1030,260575,=,260575,N20.Saguinus_sp._T1030,,,canonicalName,species
+________________,B ONLY,,,,1967463,N20.Saguinus_sp._EG-2017,,,,species
+____________,B ONLY (increased resolution),N15.Callithrix,9481,>,1965102,N20.Mico,,,N15.Callithrix_jacchus_x_penicillata is not in the A taxon,genus
+______________,SHARED (moved from 9481),N15.Callithrix_emiliae,48842,=,48842,N20.Mico_emiliae,,canonicalName,synonym+canonicalName,species
+______________,SHARED (moved from 9481),N15.Callithrix_humeralifera,52232,=,52232,N20.Mico_humeralifer,,canonicalName; scientificName,synonym+canonicalName,species
+______________,SHARED (moved from 9481),N15.Callithrix_mauesi,57377,=,57377,N20.Mico_mauesi,,canonicalName,synonym+canonicalName,species
+______________,SHARED (moved from 9481),N15.Callithrix_cf._emiliae,198701,=,198701,N20.Mico_cf._emiliae,,canonicalName,synonym+canonicalName,species
+______________,SHARED (moved from 9481),N15.Callithrix_saterei,198702,=,198702,N20.Mico_saterei,,canonicalName,synonym+canonicalName,species
+______________,SHARED (moved from 9481),N15.Callithrix_melanura,1090896,=,1090896,N20.Mico_melanurus,,canonicalName; scientificName,ncbi_id,species
+______________,SHARED (moved from 9481),N15.Callithrix_rondoni,1127763,=,1127763,N20.Mico_rondoni,,canonicalName,synonym+canonicalName,species
+______________,B ONLY,N15.Callithrix_argentata_argentata,867362,<,9482,N20.Mico_argentatus,,,particle set >,species
+______________,B ONLY,,,,1758231,N20.Mico_chrysoleucus,,,,species
+______________,B ONLY,,,,2592805,N20.Mico_intermedius,,,,species
+______________,B ONLY,,,,2592806,N20.Mico_leucippe,,,,species
+______________,B ONLY,,,,2592807,N20.Mico_marcai,,,,species
+______________,B ONLY,,,,2592808,N20.Mico_munduruku,,,,species
+____________,B ONLY (increased resolution),N15.Saguinus,9486,>,2681187,N20.Leontocebus,,,N15.Saguinus_inustus is not in the A taxon,genus
+______________,SHARED (moved from 9486),N15.Saguinus_fuscicollis,9487,=,9487,N20.Leontocebus_fuscicollis,,canonicalName,particle set =,species
+________________,SHARED,N15.Saguinus_fuscicollis_fuscicollis,48018,=,48018,N20.Leontocebus_fuscicollis_fuscicollis,,canonicalName,ncbi_id,subspecies
+________________,SHARED,N15.Saguinus_fuscicollis_weddelli,343424,=,343424,N20.Leontocebus_fuscicollis_weddelli,,canonicalName,ncbi_id,subspecies
+________________,SHARED,N15.Saguinus_fuscicollis_leucogenys,881946,=,881946,N20.Leontocebus_fuscicollis_leucogenys,,canonicalName; scientificName,ncbi_id,subspecies
+________________,SHARED,N15.Saguinus_fuscicollis_illigeri,881947,=,881947,N20.Leontocebus_fuscicollis_illigeri,,canonicalName; scientificName,ncbi_id,subspecies
+________________,SHARED,N15.Saguinus_fuscicollis_nigrifrons,881949,=,881949,N20.Leontocebus_fuscicollis_nigrifrons,,canonicalName; scientificName,ncbi_id,subspecies
+________________,SHARED,N15.Saguinus_fuscicollis_lagonotus,881950,=,881950,N20.Leontocebus_fuscicollis_lagonotus,,canonicalName; scientificName,ncbi_id,subspecies
+______________,SHARED (moved from 9486),N15.Saguinus_tripartitus,122388,=,122388,N20.Leontocebus_tripartitus,,canonicalName,ncbi_id,species
+______________,SHARED (moved from 9486),N15.Saguinus_cruzlimai,1618156,=,1618156,N20.Leontocebus_cruzlimai,,canonicalName,synonym+canonicalName,species
+______________,B ONLY,N15.Saguinus_nigricollis_nigricollis,873070,<,9489,N20.Leontocebus_nigricollis,,,particle set >,species
+__________,SHARED,N15.Cebinae,38070,=,38070,N20.Cebinae,,,particle set =,subfamily
+____________,SHARED,N15.Cebus,9513,=,9513,N20.Cebus,,number_of_children,particle set =,genus
+______________,SHARED,N15.Cebus_albifrons,9514,=,9514,N20.Cebus_albifrons,,,canonicalName,species
+______________,SHARED,N15.Cebus_capucinus,9516,=,9516,N20.Cebus_capucinus,,number_of_children,canonicalName,species
+________________,B ONLY,,,,1737458,N20.Cebus_capucinus_imitator,,,,subspecies
+______________,SHARED,N15.Cebus_kaapori,37294,=,37294,N20.Cebus_kaapori,,,canonicalName,species
+______________,A ONLY,N15.Cebus_olivaceus,37295,>,1090893,N20.Cebus_olivaceus_nigrivittatus,subtree=,,particle set >,subspecies
+______________,B ONLY,N15.Cebus_olivaceus_nigrivittatus,1090893,<,37295,N20.Cebus_olivaceus,,,particle set >,species
+________________,B ONLY,,,,1985287,N20.Cebus_olivaceus_castaneus,,,,subspecies
+______________,B ONLY,,,,1985288,N20.Cebus_unicolor,,,,species
+______________,B ONLY,,,,1985289,N20.Cebus_versicolor,,,,species
+______________,B ONLY (increased resolution),N15.Cebus,9513,>,2618788,N20.unclassified_Cebus,,,N15.Cebus_olivaceus is not in the A taxon,
+________________,SHARED (moved from 9513),N15.Cebus_sp.,9517,=,9517,N20.Cebus_sp.,,,canonicalName,species
+________________,SHARED (moved from 9513),N15.Cebus_sp._MAS-2011,1090916,=,1090916,N20.Cebus_sp._MAS-2011,,,canonicalName,species
+________________,B ONLY,,,,1967451,N20.Cebus_sp._1_EG-2017,,,,species
+________________,B ONLY,,,,1967452,N20.Cebus_sp._2_EG-2017,,,,species
+____________,SHARED,N15.Sapajus,1532884,=,1532884,N20.Sapajus,,number_of_children,particle set =,genus
+______________,SHARED,N15.Sapajus_apella,9515,=,9515,N20.Sapajus_apella,subtree=,,particle set =,species
+______________,SHARED,N15.Sapajus_xanthosternos,174599,=,174599,N20.Sapajus_xanthosternos,,,canonicalName,species
+______________,SHARED,N15.Sapajus_cay,649471,=,649471,N20.Sapajus_cay,,,canonicalName,species
+______________,A ONLY,N15.Sapajus_nigritus,867366,>,867367,N20.Sapajus_nigritus_robustus,subtree=,,particle set >,subspecies
+______________,SHARED,N15.Sapajus_flavius,1112861,=,1112861,N20.Sapajus_flavius,,,canonicalName,species
+______________,SHARED,N15.Sapajus_libidinosus,1126382,=,1126382,N20.Sapajus_libidinosus,,,canonicalName,species
+______________,B ONLY,N15.Sapajus_nigritus_robustus,867367,<,867366,N20.Sapajus_nigritus,,,particle set >,species
+______________,B ONLY,,,,2619504,N20.unclassified_Sapajus,,,,
+________________,B ONLY,,,,1874197,N20.Sapajus_sp.,,,,species
+________________,B ONLY,,,,2093835,N20.Sapajus_sp._9_FD-2018,,,,species
+________________,B ONLY,,,,2093836,N20.Sapajus_sp._10_FD-2018,,,,species
+________________,B ONLY,,,,2093837,N20.Sapajus_sp._22_FD-2018,,,,species
+________________,B ONLY,,,,2093838,N20.Sapajus_sp._M5_FD-2018,,,,species
+________________,B ONLY,,,,2093839,N20.Sapajus_sp._M12_FD-2018,,,,species
+________________,B ONLY,,,,2093840,N20.Sapajus_sp._M39_FD-2018,,,,species
+__________,A ONLY,N15.unclassified_Cebidae,38071,>,168015,N20.Aotinae_gen._sp.,subtree=,,particle set >,species
+__________,A ONLY,N15.Saimiriinae,378850,>,9520,N20.Saimiri,,,particle set >,genus
+____________,SHARED (moved from 378850),N15.Saimiri,9520,=,9520,N20.Saimiri,,number_of_children,particle set =,genus
+______________,SHARED,N15.Saimiri_sciureus,9521,=,9521,N20.Saimiri_sciureus,subtree=,,particle set =,species
+______________,A ONLY,N15.Saimiri_boliviensis,27679,>,495297,N20.Saimiri_boliviensis_peruviensis,,,particle set >,subspecies
+________________,A ONLY (loss of resolution),N15.Saimiri_boliviensis_boliviensis,39432,<,27679,N20.Saimiri_boliviensis,,,synonym+canonicalName+synonym,species
+________________,SHARED (moved from 27679),N15.Saimiri_boliviensis_peruviensis,495297,=,495297,N20.Saimiri_boliviensis_peruviensis,,,scientificName,subspecies
+______________,SHARED,N15.Saimiri_ustus,66265,=,66265,N20.Saimiri_ustus,,,canonicalName,species
+______________,SHARED,N15.Saimiri_oerstedii,70928,=,70928,N20.Saimiri_oerstedii,subtree=,,particle set =,species
+______________,SHARED,N15.Saimiri_vanzolinii,1561161,=,1561161,N20.Saimiri_vanzolinii,,,scientificName,species
+______________,B ONLY,N15.Saimiri_boliviensis_peruviensis,495297,<,27679,N20.Saimiri_boliviensis,,,particle set >,species
+________________,B ONLY (increased resolution),N15.Saimiri_boliviensis,27679,>,39432,N20.Saimiri_boliviensis_boliviensis,,,synonym+canonicalName+synonym,subspecies
+______________,B ONLY (increased resolution),N15.Saimiri,9520,>,2635411,N20.unclassified_Saimiri,,,N15.Saimiri_vanzolinii is not in the A taxon,
+________________,SHARED (moved from 9520),N15.Saimiri_sp._MAS-2011,1090919,=,1090919,N20.Saimiri_sp._MAS-2011,,,canonicalName,species
+________________,SHARED (moved from 9520),N15.Saimiri_sp.,1561164,=,1561164,N20.Saimiri_sp.,,,canonicalName,species
+________________,B ONLY,,,,1967464,N20.Saimiri_sp._1_EG-2017,,,,species
+________________,B ONLY,,,,1967465,N20.Saimiri_sp._2_EG-2017,,,,species
+________________,B ONLY,,,,1967466,N20.Saimiri_sp._3_EG-2017,,,,species
+__________,B ONLY,N15.Aotinae_gen._sp.,168015,<,38071,N20.unclassified_Cebidae,,,particle set >,
+__________,B ONLY,N15.Saimiri,9520,<,378850,N20.Saimiriinae,,,particle set >,subfamily
+________,A ONLY,N15.Aotidae,376918,>,9504,N20.Aotus,,,particle set >,genus
+__________,SHARED (moved from 376918),N15.Aotus,9504,=,9504,N20.Aotus,,number_of_children,particle set =,genus
+____________,SHARED,N15.Aotus_trivirgatus,9505,=,9505,N20.Aotus_trivirgatus,,,canonicalName,species
+____________,SHARED,N15.Aotus_azarai,30591,=,30591,N20.Aotus_azarai,subtree=,,particle set =,species
+____________,SHARED,N15.Aotus_nancymaae,37293,=,37293,N20.Aotus_nancymaae,,,canonicalName,species
+____________,SHARED,N15.Aotus_lemurinus,43147,=,43147,N20.Aotus_lemurinus,,,scientificName,species
+____________,SHARED,N15.Aotus_nigriceps,57175,=,57175,N20.Aotus_nigriceps,,,canonicalName,species
+____________,SHARED,N15.Aotus_vociferans,57176,=,57176,N20.Aotus_vociferans,,,canonicalName,species
+____________,SHARED,N15.Aotus_griseimembra,292213,=,292213,N20.Aotus_griseimembra,,,scientificName,species
+____________,SHARED,N15.Aotus_brumbacki,361674,=,361674,N20.Aotus_brumbacki,,,canonicalName,species
+____________,SHARED,N15.Aotus_zonalis,1263727,=,1263727,N20.Aotus_zonalis,,,canonicalName,species
+____________,B ONLY (increased resolution),N15.Aotus,9504,>,2688256,N20.unclassified_Aotus_(in:_Chordata),subtree=,,N15.Aotus_zonalis is not in the A taxon,
+________,SHARED,N15.Pitheciidae,376919,=,376919,N20.Pitheciidae,,number_of_children,particle set =,family
+__________,SHARED,N15.Pitheciinae,38039,=,38039,N20.Pitheciinae,,,particle set =,subfamily
+____________,SHARED,N15.Chiropotes,9524,=,9524,N20.Chiropotes,,number_of_children,particle set =,genus
+______________,SHARED,N15.Chiropotes_satanas,9525,=,9525,N20.Chiropotes_satanas,,,canonicalName,species
+______________,SHARED,N15.Chiropotes_albinasus,198627,=,198627,N20.Chiropotes_albinasus,,,canonicalName,species
+______________,SHARED,N15.Chiropotes_satanas_x_albinasus,202458,=,202458,N20.Chiropotes_satanas_x_albinasus,,,canonicalName,species
+______________,SHARED,N15.Chiropotes_utahickae,280160,=,280160,N20.Chiropotes_utahickae,,,scientificName,species
+______________,SHARED,N15.Chiropotes_israelita,280163,=,280163,N20.Chiropotes_israelita,,,canonicalName,species
+______________,SHARED,N15.Chiropotes_albinasus_x_satanas,626367,=,626367,N20.Chiropotes_albinasus_x_satanas,,,canonicalName,species
+______________,A ONLY,N15.Chiropotes_chiropotes,658221,>,1560631,N20.Chiropotes_chiropotes_sagulata,subtree=,,particle set >,subspecies
+______________,B ONLY,N15.Chiropotes_chiropotes_sagulata,1560631,<,658221,N20.Chiropotes_chiropotes,,,particle set >,species
+______________,B ONLY (increased resolution),N15.Chiropotes,9524,>,2649368,N20.unclassified_Chiropotes,,,N15.Chiropotes_chiropotes is not in the A taxon,
+________________,SHARED (moved from 9524),N15.Chiropotes_sp._MAS-2011,1090917,=,1090917,N20.Chiropotes_sp._MAS-2011,,,canonicalName,species
+________________,SHARED (moved from 9524),N15.Chiropotes_sp._ZFMK_2008.244,1472258,=,1472258,N20.Chiropotes_sp._ZFMK_2008.244,,,canonicalName,species
+________________,B ONLY,,,,1758238,N20.Chiropotes_sp.,,,,species
+________________,B ONLY,,,,2704455,N20.Chiropotes_sp._CTGAM5663,,,,species
+________________,B ONLY,,,,2736752,N20.Chiropotes_sp._CTGAM5363,,,,species
+____________,SHARED,N15.Cacajao,30595,=,30595,N20.Cacajao,,number_of_children,particle set =,genus
+______________,SHARED,N15.Cacajao_calvus,30596,=,30596,N20.Cacajao_calvus,subtree=,,particle set =,species
+______________,SHARED,N15.Cacajao_melanocephalus,70825,=,70825,N20.Cacajao_melanocephalus,,,canonicalName,species
+______________,SHARED,N15.Cacajao_rubicundus,70927,=,70927,N20.Cacajao_rubicundus,,,canonicalName,species
+______________,SHARED,N15.Cacajao_ayresi,535896,=,535896,N20.Cacajao_ayresi,,,canonicalName,species
+______________,SHARED,N15.Cacajao_hosomi,535897,=,535897,N20.Cacajao_hosomi,,,canonicalName,species
+______________,B ONLY,,,,2704456,N20.unclassified_Cacajao,,,,
+________________,B ONLY,,,,2704457,N20.Cacajao_sp._CTGAM5666,,,,species
+____________,SHARED,N15.Pithecia,30597,=,30597,N20.Pithecia,,number_of_children,particle set =,genus
+______________,SHARED,N15.Pithecia_irrorata,30598,=,30598,N20.Pithecia_irrorata,,,canonicalName,species
+______________,A ONLY,N15.Pithecia_pithecia,43777,>,285955,N20.Pithecia_pithecia_pithecia,subtree=,,particle set >,subspecies
+______________,SHARED,N15.Pithecia_monachus,595220,=,595220,N20.Pithecia_monachus,,,canonicalName,species
+______________,B ONLY,N15.Pithecia_pithecia_pithecia,285955,<,43777,N20.Pithecia_pithecia,,,particle set >,species
+______________,B ONLY,,,,2646430,N20.unclassified_Pithecia,,,,
+________________,B ONLY,,,,1758237,N20.Pithecia_sp.,,,,species
+________________,B ONLY,,,,2704458,N20.Pithecia_sp._UFPA_Pit22,,,,species
+__________,A ONLY,N15.Callicebinae,38069,>,38069,N20.Callicebinae,,,particle set >,subfamily
+____________,A ONLY,N15.Callicebus,9522,>,38069,N20.Callicebinae,,,particle set = (chain),subfamily
+______________,A ONLY,N15.Callicebus_donacophilus,230833,>,285954,N20.Plecturocebus_donacophilus_donacophilus,,,particle set >,subspecies
+________________,SHARED (moved from 230833),N15.Callicebus_donacophilus_donacophilus,285954,=,285954,N20.Plecturocebus_donacophilus_donacophilus,,canonicalName,ncbi_id,subspecies
+__________,B ONLY (increased resolution),N15.Callicebinae,38069,>,38069,N20.Callicebinae,,,monotypic (reverse),subfamily
+____________,B ONLY (increased resolution),N15.Callicebus,9522,>,9522,N20.Callicebus,,,N15.Callicebus_purinus is not in the A taxon,genus
+______________,SHARED (moved from 9522),N15.Callicebus_personatus,70814,=,70814,N20.Callicebus_personatus,subtree=,,particle set =,species
+______________,SHARED (moved from 9522),N15.Callicebus_coimbrai,867333,=,867333,N20.Callicebus_coimbrai,,,scientificName,species
+______________,SHARED (moved from 9522),N15.Callicebus_nigrifrons,867334,=,867334,N20.Callicebus_nigrifrons,,,scientificName,species
+______________,B ONLY,,,,1290433,N20.Callicebus_dubius,,,,species
+______________,B ONLY,,,,1861701,N20.Callicebus_caquetensis,,,,species
+______________,B ONLY,,,,1861702,N20.Callicebus_ornatus,,,,species
+______________,B ONLY,,,,1861703,N20.Callicebus_discolor,,,,species
+______________,B ONLY (increased resolution),N15.Callicebus,9522,>,2627897,N20.unclassified_Callicebus,,,N15.Callicebus_purinus is not in the A taxon,
+________________,SHARED (moved from 9522),N15.Callicebus_sp.,116962,=,116962,N20.Callicebus_sp.,,,canonicalName,species
+________________,SHARED (moved from 9522),N15.Callicebus_sp._MAS-2011,1090915,=,1090915,N20.Callicebus_sp._MAS-2011,,,canonicalName,species
+________________,B ONLY,,,,1861704,N20.Callicebus_sp._1_MH-2016,,,,species
+________________,B ONLY,,,,1861705,N20.Callicebus_sp._2_MH-2016,,,,species
+____________,B ONLY (increased resolution),N15.Callicebus,9522,>,1812035,N20.Plecturocebus,,,N15.Callicebus_purinus is not in the A taxon,genus
+______________,SHARED (moved from 9522),N15.Callicebus_moloch,9523,=,9523,N20.Plecturocebus_moloch,,canonicalName,ncbi_id,species
+______________,SHARED (moved from 9522),N15.Callicebus_hoffmannsi,78255,=,78255,N20.Plecturocebus_hoffmannsi,,canonicalName,ncbi_id,species
+______________,SHARED (moved from 9522),N15.Callicebus_cupreus,202457,=,202457,N20.Plecturocebus_cupreus,,canonicalName,ncbi_id,species
+______________,SHARED (moved from 9522),N15.Callicebus_brunneus,221704,=,1812042,N20.Plecturocebus_brunneus,,ncbi_id; canonicalName,synonym+canonicalName+synonym,species
+______________,SHARED (moved from 9522),N15.Callicebus_caligatus,867332,=,867332,N20.Plecturocebus_caligatus,,canonicalName,ncbi_id,species
+______________,B ONLY,N15.Callicebus_donacophilus_donacophilus,285954,<,230833,N20.Plecturocebus_donacophilus,,,particle set >,species
+______________,B ONLY,,,,1812036,N20.Plecturocebus_bernhardi,,,,species
+______________,B ONLY,,,,1812037,N20.Plecturocebus_cinerascens,,,,species
+______________,B ONLY,,,,1812038,N20.Plecturocebus_miltoni,,,,species
+______________,B ONLY,,,,2487713,N20.Plecturocebus_vieirai,,,,species
+______________,B ONLY,,,,2488670,N20.Plecturocebus_grovesi,,,,species
+____________,B ONLY (increased resolution),N15.Callicebus,9522,>,1812102,N20.Cheracebus,,,N15.Callicebus_sp._MAS-2011 is not in the A taxon,genus
+______________,SHARED (moved from 9522),N15.Callicebus_torquatus,30592,=,30592,N20.Cheracebus_torquatus,,canonicalName,ncbi_id,species
+______________,SHARED (moved from 9522),N15.Callicebus_lugens,210166,=,210166,N20.Cheracebus_lugens,,canonicalName,ncbi_id,species
+______________,SHARED (moved from 9522),N15.Callicebus_purinus,1560619,=,1560619,N20.Cheracebus_purinus,,canonicalName,ncbi_id,species
+______________,B ONLY,,,,1812110,N20.Cheracebus_regulus,,,,species
+______________,B ONLY,,,,2487712,N20.Cheracebus_lucifer,,,,species
+__________,B ONLY,,,,2490929,N20.Xenothricinae,,,,subfamily
+____________,B ONLY,,,,2490930,N20.Xenothrix,,,,genus
+______________,B ONLY,,,,2490931,N20.Xenothrix_mcgregori,,,,species
+________,SHARED,N15.Atelidae,378855,=,378855,N20.Atelidae,,,particle set =,family
+__________,A ONLY,N15.Alouattinae,38066,>,9499,N20.Alouatta,,,particle set >,genus
+____________,SHARED (moved from 38066),N15.Alouatta,9499,=,9499,N20.Alouatta,,number_of_children,particle set =,genus
+______________,SHARED,N15.Alouatta_caraya,9502,=,9502,N20.Alouatta_caraya,,,canonicalName,species
+______________,A ONLY (loss of resolution),N15.Alouatta_seniculus,9503,<,9499,N20.Alouatta,,,N20.Alouatta_guariba is not in the A taxon,genus
+________________,SHARED,N15.Alouatta_seniculus_macconnelli,198115,=,198115,N20.Alouatta_macconnelli,,taxonRank; canonicalName,synonym+canonicalName,species
+______________,SHARED,N15.Alouatta_palliata,30589,=,30589,N20.Alouatta_palliata,subtree=,,particle set =,species
+______________,A ONLY,N15.Alouatta_belzebul,30590,>,182257,N20.Alouatta_belzebul_belzebul,subtree=,,particle set >,subspecies
+______________,SHARED,N15.Alouatta_sara,121123,=,121123,N20.Alouatta_sara,,,canonicalName,species
+______________,SHARED,N15.Alouatta_stramineus,163110,=,163110,N20.Alouatta_stramineus,,,canonicalName,species
+______________,SHARED,N15.Alouatta_pigra,182253,=,182253,N20.Alouatta_pigra,,,canonicalName,species
+______________,A ONLY,N15.Alouatta_guariba,182256,>,183328,N20.Alouatta_guariba_clamitans,subtree=,,particle set >,subspecies
+______________,B ONLY,N15.Alouatta_seniculus_seniculus,182254,<,9503,N20.Alouatta_seniculus,subtree=,,particle set >,species
+______________,B ONLY,N15.Alouatta_belzebul_belzebul,182257,<,30590,N20.Alouatta_belzebul,,,particle set >,species
+______________,B ONLY,N15.Alouatta_guariba_clamitans,183328,<,182256,N20.Alouatta_guariba,,,particle set >,species
+______________,B ONLY,,,,2487933,N20.Alouatta_palliata_x_Alouatta_pigra,,,,species
+__________,SHARED,N15.Atelinae,38068,=,38068,N20.Atelinae,,,particle set =,subfamily
+____________,SHARED,N15.Ateles,9506,=,9506,N20.Ateles,,number_of_children,particle set =,genus
+______________,SHARED,N15.Ateles_belzebuth,9507,=,9507,N20.Ateles_belzebuth,subtree=,,particle set =,species
+______________,SHARED,N15.Ateles_fusciceps,9508,=,9508,N20.Ateles_fusciceps,subtree=,,particle set =,species
+______________,SHARED,N15.Ateles_geoffroyi,9509,=,9509,N20.Ateles_geoffroyi,subtree=,,particle set =,species
+______________,SHARED,N15.Ateles_paniscus,9510,=,9510,N20.Ateles_paniscus,,,canonicalName,species
+______________,SHARED,N15.Ateles_paniscus_x_Ateles_fusciceps,36234,=,36234,N20.Ateles_paniscus_x_Ateles_fusciceps,,,canonicalName,species
+______________,A ONLY (loss of resolution),N15.unclassified_Ateles,120432,<,120432,N20.unclassified_Ateles,subtree=,,N20.Ateles_sp. is not in the A taxon,
+______________,A ONLY,N15.Ateles_hybridus,129801,>,1230481,N20.Ateles_hybridus_hybridus,subtree=,,particle set >,subspecies
+______________,SHARED,N15.Ateles_marginatus,1529884,=,1529884,N20.Ateles_marginatus,,scientificName,canonicalName,species
+______________,B ONLY (increased resolution),N15.Ateles,9506,>,120432,N20.unclassified_Ateles,,,N15.Ateles_marginatus is not in the A taxon,
+________________,SHARED (moved from 9506),N15.Ateles_sp.,9511,=,9511,N20.Ateles_sp.,,,canonicalName,species
+________________,B ONLY,,,,1967450,N20.Ateles_sp._EG-2017,,,,species
+______________,B ONLY,N15.Ateles_hybridus_hybridus,1230481,<,129801,N20.Ateles_hybridus,,,particle set >,species
+____________,SHARED,N15.Lagothrix,9518,=,9518,N20.Lagothrix,,number_of_children,particle set =,genus
+______________,SHARED,N15.Lagothrix_lagotricha,9519,=,9519,N20.Lagothrix_lagotricha,,,scientificName,species
+______________,SHARED,N15.Lagothrix_lugens,767355,=,767355,N20.Lagothrix_lugens,,,scientificName,species
+______________,SHARED,N15.Lagothrix_poeppigii,767356,=,767356,N20.Lagothrix_poeppigii,,,scientificName,species
+______________,SHARED,N15.Lagothrix_cana,767357,=,767357,N20.Lagothrix_cana,,,scientificName,species
+______________,B ONLY,,,,2565305,N20.Lagothrix_flavicauda,,,,species
+______________,B ONLY,,,,2565306,N20.Lagothrix_tschudii,,,,species
+______________,B ONLY,N15.Lagothrix_sp._CCS-2009a,638937,<,2645779,N20.unclassified_Lagothrix,,,particle set >,
+________________,SHARED (moved from 9518),N15.Lagothrix_sp._CCS-2009a,638937,=,638937,N20.Lagothrix_sp._CCS-2009a,,,canonicalName,species
+________________,B ONLY,,,,1967456,N20.Lagothrix_sp._EG-2017,,,,species
+____________,SHARED,N15.Brachyteles,30593,=,30593,N20.Brachyteles,subtree=,,particle set =,genus
+__________,B ONLY,N15.Alouatta,9499,<,38066,N20.Alouattinae,,,particle set >,subfamily
+________,B ONLY,N15.Aotus,9504,<,376918,N20.Aotidae,,,particle set >,family
+______,SHARED,N15.Catarrhini,9526,=,9526,N20.Catarrhini,,,particle set =,parvorder
+________,A ONLY,N15.Cercopithecoidea,314294,>,9527,N20.Cercopithecidae,,,particle set >,family
+__________,SHARED (moved from 314294),N15.Cercopithecidae,9527,=,9527,N20.Cercopithecidae,,,particle set =,family
+____________,SHARED,N15.Cercopithecinae,9528,=,9528,N20.Cercopithecinae,,number_of_children,particle set =,subfamily
+______________,SHARED,N15.Cercocebus,9529,=,9529,N20.Cercocebus,,,particle set =,genus
+________________,A ONLY,N15.Cercocebus_torquatus,9530,>,81944,N20.Cercocebus_torquatus_torquatus,subtree=,,particle set >,subspecies
+________________,SHARED,N15.Cercocebus_atys,9531,=,9531,N20.Cercocebus_atys,subtree=,,particle set =,species
+________________,SHARED,N15.Cercocebus_galeritus,9532,=,9532,N20.Cercocebus_galeritus,,,canonicalName,species
+________________,SHARED,N15.Cercocebus_chrysogaster,75569,=,75569,N20.Cercocebus_chrysogaster,,,scientificName,species
+________________,SHARED,N15.Cercocebus_agilis,255237,=,255237,N20.Cercocebus_agilis,,,canonicalName,species
+________________,B ONLY,N15.Cercocebus_torquatus_torquatus,81944,<,9530,N20.Cercocebus_torquatus,,,particle set >,species
+______________,A ONLY (loss of resolution),N15.Cercopithecus,9533,<,9528,N20.Cercopithecinae,,,N20.Chlorocebus is not in the A taxon,subfamily
+________________,A ONLY,N15.Cercopithecus_hamlyni,9536,>,867373,N20.Cercopithecus_hamlyni_hamlyni,subtree=,,particle set >,subspecies
+________________,A ONLY,N15.Cercopithecus_campbelli,303588,>,304410,N20.Cercopithecus_campbelli_lowei,subtree=,,particle set >,subspecies
+______________,A ONLY,N15.Erythrocebus,9537,>,9538,N20.Erythrocebus_patas,subtree=,,particle set >,species
+______________,SHARED,N15.Macaca,9539,=,9539,N20.Macaca,,number_of_children,particle set =,genus
+________________,SHARED,N15.Macaca_arctoides,9540,=,9540,N20.Macaca_arctoides,,,canonicalName,species
+________________,SHARED,N15.Macaca_fascicularis,9541,=,9541,N20.Macaca_fascicularis,,number_of_children,particle set =,species
+__________________,SHARED,N15.Macaca_fascicularis_philippinensis,90386,=,90386,N20.Macaca_fascicularis_philippinensis,,,canonicalName,subspecies
+__________________,SHARED,N15.Macaca_fascicularis_fascicularis,1215360,=,1215360,N20.Macaca_fascicularis_fascicularis,,,canonicalName,subspecies
+__________________,B ONLY,,,,1747270,N20.Macaca_fascicularis_aureus,,,,subspecies
+________________,A ONLY,N15.Macaca_fuscata,9542,>,179089,N20.Macaca_fuscata_yakui,,,particle set >,subspecies
+__________________,A ONLY (loss of resolution),N15.Macaca_fuscata_fuscata,9543,<,9542,N20.Macaca_fuscata,,,synonym+canonicalName+synonym,species
+__________________,SHARED (moved from 9542),N15.Macaca_fuscata_yakui,179089,=,179089,N20.Macaca_fuscata_yakui,,,canonicalName,subspecies
+________________,A ONLY,N15.Macaca_mulatta,9544,>,1449913,N20.Macaca_mulatta_lasiotus,subtree=,,particle set >,subspecies
+________________,A ONLY (loss of resolution),N15.Macaca_nemestrina,9545,<,9539,N20.Macaca,,,N20.unclassified_Macaca is not in the A taxon,genus
+__________________,SHARED,N15.Macaca_nemestrina_leonina,90387,=,90387,N20.Macaca_leonina,,taxonRank; canonicalName,ncbi_id,species
+__________________,SHARED,N15.Macaca_nemestrina_siberu,244255,=,244255,N20.Macaca_siberu,,taxonRank; canonicalName,ncbi_id,species
+________________,SHARED,N15.Macaca_sylvanus,9546,=,9546,N20.Macaca_sylvanus,,,canonicalName,species
+________________,A ONLY,N15.Macaca_radiata,9548,>,439030,N20.Macaca_radiata_radiata,subtree=,,particle set >,subspecies
+________________,A ONLY,N15.Macaca_assamensis,9551,>,1411634,N20.Macaca_assamensis_assamensis,subtree=,,particle set >,subspecies
+________________,SHARED,N15.Macaca_sinica,9552,=,9552,N20.Macaca_sinica,,,canonicalName,species
+________________,SHARED,N15.Macaca_speciosa,9553,=,9553,N20.Macaca_speciosa,,,canonicalName,species
+________________,SHARED,N15.Macaca_tonkeana,40843,=,40843,N20.Macaca_tonkeana,,,canonicalName,species
+________________,SHARED,N15.Macaca_nigra,54600,=,54600,N20.Macaca_nigra,,,canonicalName,species
+________________,SHARED,N15.Macaca_silenus,54601,=,54601,N20.Macaca_silenus,,,canonicalName,species
+________________,A ONLY,N15.Macaca_thibetana,54602,>,257877,N20.Macaca_thibetana_thibetana,subtree=,,particle set >,subspecies
+________________,SHARED,N15.Macaca_cyclopis,78449,=,78449,N20.Macaca_cyclopis,,,canonicalName,species
+________________,SHARED,N15.Macaca_brunnescens,90381,=,90381,N20.Macaca_brunnescens,,,canonicalName,species
+________________,SHARED,N15.Macaca_hecki,90382,=,90382,N20.Macaca_hecki,,,scientificName,species
+________________,SHARED,N15.Macaca_maura,90383,=,90383,N20.Macaca_maura,,,canonicalName,species
+________________,SHARED,N15.Macaca_nigrescens,90384,=,90384,N20.Macaca_nigrescens,,,canonicalName,species
+________________,SHARED,N15.Macaca_ochreata,90385,=,90385,N20.Macaca_ochreata,,,scientificName,species
+________________,SHARED,N15.Macaca_maura_x_tonkeana,168259,=,168259,N20.Macaca_maura_x_tonkeana,,,canonicalName,species
+________________,SHARED,N15.Macaca_hecki_x_tonkeana,171293,=,171293,N20.Macaca_hecki_x_tonkeana,,,canonicalName,species
+________________,SHARED,N15.Macaca_pagensis,230653,=,230653,N20.Macaca_pagensis,,,canonicalName,species
+________________,SHARED,N15.Macaca_balantak,281404,=,281404,N20.Macaca_balantak,,,canonicalName,species
+________________,SHARED,N15.Macaca_balantak_x_tonkeana,281405,=,281405,N20.Macaca_balantak_x_tonkeana,,,canonicalName,species
+________________,A ONLY (merge),N15.Macaca_leonina,285350,=,90387,N20.Macaca_leonina,,,canonicalName,species
+________________,SHARED,N15.Macaca_munzala,402888,=,402888,N20.Macaca_munzala,,,canonicalName,species
+________________,A ONLY (merge),N15.Macaca_siberu,867378,=,244255,N20.Macaca_siberu,,,scientificName,species
+________________,B ONLY,N15.Macaca_fuscata_yakui,179089,<,9542,N20.Macaca_fuscata,,,particle set >,species
+__________________,B ONLY (increased resolution),N15.Macaca_fuscata,9542,>,9543,N20.Macaca_fuscata_fuscata,,,synonym+canonicalName+synonym,subspecies
+________________,B ONLY,N15.Macaca_mulatta_lasiotus,1449913,<,9544,N20.Macaca_mulatta,,,particle set >,species
+__________________,B ONLY,,,,1654737,N20.Macaca_mulatta_brevicaudus,,,,subspecies
+__________________,B ONLY,,,,2008792,N20.Macaca_mulatta_vestita,,,,subspecies
+________________,B ONLY,N15.Macaca_nemestrina_nemestrina,90388,<,9545,N20.Macaca_nemestrina,subtree=,,particle set >,species
+________________,B ONLY,N15.Macaca_radiata_radiata,439030,<,9548,N20.Macaca_radiata,,,particle set >,species
+________________,B ONLY,N15.Macaca_assamensis_assamensis,1411634,<,9551,N20.Macaca_assamensis,,,particle set >,species
+________________,B ONLY,N15.Macaca_thibetana_thibetana,257877,<,54602,N20.Macaca_thibetana,,,particle set >,species
+________________,B ONLY,,,,1885588,N20.Macaca_leucogenys,,,,species
+________________,B ONLY,N15.Macaca_sp.,9549,<,2623225,N20.unclassified_Macaca,subtree=,,particle set >,
+______________,SHARED,N15.Papio,9554,=,9554,N20.Papio,,number_of_children,particle set =,genus
+________________,A ONLY,N15.Papio_anubis,9555,>,211508,N20.Papio_anubis_anubis,subtree=,,particle set >,subspecies
+________________,SHARED,N15.Papio_cynocephalus,9556,=,9556,N20.Papio_cynocephalus,subtree=,,particle set =,species
+________________,A ONLY,N15.Papio_hamadryas,9557,>,9562,N20.Papio_hamadryas_hamadryas,subtree=,,particle set >,subspecies
+________________,A ONLY,N15.Papio_ursinus,36229,>,208089,N20.Papio_ursinus_ursinus,subtree=,,particle set >,subspecies
+________________,SHARED,N15.Papio_papio,100937,=,100937,N20.Papio_papio,,,scientificName,species
+________________,SHARED,N15.Papio_kindae,208091,=,208091,N20.Papio_kindae,,,canonicalName,species
+________________,SHARED,N15.Papio_cynocephalus_x_Papio_anubis,208510,=,208510,N20.Papio_cynocephalus_x_Papio_anubis,,,canonicalName,species
+________________,SHARED,N15.Papio_anubis_x_hamadryas,1560552,=,1560552,N20.Papio_anubis_x_hamadryas,,,canonicalName,species
+________________,B ONLY,N15.Papio_anubis_anubis,211508,<,9555,N20.Papio_anubis,,,particle set >,species
+________________,B ONLY,N15.Papio_hamadryas_hamadryas,9562,<,9557,N20.Papio_hamadryas,,,particle set >,species
+________________,B ONLY,N15.Papio_ursinus_ursinus,208089,<,36229,N20.Papio_ursinus,,,particle set >,species
+__________________,B ONLY,,,,208090,N20.Papio_ursinus_griseipes,,,,subspecies
+________________,B ONLY,,,,1945556,N20.Papio_anubis_x_Papio_cynocephalus,,,,species
+________________,B ONLY,,,,1945557,N20.Papio_anubis_x_Papio_ursinus,,,,species
+________________,B ONLY,,,,1945558,N20.Papio_kindae_x_Papio_cynocephalus,,,,species
+________________,B ONLY,,,,1945559,N20.Papio_kindae_x_Papio_ursinus_griseipes,,,,species
+________________,B ONLY (increased resolution),N15.Papio,9554,>,2632072,N20.unclassified_Papio,subtree=,,N15.Papio_anubis_x_hamadryas is not in the A taxon,
+______________,A ONLY,N15.Theropithecus,9564,>,9565,N20.Theropithecus_gelada,subtree=,,particle set >,species
+______________,SHARED,N15.Mandrillus,9567,=,9567,N20.Mandrillus,subtree=,,particle set =,genus
+______________,SHARED,N15.Miopithecus,36230,=,36230,N20.Miopithecus,,,particle set =,genus
+________________,A ONLY,N15.Miopithecus_talapoin,36231,>,560240,N20.Miopithecus_talapoin_talapoin,subtree=,,particle set >,subspecies
+________________,SHARED,N15.Miopithecus_ogouensis,100488,=,100488,N20.Miopithecus_ogouensis,,,scientificName,species
+________________,B ONLY,N15.Miopithecus_talapoin_talapoin,560240,<,36231,N20.Miopithecus_talapoin,,,particle set >,species
+______________,A ONLY,N15.Allenopithecus,54134,>,54135,N20.Allenopithecus_nigroviridis,subtree=,,particle set >,species
+______________,SHARED,N15.Lophocebus,75565,=,75565,N20.Lophocebus,,,particle set =,genus
+________________,SHARED,N15.Lophocebus_aterrimus,75566,=,75566,N20.Lophocebus_aterrimus,,,scientificName,species
+________________,A ONLY,N15.Lophocebus_albigena,75567,>,75568,N20.Lophocebus_albigena_albigena,subtree=,,particle set >,subspecies
+________________,B ONLY,N15.Lophocebus_albigena_albigena,75568,<,75567,N20.Lophocebus_albigena,,,particle set >,species
+______________,A ONLY,N15.Rungwecebus,371038,>,371039,N20.Rungwecebus_kipunji,subtree=,,particle set >,species
+______________,SHARED,N15.Chlorocebus,392815,=,392815,N20.Chlorocebus,,,particle set =,genus
+________________,SHARED,N15.Chlorocebus_aethiops,9534,=,9534,N20.Chlorocebus_aethiops,subtree=,,particle set =,species
+________________,SHARED,N15.Chlorocebus_pygerythrus,60710,=,60710,N20.Chlorocebus_pygerythrus,,number_of_children,particle set =,species
+__________________,SHARED,N15.Chlorocebus_pygerythrus_pygerythrus,460674,=,460674,N20.Chlorocebus_pygerythrus_pygerythrus,,,canonicalName,subspecies
+__________________,SHARED,N15.Chlorocebus_pygerythrus_hilgerti,508712,=,508712,N20.Chlorocebus_pygerythrus_hilgerti,,,canonicalName,subspecies
+__________________,B ONLY,,,,2269071,N20.Chlorocebus_pygerythrus_x_Chlorocebus_aethiops,,,,subspecies
+________________,SHARED,N15.Chlorocebus_sabaeus,60711,=,60711,N20.Chlorocebus_sabaeus,,,scientificName,species
+________________,A ONLY,N15.Chlorocebus_tantalus,60712,>,508710,N20.Chlorocebus_tantalus_budgetti,subtree=,,particle set >,subspecies
+________________,SHARED,N15.Chlorocebus_cynosuros,460675,=,460675,N20.Chlorocebus_cynosuros,,,scientificName,species
+________________,SHARED,N15.Chlorocebus_djamdjamensis,1284215,=,1284215,N20.Chlorocebus_djamdjamensis,,,scientificName,species
+________________,SHARED,N15.Chlorocebus_aethiops_x_djamdjamensis,1476079,=,1476079,N20.Chlorocebus_aethiops_x_djamdjamensis,,,canonicalName,species
+________________,B ONLY,N15.Chlorocebus_tantalus_budgetti,508710,<,60712,N20.Chlorocebus_tantalus,,,particle set >,species
+________________,B ONLY,,,,1903316,N20.Chlorocebus_aethiops_x_Chlorocebus_pygerythrus,,,,species
+________________,B ONLY (increased resolution),N15.Chlorocebus,392815,>,2685534,N20.unclassified_Chlorocebus,,,N15.Chlorocebus_aethiops_x_djamdjamensis is not in the A taxon,
+__________________,SHARED (moved from 392815),N15.Chlorocebus_sp._MAS-2011,1090918,=,1090918,N20.Chlorocebus_sp._MAS-2011,,,canonicalName,species
+__________________,SHARED (moved from 392815),N15.Chlorocebus_sp._TH-2013,1284216,=,1284216,N20.Chlorocebus_sp._TH-2013,,,canonicalName,species
+__________________,B ONLY,,,,2282232,N20.Chlorocebus_sp._LDS-2018,,,,species
+______________,B ONLY (increased resolution),N15.Cercopithecus,9533,>,9533,N20.Cercopithecus,,,N15.Cercopithecus_solatus is not in the A taxon,genus
+________________,SHARED (moved from 9533),N15.Cercopithecus_cephus,9535,=,9535,N20.Cercopithecus_cephus,subtree=,,particle set =,species
+________________,SHARED (moved from 9533),N15.Cercopithecus_ascanius,36223,=,36223,N20.Cercopithecus_ascanius,subtree=,,particle set =,species
+________________,SHARED (moved from 9533),N15.Cercopithecus_diana,36224,=,36224,N20.Cercopithecus_diana,,,scientificName,species
+________________,SHARED (moved from 9533),N15.Cercopithecus_mitis,36225,=,36225,N20.Cercopithecus_mitis,subtree=,,particle set =,species
+________________,SHARED (moved from 9533),N15.Cercopithecus_mona,36226,=,36226,N20.Cercopithecus_mona,subtree=,,particle set =,species
+________________,SHARED (moved from 9533),N15.Cercopithecus_neglectus,36227,=,36227,N20.Cercopithecus_neglectus,,,canonicalName,species
+________________,SHARED (moved from 9533),N15.Cercopithecus_nictitans,36228,=,36228,N20.Cercopithecus_nictitans,subtree=,,particle set =,species
+________________,SHARED (moved from 9533),N15.Cercopithecus_petaurista,100487,=,100487,N20.Cercopithecus_petaurista,subtree=,,particle set =,species
+________________,SHARED (moved from 9533),N15.Cercopithecus_pogonias,102108,=,102108,N20.Cercopithecus_pogonias,subtree=,,particle set =,species
+________________,SHARED (moved from 9533),N15.Cercopithecus_erythrogaster,161496,=,161496,N20.Cercopithecus_erythrogaster,subtree=,,particle set =,species
+________________,SHARED (moved from 9533),N15.Cercopithecus_erythrotis,167130,=,167130,N20.Cercopithecus_erythrotis,subtree=,,particle set =,species
+________________,SHARED (moved from 9533),N15.Cercopithecus_wolfi,263448,=,263448,N20.Cercopithecus_wolfi,subtree=,scientificName,particle set =,species
+________________,SHARED (moved from 9533),N15.Cercopithecus_albogularis,867370,=,867370,N20.Cercopithecus_albogularis,subtree=,,particle set =,species
+________________,SHARED (moved from 9533),N15.Cercopithecus_dryas,1137048,=,1137048,N20.Cercopithecus_dryas,,scientificName,canonicalName,species
+________________,SHARED (moved from 9533),N15.Cercopithecus_roloway,1137049,=,1137049,N20.Cercopithecus_roloway,,,scientificName,species
+________________,SHARED (moved from 9533),N15.Cercopithecus_doggetti,1137474,=,1137474,N20.Cercopithecus_doggetti,,,scientificName,species
+________________,SHARED (moved from 9533),N15.Cercopithecus_kandti,1137481,=,1137481,N20.Cercopithecus_kandti,,,scientificName,species
+________________,SHARED (moved from 9533),N15.Cercopithecus_denti,1137511,=,1137511,N20.Cercopithecus_denti,,,scientificName,species
+________________,SHARED (moved from 9533),N15.Cercopithecus_lomamiensis,1191211,=,1191211,N20.Cercopithecus_lomamiensis,,scientificName,canonicalName,species
+________________,B ONLY,N15.Cercopithecus_hamlyni_hamlyni,867373,<,9536,N20.Cercopithecus_hamlyni,,,particle set >,species
+________________,B ONLY,N15.Cercopithecus_campbelli_lowei,304410,<,303588,N20.Cercopithecus_campbelli,,,particle set >,species
+________________,B ONLY,,,,1579530,N20.Cercopithecus_sclateri,,,,species
+________________,B ONLY,N15.Cercopithecus_sp._WMS-2012,1144881,<,2618071,N20.unclassified_Cercopithecus,subtree=,,particle set >,
+______________,B ONLY,N15.Erythrocebus_patas,9538,<,9537,N20.Erythrocebus,,,particle set >,genus
+______________,B ONLY,N15.Theropithecus_gelada,9565,<,9564,N20.Theropithecus,,,particle set >,genus
+______________,B ONLY,N15.Allenopithecus_nigroviridis,54135,<,54134,N20.Allenopithecus,,,particle set >,genus
+______________,B ONLY,N15.Rungwecebus_kipunji,371039,<,371038,N20.Rungwecebus,,,particle set >,genus
+______________,B ONLY (increased resolution),N15.Cercopithecus,9533,>,2059839,N20.Allochrocebus,,,N15.Cercopithecus_lomamiensis is not in the A taxon,genus
+________________,SHARED (moved from 9533),N15.Cercopithecus_lhoesti,100224,=,100224,N20.Allochrocebus_lhoesti,,canonicalName,ncbi_id,species
+________________,SHARED (moved from 9533),N15.Cercopithecus_preussi,147649,=,147649,N20.Allochrocebus_preussi,,canonicalName; scientificName,particle set =,species
+__________________,SHARED,N15.Cercopithecus_preussi_insularis,1137512,=,1137512,N20.Allochrocebus_preussi_insularis,,canonicalName,ncbi_id,subspecies
+__________________,SHARED,N15.Cercopithecus_preussi_preussi,1137513,=,1137513,N20.Allochrocebus_preussi_preussi,,canonicalName,ncbi_id,subspecies
+________________,SHARED (moved from 9533),N15.Cercopithecus_solatus,147650,=,147650,N20.Allochrocebus_solatus,,canonicalName; scientificName,ncbi_id,species
+____________,SHARED,N15.Colobinae,9569,=,9569,N20.Colobinae,,,particle set =,subfamily
+______________,SHARED,N15.Colobus,9570,=,9570,N20.Colobus,,number_of_children,particle set =,genus
+________________,SHARED,N15.Colobus_polykomos,9572,=,9572,N20.Colobus_polykomos,,,canonicalName,species
+________________,SHARED,N15.Colobus_guereza,33548,=,33548,N20.Colobus_guereza,subtree=,scientificName,particle set =,species
+________________,A ONLY,N15.Colobus_angolensis,54131,>,336983,N20.Colobus_angolensis_palliatus,subtree=,,particle set >,subspecies
+________________,SHARED,N15.Colobus_vellerosus,378195,=,378195,N20.Colobus_vellerosus,,,canonicalName,species
+________________,SHARED,N15.Colobus_vellerosus_x_angolensis,378196,=,378196,N20.Colobus_vellerosus_x_angolensis,,,canonicalName,species
+________________,A ONLY,N15.Colobus_satanas,517012,>,517013,N20.Colobus_satanas_satanas,subtree=,,particle set >,subspecies
+________________,B ONLY,N15.Colobus_angolensis_palliatus,336983,<,54131,N20.Colobus_angolensis,,,particle set >,species
+________________,B ONLY,N15.Colobus_satanas_satanas,517013,<,517012,N20.Colobus_satanas,,,particle set >,species
+________________,B ONLY (increased resolution),N15.Colobus,9570,>,2618863,N20.unclassified_Colobus,subtree=,,N15.Colobus_satanas is not in the A taxon,
+______________,SHARED,N15.Presbytis,9573,=,9573,N20.Presbytis,,,particle set =,genus
+________________,SHARED,N15.Presbytis_senex,66055,=,66055,N20.Presbytis_senex,,,canonicalName,species
+________________,SHARED,N15.Presbytis_melalophos,78451,=,78451,N20.Presbytis_melalophos,,,particle set =,species
+__________________,SHARED,N15.Presbytis_melalophos_mitrata,272115,=,272115,N20.Presbytis_melalophos_mitrata,,,canonicalName,subspecies
+__________________,SHARED,N15.Presbytis_melalophos_bicolor,1046095,=,1046095,N20.Presbytis_melalophos_bicolor,,,scientificName,subspecies
+__________________,SHARED,N15.Presbytis_melalophos_melalophos,1046096,=,1046096,N20.Presbytis_melalophos_melalophos,,,canonicalName,subspecies
+__________________,SHARED,N15.Presbytis_melalophos_sumatranus,1046097,=,1046097,N20.Presbytis_melalophos_sumatranus,,,scientificName,subspecies
+________________,SHARED,N15.Presbytis_comata,78452,=,78452,N20.Presbytis_comata,subtree=,,particle set =,species
+________________,SHARED,N15.Presbytis_femoralis,78453,=,78453,N20.Presbytis_femoralis,,number_of_children,canonicalName,species
+__________________,B ONLY,,,,1840579,N20.Presbytis_femoralis_femoralis,,,,subspecies
+________________,SHARED,N15.Presbytis_chrysomelas,1046090,=,1046090,N20.Presbytis_chrysomelas,,,scientificName,species
+________________,SHARED,N15.Presbytis_frontata,1046092,=,1046092,N20.Presbytis_frontata,,,scientificName,species
+________________,A ONLY,N15.Presbytis_hosei,1046093,>,1046094,N20.Presbytis_hosei_hosei,subtree=,,particle set >,subspecies
+________________,SHARED,N15.Presbytis_potenziani,1046098,=,1046098,N20.Presbytis_potenziani,subtree=,,particle set =,species
+________________,A ONLY,N15.Presbytis_rubicunda,1046101,>,1046102,N20.Presbytis_rubicunda_rubicunda,subtree=,,particle set >,subspecies
+________________,SHARED,N15.Presbytis_thomasi,1046103,=,1046103,N20.Presbytis_thomasi,,,scientificName,species
+________________,B ONLY,N15.Presbytis_hosei_hosei,1046094,<,1046093,N20.Presbytis_hosei,,,particle set >,species
+________________,B ONLY,N15.Presbytis_rubicunda_rubicunda,1046102,<,1046101,N20.Presbytis_rubicunda,,,particle set >,species
+______________,A ONLY,N15.Nasalis,43779,>,43780,N20.Nasalis_larvatus,subtree=,,particle set >,species
+______________,SHARED,N15.Pygathrix,54132,=,54132,N20.Pygathrix,,,particle set =,genus
+________________,A ONLY,N15.Pygathrix_nemaeus,54133,>,303485,N20.Pygathrix_nemaeus_nemaeus,subtree=,,particle set >,subspecies
+________________,SHARED,N15.Pygathrix_nigripes,310352,=,310352,N20.Pygathrix_nigripes,,,canonicalName,species
+________________,SHARED,N15.Pygathrix_cinerea,693712,=,693712,N20.Pygathrix_cinerea,,,canonicalName,species
+________________,SHARED,N15.Pygathrix_cinerea_1_RL-2012,1194332,=,1194332,N20.Pygathrix_cinerea_1_RL-2012,,,canonicalName,species
+________________,SHARED,N15.Pygathrix_cinerea_2_RL-2012,1194333,=,1194333,N20.Pygathrix_cinerea_2_RL-2012,,,canonicalName,species
+________________,B ONLY,N15.Pygathrix_nemaeus_nemaeus,303485,<,54133,N20.Pygathrix_nemaeus,,,particle set >,species
+______________,SHARED,N15.Trachypithecus,54136,=,54136,N20.Trachypithecus,,number_of_children,particle set =,genus
+________________,A ONLY,N15.Trachypithecus_vetulus,54137,>,614071,N20.Trachypithecus_vetulus_vetulus,subtree=,,particle set >,subspecies
+________________,A ONLY,N15.Trachypithecus_francoisi,54180,>,272119,N20.Trachypithecus_francoisi_francoisi,subtree=,,particle set >,subspecies
+________________,SHARED,N15.Trachypithecus_obscurus,54181,=,54181,N20.Trachypithecus_obscurus,,,scientificName,species
+________________,SHARED,N15.Trachypithecus_phayrei,61618,=,61618,N20.Trachypithecus_phayrei,subtree=,,particle set =,species
+________________,SHARED,N15.Trachypithecus_johnii,66063,=,66063,N20.Trachypithecus_johnii,,,scientificName,species
+________________,SHARED,N15.Trachypithecus_cristatus,122765,=,122765,N20.Trachypithecus_cristatus,,,scientificName,species
+________________,SHARED,N15.Trachypithecus_geei,164650,=,164650,N20.Trachypithecus_geei,,,canonicalName,species
+________________,SHARED,N15.Trachypithecus_pileatus,164651,=,164651,N20.Trachypithecus_pileatus,,,canonicalName,species
+________________,SHARED,N15.Trachypithecus_auratus,222416,=,222416,N20.Trachypithecus_auratus,subtree=,,particle set =,species
+________________,SHARED,N15.Trachypithecus_germaini,271260,=,271260,N20.Trachypithecus_germaini,,,canonicalName,species
+________________,SHARED,N15.Trachypithecus_barbei,271261,=,271261,N20.Trachypithecus_barbei,,,canonicalName,species
+________________,SHARED,N15.Trachypithecus_delacouri,465717,=,465717,N20.Trachypithecus_delacouri,,,canonicalName,species
+________________,SHARED,N15.Trachypithecus_laotum,465718,=,465718,N20.Trachypithecus_laotum,,,canonicalName,species
+________________,SHARED,N15.Trachypithecus_poliocephalus,465719,=,465719,N20.Trachypithecus_poliocephalus,subtree=,,particle set =,species
+________________,SHARED,N15.Trachypithecus_francoisi_x_poliocephalus,744437,=,744437,N20.Trachypithecus_francoisi_x_poliocephalus,,,canonicalName,species
+________________,SHARED,N15.Trachypithecus_hatinhensis,867383,=,867383,N20.Trachypithecus_hatinhensis,,,scientificName,species
+________________,SHARED,N15.Trachypithecus_shortridgei,1042121,=,1042121,N20.Trachypithecus_shortridgei,,,scientificName,species
+________________,B ONLY,N15.Trachypithecus_vetulus_vetulus,614071,<,54137,N20.Trachypithecus_vetulus,,,particle set >,species
+________________,B ONLY,N15.Trachypithecus_francoisi_francoisi,272119,<,54180,N20.Trachypithecus_francoisi,,,particle set >,species
+________________,B ONLY,,,,1966384,N20.Trachypithecus_mauritius,,,,species
+________________,B ONLY,N15.Trachypithecus_sp.,580599,<,2623509,N20.unclassified_Trachypithecus,subtree=,,particle set >,
+______________,SHARED,N15.Semnopithecus,88028,=,88028,N20.Semnopithecus,,number_of_children,particle set =,genus
+________________,A ONLY (loss of resolution),N15.Semnopithecus_entellus,88029,<,88028,N20.Semnopithecus,,,N20.Semnopithecus_hypoleucos is not in the A taxon,genus
+__________________,SHARED,N15.Semnopithecus_entellus_priam,272117,=,1208733,N20.Semnopithecus_priam,,taxonRank; ncbi_id; canonicalName,canonicalName+synonym,species
+________________,SHARED,N15.Semnopithecus_hector,867382,=,867382,N20.Semnopithecus_hector,,,scientificName,species
+________________,A ONLY (merge),N15.Semnopithecus_priam,1208733,=,1208733,N20.Semnopithecus_priam,,,scientificName,species
+________________,SHARED,N15.Semnopithecus_hypoleucos,1208734,=,1208734,N20.Semnopithecus_hypoleucos,,,scientificName,species
+________________,B ONLY,N15.Semnopithecus_entellus_entellus,867381,<,88029,N20.Semnopithecus_entellus,subtree=,,particle set >,species
+________________,B ONLY,,,,2632571,N20.unclassified_Semnopithecus,,,,
+__________________,B ONLY,,,,1778600,N20.Semnopithecus_sp.,,,,species
+______________,A ONLY,N15.Procolobus,164647,>,373033,N20.Procolobus_verus,,,particle set >,species
+________________,SHARED (moved from 164647),N15.Procolobus_verus,373033,=,373033,N20.Procolobus_verus,,,canonicalName,species
+______________,SHARED,N15.Rhinopithecus,542827,=,542827,N20.Rhinopithecus,,number_of_children,particle set =,genus
+________________,SHARED,N15.Rhinopithecus_bieti,61621,=,61621,N20.Rhinopithecus_bieti,,,canonicalName,species
+________________,SHARED,N15.Rhinopithecus_roxellana,61622,=,61622,N20.Rhinopithecus_roxellana,,,scientificName,species
+________________,SHARED,N15.Rhinopithecus_avunculus,66062,=,66062,N20.Rhinopithecus_avunculus,,scientificName,canonicalName,species
+________________,SHARED,N15.Rhinopithecus_brelichi,224329,=,224329,N20.Rhinopithecus_brelichi,,,canonicalName,species
+________________,SHARED,N15.Rhinopithecus_bieti_1_RL-2012,1194334,=,1194334,N20.Rhinopithecus_bieti_1_RL-2012,,,canonicalName,species
+________________,SHARED,N15.Rhinopithecus_bieti_2_RL-2012,1194335,=,1194335,N20.Rhinopithecus_bieti_2_RL-2012,,,canonicalName,species
+________________,SHARED,N15.Rhinopithecus_strykeri,1194336,=,1194336,N20.Rhinopithecus_strykeri,,,scientificName,species
+________________,B ONLY,,,,2644350,N20.unclassified_Rhinopithecus,,,,
+__________________,B ONLY,,,,1859147,N20.Rhinopithecus_sp.,,,,species
+______________,SHARED,N15.Piliocolobus,591932,=,591932,N20.Piliocolobus,,,particle set =,genus
+________________,SHARED,N15.Piliocolobus_badius,164648,=,164648,N20.Piliocolobus_badius,subtree=,,particle set =,species
+________________,SHARED,N15.Piliocolobus_gordonorum,591933,=,591933,N20.Piliocolobus_gordonorum,,,canonicalName,species
+________________,SHARED,N15.Piliocolobus_rufomitratus,591934,=,591934,N20.Piliocolobus_rufomitratus,,,canonicalName,species
+________________,SHARED,N15.Piliocolobus_tholloni,591935,=,591935,N20.Piliocolobus_tholloni,,,canonicalName,species
+________________,SHARED,N15.Piliocolobus_tephrosceles,591936,=,591936,N20.Piliocolobus_tephrosceles,,,canonicalName,species
+________________,SHARED,N15.Piliocolobus_kirkii,591937,=,591937,N20.Piliocolobus_kirkii,,,canonicalName,species
+________________,SHARED,N15.Piliocolobus_foai,591938,=,591938,N20.Piliocolobus_foai,,,canonicalName,species
+________________,SHARED,N15.Piliocolobus_pennantii,591944,=,591944,N20.Piliocolobus_pennantii,,,canonicalName,species
+________________,SHARED,N15.Piliocolobus_preussi,591945,=,591945,N20.Piliocolobus_preussi,,,canonicalName,species
+______________,A ONLY,N15.Simias,1203020,>,170207,N20.Simias_concolor,subtree=,,particle set >,species
+______________,B ONLY,N15.Nasalis_larvatus,43780,<,43779,N20.Nasalis,,,particle set >,genus
+______________,B ONLY,N15.Procolobus_verus,373033,<,164647,N20.Procolobus,,,particle set >,genus
+______________,B ONLY,N15.Simias_concolor,170207,<,1203020,N20.Simias,,,particle set >,genus
+____________,SHARED,N15.Cercopithecidae_gen._sp.,9576,=,9576,N20.Cercopithecidae_gen._sp.,,,canonicalName,species
+________,SHARED,N15.Hominoidea,314295,=,314295,N20.Hominoidea,,,particle set =,superfamily
+__________,SHARED,N15.Hylobatidae,9577,=,9577,N20.Hylobatidae,,,particle set =,family
+____________,SHARED,N15.Hylobates,9578,=,9578,N20.Hylobates,,number_of_children,particle set =,genus
+______________,SHARED,N15.Hylobates_agilis,9579,=,9579,N20.Hylobates_agilis,subtree=,,particle set =,species
+______________,SHARED,N15.Hylobates_lar,9580,=,9580,N20.Hylobates_lar,subtree=,,particle set =,species
+______________,SHARED,N15.Hylobates_klossii,9587,=,9587,N20.Hylobates_klossii,,,canonicalName,species
+______________,SHARED,N15.Hylobates_muelleri,9588,=,9588,N20.Hylobates_muelleri,subtree=,,particle set =,species
+______________,SHARED,N15.Hylobates_pileatus,9589,=,9589,N20.Hylobates_pileatus,,,canonicalName,species
+______________,SHARED,N15.Hylobates_moloch,81572,=,81572,N20.Hylobates_moloch,,,canonicalName,species
+______________,SHARED,N15.Hylobates_alibarbis,716691,=,716691,N20.Hylobates_albibarbis,,canonicalName; scientificName,ncbi_id,species
+______________,B ONLY (increased resolution),N15.Hylobates,9578,>,2647113,N20.unclassified_Hylobates,,,N15.Hylobates_alibarbis is not in the A taxon,
+________________,SHARED (moved from 9578),N15.Hylobates_sp.,9581,=,9581,N20.Hylobates_sp.,,,canonicalName,species
+________________,SHARED (moved from 9578),N15.Hylobates_sp._TIB-201,150249,=,150249,N20.Hylobates_sp._TIB-201,,,canonicalName,species
+________________,SHARED (moved from 9578),N15.Hylobates_sp._IGL-2004,280856,=,280856,N20.Hylobates_sp._IGL-2004,,,canonicalName,species
+________________,SHARED (moved from 9578),N15.Hylobates_sp._AMA-2004,288892,=,288892,N20.Hylobates_sp._AMA-2004,,,canonicalName,species
+________________,SHARED (moved from 9578),N15.Hylobates_sp._ECACC_MLA144,419588,=,419588,N20.Hylobates_sp._ECACC_MLA144,,,canonicalName,species
+________________,SHARED (moved from 9578),N15.Hylobates_sp._PS-2007,425245,=,425245,N20.Hylobates_sp._PS-2007,,,canonicalName,species
+________________,B ONLY,,,,2023128,N20.Hylobates_sp._OH-2017,,,,species
+____________,SHARED,N15.Nomascus,325165,=,325165,N20.Nomascus,,number_of_children,particle set =,genus
+______________,SHARED,N15.Nomascus_siki,9586,=,9586,N20.Nomascus_siki,,,canonicalName,species
+______________,SHARED,N15.Nomascus_concolor,29089,=,29089,N20.Nomascus_concolor,subtree=,,particle set =,species
+______________,SHARED,N15.Nomascus_gabriellae,61852,=,61852,N20.Nomascus_gabriellae,,,canonicalName,species
+______________,SHARED,N15.Nomascus_leucogenys,61853,=,61853,N20.Nomascus_leucogenys,,,canonicalName,species
+______________,SHARED,N15.Nomascus_nasutus,327374,=,327374,N20.Nomascus_nasutus,,,canonicalName,species
+______________,SHARED,N15.Nomascus_hainanus,693984,=,693984,N20.Nomascus_hainanus,,,canonicalName,species
+______________,B ONLY,,,,1616038,N20.Nomascus_annamensis,,,,species
+______________,B ONLY,,,,2170372,N20.Nomascus_gabriellae_x_Nomascus_siki,,,,species
+______________,B ONLY,,,,2170373,N20.Nomascus_leucogenys_x_Nomascus_siki,,,,species
+______________,B ONLY,,,,2170374,N20.Nomascus_cf._leucogenys_SSH-2018,,,,species
+____________,A ONLY,N15.Symphalangus,325166,>,405039,N20.Symphalangus_syndactylus_syndactylus,,,particle set >,subspecies
+______________,A ONLY,N15.Symphalangus_syndactylus,9590,>,405039,N20.Symphalangus_syndactylus_syndactylus,subtree=,,particle set >,subspecies
+____________,SHARED,N15.Hoolock,325167,=,325167,N20.Hoolock,,number_of_children,particle set =,genus
+______________,SHARED,N15.Hoolock_hoolock,61851,=,61851,N20.Hoolock_hoolock,,,canonicalName,species
+______________,SHARED,N15.Hoolock_leuconedys,593543,=,593543,N20.Hoolock_leuconedys,,,scientificName,species
+______________,B ONLY,,,,1934190,N20.Hoolock_tianxing,,,,species
+______________,B ONLY,,,,1934191,N20.Hoolock_leuconedys_x_Hoolock_tianxing,,,,species
+____________,B ONLY,N15.Symphalangus_syndactylus_syndactylus,405039,<,325166,N20.Symphalangus,,,particle set >,genus
+______________,B ONLY,N15.Symphalangus_syndactylus_syndactylus,405039,<,9590,N20.Symphalangus_syndactylus,,,particle set >,species
+__________,SHARED,N15.Hominidae,9604,=,9604,N20.Hominidae,,,particle set =,family
+____________,SHARED,N15.Homininae,207598,=,207598,N20.Homininae,,,particle set =,subfamily
+______________,SHARED,N15.Gorilla,9592,=,9592,N20.Gorilla,subtree=,,particle set =,genus
+______________,SHARED,N15.Pan,9596,=,9596,N20.Pan,,,particle set =,genus
+________________,SHARED,N15.Pan_paniscus,9597,=,9597,N20.Pan_paniscus,,,canonicalName,species
+________________,SHARED,N15.Pan_troglodytes,9598,=,9598,N20.Pan_troglodytes,subtree=,,particle set =,species
+______________,SHARED,N15.Homo,9605,=,9605,N20.Homo,,number_of_children,particle set =,genus
+________________,SHARED,N15.Homo_sapiens,9606,=,9606,N20.Homo_sapiens,,,particle set =,species
+__________________,SHARED,N15.Homo_sapiens_neanderthalensis,63221,=,63221,N20.Homo_sapiens_neanderthalensis,,,canonicalName,subspecies
+__________________,SHARED,N15.Homo_sapiens_ssp._Denisova,741158,=,741158,N20.Homo_sapiens_subsp._'Denisova',,canonicalName,ncbi_id,subspecies
+________________,SHARED,N15.Homo_heidelbergensis,1425170,=,1425170,N20.Homo_heidelbergensis,,,scientificName,species
+________________,B ONLY,,,,2665952,N20.environmental_samples,,,,
+__________________,B ONLY,,,,2665953,N20.Homo_sapiens_environmental_sample,,,,species
+____________,A ONLY,N15.Ponginae,607660,>,9599,N20.Pongo,,,particle set >,genus
+______________,SHARED (moved from 607660),N15.Pongo,9599,=,9599,N20.Pongo,,number_of_children,particle set =,genus
+________________,A ONLY,N15.Pongo_pygmaeus,9600,>,9602,N20.Pongo_pygmaeus_pygmaeus,subtree=,,particle set >,subspecies
+________________,A ONLY (loss of resolution),N15.Pongo_abelii,9601,<,9600,N20.Pongo_pygmaeus,,,synonym+canonicalName+synonym,species
+________________,SHARED,N15.Pongo_abelii_x_pygmaeus,502961,=,502961,N20.Pongo_abelii_x_pygmaeus,,,canonicalName,species
+________________,B ONLY,N15.Pongo_pygmaeus_pygmaeus,9602,<,9600,N20.Pongo_pygmaeus,,,particle set >,species
+________________,B ONLY (increased resolution),N15.Pongo_pygmaeus,9600,>,9601,N20.Pongo_abelii,,,synonym+canonicalName+synonym,species
+________________,B ONLY,,,,2051901,N20.Pongo_tapanuliensis,,,,species
+________________,B ONLY,N15.Pongo_sp.,9603,<,2624844,N20.unclassified_Pongo,subtree=,,particle set >,
+____________,B ONLY,N15.Pongo,9599,<,607660,N20.Ponginae,,,particle set >,subfamily
+________,B ONLY,N15.Cercopithecidae,9527,<,314294,N20.Cercopithecoidea,,,particle set >,superfamily
+____,A ONLY,N15.Tarsiiformes,376912,>,9475,N20.Tarsiidae,,,particle set >,family
+______,A ONLY,N15.Tarsiidae,9475,>,9475,N20.Tarsiidae,,,particle set >,family
+________,A ONLY,N15.Tarsius,9476,>,9475,N20.Tarsiidae,,,particle set = (chain),family
+____,B ONLY,N15.Tarsius,9476,<,376912,N20.Tarsiiformes,,,particle set >,infraorder
+______,B ONLY (increased resolution),N15.Tarsiidae,9475,>,9475,N20.Tarsiidae,,,monotypic (reverse),family
+________,B ONLY (increased resolution),N15.Tarsius,9476,>,9476,N20.Tarsius,,,N15.Tarsius_syrichta is not in the A taxon,genus
+__________,SHARED (moved from 9476),N15.Tarsius_dentatus,449501,=,449501,N20.Tarsius_dentatus,,,canonicalName,species
+__________,SHARED (moved from 9476),N15.Tarsius_lariang,630277,=,630277,N20.Tarsius_lariang,,,canonicalName,species
+__________,SHARED (moved from 9476),N15.Tarsius_dentatus_x_lariang,642591,=,642591,N20.Tarsius_dentatus_x_lariang,,,canonicalName,species
+__________,SHARED (moved from 9476),N15.Tarsius_tarsier,662464,=,662464,N20.Tarsius_tarsier,,,canonicalName,species
+__________,SHARED (moved from 9476),N15.Tarsius_sangirensis,905053,=,905053,N20.Tarsius_sangirensis,,,scientificName,species
+__________,SHARED (moved from 9476),N15.Tarsius_wallacei,981131,=,981131,N20.Tarsius_wallacei,,,scientificName,species
+__________,B ONLY,,,,1748400,N20.Tarsius_fuscus,,,,species
+__________,B ONLY (increased resolution),N15.Tarsius,9476,>,2624233,N20.unclassified_Tarsius,,,N15.Tarsius_wallacei is not in the A taxon,
+____________,SHARED (moved from 9476),N15.Tarsius_sp.,30612,=,30612,N20.Tarsius_sp.,,,canonicalName,species
+____________,SHARED (moved from 9476),N15.Tarsius_sp._FFA-2009a,662655,=,662655,N20.Tarsius_sp._FFA-2009a,,,canonicalName,species
+____________,B ONLY,,,,1748402,N20.Tarsius_sp._CD-2015,,,,species
+________,B ONLY,N15.Tarsius_syrichta,9478,<,1868481,N20.Carlito,,,particle set >,genus
+__________,SHARED (moved from 9476),N15.Tarsius_syrichta,9478,=,1868482,N20.Carlito_syrichta,,ncbi_id; canonicalName,synonym+canonicalName+synonym,species
+________,B ONLY,N15.Tarsius_bancanus,9477,<,1971489,N20.Cephalopachus,,,particle set >,genus
+__________,SHARED (moved from 9476),N15.Tarsius_bancanus,9477,=,9477,N20.Cephalopachus_bancanus,,number_of_children; canonicalName; scientificName,ncbi_id,species
+____________,B ONLY,,,,1971490,N20.Cephalopachus_bancanus_bancanus,,,,subspecies
+____________,B ONLY,,,,2567999,N20.Cephalopachus_bancanus_borneanus,,,,subspecies

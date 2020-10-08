@@ -58,6 +58,7 @@ class Table:
   # this table, which can be determined using get_position.
 
   def get_index(self, prop):
+    if self.methods[prop.uid] == not_present: return {}
     if self.indexes[prop.uid] == None:
       index = {}
       for id in self.record_uids:

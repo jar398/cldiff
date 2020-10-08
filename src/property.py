@@ -41,7 +41,7 @@ def uri_to_property(uri):
   return sel
 
 def alias(this, to_that):
-  if this in pet_name_to_uri_table:
+  if this in properties_by_pet_name:
     raise "URI pet_name collision:  \n%s  \n%s" % (to_that, this)
   sel = by_name(to_that)
   properties_by_pet_name[this] = sel
@@ -83,7 +83,7 @@ GBIF properties...
 """
 
 uris = [
-        # "http://purl.org/dc/terms/source",     # checklist  ??
+        "http://purl.org/dc/terms/source",     # EOL
         "https://github.com/jar398/biodiversity/wiki/subtree",  # subtree identity
         "https://github.com/jar398/biodiversity/wiki/tips",     # same tips
         "https://github.com/jar398/biodiversity/wiki/direct",   # not via synonym
@@ -96,8 +96,9 @@ uris = [
         "http://rs.tdwg.org/dwc/terms/scientificNameAuthorship",
         "http://rs.tdwg.org/dwc/terms/nameAccordingToID",
         "http://rs.tdwg.org/dwc/terms/taxonID",    # exclude from diff?
-        "http://rs.tdwg.org/dwc/terms/gbif_id",
-        "http://rs.tdwg.org/dwc/terms/NCBI Taxonomy ID",
+        "https://github.com/jar398/biodiversity/wiki/gbif_id",
+        "https://github.com/jar398/biodiversity/wiki/ncbi_id",
+        "http://eol.org/schema/EOLid",  # page ID (via Jen)
         "http://rs.tdwg.org/dwc/terms/vernacularName",
         "http://rs.tdwg.org/dwc/terms/parentNameUsageID",
         "http://rs.tdwg.org/dwc/terms/namePublishedInYear",
@@ -113,6 +114,8 @@ uris = [
 ]
 for uri in uris: uri_to_property(uri)
   
+alias("NCBI Taxonomy ID", "ncbi_id")
+
 number_of_properties = len(properties_by_specificity)
 
 if __name__ == '__main__':

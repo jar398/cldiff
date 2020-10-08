@@ -101,6 +101,7 @@ mam: $(WORK)/mammalia-ncbi-2015-2020.csv
 
 publish: doc/primates-ncbi-2015-2020.csv \
 	 doc/primates-ncbi-2015-2020.ex \
+	 doc/primates-ncbi-2015-2020-dribble.txt \
 	 doc/mammalia-ncbi-2015-2020.csv \
 	 doc/mammalia-ncbi-2015-2020-dribble.txt \
 	 doc/ncbi-gbif.csv

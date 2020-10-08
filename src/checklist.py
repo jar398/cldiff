@@ -20,11 +20,14 @@ def field(label):
 nomenclatural_status = field("nomenclaturalStatus")
 taxonomic_status     = field("taxonomicStatus")    # flush?
 taxon_rank           = field("taxonRank")
-parent_node_id    = field("parentNameUsageID")
-node_id           = field("taxonID")
-accepted_node_id  = field("acceptedNameUsageID")
+parent_node_id       = field("parentNameUsageID")
+node_id              = field("taxonID")
+accepted_node_id     = field("acceptedNameUsageID")
 canonical_name       = field("canonicalName")
 scientific_name      = field("scientificName")
+ncbi_id      = field("ncbi_id")
+gbif_id      = field("gbif_id")
+eol_id       = field("EOLid")
 
 # ---------- Taxon registry and taxa
 
@@ -35,6 +38,7 @@ forest_tnu = 0
 def get_value(uid, field):
   assert field
   if uid == forest_tnu: return None
+  assert uid > 0
   return table.get_value(uid, field)
 
 def get_checklist(uid):
@@ -223,8 +227,8 @@ def get_direct_parent(tnu):
 
 def get_children(parent):
   return get_nodes_with_value(get_checklist(parent),
-                                 parent_node_id,
-                                 get_node_id(parent))
+                              parent_node_id,
+                              get_node_id(parent))
 
 # Get canonical record among a set of equivalent records
 
@@ -426,21 +430,6 @@ def is_container(tnu):
          "unallocated" in name or \
          "unassigned" in name
   
-# ---------- Approximate lookup
-
-def get_similar_records(checklist, record, shared_idspace=False):
-  assert record > 0
-  assert get_checklist(record) != checklist
-  # TBD: search on scientific_name epithet, etc. as well
-  hits = get_nodes_with_value(checklist,
-                                 canonical_name,
-                                 get_name(record))
-  if shared_idspace:
-    id_hit = get_record_with_node_id(checklist, get_node_id(record))
-    if id_hit and not id_hit in hits:
-      hits = hits + [id_hit]
-  return hits
-
 # ---------- General utility that doesn't really belong here
 
 def invert_dict(d):

@@ -12,7 +12,6 @@
 
 import checklist as cl
 import relation as rel
-import alignment
 
 def merge_checklists(A, B, al, xmrcas):
   parents = {}
@@ -27,7 +26,7 @@ def merge_checklists(A, B, al, xmrcas):
         else:
           if not merged in roots:
             roots.append(merged)
-      for child in alignment.get_children(node):
+      for child in cl.get_children(node):
         process(child)
     for root in cl.get_roots(check):
       process(root)

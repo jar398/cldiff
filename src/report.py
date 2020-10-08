@@ -12,44 +12,45 @@ import eulerx
 import alignment
 import diff
 import merge
+import dribble
 
 # A is lower priority, B is higher
 
 def main(c1, c1_tag, c2, c2_tag, out, format):
+  global dribble_file
   A = cl.read_checklist(c1, c1_tag + ".", "low-checklist")
   B = cl.read_checklist(c2, c2_tag + ".", "high-checklist")
   print ("Node counts:", len(A.get_all_nodes()), len(B.get_all_nodes()))
-  write_report(A, B, format, out)
+  with open("dribble.txt", "w") as dribfile:
+    dribble.dribble_file = dribfile
+    # Map each B to a corresponding A
+    (al, xmrcas) = alignment.align(B, A)
+    # Where to xmrcas come from?
+    write_report(A, B, al, xmrcas, format, out)
+    dribble.dribble_file = sys.stdout
 
-def write_report(A, B, format, outpath):
+def write_report(A, B, al, xmrcas, format, outpath):
   if outpath == "-":
-    really_write_report(A, B, format, sys.stdout)
+    really_write_report(A, B, al, xmrcas, format, sys.stdout)
   else:
     with open(outpath, "w") as outfile:
       print ("Preparing:", outpath)
-      really_write_report(A, B, format, outfile)
+      really_write_report(A, B, al, xmrcas, format, outfile)
 
-def really_write_report(A, B, format, outfile):
-  with open("dribble.txt", "w") as dribfile:
-
-    # Map each B to a corresponding A
-    (al, xmrcas) = alignment.align(B, A, dribfile)
-    # Where to xmrcas come from?
-
-    if format == "eulerx":
-      eulerx.dump_alignment(al, outfile)
-    else:
-      (parents, roots) = merge.merge_checklists(A, B, al, xmrcas)
-      print ("# Number of roots in merge: %s" % len(roots))
-      print ("# Number of non-roots in merge: %s" % len(parents))
-      report(A, B, al, roots, parents, outfile)
+def really_write_report(A, B, al, xmrcas, format, outfile):
+  if format == "eulerx":
+    eulerx.dump_alignment(al, outfile)
+  else:
+    (parents, roots) = merge.merge_checklists(A, B, al, xmrcas)
+    print ("# Number of roots in merge: %s" % len(roots))
+    print ("# Number of non-roots in merge: %s" % len(parents))
+    report(A, B, al, roots, parents, outfile)
 
 # Default (simplified) report format
 
 def report(A, B, al, roots, parents, outfile):
-  inv = invert_alignment(al)
   writer = csv.writer(outfile)
-  writer.writerow(["indent", "operation", "dom", "dom id", "relation", "cod id", "cod", "unchanged", "changed_props", "reason"])
+  writer.writerow(["indent", "operation", "dom", "dom id", "relation", "cod id", "cod", "unchanged", "changed_props", "reason", "rank"])
   children = cl.invert_dict(parents)
   all_props = set.intersection(set(A.properties), set(B.properties))
   changed = find_changed_merged_subtrees(roots, children, all_props)
@@ -60,6 +61,7 @@ def report(A, B, al, roots, parents, outfile):
     d = None
     reason = None
     if x and y:
+      re = "="
       op = "SHARED"
       px = cl.get_parent(x)
       if px and al[px].cod != cl.get_parent(y):
@@ -68,13 +70,13 @@ def report(A, B, al, roots, parents, outfile):
       if not diff.same(comparison):
         props = diff.unpack(comparison)
         d = ("; ".join(map(lambda x:x.pet_name, props)))
-      reason = al[x].reason
+      reason = art.reason(al[x])
     elif x:
       op = "A ONLY"
       ar = al.get(x)
       if ar:
         re = ar.relation.name
-        reason = ar.reason
+        reason = art.reason(ar)
         # Equivalence, usually, but sometimes not
         y = ar.cod
 
@@ -89,7 +91,7 @@ def report(A, B, al, roots, parents, outfile):
       ar = al.get(y)
       if ar:
         re = ar.relation.revname
-        reason = ar.reason
+        reason = art.reason(ar)
         x = ar.cod
         if rel.is_variant(ar.relation, rel.eq):
           op += " (split)"
@@ -119,25 +121,17 @@ def report_one_articulation(op, ch, d, x, re, y, reason, writer, indent):
   if x:
     ux = cl.get_unique(x)
     ix = cl.get_node_id(x)
+    rank = cl.get_nominal_rank(x)
   if y:
     uy = cl.get_unique(y)
     iy = cl.get_node_id(y)
+    rank = cl.get_nominal_rank(y)
   writer.writerow([indent, op,
                    ux, ix, re,
-                   iy, uy, ch, d, reason])
+                   iy, uy, ch, d, reason, rank])
 
 # --------------------
 # utilities
-
-def invert_alignment(alignment):
-  inv = {}
-  for ar in alignment.values():
-    rev = art.reverse(ar)
-    if rev.dom in inv:
-      inv[rev.dom].append(rev)
-    else:
-      inv[rev.dom] = [rev]
-  return inv
 
 # Returns table with True for merged nodes all of whose descendants are
 # unchanged

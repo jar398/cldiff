@@ -17,7 +17,7 @@ Articulation = \
   collections.namedtuple('Articulation',
                          ['dom', 'cod', 'relation', 'factors', 'reason', 'diff'])
 
-def _articulation(dom, cod, re, factors = None, reason = None):
+def _articulation(dom, cod, re, reason = None, factors = None):
   assert dom > 0
   assert cod > 0
   assert re
@@ -25,10 +25,7 @@ def _articulation(dom, cod, re, factors = None, reason = None):
   dif = diff.all_diffs
   if cl.is_accepted(dom) and cl.is_accepted(cod):
     dif = diff.differences(dom, cod)
-  if factors == None: factors = []
-  assert isinstance(factors, list)
   ar = Articulation(dom, cod, re, factors, reason, dif)
-  if len(factors) == 0: factors.append(ar)
   return ar
 
 def express(ar):
@@ -46,8 +43,14 @@ def compose(p, q):
   return _articulation(p.dom,
                        q.cod,
                        rel.compose(p.relation, q.relation),
-                       p.factors + q.factors,
-                       p.reason + "+" + q.reason)
+                       reason = None,
+                       factors = (p.factors or [p]) + (q.factors or [q]))
+
+def reason(p):
+  if p.factors:
+    return "+".join(map(reason, p.factors))
+  else:
+    return p.reason
 
 def composable(p, q):
   return (p.cod == q.dom and
@@ -65,21 +68,33 @@ def conjoinable(p, q):
           p.cod == q.cod and
           rel.conjoinable(p.relation, q.relation))
 
-def get_comment(art):
-  return art.relation.name
+def get_comment(ar):
+  return ar.relation.name
 
-def reverse(art):
-  f = list(reversed(art.factors))
-  return _articulation(art.cod, art.dom, rel.reverse(art.relation), f,
-                       art.reason)    # Reason
+def reverse(ar):
+  if ar.factors:
+    f = list(reversed(ar.factors))
+  else:
+    f = None
+  return _articulation(ar.cod, ar.dom, rel.reverse(ar.relation),
+                       reason = reason(ar),
+                       factors = f)
 
-def is_identity(art):
-  return art.dom == art.cod and art.relation == rel.eq
+def is_identity(ar):
+  return ar.dom == ar.cod and ar.relation == rel.eq
 
 def inverses(ar1, ar2):
   return (ar1.cod == ar2.dom and 
           ar1.dom == ar2.cod and 
           rel.inverses(ar1.relation, ar2.relation))
+
+# Foo.  Phase out
+
+def change_relation(ar, rel, note):
+  return _articulation(ar.dom, ar.cod, rel, 
+                       # This doesn't work if ar is composed
+                       reason = (ar.reason or "none") + " (%s)" % note,
+                       factors = ar.factors)
 
 # ---------- Synonymy relationship within one tree
 
@@ -160,12 +175,34 @@ def extensional(dom, cod, re, reason):
 def monotypic(dom, cod, re):
   return bridge(dom, cod, re, "monotypic")
 
-def intensional(dom, cod):
-  return bridge(dom, cod, rel.eq, "name")
+def intensional(dom, cod, how):
+  return bridge(dom, cod, rel.eq, how)
 
 def bridge(dom, cod, re, reason):
   assert cl.get_checklist(dom) != cl.get_checklist(cod)
   return _articulation(dom, cod, re, reason=reason)
+
+# Intensional matches by name (no synonym following)
+# This ought to be cached I think?
+
+def direct_matches(node, other):
+  assert node > 0
+  assert cl.get_checklist(node) != other
+  seen = []
+  arts = []
+  for prop in [cl.scientific_name,
+               cl.canonical_name,
+               cl.ncbi_id,
+               cl.gbif_id,
+               cl.eol_id]:
+    val = cl.get_value(node, prop)
+    if val != None:
+      more = cl.get_nodes_with_value(other, prop, val)
+      for hit in more:
+        if hit and not hit in seen:
+          seen.append(hit)
+          arts.append(intensional(node, hit, prop.pet_name))
+  return arts
 
 # ---------- Utility: collapsing a set of matches
 
@@ -212,7 +249,7 @@ def badness(ar):
          change,
          drop,
          # Using synonym is bad, using two is worse
-         len(ar.factors),
+         len(ar.factors) if ar.factors else 1,
          # Added fields are benign
          # Dropped fields are so-so
          # What is this about?
