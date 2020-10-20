@@ -57,7 +57,7 @@ def dump(ch, out):
 def dump_alignment(al, out):
   articulations = [ar for ar in al.values()
                    if (ar.dom < ar.cod or
-                       not alignment.is_mutual(ar, al))]
+                       not is_mutual(ar, al))]
   def sort_key(ar):
     if ar.dom < ar.cod:
       return (ar.dom, ar.cod)
@@ -70,6 +70,13 @@ def dump_alignment(al, out):
                                 ar.relation.name,
                                 cl.get_unique(ar.cod)))
   out.write("\n")
+
+def is_mutual(ar, al):
+  rev = al.get(ar.cod)
+  if rev:
+    return rev.dom == ar.dom
+  else:
+    return False
 
 if __name__ == '__main__':
   parser = argparse.ArgumentParser()

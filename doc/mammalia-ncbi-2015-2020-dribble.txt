@@ -1,137 +1,66 @@
 # ** Multiple least-bad matches. Need to find more tie-breakers.
-   B.environmental_samples#2682739 -> ['A.environmental_samples#328690', 'A.environmental_samples#1002248', 'A.environmental_samples#1002256']
+   B.Papio_cynocephalus -> ['A.Papio_anubis', 'A.Papio_ursinus']
+# ** Multiple least-bad matches. Need to find more tie-breakers.
+   B.environmental_samples#1002241 -> ['A.environmental_samples#328690', 'A.environmental_samples#1002248', 'A.environmental_samples#1002256']
+# ** Multiple least-bad matches. Need to find more tie-breakers.
+   B.environmental_samples#1002243 -> ['A.environmental_samples#328690', 'A.environmental_samples#1002248', 'A.environmental_samples#1002256']
+# ** Multiple least-bad matches. Need to find more tie-breakers.
+   B.environmental_samples#1002245 -> ['A.environmental_samples#328690', 'A.environmental_samples#1002248', 'A.environmental_samples#1002256']
+# ** Multiple least-bad matches. Need to find more tie-breakers.
+   B.environmental_samples#1002250 -> ['A.environmental_samples#328690', 'A.environmental_samples#1002248', 'A.environmental_samples#1002256']
+# ** Multiple least-bad matches. Need to find more tie-breakers.
+   B.environmental_samples#1002252 -> ['A.environmental_samples#328690', 'A.environmental_samples#1002248', 'A.environmental_samples#1002256']
+# ** Multiple least-bad matches. Need to find more tie-breakers.
+   B.environmental_samples#1002254 -> ['A.environmental_samples#328690', 'A.environmental_samples#1002248', 'A.environmental_samples#1002256']
+# ** Multiple least-bad matches. Need to find more tie-breakers.
+   B.environmental_samples#1092586 -> ['A.environmental_samples#328690', 'A.environmental_samples#1002248', 'A.environmental_samples#1002256']
 # ** Multiple least-bad matches. Need to find more tie-breakers.
    B.environmental_samples#1617257 -> ['A.environmental_samples#328690', 'A.environmental_samples#1002248', 'A.environmental_samples#1002256']
 # ** Multiple least-bad matches. Need to find more tie-breakers.
    B.environmental_samples#2665946 -> ['A.environmental_samples#328690', 'A.environmental_samples#1002248', 'A.environmental_samples#1002256']
 # ** Multiple least-bad matches. Need to find more tie-breakers.
-   B.environmental_samples#2682741 -> ['A.environmental_samples#328690', 'A.environmental_samples#1002248', 'A.environmental_samples#1002256']
-# ** Multiple least-bad matches. Need to find more tie-breakers.
    B.environmental_samples#2665948 -> ['A.environmental_samples#328690', 'A.environmental_samples#1002248', 'A.environmental_samples#1002256']
-# ** Multiple least-bad matches. Need to find more tie-breakers.
-   B.environmental_samples#2682736 -> ['A.environmental_samples#328690', 'A.environmental_samples#1002248', 'A.environmental_samples#1002256']
 # ** Multiple least-bad matches. Need to find more tie-breakers.
    B.environmental_samples#2665950 -> ['A.environmental_samples#328690', 'A.environmental_samples#1002248', 'A.environmental_samples#1002256']
 # ** Multiple least-bad matches. Need to find more tie-breakers.
    B.environmental_samples#2665952 -> ['A.environmental_samples#328690', 'A.environmental_samples#1002248', 'A.environmental_samples#1002256']
+# ** Multiple least-bad matches. Need to find more tie-breakers.
+   B.environmental_samples#2682736 -> ['A.environmental_samples#328690', 'A.environmental_samples#1002248', 'A.environmental_samples#1002256']
 # ** Multiple least-bad matches. Need to find more tie-breakers.
    B.environmental_samples#2682739 -> ['A.environmental_samples#328690', 'A.environmental_samples#1002248', 'A.environmental_samples#1002256']
 # ** Multiple least-bad matches. Need to find more tie-breakers.
-   B.environmental_samples#1617257 -> ['A.environmental_samples#328690', 'A.environmental_samples#1002248', 'A.environmental_samples#1002256']
-# ** Multiple least-bad matches. Need to find more tie-breakers.
-   B.environmental_samples#2665946 -> ['A.environmental_samples#328690', 'A.environmental_samples#1002248', 'A.environmental_samples#1002256']
-# ** Multiple least-bad matches. Need to find more tie-breakers.
    B.environmental_samples#2682741 -> ['A.environmental_samples#328690', 'A.environmental_samples#1002248', 'A.environmental_samples#1002256']
 # ** Multiple least-bad matches. Need to find more tie-breakers.
-   B.environmental_samples#2665948 -> ['A.environmental_samples#328690', 'A.environmental_samples#1002248', 'A.environmental_samples#1002256']
+   B.?baboon#9555.2 -> ['A.Papio_anubis', 'A.Papio_papio']
 # ** Multiple least-bad matches. Need to find more tie-breakers.
-   B.environmental_samples#2682736 -> ['A.environmental_samples#328690', 'A.environmental_samples#1002248', 'A.environmental_samples#1002256']
+   B.?baboon#9556.1 -> ['A.Papio_anubis', 'A.Papio_papio']
 # ** Multiple least-bad matches. Need to find more tie-breakers.
-   B.environmental_samples#2665950 -> ['A.environmental_samples#328690', 'A.environmental_samples#1002248', 'A.environmental_samples#1002256']
+   B.?baboon#9557.1 -> ['A.Papio_anubis', 'A.Papio_papio']
 # ** Multiple least-bad matches. Need to find more tie-breakers.
-   B.environmental_samples#2665952 -> ['A.environmental_samples#328690', 'A.environmental_samples#1002248', 'A.environmental_samples#1002256']
-# ** B.Marmosa_germana ∨ A.Micoureus_regina <= B.Micoureus
-# ** B.Planigale_tenuirostris ∨ A.Planigale_gilesi <= B.Planigale
-# ** B.Pseudantechinus_bilarni ∨ A.Murexchinus_melanurus <= B.Dasyuridae
-# ** B.Dasycercus_blythi ∨ A.Dasycercus_cristicauda <= B.Dasycercus
-# ** B.Artibeus_sp._BOLD:AAA2159 ∨ A.Chiroptera_sp._BOLD:AAA2159 <= B.Chiroptera
-# ** B.Artibeus_sp._BOLD:AAA2160 ∨ A.Chiroptera_sp._BOLD:AAA2160 <= B.Chiroptera
-# ** B.Artibeus_sp._BOLD:AAA2332 ∨ A.Chiroptera_sp._BOLD:AAA2332 <= B.Chiroptera
-# ** B.Myotis_cf._ater_BOLD:AAA8748 ∨ A.Chiroptera_sp._BOLD:AAA8748 <= B.Chiroptera
-# ** B.Myotis_cf._muricola_BOLD:AAA8748 ∨ A.Chiroptera_sp._BOLD:AAA8748 <= B.Chiroptera
-# ** B.Myotis_cf._muricola_BOLD:AAA8747 ∨ A.Chiroptera_sp._BOLD:AAA8747 <= B.Chiroptera
-# ** B.Myotis_occultus ∨ A.Myotis_lucifugus <= B.Myotis
-# ** B.Pipistrellus_cf._tenuis_BOLD:AAB2554 ∨ A.Chiroptera_sp._BOLD:AAB2554 <= B.Chiroptera
-# ** B.Murina_cf._cyclotis_BOLD:AAC4219 ∨ A.Chiroptera_sp._BOLD:AAC4219 <= B.Chiroptera
-# ** B.Vespertilionidae_sp._BOLD:AAH8358 ∨ A.Chiroptera_sp._BOLD:AAH8358 <= B.Chiroptera
-# ** B.Vespertilionidae_sp._BOLD:AAC0445 ∨ A.Hipposideros_bicolor_'142_KHz' <= B.Microchiroptera
-# ** B.Rhinolophus_cf._chaseni_BOLD:AAB4878 ∨ A.Chiroptera_sp._BOLD:AAB4878 <= B.Chiroptera
-# ** B.Rhinolophus_cf._pusillus_BOLD:AAB9127 ∨ A.Chiroptera_sp._BOLD:AAB9127 <= B.Chiroptera
-# ** B.Rhinolophus_sp._BOLD:AAB4878 ∨ A.Chiroptera_sp._BOLD:AAB4878 <= B.Chiroptera
-# ** B.Rhinolophidae_sp._BOLD:AAB9127 ∨ A.Chiroptera_sp._BOLD:AAB9127 <= B.Chiroptera
-# ** B.Chiroptera_sp._BOLD:AAJ3874 ∨ A.Rodentia_sp._BOLD:AAJ3874 <= B.Boreoeutheria
-# ** B.Carnivora_sp._BOLD:AAA9549 ∨ A.Didelphimorphia_sp._BOLD:AAA9549 <= B.Theria
-# ** B.Cervus_canadensis_nelsoni ∨ A.Cervus_canadensis_canadensis <= B.Cervus_canadensis
-# ** B.Tupaia_belangeri ∨ A.Tupaia_glis <= B.Tupaia
-# ** B.Lagomorpha_sp._BOLD:AAV6889 ∨ A.Carnivora_sp._BOLD:AAV6889 <= B.Boreoeutheria
-# ** B.Proechimys_sp._BOLD:AAA1748 ∨ A.Rodentia_sp._BOLD:AAA1748 <= B.Rodentia
-# ** B.Proechimys_sp._BOLD:AAA3831 ∨ A.Rodentia_sp._BOLD:AAA3831 <= B.Rodentia
-# ** B.Rodentia_sp._BOLD:AAA1667 ∨ A.Chiroptera_sp._BOLD:AAA1667 <= B.Boreoeutheria
-# ** B.Rodentia_sp._BOLD:AAA3869 ∨ A.Carnivora_sp._BOLD:AAA3869 <= B.Boreoeutheria
-# ** B.Rattus_sp._BOLD:AAB2209 ∨ A.Rodentia_sp._BOLD:AAB2209 <= B.Rodentia
-# ** B.Rattus_sp._BOLD:AAH3526 ∨ A.Rodentia_sp._BOLD:AAH3526 <= B.Rodentia
-# ** B.Rattus_sp._BOLD:AAB6757 ∨ A.Rodentia_sp._BOLD:AAB6757 <= B.Rodentia
-# ** B.Rattus_sp._BOLD:AAE2315 ∨ A.Niviventer_sp._BOLD:AAE2315 <= B.Murinae
-# ** B.Rattus_pyctoris ∨ A.Rattus_rattus <= B.Rattus
-# ** B.Hylomyscus_sp._7_VN-2012 ∨ A.Hylomyscus_sp._10_VN-2012 <= B.unclassified_Hylomyscus
-# ** B.Niviventer_sp._BOLD:AAB2209 ∨ A.Rodentia_sp._BOLD:AAB2209 <= B.Rodentia
-# ** B.Niviventer_sp._BOLD:AAA8157 ∨ A.Rodentia_sp._BOLD:AAA8157 <= B.Rodentia
-# ** B.Niviventer_cf._confucianus_BOLD:AAA2718 ∨ A.Niviventer_sp._BOLD:AAA2718 <= B.Niviventer
-# ** B.Phodopus_campbelli ∨ A.Phodopus_sungorus <= B.Phodopus
-# ** B.Microtus_cf._arvalis_BOLD:AAA5168 ∨ A.Rodentia_sp._BOLD:AAA5168 <= B.Rodentia
-# ** B.Nectomys_sp._BOLD:AAC2628 ∨ A.Rodentia_sp._BOLD:AAC2628 <= B.Rodentia
-# ** B.Nectomys_sp._BOLD:AAM5477 ∨ A.Rodentia_sp._BOLD:AAM5477 <= B.Rodentia
-# ** B.Oryzomys_sp._BOLD:AAA1671 ∨ A.Rodentia_sp._BOLD:AAA1671 <= B.Rodentia
-# ** B.Oryzomys_sp._BOLD:AAA2984 ∨ A.Rodentia_sp._BOLD:AAA2984 <= B.Rodentia
-# ** B.Microryzomys_altissimus ∨ A.Neacomys_minutus <= B.Neacomys
-# ** B.Peromyscus_sp._BOLD:AAA3869 ∨ A.Carnivora_sp._BOLD:AAA3869 <= B.Boreoeutheria
-# ** A.Planigale_tenuirostris ∨ B.Planigale_gilesi <= A.Planigale
-# ** A.Pseudantechinus_bilarni ∨ B.Murexia_melanurus <= A.Dasyuridae
-# ** A.Artibeus_sp._BOLD:AAA2159 ∨ B.Chiroptera_sp._BOLD:AAA2159 <= A.Chiroptera
-# ** A.Artibeus_sp._BOLD:AAA2160 ∨ B.Chiroptera_sp._BOLD:AAA2160 <= A.Chiroptera
-# ** A.Artibeus_sp._BOLD:AAA2332 ∨ B.Chiroptera_sp._BOLD:AAA2332 <= A.Chiroptera
-# ** A.Myotis_cf._ater_BOLD:AAA8748 ∨ B.Chiroptera_sp._BOLD:AAA8748 <= A.Chiroptera
-# ** A.Myotis_cf._muricola_BOLD:AAA8748 ∨ B.Chiroptera_sp._BOLD:AAA8748 <= A.Chiroptera
-# ** A.Myotis_cf._muricola_BOLD:AAA8747 ∨ B.Chiroptera_sp._BOLD:AAA8747 <= A.Chiroptera
-# ** A.Pipistrellus_cf._tenuis_BOLD:AAB2554 ∨ B.Chiroptera_sp._BOLD:AAB2554 <= A.Chiroptera
-# ** A.Murina_cf._cyclotis_BOLD:AAC4219 ∨ B.Chiroptera_sp._BOLD:AAC4219 <= A.Chiroptera
-# ** A.Glauconycteris_argentata ∨ B.Glauconycteris_argentata <= A.Vespertilionidae
-# ** A.Glauconycteris_variegata ∨ B.Glauconycteris_variegata <= A.Vespertilionidae
-# ** A.Vespertilionidae_sp._BOLD:AAH8358 ∨ B.Chiroptera_sp._BOLD:AAH8358 <= A.Chiroptera
-# ** A.Vespertilionidae_sp._BOLD:AAC0445 ∨ B.Hipposideros_bicolor_'142_KHz' <= A.Microchiroptera
-# ** A.Rhinolophus_sp._HHS-2009a ∨ B.Rhinolophus_sp._HHS-2009a <= A.Rhinolophus
-# ** A.Rhinolophus_cf._chaseni_BOLD:AAB4878 ∨ B.Chiroptera_sp._BOLD:AAB4878 <= A.Chiroptera
-# ** A.Rhinolophus_cf._pusillus_BOLD:AAB9127 ∨ B.Chiroptera_sp._BOLD:AAB9127 <= A.Chiroptera
-# ** A.Rhinolophus_sp._BOLD:AAB4878 ∨ B.Chiroptera_sp._BOLD:AAB4878 <= A.Chiroptera
-# ** A.Rhinolophidae_sp._BOLD:AAB9127 ∨ B.Chiroptera_sp._BOLD:AAB9127 <= A.Chiroptera
-# ** A.Chiroptera_sp._BOLD:AAJ3874 ∨ B.Rodentia_sp._BOLD:AAJ3874 <= A.Boreoeutheria
-# ** A.Carnivora_sp._BOLD:AAA9549 ∨ B.Didelphimorphia_sp._BOLD:AAA9549 <= A.Theria
-# ** A.Cervus_canadensis_nelsoni ∨ B.Cervus_canadensis_canadensis <= A.Cervus_canadensis
-# ** A.Giraffa_camelopardalis_rothschildi ∨ B.Giraffa_tippelskirchi <= A.Giraffa_camelopardalis
-# ** A.Oryx_oryxleucoryx ∨ B.Oryx_leucoryx <= A.Oryx
-# ** A.Bos_taurus_x_Bos_indicus ∨ B.Bos_indicus_x_Bos_taurus <= A.Bos_hybrids
-# ** A.Bos_taurus_x_Bos_grunniens ∨ B.Bos_grunniens_x_Bos_taurus <= A.Bos_hybrids
-# ** A.Tupaia_belangeri ∨ B.Tupaia_glis <= A.Tupaia
-# ** A.Nycticebus_intermedius ∨ B.Nycticebus_pygmaeus <= A.Nycticebus
-# ** A.Macaca_leonina ∨ B.Macaca_leonina <= A.Macaca
-# ** A.Macaca_siberu ∨ B.Macaca_siberu <= A.Macaca
-# ** A.Semnopithecus_priam ∨ B.Semnopithecus_priam <= A.Semnopithecus
-# ** A.Lagomorpha_sp._BOLD:AAV6889 ∨ B.Carnivora_sp._BOLD:AAV6889 <= A.Boreoeutheria
-# ** A.Proechimys_sp._BOLD:AAA1748 ∨ B.Rodentia_sp._BOLD:AAA1748 <= A.Rodentia
-# ** A.Proechimys_sp._BOLD:AAA3831 ∨ B.Rodentia_sp._BOLD:AAA3831 <= A.Rodentia
-# ** A.Graphiurus_kelleni ∨ B.Graphiurus_kelleni <= A.Graphiurus
-# ** A.Rattus_sp._BOLD:AAB2209 ∨ B.Rodentia_sp._BOLD:AAB2209 <= A.Rodentia
-# ** A.Rattus_sp._BOLD:AAH3526 ∨ B.Rodentia_sp._BOLD:AAH3526 <= A.Rodentia
-# ** A.Rattus_sp._BOLD:AAB6757 ∨ B.Rodentia_sp._BOLD:AAB6757 <= A.Rodentia
-# ** A.Rattus_sp._BOLD:AAE2315 ∨ B.Niviventer_sp._BOLD:AAE2315 <= A.Murinae
-# ** A.Rattus_pyctoris ∨ B.Rattus_pyctoris <= A.Rattus
-# ** A.Mastomys_hildebrandtii ∨ B.Mastomys_natalensis <= A.Mastomys
-# ** A.Hylomyscus_sp._7_VN-2012 ∨ B.Hylomyscus_sp._10_VN-2012 <= A.unclassified_Hylomyscus
-# ** A.Niviventer_bukit ∨ B.Niviventer_fulvescens <= A.Niviventer
-# ** A.Niviventer_sp._BOLD:AAB2209 ∨ B.Rodentia_sp._BOLD:AAB2209 <= A.Rodentia
-# ** A.Niviventer_sp._BOLD:AAA8157 ∨ B.Rodentia_sp._BOLD:AAA8157 <= A.Rodentia
-# ** A.Niviventer_cf._confucianus_BOLD:AAA2718 ∨ B.Niviventer_sp._BOLD:AAA2718 <= A.Niviventer
-# ** A.Phodopus_campbelli ∨ B.Phodopus_sungorus <= A.Phodopus
-# ** A.Microtus_pyrenaicus ∨ B.Microtus_gerbei <= A.Microtus
-# ** A.Microtus_cf._arvalis_BOLD:AAA5168 ∨ B.Rodentia_sp._BOLD:AAA5168 <= A.Rodentia
-# ** A.Neodon_sikimensis ∨ B.Neodon_sikimensis <= A.Arvicolinae
-# ** A.Nectomys_sp._BOLD:AAC2628 ∨ B.Rodentia_sp._BOLD:AAC2628 <= A.Rodentia
-# ** A.Nectomys_sp._BOLD:AAM5477 ∨ B.Rodentia_sp._BOLD:AAM5477 <= A.Rodentia
-# ** A.Oryzomys_sp._BOLD:AAA1671 ∨ B.Rodentia_sp._BOLD:AAA1671 <= A.Rodentia
-# ** A.Oryzomys_sp._BOLD:AAA2984 ∨ B.Rodentia_sp._BOLD:AAA2984 <= A.Rodentia
-# ** A.Peromyscus_sp._BOLD:AAA3869 ∨ B.Carnivora_sp._BOLD:AAA3869 <= A.Boreoeutheria
-# ** A.Reithrodontomys_sp._ROM116805 ∨ B.Reithrodontomys_sp._1_AVB-2011 <= A.Reithrodontomys
-# ** A.Reithrodontomys_sp._1_AVB-2011 ∨ B.Reithrodontomys_sp._1_AVB-2011 <= A.Reithrodontomys
-# ** A.Reithrodontomys_sp._2_AVB-2011 ∨ B.Reithrodontomys_sp._2_AVB-2011 <= A.Reithrodontomys
-# ** A.Rodentia_sp._BOLD:AAA1667 ∨ B.Chiroptera_sp._BOLD:AAA1667 <= A.Boreoeutheria
-# ** A.Rodentia_sp._BOLD:AAA3869 ∨ B.Carnivora_sp._BOLD:AAA3869 <= A.Boreoeutheria
+   B.?baboon#36229.1 -> ['A.Papio_anubis', 'A.Papio_papio']
+# ** Multiple least-bad matches. Need to find more tie-breakers.
+   B.?baboon#100937.1 -> ['A.Papio_anubis', 'A.Papio_papio']
+# ** Multiple least-bad matches. Need to find more tie-breakers.
+   A.environmental_samples#1002241 -> ['B.environmental_samples#328690', 'B.environmental_samples#1002248', 'B.environmental_samples#1002256', 'B.environmental_samples#2665948', 'B.environmental_samples#2682739']
+# ** Multiple least-bad matches. Need to find more tie-breakers.
+   A.environmental_samples#1002243 -> ['B.environmental_samples#328690', 'B.environmental_samples#1002248', 'B.environmental_samples#1002256', 'B.environmental_samples#2665948', 'B.environmental_samples#2682739']
+# ** Multiple least-bad matches. Need to find more tie-breakers.
+   A.environmental_samples#1002245 -> ['B.environmental_samples#328690', 'B.environmental_samples#1002248', 'B.environmental_samples#1002256', 'B.environmental_samples#2665948', 'B.environmental_samples#2682739']
+# ** Multiple least-bad matches. Need to find more tie-breakers.
+   A.environmental_samples#1002250 -> ['B.environmental_samples#328690', 'B.environmental_samples#1002248', 'B.environmental_samples#1002256', 'B.environmental_samples#2665948', 'B.environmental_samples#2682739']
+# ** Multiple least-bad matches. Need to find more tie-breakers.
+   A.environmental_samples#1002252 -> ['B.environmental_samples#328690', 'B.environmental_samples#1002248', 'B.environmental_samples#1002256', 'B.environmental_samples#2665948', 'B.environmental_samples#2682739']
+# ** Multiple least-bad matches. Need to find more tie-breakers.
+   A.environmental_samples#1002254 -> ['B.environmental_samples#328690', 'B.environmental_samples#1002248', 'B.environmental_samples#1002256', 'B.environmental_samples#2665948', 'B.environmental_samples#2682739']
+# ** Multiple least-bad matches. Need to find more tie-breakers.
+   A.environmental_samples#1092586 -> ['B.environmental_samples#328690', 'B.environmental_samples#1002248', 'B.environmental_samples#1002256', 'B.environmental_samples#2665948', 'B.environmental_samples#2682739']
+# ** Multiple least-bad matches. Need to find more tie-breakers.
+   A.?baboon#9555.10 -> ['B.Papio_anubis', 'B.Papio_papio']
+# ** Multiple least-bad matches. Need to find more tie-breakers.
+   A.?baboon#9556.5 -> ['B.Papio_anubis', 'B.Papio_papio']
+# ** Multiple least-bad matches. Need to find more tie-breakers.
+   A.?baboon#9557.4 -> ['B.Papio_anubis', 'B.Papio_papio']
+# ** Multiple least-bad matches. Need to find more tie-breakers.
+   A.?baboon#36229.5 -> ['B.Papio_anubis', 'B.Papio_papio']
+# ** Multiple least-bad matches. Need to find more tie-breakers.
+   A.?baboon#100937.7 -> ['B.Papio_anubis', 'B.Papio_papio']

@@ -1,14 +1,15 @@
-# Given two source checklists and an alignment between them,
+# Given two source checklists A and B and an alignment between them,
 # compute the merge of the two checklists in the following sense:
 
-# 1. Every node of the merge comes either from a mutual match between the 
+# 1. The set of 'merge nodes' form a forest, i.e. every merge node has a
+#    merge node as a parent, if it's not a root.
+# 2. Every node of the merge comes either from a mutual match between the 
 #    sources, or from an unmatched node in either source.
-# 2. The parent of a merge node is a merge node.
-# 3. The second checklist has priority in the sense that nodes in the first
+# 3. The second or 'B' checklist has priority in the sense that nodes in the first
 #    that conflict with the second are not included in the merge.
 
-# The merged tree is represented by the parent mapping.  The inverse
-# (children) is computed on demand.
+# The merge tree is represented by the node-to-parent mapping.  The inverse
+# of this mapping (children) is computed on demand.
 
 import checklist as cl
 import relation as rel
@@ -18,69 +19,72 @@ def merge_checklists(A, B, al, xmrcas):
   roots = []
   def half_compute_parents(check, inject, al):
     def process(node):
+      for child in cl.get_children(node):
+        process(child)
       merged = inject(node, al)
       if not merged in parents:
-        p = merged_parent(merged, inject, al, xmrcas)
+        p = merged_parent(merged, al)
         if p:
           parents[merged] = p     # Otherwise it's a root
         else:
           if not merged in roots:
             roots.append(merged)
-      for child in cl.get_children(node):
-        process(child)
     for root in cl.get_roots(check):
       process(root)
   half_compute_parents(A, inject_A, al)
   half_compute_parents(B, inject_B, al)
   return (parents, roots)
 
-def merged_parent(merged, inject, al, xmrcas):
+# A is low priority
+
+def merged_parent(merged, al):
   (x, y) = merged    # False if node is inconsistent
-  if x:
-    u = consistent_parent(x, al)
-  else:
-    u = None
-  if y:
-    v = cl.get_parent(y)
-  else:
-    v = None
-  if not u:
-    if not v:
-      # node is a root in both checklists.  no merged parent
-      return None
-    # node is only a root in high priority checklist
-    return inject_B(v, al)
-  elif not v:
-    # node is only a root in low priority checklist
-    return inject_A(u, al)
-  else:
-    over = xmrcas.get(u)
-    if over and cl.mrca(over, v) == v:
-      # parent is in low priority checklist - "insertion"
-      return inject_A(u, al)
-  return inject_B(v, al)
 
-# Skip ancestors that are inconsistent with high priority checklist
+  if x and y:                   # x ≈ y
+    assert al[x].cod == y
+    p = cl.get_parent(x)
+    q = cl.get_parent(y)
+    ar = get_consistent_articulation(p, al)
+    if ar:
+      if cl.how_related(ar.cod, q) == rel.lt:
+        return inject_A(ar.dom, al)
+      else:
+        return inject_B(q, al)
+    else:
+      return inject_A(p, al)
 
-def consistent_parent(x, al):
-  u = cl.get_parent(x)
-  u_art = al.get(u)
-  if not u_art:
-    return u
-  elif not rel.is_variant(u_art.relation, rel.conflict):
-    return u
+  elif x:
+    ar = get_consistent_articulation(x, al)
+    if ar:
+      q = ar.cod
+      return inject_B(q, al)
+    else:
+      return inject_A(cl.get_parent(x), al)
+
+  elif y:
+    return inject_B(cl.get_parent(y), al)
+
   else:
-    # u conflicts with checklist B.  Continue up lineage
-    return consistent_parent(u, al)
+    assert False
+
+# Scan up through lineage to find non-conflict articulation
+
+def get_consistent_articulation(node, al):
+  ar = al.get(node)
+  while ar and rel.is_variant(ar.relation, rel.conflict):
+    node = cl.get_parent(node)
+    ar = al.get(node)
+  return ar
 
 # Inject node in low priority checklist into merged checklist
 
 def inject_A(node, al):
+  if node == cl.forest_tnu: return None
   m1 = al.get(node)
   if m1:
-    if rel.is_variant(m1.relation, rel.eq):
+    if is_eq(m1.relation):
       m2 = al.get(m1.cod)
-      if m2 and rel.is_variant(m2.relation, rel.eq):
+      if m2 and is_eq(m2.relation):
         if m2.cod == node:
           return (node, m1.cod)
   return (node, None)
@@ -88,11 +92,15 @@ def inject_A(node, al):
 # Inject node in high priority checklist into merged checklist
 
 def inject_B(node, al):
+  if node == cl.forest_tnu: return None
   m1 = al.get(node)
   if m1:
-    if rel.is_variant(m1.relation, rel.eq):
+    if is_eq(m1.relation):
       m2 = al.get(m1.cod)
-      if m2 and rel.is_variant(m2.relation, rel.eq):
+      if m2 and is_eq(m2.relation):
         if m2.cod == node:
           return (m1.cod, node)
   return (None, node)
+
+def is_eq(re):
+  return rel.is_variant(re, rel.eq)  # == rel.intensional

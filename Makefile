@@ -1,7 +1,8 @@
 WORK=work
 
 SOURCES=src/report.py src/alignment.py src/articulation.py src/relation.py \
-        src/checklist.py src/diff.py src/merge.py src/report.py src/eulerx.py
+        src/checklist.py src/diff.py src/merge.py src/report.py src/eulerx.py \
+	src/intension.py
 
 all: $(WORK)/primates-ncbi-2015-2020.csv 
 

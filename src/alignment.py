@@ -17,7 +17,8 @@ from intension import choose_best_match
 # articulation).
 
 def align(B, A):
-  particles = intension.find_particles(B, A)
+  particles = find_particles(B, A)
+  particles = fix_alignment(particles)
 
   cross_mrcas = analyze_cross_mrcas(B, A, particles)
   print ("# Number of cross-mrcas:", len(cross_mrcas))
@@ -30,14 +31,14 @@ def align(B, A):
 def finish_alignment(B, A, particles, xmrcas):
   global cross_mrcas
   cross_mrcas = xmrcas
-  alignment = {}
+  draft = {}
   def half_finish(B, A):
     def process(node):
       m = articulate(node, A, particles, xmrcas)
       if m:
         if not EOL:
           assert cl.is_accepted(m.cod)
-        alignment[node] = m
+        draft[node] = m
       else:
         # Otherwise, what?
         pass
@@ -47,125 +48,135 @@ def finish_alignment(B, A, particles, xmrcas):
       process(root)
   half_finish(B, A)
   half_finish(A, B)
-  fix_alignment(alignment)
+  return draft
+
+# Deal with splits and merges.
+
+def fix_alignment(draft):
+  alignment = {}
+
+  # Suppose `node` x comes from the A checklist, and there is a split
+  # such that x matches multiple nodes y1, y2 in the B checklist.
+
+  # For each A-node x, find all B-nodes y, ... that are contending to
+  # be equivalent to x.
+
+  incoming = {}
+  for node in draft:    # y node
+    ar = draft[node]     # ar : y -> x
+    if ar.cod in incoming:
+      incoming[ar.cod].append(ar) # x -> (y->x, y2->x)
+    else:
+      incoming[ar.cod] = [ar]     # x -> (y->x)
+
+  # Modify the relation for all approximate-match nodes.
+
+  for node in incoming:          # y node
+    # e.g. inc = {a ≈ node, b ≈ node}
+    inc = incoming[node]    # articulations whose cod is node
+    # mut: node ≈ a
+    mut = draft.get(node)   # mut : node -> mutual
+    sibs = []
+    if mut:
+      rent = cl.get_parent(mut.cod)    # parent of a
+      for ar in inc:    # ar: a ≈ node
+        if (rel.is_variant(ar.relation, rel.eq) and
+            # parent of b is same as parent of a?
+            cl.get_parent(ar.dom) == rent):
+          sibs.append(ar)
+    for ar in inc:
+      target = ar.dom
+      if ar in sibs:
+        if len(sibs) == 1:
+          alignment[target] = art.set_relation(ar, rel.eq)
+        else:
+          alignment[target] = art.change_relation(ar, rel.merge, "merge", "split")
+    if len(sibs) > 1:
+      # alignment[node] = art.change_relation(ar, rel.split, "split", "merge")
+      # Report!
+      print("# Split/join %s -> %s -> %s" %
+            (" ∨ ".join(map(lambda e:cl.get_unique(e.dom), sibs)),
+             cl.get_unique(node),
+             cl.get_unique(rent)))
+      
   return alignment
-
-# This is a kludge.
-
-def fix_alignment(alignment):
-  errants = []
-  for node in alignment:
-    m1 = alignment[node]
-    if m1.relation == rel.eq:
-      m2 = alignment.get(m1.cod)
-      if (m2 == None or \
-          m2.relation != rel.eq or \
-          m2.cod != node):
-        errants.append((m1, m2))
-  for (m1, m2) in errants:
-    node = m1.dom
-    if m2 == None:
-      ar = art.change_relation(m1, rel.lt, "foo?")
-      alignment[node] = ar
-      alignment[m1.cod] = art.reverse(ar)
-    elif m2.relation != rel.eq:
-      alignment[node] = art.change_relation(m1, rel.reverse(m2.relation), "reverse")
-    else:    # m2.cod != node
-      ca = cl.mrca(m2.cod, node)
-      if ca == node:
-        alignment[node] = art.change_relation(m1, rel.lt, "chain")
-      elif ca == m2.cod:
-        alignment[node] = art.change_relation(m1, rel.gt, "chain")
-      else:
-        # Split?  What to do?
-        # e.g. ** B.Callosciurus_caniceps ∨ A.Petaurista_caniceps = B.Sciuridae
-        print("# ** %s ∨ %s <= %s" %
-              (cl.get_unique(node), cl.get_unique(m1.cod), cl.get_unique(ca)),
-              file=dribble.dribble_file)
-  return None
-
-def is_mutual(m1, al):
-  m2 = al[m1.cod]
-  return m2 and art.inverses(m1, m2)
 
 # ---------- One-sided best match
 
 def articulate(node, other, particles, xmrcas):     # B-node to A
+  matches = filtered_matches(node, other, particles, xmrcas)
+
+  # This is awkward
+  if len(matches) == 0:
+    return None
+  elif len(matches) == 1:
+    match = matches[0]
+    rematches = filtered_matches(match.cod, cl.get_checklist(node), particles, xmrcas)
+    if len(rematches) == 0:
+      print("** Shouldn't happen: %s" % cl.get_unique(node))
+      return None
+    elif len(rematches) == 1:
+      if rel.is_variant(match.relation, rel.eq):
+        return art.set_relation(match, rel.eq)
+      else:
+        return match
+    else:
+      print("** Rehelp: %s -> %s" %
+            (cl.get_unique(match.cod),
+             (", ".join(map(lambda ar:cl.get_unique(ar.cod), rematches)))))
+      return match
+  else:
+    print("** Help: %s -> %s" %
+          (cl.get_unique(node),
+             (", ".join(map(lambda ar:cl.get_unique(ar.cod), matches)))))
+    return matches[0]
+
+def filtered_matches(node, other, particles, xmrcas):
   assert node > 0
   assert cl.is_accepted(node)
   assert other
   assert cl.get_checklist(node) != other
 
-  if debug:
-    print("# matching B-node", cl.get_unique(node))
-  exties = extensional_matches(node, particles, other)    #monotypic chain
+  exties = extensional_matches(node, particles, other)    #monotypic chain (lineage)
 
-  if len(exties) == 1:
-    match = exties[0]
+  if len(exties) <= 1:
+    return exties
   else:
-    # Filter out intensionals that aren't extensional (or v.v.)
     namies = intension.intensional_matches(node, other)
+    # Nodes we match to intensionally
     targets = [namie.cod for namie in namies]
-    #         [extie.cod for extie in exties]
-    #bothies = [match for match in namies if match.cod in targets]
     bothies = [match for match in exties if match.cod in targets]
-
     if len(bothies) > 0:
-      match = choose_best_match(bothies)
-    elif len(exties) > 0:
-      if debug: print("# %s exties to %s" % (len(exties), cl.get_unique(node)))
-      match = choose_best_match(exties)
+      return intension.skim_best_matches(bothies)
     else:
-      # should not happen
-      if debug: print("# no extie")
-      match = choose_best_match(namies)
-
-  return match
+      # print("# no extensional + intensional match for %s" % cl.get_unique(node))
+      return exties
 
 # ---------- EXTENSIONALITY / by split
 
 # Starting with one match, extend to a set of matches by adding
 # 'monotypic' ancestors
 
-def extensional_matches(tnu, particles, other):       # B-node to A
-  assert cl.get_checklist(tnu) != other
-
-  match = extensional_match(tnu, particles, other)    # Single B/A extensional match
+def extensional_matches(node, particles, other):       # B-node to A
+  assert cl.get_checklist(node) != other
+  match = extensional_match(node, particles, other)    # Single B/A extensional match
   if not match:
     return []
   matches = [match]
-  if debug: print("# %s has initial extensional match %s" %
-                  (cl.get_unique(tnu), cl.get_unique(match.cod)))
   if rel.is_variant(match.relation, rel.eq):
 
-    here = cl.get_checklist(tnu)
+    here = cl.get_checklist(node)
     anchor = cross_mrca(match.cod)
 
     # Scan upwards from match.code looking for nodes that return back to anchor
-    scan = match.cod    # tnu -> partner
-    if debug: print("# scanning up from %s for returns to %s" %
-                    (cl.get_unique(scan), cl.get_unique(anchor)))
-
+    scan = match.cod    # node -> partner
     while True:
       scan = cl.get_parent(scan)    # in other
-      if scan == None:
-        print("# bailing out, no parent %s" % cl.get_unique(tnu))
-        break
-      if scan == cl.forest_tnu:
-        print("# bailing out, %s --> forest" % cl.get_unique(tnu))
-        break
-      if debug:
-        print("# considering %s" % cl.get_unique(scan))
+      if scan == cl.forest_tnu: break
       back = cross_mrca(scan)
       if back != anchor:
-        if debug: print("# goes back to %s not %s, breaking out" %
-                        (cl.get_unique(back), cl.get_unique(anchor)))
         break
-      if debug: print("# adding return match %s" %
-                      (cl.get_unique(scan)))
-      matches.append(art.monotypic(tnu, scan, rel.eq))
-    if debug: print("# %s matches %s nodes extensionally" %
-                    (cl.get_unique(tnu), len(matches)))
+      matches.append(art.monotypic(node, scan, rel.eq))
   return matches
 
 # Guaranteed invertible, except for monotypic node chains
@@ -182,13 +193,16 @@ def extensional_match(node, particles, other):
   back = cross_mrca(partner)    # 'bounce'
   if not back:
     return None    # Not sure how this can happen but it does (NCBI vs. GBIF)
-  how = cl.how_related(node, back)
+  how = cl.how_related(back, node)    # Alway rcc5
   # assert how != rel.disjoint - oddly, not always true
-  reason = "particle set " + how.name
+  reason = "cross-mrca " + how.name
   if how == rel.eq:
+    # Should end up being eq iff name match or unique match
+    # Can test for unique match by looking at xmrca of parent
+
     # Could be part of a 'monotypic' chain; fix later
-    re = how
-  elif how != rel.lt:
+    re = rel.extensional
+  elif how != rel.gt:
     re = how
   else:               # must be rel.lt
     # Assume resolution (node < partner) until conflict is proven
@@ -235,15 +249,15 @@ def cross_compare(node, conode):
   back = cross_mrca(conode)
   if back == None:
     return (None, None)
-  re = cl.how_related(node, back)
-  assert re != rel.conflict
-  if re == rel.eq:
+  how = cl.how_related(back, node)
+  assert how != rel.conflict
+  if how == rel.eq:
     return (conode, None)
-  elif re == rel.gt:
+  elif how == rel.lt:
     return (conode, None)
-  elif re == rel.disjoint:
+  elif how == rel.disjoint:
     return (None, conode)
-  assert re == rel.lt
+  assert how == rel.gt
   x_seen = None
   y_seen = None
   for child in cl.get_children(conode):
@@ -315,9 +329,67 @@ def analyze_cross_mrcas(A, B, particles):
 
 # Returns an accepted/accepted articulation
 
-def cross_mrca(tnu):
+def cross_mrca(node):
   global cross_mrcas
-  assert tnu > 0
+  assert node > 0
   if not EOL:
-    assert cl.is_accepted(tnu)
-  return cross_mrcas.get(tnu)
+    assert cl.is_accepted(node)
+  return cross_mrcas.get(node)
+
+# ---------- Particles
+
+# A particle is mutual =-articulation of accepted nodes deriving from
+# sameness of 'intrinsic' node properties: name, id, rank, parent,
+# etc.
+
+# This function returns a partial map from nodes to articulations.
+
+def find_particles(here, other):
+  intension.clear_cache()
+  particles = {}
+  count = [0]
+  best = intension.best_intensional_matches(here, other)
+  def log(node, message):
+    if count[0] < 0:
+      if debug:
+       print("# fp(%s): %s" % (cl.get_unique(node), message))
+      count[0] += 1
+  def subanalyze(node, other):
+    log(node, "subanalyze")
+    if not cl.is_accepted(node):
+      print("# ** Child %s of %s has an accepted name" %
+            (cl.get_unique(node), cl.get_unique(cl.get_parent(node))))
+      return False
+    found_match = False
+    for inf in cl.get_children(node):
+      log(node, "child %s" % inf)
+      if subanalyze(inf, other):
+        found_match = True
+    if found_match:    # Some descendant is a particle
+      return True
+    candidate = best.get(node)
+    if candidate:
+      rematch = best.get(candidate.cod)
+      if rematch:
+        if rematch.cod == node:
+          if not EOL and not cl.is_accepted(candidate.cod):
+            print("# ** Candidate is synonymlike: %s" % cl.get_unique(candidate.cod))
+          particles[node] = candidate    # here -> other
+          particles[candidate.cod] = art.reverse(candidate)  # other -> here
+          return True
+        else:
+          # This situation probably reflects a split!
+          log(node,
+              "Round trip fail:\n  %s\n  %s\n" %
+              (art.express(candidate),
+               art.express(art.reverse(rematch))))
+      else:
+        log(node, "No rematch")
+    return False
+  log(0, "top")
+  for root in cl.get_roots(here):
+    log(root, "root")
+    subanalyze(root, other)
+  print ("# Number of particles:", len(particles)>>1)
+  return particles
+

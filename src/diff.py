@@ -39,13 +39,12 @@ def differences(uid1, uid2, props = None):  # mask
       v1 = cl.get_value(uid1, prop)
       v2 = cl.get_value(uid2, prop)
       if v1 != v2:
-        if v1 != None:
-          if v2 != None:
-            change |= 1 << prop.specificity
-          else:
-            drop |= 1 << prop.specificity
-        elif v2 != None:
+        if v1 == None:
           add |= 1 << prop.specificity
+        elif v2 == None:
+          drop |= 1 << prop.specificity
+        else:
+          change |= 1 << prop.specificity
   if len(cl.get_children(uid1)) != len(cl.get_children(uid2)):
     change |= 1 << number_of_children.specificity
   # TBD: compare parents ??
@@ -66,9 +65,7 @@ def unpack(comparison):
     props = []
     for prop in property.properties_by_specificity:
       spec = prop.specificity
-      (drop, change, add) = comparison
+      (_, change, _) = comparison
       if (change & (1 << spec)) != 0:
         props.append(prop)
-      #if ((drop | add) & (1 << spec)) != 0:
-      #  props.append(prop)
     return props

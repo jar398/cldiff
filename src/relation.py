@@ -16,7 +16,11 @@ for (ba, ab, name, revname) in \
     [(0,   0,   '!',  '!'),
      (0.5, 0.5, '><', '><'),
      (1,   0.5, '<',  '>'),
-     (1,   1,   '=',  '=')]:
+     (1,   0.5, 'merge', 'split'),
+     (1,   1,   '=',  '='),
+     (1,   1,   '≈',  '≈'),     # intensional (by name, id)
+     (1,   1,   'particle set =',  'particle set ='), # extensional (by particle set)
+     (0.7, 0.7, 'xmrca', 'acrmx')]:    # by cross-mrca
   re  = Relation(ba, ab, name, revname)
   relations_by_params[(ba, ab)] = re
   relations_by_name[name] = re
@@ -35,9 +39,14 @@ conflict    = relations_by_name['><']
 lt          = relations_by_name['<']
 gt          = relations_by_name['>']
 eq          = relations_by_name['=']
+intensional = relations_by_name['≈']
+cross_mrca  = relations_by_name['xmrca']
+extensional = relations_by_name['particle set =']
+merge       = relations_by_name['merge']
 
 def is_variant(re, other):
-  return re == other
+  return (re.b_given_a == other.b_given_a and
+          re.a_given_b == other.a_given_b)
 
 # Reverse relation
 

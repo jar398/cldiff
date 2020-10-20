@@ -1,6 +1,7 @@
 # Articulations must support:
-#   The basics: source and destination taxa, and an RCC-5 (or similar) relation
-#   A comment explaining the reason the articulation might be true
+#   The basics: source and destination taxa (nodes), and an RCC-5 (or similar) 
+#     relation between them
+#   An explanation for why the articulation might be true
 #   Reversal
 #   Composition
 #   Disjunction ??
@@ -13,11 +14,16 @@ import diff
 
 # Articulations
 
+# reason and factors are mutually exclusive.  reason is only for
+# non-composed articulations.
+
 Articulation = \
   collections.namedtuple('Articulation',
-                         ['dom', 'cod', 'relation', 'factors', 'reason', 'diff'])
+                         ['dom', 'cod', 'relation', 'factors',
+                          'reason', 'revreason', 'diff'])
 
-def _articulation(dom, cod, re, reason = None, factors = None):
+def _articulation(dom, cod, re,
+                  reason = None, revreason = None, factors = None):
   assert dom > 0
   assert cod > 0
   assert re
@@ -25,7 +31,7 @@ def _articulation(dom, cod, re, reason = None, factors = None):
   dif = diff.all_diffs
   if cl.is_accepted(dom) and cl.is_accepted(cod):
     dif = diff.differences(dom, cod)
-  ar = Articulation(dom, cod, re, factors, reason, dif)
+  ar = Articulation(dom, cod, re, factors, reason, revreason, dif)
   return ar
 
 def express(ar):
@@ -43,7 +49,6 @@ def compose(p, q):
   return _articulation(p.dom,
                        q.cod,
                        rel.compose(p.relation, q.relation),
-                       reason = None,
                        factors = (p.factors or [p]) + (q.factors or [q]))
 
 def reason(p):
@@ -77,7 +82,8 @@ def reverse(ar):
   else:
     f = None
   return _articulation(ar.cod, ar.dom, rel.reverse(ar.relation),
-                       reason = reason(ar),
+                       reason = ar.reason,
+                       revreason = ar.revreason,
                        factors = f)
 
 def is_identity(ar):
@@ -90,11 +96,12 @@ def inverses(ar1, ar2):
 
 # Foo.  Phase out
 
-def change_relation(ar, rel, note):
-  return _articulation(ar.dom, ar.cod, rel, 
-                       # This doesn't work if ar is composed
-                       reason = (ar.reason or "none") + " (%s)" % note,
-                       factors = ar.factors)
+def set_relation(ar, re):      # re = rel.eq
+  return _articulation(ar.dom, ar.cod, re, ar.reason, ar.revreason)
+
+def change_relation(ar, re, reason, revreason):  # re = rel.gt
+  return compose(set_relation(ar, re),
+                 _articulation(ar.cod, ar.cod, rel.eq, reason, revreason))
 
 # ---------- Synonymy relationship within one tree
 
@@ -111,12 +118,10 @@ def synonymy(synonym, accepted):
 # I don't understand this
 
 def synonym_relation(nom_status):
-  if nom_status == None:
-    return rel.eq
   re = synonym_relations.get(nom_status)
   if re: return re
   print("Unrecognized nomenclatural status: %s" % nom_status)
-  return rel.reverse(rel.eq)    # foo
+  return rel.intensional
 
 # These relations go from synonym to accepted (the "has x" form)
 # TBD: Put these back into the articulation somehow
@@ -125,11 +130,11 @@ synonym_relations = {}
 
 def declare_synonym_relations():
 
-  def b(nstatus, rcc5 = rel.eq, name = None, revname = None, relation = rel.eq):
+  def b(nstatus, relation = rel.intensional, name = None, revname = None):
     if False:
       if name == None: name = "has-" + nstatus.replace(" ", "-")
       if revname == None: revname = nstatus.replace(" ", "-") + "-of"
-    re = rel.reverse(rcc5)
+    re = rel.reverse(relation)
     synonym_relations[nstatus] = re
     return re
 
@@ -161,22 +166,25 @@ def declare_synonym_relations():
   b("genbank common name")    # at most one per node
   b("common name")
 
-  b("includes", rcc5=rel.gt, name="part-of", revname="included-in")
-  b("in-part",  rcc5=rel.lt, name="included-in", revname="part-of")  # part of a polyphyly
-  b("proparte synonym", rcc5=rel.lt)
+  b("includes", relation=rel.gt, name="part-of", revname="included-in")
+  b("in-part",  relation=rel.lt, name="included-in", revname="part-of")  # part of a polyphyly
+  b("proparte synonym", relation=rel.lt)
 
 declare_synonym_relations()
 
 # ---------- Different kinds of articulation
+
+def intensional(dom, cod, how):
+  return bridge(dom, cod, rel.intensional, how)
+
+def cross_mrca(dom, cod):
+  return bridge(dom, cod, rel.cross_mrca, "cross-mrca")
 
 def extensional(dom, cod, re, reason):
   return bridge(dom, cod, re, reason)
 
 def monotypic(dom, cod, re):
   return bridge(dom, cod, re, "monotypic")
-
-def intensional(dom, cod, how):
-  return bridge(dom, cod, rel.eq, how)
 
 def bridge(dom, cod, re, reason):
   assert cl.get_checklist(dom) != cl.get_checklist(cod)

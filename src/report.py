@@ -53,24 +53,36 @@ def report(A, B, al, roots, parents, outfile):
   writer.writerow(["indent", "operation", "dom", "dom id", "relation", "cod id", "cod", "unchanged", "changed_props", "reason", "rank"])
   children = cl.invert_dict(parents)
   all_props = set.intersection(set(A.properties), set(B.properties))
-  changed = find_changed_merged_subtrees(roots, children, all_props)
+  changed = find_changed_subtrees(roots, children, all_props)
   def process(mnode, indent):
+
+    ch = None
+    status = changed.get(mnode)
+
     (x, y) = mnode
     childs = children.get(mnode, [])
     re = None
-    d = None
+    dif = None
     reason = None
     if x and y:
-      re = "="
       op = "SHARED"
-      px = cl.get_parent(x)
-      if px and al[px].cod != cl.get_parent(y):
-        op = op + (" (moved from %s)" % cl.get_node_id(px))
+      re = al.get(x).relation.name  # ~ ≈ or =
       comparison = diff.differences(x, y, all_props)
       if not diff.same(comparison):
         props = diff.unpack(comparison)
-        d = ("; ".join(map(lambda x:x.pet_name, props)))
+        dif = ("; ".join(map(lambda x:x.pet_name, props)))
+      px = cl.get_parent(x)
+      qx = al.get(px)
+      if qx and qx.cod != cl.get_parent(y):
+        op += (" (moved from %s)" % cl.get_node_id(px))
       reason = art.reason(al[x])
+
+      if not status:
+        if len(childs) > 0:
+          ch = "subtree="
+        else:
+          ch = "tip"
+
     elif x:
       op = "A ONLY"
       ar = al.get(x)
@@ -100,12 +112,7 @@ def report(A, B, al, roots, parents, outfile):
         elif rel.is_variant(ar.relation, rel.lt):
           op += " (increased resolution)"
 
-    status = changed.get(mnode)
-    ch = None
-    if not status and len(childs) > 0:
-      ch = "subtree="
-
-    report_one_articulation(op, ch, d, x, re, y, reason, writer, indent)
+    report_one_articulation(op, ch, dif, x, re, y, reason, writer, indent)
     jndent = indent + "__"
     if status:
       for child in childs:
@@ -113,7 +120,7 @@ def report(A, B, al, roots, parents, outfile):
   for root in roots:
     process(root, "")
 
-def report_one_articulation(op, ch, d, x, re, y, reason, writer, indent):
+def report_one_articulation(op, ch, dif, x, re, y, reason, writer, indent):
   ux = None
   ix = None
   uy = None
@@ -128,7 +135,7 @@ def report_one_articulation(op, ch, d, x, re, y, reason, writer, indent):
     rank = cl.get_nominal_rank(y)
   writer.writerow([indent, op,
                    ux, ix, re,
-                   iy, uy, ch, d, reason, rank])
+                   iy, uy, ch, dif, reason, rank])
 
 # --------------------
 # utilities
@@ -136,7 +143,7 @@ def report_one_articulation(op, ch, d, x, re, y, reason, writer, indent):
 # Returns table with True for merged nodes all of whose descendants are
 # unchanged
 
-def find_changed_merged_subtrees(roots, children, all_props):
+def find_changed_subtrees(roots, children, all_props):
   status = {}
   def process(node):
     node_changed = False
