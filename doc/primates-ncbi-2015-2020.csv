@@ -224,7 +224,7 @@ ______________,SHARED (moved from 9481),N15.Callithrix_humeralifera,52232,=,5223
 ______________,SHARED (moved from 9481),N15.Callithrix_mauesi,57377,=,57377,N20.Mico_mauesi,tip,canonicalName,,species
 ______________,SHARED (moved from 9481),N15.Callithrix_cf._emiliae,198701,=,198701,N20.Mico_cf._emiliae,tip,canonicalName,,species
 ______________,SHARED (moved from 9481),N15.Callithrix_saterei,198702,=,198702,N20.Mico_saterei,tip,canonicalName,,species
-______________,SHARED (moved from 9481),N15.Callithrix_melanura,1090896,=,1090896,N20.Mico_melanurus,tip,canonicalName; scientificName,ncbi_id,species
+______________,SHARED (moved from 9481),N15.Callithrix_melanura,1090896,=,1090896,N20.Mico_melanurus,tip,canonicalName; scientificName,,species
 ______________,SHARED (moved from 9481),N15.Callithrix_rondoni,1127763,=,1127763,N20.Mico_rondoni,tip,canonicalName,,species
 ______________,B ONLY (increased resolution),N15.Callithrix_argentata_argentata,867362,>,9482,N20.Mico_argentatus,,,cross-mrca <,species
 ______________,B ONLY,,,,1758231,N20.Mico_chrysoleucus,,,,species
@@ -235,11 +235,11 @@ ______________,B ONLY,,,,2592808,N20.Mico_munduruku,,,,species
 ____________,B ONLY (increased resolution),N15.Saguinus,9486,>,2681187,N20.Leontocebus,,,N15.Saguinus_inustus is not in the A taxon,genus
 ______________,SHARED (moved from 9486),N15.Saguinus_fuscicollis,9487,=,9487,N20.Leontocebus_fuscicollis,,canonicalName,cross-mrca =,species
 ________________,SHARED,N15.Saguinus_fuscicollis_fuscicollis,48018,=,48018,N20.Leontocebus_fuscicollis_fuscicollis,tip,canonicalName,ncbi_id,subspecies
-________________,SHARED,N15.Saguinus_fuscicollis_weddelli,343424,=,343424,N20.Leontocebus_fuscicollis_weddelli,tip,canonicalName,ncbi_id,subspecies
-________________,SHARED,N15.Saguinus_fuscicollis_leucogenys,881946,=,881946,N20.Leontocebus_fuscicollis_leucogenys,tip,canonicalName; scientificName,ncbi_id,subspecies
-________________,SHARED,N15.Saguinus_fuscicollis_illigeri,881947,=,881947,N20.Leontocebus_fuscicollis_illigeri,tip,canonicalName; scientificName,ncbi_id,subspecies
-________________,SHARED,N15.Saguinus_fuscicollis_nigrifrons,881949,=,881949,N20.Leontocebus_fuscicollis_nigrifrons,tip,canonicalName; scientificName,ncbi_id,subspecies
-________________,SHARED,N15.Saguinus_fuscicollis_lagonotus,881950,=,881950,N20.Leontocebus_fuscicollis_lagonotus,tip,canonicalName; scientificName,ncbi_id,subspecies
+________________,SHARED,N15.Saguinus_fuscicollis_weddelli,343424,=,343424,N20.Leontocebus_fuscicollis_weddelli,tip,canonicalName,,subspecies
+________________,SHARED,N15.Saguinus_fuscicollis_leucogenys,881946,=,881946,N20.Leontocebus_fuscicollis_leucogenys,tip,canonicalName; scientificName,,subspecies
+________________,SHARED,N15.Saguinus_fuscicollis_illigeri,881947,=,881947,N20.Leontocebus_fuscicollis_illigeri,tip,canonicalName; scientificName,,subspecies
+________________,SHARED,N15.Saguinus_fuscicollis_nigrifrons,881949,=,881949,N20.Leontocebus_fuscicollis_nigrifrons,tip,canonicalName; scientificName,,subspecies
+________________,SHARED,N15.Saguinus_fuscicollis_lagonotus,881950,=,881950,N20.Leontocebus_fuscicollis_lagonotus,tip,canonicalName; scientificName,,subspecies
 ______________,SHARED (moved from 9486),N15.Saguinus_tripartitus,122388,=,122388,N20.Leontocebus_tripartitus,tip,canonicalName,ncbi_id,species
 ______________,SHARED (moved from 9486),N15.Saguinus_cruzlimai,1618156,=,1618156,N20.Leontocebus_cruzlimai,tip,canonicalName,,species
 ______________,B ONLY (increased resolution),N15.Saguinus_nigricollis_nigricollis,873070,>,9489,N20.Leontocebus_nigricollis,,,cross-mrca <,species
@@ -323,11 +323,11 @@ ________________,SHARED (moved from 9522),N15.Callicebus_sp._MAS-2011,1090915,=,
 ________________,B ONLY,,,,1861704,N20.Callicebus_sp._1_MH-2016,,,,species
 ________________,B ONLY,,,,1861705,N20.Callicebus_sp._2_MH-2016,,,,species
 ____________,B ONLY (increased resolution),N15.Callicebus,9522,>,1812035,N20.Plecturocebus,,,N15.Callicebus_purinus is not in the A taxon,genus
-______________,SHARED (moved from 9522),N15.Callicebus_moloch,9523,=,9523,N20.Plecturocebus_moloch,tip,canonicalName,ncbi_id,species
-______________,SHARED (moved from 9522),N15.Callicebus_hoffmannsi,78255,=,78255,N20.Plecturocebus_hoffmannsi,tip,canonicalName,ncbi_id,species
-______________,SHARED (moved from 9522),N15.Callicebus_cupreus,202457,=,202457,N20.Plecturocebus_cupreus,tip,canonicalName,ncbi_id,species
+______________,SHARED (moved from 9522),N15.Callicebus_moloch,9523,=,9523,N20.Plecturocebus_moloch,tip,canonicalName,,species
+______________,SHARED (moved from 9522),N15.Callicebus_hoffmannsi,78255,=,78255,N20.Plecturocebus_hoffmannsi,tip,canonicalName,,species
+______________,SHARED (moved from 9522),N15.Callicebus_cupreus,202457,=,202457,N20.Plecturocebus_cupreus,tip,canonicalName,,species
 ______________,SHARED (moved from 9522),N15.Callicebus_brunneus,221704,=,1812042,N20.Plecturocebus_brunneus,tip,ncbi_id; canonicalName,,species
-______________,SHARED (moved from 9522),N15.Callicebus_caligatus,867332,=,867332,N20.Plecturocebus_caligatus,tip,canonicalName,ncbi_id,species
+______________,SHARED (moved from 9522),N15.Callicebus_caligatus,867332,=,867332,N20.Plecturocebus_caligatus,tip,canonicalName,,species
 ______________,B ONLY (increased resolution),N15.Callicebus_donacophilus_donacophilus,285954,>,230833,N20.Plecturocebus_donacophilus,,,cross-mrca <,species
 ______________,B ONLY,,,,1812036,N20.Plecturocebus_bernhardi,,,,species
 ______________,B ONLY,,,,1812037,N20.Plecturocebus_cinerascens,,,,species
@@ -335,9 +335,9 @@ ______________,B ONLY,,,,1812038,N20.Plecturocebus_miltoni,,,,species
 ______________,B ONLY,,,,2487713,N20.Plecturocebus_vieirai,,,,species
 ______________,B ONLY,,,,2488670,N20.Plecturocebus_grovesi,,,,species
 ____________,B ONLY (increased resolution),N15.Callicebus,9522,>,1812102,N20.Cheracebus,,,N15.Callicebus_sp._MAS-2011 is not in the A taxon,genus
-______________,SHARED (moved from 9522),N15.Callicebus_torquatus,30592,=,30592,N20.Cheracebus_torquatus,tip,canonicalName,ncbi_id,species
-______________,SHARED (moved from 9522),N15.Callicebus_lugens,210166,=,210166,N20.Cheracebus_lugens,tip,canonicalName,ncbi_id,species
-______________,SHARED (moved from 9522),N15.Callicebus_purinus,1560619,=,1560619,N20.Cheracebus_purinus,tip,canonicalName,ncbi_id,species
+______________,SHARED (moved from 9522),N15.Callicebus_torquatus,30592,=,30592,N20.Cheracebus_torquatus,tip,canonicalName,,species
+______________,SHARED (moved from 9522),N15.Callicebus_lugens,210166,=,210166,N20.Cheracebus_lugens,tip,canonicalName,,species
+______________,SHARED (moved from 9522),N15.Callicebus_purinus,1560619,=,1560619,N20.Cheracebus_purinus,tip,canonicalName,,species
 ______________,B ONLY,,,,1812110,N20.Cheracebus_regulus,,,,species
 ______________,B ONLY,,,,2487712,N20.Cheracebus_lucifer,,,,species
 __________,B ONLY,,,,2490929,N20.Xenothricinae,,,,subfamily
@@ -428,7 +428,7 @@ ________________,SHARED,N15.Pan_troglodytes,9598,=,9598,N20.Pan_troglodytes,subt
 ______________,SHARED,N15.Homo,9605,=,9605,N20.Homo,,number_of_children,cross-mrca =,genus
 ________________,SHARED,N15.Homo_sapiens,9606,=,9606,N20.Homo_sapiens,,,cross-mrca =,species
 __________________,SHARED,N15.Homo_sapiens_neanderthalensis,63221,=,63221,N20.Homo_sapiens_neanderthalensis,tip,,canonicalName,subspecies
-__________________,SHARED,N15.Homo_sapiens_ssp._Denisova,741158,=,741158,N20.Homo_sapiens_subsp._'Denisova',tip,canonicalName,ncbi_id,subspecies
+__________________,SHARED,N15.Homo_sapiens_ssp._Denisova,741158,=,741158,N20.Homo_sapiens_subsp._'Denisova',tip,canonicalName,,subspecies
 ________________,SHARED,N15.Homo_heidelbergensis,1425170,=,1425170,N20.Homo_heidelbergensis,tip,,scientificName,species
 ________________,B ONLY,,,,2665952,N20.environmental_samples,,,,
 __________________,B ONLY,,,,2665953,N20.Homo_sapiens_environmental_sample,,,,species
@@ -454,6 +454,6 @@ ____________,B ONLY,,,,1748402,N20.Tarsius_sp._CD-2015,,,,species
 ________,B ONLY (increased resolution),N15.Tarsius_syrichta,9478,>,1868481,N20.Carlito,,,cross-mrca <,genus
 __________,SHARED (moved from 9476),N15.Tarsius_syrichta,9478,=,1868482,N20.Carlito_syrichta,tip,ncbi_id; canonicalName,,species
 ________,B ONLY (increased resolution),N15.Tarsius_bancanus,9477,>,1971489,N20.Cephalopachus,,,cross-mrca <,genus
-__________,SHARED (moved from 9476),N15.Tarsius_bancanus,9477,=,9477,N20.Cephalopachus_bancanus,,number_of_children; canonicalName; scientificName,ncbi_id,species
+__________,SHARED (moved from 9476),N15.Tarsius_bancanus,9477,=,9477,N20.Cephalopachus_bancanus,,number_of_children; canonicalName; scientificName,,species
 ____________,B ONLY,,,,1971490,N20.Cephalopachus_bancanus_bancanus,,,,subspecies
 ____________,B ONLY,,,,2567999,N20.Cephalopachus_bancanus_borneanus,,,,subspecies

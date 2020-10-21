@@ -120,7 +120,7 @@ def synonymy(synonym, accepted):
 def synonym_relation(nom_status):
   re = synonym_relations.get(nom_status)
   if re: return re
-  print("Unrecognized nomenclatural status: %s" % nom_status)
+  dribble.log("Unrecognized nomenclatural status: %s" % nom_status)
   return rel.intensional
 
 # These relations go from synonym to accepted (the "has x" form)

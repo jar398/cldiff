@@ -1,0 +1,17 @@
+
+Logging to work/primates-ncbi-2015-2020.csv.new.log
+Node counts: 1835 2097
+** Multiple least-bad matches. Need to find tie-breakers.
+   N20.Papio_cynocephalus -> ['N15.Papio_anubis', 'N15.Papio_ursinus']
+1663 best matches
+# Number of particles: 608
+# Number of cross-mrcas: 1687
+** Rehelp: N15.Tarsius -> N20.Tarsiidae, N20.Tarsiiformes
+** Rehelp: N15.Tarsius -> N20.Tarsiidae, N20.Tarsiiformes
+** Rehelp: N15.Tarsius -> N20.Tarsiidae, N20.Tarsiiformes
+** Help: N15.Tarsius -> N20.Tarsiidae, N20.Tarsiiformes
+# Number of articulations in alignment: 1687
+Preparing work/primates-ncbi-2015-2020.csv.new
+Number of roots in merge: 1
+Number of non-roots in merge: 1073
+# Changed status: 546, changed: 93

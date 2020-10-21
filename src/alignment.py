@@ -15,13 +15,17 @@ from intension import choose_best_match
 
 def align(B, A, captured = {}):
   intension.clear_cache()
-  best = intension.best_intensional_matches(B, A)
-  # tipward_best = ...
-  # particles = mutual(tipward_best)
+  best = intension.best_intensional_match_map(B, A, captured)
+  tipward_best = tipward(best, B, A)
+  particles = mutual(tipward_best)
+  check_mutuality(particles)
+  dribble.log("# Number of particles: %s" % (len(particles)>>1))
 
-  particles = find_particles(B, A, best, captured)
   cross_mrcas = analyze_cross_mrcas(B, A, particles)
   dribble.log("# Number of cross-mrcas: %s" % len(cross_mrcas))
+
+  # Find membership-based relationships
+  extensions = analyze_extensions(cross_mrcas)
 
   draft = fix_alignment(particles)    # change ≈ to =
       # should be derived from best tips, not particles
@@ -30,6 +34,11 @@ def align(B, A, captured = {}):
   dribble.log("# Number of articulations in alignment: %s" % len(the_alignment))
 
   return (the_alignment, cross_mrcas)
+
+# This is a godawful mess
+
+def analyze_extensions(cross_mrcas):
+  return {}
 
 def finish_alignment(B, A, particles, xmrcas):
   global cross_mrcas
@@ -142,7 +151,7 @@ def filtered_matches(node, other, particles, xmrcas):
   assert other
   assert cl.get_checklist(node) != other
 
-  exties = extensional_matches(node, particles, other)    #monotypic chain (lineage)
+  exties = extensional_matches(node, other, particles, xmrcas)    #monotypic chain (lineage)
 
   if len(exties) <= 1:
     return exties
@@ -162,22 +171,22 @@ def filtered_matches(node, other, particles, xmrcas):
 # Starting with one match, extend to a set of matches by adding
 # 'monotypic' ancestors
 
-def extensional_matches(node, particles, other):       # B-node to A
+def extensional_matches(node, other, particles, xmrcas):       # B-node to A
   assert cl.get_checklist(node) != other
-  match = extensional_match(node, particles, other)    # Single B/A extensional match
+  match = extensional_match(node, other, particles, xmrcas)    # Single B/A extensional match
   if not match:
     return []
   matches = [match]
   if rel.is_variant(match.relation, rel.eq):
 
-    anchor = cross_mrca(match.cod)
+    anchor = xmrcas.get(match.cod)
 
     # Scan upwards from match.code looking for nodes that return back to anchor
     scan = match.cod    # node -> partner
     while True:
       scan = cl.get_parent(scan)    # in other
       if scan == cl.forest_tnu: break
-      back = cross_mrca(scan)
+      back = xmrcas.get(scan)
       if back != anchor:
         break
       matches.append(art.monotypic(node, scan, rel.eq))
@@ -187,15 +196,15 @@ def extensional_matches(node, particles, other):       # B-node to A
 # This code is derived from 
 #   reference-taxonomy/org/opentreeoflife/conflict/ConflictAnalysis.java
 
-def extensional_match(node, particles, other):
+def extensional_match(node, other, particles, xmrcas):
   part = particles.get(node)
   if part:
     return part
-  partner = cross_mrca(node)      # node in other checklist; 'conode'
+  partner = xmrcas.get(node)      # node in other checklist; 'conode'
   if not partner:
     # Descendant of a particle
     return None
-  back = cross_mrca(partner)    # 'bounce'
+  back = xmrcas.get(partner)    # 'bounce'
   if not back:
     # Not sure how this can happen but it does (NCBI vs. GBIF)
     dribble.log("%s <= %s <= nowhere" % (cl.get_unique(node),
@@ -219,12 +228,12 @@ def extensional_match(node, particles, other):
     # Look for an intersection between any partner-child and node
     # x is in A checklist, y is in B checklist
     for pchild in cl.get_children(partner):
-      pchild_back = cross_mrca(pchild)
+      pchild_back = xmrcas.get(pchild)
       if pchild_back == None:
         # pchild ! node
         pass
       else:
-        (x, y) = cross_compare(node, pchild)
+        (x, y) = cross_compare(node, pchild, xmrcas)
         if x and y:
           re = rel.conflict
           reason = ("%s is in the A taxon; B-sibling %s is not" %
@@ -253,8 +262,8 @@ def extensional_match(node, particles, other):
 # On each recursive call, we can provide one or the other of these, or both.
 # Or maybe none.
 
-def cross_compare(node, conode):
-  back = cross_mrca(conode)
+def cross_compare(node, conode, xmrcas):
+  back = xmrcas.get(conode)
   if back == None:
     return (None, None)
   how = cl.how_related(back, node)
@@ -269,7 +278,7 @@ def cross_compare(node, conode):
   x_seen = None
   y_seen = None
   for child in cl.get_children(conode):
-    saw = cross_compare(node, child)
+    saw = cross_compare(node, child, xmrcas)
     if saw:
       (x, y) = saw
       if x and y:
@@ -328,62 +337,61 @@ def analyze_cross_mrcas(A, B, particles):
                   (cl.get_unique(node), cl.get_unique(cross)))
   return cross_mrcas
 
-# Returns an accepted/accepted articulation
-
-def cross_mrca(node):
-  global cross_mrcas
-  assert node > 0
-  assert cl.is_accepted(node)
-  return cross_mrcas.get(node)
-
 # ---------- Particles
 
-# A particle is mutual =-articulation of accepted nodes deriving from
-# sameness of 'intrinsic' node properties: name, id, rank, parent,
-# etc.
+# A particle is a mutual =-articulation of tipward accepted nodes
+# deriving from sameness of 'intrinsic' node properties: name, id,
+# rank, parent, etc.
 
 # This function returns a partial map from nodes to articulations.
 
-def find_particles(here, other, best, captured):
-  intension.clear_cache()
-  particles = {}
-  count = [0]
-  def log(node, message):
-    if count[0] < 0:
-      count[0] += 1
-  def subanalyze(node, other):
-    log(node, "subanalyze")
-    assert cl.is_accepted(node)
+def check_mutuality(particles):
+  for node in particles:
+    ar = particles.get(node)
+    if ar:
+      rar = particles.get(ar.cod)
+      if rar:
+        if rar.cod == node:
+          pass
+        else:
+          dribble.log(
+              "** Round trip fail:\n  %s\n  %s\n" %
+              (art.express(ar), art.express(rar)))
+      else:
+        dribble.log("** No return match: %s -> none" %
+                    (art.express(ar)))
+
+# Filter out nodes where the relationship is not mutual
+
+def mutual(am):
+  mut = {}
+  for node in am:
+    ar = am[node]               # articulation
+    back = am.get(ar.cod)
+    if back and back.cod == node:
+      mut[node] = ar
+  return mut
+
+# Filter out internal nodes (those having a mapped descendant)
+
+def tipward(amap, A, B):
+  tw = {}
+  def filter_checklist(c):
+    for root in cl.get_roots(c):
+      filter(root)
+  def filter(node):
     found_match = False
-    for inf in cl.get_children(node):
-      if subanalyze(inf, other):
+    for child in cl.get_children(node):
+      if filter(child):
         found_match = True
     if found_match:    # Some descendant is a particle
       return True
-    candidate = captured.get(node) or best.get(node)
-    if candidate and rel.is_variant(candidate.relation, rel.eq):
-      assert cl.is_accepted(candidate.cod)
-      rematch = best.get(candidate.cod)
-      if rematch:
-        assert cl.is_accepted(rematch.cod)
-        if rematch.cod == node:
-          particles[node] = candidate    # here -> other
-          particles[candidate.cod] = rematch    # other -> here
-          return True
-        elif False:
-          dribble.log(
-              "** Particle round trip fail:\n  %s\n  %s\n" %
-              (art.express(candidate),
-               art.express(rematch)))
-      else:
-        dribble.log("** No particle rematch: %s -> %s -> none" %
-                    (cl.get_unique(candidate.dom),
-                     cl.get_unique(candidate.cod)))
-    return False
-  log(0, "top")
-  for root in cl.get_roots(here):
-    log(root, "root")
-    subanalyze(root, other)
-  dribble.log("# Number of particles: %s" % (len(particles)>>1))
-  return particles
+    elif node in amap:
+      tw[node] = amap[node]
+      return True
+    else:
+      return False
+  filter_checklist(A)
+  filter_checklist(B)
+  return tw
 

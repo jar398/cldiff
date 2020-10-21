@@ -9,11 +9,16 @@ EOL = False
 
 # The source node ('tnu') may be accepted or a synonym.
 
-def best_intensional_matches(A, B):
+def best_intensional_match_map(A, B, captured):
   best = {}
+  for node in captured:
+    ar = captured[node]
+    if is_variant(ar.relation, rel.eq):
+      best[ar.dom] = ar
+      best[ar.cod] = art.reverse(ar)
   def process(here, there):
     for node in here.get_all_nodes():
-      if cl.is_accepted(node):
+      if cl.is_accepted(node) and node not in best:
         ar = best_intensional_match(node, there)
         if ar:
           assert cl.is_accepted(ar.cod)
@@ -103,7 +108,7 @@ def choose_best_match(arts):     # => art
   arts = skim_best_matches(arts)
   b = arts[0]
   if len(arts) == 1: return b
-  dribble.log("# ** Multiple least-bad matches. Need to find more tie-breakers.")
+  dribble.log("** Multiple least-bad matches. Need to find tie-breakers.")
   dribble.log("   %s -> %s" %
               (cl.get_unique(b.dom),
                [cl.get_unique(a.cod) for a in arts]))

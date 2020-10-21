@@ -18,11 +18,13 @@ import dribble
 
 def main(c1, c1_tag, c2, c2_tag, out, format):
   global dribble_file
-  A = cl.read_checklist(c1, c1_tag + ".", "low-checklist")
-  B = cl.read_checklist(c2, c2_tag + ".", "high-checklist")
-  print ("Node counts:", len(A.get_all_nodes()), len(B.get_all_nodes()))
-  with open("dribble.txt", "w") as dribfile:
+  dribpath = out + ".log"
+  with open(dribpath, "w") as dribfile:
     dribble.dribble_file = dribfile
+    dribble.log ("\nLogging to %s" % (dribpath,))
+    A = cl.read_checklist(c1, c1_tag + ".", "low-checklist")
+    B = cl.read_checklist(c2, c2_tag + ".", "high-checklist")
+    dribble.log ("Node counts: %s %s" % (len(A.get_all_nodes()), len(B.get_all_nodes())))
     # Map each B to a corresponding A
     (al, xmrcas) = alignment.align(B, A)
     # Where to xmrcas come from?
@@ -34,7 +36,7 @@ def write_report(A, B, al, xmrcas, format, outpath):
     really_write_report(A, B, al, xmrcas, format, sys.stdout)
   else:
     with open(outpath, "w") as outfile:
-      print ("Preparing:", outpath)
+      dribble.log ("Preparing %s" % (outpath,))
       really_write_report(A, B, al, xmrcas, format, outfile)
 
 def really_write_report(A, B, al, xmrcas, format, outfile):
@@ -42,8 +44,8 @@ def really_write_report(A, B, al, xmrcas, format, outfile):
     eulerx.dump_alignment(al, outfile)
   else:
     (parents, roots) = merge.merge_checklists(A, B, al, xmrcas)
-    print ("# Number of roots in merge: %s" % len(roots))
-    print ("# Number of non-roots in merge: %s" % len(parents))
+    dribble.log ("Number of roots in merge: %s" % len(roots))
+    dribble.log ("Number of non-roots in merge: %s" % len(parents))
     report(A, B, al, roots, parents, outfile)
 
 # Default (simplified) report format
@@ -165,7 +167,7 @@ def find_changed_subtrees(roots, children, all_props):
   count = 0
   for key in status:
     if status[key]: count += 1
-  print("# Changed status: %s, changed: %s" % (len(status), count))
+  dribble.log("# Changed status: %s, changed: %s" % (len(status), count))
   return status
 
 # --------------------

@@ -398,11 +398,11 @@ def correct_children_mutexes(parent, parent_mutex):
     child_mutex = get_mutex(child)
     if child_mutex <= parent_mutex:
       if child_mutex == parent_mutex:
-        print("# ** Child %s has same rank as parent %s" % \
-              (get_unique(child), get_unique(parent)))
+        dribble.log("# ** Child %s has same rank as parent %s" % \
+                    (get_unique(child), get_unique(parent)))
       else:
-        print("# ** Child %s is of higher rank than parent %s" %\
-              (get_unique(child), get_unique(parent)))
+        dribble.log("# ** Child %s is of higher rank than parent %s" %\
+                    (get_unique(child), get_unique(parent)))
       if is_container(child):
         new_mutex = parent_mutex + 1 # demote!
         set_mutex(child, new_mutex)

@@ -49,7 +49,7 @@ class Table:
   def populate_from_file(self, inpath):
     # Look for a meta.xml file in same directory?
     (delim, qc, qu) = csv_parameters(inpath)
-    print("** Parameters %s %s %s" % (delim, qc, qu))
+    # print("# Parameters %s %s %s" % (delim, qc, qu))
     with open(inpath, "r") as infile:
       reader = csv.reader(infile, delimiter=delim, quotechar=qc, quoting=qu)
       self.populate_from_generator(reader)

@@ -18,7 +18,7 @@ ______________,SHARED,A.Didelphis_imperfecta,461399,=,461399,B.Didelphis_imperfe
 ______________,SHARED,A.Didelphis_pernigra,994805,=,994805,B.Didelphis_pernigra,tip,,scientificName,species
 ______________,B ONLY (increased resolution),A.Didelphis_sp.,30672,>,2645117,B.unclassified_Didelphis,,,cross-mrca <,
 ____________,SHARED,A.Philander,9271,=,9271,B.Philander,,number_of_children,cross-mrca =,genus
-______________,SHARED,A.Philander_opossum_canus,42727,=,42727,B.Philander_canus,tip,taxonRank; canonicalName; scientificName,ncbi_id,species
+______________,SHARED,A.Philander_opossum_canus,42727,=,42727,B.Philander_canus,tip,taxonRank; canonicalName; scientificName,,species
 ______________,SHARED,A.Philander_opossum_fuscogriseus,1254317,=,2202746,B.Philander_melanurus,tip,taxonRank; ncbi_id; canonicalName; scientificName,,species
 ______________,A ONLY (loss of resolution),A.Philander_opossum,9272,<,9271,B.Philander,,,B.Philander_frenatus is not in the A taxon,genus
 ______________,SHARED,A.Philander_mcilhennyi,42729,=,42729,B.Philander_mcilhennyi,tip,,canonicalName,species
@@ -112,7 +112,7 @@ ________________,SHARED,A.Micoureus_demerarae,42719,=,42719,B.Marmosa_demerarae,
 ________________,SHARED,A.Micoureus_regina,42720,=,42720,B.Micoureus_regina,tip,,scientificName,species
 ________________,SHARED,A.Micoureus_paraguayanus,225729,=,225729,B.Marmosa_paraguayana,tip,canonicalName; scientificName,,species
 ________________,SHARED,A.Micoureus_constantiae,867190,=,867190,B.Marmosa_constantiae,tip,canonicalName; scientificName,,species
-________________,SHARED,A.Micoureus_alstoni,1202162,=,1202162,B.Marmosa_alstoni,tip,canonicalName; scientificName,ncbi_id,species
+________________,SHARED,A.Micoureus_alstoni,1202162,=,1202162,B.Marmosa_alstoni,tip,canonicalName; scientificName,,species
 ________________,B ONLY,,,,2603950,B.Marmosa_budini,,,,species
 ________________,B ONLY,,,,2747325,B.Marmosa_limae,,,,species
 ________________,B ONLY,,,,2747326,B.Marmosa_meridae,,,,species
@@ -322,26 +322,26 @@ __________,B ONLY (increased resolution),A.Wallabia_bicolor,9330,>,9329,B.Wallab
 __________,B ONLY (increased resolution),A.Lagostrophus_fasciatus,65634,>,65633,B.Lagostrophus,,,cross-mrca <,genus
 __________,B ONLY (increased resolution),A.Dorcopsulus_vanheurni,69270,>,69269,B.Dorcopsulus,,,cross-mrca <,genus
 __________,B ONLY (increased resolution),A.Macropus,9312,>,1960649,B.Notamacropus,,,A.Macropus_sp._MG001 is not in the A taxon,genus
-____________,SHARED (moved from 9312),A.Macropus_agilis,9313,=,9313,B.Notamacropus_agilis,tip,canonicalName,ncbi_id,species
-____________,SHARED (moved from 9312),A.Macropus_eugenii,9315,=,9315,B.Notamacropus_eugenii,,number_of_children; canonicalName,ncbi_id,species
+____________,SHARED (moved from 9312),A.Macropus_agilis,9313,=,9313,B.Notamacropus_agilis,tip,canonicalName,,species
+____________,SHARED (moved from 9312),A.Macropus_eugenii,9315,=,9315,B.Notamacropus_eugenii,,number_of_children; canonicalName,,species
 ______________,B ONLY,,,,1960642,B.Notamacropus_eugenii_eugenii,,,,subspecies
 ______________,B ONLY,,,,1960664,B.Notamacropus_eugenii_derbianus,,,,subspecies
-____________,SHARED (moved from 9312),A.Macropus_parryi,9318,=,9318,B.Notamacropus_parryi,tip,canonicalName,ncbi_id,species
+____________,SHARED (moved from 9312),A.Macropus_parryi,9318,=,9318,B.Notamacropus_parryi,tip,canonicalName,,species
 ____________,SHARED (moved from 9312),A.Macropus_rufogriseus,9320,=,1960652,B.Notamacropus_rufogriseus,,ncbi_id; canonicalName; scientificName,cross-mrca =,species
-______________,SHARED,A.Macropus_rufogriseus_banksianus,88868,=,88868,B.Notamacropus_rufogriseus_banksianus,tip,canonicalName,ncbi_id,subspecies
-______________,SHARED,A.Macropus_rufogriseus_rufogriseus,88869,=,88869,B.Notamacropus_rufogriseus_rufogriseus,tip,canonicalName,ncbi_id,subspecies
-____________,SHARED (moved from 9312),A.Macropus_irma,196387,=,196387,B.Notamacropus_irma,tip,canonicalName,ncbi_id,species
-____________,SHARED (moved from 9312),A.Macropus_parma,413582,=,413582,B.Notamacropus_parma,tip,canonicalName,ncbi_id,species
-____________,SHARED (moved from 9312),A.Macropus_dorsalis,651581,=,651581,B.Notamacropus_dorsalis,tip,canonicalName,ncbi_id,species
+______________,SHARED,A.Macropus_rufogriseus_banksianus,88868,=,88868,B.Notamacropus_rufogriseus_banksianus,tip,canonicalName,,subspecies
+______________,SHARED,A.Macropus_rufogriseus_rufogriseus,88869,=,88869,B.Notamacropus_rufogriseus_rufogriseus,tip,canonicalName,,subspecies
+____________,SHARED (moved from 9312),A.Macropus_irma,196387,=,196387,B.Notamacropus_irma,tip,canonicalName,,species
+____________,SHARED (moved from 9312),A.Macropus_parma,413582,=,413582,B.Notamacropus_parma,tip,canonicalName,,species
+____________,SHARED (moved from 9312),A.Macropus_dorsalis,651581,=,651581,B.Notamacropus_dorsalis,tip,canonicalName,,species
 __________,B ONLY (increased resolution),A.Macropus,9312,>,2182372,B.Osphranter,,,A.Macropus_dorsalis is not in the A taxon,genus
-____________,SHARED (moved from 9312),A.Macropus_antilopinus,9314,=,9314,B.Osphranter_antilopinus,tip,canonicalName,ncbi_id,species
+____________,SHARED (moved from 9312),A.Macropus_antilopinus,9314,=,9314,B.Osphranter_antilopinus,tip,canonicalName,,species
 ____________,SHARED (moved from 9312),A.Macropus_robustus,9319,=,9319,B.Osphranter_robustus,,canonicalName,cross-mrca =,species
-______________,SHARED,A.Macropus_robustus_robustus,35580,=,35580,B.Osphranter_robustus_robustus,tip,canonicalName,ncbi_id,subspecies
-______________,SHARED,A.Macropus_robustus_erubescens,1496120,=,1496120,B.Osphranter_robustus_erubescens,tip,canonicalName,ncbi_id,subspecies
-______________,SHARED,A.Macropus_robustus_woodwardi,1496121,=,1496121,B.Osphranter_robustus_woodwardi,tip,canonicalName,ncbi_id,subspecies
-______________,SHARED,A.Macropus_robustus_isabellinus,1496122,=,1496122,B.Osphranter_robustus_isabellinus,tip,canonicalName; scientificName,ncbi_id,subspecies
-____________,SHARED (moved from 9312),A.Macropus_rufus,9321,=,9321,B.Osphranter_rufus,tip,canonicalName,ncbi_id,species
-____________,SHARED (moved from 9312),A.Macropus_bernardus,9323,=,9323,B.Osphranter_bernardus,tip,canonicalName,ncbi_id,species
+______________,SHARED,A.Macropus_robustus_robustus,35580,=,35580,B.Osphranter_robustus_robustus,tip,canonicalName,,subspecies
+______________,SHARED,A.Macropus_robustus_erubescens,1496120,=,1496120,B.Osphranter_robustus_erubescens,tip,canonicalName,,subspecies
+______________,SHARED,A.Macropus_robustus_woodwardi,1496121,=,1496121,B.Osphranter_robustus_woodwardi,tip,canonicalName,,subspecies
+______________,SHARED,A.Macropus_robustus_isabellinus,1496122,=,1496122,B.Osphranter_robustus_isabellinus,tip,canonicalName; scientificName,,subspecies
+____________,SHARED (moved from 9312),A.Macropus_rufus,9321,=,9321,B.Osphranter_rufus,tip,canonicalName,,species
+____________,SHARED (moved from 9312),A.Macropus_bernardus,9323,=,9323,B.Osphranter_bernardus,tip,canonicalName,,species
 __________,B ONLY,,,,2493641,B.Protemnodon,,,,genus
 ____________,B ONLY,,,,2493643,B.Protemnodon_anak,,,,species
 __________,B ONLY,,,,2493642,B.Simosthenurus,,,,genus
@@ -437,7 +437,7 @@ ____________,SHARED,A.Perameles_eremiana,1031274,=,1031274,B.Perameles_eremiana,
 ____________,B ONLY (increased resolution),A.Perameles_nasuta_pallescens,122387,>,9344,B.Perameles_nasuta,,,cross-mrca <,species
 __________,SHARED,A.Isoodon,37888,=,37888,B.Isoodon,,number_of_children,cross-mrca =,genus
 ____________,SHARED,A.Isoodon_macrourus,37698,=,37698,B.Isoodon_macrourus,subtree=,,cross-mrca =,species
-____________,SHARED,A.Isoodon_obesulus_fusciventer,120743,=,120743,B.Isoodon_fusciventer,tip,taxonRank; canonicalName,ncbi_id,species
+____________,SHARED,A.Isoodon_obesulus_fusciventer,120743,=,120743,B.Isoodon_fusciventer,tip,taxonRank; canonicalName,,species
 ____________,A ONLY (loss of resolution),A.Isoodon_obesulus,65612,<,37888,B.Isoodon,,,B.Isoodon_auratus is not in the A taxon,genus
 ____________,SHARED,A.Isoodon_auratus,120734,=,120734,B.Isoodon_auratus,subtree=,,cross-mrca =,species
 ____________,B ONLY (increased resolution),A.Isoodon_obesulus,65612,>,65612,B.Isoodon_obesulus,,,A.Isoodon_obesulus_fusciventer is not in the A taxon,species
@@ -1135,7 +1135,7 @@ __________________,SHARED,A.Sorex_leucogaster,1196409,=,1196409,B.Sorex_leucogas
 __________________,SHARED,A.Sorex_thibetanus,1343854,=,1343854,B.Sorex_thibetanus,tip,,scientificName,species
 __________________,B ONLY (increased resolution),A.Sorex_hoyi_hoyi,395347,>,9384,B.Sorex_hoyi,,,cross-mrca <,species
 __________________,B ONLY (increased resolution),A.Sorex_sadonis,62285,>,62286,B.Sorex_shinto,,,cross-mrca <,species
-____________________,SHARED (moved from 9379),A.Sorex_sadonis,62285,=,62285,B.Sorex_shinto_sadonis,tip,taxonRank; canonicalName,ncbi_id,subspecies
+____________________,SHARED (moved from 9379),A.Sorex_sadonis,62285,=,62285,B.Sorex_shinto_sadonis,tip,taxonRank; canonicalName,,subspecies
 __________________,B ONLY (increased resolution),A.Sorex_satunini_tembotovi,946210,>,62896,B.Sorex_satunini,,,cross-mrca <,species
 __________________,B ONLY (increased resolution),A.Sorex_bendirii_bendirii,328365,>,126317,B.Sorex_bendirii,,,cross-mrca <,species
 __________________,B ONLY (increased resolution),A.Sorex_thompsoni_thompsoni,395348,>,240004,B.Sorex_thompsoni,,,cross-mrca <,species
@@ -1156,7 +1156,7 @@ ____________________,B ONLY,,,,1521024,B.Neomys_anomalus_milleri,,,,subspecies
 __________________,SHARED,A.Neomys_fodiens,62282,=,62282,B.Neomys_fodiens,tip,,canonicalName,species
 __________________,SHARED,A.Neomys_teres,103776,=,103776,B.Neomys_teres,tip,,canonicalName,species
 ________________,SHARED,A.Chimarrogale,62292,=,62292,B.Chimarrogale,,number_of_children,cross-mrca =,genus
-__________________,SHARED,A.Chimarrogale_platycephala,62293,=,62293,B.Chimarrogale_platycephalus,tip,canonicalName,ncbi_id,species
+__________________,SHARED,A.Chimarrogale_platycephala,62293,=,62293,B.Chimarrogale_platycephalus,tip,canonicalName,,species
 __________________,SHARED,A.Chimarrogale_himalayica,227887,=,227887,B.Chimarrogale_himalayica,tip,,canonicalName,species
 __________________,SHARED,A.Chimarrogale_phaeura,271646,=,271646,B.Chimarrogale_phaeura,tip,,canonicalName,species
 __________________,SHARED,A.Chimarrogale_styani,1365920,=,1365920,B.Chimarrogale_styani,tip,,scientificName,species
@@ -1166,7 +1166,7 @@ ________________,SHARED,A.Anourosorex,127559,=,127559,B.Anourosorex,,,cross-mrca
 __________________,SHARED,A.Anourosorex_squamipes,127560,=,127560,B.Anourosorex_squamipes,tip,,canonicalName,species
 __________________,SHARED,A.Anourosorex_yamashinai,268756,=,268756,B.Anourosorex_yamashinai,tip,,canonicalName,species
 ________________,SHARED,A.Cryptotis,183660,=,183660,B.Cryptotis,,number_of_children,cross-mrca =,genus
-__________________,SHARED,A.Cryptotis_parva,183661,=,183661,B.Cryptotis_parvus,tip,canonicalName,ncbi_id,species
+__________________,SHARED,A.Cryptotis_parva,183661,=,183661,B.Cryptotis_parvus,tip,canonicalName,,species
 __________________,SHARED,A.Cryptotis_mexicana,257448,=,257448,B.Cryptotis_mexicanus,tip,canonicalName,,species
 __________________,SHARED,A.Cryptotis_goldmani,268770,=,268770,B.Cryptotis_goldmani,tip,,canonicalName,species
 __________________,SHARED,A.Cryptotis_magna,268771,=,268771,B.Cryptotis_magnus,tip,canonicalName,ncbi_id,species
@@ -1475,7 +1475,7 @@ __________________,B ONLY (increased resolution),A.Mimon,148057,>,148057,B.Mimon
 __________________,B ONLY (increased resolution),A.Vampyrum_spectrum,148074,>,148060,B.Vampyrum,,,cross-mrca <,genus
 __________________,B ONLY (increased resolution),A.Chrotopterus_auritus,148086,>,148075,B.Chrotopterus,,,cross-mrca <,genus
 __________________,B ONLY (increased resolution),A.Mimon_crenulatum,148071,>,1920523,B.Gardnerycteris,,,cross-mrca <,genus
-____________________,SHARED (moved from 148057),A.Mimon_crenulatum,148071,=,148071,B.Gardnerycteris_crenulatum,tip,canonicalName,ncbi_id,species
+____________________,SHARED (moved from 148057),A.Mimon_crenulatum,148071,=,148071,B.Gardnerycteris_crenulatum,tip,canonicalName,,species
 ____________________,B ONLY,,,,2358194,B.Gardnerycteris_keenani,,,,species
 ____________________,B ONLY,,,,2358195,B.Gardnerycteris_koepckeae,,,,species
 ________________,SHARED,A.Phyllonycterinae,138700,=,138700,B.Phyllonycterinae,subtree=,,cross-mrca =,subfamily
@@ -1515,10 +1515,6 @@ __________________,SHARED,A.Myotis_brandtii,109478,=,109478,B.Myotis_brandtii,,n
 ____________________,B ONLY,,,,2516278,B.Myotis_brandtii_brandtii,,,,subspecies
 __________________,SHARED,A.Myotis_mystacinus,109479,=,109479,B.Myotis_mystacinus,tip,,canonicalName,species
 __________________,SHARED,A.Myotis_emarginatus,109480,=,109480,B.Myotis_emarginatus,tip,,canonicalName,species
-__________________,SHARED,A.Myotis_nattereri,109481,=,109481,B.Myotis_nattereri,,number_of_children,canonicalName,species
-____________________,SHARED (moved from 109481),A.Myotis_nattereri_tschuliensis,392008,=,2510970,B.Myotis_tschuliensis,tip,taxonRank; ncbi_id; canonicalName,,species
-____________________,B ONLY,,,,2510968,B.Myotis_nattereri_helverseni,,,,subspecies
-____________________,B ONLY,,,,2510969,B.Myotis_nattereri_nattereri,,,,subspecies
 __________________,SHARED,A.Myotis_blythii,109482,=,109482,B.Myotis_blythii,subtree=,,cross-mrca =,species
 __________________,SHARED,A.Myotis_riparius,124752,=,124752,B.Myotis_riparius,tip,,canonicalName,species
 __________________,SHARED,A.Myotis_cf._punicus,126404,=,126404,B.Myotis_cf._punicus,tip,,canonicalName,species
@@ -1697,6 +1693,9 @@ __________________,SHARED,A.Myotis_secundus,1633780,=,1633780,B.Myotis_secundus,
 __________________,SHARED,A.Myotis_soror,1633781,=,1633781,B.Myotis_soror,tip,,scientificName,species
 __________________,SHARED,A.Myotis_rufoniger,1633875,=,1633875,B.Myotis_rufoniger,tip,taxonRank,canonicalName,species
 __________________,B ONLY (increased resolution),A.Myotis_myotis_myotis,126574,>,51298,B.Myotis_myotis,,,cross-mrca <,species
+__________________,B ONLY,,,,109481,B.Myotis_nattereri,,,,species
+____________________,B ONLY,,,,2510968,B.Myotis_nattereri_helverseni,,,,subspecies
+____________________,B ONLY,,,,2510969,B.Myotis_nattereri_nattereri,,,,subspecies
 __________________,B ONLY (increased resolution),A.Myotis_bocagii_cupreolus,1393934,>,153284,B.Myotis_bocagii,,,cross-mrca <,species
 __________________,B ONLY (increased resolution),A.Myotis_muricola_browni,159331,>,159330,B.Myotis_muricola,,,cross-mrca <,species
 __________________,B ONLY (increased resolution),A.Myotis_evotis_milleri,1442610,>,257883,B.Myotis_evotis,,,cross-mrca <,species
@@ -1823,6 +1822,9 @@ ________________,A ONLY (loss of resolution),A.Pipistrellus,27671,<,9431,B.Vespe
 __________________,A ONLY,A.Pipistrellus_cf._tenuis_BOLD:AAB2554,1007692,,,,,,,species
 ________________,A ONLY (conflict),A.Plecotus,27673,><,9431,B.Vespertilionidae,,,B.Corynorhinus_rafinesquii is in the A taxon; B-sibling B.Corynorhinus_townsendii is not,family
 ________________,A ONLY (loss of resolution),A.Eptesicus,29077,<,9431,B.Vespertilionidae,,,B.Parahypsugo is not in the A taxon,family
+__________________,A ONLY,A.Eptesicus_andersoni,568173,,,,,,,species
+____________________,A ONLY,A.Eptesicus_andersoni_pallescens,568176,,,,,,,subspecies
+____________________,A ONLY,A.Eptesicus_andersoni_andersoni,568177,,,,,,,subspecies
 ________________,A ONLY (conflict),A.Chalinolobus,50352,><,9431,B.Vespertilionidae,,,B.Glauconycteris_argentata is in the A taxon; B-sibling B.Glauconycteris_egeria is not,family
 ________________,SHARED,A.Nyctalus,51299,=,51299,B.Nyctalus,,,cross-mrca =,genus
 __________________,SHARED,A.Nyctalus_noctula,51300,=,51300,B.Nyctalus_noctula,tip,,canonicalName,species
@@ -1931,7 +1933,7 @@ ____________________,SHARED (moved from 59488),A.Murina_sp._B_CMF-2010,867847,=,
 ____________________,SHARED (moved from 59488),A.Murina_sp._D_CMF-2010,867848,=,867848,B.Murina_sp._D_CMF-2010,tip,,canonicalName,species
 ____________________,SHARED (moved from 59488),A.Murina_sp._E_JLE-2010,867849,=,867849,B.Murina_sp._E_JLE-2010,tip,,canonicalName,species
 ____________________,SHARED (moved from 59488),A.Murina_sp._F_JLE-2010,867850,=,867850,B.Murina_sp._F_JLE-2010,tip,,canonicalName,species
-____________________,SHARED (moved from 59488),A.Murina_sp._H_JLE-2010,867851,=,867851,B.Murina_chrysochaetes,tip,canonicalName,ncbi_id,species
+____________________,SHARED (moved from 59488),A.Murina_sp._H_JLE-2010,867851,=,867851,B.Murina_chrysochaetes,tip,canonicalName,,species
 ____________________,SHARED (moved from 59488),A.Murina_sp._A_MR-2012,1167678,=,1167678,B.Murina_sp._A_MR-2012,tip,,canonicalName,species
 ____________________,B ONLY,,,,1453895,B.Murina_sp._VTT-2014a,,,,species
 ____________________,B ONLY,,,,1986511,B.Murina_sp._APBL060517-04,,,,species
@@ -2033,7 +2035,7 @@ __________________,SHARED,A.Neoromicia_nanus,568927,=,568927,B.Neoromicia_nanus,
 __________________,SHARED,A.Neoromicia_zuluensis,1162377,=,1162377,B.Neoromicia_zuluensis,tip,,scientificName,species
 __________________,SHARED,A.Neoromicia_matroka,1162378,=,1162378,B.Neoromicia_matroka,tip,,canonicalName,species
 __________________,SHARED,A.Neoromicia_malagasyensis,1162379,=,1162379,B.Neoromicia_malagasyensis,tip,,canonicalName,species
-__________________,SHARED,A.Neoromicia_sp._SRH-2012,1162380,=,1162380,B.Neoromicia_robertsi,tip,canonicalName,ncbi_id,species
+__________________,SHARED,A.Neoromicia_sp._SRH-2012,1162380,=,1162380,B.Neoromicia_robertsi,tip,canonicalName,,species
 __________________,SHARED,A.Neoromicia_tenuipinnis,1238368,=,1238368,B.Neoromicia_tenuipinnis,tip,,scientificName,species
 __________________,SHARED,A.Neoromicia_roseveari,1286220,=,1286220,B.Neoromicia_roseveari,tip,scientificName,canonicalName,species
 __________________,SHARED,A.Neoromicia_cf._rendalli_SaSt-2013,1286221,=,1286221,B.Neoromicia_cf._rendalli_SaSt-2013,tip,,canonicalName,species
@@ -2053,9 +2055,6 @@ ____________________,B ONLY,,,,1975659,B.Neoromicia_sp._B168,,,,species
 ____________________,B ONLY,,,,1975660,B.Neoromicia_sp._B169,,,,species
 ____________________,B ONLY,,,,2448877,B.Neoromicia_sp._DMR-2017,,,,species
 ________________,SHARED,A.Cistugo,712047,=,712047,B.Cistugo,subtree=,,cross-mrca =,genus
-________________,SHARED,A.Falsistrellus,1310229,=,1310229,B.Falsistrellus,,number_of_children,scientificName,genus
-__________________,B ONLY,,,,2491053,B.Falsistrellus_mackenziei,,,,species
-__________________,B ONLY,,,,2491054,B.Falsistrellus_tasmaniensis,,,,species
 ________________,B ONLY (increased resolution),A.Idionycteris_phyllotis,27665,>,27664,B.Idionycteris,,,cross-mrca <,genus
 ________________,B ONLY (increased resolution),A.Lasionycteris_noctivagans,27667,>,27666,B.Lasionycteris,,,cross-mrca <,genus
 ________________,B ONLY (increased resolution),A.Nycticeius_humeralis,27670,>,27669,B.Nycticeius,,,cross-mrca <,genus
@@ -2137,8 +2136,6 @@ __________________,B ONLY,,,,2748932,B.Pipistrellus_mimus,,,,species
 ________________,B ONLY (increased resolution),A.Plecotus,27673,>,27673,B.Plecotus,,,A.Plecotus_rafinesquii is not in the A taxon,genus
 __________________,SHARED (moved from 27673),A.Plecotus_auritus,61862,=,61862,B.Plecotus_auritus,tip,,scientificName,species
 __________________,SHARED (moved from 27673),A.Plecotus_kolombatovici,169060,=,169060,B.Plecotus_kolombatovici,tip,,canonicalName,species
-__________________,SHARED (moved from 27673),A.Plecotus_teneriffae,187391,=,187391,B.Plecotus_teneriffae,,number_of_children,canonicalName,species
-____________________,SHARED (moved from 187391),A.Plecotus_teneriffae_gaisleri,272799,=,272799,B.Plecotus_gaisleri,tip,taxonRank; canonicalName,,species
 __________________,SHARED (moved from 27673),A.Plecotus_balensis,196419,=,196419,B.Plecotus_balensis,tip,,canonicalName,species
 __________________,SHARED (moved from 27673),A.Plecotus_sardus,221272,=,221272,B.Plecotus_sardus,tip,,canonicalName,species
 __________________,SHARED (moved from 27673),A.Plecotus_cf._kolombatovici,231882,=,231882,B.Plecotus_cf._kolombatovici,tip,,canonicalName,species
@@ -2153,10 +2150,18 @@ __________________,SHARED (moved from 27673),A.Plecotus_strelkovi,360163,=,36016
 __________________,SHARED (moved from 27673),A.unclassified_Plecotus,1032398,=,1032398,B.unclassified_Plecotus,subtree=,,cross-mrca =,
 __________________,SHARED (moved from 27673),A.Plecotus_cf._kozlovi,1195387,=,1195387,B.Plecotus_cf._kozlovi,tip,,canonicalName,species
 __________________,B ONLY (increased resolution),A.Plecotus_austriacus_austriacus,169059,>,109483,B.Plecotus_austriacus,,,cross-mrca <,species
+__________________,B ONLY,,,,187391,B.Plecotus_teneriffae,,,,species
 __________________,B ONLY (increased resolution),A.Plecotus_macrobullaris_macrobullaris,272800,>,242915,B.Plecotus_macrobullaris,,,cross-mrca <,species
 ________________,B ONLY (increased resolution),A.Eptesicus,29077,>,29077,B.Eptesicus,,,A.Eptesicus_dimissus is not in the A taxon,genus
 __________________,SHARED (moved from 29077),A.Eptesicus_fuscus,29078,=,29078,B.Eptesicus_fuscus,tip,,canonicalName,species
 __________________,SHARED (moved from 29077),A.Eptesicus_nilssonii,59451,=,59451,B.Eptesicus_nilssonii,tip,,scientificName,species
+__________________,SHARED (moved from 29077),A.Eptesicus_serotinus,59452,=,59452,B.Eptesicus_serotinus,,number_of_children,cross-mrca =,species
+____________________,SHARED,A.Eptesicus_serotinus_turcomanus,568170,=,568170,B.Eptesicus_serotinus_turcomanus,tip,,canonicalName,subspecies
+____________________,SHARED,A.Eptesicus_serotinus_mirza,568171,=,568171,B.Eptesicus_serotinus_mirza,tip,,canonicalName,subspecies
+____________________,SHARED,A.Eptesicus_serotinus_pachyomus,1332049,=,1332049,B.Eptesicus_serotinus_pachyomus,tip,,scientificName,subspecies
+____________________,SHARED,A.Eptesicus_serotinus_pallens,1332050,=,1332050,B.Eptesicus_serotinus_pallens,tip,,scientificName,subspecies
+____________________,SHARED,A.Eptesicus_serotinus_serotinus,1332053,=,1332053,B.Eptesicus_serotinus_serotinus,tip,,canonicalName,subspecies
+____________________,B ONLY,,,,568173,B.Eptesicus_serotinus_andersoni,,,,subspecies
 __________________,SHARED (moved from 29077),A.Eptesicus_furinalis,124746,=,124746,B.Eptesicus_furinalis,tip,,canonicalName,species
 __________________,SHARED (moved from 29077),A.Eptesicus_regulus,138978,=,138978,B.Eptesicus_regulus,tip,,canonicalName,species
 __________________,SHARED (moved from 29077),A.Eptesicus_diminutus,159320,=,159320,B.Eptesicus_diminutus,tip,,canonicalName,species
@@ -2170,16 +2175,6 @@ __________________,SHARED (moved from 29077),A.Eptesicus_isabellinus,502802,=,50
 __________________,SHARED (moved from 29077),A.Eptesicus_nasutus,568178,=,568178,B.Eptesicus_nasutus,subtree=,,cross-mrca =,species
 __________________,SHARED (moved from 29077),A.Eptesicus_gobiensis,743491,=,743491,B.Eptesicus_gobiensis,tip,,scientificName,species
 __________________,SHARED (moved from 29077),A.Eptesicus_bobrinskoi,1195382,=,1195382,B.Eptesicus_bobrinskoi,tip,,scientificName,species
-__________________,B ONLY (increased resolution),A.Eptesicus,29077,>,59452,B.Eptesicus_serotinus,,,A.Eptesicus_bobrinskoi is not in the A taxon,species
-____________________,SHARED,A.Eptesicus_serotinus_turcomanus,568170,=,568170,B.Eptesicus_serotinus_turcomanus,tip,,canonicalName,subspecies
-____________________,SHARED,A.Eptesicus_serotinus_mirza,568171,=,568171,B.Eptesicus_serotinus_mirza,tip,,canonicalName,subspecies
-____________________,SHARED,A.Eptesicus_serotinus_pachyomus,1332049,=,1332049,B.Eptesicus_serotinus_pachyomus,tip,,scientificName,subspecies
-____________________,SHARED,A.Eptesicus_serotinus_pallens,1332050,=,1332050,B.Eptesicus_serotinus_pallens,tip,,scientificName,subspecies
-____________________,SHARED,A.Eptesicus_serotinus_serotinus,1332053,=,1332053,B.Eptesicus_serotinus_serotinus,tip,,canonicalName,subspecies
-____________________,A ONLY (loss of resolution),A.Eptesicus_serotinus,59452,<,59452,B.Eptesicus_serotinus,,,B.Eptesicus_serotinus_andersoni is not in the A taxon,species
-____________________,SHARED (moved from 29077),A.Eptesicus_andersoni,568173,=,568173,B.Eptesicus_serotinus_andersoni,,number_of_children; taxonRank; canonicalName,,subspecies
-______________________,A ONLY,A.Eptesicus_andersoni_pallescens,568176,,,,,,,subspecies
-______________________,A ONLY,A.Eptesicus_andersoni_andersoni,568177,,,,,,,subspecies
 __________________,B ONLY,,,,2080586,B.Eptesicus_japonensis,,,,species
 __________________,B ONLY,,,,2093327,B.Eptesicus_guadeloupensis,,,,species
 __________________,B ONLY,,,,2594313,B.Eptesicus_ulapesensis,,,,species
@@ -2223,7 +2218,6 @@ __________________,SHARED (moved from 109484),A.Hypsugo_alaschanicus,999321,=,99
 __________________,SHARED (moved from 109484),A.Hypsugo_cf._darwinii,1048813,=,1048813,B.Hypsugo_cf._darwinii,tip,,canonicalName,species
 __________________,SHARED (moved from 109484),A.Hypsugo_anchietae,1162376,=,1162376,B.Hypsugo_anchietae,tip,,scientificName,species
 __________________,SHARED (moved from 109484),A.Hypsugo_sp._KMN-2014,1578732,=,1578732,B.Hypsugo_bemainty,tip,canonicalName,ncbi_id,species
-__________________,SHARED (moved from 1310229),A.Falsistrellus_petersi,1310230,=,1310230,B.Hypsugo_petersi,tip,canonicalName; scientificName,ncbi_id,species
 __________________,B ONLY,,,,1788295,B.Hypsugo_macrotis,,,,species
 __________________,B ONLY,,,,1897726,B.Hypsugo_dolichodon,,,,species
 __________________,B ONLY,,,,1928619,B.Hypsugo_arabicus,,,,species
@@ -2280,33 +2274,35 @@ ________________,B ONLY (increased resolution),A.Miniopterus,9432,>,981671,B.Min
 ________________,B ONLY (increased resolution),A.Vespertilionidae_sp._SMM103-12,1296582,>,1296580,B.unclassified_Vespertilionidae,,,cross-mrca <,
 __________________,B ONLY,,,,1296581,B.Vespertilionidae_sp._BOLD:AAH8358,,,,species
 __________________,B ONLY,,,,1296583,B.Vespertilionidae_sp._BOLD:AAC0445,,,,species
+________________,B ONLY,,,,1310229,B.Falsistrellus,,,,genus
+__________________,B ONLY,,,,2491053,B.Falsistrellus_mackenziei,,,,species
+__________________,B ONLY,,,,2491054,B.Falsistrellus_tasmaniensis,,,,species
 ________________,B ONLY (increased resolution),A.Submyotodon_latirostris,385037,>,1636536,B.Submyotodon,,,cross-mrca <,genus
 ________________,B ONLY (increased resolution),A.Lasiurus,72130,>,2045281,B.Aeorestes,,,A.Lasiurus_intermedius is not in the A taxon,genus
-__________________,SHARED (moved from 72130),A.Lasiurus_cinereus,257879,=,257879,B.Aeorestes_cinereus,,number_of_children; canonicalName,ncbi_id,species
+__________________,SHARED (moved from 72130),A.Lasiurus_cinereus,257879,=,257879,B.Aeorestes_cinereus,,number_of_children; canonicalName,,species
 ____________________,B ONLY,,,,1673613,B.Aeorestes_cinereus_cinereus,,,,subspecies
-__________________,SHARED (moved from 72130),A.Lasiurus_egregius,461400,=,461400,B.Aeorestes_egregius,tip,canonicalName,ncbi_id,species
+__________________,SHARED (moved from 72130),A.Lasiurus_egregius,461400,=,461400,B.Aeorestes_egregius,tip,canonicalName,,species
 __________________,B ONLY,,,,2045283,B.Aeorestes_semotus,,,,species
 __________________,B ONLY,,,,2045284,B.Aeorestes_villosissimus,,,,species
 ________________,B ONLY (increased resolution),A.Lasiurus,72130,>,2045282,B.Dasypterus,,,A.Lasiurus_egregius is not in the A taxon,genus
-__________________,SHARED (moved from 72130),A.Lasiurus_xanthinus,72131,=,72131,B.Dasypterus_xanthinus,tip,canonicalName,ncbi_id,species
-__________________,SHARED (moved from 72130),A.Lasiurus_ega,258928,=,258928,B.Dasypterus_ega,tip,canonicalName,ncbi_id,species
-__________________,SHARED (moved from 72130),A.Lasiurus_intermedius,592573,=,592573,B.Dasypterus_intermedius,,number_of_children; canonicalName,ncbi_id,species
+__________________,SHARED (moved from 72130),A.Lasiurus_xanthinus,72131,=,72131,B.Dasypterus_xanthinus,tip,canonicalName,,species
+__________________,SHARED (moved from 72130),A.Lasiurus_ega,258928,=,258928,B.Dasypterus_ega,tip,canonicalName,,species
+__________________,SHARED (moved from 72130),A.Lasiurus_intermedius,592573,=,592573,B.Dasypterus_intermedius,,number_of_children; canonicalName,,species
 ____________________,B ONLY,,,,2066583,B.Dasypterus_intermedius_floridanus,,,,subspecies
 ____________________,B ONLY,,,,2738915,B.Dasypterus_intermedius_intermedius,,,,subspecies
 __________________,B ONLY,,,,1691930,B.Dasypterus_insularis,,,,species
 ________________,B ONLY (increased resolution),A.Pipistrellus_subflavus,27672,>,2057181,B.Perimyotis,,,cross-mrca <,genus
 __________________,SHARED (moved from 27671),A.Pipistrellus_subflavus,27672,=,27672,B.Perimyotis_subflavus,tip,canonicalName,,species
 ________________,B ONLY (increased resolution),A.Eptesicus_dimissus,712050,>,2069572,B.Cassistrellus,,,cross-mrca <,genus
-__________________,SHARED (moved from 29077),A.Eptesicus_dimissus,712050,=,712050,B.Cassistrellus_dimissus,tip,canonicalName; scientificName,ncbi_id,species
+__________________,SHARED (moved from 29077),A.Eptesicus_dimissus,712050,=,712050,B.Cassistrellus_dimissus,tip,canonicalName; scientificName,,species
 __________________,B ONLY,,,,2069573,B.Cassistrellus_yokdonensis,,,,species
 ________________,B ONLY,,,,2093333,B.Mimetillus,,,,genus
 __________________,B ONLY,,,,2093334,B.Mimetillus_moloneyi,,,,species
 ________________,B ONLY,,,,2448839,B.Niumbaha,,,,genus
 __________________,B ONLY,,,,2448840,B.Niumbaha_superba,,,,species
 ________________,B ONLY (increased resolution),A.Hypsugo,109484,>,2608639,B.Parahypsugo,,,A.Hypsugo_sp._KMN-2014 is not in the A taxon,genus
-__________________,SHARED (moved from 109484),A.Hypsugo_eisentrauti,258920,=,258920,B.Parahypsugo_eisentrauti,tip,canonicalName; scientificName,ncbi_id,species
-__________________,SHARED (moved from 109484),A.Hypsugo_crassulus,1286224,=,1286224,B.Parahypsugo_crassulus,,number_of_children; canonicalName; scientificName,ncbi_id,species
-____________________,SHARED (moved from 1286224),A.Hypsugo_crassulus_bellieri,1286225,=,2608640,B.Parahypsugo_bellieri,tip,taxonRank; ncbi_id; canonicalName; scientificName,,species
+__________________,SHARED (moved from 109484),A.Hypsugo_eisentrauti,258920,=,258920,B.Parahypsugo_eisentrauti,tip,canonicalName; scientificName,,species
+__________________,B ONLY,,,,1286224,B.Parahypsugo_crassulus,,,,species
 __________________,B ONLY,,,,2608642,B.Parahypsugo_happoldorum,,,,species
 ________________,B ONLY,,,,2741457,B.Mirostrellus,,,,genus
 __________________,B ONLY,,,,2741458,B.Mirostrellus_joffrei,,,,species
@@ -2654,12 +2650,12 @@ ________________,B ONLY (increased resolution),A.Asellia_tridens,578340,>,578339
 __________________,B ONLY,,,,1932780,B.Asellia_arabica,,,,species
 __________________,B ONLY,,,,1932781,B.Asellia_italosomalica,,,,species
 ________________,B ONLY (increased resolution),A.Hipposideros,58068,>,2603868,B.Macronycteris,,,A.Hipposideros_hypophyllus is not in the A taxon,genus
-__________________,SHARED (moved from 58068),A.Hipposideros_commersoni,110941,=,110941,B.Macronycteris_commersoni,tip,canonicalName,ncbi_id,species
-__________________,SHARED (moved from 58068),A.Hipposideros_gigas,584996,=,584996,B.Macronycteris_gigas,tip,canonicalName; scientificName,ncbi_id,species
+__________________,SHARED (moved from 58068),A.Hipposideros_commersoni,110941,=,110941,B.Macronycteris_commersoni,tip,canonicalName,,species
+__________________,SHARED (moved from 58068),A.Hipposideros_gigas,584996,=,584996,B.Macronycteris_gigas,tip,canonicalName; scientificName,,species
 __________________,SHARED (moved from 58068),A.Hipposideros_vittatus,1325445,=,2603869,B.Macronycteris_vittata,tip,ncbi_id; canonicalName; scientificName,,species
 __________________,B ONLY,,,,2735188,B.Macronycteris_cryptovalorona,,,,species
 ________________,B ONLY (increased resolution),A.Hipposideros_cyclops,249021,>,2664496,B.Doryrhina,,,cross-mrca <,genus
-__________________,SHARED (moved from 58068),A.Hipposideros_cyclops,249021,=,249021,B.Doryrhina_cyclops,tip,canonicalName,ncbi_id,species
+__________________,SHARED (moved from 58068),A.Hipposideros_cyclops,249021,=,249021,B.Doryrhina_cyclops,tip,canonicalName,,species
 __________________,B ONLY,,,,2664497,B.Doryrhina_camerunensis,,,,species
 __________________,B ONLY,,,,2735189,B.Doryrhina_cf._camerunensis_TD-2020,,,,species
 __________________,B ONLY,,,,2735198,B.Doryrhina_cyclops_complex_sp._lineage_2,,,,species
@@ -2921,11 +2917,10 @@ ________________,SHARED,A.Hippidion_principale,1582057,=,1582057,B.Hippidion_pri
 ______________,B ONLY (reorganization),A.Equus#9789,9789,><,9789,B.Equus#9789,,,A.Equus_sp._LLO-2009a is in the A taxon; B-sibling A.Equus_sp._(NWSL) is not,genus
 ________________,SHARED (moved from 9789),A.Hippotigris,35506,=,35506,B.Hippotigris,subtree=,,cross-mrca =,subgenus
 ________________,SHARED (moved from 9789),A.Equus#35510,35510,=,35510,B.Equus#35510,,number_of_children,cross-mrca =,subgenus
-__________________,SHARED,A.Equus_caballus,9796,=,9796,B.Equus_caballus,,number_of_children,scientificName,species
-____________________,SHARED (moved from 9796),A.Equus_caballus_ferus,1114792,=,1114792,B.Equus_ferus,tip,taxonRank; canonicalName; scientificName,,species
 __________________,SHARED,A.Equus_przewalskii,9798,=,9798,B.Equus_przewalskii,tip,,scientificName,species
 __________________,SHARED,A.Equus_sp.,46122,=,46122,B.Equus_sp.,tip,,canonicalName,species
 __________________,SHARED,A.Equus_przewalskii_x_caballus,1263311,=,1263311,B.Equus_przewalskii_x_caballus,tip,,canonicalName,species
+__________________,B ONLY,,,,9796,B.Equus_caballus,,,,species
 ________________,A ONLY (loss of resolution),A.Equus_incertae_sedis,1225529,<,9789,B.Equus#9789,,,B.Sussemionus is not in the A taxon,genus
 ________________,B ONLY (increased resolution),A.Equus_grevyi,9792,>,35507,B.Dolichohippus,,,cross-mrca <,subgenus
 ________________,B ONLY (increased resolution),A.Equus_asinus,9793,>,35508,B.Asinus,,,cross-mrca <,subgenus
@@ -3129,7 +3124,6 @@ __________________,B ONLY (increased resolution),A.Otocolobus_manul,61408,>,6140
 __________________,B ONLY (increased resolution),A.Profelis_aurata,61412,>,61411,B.Profelis,,,cross-mrca <,genus
 __________________,B ONLY,,,,1403448,B.Leptailurus_serval_x_Caracal_caracal,,,,species
 ________________,SHARED,A.Pantherinae,338153,=,338153,B.Pantherinae,,,cross-mrca =,subfamily
-__________________,SHARED,A.Uncia,29063,=,29063,B.Uncia,tip,number_of_children,canonicalName,genus
 __________________,SHARED,A.Neofelis,61451,=,61451,B.Neofelis,,,cross-mrca =,genus
 ____________________,SHARED,A.Neofelis_diardi,427616,=,427616,B.Neofelis_diardi,tip,,canonicalName,species
 ____________________,B ONLY (increased resolution),A.Neofelis_nebulosa_nebulosa,427615,>,61452,B.Neofelis_nebulosa,,,cross-mrca <,species
@@ -3145,9 +3139,9 @@ ______________________,B ONLY,,,,235557,B.Panthera_leo_persica_x_Panthera_leo_le
 ____________________,SHARED,A.Panthera_pardus,9691,=,9691,B.Panthera_pardus,subtree=,,cross-mrca =,species
 ____________________,SHARED,A.Panthera_tigris,9694,=,9694,B.Panthera_tigris,subtree=,,cross-mrca =,species
 ____________________,A ONLY (loss of resolution),A.Panthera,9688,<,9688,B.Panthera,,,B.Panthera_uncia is not in the A taxon,genus
-____________________,SHARED (moved from 29063),A.Uncia_uncia,29064,=,29064,B.Panthera_uncia,tip,canonicalName,,species
 ____________________,B ONLY (increased resolution),A.Panthera_onca_mesembrina,399178,>,9690,B.Panthera_onca,,,cross-mrca <,species
 ____________________,B ONLY,,,,235915,B.Panthera_leo_x_Panthera_tigris,,,,species
+__________________,B ONLY,,,,29063,B.Uncia,,,,genus
 __________________,B ONLY (increased resolution),A.Pardofelis_marmorata,61410,>,61409,B.Pardofelis,,,cross-mrca <,genus
 ________________,SHARED,A.unclassified_Felidae,339610,=,339610,B.unclassified_Felidae,,,cross-mrca =,
 __________________,SHARED,A.Smilodon,13265,=,13265,B.Smilodon,subtree=,,cross-mrca =,genus
@@ -3193,9 +3187,9 @@ ________________,B ONLY (increased resolution),A.Rhynchogale_melleri,210654,>,21
 ________________,B ONLY (increased resolution),A.Paracynictis_selousi,311560,>,311559,B.Paracynictis,,,cross-mrca <,genus
 ________________,B ONLY (increased resolution),A.Herpestinae_sp._PAML-2006,373387,>,373388,B.unclassified_Herpestidae,,,cross-mrca <,
 ________________,B ONLY (increased resolution),A.Herpestes,9699,>,2079297,B.Urva,,,A.Herpestes_semitorquatus is not in the A taxon,genus
-__________________,SHARED (moved from 9699),A.Herpestes_edwardsii,39705,=,39705,B.Urva_edwardsii,tip,canonicalName,ncbi_id,species
-__________________,SHARED (moved from 9699),A.Herpestes_auropunctatus,48418,=,48418,B.Urva_auropunctata,tip,canonicalName,ncbi_id,species
-__________________,SHARED (moved from 9699),A.Herpestes_javanicus,140016,=,140016,B.Urva_javanica,tip,canonicalName,ncbi_id,species
+__________________,SHARED (moved from 9699),A.Herpestes_edwardsii,39705,=,39705,B.Urva_edwardsii,tip,canonicalName,,species
+__________________,SHARED (moved from 9699),A.Herpestes_auropunctatus,48418,=,48418,B.Urva_auropunctata,tip,canonicalName,,species
+__________________,SHARED (moved from 9699),A.Herpestes_javanicus,140016,=,140016,B.Urva_javanica,tip,canonicalName,,species
 ______________,SHARED,A.Eupleridae,379589,=,379589,B.Eupleridae,,,cross-mrca =,family
 ________________,SHARED,A.Galidiinae,61398,=,61398,B.Galidiinae,,,cross-mrca =,subfamily
 __________________,SHARED,A.Salanoia,219104,=,219104,B.Salanoia,,,cross-mrca =,genus
@@ -3336,14 +3330,6 @@ ________________,B ONLY,,,,1825729,B.Arctotherium,,,,genus
 __________________,B ONLY,,,,2640560,B.unclassified_Arctotherium,,,,
 ____________________,B ONLY,,,,1825730,B.Arctotherium_sp.,,,,species
 ______________,SHARED,A.Procyonidae,9647,=,9647,B.Procyonidae,,number_of_children,cross-mrca =,family
-________________,SHARED,A.Nasua,9650,=,9650,B.Nasua,,number_of_children,cross-mrca =,genus
-__________________,SHARED,A.Nasua_nasua,9651,=,9651,B.Nasua_nasua,,,canonicalName,species
-____________________,A ONLY,A.Nasua_nasua_rufa,9652,,,,,,,subspecies
-____________________,B ONLY,,,,9652,B.Nasua_nasua_rufa,,,,subspecies
-__________________,SHARED,A.Nasua_narica,352831,=,352831,B.Nasua_narica,tip,,canonicalName,species
-__________________,B ONLY,,,,2649482,B.unclassified_Nasua,,,,
-____________________,B ONLY,,,,1704005,B.Nasua_sp._LD-2015,,,,species
-____________________,B ONLY,,,,1967459,B.Nasua_sp._EG-2017,,,,species
 ________________,SHARED,A.Procyon,9653,=,9653,B.Procyon,,,cross-mrca =,genus
 __________________,SHARED,A.Procyon_lotor,9654,=,9654,B.Procyon_lotor,subtree=,,cross-mrca =,species
 __________________,SHARED,A.Procyon_cancrivorus,92522,=,92522,B.Procyon_cancrivorus,tip,,canonicalName,species
@@ -3358,6 +3344,12 @@ __________________,B ONLY (increased resolution),A.Bassaricyon_neblina_neblina,1
 __________________,B ONLY (increased resolution),A.Bassaricyon,48421,>,2639555,B.unclassified_Bassaricyon,,,A.Bassaricyon_medius is not in the A taxon,
 ________________,SHARED,A.Bassariscus,55046,=,55046,B.Bassariscus,subtree=,,cross-mrca =,genus
 ________________,SHARED,A.Nasuella,743423,=,743423,B.Nasuella,subtree=,,cross-mrca =,genus
+________________,B ONLY (increased resolution),A.Nasua_narica,352831,>,9650,B.Nasua,,,cross-mrca <,genus
+__________________,B ONLY,,,,9651,B.Nasua_nasua,,,,species
+____________________,B ONLY,,,,9652,B.Nasua_nasua_rufa,,,,subspecies
+__________________,B ONLY,,,,2649482,B.unclassified_Nasua,,,,
+____________________,B ONLY,,,,1704005,B.Nasua_sp._LD-2015,,,,species
+____________________,B ONLY,,,,1967459,B.Nasua_sp._EG-2017,,,,species
 ________________,B ONLY (increased resolution),A.Potos_flavus,29067,>,29066,B.Potos,,,cross-mrca <,genus
 ________________,B ONLY,,,,1967461,B.unclassified_Procyonidae,,,,
 __________________,B ONLY,,,,1967462,B.Procyonidae_sp._EG-2017,,,,species
@@ -3371,7 +3363,7 @@ ____________________,B ONLY,,,,1565733,B.Lutra_nippon,,,,species
 __________________,SHARED,A.Lontra,71112,=,71112,B.Lontra,subtree=,,cross-mrca =,genus
 __________________,SHARED,A.Aonyx,76721,=,76721,B.Aonyx,,,cross-mrca =,genus
 ____________________,SHARED,A.Aonyx_capensis,76722,=,76722,B.Aonyx_capensis,tip,,canonicalName,species
-____________________,SHARED,A.Aonyx_cinerea,452597,=,452597,B.Aonyx_cinereus,tip,canonicalName,,species
+____________________,SHARED,A.Aonyx_cinerea,452597,=,452597,B.Aonyx_cinereus,tip,canonicalName,ncbi_id,species
 __________________,B ONLY (increased resolution),A.Pteronura_brasiliensis,9672,>,9671,B.Pteronura,,,cross-mrca <,genus
 __________________,B ONLY (increased resolution),A.Enhydra_lutris,34882,>,34881,B.Enhydra,,,cross-mrca <,genus
 __________________,B ONLY (increased resolution),A.Hydrictis_maculicollis,452641,>,452640,B.Hydrictis,,,cross-mrca <,genus
@@ -3402,7 +3394,7 @@ __________________,SHARED,A.Neovison_vison_x_Mustela_lutreola,1284774,=,1284774,
 __________________,B ONLY (increased resolution),A.Lyncodon_patagonicus,768574,>,768573,B.Lyncodon,,,cross-mrca <,genus
 ________________,SHARED,A.Melinae,1008252,=,1008252,B.Melinae,,,cross-mrca =,subfamily
 __________________,SHARED,A.Meles,9661,=,9661,B.Meles,,number_of_children,cross-mrca =,genus
-____________________,SHARED,A.Meles_meles_canescens,231151,=,231151,B.Meles_canescens,tip,taxonRank; canonicalName,ncbi_id,species
+____________________,SHARED,A.Meles_meles_canescens,231151,=,231151,B.Meles_canescens,tip,taxonRank; canonicalName,,species
 ____________________,A ONLY (loss of resolution),A.Meles_meles,9662,<,9661,B.Meles,,,B.unclassified_Meles is not in the A taxon,genus
 ____________________,SHARED,A.Meles_anakuma,191034,=,191034,B.Meles_anakuma,tip,,canonicalName,species
 ____________________,SHARED,A.Meles_leucurus,702266,=,702266,B.Meles_leucurus,,number_of_children,scientificName,species
@@ -3476,8 +3468,8 @@ ________________,B ONLY (increased resolution),A.Erignathus_barbatus,39304,>,391
 ________________,B ONLY (increased resolution),A.Lobodon_carcinophaga,101849,>,101848,B.Lobodon,,,cross-mrca <,genus
 ________________,B ONLY (increased resolution),A.Ommatophoca_rossii,207342,>,207341,B.Ommatophoca,,,cross-mrca <,genus
 ________________,B ONLY (increased resolution),A.Monachus,29087,>,1907176,B.Neomonachus,,,A.Monachus_monachus is not in the A taxon,genus
-__________________,SHARED (moved from 29087),A.Monachus_schauinslandi,29088,=,29088,B.Neomonachus_schauinslandi,tip,canonicalName,ncbi_id,species
-__________________,SHARED (moved from 29087),A.Monachus_tropicalis,1295174,=,1295174,B.Neomonachus_tropicalis,tip,canonicalName,ncbi_id,species
+__________________,SHARED (moved from 29087),A.Monachus_schauinslandi,29088,=,29088,B.Neomonachus_schauinslandi,tip,canonicalName,,species
+__________________,SHARED (moved from 29087),A.Monachus_tropicalis,1295174,=,1295174,B.Neomonachus_tropicalis,tip,canonicalName,,species
 ______________,SHARED,A.Mephitidae,119825,=,119825,B.Mephitidae,,,cross-mrca =,family
 ________________,SHARED,A.Conepatus,30541,=,30541,B.Conepatus,,,cross-mrca =,genus
 __________________,SHARED,A.Conepatus_chinga,30542,=,30542,B.Conepatus_chinga,tip,,canonicalName,species
@@ -3578,7 +3570,7 @@ ________________________,B ONLY,,,,1844112,B.Odocoileus_virginianus_clavium,,,,s
 ________________________,B ONLY,,,,1844113,B.Odocoileus_virginianus_curassavicus,,,,subspecies
 ________________________,B ONLY,,,,2567843,B.Odocoileus_virginianus_veraecrucis,,,,subspecies
 ______________________,A ONLY (loss of resolution),A.Odocoileus,9871,<,9871,B.Odocoileus,,,B.Odocoileus_pandora is not in the A taxon,genus
-______________________,SHARED (moved from 43333),A.Mazama_pandora,1380314,=,1380314,B.Odocoileus_pandora,tip,canonicalName; scientificName,ncbi_id,species
+______________________,SHARED (moved from 43333),A.Mazama_pandora,1380314,=,1380314,B.Odocoileus_pandora,tip,canonicalName; scientificName,,species
 ______________________,B ONLY (increased resolution),A.Odocoileus_sp.,39410,>,2625720,B.unclassified_Odocoileus,,,cross-mrca <,
 ____________________,B ONLY (increased resolution),A.Mazama,43333,>,43333,B.Mazama,,,A.Mazama_pandora is not in the A taxon,genus
 ______________________,SHARED (moved from 43333),A.Mazama_americana,43334,=,43334,B.Mazama_americana,,number_of_children,canonicalName,species
@@ -3597,7 +3589,7 @@ ____________________,B ONLY (increased resolution),A.Blastocerus_dichotomus,2481
 __________________,SHARED,A.Muntiacinae,34877,=,34877,B.Muntiacinae,,,cross-mrca =,subfamily
 ____________________,SHARED,A.Muntiacus,9885,=,9885,B.Muntiacus,,number_of_children,cross-mrca =,genus
 ______________________,SHARED,A.Muntiacus_reevesi,9886,=,9886,B.Muntiacus_reevesi,subtree=,,cross-mrca =,species
-______________________,SHARED,A.Muntiacus_muntjak_vaginalis,9887,=,9887,B.Muntiacus_vaginalis,tip,taxonRank; canonicalName,ncbi_id,species
+______________________,SHARED,A.Muntiacus_muntjak_vaginalis,9887,=,9887,B.Muntiacus_vaginalis,tip,taxonRank; canonicalName,,species
 ______________________,A ONLY (loss of resolution),A.Muntiacus_muntjak,9888,<,9885,B.Muntiacus,,,B.Muntiacus_sp._JJ-2007 is not in the A taxon,genus
 ______________________,SHARED,A.Muntiacus_crinifrons,71854,=,71854,B.Muntiacus_crinifrons,tip,,canonicalName,species
 ______________________,SHARED,A.Muntiacus_feae,71855,=,71855,B.Muntiacus_feae,tip,,canonicalName,species
@@ -3722,9 +3714,9 @@ ________________________,SHARED (moved from 9860),A.Cervus_elaphus_scoticus,4088
 ________________________,B ONLY,,,,1678938,B.Cervus_elaphus_italicus,,,,subspecies
 ________________________,B ONLY,,,,1851208,B.Cervus_elaphus_alxaicus,,,,subspecies
 ______________________,B ONLY (increased resolution),A.Cervus_elaphus,9860,>,2100816,B.Cervus_hanglu,,,A.Cervus_elaphus_scoticus is not in the A taxon,species
-________________________,SHARED (moved from 9860),A.Cervus_elaphus_yarkandensis,84702,=,84702,B.Cervus_hanglu_yarkandensis,tip,canonicalName,ncbi_id,subspecies
-________________________,SHARED (moved from 9860),A.Cervus_elaphus_bactrianus,164931,=,164931,B.Cervus_hanglu_bactrianus,tip,canonicalName,ncbi_id,subspecies
-________________________,SHARED (moved from 9860),A.Cervus_elaphus_hanglu,408872,=,408872,B.Cervus_hanglu_hanglu,tip,canonicalName,ncbi_id,subspecies
+________________________,SHARED (moved from 9860),A.Cervus_elaphus_yarkandensis,84702,=,84702,B.Cervus_hanglu_yarkandensis,tip,canonicalName,,subspecies
+________________________,SHARED (moved from 9860),A.Cervus_elaphus_bactrianus,164931,=,164931,B.Cervus_hanglu_bactrianus,tip,canonicalName,,subspecies
+________________________,SHARED (moved from 9860),A.Cervus_elaphus_hanglu,408872,=,408872,B.Cervus_hanglu_hanglu,tip,canonicalName,,subspecies
 ______________________,B ONLY (increased resolution),A.Cervus_sp.,27598,>,2649582,B.unclassified_Cervus,,,cross-mrca <,
 ____________________,SHARED,A.Dama,9867,=,9867,B.Dama,,,cross-mrca =,genus
 ______________________,SHARED,A.Dama_dama,30532,=,30532,B.Dama_dama,tip,,canonicalName,species
@@ -3757,8 +3749,8 @@ ____________________,B ONLY (increased resolution),A.Hydropotes_inermis_argyropu
 ______________________,B ONLY (increased resolution),A.Hydropotes_inermis_argyropus,344906,>,9883,B.Hydropotes_inermis,,,cross-mrca <,species
 ________________,SHARED,A.Giraffidae,9892,=,9892,B.Giraffidae,,,cross-mrca =,family
 __________________,B ONLY (split),A.Giraffa,9893,=,9893,B.Giraffa,,,monotypic,genus
-____________________,SHARED,A.Giraffa_camelopardalis_reticulata,409609,=,409609,B.Giraffa_reticulata,tip,taxonRank; canonicalName,ncbi_id,species
-____________________,SHARED,A.Giraffa_camelopardalis_tippelskirchi,439328,=,439328,B.Giraffa_tippelskirchi,tip,taxonRank; canonicalName,ncbi_id,species
+____________________,SHARED,A.Giraffa_camelopardalis_reticulata,409609,=,409609,B.Giraffa_reticulata,tip,taxonRank; canonicalName,,species
+____________________,SHARED,A.Giraffa_camelopardalis_tippelskirchi,439328,=,439328,B.Giraffa_tippelskirchi,tip,taxonRank; canonicalName,,species
 ____________________,A ONLY (merge),A.Giraffa_camelopardalis,9894,=,9893,B.Giraffa,,,cross-mrca =,genus
 ______________________,A ONLY,A.Giraffa_camelopardalis_giraffa,439325,,,,,,,subspecies
 ______________________,A ONLY,A.Giraffa_camelopardalis_rothschildi,439327,,,,,,,subspecies
@@ -3770,7 +3762,7 @@ ______________________,SHARED (moved from 9894),A.Giraffa_camelopardalis_peralta
 ______________________,SHARED (moved from 9894),A.Giraffa_camelopardalis_hybrid_subspecies,927613,=,927613,B.Giraffa_camelopardalis_hybrid_subspecies,tip,,canonicalName,subspecies
 ______________________,B ONLY,,,,1870831,B.Giraffa_camelopardalis_camelopardalis,,,,subspecies
 ____________________,B ONLY (increased resolution),A.Giraffa_camelopardalis_angolensis,439323,>,439325,B.Giraffa_giraffa,,,cross-mrca <,species
-______________________,SHARED (moved from 9894),A.Giraffa_camelopardalis_angolensis,439323,=,439323,B.Giraffa_giraffa_angolensis,tip,canonicalName,ncbi_id,subspecies
+______________________,SHARED (moved from 9894),A.Giraffa_camelopardalis_angolensis,439323,=,439323,B.Giraffa_giraffa_angolensis,tip,canonicalName,,subspecies
 ______________________,B ONLY,,,,2116735,B.Giraffa_giraffa_giraffa,,,,subspecies
 ____________________,B ONLY,,,,2682741,B.environmental_samples#2682741,,,,
 ______________________,B ONLY,,,,2682742,B.Giraffa_environmental_sample,,,,species
@@ -3909,14 +3901,14 @@ ________________________,SHARED,A.Ovis_vignei_arkal,191607,=,191607,B.Ovis_vigne
 ________________________,SHARED,A.Ovis_vignei_blanfordi,509055,=,509055,B.Ovis_vignei_blanfordi,tip,,canonicalName,subspecies
 ________________________,SHARED,A.Ovis_vignei_cycloceros,509057,=,509057,B.Ovis_vignei_cycloceros,tip,,canonicalName,subspecies
 ________________________,SHARED,A.Ovis_vignei_kermanensis,509058,=,509058,B.Ovis_vignei_kermanensis,tip,,canonicalName,subspecies
-________________________,SHARED,A.Ovis_vignei_punjabensis,509059,=,509059,B.Ovis_vignei_punjabiensis,tip,canonicalName,ncbi_id,subspecies
+________________________,SHARED,A.Ovis_vignei_punjabensis,509059,=,509059,B.Ovis_vignei_punjabiensis,tip,canonicalName,,subspecies
 ________________________,SHARED,A.Ovis_vignei_vignei,509060,=,509060,B.Ovis_vignei_vignei,tip,,canonicalName,subspecies
 ______________________,SHARED,A.Ovis_canadensis_x_aries,611332,=,611332,B.Ovis_canadensis_x_aries,tip,,canonicalName,species
 ______________________,SHARED,A.Ovis_orientalis_x_vignei,703186,=,703186,B.Ovis_orientalis_x_vignei,tip,,canonicalName,species
 ______________________,SHARED,A.unclassified_Ovis,1110705,=,1110705,B.unclassified_Ovis,subtree=,,cross-mrca =,
 ______________________,B ONLY (increased resolution),A.Ovis_aries,9940,>,9940,B.Ovis_aries,,,A.Ovis_aries_ophion is not in the A taxon,species
 ______________________,B ONLY (reorganization),A.Ovis,9935,><,469796,B.Ovis_orientalis,,,A.Ovis_aries_ophion is in the A taxon; B-sibling A.Ovis_aries_platyura is not,species
-________________________,SHARED (moved from 9940),A.Ovis_aries_ophion,557290,=,557290,B.Ovis_orientalis_ophion,tip,canonicalName,ncbi_id,subspecies
+________________________,SHARED (moved from 9940),A.Ovis_aries_ophion,557290,=,557290,B.Ovis_orientalis_ophion,tip,canonicalName,,subspecies
 ________________________,SHARED,A.Ovis_orientalis_anatolica,509051,=,509051,B.Ovis_orientalis_anatolica,tip,,scientificName,subspecies
 ________________________,SHARED,A.Ovis_orientalis_gmelini,509052,=,509052,B.Ovis_orientalis_gmelini,tip,,canonicalName,subspecies
 ________________________,SHARED,A.Ovis_orientalis_isphahanica,509053,=,509053,B.Ovis_orientalis_isphahanica,tip,,canonicalName,subspecies
@@ -3978,7 +3970,7 @@ ____________________,B ONLY (increased resolution),A.Myotragus_balearicus,201717
 ____________________,B ONLY,,,,1922214,B.Bootherium,,,,genus
 ______________________,B ONLY,,,,1922215,B.Bootherium_bombifrons,,,,species
 ____________________,B ONLY (increased resolution),A.Hemitragus_jayakari,330465,>,2305161,B.Arabitragus,,,cross-mrca <,genus
-______________________,SHARED (moved from 37178),A.Hemitragus_jayakari,330465,=,330465,B.Arabitragus_jayakari,tip,canonicalName; scientificName,ncbi_id,species
+______________________,SHARED (moved from 37178),A.Hemitragus_jayakari,330465,=,330465,B.Arabitragus_jayakari,tip,canonicalName; scientificName,,species
 ____________________,B ONLY,,,,2666254,B.Caprinae_intergeneric_hybrids,,,,
 ______________________,B ONLY,,,,2666255,B.Capra_hircus_x_Ovis_aries,,,,species
 __________________,SHARED,A.Bovinae,27592,=,27592,B.Bovinae,,,cross-mrca =,subfamily
@@ -4093,7 +4085,7 @@ ____________________,SHARED,A.Sus_scrofa_coreanus,291050,=,291050,B.Sus_scrofa_c
 ____________________,SHARED,A.Sus_scrofa_cristatus,309913,=,309913,B.Sus_scrofa_cristatus,tip,,canonicalName,subspecies
 ____________________,SHARED,A.Sus_scrofa_papuensis,309914,=,309914,B.Sus_scrofa_papuensis,tip,,canonicalName,subspecies
 ____________________,SHARED,A.Sus_scrofa_andamensis,310260,=,310260,B.Sus_scrofa_andamensis,tip,,canonicalName,subspecies
-____________________,SHARED,A.Sus_scrofa_taiwanensis,310261,=,310261,B.Sus_scrofa_taivanus,tip,canonicalName,ncbi_id,subspecies
+____________________,SHARED,A.Sus_scrofa_taiwanensis,310261,=,310261,B.Sus_scrofa_taivanus,tip,canonicalName,,subspecies
 ____________________,SHARED,A.Sus_scrofa_leucomystax,375578,=,375578,B.Sus_scrofa_leucomystax,tip,,canonicalName,subspecies
 ____________________,SHARED,A.Sus_scrofa_riukiuanus,375579,=,375579,B.Sus_scrofa_riukiuanus,tip,,canonicalName,subspecies
 ____________________,SHARED,A.Sus_scrofa_scrofa,415978,=,415978,B.Sus_scrofa_scrofa,tip,,canonicalName,subspecies
@@ -4254,7 +4246,7 @@ __________________,SHARED,A.Balaenopteridae,9765,=,9765,B.Balaenopteridae,,,cros
 ____________________,SHARED,A.Balaenoptera,9766,=,9766,B.Balaenoptera,,number_of_children,cross-mrca =,genus
 ______________________,SHARED,A.Balaenoptera_acutorostrata,9767,=,9767,B.Balaenoptera_acutorostrata,,,cross-mrca =,species
 ________________________,SHARED,A.Balaenoptera_acutorostrata_scammoni,310752,=,310752,B.Balaenoptera_acutorostrata_scammoni,tip,,canonicalName,subspecies
-________________________,SHARED,A.Balaenoptera_acutorostrata_dwarf_minke_whale,487985,=,487985,B.Balaenoptera_acutorostrata_subsp._unnamed,tip,canonicalName,ncbi_id,
+________________________,SHARED,A.Balaenoptera_acutorostrata_dwarf_minke_whale,487985,=,487985,B.Balaenoptera_acutorostrata_subsp._unnamed,tip,canonicalName,,
 ______________________,SHARED,A.Balaenoptera_borealis,9768,=,9768,B.Balaenoptera_borealis,tip,,canonicalName,species
 ______________________,SHARED,A.Balaenoptera_edeni,9769,=,9769,B.Balaenoptera_edeni,tip,,scientificName,species
 ______________________,SHARED,A.Balaenoptera_physalus,9770,=,9770,B.Balaenoptera_physalus,tip,,scientificName,species
@@ -4295,9 +4287,9 @@ ________________,B ONLY,,,,1836949,B.Manis_culionensis,,,,species
 ________________,B ONLY (increased resolution),A.Manis,9973,>,2643178,B.unclassified_Manis,,,A.Manis_gigantea is not in the A taxon,
 ______________,B ONLY (increased resolution),A.Manis,9973,>,2736677,B.Smutsia#2736677,,,A.Manis_crassicaudata is not in the A taxon,genus
 ________________,SHARED (moved from 9973),A.Manis_temminckii,302418,=,302418,B.Smutsia_temminckii,tip,canonicalName; scientificName,,species
-________________,SHARED (moved from 9973),A.Manis_gigantea,1559511,=,1559511,B.Smutsia_gigantea,tip,canonicalName; scientificName,ncbi_id,species
+________________,SHARED (moved from 9973),A.Manis_gigantea,1559511,=,1559511,B.Smutsia_gigantea,tip,canonicalName; scientificName,,species
 ______________,B ONLY (increased resolution),A.Manis,9973,>,2736678,B.Phataginus,,,A.Manis_gigantea is not in the A taxon,genus
-________________,SHARED (moved from 9973),A.Manis_tetradactyla,73815,=,73815,B.Phataginus_tetradactyla,tip,canonicalName,ncbi_id,species
+________________,SHARED (moved from 9973),A.Manis_tetradactyla,73815,=,73815,B.Phataginus_tetradactyla,tip,canonicalName,,species
 ________________,SHARED (moved from 9973),A.Manis_tricuspis,358128,=,358128,B.Phataginus_tricuspis,tip,canonicalName; scientificName,,species
 ________,SHARED,A.Euarchontoglires,314146,=,314146,B.Euarchontoglires,,,cross-mrca =,superorder
 __________,SHARED,A.Primates,9443,=,9443,B.Primates,,,cross-mrca =,order
@@ -4525,7 +4517,7 @@ ________________________,SHARED (moved from 9481),A.Callithrix_humeralifera,5223
 ________________________,SHARED (moved from 9481),A.Callithrix_mauesi,57377,=,57377,B.Mico_mauesi,tip,canonicalName,,species
 ________________________,SHARED (moved from 9481),A.Callithrix_cf._emiliae,198701,=,198701,B.Mico_cf._emiliae,tip,canonicalName,,species
 ________________________,SHARED (moved from 9481),A.Callithrix_saterei,198702,=,198702,B.Mico_saterei,tip,canonicalName,,species
-________________________,SHARED (moved from 9481),A.Callithrix_melanura,1090896,=,1090896,B.Mico_melanurus,tip,canonicalName; scientificName,ncbi_id,species
+________________________,SHARED (moved from 9481),A.Callithrix_melanura,1090896,=,1090896,B.Mico_melanurus,tip,canonicalName; scientificName,,species
 ________________________,SHARED (moved from 9481),A.Callithrix_rondoni,1127763,=,1127763,B.Mico_rondoni,tip,canonicalName,,species
 ________________________,B ONLY (increased resolution),A.Callithrix_argentata_argentata,867362,>,9482,B.Mico_argentatus,,,cross-mrca <,species
 ________________________,B ONLY,,,,1758231,B.Mico_chrysoleucus,,,,species
@@ -4536,11 +4528,11 @@ ________________________,B ONLY,,,,2592808,B.Mico_munduruku,,,,species
 ______________________,B ONLY (increased resolution),A.Saguinus,9486,>,2681187,B.Leontocebus,,,A.Saguinus_inustus is not in the A taxon,genus
 ________________________,SHARED (moved from 9486),A.Saguinus_fuscicollis,9487,=,9487,B.Leontocebus_fuscicollis,,canonicalName,cross-mrca =,species
 __________________________,SHARED,A.Saguinus_fuscicollis_fuscicollis,48018,=,48018,B.Leontocebus_fuscicollis_fuscicollis,tip,canonicalName,ncbi_id,subspecies
-__________________________,SHARED,A.Saguinus_fuscicollis_weddelli,343424,=,343424,B.Leontocebus_fuscicollis_weddelli,tip,canonicalName,ncbi_id,subspecies
-__________________________,SHARED,A.Saguinus_fuscicollis_leucogenys,881946,=,881946,B.Leontocebus_fuscicollis_leucogenys,tip,canonicalName; scientificName,ncbi_id,subspecies
-__________________________,SHARED,A.Saguinus_fuscicollis_illigeri,881947,=,881947,B.Leontocebus_fuscicollis_illigeri,tip,canonicalName; scientificName,ncbi_id,subspecies
-__________________________,SHARED,A.Saguinus_fuscicollis_nigrifrons,881949,=,881949,B.Leontocebus_fuscicollis_nigrifrons,tip,canonicalName; scientificName,ncbi_id,subspecies
-__________________________,SHARED,A.Saguinus_fuscicollis_lagonotus,881950,=,881950,B.Leontocebus_fuscicollis_lagonotus,tip,canonicalName; scientificName,ncbi_id,subspecies
+__________________________,SHARED,A.Saguinus_fuscicollis_weddelli,343424,=,343424,B.Leontocebus_fuscicollis_weddelli,tip,canonicalName,,subspecies
+__________________________,SHARED,A.Saguinus_fuscicollis_leucogenys,881946,=,881946,B.Leontocebus_fuscicollis_leucogenys,tip,canonicalName; scientificName,,subspecies
+__________________________,SHARED,A.Saguinus_fuscicollis_illigeri,881947,=,881947,B.Leontocebus_fuscicollis_illigeri,tip,canonicalName; scientificName,,subspecies
+__________________________,SHARED,A.Saguinus_fuscicollis_nigrifrons,881949,=,881949,B.Leontocebus_fuscicollis_nigrifrons,tip,canonicalName; scientificName,,subspecies
+__________________________,SHARED,A.Saguinus_fuscicollis_lagonotus,881950,=,881950,B.Leontocebus_fuscicollis_lagonotus,tip,canonicalName; scientificName,,subspecies
 ________________________,SHARED (moved from 9486),A.Saguinus_tripartitus,122388,=,122388,B.Leontocebus_tripartitus,tip,canonicalName,ncbi_id,species
 ________________________,SHARED (moved from 9486),A.Saguinus_cruzlimai,1618156,=,1618156,B.Leontocebus_cruzlimai,tip,canonicalName,,species
 ________________________,B ONLY (increased resolution),A.Saguinus_nigricollis_nigricollis,873070,>,9489,B.Leontocebus_nigricollis,,,cross-mrca <,species
@@ -4624,11 +4616,11 @@ __________________________,SHARED (moved from 9522),A.Callicebus_sp._MAS-2011,10
 __________________________,B ONLY,,,,1861704,B.Callicebus_sp._1_MH-2016,,,,species
 __________________________,B ONLY,,,,1861705,B.Callicebus_sp._2_MH-2016,,,,species
 ______________________,B ONLY (increased resolution),A.Callicebus,9522,>,1812035,B.Plecturocebus,,,A.Callicebus_purinus is not in the A taxon,genus
-________________________,SHARED (moved from 9522),A.Callicebus_moloch,9523,=,9523,B.Plecturocebus_moloch,tip,canonicalName,ncbi_id,species
-________________________,SHARED (moved from 9522),A.Callicebus_hoffmannsi,78255,=,78255,B.Plecturocebus_hoffmannsi,tip,canonicalName,ncbi_id,species
-________________________,SHARED (moved from 9522),A.Callicebus_cupreus,202457,=,202457,B.Plecturocebus_cupreus,tip,canonicalName,ncbi_id,species
+________________________,SHARED (moved from 9522),A.Callicebus_moloch,9523,=,9523,B.Plecturocebus_moloch,tip,canonicalName,,species
+________________________,SHARED (moved from 9522),A.Callicebus_hoffmannsi,78255,=,78255,B.Plecturocebus_hoffmannsi,tip,canonicalName,,species
+________________________,SHARED (moved from 9522),A.Callicebus_cupreus,202457,=,202457,B.Plecturocebus_cupreus,tip,canonicalName,,species
 ________________________,SHARED (moved from 9522),A.Callicebus_brunneus,221704,=,1812042,B.Plecturocebus_brunneus,tip,ncbi_id; canonicalName,,species
-________________________,SHARED (moved from 9522),A.Callicebus_caligatus,867332,=,867332,B.Plecturocebus_caligatus,tip,canonicalName,ncbi_id,species
+________________________,SHARED (moved from 9522),A.Callicebus_caligatus,867332,=,867332,B.Plecturocebus_caligatus,tip,canonicalName,,species
 ________________________,B ONLY (increased resolution),A.Callicebus_donacophilus_donacophilus,285954,>,230833,B.Plecturocebus_donacophilus,,,cross-mrca <,species
 ________________________,B ONLY,,,,1812036,B.Plecturocebus_bernhardi,,,,species
 ________________________,B ONLY,,,,1812037,B.Plecturocebus_cinerascens,,,,species
@@ -4636,9 +4628,9 @@ ________________________,B ONLY,,,,1812038,B.Plecturocebus_miltoni,,,,species
 ________________________,B ONLY,,,,2487713,B.Plecturocebus_vieirai,,,,species
 ________________________,B ONLY,,,,2488670,B.Plecturocebus_grovesi,,,,species
 ______________________,B ONLY (increased resolution),A.Callicebus,9522,>,1812102,B.Cheracebus,,,A.Callicebus_sp._MAS-2011 is not in the A taxon,genus
-________________________,SHARED (moved from 9522),A.Callicebus_torquatus,30592,=,30592,B.Cheracebus_torquatus,tip,canonicalName,ncbi_id,species
-________________________,SHARED (moved from 9522),A.Callicebus_lugens,210166,=,210166,B.Cheracebus_lugens,tip,canonicalName,ncbi_id,species
-________________________,SHARED (moved from 9522),A.Callicebus_purinus,1560619,=,1560619,B.Cheracebus_purinus,tip,canonicalName,ncbi_id,species
+________________________,SHARED (moved from 9522),A.Callicebus_torquatus,30592,=,30592,B.Cheracebus_torquatus,tip,canonicalName,,species
+________________________,SHARED (moved from 9522),A.Callicebus_lugens,210166,=,210166,B.Cheracebus_lugens,tip,canonicalName,,species
+________________________,SHARED (moved from 9522),A.Callicebus_purinus,1560619,=,1560619,B.Cheracebus_purinus,tip,canonicalName,,species
 ________________________,B ONLY,,,,1812110,B.Cheracebus_regulus,,,,species
 ________________________,B ONLY,,,,2487712,B.Cheracebus_lucifer,,,,species
 ____________________,B ONLY,,,,2490929,B.Xenothricinae,,,,subfamily
@@ -4729,7 +4721,7 @@ __________________________,SHARED,A.Pan_troglodytes,9598,=,9598,B.Pan_troglodyte
 ________________________,SHARED,A.Homo,9605,=,9605,B.Homo,,number_of_children,cross-mrca =,genus
 __________________________,SHARED,A.Homo_sapiens,9606,=,9606,B.Homo_sapiens,,,cross-mrca =,species
 ____________________________,SHARED,A.Homo_sapiens_neanderthalensis,63221,=,63221,B.Homo_sapiens_neanderthalensis,tip,,canonicalName,subspecies
-____________________________,SHARED,A.Homo_sapiens_ssp._Denisova,741158,=,741158,B.Homo_sapiens_subsp._'Denisova',tip,canonicalName,ncbi_id,subspecies
+____________________________,SHARED,A.Homo_sapiens_ssp._Denisova,741158,=,741158,B.Homo_sapiens_subsp._'Denisova',tip,canonicalName,,subspecies
 __________________________,SHARED,A.Homo_heidelbergensis,1425170,=,1425170,B.Homo_heidelbergensis,tip,,scientificName,species
 __________________________,B ONLY,,,,2665952,B.environmental_samples#2665952,,,,
 ____________________________,B ONLY,,,,2665953,B.Homo_sapiens_environmental_sample,,,,species
@@ -4755,7 +4747,7 @@ ______________________,B ONLY,,,,1748402,B.Tarsius_sp._CD-2015,,,,species
 __________________,B ONLY (increased resolution),A.Tarsius_syrichta,9478,>,1868481,B.Carlito,,,cross-mrca <,genus
 ____________________,SHARED (moved from 9476),A.Tarsius_syrichta,9478,=,1868482,B.Carlito_syrichta,tip,ncbi_id; canonicalName,,species
 __________________,B ONLY (increased resolution),A.Tarsius_bancanus,9477,>,1971489,B.Cephalopachus,,,cross-mrca <,genus
-____________________,SHARED (moved from 9476),A.Tarsius_bancanus,9477,=,9477,B.Cephalopachus_bancanus,,number_of_children; canonicalName; scientificName,ncbi_id,species
+____________________,SHARED (moved from 9476),A.Tarsius_bancanus,9477,=,9477,B.Cephalopachus_bancanus,,number_of_children; canonicalName; scientificName,,species
 ______________________,B ONLY,,,,1971490,B.Cephalopachus_bancanus_bancanus,,,,subspecies
 ______________________,B ONLY,,,,2567999,B.Cephalopachus_bancanus_borneanus,,,,subspecies
 __________,SHARED,A.Glires,314147,=,314147,B.Glires,,,cross-mrca =,
@@ -4935,7 +4927,7 @@ ________________,SHARED,A.Hystricidae,10135,=,10135,B.Hystricidae,,,cross-mrca =
 __________________,SHARED,A.Hystrix,10136,=,10136,B.Hystrix,,number_of_children,cross-mrca =,genus
 ____________________,SHARED,A.Hystrix_cristata,10137,=,10137,B.Hystrix_cristata,tip,,canonicalName,species
 ____________________,SHARED,A.Hystrix_africaeaustralis,10138,=,10138,B.Hystrix_africaeaustralis,tip,,canonicalName,species
-____________________,SHARED,A.Hystrix_brachyurus,143286,=,143286,B.Hystrix_brachyura,,number_of_children; canonicalName,,species
+____________________,SHARED,A.Hystrix_brachyurus,143286,=,143286,B.Hystrix_brachyura,,number_of_children; canonicalName,ncbi_id,species
 ______________________,B ONLY,,,,1758208,B.Hystrix_brachyura_hodgsoni,,,,subspecies
 ____________________,SHARED,A.Hystrix_indica,192883,=,192883,B.Hystrix_indica,tip,,canonicalName,species
 ____________________,B ONLY,,,,1936104,B.Hystrix_crassispinis,,,,species
@@ -5450,9 +5442,8 @@ ________________________,B ONLY,,,,2599451,B.Biswamoyopterus_biswasi,,,,species
 ____________________,SHARED,A.Sciurini,337752,=,337752,B.Sciurini,,number_of_children,cross-mrca =,tribe
 ______________________,A ONLY (loss of resolution),A.Sciurus,10001,<,337752,B.Sciurini,,,B.Syntheosciurus is not in the A taxon,tribe
 ______________________,SHARED,A.Microsciurus,45476,=,45476,B.Microsciurus,,number_of_children,cross-mrca =,genus
-________________________,SHARED,A.Microsciurus_flaviventer,45477,=,45477,B.Microsciurus_flaviventer,,number_of_children,canonicalName,species
-__________________________,SHARED (moved from 45477),A.Microsciurus_flaviventer_sabanillae,227737,=,2749094,B.Microsciurus_sabanillae,tip,taxonRank; ncbi_id; canonicalName,,species
 ________________________,SHARED,A.Microsciurus_alfari,226865,=,226865,B.Microsciurus_alfari,tip,,canonicalName,species
+________________________,B ONLY,,,,45477,B.Microsciurus_flaviventer,,,,species
 ________________________,B ONLY,,,,2749092,B.Microsciurus_mimulus,,,,species
 ________________________,B ONLY,,,,2749093,B.Microsciurus_otinus,,,,species
 ________________________,B ONLY,,,,2749095,B.Microsciurus_similis,,,,species
@@ -5490,11 +5481,10 @@ ________________________,SHARED (moved from 10001),A.Sciurus_aestuans,84648,=,84
 ________________________,B ONLY,,,,2749091,B.Guerlinguetus_brasiliensis,,,,species
 ______________________,B ONLY (increased resolution),A.Sciurus,10001,>,2749099,B.Hadrosciurus,,,A.Sciurus_gilvigularis is not in the A taxon,genus
 ________________________,SHARED (moved from 10001),A.Sciurus_spadiceus,511841,=,511841,B.Hadrosciurus_spadiceus,tip,canonicalName,ncbi_id,species
-________________________,SHARED (moved from 10001),A.Sciurus_igniventris,1473561,=,1473561,B.Hadrosciurus_igniventris,tip,canonicalName; scientificName,ncbi_id,species
-________________________,SHARED (moved from 10001),A.Sciurus_pyrrhinus,1473562,=,1473562,B.Hadrosciurus_pyrrhinus,tip,canonicalName; scientificName,ncbi_id,species
-______________________,B ONLY (increased resolution),A.Sciurus_stramineus,45473,>,2749100,B.Simosciurus,,,cross-mrca <,genus
-________________________,SHARED (moved from 10001),A.Sciurus_stramineus,45473,=,45473,B.Simosciurus_stramineus,,number_of_children; canonicalName,ncbi_id,species
-__________________________,SHARED (moved from 45473),A.Sciurus_stramineus_nebouxii,1547579,=,1547579,B.Simosciurus_nebouxii,tip,taxonRank; canonicalName; scientificName,ncbi_id,species
+________________________,SHARED (moved from 10001),A.Sciurus_igniventris,1473561,=,1473561,B.Hadrosciurus_igniventris,tip,canonicalName; scientificName,,species
+________________________,SHARED (moved from 10001),A.Sciurus_pyrrhinus,1473562,=,1473562,B.Hadrosciurus_pyrrhinus,tip,canonicalName; scientificName,,species
+______________________,B ONLY (increased resolution),A.Sciurus_stramineus_nebouxii,1547579,>,2749100,B.Simosciurus,,,cross-mrca <,genus
+________________________,B ONLY,,,,45473,B.Simosciurus_stramineus,,,,species
 ____________________,B ONLY (increased resolution),A.Tamiasciurus,10008,>,337822,B.Tamiasciurini,,,cross-mrca <,tribe
 __________________,SHARED,A.Callosciurinae,337724,=,337724,B.Callosciurinae,,,cross-mrca =,subfamily
 ____________________,SHARED,A.Callosciurini,337736,=,337736,B.Callosciurini,,,cross-mrca =,tribe
@@ -5752,9 +5742,9 @@ ________________________,SHARED,A.Urocitellus_columbianus,50862,=,50862,B.Urocit
 ________________________,SHARED,A.Urocitellus_brunneus,53505,=,53505,B.Urocitellus_brunneus,subtree=,,cross-mrca =,species
 ________________________,SHARED,A.Urocitellus_armatus,99832,=,99832,B.Urocitellus_armatus,tip,,canonicalName,species
 ________________________,SHARED,A.Urocitellus_townsendi,99861,=,99861,B.Urocitellus_townsendii,,canonicalName,cross-mrca =,species
-__________________________,SHARED,A.Urocitellus_townsendi_nancyae,99864,=,99864,B.Urocitellus_townsendii_nancyae,tip,canonicalName,ncbi_id,subspecies
-__________________________,SHARED,A.Urocitellus_townsendi_townsendi,99865,=,99865,B.Urocitellus_townsendii_townsendii,tip,canonicalName,ncbi_id,subspecies
-__________________________,SHARED,A.Urocitellus_townsendi_vigilis,99866,=,99866,B.Urocitellus_townsendii_vigilis,tip,canonicalName,ncbi_id,subspecies
+__________________________,SHARED,A.Urocitellus_townsendi_nancyae,99864,=,99864,B.Urocitellus_townsendii_nancyae,tip,canonicalName,,subspecies
+__________________________,SHARED,A.Urocitellus_townsendi_townsendi,99865,=,99865,B.Urocitellus_townsendii_townsendii,tip,canonicalName,,subspecies
+__________________________,SHARED,A.Urocitellus_townsendi_vigilis,99866,=,99866,B.Urocitellus_townsendii_vigilis,tip,canonicalName,,subspecies
 ________________________,SHARED,A.Urocitellus_undulatus,99867,=,99867,B.Urocitellus_undulatus,,number_of_children,canonicalName,species
 __________________________,B ONLY,,,,1858685,B.Urocitellus_undulatus_jacutensis,,,,subspecies
 __________________________,B ONLY,,,,1858686,B.Urocitellus_undulatus_undulatus,,,,subspecies
@@ -6247,7 +6237,7 @@ ________________________,SHARED,A.Eospalax_rothschildi,146136,=,146136,B.Eospala
 ________________________,SHARED,A.Eospalax_rufescens,146137,=,146137,B.Eospalax_rufescens,tip,,canonicalName,species
 ________________________,SHARED,A.Eospalax_smithii,444095,=,444095,B.Eospalax_smithii,tip,,canonicalName,species
 ________________________,B ONLY (increased resolution),A.Eospalax,146131,>,146134,B.Eospalax_fontanierii,,,A.Eospalax_smithii is not in the A taxon,species
-__________________________,SHARED (moved from 146131),A.Eospalax_baileyi,146132,=,146132,B.Eospalax_fontanierii_baileyi,tip,taxonRank; canonicalName,ncbi_id,subspecies
+__________________________,SHARED (moved from 146131),A.Eospalax_baileyi,146132,=,146132,B.Eospalax_fontanierii_baileyi,tip,taxonRank; canonicalName,,subspecies
 __________________________,SHARED (moved from 146131),A.Eospalax_cansus,146133,=,146133,B.Eospalax_fontanierii_cansus,tip,taxonRank; canonicalName,,subspecies
 __________________,SHARED,A.Nesomyidae,337673,=,337673,B.Nesomyidae,,,cross-mrca =,family
 ____________________,SHARED,A.Cricetomyinae,40142,=,40142,B.Cricetomyinae,,,cross-mrca =,subfamily
@@ -6607,7 +6597,7 @@ ______________________,B ONLY (increased resolution),A.Neofiber_alleni,484905,>,
 ______________________,B ONLY (increased resolution),A.Lemmiscus_curtatus,663699,>,663698,B.Lemmiscus,,,cross-mrca <,genus
 ______________________,B ONLY (increased resolution),A.Hyperacrius_fertilis,1472672,>,1472671,B.Hyperacrius,,,cross-mrca <,genus
 ______________________,B ONLY (increased resolution),A.Microtus,10053,>,2162899,B.Alexandromys,,,A.Microtus_schidlovskii is not in the A taxon,genus
-________________________,SHARED (moved from 10053),A.Microtus_mongolicus,716674,=,716674,B.Alexandromys_mongolicus,tip,canonicalName; scientificName,ncbi_id,species
+________________________,SHARED (moved from 10053),A.Microtus_mongolicus,716674,=,716674,B.Alexandromys_mongolicus,tip,canonicalName; scientificName,,species
 ________________________,B ONLY (increased resolution),A.Microtus_middendorffii_hyperboreus,527669,>,100900,B.Alexandromys_middendorffii,,,cross-mrca <,species
 ________________________,B ONLY,,,,2162900,B.Alexandromys_oeconomus,,,,species
 __________________________,B ONLY,,,,2162901,B.Alexandromys_oeconomus_kharanurensis,,,,subspecies
@@ -6615,8 +6605,8 @@ ________________________,B ONLY,,,,2162902,B.Alexandromys_limnophilus,,,,species
 __________________________,B ONLY,,,,2162903,B.Alexandromys_limnophilus_malygini,,,,subspecies
 ________________________,B ONLY,,,,2162904,B.Alexandromys_mujanensis,,,,species
 ______________________,B ONLY (increased resolution),A.Microtus,10053,>,2681584,B.Terricola,,,A.Microtus_schidlovskii is not in the A taxon,genus
-________________________,SHARED (moved from 10053),A.Microtus_subterraneus,137712,=,137712,B.Terricola_subterraneus,tip,canonicalName,ncbi_id,species
-________________________,SHARED (moved from 10053),A.Microtus_daghestanicus,269651,=,269651,B.Terricola_daghestanicus,tip,canonicalName,ncbi_id,species
+________________________,SHARED (moved from 10053),A.Microtus_subterraneus,137712,=,137712,B.Terricola_subterraneus,tip,canonicalName,,species
+________________________,SHARED (moved from 10053),A.Microtus_daghestanicus,269651,=,269651,B.Terricola_daghestanicus,tip,canonicalName,,species
 ____________________,SHARED,A.Sigmodontinae,40141,=,40141,B.Sigmodontinae,,number_of_children,cross-mrca =,subfamily
 ______________________,SHARED,A.Akodon,10069,=,10069,B.Akodon,,,cross-mrca =,genus
 ________________________,SHARED,A.Akodon_aerosus,10070,=,10070,B.Akodon_aerosus,tip,,canonicalName,species
@@ -6999,7 +6989,7 @@ ________________________,B ONLY,,,,2028558,B.Nesoryzomys_indefessus,,,,species
 ______________________,SHARED,A.Scapteromys,89125,=,89125,B.Scapteromys,,number_of_children,cross-mrca =,genus
 ________________________,SHARED,A.Scapteromys_tumidus,89126,=,89126,B.Scapteromys_tumidus,tip,,canonicalName,species
 ________________________,SHARED,A.Scapteromys_aquaticus,241146,=,241146,B.Scapteromys_aquaticus,tip,,canonicalName,species
-________________________,SHARED,A.Scapteromys_sp._1_GLG-2013,1394148,=,1394148,B.Scapteromys_meridionalis,tip,canonicalName,ncbi_id,species
+________________________,SHARED,A.Scapteromys_sp._1_GLG-2013,1394148,=,1394148,B.Scapteromys_meridionalis,tip,canonicalName,,species
 ________________________,B ONLY,,,,2641614,B.unclassified_Scapteromys,,,,
 __________________________,B ONLY,,,,1604308,B.Scapteromys_sp._ULB-2015b,,,,species
 __________________________,B ONLY,,,,1604309,B.Scapteromys_sp._ULB-2015a,,,,species
@@ -8335,10 +8325,11 @@ ________________________,SHARED,A.Hapalomys_delacouri,1156415,=,1156415,B.Hapalo
 ________________________,SHARED,A.Hapalomys_longicaudatus,1542949,=,1542949,B.Hapalomys_longicaudatus,tip,,scientificName,species
 ________________________,B ONLY,,,,2677352,B.unclassified_Hapalomys,,,,
 __________________________,B ONLY,,,,1880988,B.Hapalomys_sp._AEB-2016a,,,,species
-______________________,SHARED,A.unclassified_Murinae,1217599,=,1217599,B.unclassified_Murinae,,number_of_children,canonicalName,
-________________________,B ONLY,,,,1795551,B.Murinae_sp._KCR-2016a,,,,species
-________________________,B ONLY,,,,2419796,B.Murinae_sp._GK59,,,,species
-________________________,B ONLY,,,,2716781,B.Murinae_gen._n._sp._n._KR-2020,,,,species
+______________________,SHARED,A.unclassified_Murinae,1217599,=,1932368,B.Soricomys,,ncbi_id; canonicalName,cross-mrca =,genus
+________________________,SHARED,A.Murinae_sp._SAJ-2012a,1217600,=,1217600,B.Soricomys_kalinga,tip,canonicalName,ncbi_id,species
+________________________,SHARED,A.Murinae_sp._SAJ-2012b,1217601,=,1217601,B.Soricomys_leonardocoi,tip,canonicalName,ncbi_id,species
+________________________,SHARED,A.Murinae_sp._SAJ-2012c,1217602,=,1217602,B.Soricomys_montanus,tip,canonicalName,,species
+________________________,SHARED,A.Murinae_sp._SAJ-2012d,1217603,=,1217603,B.Soricomys_musseri,tip,canonicalName,ncbi_id,species
 ______________________,A ONLY (loss of resolution),A.Murinae,39107,<,39107,B.Murinae,,,B.Waiomys is not in the A taxon,subfamily
 ______________________,B ONLY (increased resolution),A.Conilurus_penicillatus,10127,>,10126,B.Conilurus,,,cross-mrca <,genus
 ______________________,B ONLY (increased resolution),A.Stochomys_longicaudatus,34856,>,34855,B.Stochomys,,,cross-mrca <,genus
@@ -8403,6 +8394,10 @@ ________________________,B ONLY,,,,2640819,B.unclassified_Dephomys,,,,
 __________________________,B ONLY,,,,2448059,B.Dephomys_sp._USNM_584603,,,,species
 __________________________,B ONLY,,,,2448060,B.Dephomys_sp._USNM_584604,,,,species
 ______________________,B ONLY (increased resolution),A.Srilankamys_ohiensis,1036333,>,1036332,B.Srilankamys,,,cross-mrca <,genus
+______________________,B ONLY,,,,1217599,B.unclassified_Murinae,,,,
+________________________,B ONLY,,,,1795551,B.Murinae_sp._KCR-2016a,,,,species
+________________________,B ONLY,,,,2419796,B.Murinae_sp._GK59,,,,species
+________________________,B ONLY,,,,2716781,B.Murinae_gen._n._sp._n._KR-2020,,,,species
 ______________________,B ONLY (increased resolution),A.Lamottemys_okuensis,1261106,>,1261105,B.Lamottemys,,,cross-mrca <,genus
 ______________________,B ONLY (increased resolution),A.Saxatilomys_paulinae,1268277,>,1268276,B.Saxatilomys,,,cross-mrca <,genus
 ______________________,B ONLY (increased resolution),A.Tonkinomys_daovantieni,1305945,>,1305944,B.Tonkinomys,,,cross-mrca <,genus
@@ -8434,11 +8429,6 @@ ________________________,B ONLY,,,,2627855,B.unclassified_Paraleptomys,,,,
 __________________________,B ONLY,,,,1795558,B.Paraleptomys_sp._KCR-2016a,,,,species
 ______________________,B ONLY,,,,1799707,B.Komodomys,,,,genus
 ________________________,B ONLY,,,,1799708,B.Komodomys_rintjanus,,,,species
-______________________,B ONLY,A.unclassified_Murinae,1217599,!,1932368,B.Soricomys,,,cross-mrca !,genus
-________________________,SHARED (moved from 1217599),A.Murinae_sp._SAJ-2012a,1217600,=,1217600,B.Soricomys_kalinga,tip,canonicalName,ncbi_id,species
-________________________,SHARED (moved from 1217599),A.Murinae_sp._SAJ-2012b,1217601,=,1217601,B.Soricomys_leonardocoi,tip,canonicalName,ncbi_id,species
-________________________,SHARED (moved from 1217599),A.Murinae_sp._SAJ-2012c,1217602,=,1217602,B.Soricomys_montanus,tip,canonicalName,ncbi_id,species
-________________________,SHARED (moved from 1217599),A.Murinae_sp._SAJ-2012d,1217603,=,1217603,B.Soricomys_musseri,tip,canonicalName,ncbi_id,species
 ______________________,B ONLY (increased resolution),A.Muridae_sp._KCR-2015,1638931,>,1933117,B.Hyorhinomys,,,cross-mrca <,genus
 ________________________,SHARED (moved from 58328),A.Muridae_sp._KCR-2015,1638931,=,1638931,B.Hyorhinomys_stuempkei,tip,canonicalName,ncbi_id,species
 ______________________,B ONLY (increased resolution),A.Rodentia_sp._KCR-2014,1478024,>,1978185,B.Waiomys,,,cross-mrca <,genus
