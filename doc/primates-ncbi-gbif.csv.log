@@ -1,0 +1,21 @@
+
+Logging to work/primates-ncbi-gbif.csv.new.log
+No such property: datasetID
+No such property: originalNameUsageID
+No such property: genericName
+No such property: nameAccordingTo
+No such property: namePublishedIn
+No such property: taxonRemarks
+No such property: kingdom
+No such property: phylum
+No such property: class
+No such property: order
+Node counts: 2097 5073
+1400 best matches
+# Number of particles: 456
+# Number of cross-mrcas: 1284
+# Number of articulations in alignment: 1284
+Preparing work/primates-ncbi-gbif.csv.new
+Number of roots in merge: 1
+Number of non-roots in merge: 3118
+# Changed status: 2095, changed: 534
