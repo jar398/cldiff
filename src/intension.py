@@ -11,17 +11,20 @@ EOL = False
 
 def best_intensional_matches(A, B):
   best = {}
-  def process(A, B):
-    for node in A.get_all_nodes():
-      ar = best_intensional_match(node, B)
-      if ar:
-        best[node] = ar
+  def process(here, there):
+    for node in here.get_all_nodes():
+      if cl.is_accepted(node):
+        ar = best_intensional_match(node, there)
+        if ar:
+          assert cl.is_accepted(ar.cod)
+          best[node] = ar
   process(A, B)
   process(B, A)
+  dribble.log("%s best matches" % len(best))
   return best
 
-# Three components: synonym-or-self o intensional o synonym-of-or-self
-# from_accepted_articulations o intensional_matches o [to_accepted_articulation]
+# Three components: synonym-or-self o direct o synonym-of-or-self
+# from_accepted_articulations o direct_matches o [to_accepted_articulation]
 
 def best_intensional_match(tnu, other):
   matches = intensional_matches(tnu, other)
@@ -86,10 +89,8 @@ def synonyms_locally(tnu):
 
 def has_accepted_locally(maybe_syn):   # goes from synonym to accepted
   assert maybe_syn > 0
-  accepted = cl.get_accepted(maybe_syn)
-  if accepted:
-    if not EOL:
-      assert accepted != maybe_syn
+  accepted = cl.to_accepted(maybe_syn)
+  if accepted != maybe_syn:
     return art.synonymy(maybe_syn, accepted)
   else:
     return None
@@ -102,12 +103,10 @@ def choose_best_match(arts):     # => art
   arts = skim_best_matches(arts)
   b = arts[0]
   if len(arts) == 1: return b
-  print("# ** Multiple least-bad matches. Need to find more tie-breakers.",
-        file=dribble.dribble_file)
-  print("   %s -> %s" %
-        (cl.get_unique(b.dom),
-         [cl.get_unique(a.cod) for a in arts]),
-        file=dribble.dribble_file)
+  dribble.log("# ** Multiple least-bad matches. Need to find more tie-breakers.")
+  dribble.log("   %s -> %s" %
+              (cl.get_unique(b.dom),
+               [cl.get_unique(a.cod) for a in arts]))
   return None
 
 # There can be multiple best matches

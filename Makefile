@@ -72,10 +72,10 @@ $(WORK)/primates-ncbi-2015-2020.ex: $(SOURCES) $(N15)/primates.csv $(N20)/primat
 	mv $@.new $@
 
 $(WORK)/ncbi-gbif.csv: $(SOURCES) $(N20)/primates.csv $(C)/primates.csv
-	python3 src/report.py $(N20)/primates.csv --low-tag=N20 \
-			      $(C)/primates.csv --high-tag=G --out $@.new
+	python3 src/report.py $(N20)/primates.csv \
+			      $(C)/primates.csv --out $@.new
 	mv $@.new $@
-	mv dribble.txt $(WORK)/primates-ncbi-2015-2020-dribble.txt
+	mv dribble.txt $(WORK)/primates-ncbi-gbif-dribble.txt
 
 pri: $(WORK)/primates-ncbi-2015-2020.csv
 

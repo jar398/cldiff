@@ -1,8 +1,5 @@
 debug = False
 
-# Temporary hack for experimenting with poorly formed EOL checklists
-EOL = False
-
 import sys
 
 import checklist as cl
@@ -16,15 +13,21 @@ from intension import choose_best_match
 # A-record that it matches (preferably but not necessarily an '='
 # articulation).
 
-def align(B, A):
-  particles = find_particles(B, A)
-  particles = fix_alignment(particles)
+def align(B, A, captured = {}):
+  intension.clear_cache()
+  best = intension.best_intensional_matches(B, A)
+  # tipward_best = ...
+  # particles = mutual(tipward_best)
 
+  particles = find_particles(B, A, best, captured)
   cross_mrcas = analyze_cross_mrcas(B, A, particles)
-  print ("# Number of cross-mrcas:", len(cross_mrcas))
+  dribble.log("# Number of cross-mrcas: %s" % len(cross_mrcas))
 
-  the_alignment = finish_alignment(B, A, particles, cross_mrcas)
-  print ("# Number of articulations in alignment:", len(the_alignment))
+  draft = fix_alignment(particles)    # change ≈ to =
+      # should be derived from best tips, not particles
+
+  the_alignment = finish_alignment(B, A, draft, cross_mrcas)
+  dribble.log("# Number of articulations in alignment: %s" % len(the_alignment))
 
   return (the_alignment, cross_mrcas)
 
@@ -36,8 +39,7 @@ def finish_alignment(B, A, particles, xmrcas):
     def process(node):
       m = articulate(node, A, particles, xmrcas)
       if m:
-        if not EOL:
-          assert cl.is_accepted(m.cod)
+        assert cl.is_accepted(m.cod)
         draft[node] = m
       else:
         # Otherwise, what?
@@ -50,7 +52,8 @@ def finish_alignment(B, A, particles, xmrcas):
   half_finish(A, B)
   return draft
 
-# Deal with splits and merges.
+# Deal with ad hoc splits and merges.
+# This currently doesn't do much of anything.
 
 def fix_alignment(draft):
   alignment = {}
@@ -71,33 +74,35 @@ def fix_alignment(draft):
 
   # Modify the relation for all approximate-match nodes.
 
-  for node in incoming:          # y node
-    # e.g. inc = {a ≈ node, b ≈ node}
-    inc = incoming[node]    # articulations whose cod is node
-    # mut: node ≈ a
-    mut = draft.get(node)   # mut : node -> mutual
+  for y in incoming:          # y node
+    # e.g. inc = {a ≈ y, b ≈ y}
+    inc = incoming[y]    # cod = y for all articulations
+    # mut: y ≈ x
+    mut = draft.get(y)   # mut : y -> mutual
     sibs = []
     if mut:
-      rent = cl.get_parent(mut.cod)    # parent of a
-      for ar in inc:    # ar: a ≈ node
+      x0 = mut.cod
+      rent = cl.get_parent(x0)    # parent of x
+      for ar in inc:    # ar: x ≈ y
         if (rel.is_variant(ar.relation, rel.eq) and
             # parent of b is same as parent of a?
             cl.get_parent(ar.dom) == rent):
           sibs.append(ar)
     for ar in inc:
-      target = ar.dom
+      x = ar.dom
       if ar in sibs:
         if len(sibs) == 1:
-          alignment[target] = art.set_relation(ar, rel.eq)
+          alignment[x] = art.set_relation(ar, rel.eq) # x = y
         else:
-          alignment[target] = art.change_relation(ar, rel.merge, "merge", "split")
+          alignment[x] = art.change_relation(ar, rel.merge, "merge", "split")
+      else:
+        alignment[x] = ar       # x < y
     if len(sibs) > 1:
-      # alignment[node] = art.change_relation(ar, rel.split, "split", "merge")
       # Report!
-      print("# Split/join %s -> %s -> %s" %
-            (" ∨ ".join(map(lambda e:cl.get_unique(e.dom), sibs)),
-             cl.get_unique(node),
-             cl.get_unique(rent)))
+      dribble.log("# Split/join %s -> %s -> %s" %
+                  (" ∨ ".join(map(lambda e:cl.get_unique(e.dom), sibs)),
+                   cl.get_unique(y),
+                   cl.get_unique(rent)))
       
   return alignment
 
@@ -113,7 +118,7 @@ def articulate(node, other, particles, xmrcas):     # B-node to A
     match = matches[0]
     rematches = filtered_matches(match.cod, cl.get_checklist(node), particles, xmrcas)
     if len(rematches) == 0:
-      print("** Shouldn't happen: %s" % cl.get_unique(node))
+      dribble.log("** Shouldn't happen: %s" % cl.get_unique(node))
       return None
     elif len(rematches) == 1:
       if rel.is_variant(match.relation, rel.eq):
@@ -121,12 +126,12 @@ def articulate(node, other, particles, xmrcas):     # B-node to A
       else:
         return match
     else:
-      print("** Rehelp: %s -> %s" %
+      dribble.log("** Rehelp: %s -> %s" %
             (cl.get_unique(match.cod),
              (", ".join(map(lambda ar:cl.get_unique(ar.cod), rematches)))))
       return match
   else:
-    print("** Help: %s -> %s" %
+    dribble.log("** Help: %s -> %s" %
           (cl.get_unique(node),
              (", ".join(map(lambda ar:cl.get_unique(ar.cod), matches)))))
     return matches[0]
@@ -147,7 +152,7 @@ def filtered_matches(node, other, particles, xmrcas):
     targets = [namie.cod for namie in namies]
     bothies = [match for match in exties if match.cod in targets]
     if len(bothies) > 0:
-      return intension.skim_best_matches(bothies)
+      return [choose_best_match(bothies)]
     else:
       # print("# no extensional + intensional match for %s" % cl.get_unique(node))
       return exties
@@ -165,7 +170,6 @@ def extensional_matches(node, particles, other):       # B-node to A
   matches = [match]
   if rel.is_variant(match.relation, rel.eq):
 
-    here = cl.get_checklist(node)
     anchor = cross_mrca(match.cod)
 
     # Scan upwards from match.code looking for nodes that return back to anchor
@@ -189,10 +193,14 @@ def extensional_match(node, particles, other):
     return part
   partner = cross_mrca(node)      # node in other checklist; 'conode'
   if not partner:
+    # Descendant of a particle
     return None
   back = cross_mrca(partner)    # 'bounce'
   if not back:
-    return None    # Not sure how this can happen but it does (NCBI vs. GBIF)
+    # Not sure how this can happen but it does (NCBI vs. GBIF)
+    dribble.log("%s <= %s <= nowhere" % (cl.get_unique(node),
+                                         cl.get_unique(partner)))
+    return None
   how = cl.how_related(back, node)    # Alway rcc5
   # assert how != rel.disjoint - oddly, not always true
   reason = "cross-mrca " + how.name
@@ -282,49 +290,42 @@ def cross_compare(node, conode):
 
 def analyze_cross_mrcas(A, B, particles):
   cross_mrcas = {}
-  def half_analyze_cross_mrcas(checklist, other, checkp):
-    def subanalyze_cross_mrcas(tnu, other):
+  def half_analyze_cross_mrcas(checklist, other):
+    def subanalyze_cross_mrcas(node, other):
       result = None
-      probe = particles.get(tnu)
+      probe = particles.get(node)
       if probe:
-        assert probe.dom == tnu
-        if not EOL:
-          assert cl.is_accepted(probe.cod)
-        if debug:
-          print("#   particle(%s) = %s" %\
-                (cl.get_unique(tnu), cl.get_unique(probe.cod)))
+        assert probe.dom == node
+        assert cl.is_accepted(probe.cod)
         result = probe.cod
       else:
-        children = cl.get_children(tnu)
+        children = cl.get_children(node)
         if children:
           m = None      # None is the identity for mrca
           for child in children:
-            if debug:
-              print("# Child %s of %s" % (cl.get_unique(child), cl.get_unique(tnu)))
             m2 = subanalyze_cross_mrcas(child, other)
             if m2 != None:
-              if debug:
-                print("#  Folding %s into %s" % (cl.get_unique(m2), cl.get_unique(m)))
               m = cl.mrca(m, m2) if m != None else m2
-              # ?????
-              if debug:
-                print("#   -> %s" % cl.get_unique(m))
           if m != None:
             result = m
-            if debug:
-              print("#   cm(%s) = %s)" % \
-                    (cl.get_unique(tnu), cl.get_unique(m)))
-      cross_mrcas[tnu] = result
-      if debug and checkp and result:
-        probe = cross_mrcas.get(result)
-        if not probe:
-          print("# ** No return cross-MRCA for %s -> %s -> ..." %\
-                (cl.get_unique(tnu), cl.get_unique(result)))
-      return result
+      if result:
+        assert cl.get_checklist(result) != cl.get_checklist(node)
+        cross_mrcas[node] = result
+      return result             # in B
     for root in cl.get_roots(checklist):
       subanalyze_cross_mrcas(root, other)
-  half_analyze_cross_mrcas(A, B, False)
-  half_analyze_cross_mrcas(B, A, True)
+  half_analyze_cross_mrcas(A, B)
+  half_analyze_cross_mrcas(B, A)
+
+  # Sanity check
+  for node in cross_mrcas:
+    cross = cross_mrcas[node]
+    probe = cross_mrcas.get(cross)
+    if probe:
+      assert cl.get_checklist(probe) == cl.get_checklist(node)
+    else:
+      dribble.log("# ** No return cross-MRCA for %s -> %s -> ..." %\
+                  (cl.get_unique(node), cl.get_unique(cross)))
   return cross_mrcas
 
 # Returns an accepted/accepted articulation
@@ -332,8 +333,7 @@ def analyze_cross_mrcas(A, B, particles):
 def cross_mrca(node):
   global cross_mrcas
   assert node > 0
-  if not EOL:
-    assert cl.is_accepted(node)
+  assert cl.is_accepted(node)
   return cross_mrcas.get(node)
 
 # ---------- Particles
@@ -344,52 +344,46 @@ def cross_mrca(node):
 
 # This function returns a partial map from nodes to articulations.
 
-def find_particles(here, other):
+def find_particles(here, other, best, captured):
   intension.clear_cache()
   particles = {}
   count = [0]
-  best = intension.best_intensional_matches(here, other)
   def log(node, message):
     if count[0] < 0:
-      if debug:
-       print("# fp(%s): %s" % (cl.get_unique(node), message))
       count[0] += 1
   def subanalyze(node, other):
     log(node, "subanalyze")
-    if not cl.is_accepted(node):
-      print("# ** Child %s of %s has an accepted name" %
-            (cl.get_unique(node), cl.get_unique(cl.get_parent(node))))
-      return False
+    assert cl.is_accepted(node)
     found_match = False
     for inf in cl.get_children(node):
-      log(node, "child %s" % inf)
       if subanalyze(inf, other):
         found_match = True
     if found_match:    # Some descendant is a particle
       return True
-    candidate = best.get(node)
-    if candidate:
+    candidate = captured.get(node) or best.get(node)
+    if candidate and rel.is_variant(candidate.relation, rel.eq):
+      assert cl.is_accepted(candidate.cod)
       rematch = best.get(candidate.cod)
       if rematch:
+        assert cl.is_accepted(rematch.cod)
         if rematch.cod == node:
-          if not EOL and not cl.is_accepted(candidate.cod):
-            print("# ** Candidate is synonymlike: %s" % cl.get_unique(candidate.cod))
           particles[node] = candidate    # here -> other
-          particles[candidate.cod] = art.reverse(candidate)  # other -> here
+          particles[candidate.cod] = rematch    # other -> here
           return True
-        else:
-          # This situation probably reflects a split!
-          log(node,
-              "Round trip fail:\n  %s\n  %s\n" %
+        elif False:
+          dribble.log(
+              "** Particle round trip fail:\n  %s\n  %s\n" %
               (art.express(candidate),
-               art.express(art.reverse(rematch))))
+               art.express(rematch)))
       else:
-        log(node, "No rematch")
+        dribble.log("** No particle rematch: %s -> %s -> none" %
+                    (cl.get_unique(candidate.dom),
+                     cl.get_unique(candidate.cod)))
     return False
   log(0, "top")
   for root in cl.get_roots(here):
     log(root, "root")
     subanalyze(root, other)
-  print ("# Number of particles:", len(particles)>>1)
+  dribble.log("# Number of particles: %s" % (len(particles)>>1))
   return particles
 

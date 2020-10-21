@@ -201,34 +201,23 @@ def get_inferiors(tnu):
 
 def get_parent(tnu):
   assert tnu > 0
-  # There are two checks here, and if the order of the checks matters,
-  # the input checklist is ill-formed
+  assert is_accepted(tnu)
   parent_id = get_value(tnu, parent_node_id)
   if parent_id != None:
     parent = get_record_with_node_id(get_checklist(tnu), parent_id)
     if parent != None:
-      return to_accepted(parent)
-  probe = get_accepted(tnu)
-  if probe != None:
-    return get_direct_parent(probe)
-  else:
-    return forest_tnu
-
-def get_direct_parent(tnu):
-  assert tnu > 0
-  # There are two checks here, and if the order of the checks matters,
-  # the input checklist is ill-formed
-  parent_id = get_value(tnu, parent_node_id)
-  if parent_id != None:
-    parent = get_record_with_node_id(get_checklist(tnu), parent_id)
-    if parent != None:
-      return to_accepted(parent)
-  return None
+      # The parent of an accepted node has to be accepted
+      assert is_accepted(parent)
+      return parent
+  return forest_tnu
 
 def get_children(parent):
-  return get_nodes_with_value(get_checklist(parent),
-                              parent_node_id,
-                              get_node_id(parent))
+  children = get_nodes_with_value(get_checklist(parent),
+                                  parent_node_id,
+                                  get_node_id(parent))
+  for child in children:
+    assert is_accepted(child)
+  return children
 
 # Get canonical record among a set of equivalent records
 
@@ -250,7 +239,9 @@ def to_accepted(tnu):
 def get_accepted(tnu):
   probe = get_value(tnu, accepted_node_id)
   if probe != None:
-    return get_record_with_node_id(get_checklist(tnu), probe)
+    a = get_record_with_node_id(get_checklist(tnu), probe)
+    assert is_accepted(a)
+    return a
   return None
 
 def get_synonyms(tnu):
@@ -453,7 +444,7 @@ def self_test():
   print ("Name:", get_name(tnu))
   synos = get_synonyms(tnu)
   print ("Synonyms:", list(map(get_taxon_id, synos)))
-  print ("Back atcha:", [get_accepted(syno) for syno in synos])
+  print ("Back atcha:", [to_accepted(syno) for syno in synos])
 
 if __name__ == '__main__':
   self_test()
