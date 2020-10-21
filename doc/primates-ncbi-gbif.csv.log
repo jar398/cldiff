@@ -11,8 +11,8 @@ No such property: phylum
 No such property: class
 No such property: order
 Node counts: 2097 5073
-# Best: B.Ateles_paniscus ≈ A.Ateles_paniscus
-# Best: A.Ateles_paniscus ≈ B.Ateles_paniscus
+# Best: B.Ateles_paniscus matches A.Ateles_paniscus
+# Best: A.Ateles_paniscus matches B.Ateles_paniscus
 1400 best matches
 # Split/join B.Eulemur_collaris#9812996 ∨ B.Lemur_collaris -> A.Eulemur_fulvus_collaris -> B.Eulemur#2436417
 # Split/join B.Pachylemur#5428934 ∨ B.Pachylemur#7237035 -> A.Pachylemur -> B.Lemuridae
@@ -29,8 +29,77 @@ Node counts: 2097 5073
 # Number of particles: 456
 # Number of cross-mrcas: 1284
 # Number of extensional relationships: 372
-# Number of articulations in alignment: 1284
+# Number of articulations in alignment: 1233
 Preparing work/primates-ncbi-gbif.csv.new
 Number of roots in merge: 1
-Number of non-roots in merge: 3130
-# Changed status: 2219, changed: 611
+Number of non-roots in merge: 3127
+# Changed status: 2248, changed: 619
+** Perodicticus potto names different taxa in the two checklists
+  A.Perodicticus_potto = B.Perodicticus [mutual-cross-mrca]
+  B.Perodicticus_potto matches A.Perodicticus_potto [canonicalName]
+** Leontocebus fuscicollis names different taxa in the two checklists
+  A.Leontocebus_fuscicollis = B.Leontocebus#5428933 [monotypic]
+** Cebidae names different taxa in the two checklists
+  A.Cebidae = B.Primates [monotypic]
+** Saimiri sciureus names different taxa in the two checklists
+  A.Saimiri_sciureus = B.Saimiri [monotypic]
+  B.Saimiri_sciureus matches A.Saimiri_sciureus [canonicalName]
+** Cercocebus torquatus names different taxa in the two checklists
+  B.Cercocebus_torquatus = A.Cercocebus [monotypic]
+** Macaca nemestrina names different taxa in the two checklists
+  B.Macaca_nemestrina = A.Macaca [monotypic]
+** Hylobates muelleri names different taxa in the two checklists
+  A.Hylobates_muelleri = B.Hylobates [monotypic]
+  B.Hylobates_muelleri matches A.Hylobates_muelleri [scientificName]
+** Hapalemur griseus names different taxa in the two checklists
+  A.Hapalemur_griseus = B.Hapalemur [monotypic]
+** Alouatta belzebul names different taxa in the two checklists
+  B.Alouatta_belzebul merge A.Alouatta_belzebul [canonicalName]
+** Indriidae names different taxa in the two checklists
+  A.Indriidae = B.Primates [monotypic]
+** Lepilemuridae names different taxa in the two checklists
+  B.Lepilemuridae = A.Lepilemur [monotypic]
+** Cercopithecus mitis names different taxa in the two checklists
+  B.Cercopithecus_mitis = A.Cercopithecus [monotypic]
+** Pan troglodytes troglodytes names different taxa in the two checklists
+  A.Pan_troglodytes_troglodytes merge B.Pan_troglodytes_troglodytes [canonicalName]
+** Hoolock hoolock names different taxa in the two checklists
+  A.Hoolock_hoolock = B.Hoolock_hoolock_hoolock [None]
+** Presbytis melalophos names different taxa in the two checklists
+  A.Presbytis_melalophos = B.Presbytis#3239596 [monotypic]
+** Macaca leonina names different taxa in the two checklists
+  A.Macaca_leonina = B.Macaca_nemestrina_leonina [None]
+  B.Macaca_leonina matches A.Macaca_leonina [scientificName]
+** Ateles geoffroyi vellerosus names different taxa in the two checklists
+  A.Ateles_geoffroyi_vellerosus merge B.Ateles_geoffroyi_vellerosus [canonicalName]
+** Cercopithecus pogonias grayi names different taxa in the two checklists
+  A.Cercopithecus_pogonias_grayi merge B.Cercopithecus_pogonias_grayi [canonicalName]
+** Loris tardigradus nordicus names different taxa in the two checklists
+  A.Loris_tardigradus_nordicus = B.Loris_lydekkerianus_nordicus [None]
+  B.Loris_tardigradus_nordicus matches A.Loris_tardigradus_nordicus [canonicalName]
+** Trachypithecus phayrei phayrei names different taxa in the two checklists
+  A.Trachypithecus_phayrei_phayrei matches B.Trachypithecus_phayrei_phayrei [canonicalName]
+  B.Trachypithecus_phayrei_phayrei = A.Trachypithecus_barbei [None]
+** Loris lydekkerianus malabaricus names different taxa in the two checklists
+  A.Loris_lydekkerianus_malabaricus = B.Loris_tardigradus_malabaricus [None]
+  B.Loris_lydekkerianus_malabaricus matches A.Loris_lydekkerianus_malabaricus [canonicalName]
+** Chiropotes chiropotes names different taxa in the two checklists
+  B.Chiropotes_chiropotes merge A.Chiropotes_chiropotes [scientificName]
+** Nomascus concolor concolor names different taxa in the two checklists
+  A.Nomascus_concolor_concolor merge B.Nomascus_concolor_concolor [canonicalName]
+** Callicebus nigrifrons names different taxa in the two checklists
+  A.Callicebus_nigrifrons matches B.Callicebus_nigrifrons [scientificName]
+  B.Callicebus_nigrifrons = A.Callicebus_personatus_nigrifrons [None]
+** Allochrocebus preussi preussi names different taxa in the two checklists
+  A.Allochrocebus_preussi_preussi matches B.Allochrocebus_preussi_preussi [canonicalName]
+  B.Allochrocebus_preussi_preussi particleset= A.Allochrocebus_preussi [synonym+canonicalName+synonym]
+** Ateles geoffroyi ornatus names different taxa in the two checklists
+  A.Ateles_geoffroyi_ornatus merge B.Ateles_geoffroyi_ornatus [canonicalName]
+** Ateles fusciceps rufiventris names different taxa in the two checklists
+  A.Ateles_fusciceps_rufiventris merge B.Ateles_fusciceps_rufiventris [scientificName]
+** Carlito syrichta names different taxa in the two checklists
+  A.Carlito_syrichta particleset= B.Carlito_syrichta_syrichta [synonym+canonicalName+synonym]
+  B.Carlito_syrichta matches A.Carlito_syrichta [canonicalName]
+** Paragalago zanzibaricus names different taxa in the two checklists
+  A.Paragalago_zanzibaricus matches B.Paragalago_zanzibaricus [scientificName]
+  B.Paragalago_zanzibaricus = A.Galagoides_zanzibaricus [None]

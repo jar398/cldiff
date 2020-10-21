@@ -29,7 +29,7 @@ def main(c1, c1_tag, c2, c2_tag, out, format):
     (al, xmrcas) = alignment.align(B, A)
     # Where to xmrcas come from?
     write_report(A, B, al, xmrcas, format, out)
-    dribble.dribble_file = sys.stdout
+    dribble.dribble_file = None
 
 def write_report(A, B, al, xmrcas, format, outpath):
   if outpath == "-":
@@ -47,6 +47,30 @@ def really_write_report(A, B, al, xmrcas, format, outfile):
     dribble.log ("Number of roots in merge: %s" % len(roots))
     dribble.log ("Number of non-roots in merge: %s" % len(parents))
     report(A, B, al, roots, parents, outfile)
+    report_on_collisions(A, B, al)
+
+canonical_name = cl.field("canonicalName")
+
+def report_on_collisions(A, B, al):
+  index = cl.index_by_value(A, canonical_name)
+  for name in index:
+    A_nodes = index[name]
+    if len(A_nodes) == 1:
+      B_nodes = cl.get_nodes_with_value(B, canonical_name, name)
+      if B_nodes and len(B_nodes) == 1:
+        A_node = A_nodes[0]
+        B_node = B_nodes[0]
+        if cl.is_accepted(A_node) and cl.is_accepted(B_node):
+          ar1 = al.get(A_node)
+          ar2 = al.get(B_node)
+          ar1_bad = ar1 and (not rel.is_variant(ar1.relation, rel.eq) or
+                             ar1.cod != B_node)
+          ar2_bad = ar2 and (not rel.is_variant(ar2.relation, rel.eq) or
+                             ar2.cod != A_node)
+          if ar1_bad or ar2_bad:
+            dribble.log("** %s names different taxa in the two checklists" % name)
+            if ar1: dribble.log("  %s [%s]" % (art.express(ar1), art.reason(ar1)))
+            if ar2: dribble.log("  %s [%s]" % (art.express(ar2), art.reason(ar2)))
 
 # Default (simplified) report format
 

@@ -86,12 +86,34 @@ def match_to_accepted(m):
 
 # An accepted name can have many synonyms
 
-def synonyms_locally(tnu):
-  if cl.is_accepted(tnu):
-    hases = [has_accepted_locally(syn) for syn in cl.get_synonyms(tnu)]
+def synonyms_locally(node):
+  if cl.is_accepted(node):
+    hases = [has_accepted_locally(syn) for syn in informative_synonyms(node)]
     return art.collapse_matches([art.reverse(ar) for ar in hases if ar])
   else:
     return []
+
+canonical_name = cl.field("canonicalName")
+
+def informative_synonyms(node):
+  if False:
+    c = cl.get_checklist(node)
+    return [syn
+            for syn in cl.get_synonyms(node)
+            if is_informative(syn)]
+  else:
+    return cl.get_synonyms(node)
+
+# Filter out any synonym whose name is an accepted name in the same checklist
+# (did this following a hunch that didn't work out)
+
+def is_informative(syn):
+  name = cl.get_value(syn, canonical_name)
+  nodes = cl.get_nodes_with_value(cl.get_checklist(syn), canonical_name, name)
+  for node in nodes:
+    if cl.is_accepted(node):
+      return False
+  return True
 
 # A synonym has only one accepted name
 

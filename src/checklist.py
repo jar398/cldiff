@@ -116,10 +116,13 @@ def get_nodes_file_path(dwca_dir):
 
 # Get taxon records in checklist having a particular value in some column
 
+def index_by_value(checklist, field):
+  return checklist.get_index(field)
+
 canonical_empty_list = []
 
 def get_nodes_with_value(checklist, field, value):
-  return checklist.get_index(field).get(value, canonical_empty_list)
+  return index_by_value(checklist, field).get(value, canonical_empty_list)
 
 # Get unique (we hope) taxon record possessing a given identifier
 # Can return None
