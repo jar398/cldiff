@@ -35,9 +35,12 @@ def _articulation(dom, cod, re,
   return ar
 
 def express(ar):
-  return "%s %s %s" % (cl.get_unique(ar.dom),
-                       ar.relation.name,
-                       cl.get_unique(ar.cod))
+  if ar == None:
+    return "none"
+  else:
+    return "%s %s %s" % (cl.get_unique(ar.dom),
+                         ar.relation.name,
+                         cl.get_unique(ar.cod))
 
 def compose(p, q):
   if not composable(p, q):

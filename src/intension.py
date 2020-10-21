@@ -20,6 +20,9 @@ def best_intensional_match_map(A, B, captured):
     for node in here.get_all_nodes():
       if cl.is_accepted(node) and node not in best:
         ar = best_intensional_match(node, there)
+        debug = (cl.get_name(node) == 'Ateles paniscus')
+        if debug:
+          dribble.log("# Best: %s" % art.express(ar))
         if ar:
           assert cl.is_accepted(ar.cod)
           best[node] = ar

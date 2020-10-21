@@ -1,17 +1,25 @@
 
 Logging to work/primates-ncbi-2015-2020.csv.new.log
 Node counts: 1835 2097
+# Best: N20.Ateles_paniscus ≈ N15.Ateles_paniscus
 ** Multiple least-bad matches. Need to find tie-breakers.
    N20.Papio_cynocephalus -> ['N15.Papio_anubis', 'N15.Papio_ursinus']
+# Best: N15.Ateles_paniscus ≈ N20.Ateles_paniscus
 1663 best matches
+# Split/join N15.Nycticebus_intermedius ∨ N15.Nycticebus_pygmaeus -> N20.Nycticebus_pygmaeus -> N15.Nycticebus
 # Number of particles: 608
 # Number of cross-mrcas: 1687
-** Rehelp: N15.Tarsius -> N20.Tarsiidae, N20.Tarsiiformes
-** Rehelp: N15.Tarsius -> N20.Tarsiidae, N20.Tarsiiformes
-** Rehelp: N15.Tarsius -> N20.Tarsiidae, N20.Tarsiiformes
-** Help: N15.Tarsius -> N20.Tarsiidae, N20.Tarsiiformes
-# Number of articulations in alignment: 1687
+# Number of extensional relationships: 471
+** Multiple matches: N15.Cercopithecidae -> N20.Cercopithecidae, N20.Cercopithecoidea
+** Multiple returns: N20.Cercopithecidae -> N15.Cercopithecidae, N15.Cercopithecoidea
+** Multiple matches: N15.Tarsius -> N20.Tarsiidae, N20.Tarsiiformes
+** Multiple matches: N20.Cercopithecidae -> N15.Cercopithecidae, N15.Cercopithecoidea
+** Multiple returns: N15.Cercopithecidae -> N20.Cercopithecidae, N20.Cercopithecoidea
+** Multiple returns: N15.Tarsius -> N20.Tarsiidae, N20.Tarsiiformes
+** Multiple returns: N15.Tarsius -> N20.Tarsiidae, N20.Tarsiiformes
+** Multiple returns: N15.Tarsius -> N20.Tarsiidae, N20.Tarsiiformes
+# Number of articulations in alignment: 1551
 Preparing work/primates-ncbi-2015-2020.csv.new
 Number of roots in merge: 1
-Number of non-roots in merge: 1073
-# Changed status: 546, changed: 93
+Number of non-roots in merge: 1074
+# Changed status: 604, changed: 102

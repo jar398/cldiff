@@ -1,6 +1,7 @@
 
 Logging to work/mammalia-ncbi-2015-2020.csv.new.log
 Node counts: 18133 21882
+# Best: B.Ateles_paniscus ≈ A.Ateles_paniscus
 ** Multiple least-bad matches. Need to find tie-breakers.
    B.Papio_cynocephalus -> ['A.Papio_anubis', 'A.Papio_ursinus']
 ** Multiple least-bad matches. Need to find tie-breakers.
@@ -33,6 +34,7 @@ Node counts: 18133 21882
    B.environmental_samples#2682739 -> ['A.environmental_samples#328690', 'A.environmental_samples#1002248', 'A.environmental_samples#1002256']
 ** Multiple least-bad matches. Need to find tie-breakers.
    B.environmental_samples#2682741 -> ['A.environmental_samples#328690', 'A.environmental_samples#1002248', 'A.environmental_samples#1002256']
+# Best: A.Ateles_paniscus ≈ B.Ateles_paniscus
 ** Multiple least-bad matches. Need to find tie-breakers.
    A.environmental_samples#1002241 -> ['B.environmental_samples#328690', 'B.environmental_samples#1002248', 'B.environmental_samples#1002256', 'B.environmental_samples#2665948', 'B.environmental_samples#2682739']
 ** Multiple least-bad matches. Need to find tie-breakers.
@@ -48,20 +50,50 @@ Node counts: 18133 21882
 ** Multiple least-bad matches. Need to find tie-breakers.
    A.environmental_samples#1092586 -> ['B.environmental_samples#328690', 'B.environmental_samples#1002248', 'B.environmental_samples#1002256', 'B.environmental_samples#2665948', 'B.environmental_samples#2682739']
 19243 best matches
+# Split/join B.Micoureus_regina ∨ B.Marmosa_germana -> A.Micoureus_regina -> B.Micoureus
+# Split/join B.Planigale_gilesi ∨ B.Planigale_tenuirostris -> A.Planigale_gilesi -> B.Planigale
+# Split/join B.Dasycercus_cristicauda ∨ B.Dasycercus_blythi -> A.Dasycercus_cristicauda -> B.Dasycercus
+# Split/join B.Cervus_canadensis_canadensis ∨ B.Cervus_canadensis_nelsoni -> A.Cervus_canadensis_canadensis -> B.Cervus_canadensis
+# Split/join B.Tupaia_glis ∨ B.Tupaia_belangeri -> A.Tupaia_glis -> B.Tupaia
+# Split/join B.Hylomyscus_sp._10_VN-2012 ∨ B.Hylomyscus_sp._7_VN-2012 -> A.Hylomyscus_sp._10_VN-2012 -> B.unclassified_Hylomyscus
+# Split/join B.Phodopus_sungorus ∨ B.Phodopus_campbelli -> A.Phodopus_sungorus -> B.Phodopus
+# Split/join B.Neacomys_minutus ∨ B.Microryzomys_altissimus -> A.Neacomys_minutus -> B.Neacomys
+# Split/join A.Planigale_gilesi ∨ A.Planigale_tenuirostris -> B.Planigale_gilesi -> A.Planigale
+# Split/join A.Rhinolophus_sp._GZNU20080502002 ∨ A.Rhinolophus_sp._HHS-2009a -> B.Rhinolophus_sp._HHS-2009a -> A.Rhinolophus
+# Split/join A.Cervus_canadensis_canadensis ∨ A.Cervus_canadensis_nelsoni -> B.Cervus_canadensis_canadensis -> A.Cervus_canadensis
+# Split/join A.Giraffa_camelopardalis_rothschildi ∨ A.Giraffa_camelopardalis_tippelskirchi -> B.Giraffa_tippelskirchi -> A.Giraffa_camelopardalis
+# Split/join A.Oryx_leucoryx ∨ A.Oryx_oryxleucoryx -> B.Oryx_leucoryx -> A.Oryx
+# Split/join A.Bos_indicus_x_Bos_taurus ∨ A.Bos_taurus_x_Bos_indicus -> B.Bos_indicus_x_Bos_taurus -> A.Bos_hybrids
+# Split/join A.Bos_grunniens_x_Bos_taurus ∨ A.Bos_taurus_x_Bos_grunniens -> B.Bos_grunniens_x_Bos_taurus -> A.Bos_hybrids
+# Split/join A.Tupaia_glis ∨ A.Tupaia_belangeri -> B.Tupaia_glis -> A.Tupaia
+# Split/join A.Nycticebus_intermedius ∨ A.Nycticebus_pygmaeus -> B.Nycticebus_pygmaeus -> A.Nycticebus
+# Split/join A.Graphiurus_parvus ∨ A.Graphiurus_kelleni -> B.Graphiurus_kelleni -> A.Graphiurus
+# Split/join A.Mastomys_natalensis ∨ A.Mastomys_hildebrandtii -> B.Mastomys_natalensis -> A.Mastomys
+# Split/join A.Hylomyscus_sp._10_VN-2012 ∨ A.Hylomyscus_sp._7_VN-2012 -> B.Hylomyscus_sp._10_VN-2012 -> A.unclassified_Hylomyscus
+# Split/join A.Niviventer_fulvescens ∨ A.Niviventer_bukit -> B.Niviventer_fulvescens -> A.Niviventer
+# Split/join A.Phodopus_sungorus ∨ A.Phodopus_campbelli -> B.Phodopus_sungorus -> A.Phodopus
+# Split/join A.Microtus_gerbei ∨ A.Microtus_pyrenaicus -> B.Microtus_gerbei -> A.Microtus
+# Split/join A.Reithrodontomys_sp._ROM114291 ∨ A.Reithrodontomys_sp._ROM116805 ∨ A.Reithrodontomys_sp._1_AVB-2011 -> B.Reithrodontomys_sp._1_AVB-2011 -> A.Reithrodontomys
+# Split/join A.Reithrodontomys_sp._ROM116835 ∨ A.Reithrodontomys_sp._2_AVB-2011 -> B.Reithrodontomys_sp._2_AVB-2011 -> A.Reithrodontomys
 # Number of particles: 7345
 # Number of cross-mrcas: 19393
-** Rehelp: A.Manis -> B.Manidae, B.Pholidota
-** Rehelp: A.Manis -> B.Manidae, B.Pholidota
-** Rehelp: A.Manis -> B.Manidae, B.Pholidota
-** Rehelp: A.Manis -> B.Manidae, B.Pholidota
-** Rehelp: A.Manis -> B.Manidae, B.Pholidota
-** Rehelp: A.Tarsius -> B.Tarsiidae, B.Tarsiiformes
-** Rehelp: A.Tarsius -> B.Tarsiidae, B.Tarsiiformes
-** Rehelp: A.Tarsius -> B.Tarsiidae, B.Tarsiiformes
-** Help: A.Manis -> B.Manidae, B.Pholidota
-** Help: A.Tarsius -> B.Tarsiidae, B.Tarsiiformes
-# Number of articulations in alignment: 19393
+# Number of extensional relationships: 4703
+** Multiple matches: A.Manis -> B.Manidae, B.Pholidota
+** Multiple matches: A.Cercopithecidae -> B.Cercopithecidae, B.Cercopithecoidea
+** Multiple returns: B.Cercopithecidae -> A.Cercopithecidae, A.Cercopithecoidea
+** Multiple matches: A.Tarsius -> B.Tarsiidae, B.Tarsiiformes
+** Multiple returns: A.Manis -> B.Manidae, B.Pholidota
+** Multiple returns: A.Manis -> B.Manidae, B.Pholidota
+** Multiple returns: A.Manis -> B.Manidae, B.Pholidota
+** Multiple returns: A.Manis -> B.Manidae, B.Pholidota
+** Multiple returns: A.Manis -> B.Manidae, B.Pholidota
+** Multiple matches: B.Cercopithecidae -> A.Cercopithecidae, A.Cercopithecoidea
+** Multiple returns: A.Cercopithecidae -> B.Cercopithecidae, B.Cercopithecoidea
+** Multiple returns: A.Tarsius -> B.Tarsiidae, B.Tarsiiformes
+** Multiple returns: A.Tarsius -> B.Tarsiidae, B.Tarsiiformes
+** Multiple returns: A.Tarsius -> B.Tarsiidae, B.Tarsiiformes
+# Number of articulations in alignment: 17654
 Preparing work/mammalia-ncbi-2015-2020.csv.new
 Number of roots in merge: 1
-Number of non-roots in merge: 13321
-# Changed status: 10154, changed: 1313
+Number of non-roots in merge: 13341
+# Changed status: 11715, changed: 1634
