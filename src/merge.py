@@ -14,7 +14,7 @@
 import checklist as cl
 import relation as rel
 
-def merge_checklists(A, B, al, xmrcas):
+def merge_checklists(A, B, al):
   parents = {}
   roots = []
   def half_compute_parents(check, inject, al):
@@ -37,44 +37,45 @@ def merge_checklists(A, B, al, xmrcas):
 
 # A is low priority
 
+###  THIS IS ALL WRONG.
+
 def merged_parent(merged, al):
   (x, y) = merged    # False if node is inconsistent
 
   if x and y:                   # x ≈ y
     assert al[x].cod == y
-    p = cl.get_parent(x)
-    q = cl.get_parent(y)
-    ar = get_consistent_articulation(p, al)
-    if ar:
-      if cl.how_related(ar.cod, q) == rel.lt:
-        return inject_A(ar.dom, al)
-      else:
-        return inject_B(q, al)
-    else:
-      return inject_A(p, al)
+    p = cl.get_parent(x)    # in A
+    q = cl.get_parent(y)    # in B
+    if p == cl.forest_tnu: return inject_B(q, al)
+    if q == cl.forest_tnu: return inject_A(p, al)
+    ar = al.get(p)
+    if not ar: return inject_B(q, al)
+    if rel.is_variant(ar.relation, rel.gt): return inject_B(q, al)
+
+    how = cl.how_related(ar.cod, q)
+    if how == rel.lt: return inject_A(p, al)
+    return inject_B(q, al)
 
   elif x:
-    ar = get_consistent_articulation(x, al)
-    if ar:
-      q = ar.cod
-      return inject_B(q, al)
-    else:
-      return inject_A(cl.get_parent(x), al)
+    p = cl.get_parent(x)
+    if p == cl.forest_tnu: return None
+    ar = al.get(x)
+    if not ar: return inject_A(p, al)
+    if rel.is_variant(ar.relation, rel.gt): return inject_A(p, al)
+    # if rel.is_variant(ar.relation, rel.conflict): return inject_A(p, al)
+    return inject_B(ar.cod, al)
 
   elif y:
-    return inject_B(cl.get_parent(y), al)
+    q = cl.get_parent(y)
+    if q == cl.forest_tnu: return None
+    ar = al.get(y)
+    if not ar: return inject_B(q, al)
+    if rel.is_variant(ar.relation, rel.gt): return inject_B(q, al)
+    if rel.is_variant(ar.relation, rel.conflict): return inject_B(q, al)
+    return inject_A(ar.cod, al)
 
   else:
     assert False
-
-# Scan up through lineage to find non-conflict articulation
-
-def get_consistent_articulation(node, al):
-  ar = al.get(node)
-  while ar and rel.is_variant(ar.relation, rel.conflict):
-    node = cl.get_parent(node)
-    ar = al.get(node)
-  return ar
 
 # Inject node in low priority checklist into merged checklist
 
@@ -103,4 +104,4 @@ def inject_B(node, al):
   return (None, node)
 
 def is_eq(re):
-  return rel.is_variant(re, rel.eq)  # == rel.intensional
+  return rel.is_variant(re, rel.eq)

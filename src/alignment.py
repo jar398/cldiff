@@ -1,4 +1,4 @@
-debug = False
+# This is a godawful mess
 
 import sys
 
@@ -9,9 +9,6 @@ import intension
 import dribble
 from intension import choose_best_match
 
-#confusing = 'Ateles paniscus'
-confusing = 'zzz'
-
 # For each B-record, we choose an articulation with the closest
 # A-record that it matches (preferably but not necessarily an '='
 # articulation).
@@ -19,13 +16,14 @@ confusing = 'zzz'
 def align(B, A, captured = {}):
   intension.clear_cache()
   best = intension.best_intensional_match_map(B, A, captured)
-  tipward_best = tipward(best, B, A)
 
   # Start to fill in the alignment
+  tipward_best = tipward(best, B, A)
   draft = detect_lumps_splits(tipward_best)    # change ≈ to =
 
   # Extensional analysis
-  particles = mutual(tipward_best)
+  # particles = mutual(tipward_best)
+  particles = tipward(mutual(best), B, A)
   check_mutuality(particles)
   dribble.log("# Number of particles: %s" % (len(particles)>>1))
   cross_mrcas = analyze_cross_mrcas(B, A, particles)
@@ -40,20 +38,26 @@ def align(B, A, captured = {}):
 
   return (the_alignment, cross_mrcas)
 
-# This is a godawful mess
-
 def assemble_alignment(draft, best, ext_map):
   for node in ext_map:
     ar1 = draft.get(node)
     ar2 = articulate(node, best, ext_map)
-    if ar1 and ar2:
-      if ar1.cod != ar2.cod:
-        dribble.log("** Intensional and extensional matches differ:\n  %s\n  %s" %
-                    (art.express(ar1), art.express(ar2)))
-    elif ar1:
-      pass
-    elif ar2:
+    if ar1 and ar2 and ar1.cod != ar2.cod:
+      dribble.log("** Intensional and extensional matches differ:\n  %s\n  %s" %
+                  (art.express(ar1), art.express(ar2)))
+    if ar2:
+      if (dribble.watch(node)):
+        dribble.log("# Matching extensionally: %s" %
+                    art.express(ar2))
       draft[node] = ar2
+    elif ar1:
+      if (dribble.watch(node)):
+        dribble.log("# Matching intensionally: %s" %
+                    art.express(ar1))
+      draft[node] = ar1
+    else:
+      if (dribble.watch(node)):
+        dribble.log("# No match for %s" % cl.get_unique(node))
   return draft
 
 # ---------- Final alignment
@@ -67,12 +71,15 @@ def articulate(node, best, ext_map):     # B-node to A
 
   # This is awkward
   if len(matches) == 0:
-    return None
+    ar = ext_map.get(node)
+    if dribble.watch(node):
+      dribble.log("# Non-equal articulation: %s" % art.express(ar))
+    return ar
   elif len(matches) == 1:
     match = matches[0]
     rematches = filtered_matches(match.cod, best, ext_map)
     if len(rematches) == 0:
-      # dribble.log("** Shouldn't happen: %s" % cl.get_unique(node))
+      dribble.log("** Shouldn't happen: %s" % cl.get_unique(node))
       return None
     elif len(rematches) == 1:
       if rel.is_variant(match.relation, rel.eq):
@@ -90,65 +97,84 @@ def articulate(node, best, ext_map):     # B-node to A
              (", ".join(map(lambda ar:cl.get_unique(ar.cod), matches)))))
     return matches[0]
 
-# Find matches that are both extensional and intensional
+# Find matches that are both extensional and intensional.
+# Returns a list of =-like articulations, perhaps empty.
 
 def filtered_matches(node, best, ext_map):
   assert node > 0
   assert cl.is_accepted(node)
 
   exties = extensional_chain(node, ext_map)    #monotypic chain (lineage)
+  if dribble.watch(node):
+    dribble.log("# Chain %s = [%s]" %
+                (cl.get_unique(node),
+                 " <- ".join(map(lambda ar:cl.get_unique(ar.cod), exties))))
 
   if len(exties) < 1:
+    if dribble.watch(node):
+      dribble.log("# No extensionally equal matches to %s" % cl.get_unique(node))
     return exties
   else:
     bestie = best.get(node)
     if bestie and bestie.cod in [e.cod for e in exties]:
-      if len(exties) > 1 and bestie.cod != exties[0].cod:
-        print("# Lifting %s" % art.express(bestie))
+      if dribble.watch(node):
+        dribble.log("# Extensional + intensional match: %s" % art.express(bestie))
       return [art.change_relation(bestie, rel.eq, "particleset=", "particleset=")]
     else:
-      # print("# no extensional + intensional match for %s" % cl.get_unique(node))
+      if dribble.watch(node):
+        dribble.log("# No applicable intensional match to %s" % cl.get_unique(node))
       return exties
 
 # ---------- Find preimage of extensional map (a chain)
 
 # Starting with one match, extend to a set of extensional matches by
-# adding 'monotypic' ancestors
+# adding 'monotypic' ancestors.
+# Returns a list of =-like articulations, perhaps empty.
 
-def extensional_chain(node, ext_map):       # B-node to A
-  match = ext_map.get(node)    # Single B/A extensional match
+def extensional_chain(x, ext_map):       # B-node to A
+  match = ext_map.get(x)    # Single B/A extensional match
+  if dribble.watch(x):
+    dribble.log("# Chain(%s) - articulation is %s" %
+                (cl.get_unique(x), art.express(match)))
   if not match:
+    return []
+  if not rel.is_variant(match.relation, rel.eq):
     return []
 
   # match.cod is the start of the chain
-  # anchor is a descendant of node
-  cursor = match.cod
+  # anchor is a descendant of x
+  y = match.cod
 
   # Start at anchor's match and go rootward finding all matches to anchor
   matches = []
-  anchor = None
+  x_anchor = None
   while True:
-    back = ext_map.get(cursor)
+    back = ext_map.get(y)
     if (back == None or
         not rel.is_variant(back.relation, rel.eq)):
+      if dribble.watch(x):
+        dribble.log("# Chain %s - no back-articulation from %s: %s" %
+                    (cl.get_unique(x), cl.get_unique(y), art.express(back)))
       break
-    if anchor == None:
-      anchor = back.cod
-      #if anchor != node:
-      #  print ("# anchor %s = %s" % (cl.get_unique(node), cl.get_unique(anchor)))
-    elif back.cod != anchor:
+    if x_anchor == None:
+      x_anchor = back.cod
+      if dribble.watch(x):
+        dribble.log("# Chain - setting anchor: %s" % cl.get_unique(x_anchor))
+    elif back.cod != x_anchor:
+      if dribble.watch(x):
+        dribble.log("# Chain - end: %s" % cl.get_unique(back.cod))
       break
-    if anchor == node:
-      if cursor == match.cod:
-        m = match
+    if x_anchor == x:
+      if y == match.cod:
+        m = match               # x -> y
       else:
-        m = art.reverse(back)
+        m = art.reverse(back)   # x -> y
     else:
-      m = art.monotypic(node, cursor, rel.extensional)
+      m = art.monotypic(x, y, rel.extensional)
     matches.append(m)
-    cursor = cl.get_parent(cursor)
+    y = cl.get_parent(y)
   #if len(matches) > 1:
-  #  print ("# nontrivial chain for %s" % cl.get_unique(node))
+  #  print ("# nontrivial chain for %s" % cl.get_unique(x))
   return matches
 
 # ---------- Extensionality by particle set
@@ -160,10 +186,9 @@ def extensional_match_map(A, B, particles, xmrcas):
   def process(node):
     for child in cl.get_children(node):
       process(child)
-    if not particles.get(node):
-      ar = extensional_match(node, particles, xmrcas)
-      if ar:
-        ext[node] = ar
+    ar = extensional_match(node, particles, xmrcas)
+    if ar:
+      ext[node] = ar
   for root in cl.get_roots(A): process(root)
   for root in cl.get_roots(B): process(root)
   return ext
@@ -175,16 +200,22 @@ def extensional_match_map(A, B, particles, xmrcas):
 def extensional_match(node, particles, xmrcas):
   part = particles.get(node)
   if part:
+    if dribble.watch(node):
+      dribble.log("# EM: particle. %s" % art.express(part))
     return part
   partner = xmrcas.get(node)      # node in other checklist; 'conode'
   if not partner:
     # Descendant of a particle
+    if dribble.watch(node):
+      dribble.log("# EM: %s is descendant of particle." % cl.get_unique(node))
     return None
   back = xmrcas.get(partner)    # 'bounce'
   if not back:
     # Not sure how this can happen but it does (NCBI vs. GBIF)
     dribble.log("%s <= %s <= nowhere" % (cl.get_unique(node),
                                          cl.get_unique(partner)))
+    if dribble.watch(node):
+      dribble.log("# EM: %s killed because aborted round trip." % cl.get_unique(node))
     return None
   # node <= partner <= back
   how = cl.how_related(node, back)    # Alway rcc5
@@ -211,27 +242,36 @@ def extensional_match(node, particles, xmrcas):
         # pchild ! node
         pass
       else:
-        (x, y) = cross_compare(node, pchild, xmrcas)
-        if x and y:
+        (d, e) = cross_compare(node, pchild, xmrcas)
+        if d and e:
           how = rel.conflict
-          # The conflict is with the child, not with the partner
-          partner = pchild
           reason = ("%s is in; its sibling %s is not" %
-                    (cl.get_unique(x), cl.get_unique(y)))
+                    (cl.get_unique(d), cl.get_unique(e)))
+          dribble.log("** %s (x) conflicts with %s (y) because:\n"
+                      "   %s (c) is a child of y,\n"
+                      "   %s (d) and %s (e) are descendants of c,\n"
+                      "   and d < x while e ! x" %
+                      (cl.get_unique(node),
+                       cl.get_unique(partner),
+                       cl.get_unique(pchild),
+                       cl.get_unique(d),
+                       cl.get_unique(e)))
           break
-        elif y:
-          reason = ("%s is not in it" % cl.get_unique(y))
+        elif e:
+          reason = ("%s is not in it" % cl.get_unique(e))
 
-  return art.extensional(node, partner, how, reason)
+  ar = art.extensional(node, partner, how, reason)
+  if dribble.watch(node):
+    dribble.log("# Extensional articulation %s" % art.express(ar))
+  return ar
 
 # ---------- Determine disjointness across checklists
 
 # Compare node (in A) to conode (in B) according to particle sets.
-# They can bear any relationship: < = > >< !
 
-# Returns subnodes (x, y) of conode where
-#    x <= node ∩ conode, or is None if node ∩ conode = ∅
-#    y <= conode - node, or is None if conode - node = ∅
+# Returns disjoint descendants (x, y) of conode where
+#    x <= conode ∩ node, or x = None if conode ! node
+#    y <= conode - node, or y = None if conode <= node
 
 # We're looking for two things
 #  1. whether they intersect (if so then parent conflict can be detected) -
@@ -239,22 +279,24 @@ def extensional_match(node, particles, xmrcas):
 #  2. why they are not equal (goes to conflict diagnosis) - example of
 #      conode descendant that is *not* a node descendant.
 
-# On each recursive call, we can provide one or the other of these, or both.
+# On each recursive call, we can obtain one or the other of these, or both.
 # Or maybe none.
+
+# The recursion is over conode, searching for sibling descendants for
+# which one is in node and the other is not.
 
 def cross_compare(node, conode, xmrcas):
   back = xmrcas.get(conode)
   if back == None:
     return (None, None)
-  how = cl.how_related(back, node)
-  assert how != rel.conflict
+  how = cl.how_related(node, back)
   if how == rel.eq:
-    return (conode, None)
-  elif how == rel.lt:
-    return (conode, None)
+    return (conode, None)    # conode <= node
+  elif how == rel.gt:
+    return (conode, None)    # conode <= node
   elif how == rel.disjoint:
-    return (None, conode)
-  assert how == rel.gt
+    return (None, conode)    # conode ! node
+  assert how == rel.lt    # node < back is inconclusive
   x_seen = None
   y_seen = None
   for child in cl.get_children(conode):
@@ -357,6 +399,9 @@ def analyze_cross_mrcas(A, B, particles):
             result = m
       if result:
         assert cl.get_checklist(result) != cl.get_checklist(node)
+        if dribble.watch(node):
+          dribble.log("# Cross-mrca(%s) = %s" %
+                      (cl.get_unique(node), cl.get_unique(result)))
         cross_mrcas[node] = result
       return result             # in B
     for root in cl.get_roots(checklist):
@@ -404,15 +449,17 @@ def check_mutuality(particles):
 def mutual(am):
   mut = {}
   for node in am:
-    debug = (cl.get_name(node) == confusing)
+    debug = dribble.watch(node)
     ar = am[node]               # articulation
     back = am.get(ar.cod)
     if back:
       if back.cod == node:
         mut[node] = ar
-        if debug: dribble.log("# Mutually matched: %s" % art.express(ar))
+        if debug: dribble.log("# Mutually matched: %s" % 
+                              (art.express(ar)))
       else:
-        if debug: dribble.log("# Not mutual: %s, %s" % art.express(ar), art.express(back))
+        if debug: dribble.log("# Not mutual: %s, %s" %
+                              (art.express(ar), art.express(back)))
     else:
       if debug: dribble.log("# No return: %s" % art.express(ar))
   return mut
@@ -422,23 +469,25 @@ def mutual(am):
 def tipward(amap, A, B):
   tw = {}
   def filter(node):
-    debug = (cl.get_name(node) == confusing)
-    found_match = False
+    debug = dribble.watch(node)
+    found_match = None
     for child in cl.get_children(node):
       ar = filter(child)
       if ar:
         found_match = ar
     if found_match:    # Some descendant is a particle
-      if debug: dribble.log("# Found match near child %s" % art.express(found_match))
+      if debug: dribble.log("# %s: descendant matches, not keeping: %s" %
+                            (cl.get_unique(node), art.express(found_match)))
       return found_match
     elif node in amap:
       ar = amap[node]
       tw[node] = ar
-      if debug: dribble.log("# Matched node %s" % art.express(ar))
+      if debug: dribble.log("# %s is a tipward match, keeping: %s" %
+                            (cl.get_unique(node), art.express(ar)))
       return ar
     else:
-      if debug: dribble.log("# Failed to match %s" % cl.get_unique(node))
-      return False
+      if debug: dribble.log("# %s is unmatched" % cl.get_unique(node))
+      return None
   for root in cl.get_roots(A): filter(root)
   for root in cl.get_roots(B): filter(root)
   return tw

@@ -1,9 +1,13 @@
 
 Logging to work/mammalia-ncbi-2015-2020.csv.new.log
 Node counts: 18133 21882
-# Best: B.Ateles paniscus matches A.Ateles paniscus
 ** Multiple least-bad matches. Need to find tie-breakers.
    B.Papio cynocephalus -> ['A.Papio anubis', 'A.Papio ursinus']
+# Best: B.Galagoides matches A.Galagoides
+# Best: B.Galagoides demidoff matches A.Galagoides demidoff
+# Best: B.Galagoides zanzibaricus matches A.Galagoides zanzibaricus
+# Best: B.Galagoides orinus matches A.Galagoides orinus
+# Best: B.Galagoides thomasi matches A.Galago thomasi
 ** Multiple least-bad matches. Need to find tie-breakers.
    B.environmental samples#1002241 -> ['A.environmental samples#328690', 'A.environmental samples#1002248', 'A.environmental samples#1002256']
 ** Multiple least-bad matches. Need to find tie-breakers.
@@ -18,8 +22,13 @@ Node counts: 18133 21882
    B.environmental samples#1002254 -> ['A.environmental samples#328690', 'A.environmental samples#1002248', 'A.environmental samples#1002256']
 ** Multiple least-bad matches. Need to find tie-breakers.
    B.environmental samples#1092586 -> ['A.environmental samples#328690', 'A.environmental samples#1002248', 'A.environmental samples#1002256']
+# Best: B.Galagoides cocos matches A.Galagoides cocos
 ** Multiple least-bad matches. Need to find tie-breakers.
    B.environmental samples#1617257 -> ['A.environmental samples#328690', 'A.environmental samples#1002248', 'A.environmental samples#1002256']
+# Best: none
+# Best: none
+# Best: none
+# Best: none
 ** Multiple least-bad matches. Need to find tie-breakers.
    B.environmental samples#2665946 -> ['A.environmental samples#328690', 'A.environmental samples#1002248', 'A.environmental samples#1002256']
 ** Multiple least-bad matches. Need to find tie-breakers.
@@ -34,7 +43,10 @@ Node counts: 18133 21882
    B.environmental samples#2682739 -> ['A.environmental samples#328690', 'A.environmental samples#1002248', 'A.environmental samples#1002256']
 ** Multiple least-bad matches. Need to find tie-breakers.
    B.environmental samples#2682741 -> ['A.environmental samples#328690', 'A.environmental samples#1002248', 'A.environmental samples#1002256']
-# Best: A.Ateles paniscus matches B.Ateles paniscus
+# Best: A.Galagoides matches B.Galagoides
+# Best: A.Galagoides demidoff matches B.Galagoides demidoff
+# Best: A.Galagoides zanzibaricus matches B.Galagoides zanzibaricus
+# Best: A.Galagoides orinus matches B.Galagoides orinus
 ** Multiple least-bad matches. Need to find tie-breakers.
    A.environmental samples#1002241 -> ['B.environmental samples#328690', 'B.environmental samples#1002248', 'B.environmental samples#1002256', 'B.environmental samples#2665948', 'B.environmental samples#2682739']
 ** Multiple least-bad matches. Need to find tie-breakers.
@@ -49,7 +61,23 @@ Node counts: 18133 21882
    A.environmental samples#1002254 -> ['B.environmental samples#328690', 'B.environmental samples#1002248', 'B.environmental samples#1002256', 'B.environmental samples#2665948', 'B.environmental samples#2682739']
 ** Multiple least-bad matches. Need to find tie-breakers.
    A.environmental samples#1092586 -> ['B.environmental samples#328690', 'B.environmental samples#1002248', 'B.environmental samples#1002256', 'B.environmental samples#2665948', 'B.environmental samples#2682739']
+# Best: A.Galagoides cocos matches B.Galagoides cocos
 19243 best matches
+# B.Galagoides demidoff murinus is unmatched
+# B.Galagoides demidoff is a tipward match, keeping: B.Galagoides demidoff matches A.Galagoides demidoff
+# B.Galagoides zanzibaricus udzungwensis is unmatched
+# B.Galagoides zanzibaricus zanzibaricus is unmatched
+# B.Galagoides zanzibaricus is a tipward match, keeping: B.Galagoides zanzibaricus matches A.Galagoides zanzibaricus
+# B.Galagoides orinus is a tipward match, keeping: B.Galagoides orinus matches A.Galagoides orinus
+# B.Galagoides thomasi is a tipward match, keeping: B.Galagoides thomasi matches A.Galago thomasi
+# B.Galagoides cocos is a tipward match, keeping: B.Galagoides cocos matches A.Galagoides cocos
+# B.Galagoides rondoensis is unmatched
+# B.Galagoides: descendant matches, not keeping: B.Galagoides cocos matches A.Galagoides cocos
+# A.Galagoides demidoff is a tipward match, keeping: A.Galagoides demidoff matches B.Galagoides demidoff
+# A.Galagoides zanzibaricus is a tipward match, keeping: A.Galagoides zanzibaricus matches B.Galagoides zanzibaricus
+# A.Galagoides orinus is a tipward match, keeping: A.Galagoides orinus matches B.Galagoides orinus
+# A.Galagoides cocos is a tipward match, keeping: A.Galagoides cocos matches B.Galagoides cocos
+# A.Galagoides: descendant matches, not keeping: A.Galagoides cocos matches B.Galagoides cocos
 # Split/lump B.Micoureus regina ∨ B.Marmosa germana -> A.Micoureus regina -> B.Micoureus
 # Split/lump B.Planigale gilesi ∨ B.Planigale tenuirostris -> A.Planigale gilesi -> B.Planigale
 # Split/lump B.Dasycercus cristicauda ∨ B.Dasycercus blythi -> A.Dasycercus cristicauda -> B.Dasycercus
@@ -75,193 +103,713 @@ Node counts: 18133 21882
 # Split/lump A.Microtus gerbei ∨ A.Microtus pyrenaicus -> B.Microtus gerbei -> A.Microtus
 # Split/lump A.Reithrodontomys sp. ROM114291 ∨ A.Reithrodontomys sp. ROM116805 ∨ A.Reithrodontomys sp. 1 AVB-2011 -> B.Reithrodontomys sp. 1 AVB-2011 -> A.Reithrodontomys
 # Split/lump A.Reithrodontomys sp. ROM116835 ∨ A.Reithrodontomys sp. 2 AVB-2011 -> B.Reithrodontomys sp. 2 AVB-2011 -> A.Reithrodontomys
-# Number of particles: 7345
-# Number of cross-mrcas: 19393
-# Number of extensional relationships: 4703
-** Multiple matches: A.Elephantulus -> B.Macroscelididae, B.Macroscelidea
-** Multiple matches: A.Miniopterus schreibersii -> B.Miniopterus, B.Miniopterinae
+# Mutually matched: B.Galagoides matches A.Galagoides
+# Mutually matched: B.Galagoides demidoff matches A.Galagoides demidoff
+# Mutually matched: B.Galagoides zanzibaricus matches A.Galagoides zanzibaricus
+# Mutually matched: B.Galagoides orinus matches A.Galagoides orinus
+# Mutually matched: B.Galagoides thomasi matches A.Galago thomasi
+# Mutually matched: B.Galagoides cocos matches A.Galagoides cocos
+# Mutually matched: A.Galagoides matches B.Galagoides
+# Mutually matched: A.Galagoides demidoff matches B.Galagoides demidoff
+# Mutually matched: A.Galagoides zanzibaricus matches B.Galagoides zanzibaricus
+# Mutually matched: A.Galagoides orinus matches B.Galagoides orinus
+# Mutually matched: A.Galagoides cocos matches B.Galagoides cocos
+# B.Galagoides demidoff murinus is unmatched
+# B.Galagoides demidoff is a tipward match, keeping: B.Galagoides demidoff matches A.Galagoides demidoff
+# B.Galagoides zanzibaricus udzungwensis is unmatched
+# B.Galagoides zanzibaricus zanzibaricus is unmatched
+# B.Galagoides zanzibaricus is a tipward match, keeping: B.Galagoides zanzibaricus matches A.Galagoides zanzibaricus
+# B.Galagoides orinus is a tipward match, keeping: B.Galagoides orinus matches A.Galagoides orinus
+# B.Galagoides thomasi is a tipward match, keeping: B.Galagoides thomasi matches A.Galago thomasi
+# B.Galagoides cocos is a tipward match, keeping: B.Galagoides cocos matches A.Galagoides cocos
+# B.Galagoides rondoensis is unmatched
+# B.Galagoides: descendant matches, not keeping: B.Galagoides cocos matches A.Galagoides cocos
+# A.Galagoides demidoff is a tipward match, keeping: A.Galagoides demidoff matches B.Galagoides demidoff
+# A.Galagoides zanzibaricus is a tipward match, keeping: A.Galagoides zanzibaricus matches B.Galagoides zanzibaricus
+# A.Galagoides orinus is a tipward match, keeping: A.Galagoides orinus matches B.Galagoides orinus
+# A.Galagoides cocos is a tipward match, keeping: A.Galagoides cocos matches B.Galagoides cocos
+# A.Galagoides: descendant matches, not keeping: A.Galagoides cocos matches B.Galagoides cocos
+** No return match: B.Stenonycteris matches A.Stenonycteris -> none
+** No return match: B.Myotis nattereri matches A.Myotis nattereri -> none
+** No return match: B.Plecotus teneriffae matches A.Plecotus teneriffae -> none
+** No return match: B.Falsistrellus matches A.Falsistrellus -> none
+** No return match: B.Parahypsugo crassulus matches A.Hypsugo crassulus -> none
+** No return match: B.Equus caballus matches A.Equus caballus -> none
+** No return match: B.Uncia matches A.Uncia -> none
+** No return match: B.Microsciurus flaviventer matches A.Microsciurus flaviventer -> none
+** No return match: B.Simosciurus stramineus matches A.Sciurus stramineus -> none
+** No return match: B.unclassified Murinae matches A.unclassified Murinae -> none
+** No return match: A.Sorex shinto matches B.Sorex shinto -> none
+** No return match: A.Brachyphylla nana matches B.Brachyphylla nana -> none
+** No return match: A.Giraffa camelopardalis giraffa particle-set<= B.Giraffa giraffa -> none
+** No return match: A.Porcula matches B.Porcula -> none
+** No return match: A.Eospalax fontanierii matches B.Eospalax fontanierii -> none
+** No return match: A.Akodon andinus particle-set<= B.Abrothrix andinus -> none
+# Number of particles: 7355
+# Cross-mrca(B.Galagoides demidoff) = A.Galagoides demidoff
+# Cross-mrca(B.Galagoides zanzibaricus) = A.Galagoides zanzibaricus
+# Cross-mrca(B.Galagoides orinus) = A.Galagoides orinus
+# Cross-mrca(B.Galagoides thomasi) = A.Galago thomasi
+# Cross-mrca(B.Galagoides cocos) = A.Galagoides cocos
+# Cross-mrca(B.Galagoides) = A.Galagidae
+# Cross-mrca(A.Galagoides demidoff) = B.Galagoides demidoff
+# Cross-mrca(A.Galagoides zanzibaricus) = B.Galagoides zanzibaricus
+# Cross-mrca(A.Galagoides orinus) = B.Galagoides orinus
+# Cross-mrca(A.Galagoides cocos) = B.Galagoides cocos
+# Cross-mrca(A.Galagoides) = B.Galagoides
+# Number of cross-mrcas: 19414
+** A.Megaerops (x) conflicts with B.Pteropodinae (y) because:
+   B.Ptenochirus (c) is a child of y,
+   B.Ptenochirus wetmorei (d) and B.Ptenochirus minor (e) are descendants of c,
+   and d < x while e ! x
+** A.Epomophorini-Myonycterini lineage (x) conflicts with B.Pteropodinae (y) because:
+   B.Rousettus (c) is a child of y,
+   B.Rousettus lanosus (d) and B.Rousettus amplexicaudatus (e) are descendants of c,
+   and d < x while e ! x
+** A.Scotonycteris (x) conflicts with B.Pteropodidae (y) because:
+   B.Casinycteris (c) is a child of y,
+   B.Casinycteris ophiodon (d) and B.Casinycteris campomaanensis (e) are descendants of c,
+   and d < x while e ! x
+** A.Artibeus (x) conflicts with B.Stenodermatinae (y) because:
+   B.Dermanura (c) is a child of y,
+   B.Dermanura bogotensis (d) and B.Dermanura rava (e) are descendants of c,
+   and d < x while e ! x
+** A.Plecotus (x) conflicts with B.Vespertilionidae (y) because:
+   B.Corynorhinus (c) is a child of y,
+   B.Corynorhinus rafinesquii (d) and B.Corynorhinus townsendii (e) are descendants of c,
+   and d < x while e ! x
+** A.Chalinolobus (x) conflicts with B.Vespertilionidae (y) because:
+   B.Glauconycteris (c) is a child of y,
+   B.Glauconycteris argentata (d) and B.Glauconycteris egeria (e) are descendants of c,
+   and d < x while e ! x
+** A.Hypsugo (x) conflicts with B.Vespertilionidae (y) because:
+   B.Hypsugo (c) is a child of y,
+   B.Hypsugo anchietae (d) and B.Hypsugo petersi (e) are descendants of c,
+   and d < x while e ! x
+** A.unclassified Equus (x) conflicts with B.Equidae (y) because:
+   B.Equus#9789 (c) is a child of y,
+   B.unclassified Equus (d) and B.Equus kiang (e) are descendants of c,
+   and d < x while e ! x
+** A.Herpestes (x) conflicts with B.Herpestidae (y) because:
+   B.Herpestes (c) is a child of y,
+   B.Herpestes ichneumon (d) and B.Herpestes naso (e) are descendants of c,
+   and d < x while e ! x
+** A.Helogale (x) conflicts with B.Herpestidae (y) because:
+   B.Herpestes (c) is a child of y,
+   B.Herpestes naso (d) and B.Herpestes ichneumon (e) are descendants of c,
+   and d < x while e ! x
+** A.Canis lupus (x) conflicts with B.Canis (y) because:
+   B.Canis lupus (c) is a child of y,
+   B.Canis lupus hodophilax (d) and B.Canis lupus lycaon (e) are descendants of c,
+   and d < x while e ! x
+** A.Mazama (x) conflicts with B.Odocoileinae (y) because:
+   B.Odocoileus (c) is a child of y,
+   B.Odocoileus pandora (d) and B.Odocoileus virginianus (e) are descendants of c,
+   and d < x while e ! x
+** A.Ovis aries (x) conflicts with B.Ovis (y) because:
+   B.Ovis orientalis (c) is a child of y,
+   B.Ovis orientalis ophion (d) and B.Ovis orientalis laristanica (e) are descendants of c,
+   and d < x while e ! x
+** A.Chiromyiformes (x) conflicts with B.Strepsirrhini (y) because:
+   B.Lorisiformes (c) is a child of y,
+   B.Lorisidae (d) and B.Galagidae (e) are descendants of c,
+   and d < x while e ! x
+** A.Galago (x) conflicts with B.Galagidae (y) because:
+   B.Galagoides (c) is a child of y,
+   B.Galagoides thomasi (d) and B.Galagoides orinus (e) are descendants of c,
+   and d < x while e ! x
+# EM: particle. A.Galagoides demidoff matches B.Galagoides demidoff
+# EM: particle. A.Galagoides zanzibaricus matches B.Galagoides zanzibaricus
+# EM: particle. A.Galagoides orinus matches B.Galagoides orinus
+# EM: particle. A.Galagoides cocos matches B.Galagoides cocos
+# Extensional articulation A.Galagoides < B.Galagoides
+** A.Spermophilus (x) conflicts with B.Marmotini (y) because:
+   B.Urocitellus (c) is a child of y,
+   B.Urocitellus elegans (d) and B.Urocitellus beldingi (e) are descendants of c,
+   and d < x while e ! x
+** A.unclassified Mus (x) conflicts with B.Mus#10088 (y) because:
+   B.Mus#862507 (c) is a child of y,
+   B.Mus abbotti (d) and B.Mus spicilegus (e) are descendants of c,
+   and d < x while e ! x
+** A.unclassified Muridae (x) conflicts with B.Muridae (y) because:
+   B.Murinae (c) is a child of y,
+   B.Hyorhinomys (d) and B.Soricomys (e) are descendants of c,
+   and d < x while e ! x
+** A.Muridae (x) conflicts with B.Muridae (y) because:
+   B.Murinae (c) is a child of y,
+   B.Hyorhinomys (d) and B.Waiomys (e) are descendants of c,
+   and d < x while e ! x
+** A.Microtus (x) conflicts with B.Arvicolinae (y) because:
+   B.Neodon (c) is a child of y,
+   B.Neodon sikimensis (d) and B.Neodon irene (e) are descendants of c,
+   and d < x while e ! x
+** A.Eothenomys (x) conflicts with B.Arvicolinae (y) because:
+   B.Myodes (c) is a child of y,
+   B.Myodes smithii (d) and B.Myodes regulus (e) are descendants of c,
+   and d < x while e ! x
+** A.Muroidea (x) conflicts with B.Muroidea (y) because:
+   B.Muridae (c) is a child of y,
+   B.Hyorhinomys (d) and B.Waiomys (e) are descendants of c,
+   and d < x while e ! x
+** A.Sciurognathi (x) conflicts with B.Rodentia (y) because:
+   B.Hystricomorpha (c) is a child of y,
+   B.Ctenodactylidae (d) and B.Echimyidae (e) are descendants of c,
+   and d < x while e ! x
+** A.unclassified Rodentia (x) conflicts with B.Rodentia (y) because:
+   B.Myomorpha (c) is a child of y,
+   B.Waiomys (d) and B.Hyorhinomys (e) are descendants of c,
+   and d < x while e ! x
+** B.Rousettus (x) conflicts with A.Pteropodinae (y) because:
+   A.Epomophorini-Myonycterini lineage (c) is a child of y,
+   A.Stenonycterini (d) and A.Epomophorini (e) are descendants of c,
+   and d < x while e ! x
+** B.Ptenochirus (x) conflicts with A.Pteropodinae (y) because:
+   A.Megaerops (c) is a child of y,
+   A.Megaerops wetmorei (d) and A.Megaerops kusnotoi (e) are descendants of c,
+   and d < x while e ! x
+** B.Casinycteris (x) conflicts with A.Pteropodidae (y) because:
+   A.Scotonycteris (c) is a child of y,
+   A.Scotonycteris ophiodon (d) and A.Scotonycteris zenkeri (e) are descendants of c,
+   and d < x while e ! x
+** B.Dermanura (x) conflicts with A.Stenodermatinae (y) because:
+   A.Artibeus (c) is a child of y,
+   A.Artibeus bogotensis (d) and A.Artibeus schwartzi (e) are descendants of c,
+   and d < x while e ! x
+** B.Hypsugo (x) conflicts with A.Vespertilionidae (y) because:
+   A.Hypsugo (c) is a child of y,
+   A.Hypsugo savii (d) and A.Hypsugo eisentrauti (e) are descendants of c,
+   and d < x while e ! x
+** B.Corynorhinus (x) conflicts with A.Vespertilionidae (y) because:
+   A.Plecotus (c) is a child of y,
+   A.Plecotus rafinesquii (d) and A.Plecotus auritus (e) are descendants of c,
+   and d < x while e ! x
+** B.Glauconycteris (x) conflicts with A.Vespertilionidae (y) because:
+   A.Chalinolobus (c) is a child of y,
+   A.Chalinolobus beatrix (d) and A.Chalinolobus tuberculatus (e) are descendants of c,
+   and d < x while e ! x
+** B.Equus#9789 (x) conflicts with A.Equus#9789 (y) because:
+   A.unclassified Equus (c) is a child of y,
+   A.Equus sp. LLO-2009a (d) and A.Equus sp. (NWSL) (e) are descendants of c,
+   and d < x while e ! x
+** B.Herpestes (x) conflicts with A.Herpestidae (y) because:
+   A.Herpestes (c) is a child of y,
+   A.Herpestes ichneumon (d) and A.Herpestes edwardsii (e) are descendants of c,
+   and d < x while e ! x
+** B.Canis lupus (x) conflicts with A.Canis (y) because:
+   A.Canis lupus (c) is a child of y,
+   A.Canis lupus x Canis lupus familiaris (d) and A.Canis lupus lupaster (e) are descendants of c,
+   and d < x while e ! x
+** B.Odocoileus (x) conflicts with A.Odocoileinae (y) because:
+   A.Mazama (c) is a child of y,
+   A.Mazama pandora (d) and A.Mazama rufina (e) are descendants of c,
+   and d < x while e ! x
+** B.Ovis orientalis (x) conflicts with A.Ovis (y) because:
+   A.Ovis aries (c) is a child of y,
+   A.Ovis aries ophion (d) and A.Ovis aries platyura (e) are descendants of c,
+   and d < x while e ! x
+# EM: B.Galagoides demidoff murinus is descendant of particle.
+# EM: particle. B.Galagoides demidoff matches A.Galagoides demidoff
+# EM: B.Galagoides zanzibaricus udzungwensis is descendant of particle.
+# EM: B.Galagoides zanzibaricus zanzibaricus is descendant of particle.
+# EM: particle. B.Galagoides zanzibaricus matches A.Galagoides zanzibaricus
+# EM: particle. B.Galagoides orinus matches A.Galagoides orinus
+# EM: particle. B.Galagoides thomasi matches A.Galago thomasi
+# EM: particle. B.Galagoides cocos matches A.Galagoides cocos
+# EM: B.Galagoides rondoensis is descendant of particle.
+** B.Galagoides (x) conflicts with A.Galagidae (y) because:
+   A.Galago (c) is a child of y,
+   A.Galago thomasi (d) and A.Galago granti (e) are descendants of c,
+   and d < x while e ! x
+# Extensional articulation B.Galagoides >< A.Galagidae
+** B.Lorisiformes (x) conflicts with A.Strepsirrhini (y) because:
+   A.Chiromyiformes (c) is a child of y,
+   A.Lorisidae (d) and A.Daubentoniidae (e) are descendants of c,
+   and d < x while e ! x
+** B.Hystricomorpha (x) conflicts with A.Rodentia (y) because:
+   A.Sciurognathi (c) is a child of y,
+   A.Ctenodactylidae (d) and A.Pedetidae (e) are descendants of c,
+   and d < x while e ! x
+** B.Urocitellus (x) conflicts with A.Marmotini (y) because:
+   A.Spermophilus (c) is a child of y,
+   A.Spermophilus elegans (d) and A.Spermophilus dauricus (e) are descendants of c,
+   and d < x while e ! x
+** B.Mus#862507 (x) conflicts with A.Mus#10088 (y) because:
+   A.unclassified Mus (c) is a child of y,
+   A.Mus gratus (d) and A.Mus sp. Chypre (e) are descendants of c,
+   and d < x while e ! x
+** B.Murinae (x) conflicts with A.Rodentia (y) because:
+   A.Sciurognathi (c) is a child of y,
+   A.Murinae (d) and A.Gerbillinae (e) are descendants of c,
+   and d < x while e ! x
+** B.Muridae (x) conflicts with A.Rodentia (y) because:
+   A.Sciurognathi (c) is a child of y,
+   A.Muridae (d) and A.Spalacidae (e) are descendants of c,
+   and d < x while e ! x
+** B.Myodes (x) conflicts with A.Arvicolinae (y) because:
+   A.Eothenomys (c) is a child of y,
+   A.Eothenomys smithii (d) and A.Eothenomys imaizumii (e) are descendants of c,
+   and d < x while e ! x
+** B.Neodon (x) conflicts with A.Arvicolinae (y) because:
+   A.Microtus (c) is a child of y,
+   A.Microtus sikimensis (d) and A.Microtus savii (e) are descendants of c,
+   and d < x while e ! x
+** B.Muroidea (x) conflicts with A.Rodentia (y) because:
+   A.Sciurognathi (c) is a child of y,
+   A.Muroidea (d) and A.Anomaluridae (e) are descendants of c,
+   and d < x while e ! x
+** B.Myomorpha (x) conflicts with A.Rodentia (y) because:
+   A.Sciurognathi (c) is a child of y,
+   A.Dipodidae (d) and A.Castoridae (e) are descendants of c,
+   and d < x while e ! x
+# Number of extensional relationships: 19414
+** Multiple matches: A.Murexia -> B.Murexia longicaudata aspera, B.Murexia longicaudata
 ** Multiple matches: A.Manis -> B.Manidae, B.Pholidota
-** Multiple matches: A.Alouatta seniculus -> B.Alouatta, B.Alouattinae
+** Multiple matches: A.environmental samples#1002243 -> B.Canis environmental sample, B.environmental samples#1002243
+** Multiple matches: A.environmental samples#1002254 -> B.Vulpes environmental sample, B.environmental samples#1002254
+** Multiple matches: A.environmental samples#1002252 -> B.Ursus environmental sample, B.environmental samples#1002252
+** Multiple matches: A.environmental samples#1002250 -> B.Procyon environmental sample, B.environmental samples#1002250
+** Multiple matches: A.environmental samples#1002245 -> B.Lutra environmental sample, B.environmental samples#1002245
+# Chain(B.Galagoides thomasi) - articulation is B.Galagoides thomasi matches A.Galago thomasi
+# Chain - setting anchor: B.Galagoides thomasi
+# Chain B.Galagoides thomasi - no back-articulation from A.Galago: A.Galago >< B.Galagidae
+# Chain B.Galagoides thomasi = [A.Galago thomasi]
+# Extensional + intensional match: B.Galagoides thomasi matches A.Galago thomasi
+# Chain(A.Galagoides demidoff) - articulation is A.Galagoides demidoff matches B.Galagoides demidoff
+# Chain - setting anchor: A.Galagoides demidoff
+# Chain A.Galagoides demidoff - no back-articulation from B.Galagoides: B.Galagoides >< A.Galagidae
+# Chain A.Galagoides demidoff = [B.Galagoides demidoff]
+# Extensional + intensional match: A.Galagoides demidoff matches B.Galagoides demidoff
+# Chain(B.Galagoides demidoff) - articulation is B.Galagoides demidoff matches A.Galagoides demidoff
+# Chain - setting anchor: B.Galagoides demidoff
+# Chain B.Galagoides demidoff - no back-articulation from A.Galagoides: A.Galagoides < B.Galagoides
+# Chain B.Galagoides demidoff = [A.Galagoides demidoff]
+# Extensional + intensional match: B.Galagoides demidoff matches A.Galagoides demidoff
+# Matching extensionally: A.Galagoides demidoff = B.Galagoides demidoff
+# Chain(A.Galagoides zanzibaricus) - articulation is A.Galagoides zanzibaricus matches B.Galagoides zanzibaricus
+# Chain - setting anchor: A.Galagoides zanzibaricus
+# Chain A.Galagoides zanzibaricus - no back-articulation from B.Galagoides: B.Galagoides >< A.Galagidae
+# Chain A.Galagoides zanzibaricus = [B.Galagoides zanzibaricus]
+# Extensional + intensional match: A.Galagoides zanzibaricus matches B.Galagoides zanzibaricus
+# Chain(B.Galagoides zanzibaricus) - articulation is B.Galagoides zanzibaricus matches A.Galagoides zanzibaricus
+# Chain - setting anchor: B.Galagoides zanzibaricus
+# Chain B.Galagoides zanzibaricus - no back-articulation from A.Galagoides: A.Galagoides < B.Galagoides
+# Chain B.Galagoides zanzibaricus = [A.Galagoides zanzibaricus]
+# Extensional + intensional match: B.Galagoides zanzibaricus matches A.Galagoides zanzibaricus
+# Matching extensionally: A.Galagoides zanzibaricus = B.Galagoides zanzibaricus
+# Chain(A.Galagoides orinus) - articulation is A.Galagoides orinus matches B.Galagoides orinus
+# Chain - setting anchor: A.Galagoides orinus
+# Chain A.Galagoides orinus - no back-articulation from B.Galagoides: B.Galagoides >< A.Galagidae
+# Chain A.Galagoides orinus = [B.Galagoides orinus]
+# Extensional + intensional match: A.Galagoides orinus matches B.Galagoides orinus
+# Chain(B.Galagoides orinus) - articulation is B.Galagoides orinus matches A.Galagoides orinus
+# Chain - setting anchor: B.Galagoides orinus
+# Chain B.Galagoides orinus - no back-articulation from A.Galagoides: A.Galagoides < B.Galagoides
+# Chain B.Galagoides orinus = [A.Galagoides orinus]
+# Extensional + intensional match: B.Galagoides orinus matches A.Galagoides orinus
+# Matching extensionally: A.Galagoides orinus = B.Galagoides orinus
+# Chain(A.Galagoides cocos) - articulation is A.Galagoides cocos matches B.Galagoides cocos
+# Chain - setting anchor: A.Galagoides cocos
+# Chain A.Galagoides cocos - no back-articulation from B.Galagoides: B.Galagoides >< A.Galagidae
+# Chain A.Galagoides cocos = [B.Galagoides cocos]
+# Extensional + intensional match: A.Galagoides cocos matches B.Galagoides cocos
+# Chain(B.Galagoides cocos) - articulation is B.Galagoides cocos matches A.Galagoides cocos
+# Chain - setting anchor: B.Galagoides cocos
+# Chain B.Galagoides cocos - no back-articulation from A.Galagoides: A.Galagoides < B.Galagoides
+# Chain B.Galagoides cocos = [A.Galagoides cocos]
+# Extensional + intensional match: B.Galagoides cocos matches A.Galagoides cocos
+# Matching extensionally: A.Galagoides cocos = B.Galagoides cocos
+# Chain(A.Galagoides) - articulation is A.Galagoides < B.Galagoides
+# Chain A.Galagoides = []
+# No extensionally equal matches to A.Galagoides
+# Non-equal articulation: A.Galagoides < B.Galagoides
+# Matching extensionally: A.Galagoides < B.Galagoides
+** Multiple matches: A.Alouatta guariba -> B.Alouatta guariba clamitans, B.Alouatta guariba
 ** Multiple matches: A.Cercopithecidae -> B.Cercopithecidae, B.Cercopithecoidea
 ** Multiple matches: A.Tarsius -> B.Tarsiidae, B.Tarsiiformes
-** Multiple matches: B.unclassified Miniopterus -> A.Miniopterus, A.Miniopterinae
-** Multiple matches: B.unclassified Rhinolophus -> A.Rhinolophus, A.Rhinolophinae
-** Multiple matches: B.unclassified Tapirus -> A.Tapirus, A.Tapiridae
-** Multiple matches: B.unclassified Manis -> A.Manis, A.Manidae, A.Pholidota
-** Multiple returns: A.Manis -> B.Manidae, B.Pholidota
-** Multiple returns: A.Manis -> B.Manidae, B.Pholidota
-** Multiple matches: B.Phataginus -> A.Manis, A.Manidae, A.Pholidota
-** Multiple matches: B.unclassified Moschus -> A.Moschus, A.Moschidae
-** Multiple matches: B.unclassified Palaeopropithecus -> A.Palaeopropithecus, A.Paleopropithecidae
-** Multiple matches: B.unclassified Saimiri -> A.Saimiri, A.Saimiriinae
-** Multiple matches: B.unclassified Aotus (in: Chordata) -> A.Aotus, A.Aotidae
-** Multiple matches: B.unclassified Callicebus -> A.Callicebus, A.Callicebinae
-** Multiple matches: B.Plecturocebus -> A.Callicebus, A.Callicebinae
-** Multiple matches: B.Cheracebus -> A.Callicebus, A.Callicebinae
+** Multiple matches: A.environmental samples#1002241 -> B.Leporidae environmental sample, B.environmental samples#1002241
+** Multiple returns: B.Dipodomys panamintinus -> A.Dipodomys panamintinus panamintinus, A.Dipodomys panamintinus
+** Multiple matches: A.Rattus norvegicus -> B.Rattus norvegicus albus, B.Rattus norvegicus
+** Multiple returns: B.Abrothrix andinus -> A.Abrothrix andinus polius, A.Abrothrix andinus
+** Multiple returns: B.Abrothrix andinus -> A.Abrothrix andinus polius, A.Abrothrix andinus
+** Multiple matches: A.environmental samples#1092586 -> B.mammal environmental sample, B.environmental samples#1092586
+** Multiple matches: B.unclassified Scotorepens -> A.Scotorepens sp. JMW-2004, A.Scotorepens
+** Multiple matches: B.environmental samples#1002243 -> A.Canis environmental sample, A.environmental samples#1002243
+** Multiple matches: B.environmental samples#1002254 -> A.Vulpes environmental sample, A.environmental samples#1002254
+** Multiple matches: B.environmental samples#1002252 -> A.Ursus environmental sample, A.environmental samples#1002252
+** Multiple matches: B.environmental samples#1002250 -> A.Procyon environmental sample, A.environmental samples#1002250
+** Multiple matches: B.environmental samples#1002245 -> A.Lutra environmental sample, A.environmental samples#1002245
+** Multiple matches: B.Chiromyiformes -> A.Daubentonia madagascariensis, A.Daubentonia, A.Daubentoniidae
+# Chain(B.Galagoides demidoff) - articulation is B.Galagoides demidoff matches A.Galagoides demidoff
+# Chain - setting anchor: B.Galagoides demidoff
+# Chain B.Galagoides demidoff - no back-articulation from A.Galagoides: A.Galagoides < B.Galagoides
+# Chain B.Galagoides demidoff = [A.Galagoides demidoff]
+# Extensional + intensional match: B.Galagoides demidoff matches A.Galagoides demidoff
+# Chain(A.Galagoides demidoff) - articulation is A.Galagoides demidoff matches B.Galagoides demidoff
+# Chain - setting anchor: A.Galagoides demidoff
+# Chain A.Galagoides demidoff - no back-articulation from B.Galagoides: B.Galagoides >< A.Galagidae
+# Chain A.Galagoides demidoff = [B.Galagoides demidoff]
+# Extensional + intensional match: A.Galagoides demidoff matches B.Galagoides demidoff
+# Matching extensionally: B.Galagoides demidoff = A.Galagoides demidoff
+# Chain(B.Galagoides zanzibaricus) - articulation is B.Galagoides zanzibaricus matches A.Galagoides zanzibaricus
+# Chain - setting anchor: B.Galagoides zanzibaricus
+# Chain B.Galagoides zanzibaricus - no back-articulation from A.Galagoides: A.Galagoides < B.Galagoides
+# Chain B.Galagoides zanzibaricus = [A.Galagoides zanzibaricus]
+# Extensional + intensional match: B.Galagoides zanzibaricus matches A.Galagoides zanzibaricus
+# Chain(A.Galagoides zanzibaricus) - articulation is A.Galagoides zanzibaricus matches B.Galagoides zanzibaricus
+# Chain - setting anchor: A.Galagoides zanzibaricus
+# Chain A.Galagoides zanzibaricus - no back-articulation from B.Galagoides: B.Galagoides >< A.Galagidae
+# Chain A.Galagoides zanzibaricus = [B.Galagoides zanzibaricus]
+# Extensional + intensional match: A.Galagoides zanzibaricus matches B.Galagoides zanzibaricus
+# Matching extensionally: B.Galagoides zanzibaricus = A.Galagoides zanzibaricus
+# Chain(B.Galagoides orinus) - articulation is B.Galagoides orinus matches A.Galagoides orinus
+# Chain - setting anchor: B.Galagoides orinus
+# Chain B.Galagoides orinus - no back-articulation from A.Galagoides: A.Galagoides < B.Galagoides
+# Chain B.Galagoides orinus = [A.Galagoides orinus]
+# Extensional + intensional match: B.Galagoides orinus matches A.Galagoides orinus
+# Chain(A.Galagoides orinus) - articulation is A.Galagoides orinus matches B.Galagoides orinus
+# Chain - setting anchor: A.Galagoides orinus
+# Chain A.Galagoides orinus - no back-articulation from B.Galagoides: B.Galagoides >< A.Galagidae
+# Chain A.Galagoides orinus = [B.Galagoides orinus]
+# Extensional + intensional match: A.Galagoides orinus matches B.Galagoides orinus
+# Matching extensionally: B.Galagoides orinus = A.Galagoides orinus
+# Chain(B.Galagoides thomasi) - articulation is B.Galagoides thomasi matches A.Galago thomasi
+# Chain - setting anchor: B.Galagoides thomasi
+# Chain B.Galagoides thomasi - no back-articulation from A.Galago: A.Galago >< B.Galagidae
+# Chain B.Galagoides thomasi = [A.Galago thomasi]
+# Extensional + intensional match: B.Galagoides thomasi matches A.Galago thomasi
+# Matching extensionally: B.Galagoides thomasi = A.Galago thomasi
+# Chain(B.Galagoides cocos) - articulation is B.Galagoides cocos matches A.Galagoides cocos
+# Chain - setting anchor: B.Galagoides cocos
+# Chain B.Galagoides cocos - no back-articulation from A.Galagoides: A.Galagoides < B.Galagoides
+# Chain B.Galagoides cocos = [A.Galagoides cocos]
+# Extensional + intensional match: B.Galagoides cocos matches A.Galagoides cocos
+# Chain(A.Galagoides cocos) - articulation is A.Galagoides cocos matches B.Galagoides cocos
+# Chain - setting anchor: A.Galagoides cocos
+# Chain A.Galagoides cocos - no back-articulation from B.Galagoides: B.Galagoides >< A.Galagidae
+# Chain A.Galagoides cocos = [B.Galagoides cocos]
+# Extensional + intensional match: A.Galagoides cocos matches B.Galagoides cocos
+# Matching extensionally: B.Galagoides cocos = A.Galagoides cocos
+# Chain(B.Galagoides) - articulation is B.Galagoides >< A.Galagidae
+# Chain B.Galagoides = []
+# No extensionally equal matches to B.Galagoides
+# Non-equal articulation: B.Galagoides >< A.Galagidae
+# Matching extensionally: B.Galagoides >< A.Galagidae
+** Multiple matches: B.Alouatta guariba -> A.Alouatta guariba clamitans, A.Alouatta guariba
 ** Multiple matches: B.Cercopithecidae -> A.Cercopithecidae, A.Cercopithecoidea
-** Multiple matches: B.unclassified Tarsius -> A.Tarsius, A.Tarsiidae, A.Tarsiiformes
-** Multiple returns: A.Tarsius -> B.Tarsiidae, B.Tarsiiformes
-** Multiple matches: B.unclassified Ochotona -> A.Ochotona, A.Ochotonidae
-** Multiple matches: B.unclassified Calomyscus -> A.Calomyscus, A.Calomyscinae, A.Calomyscidae
-** Multiple matches: B.unclassified Petromyscus -> A.Petromyscus, A.Petromyscinae
-# Number of articulations in alignment: 17482
+** Multiple matches: B.environmental samples#1002241 -> A.Leporidae environmental sample, A.environmental samples#1002241
+** Multiple matches: B.Dipodomys panamintinus -> A.Dipodomys panamintinus panamintinus, A.Dipodomys panamintinus
+** Multiple matches: B.Rattus norvegicus -> A.Rattus norvegicus albus, A.Rattus norvegicus
+** Multiple matches: B.unclassified Vandeleuria -> A.Vandeleuria sp. KCR-2008, A.Vandeleuria
+** Multiple matches: B.Abrothrix andinus -> A.Abrothrix andinus polius, A.Abrothrix andinus
+** Multiple matches: B.environmental samples#1092586 -> A.mammal environmental sample, A.environmental samples#1092586
+# Number of articulations in alignment: 19537
 Preparing work/mammalia-ncbi-2015-2020.csv.new
 Number of roots in merge: 1
-Number of non-roots in merge: 13265
-# Changed status: 13226, changed: 1867
+Number of non-roots in merge: 12396
+# Changed status: 11727, changed: 1614
 ** Philander opossum names different taxa in the two checklists
-  A.Philander opossum = B.Philander [monotypic]
+  A.Philander opossum < B.Philander [B.Philander frenatus is not in it]
+  B.Philander opossum = A.Philander opossum opossum [monotypic]
 ** Murexia names different taxa in the two checklists
-  B.Murexia = A.Dasyuridae [monotypic]
+  A.Murexia particle-set<= B.Murexia longicaudata aspera [monotypic]
+  B.Murexia < A.Dasyuridae [A.Dasyuridae sp. JMZ-2005 is not in it]
 ** Macropus names different taxa in the two checklists
-  A.Macropus = B.Macropodidae [monotypic]
+  A.Macropus < B.Macropodidae [B.Macropus eugenii x Wallabia bicolor is not in it]
+  B.Macropus < A.Macropus [A.Macropus dorsalis is not in it]
 ** Dasypodidae names different taxa in the two checklists
-  A.Dasypodidae = B.Cingulata [monotypic]
+  A.Dasypodidae < B.Cingulata [B.unclassified Cingulata is not in it]
   B.Dasypodidae = A.Dasypus [monotypic]
 ** Tupaiidae names different taxa in the two checklists
   A.Tupaiidae = B.Scandentia [None]
   B.Tupaiidae = A.Scandentia [None]
+** Rousettus names different taxa in the two checklists
+  A.Rousettus < B.Rousettus [B.Rousettus lanosus is not in it]
+  B.Rousettus >< A.Pteropodinae [A.Stenonycterini is in; its sibling A.Epomophorini is not]
+** Artibeus names different taxa in the two checklists
+  A.Artibeus >< B.Stenodermatinae [B.Dermanura bogotensis is in; its sibling B.Dermanura rava is not]
+  B.Artibeus < A.Artibeus [A.Artibeus bogotensis is not in it]
 ** Miniopterus schreibersii names different taxa in the two checklists
-  A.Miniopterus schreibersii particle-set<= B.Miniopterus [monotypic]
+  A.Miniopterus schreibersii < B.Miniopterus [B.Miniopterus sp. X3 is not in it]
+  B.Miniopterus schreibersii < A.Miniopterus schreibersii [A.Miniopterus schreibersii oceanensis is not in it]
+** Galago names different taxa in the two checklists
+  A.Galago >< B.Galagidae [B.Galagoides thomasi is in; its sibling B.Galagoides orinus is not]
+  B.Galago < A.Galago [A.Galago thomasi is not in it]
 ** Tarsius names different taxa in the two checklists
   A.Tarsius particle-set<= B.Tarsiidae [mutual-cross-mrca]
-  B.Tarsius = A.Tarsius [scientificName]
+  B.Tarsius < A.Tarsius [A.Tarsius syrichta is not in it]
 ** Saguinus names different taxa in the two checklists
-  A.Saguinus = B.Callitrichinae [monotypic]
+  A.Saguinus < B.Callitrichinae [B.Mico is not in it]
+  B.Saguinus < A.Saguinus [A.Saguinus cruzlimai is not in it]
 ** Alouatta seniculus names different taxa in the two checklists
-  A.Alouatta seniculus particle-set<= B.Alouatta [monotypic]
+  A.Alouatta seniculus < B.Alouatta [B.Alouatta guariba is not in it]
+  B.Alouatta seniculus = A.Alouatta seniculus seniculus [monotypic]
 ** Callicebus names different taxa in the two checklists
   A.Callicebus = B.Callicebinae [mutual-cross-mrca]
-  B.Callicebus = A.Callicebus [canonicalName]
+  B.Callicebus < A.Callicebus [A.Callicebus purinus is not in it]
 ** Cercopithecus names different taxa in the two checklists
-  A.Cercopithecus = B.Cercopithecinae [monotypic]
+  A.Cercopithecus < B.Cercopithecinae [B.Chlorocebus is not in it]
+  B.Cercopithecus < A.Cercopithecus [A.Cercopithecus solatus is not in it]
 ** Macaca fuscata fuscata names different taxa in the two checklists
   A.Macaca fuscata fuscata particle-set<= B.Macaca fuscata [synonym+canonicalName+synonym]
   B.Macaca fuscata fuscata particle-set<= A.Macaca fuscata [synonym+canonicalName+synonym]
 ** Macaca nemestrina names different taxa in the two checklists
-  A.Macaca nemestrina = B.Macaca [monotypic]
+  A.Macaca nemestrina < B.Macaca [B.unclassified Macaca is not in it]
+  B.Macaca nemestrina = A.Macaca nemestrina nemestrina [monotypic]
 ** Pongo abelii names different taxa in the two checklists
   A.Pongo abelii particle-set<= B.Pongo pygmaeus [synonym+canonicalName+synonym]
   B.Pongo abelii particle-set<= A.Pongo pygmaeus [synonym+canonicalName+synonym]
+** Canis lupus names different taxa in the two checklists
+  A.Canis lupus >< B.Canis [B.Canis lupus hodophilax is in; its sibling B.Canis lupus lycaon is not]
+  B.Canis lupus >< A.Canis [A.Canis lupus x Canis lupus familiaris is in; its sibling A.Canis lupus lupaster is not]
 ** Nasua nasua rufa names different taxa in the two checklists
   A.Nasua nasua rufa particle-set<= B.Nasua nasua [synonym+canonicalName+synonym]
   B.Nasua nasua rufa particle-set<= A.Nasua nasua [synonym+canonicalName+synonym]
 ** Meles meles names different taxa in the two checklists
-  A.Meles meles = B.Meles [monotypic]
+  A.Meles meles < B.Meles [B.unclassified Meles is not in it]
+  B.Meles meles < A.Meles meles [A.Meles meles canescens is not in it]
 ** Panthera names different taxa in the two checklists
-  B.Panthera = A.Pantherinae [monotypic]
+  A.Panthera < B.Panthera [B.Panthera uncia is not in it]
+  B.Panthera < A.Pantherinae [A.Neofelis is not in it]
+** Herpestes names different taxa in the two checklists
+  A.Herpestes >< B.Herpestidae [B.Herpestes ichneumon is in; its sibling B.Herpestes naso is not]
+  B.Herpestes >< A.Herpestidae [A.Herpestes ichneumon is in; its sibling A.Herpestes edwardsii is not]
 ** Elephantidae names different taxa in the two checklists
   A.Elephantidae = B.Proboscidea [None]
   B.Elephantidae = A.Proboscidea [None]
+** Equus caballus names different taxa in the two checklists
+  A.Equus caballus = B.Equus ferus [monotypic]
+  B.Equus caballus = A.Equus caballus [scientificName]
+** Orycteropus afer names different taxa in the two checklists
+  A.Orycteropus afer = B.Orycteropodidae [None]
+  B.Orycteropus afer = A.Orycteropodidae [None]
 ** Sus names different taxa in the two checklists
-  A.Sus = B.Suidae [monotypic]
+  A.Sus < B.Suidae [B.Hylochoerus is not in it]
+  B.Sus < A.Sus [A.Sus salvanius is not in it]
 ** Cervus elaphus names different taxa in the two checklists
-  A.Cervus elaphus = B.Cervus [monotypic]
+  A.Cervus elaphus < B.Cervus [B.unclassified Cervus is not in it]
+  B.Cervus elaphus < A.Cervus elaphus [A.Cervus elaphus hanglu is not in it]
 ** Cervus canadensis nelsoni names different taxa in the two checklists
   A.Cervus canadensis nelsoni lump B.Cervus canadensis canadensis [None]
   B.Cervus canadensis nelsoni lump A.Cervus canadensis canadensis [None]
+** Odocoileus names different taxa in the two checklists
+  A.Odocoileus < B.Odocoileus [B.Odocoileus pandora is not in it]
+  B.Odocoileus >< A.Odocoileinae [A.Mazama pandora is in; its sibling A.Mazama rufina is not]
 ** Muntiacus muntjak names different taxa in the two checklists
-  A.Muntiacus muntjak = B.Muntiacus [monotypic]
+  A.Muntiacus muntjak < B.Muntiacus [B.Muntiacus sp. JJ-2007 is not in it]
+  B.Muntiacus muntjak < A.Muntiacus muntjak [A.Muntiacus muntjak vaginalis is not in it]
 ** Giraffa camelopardalis names different taxa in the two checklists
   A.Giraffa camelopardalis = B.Giraffa [mutual-cross-mrca]
-  B.Giraffa camelopardalis = A.Giraffa camelopardalis [scientificName]
+  B.Giraffa camelopardalis < A.Giraffa camelopardalis [A.Giraffa camelopardalis tippelskirchi is not in it]
+** Ovis aries names different taxa in the two checklists
+  A.Ovis aries >< B.Ovis [B.Ovis orientalis ophion is in; its sibling B.Ovis orientalis laristanica is not]
+  B.Ovis aries < A.Ovis aries [A.Ovis aries ophion is not in it]
 ** Manidae names different taxa in the two checklists
   A.Manidae = B.Pholidota [None]
   B.Manidae = A.Pholidota [None]
 ** Manis names different taxa in the two checklists
   A.Manis particle-set<= B.Manidae [mutual-cross-mrca]
-  B.Manis = A.Manis [scientificName]
+  B.Manis < A.Manis [A.Manis gigantea is not in it]
+** Spermophilus names different taxa in the two checklists
+  A.Spermophilus >< B.Marmotini [B.Urocitellus elegans is in; its sibling B.Urocitellus beldingi is not]
+  B.Spermophilus < A.Spermophilus [A.Spermophilus elegans is not in it]
 ** Sciurus names different taxa in the two checklists
-  A.Sciurus = B.Sciurini [monotypic]
+  A.Sciurus < B.Sciurini [B.Syntheosciurus is not in it]
+  B.Sciurus < A.Sciurus [A.Sciurus pyrrhinus is not in it]
+** Dipodomys panamintinus names different taxa in the two checklists
+  A.Dipodomys panamintinus = B.Dipodomys panamintinus [scientificName]
+  B.Dipodomys panamintinus particle-set<= A.Dipodomys panamintinus panamintinus [monotypic]
+** Microtus names different taxa in the two checklists
+  A.Microtus >< B.Arvicolinae [B.Neodon sikimensis is in; its sibling B.Neodon irene is not]
+  B.Microtus < A.Microtus [A.Microtus mongolicus is not in it]
+** Muridae names different taxa in the two checklists
+  A.Muridae >< B.Muridae [B.Hyorhinomys is in; its sibling B.Waiomys is not]
+  B.Muridae >< A.Rodentia [A.Muridae is in; its sibling A.Spalacidae is not]
+** Akodon names different taxa in the two checklists
+  A.Akodon < B.Sigmodontinae [B.Podoxymys is not in it]
+  B.Akodon < A.Akodon [A.Akodon andinus is not in it]
 ** Mus sp. names different taxa in the two checklists
   A.Mus sp. particle-set<= B.Mus#10088 [synonym+canonicalName+synonym]
   B.Mus sp. particle-set<= A.Mus#10088 [synonym+canonicalName+synonym]
-** Mastomys natalensis names different taxa in the two checklists
-  A.Mastomys natalensis lump B.Mastomys natalensis [scientificName]
+** Rattus norvegicus names different taxa in the two checklists
+  A.Rattus norvegicus particle-set<= B.Rattus norvegicus albus [monotypic]
+  B.Rattus norvegicus particle-set<= A.Rattus norvegicus albus [monotypic]
 ** Rattus sp. names different taxa in the two checklists
   A.Rattus sp. particle-set<= B.Rattus [synonym+canonicalName+synonym]
   B.Rattus sp. particle-set<= A.Rattus [synonym+canonicalName+synonym]
 ** Pipistrellus names different taxa in the two checklists
-  A.Pipistrellus = B.Vespertilionidae [monotypic]
+  A.Pipistrellus < B.Vespertilionidae [B.Parahypsugo is not in it]
+  B.Pipistrellus < A.Pipistrellus [A.Pipistrellus subflavus is not in it]
+** Plecotus names different taxa in the two checklists
+  A.Plecotus >< B.Vespertilionidae [B.Corynorhinus rafinesquii is in; its sibling B.Corynorhinus townsendii is not]
+  B.Plecotus < A.Plecotus [A.Plecotus rafinesquii is not in it]
 ** Elephantulus names different taxa in the two checklists
-  A.Elephantulus particle-set<= B.Macroscelididae [monotypic]
+  A.Elephantulus < B.Macroscelididae [B.Rhynchocyon is not in it]
+  B.Elephantulus < A.Elephantulus [A.Elephantulus rozeti is not in it]
+** Uncia names different taxa in the two checklists
+  A.Uncia = B.Panthera uncia [monotypic]
+  B.Uncia = A.Uncia [canonicalName]
 ** Eptesicus names different taxa in the two checklists
-  A.Eptesicus = B.Vespertilionidae [monotypic]
+  A.Eptesicus < B.Vespertilionidae [B.Parahypsugo is not in it]
+  B.Eptesicus < A.Eptesicus [A.Eptesicus dimissus is not in it]
 ** Monachus names different taxa in the two checklists
-  A.Monachus = B.Phocidae [monotypic]
-** Bos indicus x Bos taurus names different taxa in the two checklists
-  A.Bos indicus x Bos taurus lump B.Bos indicus x Bos taurus [canonicalName]
-** Dasycercus cristicauda names different taxa in the two checklists
-  B.Dasycercus cristicauda lump A.Dasycercus cristicauda [canonicalName]
+  A.Monachus < B.Phocidae [B.Pusa is not in it]
+  B.Monachus = A.Monachus monachus [monotypic]
 ** Planigale tenuirostris names different taxa in the two checklists
   A.Planigale tenuirostris lump B.Planigale gilesi [None]
   B.Planigale tenuirostris lump A.Planigale gilesi [None]
 ** Hemitragus names different taxa in the two checklists
-  A.Hemitragus = B.Caprinae [monotypic]
+  A.Hemitragus < B.Caprinae [B.Myotragus is not in it]
+  B.Hemitragus < A.Hemitragus [A.Hemitragus jayakari is not in it]
 ** Tupaia belangeri names different taxa in the two checklists
   A.Tupaia belangeri lump B.Tupaia glis [None]
   B.Tupaia belangeri lump A.Tupaia glis [None]
 ** Mammuthus primigenius names different taxa in the two checklists
   A.Mammuthus primigenius particle-set<= B.Mammuthus [synonym+canonicalName+synonym]
   B.Mammuthus primigenius particle-set<= A.Mammuthus [synonym+canonicalName+synonym]
-** Oryx leucoryx names different taxa in the two checklists
-  A.Oryx leucoryx lump B.Oryx leucoryx [canonicalName]
+** Murinae names different taxa in the two checklists
+  A.Murinae < B.Murinae [B.Waiomys is not in it]
+  B.Murinae >< A.Rodentia [A.Murinae is in; its sibling A.Gerbillinae is not]
 ** Saimiri boliviensis boliviensis names different taxa in the two checklists
   A.Saimiri boliviensis boliviensis particle-set<= B.Saimiri boliviensis [synonym+canonicalName+synonym]
   B.Saimiri boliviensis boliviensis particle-set<= A.Saimiri boliviensis [synonym+canonicalName+synonym]
 ** Neotoma albigula names different taxa in the two checklists
-  A.Neotoma albigula = B.Neotoma [monotypic]
-** Micoureus regina names different taxa in the two checklists
-  B.Micoureus regina lump A.Micoureus regina [scientificName]
+  A.Neotoma albigula < B.Neotoma [B.unclassified Neotoma is not in it]
+  B.Neotoma albigula < A.Neotoma albigula [A.Neotoma albigula melanura is not in it]
+** Mazama names different taxa in the two checklists
+  A.Mazama >< B.Odocoileinae [B.Odocoileus pandora is in; its sibling B.Odocoileus virginianus is not]
+  B.Mazama < A.Mazama [A.Mazama pandora is not in it]
+** Microsciurus flaviventer names different taxa in the two checklists
+  A.Microsciurus flaviventer = B.Microsciurus sabanillae [monotypic]
+  B.Microsciurus flaviventer = A.Microsciurus flaviventer [canonicalName]
 ** Phodopus campbelli names different taxa in the two checklists
   A.Phodopus campbelli lump B.Phodopus sungorus [None]
   B.Phodopus campbelli lump A.Phodopus sungorus [None]
+** Chalinolobus names different taxa in the two checklists
+  A.Chalinolobus >< B.Vespertilionidae [B.Glauconycteris argentata is in; its sibling B.Glauconycteris egeria is not]
+  B.Chalinolobus < A.Chalinolobus [A.Chalinolobus variegatus is not in it]
 ** Rhinolophidae names different taxa in the two checklists
-  A.Rhinolophidae = B.Microchiroptera [monotypic]
+  A.Rhinolophidae < B.Microchiroptera [B.Craseonycteridae is not in it]
+  B.Rhinolophidae < A.Rhinolophidae [A.Paratriaenops is not in it]
+** Hipposideros names different taxa in the two checklists
+  A.Hipposideros < B.Hipposideridae [B.Asellia is not in it]
+  B.Hipposideros < A.Hipposideros [A.Hipposideros vittatus is not in it]
+** unclassified Muridae names different taxa in the two checklists
+  A.unclassified Muridae >< B.Muridae [B.Hyorhinomys is in; its sibling B.Soricomys is not]
+  B.unclassified Muridae < A.unclassified Muridae [A.Muridae sp. KCR-2015 is not in it]
+** Eptesicus serotinus names different taxa in the two checklists
+  A.Eptesicus serotinus < B.Eptesicus serotinus [B.Eptesicus serotinus andersoni is not in it]
+  B.Eptesicus serotinus < A.Eptesicus [A.Eptesicus bobrinskoi is not in it]
+** Sorex shinto names different taxa in the two checklists
+  A.Sorex shinto = B.Sorex shinto [canonicalName]
+  B.Sorex shinto = A.Sorex sadonis [monotypic]
 ** Isoodon obesulus names different taxa in the two checklists
-  A.Isoodon obesulus = B.Isoodon [monotypic]
+  A.Isoodon obesulus < B.Isoodon [B.Isoodon auratus is not in it]
+  B.Isoodon obesulus < A.Isoodon obesulus [A.Isoodon obesulus fusciventer is not in it]
+** unclassified Rodentia names different taxa in the two checklists
+  A.unclassified Rodentia >< B.Rodentia [B.Waiomys is in; its sibling B.Hyorhinomys is not]
+  B.unclassified Rodentia < A.unclassified Rodentia [A.Rodentia sp. KCR-2014 is not in it]
 ** Lasiurus names different taxa in the two checklists
-  A.Lasiurus = B.Vespertilionidae [monotypic]
+  A.Lasiurus < B.Vespertilionidae [B.Parahypsugo is not in it]
+  B.Lasiurus < A.Lasiurus [A.Lasiurus intermedius is not in it]
 ** Allactaga names different taxa in the two checklists
-  A.Allactaga = B.Allactaginae [monotypic]
+  A.Allactaga < B.Allactaginae [B.Pygeretmus is not in it]
+  B.Allactaga < A.Allactaga [A.Allactaga elater is not in it]
+** Megaerops names different taxa in the two checklists
+  A.Megaerops >< B.Pteropodinae [B.Ptenochirus wetmorei is in; its sibling B.Ptenochirus minor is not]
+  B.Megaerops < A.Megaerops [A.Megaerops wetmorei is not in it]
 ** Myonycteris names different taxa in the two checklists
-  A.Myonycteris = B.Myonycterini [monotypic]
-** Niviventer fulvescens names different taxa in the two checklists
-  A.Niviventer fulvescens lump B.Niviventer fulvescens [scientificName]
+  A.Myonycteris < B.Myonycterini [B.Megaloglossus is not in it]
+  B.Myonycteris < A.Myonycteris [A.Myonycteris angolensis is not in it]
+** Eothenomys names different taxa in the two checklists
+  A.Eothenomys >< B.Arvicolinae [B.Myodes smithii is in; its sibling B.Myodes regulus is not]
+  B.Eothenomys < A.Eothenomys [A.Eothenomys smithii is not in it]
 ** Semnopithecus entellus names different taxa in the two checklists
-  A.Semnopithecus entellus = B.Semnopithecus [monotypic]
-** Nycticebus pygmaeus names different taxa in the two checklists
-  A.Nycticebus pygmaeus lump B.Nycticebus pygmaeus [canonicalName]
+  A.Semnopithecus entellus < B.Semnopithecus [B.Semnopithecus hypoleucos is not in it]
+  B.Semnopithecus entellus = A.Semnopithecus entellus entellus [monotypic]
+** Abrothrix andinus names different taxa in the two checklists
+  A.Abrothrix andinus = B.Abrothrix andinus [scientificName]
+  B.Abrothrix andinus particle-set<= A.Abrothrix andinus polius [monotypic]
+** Galagoides names different taxa in the two checklists
+  A.Galagoides < B.Galagoides [B.Galagoides thomasi is not in it]
+  B.Galagoides >< A.Galagidae [A.Galago thomasi is in; its sibling A.Galago granti is not]
+** Myotis nattereri names different taxa in the two checklists
+  A.Myotis nattereri = B.Myotis tschuliensis [monotypic]
+  B.Myotis nattereri = A.Myotis nattereri [canonicalName]
+** Hypsugo names different taxa in the two checklists
+  A.Hypsugo >< B.Vespertilionidae [B.Hypsugo anchietae is in; its sibling B.Hypsugo petersi is not]
+  B.Hypsugo >< A.Vespertilionidae [A.Hypsugo savii is in; its sibling A.Hypsugo eisentrauti is not]
 ** unclassified Ateles names different taxa in the two checklists
-  B.unclassified Ateles = A.Ateles [monotypic]
+  A.unclassified Ateles < B.unclassified Ateles [B.Ateles sp. is not in it]
+  B.unclassified Ateles < A.Ateles [A.Ateles marginatus is not in it]
+** Ptenochirus names different taxa in the two checklists
+  A.Ptenochirus < B.Ptenochirus [B.Ptenochirus wetmorei is not in it]
+  B.Ptenochirus >< A.Pteropodinae [A.Megaerops wetmorei is in; its sibling A.Megaerops kusnotoi is not]
 ** Eospalax fontanierii names different taxa in the two checklists
   A.Eospalax fontanierii matches B.Eospalax fontanierii [canonicalName]
-  B.Eospalax fontanierii = A.Eospalax [monotypic]
+  B.Eospalax fontanierii < A.Eospalax [A.Eospalax smithii is not in it]
 ** Mimon names different taxa in the two checklists
-  A.Mimon = B.Phyllostominae [monotypic]
-** Neacomys minutus names different taxa in the two checklists
-  B.Neacomys minutus lump A.Neacomys minutus [canonicalName]
+  A.Mimon < B.Phyllostominae [B.Glyphonycteris is not in it]
+  B.Mimon < A.Mimon [A.Mimon crenulatum is not in it]
+** Alouatta guariba names different taxa in the two checklists
+  A.Alouatta guariba particle-set<= B.Alouatta guariba clamitans [monotypic]
+  B.Alouatta guariba particle-set<= A.Alouatta guariba clamitans [monotypic]
+** Plecotus teneriffae names different taxa in the two checklists
+  A.Plecotus teneriffae = B.Plecotus gaisleri [monotypic]
+  B.Plecotus teneriffae = A.Plecotus teneriffae [canonicalName]
+** Helogale names different taxa in the two checklists
+  A.Helogale >< B.Herpestidae [B.Herpestes naso is in; its sibling B.Herpestes ichneumon is not]
+  B.Helogale < A.Helogale [A.Herpestes naso is not in it]
+** Corynorhinus names different taxa in the two checklists
+  A.Corynorhinus < B.Corynorhinus [B.Corynorhinus rafinesquii is not in it]
+  B.Corynorhinus >< A.Vespertilionidae [A.Plecotus rafinesquii is in; its sibling A.Plecotus auritus is not]
 ** unclassified Saccostomus names different taxa in the two checklists
-  B.unclassified Saccostomus = A.Saccostomus [monotypic]
-** Microtus gerbei names different taxa in the two checklists
-  A.Microtus gerbei lump B.Microtus gerbei [canonicalName]
+  A.unclassified Saccostomus < B.unclassified Saccostomus [B.Saccostomus sp. is not in it]
+  B.unclassified Saccostomus < A.Saccostomus [A.Saccostomus campestris is not in it]
 ** Macaca leonina names different taxa in the two checklists
   A.Macaca leonina matches B.Macaca leonina [canonicalName]
   B.Macaca leonina = A.Macaca nemestrina leonina [ncbi_id]
-** Bos grunniens x Bos taurus names different taxa in the two checklists
-  A.Bos grunniens x Bos taurus lump B.Bos grunniens x Bos taurus [canonicalName]
+** Brachyphylla nana names different taxa in the two checklists
+  A.Brachyphylla nana = B.Brachyphylla nana [canonicalName]
+  B.Brachyphylla nana = A.Brachyphylla pumila [monotypic]
+** unclassified Equus names different taxa in the two checklists
+  A.unclassified Equus >< B.Equidae [B.unclassified Equus is in; its sibling B.Equus kiang is not]
+  B.unclassified Equus < A.unclassified Equus [A.Equus sp. (NWSL) is not in it]
+** Muroidea names different taxa in the two checklists
+  A.Muroidea >< B.Muroidea [B.Hyorhinomys is in; its sibling B.Waiomys is not]
+  B.Muroidea >< A.Rodentia [A.Muroidea is in; its sibling A.Anomaluridae is not]
+** Chiromyiformes names different taxa in the two checklists
+  A.Chiromyiformes >< B.Strepsirrhini [B.Lorisidae is in; its sibling B.Galagidae is not]
+  B.Chiromyiformes particle-set<= A.Daubentonia madagascariensis [monotypic]
 ** Lorisiformes names different taxa in the two checklists
   A.Lorisiformes = B.Galagidae [monotypic]
+  B.Lorisiformes >< A.Strepsirrhini [A.Lorisidae is in; its sibling A.Daubentoniidae is not]
+** Myodes names different taxa in the two checklists
+  A.Myodes < B.Myodes [B.Myodes smithii is not in it]
+  B.Myodes >< A.Arvicolinae [A.Eothenomys smithii is in; its sibling A.Eothenomys imaizumii is not]
+** Neodon names different taxa in the two checklists
+  A.Neodon < B.Neodon [B.Neodon sikimensis is not in it]
+  B.Neodon >< A.Arvicolinae [A.Microtus sikimensis is in; its sibling A.Microtus savii is not]
+** Ovis orientalis names different taxa in the two checklists
+  A.Ovis orientalis < B.Ovis orientalis [B.Ovis orientalis ophion is not in it]
+  B.Ovis orientalis >< A.Ovis [A.Ovis aries ophion is in; its sibling A.Ovis aries platyura is not]
+** Porcula names different taxa in the two checklists
+  A.Porcula = B.Porcula [canonicalName]
+  B.Porcula = A.Sus salvanius [monotypic]
 ** Pseudantechinus bilarni names different taxa in the two checklists
   A.Pseudantechinus bilarni particle-set<= B.Murexia melanurus [synonym+canonicalName+synonym]
   B.Pseudantechinus bilarni particle-set<= A.Murexchinus melanurus [synonym+canonicalName+synonym]
 ** Makalata names different taxa in the two checklists
-  A.Makalata = B.Echimyidae [monotypic]
+  A.Makalata < B.Echimyidae [B.Pattonomys is not in it]
+  B.Makalata < A.Makalata [A.Makalata grandis is not in it]
+** Dermanura names different taxa in the two checklists
+  A.Dermanura < B.Dermanura [B.Dermanura bogotensis is not in it]
+  B.Dermanura >< A.Stenodermatinae [A.Artibeus bogotensis is in; its sibling A.Artibeus schwartzi is not]
 ** Rattus pyctoris names different taxa in the two checklists
   A.Rattus pyctoris = B.Rattus pyctoris [scientificName]
   B.Rattus pyctoris particle-set<= A.Rattus rattus [synonym+canonicalName+synonym]
 ** Rhinolophus sp. HHS-2009a names different taxa in the two checklists
   A.Rhinolophus sp. HHS-2009a lump B.Rhinolophus sp. HHS-2009a [canonicalName]
+  B.Rhinolophus sp. HHS-2009a = A.Rhinolophus sp. GZNU20080502002 [None]
 ** Neodon sikimensis names different taxa in the two checklists
   A.Neodon sikimensis matches B.Neodon sikimensis [scientificName]
   B.Neodon sikimensis = A.Microtus sikimensis [None]
@@ -272,23 +820,35 @@ Number of non-roots in merge: 13265
   A.Macaca siberu matches B.Macaca siberu [scientificName]
   B.Macaca siberu = A.Macaca nemestrina siberu [ncbi_id]
 ** unclassified Ctenomys names different taxa in the two checklists
-  A.unclassified Ctenomys = B.Ctenomys [monotypic]
+  A.unclassified Ctenomys < B.Ctenomys [B.Ctenomys erikacuellarae is not in it]
+  B.unclassified Ctenomys < A.unclassified Ctenomys [A.Ctenomys sp. PAR-2012a is not in it]
+** Glauconycteris names different taxa in the two checklists
+  A.Glauconycteris = B.Glauconycteris egeria [monotypic]
+  B.Glauconycteris >< A.Vespertilionidae [A.Chalinolobus beatrix is in; its sibling A.Chalinolobus tuberculatus is not]
 ** Glauconycteris argentata names different taxa in the two checklists
   A.Glauconycteris argentata matches B.Glauconycteris argentata [scientificName]
   B.Glauconycteris argentata = A.Chalinolobus argentatus [None]
 ** Glauconycteris variegata names different taxa in the two checklists
   A.Glauconycteris variegata matches B.Glauconycteris variegata [scientificName]
   B.Glauconycteris variegata = A.Chalinolobus variegatus [None]
+** unclassified Mus names different taxa in the two checklists
+  A.unclassified Mus >< B.Mus#10088 [B.Mus abbotti is in; its sibling B.Mus spicilegus is not]
+  B.unclassified Mus < A.unclassified Mus [A.Mus cypriacus is not in it]
 ** Carnivora sp. BOLD:AAA9549 names different taxa in the two checklists
   A.Carnivora sp. BOLD:AAA9549 particle-set<= B.Didelphimorphia sp. BOLD:AAA9549 [synonym+canonicalName+synonym]
   B.Carnivora sp. BOLD:AAA9549 particle-set<= A.Didelphimorphia sp. BOLD:AAA9549 [synonym+canonicalName+synonym]
 ** Chiroptera sp. BOLD:AAJ3874 names different taxa in the two checklists
   A.Chiroptera sp. BOLD:AAJ3874 particle-set<= B.Rodentia sp. BOLD:AAJ3874 [synonym+canonicalName+synonym]
   B.Chiroptera sp. BOLD:AAJ3874 particle-set<= A.Rodentia sp. BOLD:AAJ3874 [synonym+canonicalName+synonym]
+** Scotonycteris names different taxa in the two checklists
+  A.Scotonycteris >< B.Pteropodidae [B.Casinycteris ophiodon is in; its sibling B.Casinycteris campomaanensis is not]
+  B.Scotonycteris < A.Scotonycteris [A.Scotonycteris ophiodon is not in it]
 ** Reithrodontomys sp. 1 AVB-2011 names different taxa in the two checklists
   A.Reithrodontomys sp. 1 AVB-2011 lump B.Reithrodontomys sp. 1 AVB-2011 [canonicalName]
+  B.Reithrodontomys sp. 1 AVB-2011 = A.Reithrodontomys sp. ROM114291 [None]
 ** Reithrodontomys sp. 2 AVB-2011 names different taxa in the two checklists
   A.Reithrodontomys sp. 2 AVB-2011 lump B.Reithrodontomys sp. 2 AVB-2011 [canonicalName]
+  B.Reithrodontomys sp. 2 AVB-2011 = A.Reithrodontomys sp. ROM116835 [None]
 ** Niviventer sp. BOLD:AAB2209 names different taxa in the two checklists
   A.Niviventer sp. BOLD:AAB2209 particle-set<= B.Rodentia sp. BOLD:AAB2209 [synonym+canonicalName+synonym]
   B.Niviventer sp. BOLD:AAB2209 particle-set<= A.Rodentia sp. BOLD:AAB2209 [synonym+canonicalName+synonym]
@@ -337,12 +897,18 @@ Number of non-roots in merge: 13265
 ** Myotis cf. muricola BOLD:AAA8747 names different taxa in the two checklists
   A.Myotis cf. muricola BOLD:AAA8747 particle-set<= B.Chiroptera sp. BOLD:AAA8747 [synonym+canonicalName+synonym]
   B.Myotis cf. muricola BOLD:AAA8747 particle-set<= A.Chiroptera sp. BOLD:AAA8747 [synonym+canonicalName+synonym]
+** unclassified Pipistrellus names different taxa in the two checklists
+  A.unclassified Pipistrellus < B.unclassified Pipistrellus [B.Pipistrellus sp. kuhlii/deserti Pkuh-II is not in it]
+  B.unclassified Pipistrellus < A.Pipistrellus [A.Pipistrellus raceyi is not in it]
 ** Lagomorpha sp. BOLD:AAV6889 names different taxa in the two checklists
   A.Lagomorpha sp. BOLD:AAV6889 particle-set<= B.Carnivora sp. BOLD:AAV6889 [synonym+canonicalName+synonym]
   B.Lagomorpha sp. BOLD:AAV6889 particle-set<= A.Carnivora sp. BOLD:AAV6889 [synonym+canonicalName+synonym]
 ** Rodentia sp. BOLD:AAA3869 names different taxa in the two checklists
   A.Rodentia sp. BOLD:AAA3869 particle-set<= B.Carnivora sp. BOLD:AAA3869 [synonym+canonicalName+synonym]
   B.Rodentia sp. BOLD:AAA3869 particle-set<= A.Carnivora sp. BOLD:AAA3869 [synonym+canonicalName+synonym]
+** Casinycteris names different taxa in the two checklists
+  A.Casinycteris < B.Casinycteris [B.Casinycteris ophiodon is not in it]
+  B.Casinycteris >< A.Pteropodidae [A.Scotonycteris ophiodon is in; its sibling A.Scotonycteris zenkeri is not]
 ** Artibeus sp. BOLD:AAA2159 names different taxa in the two checklists
   A.Artibeus sp. BOLD:AAA2159 particle-set<= B.Chiroptera sp. BOLD:AAA2159 [synonym+canonicalName+synonym]
   B.Artibeus sp. BOLD:AAA2159 particle-set<= A.Chiroptera sp. BOLD:AAA2159 [synonym+canonicalName+synonym]
@@ -367,6 +933,9 @@ Number of non-roots in merge: 13265
 ** Proechimys sp. BOLD:AAA3831 names different taxa in the two checklists
   A.Proechimys sp. BOLD:AAA3831 particle-set<= B.Rodentia sp. BOLD:AAA3831 [synonym+canonicalName+synonym]
   B.Proechimys sp. BOLD:AAA3831 particle-set<= A.Rodentia sp. BOLD:AAA3831 [synonym+canonicalName+synonym]
+** Urocitellus names different taxa in the two checklists
+  A.Urocitellus < B.Urocitellus [B.Urocitellus elegans is not in it]
+  B.Urocitellus >< A.Marmotini [A.Spermophilus elegans is in; its sibling A.Spermophilus dauricus is not]
 ** Peromyscus sp. BOLD:AAA3869 names different taxa in the two checklists
   A.Peromyscus sp. BOLD:AAA3869 particle-set<= B.Carnivora sp. BOLD:AAA3869 [synonym+canonicalName+synonym]
   B.Peromyscus sp. BOLD:AAA3869 particle-set<= A.Carnivora sp. BOLD:AAA3869 [synonym+canonicalName+synonym]
@@ -381,9 +950,22 @@ Number of non-roots in merge: 13265
   B.Semnopithecus priam = A.Semnopithecus entellus priam [None]
 ** unclassified Murinae names different taxa in the two checklists
   A.unclassified Murinae = B.Soricomys [mutual-cross-mrca]
-  B.unclassified Murinae matches A.unclassified Murinae [canonicalName]
+  B.unclassified Murinae = A.unclassified Murinae [canonicalName]
 ** Graphiurus kelleni names different taxa in the two checklists
   A.Graphiurus kelleni lump B.Graphiurus kelleni [scientificName]
+  B.Graphiurus kelleni = A.Graphiurus parvus [None]
+** Equus incertae sedis names different taxa in the two checklists
+  A.Equus incertae sedis < B.Equus#9789 [B.Sussemionus is not in it]
+  B.Equus incertae sedis < A.Equus incertae sedis [A.Equus grevyi x caballus is not in it]
+** Epomophorini-Myonycterini lineage names different taxa in the two checklists
+  A.Epomophorini-Myonycterini lineage >< B.Pteropodinae [B.Rousettus lanosus is in; its sibling B.Rousettus amplexicaudatus is not]
+  B.Epomophorini-Myonycterini lineage < A.Epomophorini-Myonycterini lineage [A.Stenonycterini is not in it]
+** Stenonycteris names different taxa in the two checklists
+  A.Stenonycteris = B.Rousettus lanosus [monotypic]
+  B.Stenonycteris = A.Stenonycteris [canonicalName]
+** Stenonycterini names different taxa in the two checklists
+  A.Stenonycterini = B.Rousettus lanosus [monotypic]
+  B.Stenonycterini ! A.Stenonycteris [particle-set-exclusion]
 ** Rhinolophidae sp. BOLD:AAB9127 names different taxa in the two checklists
   A.Rhinolophidae sp. BOLD:AAB9127 particle-set<= B.Chiroptera sp. BOLD:AAB9127 [synonym+canonicalName+synonym]
   B.Rhinolophidae sp. BOLD:AAB9127 particle-set<= A.Chiroptera sp. BOLD:AAB9127 [synonym+canonicalName+synonym]
@@ -393,3 +975,6 @@ Number of non-roots in merge: 13265
 ** Vespertilionidae sp. BOLD:AAC0445 names different taxa in the two checklists
   A.Vespertilionidae sp. BOLD:AAC0445 particle-set<= B.Hipposideros bicolor '142 KHz' [synonym+canonicalName+synonym]
   B.Vespertilionidae sp. BOLD:AAC0445 particle-set<= A.Hipposideros bicolor '142 KHz' [synonym+canonicalName+synonym]
+** Falsistrellus names different taxa in the two checklists
+  A.Falsistrellus = B.Hypsugo petersi [monotypic]
+  B.Falsistrellus = A.Falsistrellus [scientificName]

@@ -43,7 +43,7 @@ def really_write_report(A, B, al, xmrcas, format, outfile):
   if format == "eulerx":
     eulerx.dump_alignment(al, outfile)
   else:
-    (parents, roots) = merge.merge_checklists(A, B, al, xmrcas)
+    (parents, roots) = merge.merge_checklists(A, B, al)
     dribble.log ("Number of roots in merge: %s" % len(roots))
     dribble.log ("Number of non-roots in merge: %s" % len(parents))
     report(A, B, al, roots, parents, outfile)
@@ -140,7 +140,6 @@ def report(A, B, al, roots, parents, outfile):
       ar = al.get(y)
       if ar:
         z = ar.cod
-        ar = art.reverse(ar)
         if rel.is_variant(ar.relation, rel.eq):
           note = "split"
         elif rel.is_variant(ar.relation, rel.conflict):
