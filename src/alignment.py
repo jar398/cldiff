@@ -144,7 +144,7 @@ def extensional_chain(node, ext_map):       # B-node to A
       else:
         m = art.reverse(back)
     else:
-      m = art.monotypic(node, cursor, rel.eq)
+      m = art.monotypic(node, cursor, rel.extensional)
     matches.append(m)
     cursor = cl.get_parent(cursor)
   #if len(matches) > 1:
@@ -323,7 +323,7 @@ def detect_lumps_splits(best):
     if len(sibs) > 1:
       flush.append(y)
       # Report!
-      dribble.log("# Split/join %s -> %s -> %s" %
+      dribble.log("# Split/lump %s -> %s -> %s" %
                   (" ∨ ".join(map(lambda e:cl.get_unique(e.dom), sibs)),
                    cl.get_unique(y),
                    cl.get_unique(rent)))

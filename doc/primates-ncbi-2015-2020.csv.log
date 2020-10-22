@@ -1,69 +1,69 @@
 
 Logging to work/primates-ncbi-2015-2020.csv.new.log
 Node counts: 1835 2097
-# Best: N20.Ateles_paniscus matches N15.Ateles_paniscus
+# Best: B.Ateles paniscus matches A.Ateles paniscus
 ** Multiple least-bad matches. Need to find tie-breakers.
-   N20.Papio_cynocephalus -> ['N15.Papio_anubis', 'N15.Papio_ursinus']
-# Best: N15.Ateles_paniscus matches N20.Ateles_paniscus
+   B.Papio cynocephalus -> ['A.Papio anubis', 'A.Papio ursinus']
+# Best: A.Ateles paniscus matches B.Ateles paniscus
 1663 best matches
-# Split/join N15.Nycticebus_intermedius ∨ N15.Nycticebus_pygmaeus -> N20.Nycticebus_pygmaeus -> N15.Nycticebus
+# Split/lump A.Nycticebus intermedius ∨ A.Nycticebus pygmaeus -> B.Nycticebus pygmaeus -> A.Nycticebus
 # Number of particles: 608
 # Number of cross-mrcas: 1687
 # Number of extensional relationships: 471
-** Multiple matches: N15.Alouatta_seniculus -> N20.Alouatta, N20.Alouattinae
-** Multiple matches: N15.Cercopithecidae -> N20.Cercopithecidae, N20.Cercopithecoidea
-** Multiple matches: N15.Tarsius -> N20.Tarsiidae, N20.Tarsiiformes
-** Multiple matches: N20.unclassified_Palaeopropithecus -> N15.Palaeopropithecus, N15.Paleopropithecidae
-** Multiple matches: N20.unclassified_Saimiri -> N15.Saimiri, N15.Saimiriinae
-** Multiple matches: N20.unclassified_Aotus_(in:_Chordata) -> N15.Aotus, N15.Aotidae
-** Multiple matches: N20.unclassified_Callicebus -> N15.Callicebus, N15.Callicebinae
-** Multiple matches: N20.Plecturocebus -> N15.Callicebus, N15.Callicebinae
-** Multiple matches: N20.Cheracebus -> N15.Callicebus, N15.Callicebinae
-** Multiple matches: N20.Cercopithecidae -> N15.Cercopithecidae, N15.Cercopithecoidea
-** Multiple matches: N20.unclassified_Tarsius -> N15.Tarsius, N15.Tarsiidae, N15.Tarsiiformes
-** Multiple returns: N15.Tarsius -> N20.Tarsiidae, N20.Tarsiiformes
+** Multiple matches: A.Alouatta seniculus -> B.Alouatta, B.Alouattinae
+** Multiple matches: A.Cercopithecidae -> B.Cercopithecidae, B.Cercopithecoidea
+** Multiple matches: A.Tarsius -> B.Tarsiidae, B.Tarsiiformes
+** Multiple matches: B.unclassified Palaeopropithecus -> A.Palaeopropithecus, A.Paleopropithecidae
+** Multiple matches: B.unclassified Saimiri -> A.Saimiri, A.Saimiriinae
+** Multiple matches: B.unclassified Aotus (in: Chordata) -> A.Aotus, A.Aotidae
+** Multiple matches: B.unclassified Callicebus -> A.Callicebus, A.Callicebinae
+** Multiple matches: B.Plecturocebus -> A.Callicebus, A.Callicebinae
+** Multiple matches: B.Cheracebus -> A.Callicebus, A.Callicebinae
+** Multiple matches: B.Cercopithecidae -> A.Cercopithecidae, A.Cercopithecoidea
+** Multiple matches: B.unclassified Tarsius -> A.Tarsius, A.Tarsiidae, A.Tarsiiformes
+** Multiple returns: A.Tarsius -> B.Tarsiidae, B.Tarsiiformes
 # Number of articulations in alignment: 1535
 Preparing work/primates-ncbi-2015-2020.csv.new
 Number of roots in merge: 1
 Number of non-roots in merge: 1064
 # Changed status: 1025, changed: 151
 ** Tarsius names different taxa in the two checklists
-  N15.Tarsius particleset= N20.Tarsiidae [mutual-cross-mrca]
-  N20.Tarsius = N15.Tarsius [scientificName]
+  A.Tarsius particle-set<= B.Tarsiidae [mutual-cross-mrca]
+  B.Tarsius = A.Tarsius [scientificName]
 ** Saguinus names different taxa in the two checklists
-  N15.Saguinus = N20.Callitrichinae [monotypic]
+  A.Saguinus = B.Callitrichinae [monotypic]
 ** Alouatta seniculus names different taxa in the two checklists
-  N15.Alouatta_seniculus = N20.Alouatta [monotypic]
+  A.Alouatta seniculus particle-set<= B.Alouatta [monotypic]
 ** Callicebus names different taxa in the two checklists
-  N15.Callicebus = N20.Callicebinae [mutual-cross-mrca]
-  N20.Callicebus = N15.Callicebus [canonicalName]
+  A.Callicebus = B.Callicebinae [mutual-cross-mrca]
+  B.Callicebus = A.Callicebus [canonicalName]
 ** Cercopithecus names different taxa in the two checklists
-  N15.Cercopithecus = N20.Cercopithecinae [monotypic]
+  A.Cercopithecus = B.Cercopithecinae [monotypic]
 ** Macaca fuscata fuscata names different taxa in the two checklists
-  N15.Macaca_fuscata_fuscata particleset= N20.Macaca_fuscata [synonym+canonicalName+synonym]
-  N20.Macaca_fuscata_fuscata particleset= N15.Macaca_fuscata [synonym+canonicalName+synonym]
+  A.Macaca fuscata fuscata particle-set<= B.Macaca fuscata [synonym+canonicalName+synonym]
+  B.Macaca fuscata fuscata particle-set<= A.Macaca fuscata [synonym+canonicalName+synonym]
 ** Macaca nemestrina names different taxa in the two checklists
-  N15.Macaca_nemestrina = N20.Macaca [monotypic]
+  A.Macaca nemestrina = B.Macaca [monotypic]
 ** Pongo abelii names different taxa in the two checklists
-  N15.Pongo_abelii particleset= N20.Pongo_pygmaeus [synonym+canonicalName+synonym]
-  N20.Pongo_abelii particleset= N15.Pongo_pygmaeus [synonym+canonicalName+synonym]
+  A.Pongo abelii particle-set<= B.Pongo pygmaeus [synonym+canonicalName+synonym]
+  B.Pongo abelii particle-set<= A.Pongo pygmaeus [synonym+canonicalName+synonym]
 ** Saimiri boliviensis boliviensis names different taxa in the two checklists
-  N15.Saimiri_boliviensis_boliviensis particleset= N20.Saimiri_boliviensis [synonym+canonicalName+synonym]
-  N20.Saimiri_boliviensis_boliviensis particleset= N15.Saimiri_boliviensis [synonym+canonicalName+synonym]
+  A.Saimiri boliviensis boliviensis particle-set<= B.Saimiri boliviensis [synonym+canonicalName+synonym]
+  B.Saimiri boliviensis boliviensis particle-set<= A.Saimiri boliviensis [synonym+canonicalName+synonym]
 ** Semnopithecus entellus names different taxa in the two checklists
-  N15.Semnopithecus_entellus = N20.Semnopithecus [monotypic]
+  A.Semnopithecus entellus = B.Semnopithecus [monotypic]
 ** Nycticebus pygmaeus names different taxa in the two checklists
-  N15.Nycticebus_pygmaeus merge N20.Nycticebus_pygmaeus [canonicalName]
+  A.Nycticebus pygmaeus lump B.Nycticebus pygmaeus [canonicalName]
 ** unclassified Ateles names different taxa in the two checklists
-  N20.unclassified_Ateles = N15.Ateles [monotypic]
+  B.unclassified Ateles = A.Ateles [monotypic]
 ** Macaca leonina names different taxa in the two checklists
-  N15.Macaca_leonina matches N20.Macaca_leonina [canonicalName]
-  N20.Macaca_leonina = N15.Macaca_nemestrina_leonina [ncbi_id]
+  A.Macaca leonina matches B.Macaca leonina [canonicalName]
+  B.Macaca leonina = A.Macaca nemestrina leonina [ncbi_id]
 ** Lorisiformes names different taxa in the two checklists
-  N15.Lorisiformes = N20.Galagidae [monotypic]
+  A.Lorisiformes = B.Galagidae [monotypic]
 ** Macaca siberu names different taxa in the two checklists
-  N15.Macaca_siberu matches N20.Macaca_siberu [scientificName]
-  N20.Macaca_siberu = N15.Macaca_nemestrina_siberu [ncbi_id]
+  A.Macaca siberu matches B.Macaca siberu [scientificName]
+  B.Macaca siberu = A.Macaca nemestrina siberu [ncbi_id]
 ** Semnopithecus priam names different taxa in the two checklists
-  N15.Semnopithecus_priam matches N20.Semnopithecus_priam [scientificName]
-  N20.Semnopithecus_priam = N15.Semnopithecus_entellus_priam [None]
+  A.Semnopithecus priam matches B.Semnopithecus priam [scientificName]
+  B.Semnopithecus priam = A.Semnopithecus entellus priam [None]

@@ -1,116 +1,116 @@
 
 Logging to work/mammalia-ncbi-2015-2020.csv.new.log
 Node counts: 18133 21882
-# Best: B.Ateles_paniscus matches A.Ateles_paniscus
+# Best: B.Ateles paniscus matches A.Ateles paniscus
 ** Multiple least-bad matches. Need to find tie-breakers.
-   B.Papio_cynocephalus -> ['A.Papio_anubis', 'A.Papio_ursinus']
+   B.Papio cynocephalus -> ['A.Papio anubis', 'A.Papio ursinus']
 ** Multiple least-bad matches. Need to find tie-breakers.
-   B.environmental_samples#1002241 -> ['A.environmental_samples#328690', 'A.environmental_samples#1002248', 'A.environmental_samples#1002256']
+   B.environmental samples#1002241 -> ['A.environmental samples#328690', 'A.environmental samples#1002248', 'A.environmental samples#1002256']
 ** Multiple least-bad matches. Need to find tie-breakers.
-   B.environmental_samples#1002243 -> ['A.environmental_samples#328690', 'A.environmental_samples#1002248', 'A.environmental_samples#1002256']
+   B.environmental samples#1002243 -> ['A.environmental samples#328690', 'A.environmental samples#1002248', 'A.environmental samples#1002256']
 ** Multiple least-bad matches. Need to find tie-breakers.
-   B.environmental_samples#1002245 -> ['A.environmental_samples#328690', 'A.environmental_samples#1002248', 'A.environmental_samples#1002256']
+   B.environmental samples#1002245 -> ['A.environmental samples#328690', 'A.environmental samples#1002248', 'A.environmental samples#1002256']
 ** Multiple least-bad matches. Need to find tie-breakers.
-   B.environmental_samples#1002250 -> ['A.environmental_samples#328690', 'A.environmental_samples#1002248', 'A.environmental_samples#1002256']
+   B.environmental samples#1002250 -> ['A.environmental samples#328690', 'A.environmental samples#1002248', 'A.environmental samples#1002256']
 ** Multiple least-bad matches. Need to find tie-breakers.
-   B.environmental_samples#1002252 -> ['A.environmental_samples#328690', 'A.environmental_samples#1002248', 'A.environmental_samples#1002256']
+   B.environmental samples#1002252 -> ['A.environmental samples#328690', 'A.environmental samples#1002248', 'A.environmental samples#1002256']
 ** Multiple least-bad matches. Need to find tie-breakers.
-   B.environmental_samples#1002254 -> ['A.environmental_samples#328690', 'A.environmental_samples#1002248', 'A.environmental_samples#1002256']
+   B.environmental samples#1002254 -> ['A.environmental samples#328690', 'A.environmental samples#1002248', 'A.environmental samples#1002256']
 ** Multiple least-bad matches. Need to find tie-breakers.
-   B.environmental_samples#1092586 -> ['A.environmental_samples#328690', 'A.environmental_samples#1002248', 'A.environmental_samples#1002256']
+   B.environmental samples#1092586 -> ['A.environmental samples#328690', 'A.environmental samples#1002248', 'A.environmental samples#1002256']
 ** Multiple least-bad matches. Need to find tie-breakers.
-   B.environmental_samples#1617257 -> ['A.environmental_samples#328690', 'A.environmental_samples#1002248', 'A.environmental_samples#1002256']
+   B.environmental samples#1617257 -> ['A.environmental samples#328690', 'A.environmental samples#1002248', 'A.environmental samples#1002256']
 ** Multiple least-bad matches. Need to find tie-breakers.
-   B.environmental_samples#2665946 -> ['A.environmental_samples#328690', 'A.environmental_samples#1002248', 'A.environmental_samples#1002256']
+   B.environmental samples#2665946 -> ['A.environmental samples#328690', 'A.environmental samples#1002248', 'A.environmental samples#1002256']
 ** Multiple least-bad matches. Need to find tie-breakers.
-   B.environmental_samples#2665948 -> ['A.environmental_samples#328690', 'A.environmental_samples#1002248', 'A.environmental_samples#1002256']
+   B.environmental samples#2665948 -> ['A.environmental samples#328690', 'A.environmental samples#1002248', 'A.environmental samples#1002256']
 ** Multiple least-bad matches. Need to find tie-breakers.
-   B.environmental_samples#2665950 -> ['A.environmental_samples#328690', 'A.environmental_samples#1002248', 'A.environmental_samples#1002256']
+   B.environmental samples#2665950 -> ['A.environmental samples#328690', 'A.environmental samples#1002248', 'A.environmental samples#1002256']
 ** Multiple least-bad matches. Need to find tie-breakers.
-   B.environmental_samples#2665952 -> ['A.environmental_samples#328690', 'A.environmental_samples#1002248', 'A.environmental_samples#1002256']
+   B.environmental samples#2665952 -> ['A.environmental samples#328690', 'A.environmental samples#1002248', 'A.environmental samples#1002256']
 ** Multiple least-bad matches. Need to find tie-breakers.
-   B.environmental_samples#2682736 -> ['A.environmental_samples#328690', 'A.environmental_samples#1002248', 'A.environmental_samples#1002256']
+   B.environmental samples#2682736 -> ['A.environmental samples#328690', 'A.environmental samples#1002248', 'A.environmental samples#1002256']
 ** Multiple least-bad matches. Need to find tie-breakers.
-   B.environmental_samples#2682739 -> ['A.environmental_samples#328690', 'A.environmental_samples#1002248', 'A.environmental_samples#1002256']
+   B.environmental samples#2682739 -> ['A.environmental samples#328690', 'A.environmental samples#1002248', 'A.environmental samples#1002256']
 ** Multiple least-bad matches. Need to find tie-breakers.
-   B.environmental_samples#2682741 -> ['A.environmental_samples#328690', 'A.environmental_samples#1002248', 'A.environmental_samples#1002256']
-# Best: A.Ateles_paniscus matches B.Ateles_paniscus
+   B.environmental samples#2682741 -> ['A.environmental samples#328690', 'A.environmental samples#1002248', 'A.environmental samples#1002256']
+# Best: A.Ateles paniscus matches B.Ateles paniscus
 ** Multiple least-bad matches. Need to find tie-breakers.
-   A.environmental_samples#1002241 -> ['B.environmental_samples#328690', 'B.environmental_samples#1002248', 'B.environmental_samples#1002256', 'B.environmental_samples#2665948', 'B.environmental_samples#2682739']
+   A.environmental samples#1002241 -> ['B.environmental samples#328690', 'B.environmental samples#1002248', 'B.environmental samples#1002256', 'B.environmental samples#2665948', 'B.environmental samples#2682739']
 ** Multiple least-bad matches. Need to find tie-breakers.
-   A.environmental_samples#1002243 -> ['B.environmental_samples#328690', 'B.environmental_samples#1002248', 'B.environmental_samples#1002256', 'B.environmental_samples#2665948', 'B.environmental_samples#2682739']
+   A.environmental samples#1002243 -> ['B.environmental samples#328690', 'B.environmental samples#1002248', 'B.environmental samples#1002256', 'B.environmental samples#2665948', 'B.environmental samples#2682739']
 ** Multiple least-bad matches. Need to find tie-breakers.
-   A.environmental_samples#1002245 -> ['B.environmental_samples#328690', 'B.environmental_samples#1002248', 'B.environmental_samples#1002256', 'B.environmental_samples#2665948', 'B.environmental_samples#2682739']
+   A.environmental samples#1002245 -> ['B.environmental samples#328690', 'B.environmental samples#1002248', 'B.environmental samples#1002256', 'B.environmental samples#2665948', 'B.environmental samples#2682739']
 ** Multiple least-bad matches. Need to find tie-breakers.
-   A.environmental_samples#1002250 -> ['B.environmental_samples#328690', 'B.environmental_samples#1002248', 'B.environmental_samples#1002256', 'B.environmental_samples#2665948', 'B.environmental_samples#2682739']
+   A.environmental samples#1002250 -> ['B.environmental samples#328690', 'B.environmental samples#1002248', 'B.environmental samples#1002256', 'B.environmental samples#2665948', 'B.environmental samples#2682739']
 ** Multiple least-bad matches. Need to find tie-breakers.
-   A.environmental_samples#1002252 -> ['B.environmental_samples#328690', 'B.environmental_samples#1002248', 'B.environmental_samples#1002256', 'B.environmental_samples#2665948', 'B.environmental_samples#2682739']
+   A.environmental samples#1002252 -> ['B.environmental samples#328690', 'B.environmental samples#1002248', 'B.environmental samples#1002256', 'B.environmental samples#2665948', 'B.environmental samples#2682739']
 ** Multiple least-bad matches. Need to find tie-breakers.
-   A.environmental_samples#1002254 -> ['B.environmental_samples#328690', 'B.environmental_samples#1002248', 'B.environmental_samples#1002256', 'B.environmental_samples#2665948', 'B.environmental_samples#2682739']
+   A.environmental samples#1002254 -> ['B.environmental samples#328690', 'B.environmental samples#1002248', 'B.environmental samples#1002256', 'B.environmental samples#2665948', 'B.environmental samples#2682739']
 ** Multiple least-bad matches. Need to find tie-breakers.
-   A.environmental_samples#1092586 -> ['B.environmental_samples#328690', 'B.environmental_samples#1002248', 'B.environmental_samples#1002256', 'B.environmental_samples#2665948', 'B.environmental_samples#2682739']
+   A.environmental samples#1092586 -> ['B.environmental samples#328690', 'B.environmental samples#1002248', 'B.environmental samples#1002256', 'B.environmental samples#2665948', 'B.environmental samples#2682739']
 19243 best matches
-# Split/join B.Micoureus_regina ∨ B.Marmosa_germana -> A.Micoureus_regina -> B.Micoureus
-# Split/join B.Planigale_gilesi ∨ B.Planigale_tenuirostris -> A.Planigale_gilesi -> B.Planigale
-# Split/join B.Dasycercus_cristicauda ∨ B.Dasycercus_blythi -> A.Dasycercus_cristicauda -> B.Dasycercus
-# Split/join B.Cervus_canadensis_canadensis ∨ B.Cervus_canadensis_nelsoni -> A.Cervus_canadensis_canadensis -> B.Cervus_canadensis
-# Split/join B.Tupaia_glis ∨ B.Tupaia_belangeri -> A.Tupaia_glis -> B.Tupaia
-# Split/join B.Hylomyscus_sp._10_VN-2012 ∨ B.Hylomyscus_sp._7_VN-2012 -> A.Hylomyscus_sp._10_VN-2012 -> B.unclassified_Hylomyscus
-# Split/join B.Phodopus_sungorus ∨ B.Phodopus_campbelli -> A.Phodopus_sungorus -> B.Phodopus
-# Split/join B.Neacomys_minutus ∨ B.Microryzomys_altissimus -> A.Neacomys_minutus -> B.Neacomys
-# Split/join A.Planigale_gilesi ∨ A.Planigale_tenuirostris -> B.Planigale_gilesi -> A.Planigale
-# Split/join A.Rhinolophus_sp._GZNU20080502002 ∨ A.Rhinolophus_sp._HHS-2009a -> B.Rhinolophus_sp._HHS-2009a -> A.Rhinolophus
-# Split/join A.Cervus_canadensis_canadensis ∨ A.Cervus_canadensis_nelsoni -> B.Cervus_canadensis_canadensis -> A.Cervus_canadensis
-# Split/join A.Giraffa_camelopardalis_rothschildi ∨ A.Giraffa_camelopardalis_tippelskirchi -> B.Giraffa_tippelskirchi -> A.Giraffa_camelopardalis
-# Split/join A.Oryx_leucoryx ∨ A.Oryx_oryxleucoryx -> B.Oryx_leucoryx -> A.Oryx
-# Split/join A.Bos_indicus_x_Bos_taurus ∨ A.Bos_taurus_x_Bos_indicus -> B.Bos_indicus_x_Bos_taurus -> A.Bos_hybrids
-# Split/join A.Bos_grunniens_x_Bos_taurus ∨ A.Bos_taurus_x_Bos_grunniens -> B.Bos_grunniens_x_Bos_taurus -> A.Bos_hybrids
-# Split/join A.Tupaia_glis ∨ A.Tupaia_belangeri -> B.Tupaia_glis -> A.Tupaia
-# Split/join A.Nycticebus_intermedius ∨ A.Nycticebus_pygmaeus -> B.Nycticebus_pygmaeus -> A.Nycticebus
-# Split/join A.Graphiurus_parvus ∨ A.Graphiurus_kelleni -> B.Graphiurus_kelleni -> A.Graphiurus
-# Split/join A.Mastomys_natalensis ∨ A.Mastomys_hildebrandtii -> B.Mastomys_natalensis -> A.Mastomys
-# Split/join A.Hylomyscus_sp._10_VN-2012 ∨ A.Hylomyscus_sp._7_VN-2012 -> B.Hylomyscus_sp._10_VN-2012 -> A.unclassified_Hylomyscus
-# Split/join A.Niviventer_fulvescens ∨ A.Niviventer_bukit -> B.Niviventer_fulvescens -> A.Niviventer
-# Split/join A.Phodopus_sungorus ∨ A.Phodopus_campbelli -> B.Phodopus_sungorus -> A.Phodopus
-# Split/join A.Microtus_gerbei ∨ A.Microtus_pyrenaicus -> B.Microtus_gerbei -> A.Microtus
-# Split/join A.Reithrodontomys_sp._ROM114291 ∨ A.Reithrodontomys_sp._ROM116805 ∨ A.Reithrodontomys_sp._1_AVB-2011 -> B.Reithrodontomys_sp._1_AVB-2011 -> A.Reithrodontomys
-# Split/join A.Reithrodontomys_sp._ROM116835 ∨ A.Reithrodontomys_sp._2_AVB-2011 -> B.Reithrodontomys_sp._2_AVB-2011 -> A.Reithrodontomys
+# Split/lump B.Micoureus regina ∨ B.Marmosa germana -> A.Micoureus regina -> B.Micoureus
+# Split/lump B.Planigale gilesi ∨ B.Planigale tenuirostris -> A.Planigale gilesi -> B.Planigale
+# Split/lump B.Dasycercus cristicauda ∨ B.Dasycercus blythi -> A.Dasycercus cristicauda -> B.Dasycercus
+# Split/lump B.Cervus canadensis canadensis ∨ B.Cervus canadensis nelsoni -> A.Cervus canadensis canadensis -> B.Cervus canadensis
+# Split/lump B.Tupaia glis ∨ B.Tupaia belangeri -> A.Tupaia glis -> B.Tupaia
+# Split/lump B.Hylomyscus sp. 10 VN-2012 ∨ B.Hylomyscus sp. 7 VN-2012 -> A.Hylomyscus sp. 10 VN-2012 -> B.unclassified Hylomyscus
+# Split/lump B.Phodopus sungorus ∨ B.Phodopus campbelli -> A.Phodopus sungorus -> B.Phodopus
+# Split/lump B.Neacomys minutus ∨ B.Microryzomys altissimus -> A.Neacomys minutus -> B.Neacomys
+# Split/lump A.Planigale gilesi ∨ A.Planigale tenuirostris -> B.Planigale gilesi -> A.Planigale
+# Split/lump A.Rhinolophus sp. GZNU20080502002 ∨ A.Rhinolophus sp. HHS-2009a -> B.Rhinolophus sp. HHS-2009a -> A.Rhinolophus
+# Split/lump A.Cervus canadensis canadensis ∨ A.Cervus canadensis nelsoni -> B.Cervus canadensis canadensis -> A.Cervus canadensis
+# Split/lump A.Giraffa camelopardalis rothschildi ∨ A.Giraffa camelopardalis tippelskirchi -> B.Giraffa tippelskirchi -> A.Giraffa camelopardalis
+# Split/lump A.Oryx leucoryx ∨ A.Oryx oryxleucoryx -> B.Oryx leucoryx -> A.Oryx
+# Split/lump A.Bos indicus x Bos taurus ∨ A.Bos taurus x Bos indicus -> B.Bos indicus x Bos taurus -> A.Bos hybrids
+# Split/lump A.Bos grunniens x Bos taurus ∨ A.Bos taurus x Bos grunniens -> B.Bos grunniens x Bos taurus -> A.Bos hybrids
+# Split/lump A.Tupaia glis ∨ A.Tupaia belangeri -> B.Tupaia glis -> A.Tupaia
+# Split/lump A.Nycticebus intermedius ∨ A.Nycticebus pygmaeus -> B.Nycticebus pygmaeus -> A.Nycticebus
+# Split/lump A.Graphiurus parvus ∨ A.Graphiurus kelleni -> B.Graphiurus kelleni -> A.Graphiurus
+# Split/lump A.Mastomys natalensis ∨ A.Mastomys hildebrandtii -> B.Mastomys natalensis -> A.Mastomys
+# Split/lump A.Hylomyscus sp. 10 VN-2012 ∨ A.Hylomyscus sp. 7 VN-2012 -> B.Hylomyscus sp. 10 VN-2012 -> A.unclassified Hylomyscus
+# Split/lump A.Niviventer fulvescens ∨ A.Niviventer bukit -> B.Niviventer fulvescens -> A.Niviventer
+# Split/lump A.Phodopus sungorus ∨ A.Phodopus campbelli -> B.Phodopus sungorus -> A.Phodopus
+# Split/lump A.Microtus gerbei ∨ A.Microtus pyrenaicus -> B.Microtus gerbei -> A.Microtus
+# Split/lump A.Reithrodontomys sp. ROM114291 ∨ A.Reithrodontomys sp. ROM116805 ∨ A.Reithrodontomys sp. 1 AVB-2011 -> B.Reithrodontomys sp. 1 AVB-2011 -> A.Reithrodontomys
+# Split/lump A.Reithrodontomys sp. ROM116835 ∨ A.Reithrodontomys sp. 2 AVB-2011 -> B.Reithrodontomys sp. 2 AVB-2011 -> A.Reithrodontomys
 # Number of particles: 7345
 # Number of cross-mrcas: 19393
 # Number of extensional relationships: 4703
 ** Multiple matches: A.Elephantulus -> B.Macroscelididae, B.Macroscelidea
-** Multiple matches: A.Miniopterus_schreibersii -> B.Miniopterus, B.Miniopterinae
+** Multiple matches: A.Miniopterus schreibersii -> B.Miniopterus, B.Miniopterinae
 ** Multiple matches: A.Manis -> B.Manidae, B.Pholidota
-** Multiple matches: A.Alouatta_seniculus -> B.Alouatta, B.Alouattinae
+** Multiple matches: A.Alouatta seniculus -> B.Alouatta, B.Alouattinae
 ** Multiple matches: A.Cercopithecidae -> B.Cercopithecidae, B.Cercopithecoidea
 ** Multiple matches: A.Tarsius -> B.Tarsiidae, B.Tarsiiformes
-** Multiple matches: B.unclassified_Miniopterus -> A.Miniopterus, A.Miniopterinae
-** Multiple matches: B.unclassified_Rhinolophus -> A.Rhinolophus, A.Rhinolophinae
-** Multiple matches: B.unclassified_Tapirus -> A.Tapirus, A.Tapiridae
-** Multiple matches: B.unclassified_Manis -> A.Manis, A.Manidae, A.Pholidota
+** Multiple matches: B.unclassified Miniopterus -> A.Miniopterus, A.Miniopterinae
+** Multiple matches: B.unclassified Rhinolophus -> A.Rhinolophus, A.Rhinolophinae
+** Multiple matches: B.unclassified Tapirus -> A.Tapirus, A.Tapiridae
+** Multiple matches: B.unclassified Manis -> A.Manis, A.Manidae, A.Pholidota
 ** Multiple returns: A.Manis -> B.Manidae, B.Pholidota
 ** Multiple returns: A.Manis -> B.Manidae, B.Pholidota
 ** Multiple matches: B.Phataginus -> A.Manis, A.Manidae, A.Pholidota
-** Multiple matches: B.unclassified_Moschus -> A.Moschus, A.Moschidae
-** Multiple matches: B.unclassified_Palaeopropithecus -> A.Palaeopropithecus, A.Paleopropithecidae
-** Multiple matches: B.unclassified_Saimiri -> A.Saimiri, A.Saimiriinae
-** Multiple matches: B.unclassified_Aotus_(in:_Chordata) -> A.Aotus, A.Aotidae
-** Multiple matches: B.unclassified_Callicebus -> A.Callicebus, A.Callicebinae
+** Multiple matches: B.unclassified Moschus -> A.Moschus, A.Moschidae
+** Multiple matches: B.unclassified Palaeopropithecus -> A.Palaeopropithecus, A.Paleopropithecidae
+** Multiple matches: B.unclassified Saimiri -> A.Saimiri, A.Saimiriinae
+** Multiple matches: B.unclassified Aotus (in: Chordata) -> A.Aotus, A.Aotidae
+** Multiple matches: B.unclassified Callicebus -> A.Callicebus, A.Callicebinae
 ** Multiple matches: B.Plecturocebus -> A.Callicebus, A.Callicebinae
 ** Multiple matches: B.Cheracebus -> A.Callicebus, A.Callicebinae
 ** Multiple matches: B.Cercopithecidae -> A.Cercopithecidae, A.Cercopithecoidea
-** Multiple matches: B.unclassified_Tarsius -> A.Tarsius, A.Tarsiidae, A.Tarsiiformes
+** Multiple matches: B.unclassified Tarsius -> A.Tarsius, A.Tarsiidae, A.Tarsiiformes
 ** Multiple returns: A.Tarsius -> B.Tarsiidae, B.Tarsiiformes
-** Multiple matches: B.unclassified_Ochotona -> A.Ochotona, A.Ochotonidae
-** Multiple matches: B.unclassified_Calomyscus -> A.Calomyscus, A.Calomyscinae, A.Calomyscidae
-** Multiple matches: B.unclassified_Petromyscus -> A.Petromyscus, A.Petromyscinae
+** Multiple matches: B.unclassified Ochotona -> A.Ochotona, A.Ochotonidae
+** Multiple matches: B.unclassified Calomyscus -> A.Calomyscus, A.Calomyscinae, A.Calomyscidae
+** Multiple matches: B.unclassified Petromyscus -> A.Petromyscus, A.Petromyscinae
 # Number of articulations in alignment: 17482
 Preparing work/mammalia-ncbi-2015-2020.csv.new
 Number of roots in merge: 1
 Number of non-roots in merge: 13265
 # Changed status: 13226, changed: 1867
 ** Philander opossum names different taxa in the two checklists
-  A.Philander_opossum = B.Philander [monotypic]
+  A.Philander opossum = B.Philander [monotypic]
 ** Murexia names different taxa in the two checklists
   B.Murexia = A.Dasyuridae [monotypic]
 ** Macropus names different taxa in the two checklists
@@ -122,32 +122,32 @@ Number of non-roots in merge: 13265
   A.Tupaiidae = B.Scandentia [None]
   B.Tupaiidae = A.Scandentia [None]
 ** Miniopterus schreibersii names different taxa in the two checklists
-  A.Miniopterus_schreibersii = B.Miniopterus [monotypic]
+  A.Miniopterus schreibersii particle-set<= B.Miniopterus [monotypic]
 ** Tarsius names different taxa in the two checklists
-  A.Tarsius particleset= B.Tarsiidae [mutual-cross-mrca]
+  A.Tarsius particle-set<= B.Tarsiidae [mutual-cross-mrca]
   B.Tarsius = A.Tarsius [scientificName]
 ** Saguinus names different taxa in the two checklists
   A.Saguinus = B.Callitrichinae [monotypic]
 ** Alouatta seniculus names different taxa in the two checklists
-  A.Alouatta_seniculus = B.Alouatta [monotypic]
+  A.Alouatta seniculus particle-set<= B.Alouatta [monotypic]
 ** Callicebus names different taxa in the two checklists
   A.Callicebus = B.Callicebinae [mutual-cross-mrca]
   B.Callicebus = A.Callicebus [canonicalName]
 ** Cercopithecus names different taxa in the two checklists
   A.Cercopithecus = B.Cercopithecinae [monotypic]
 ** Macaca fuscata fuscata names different taxa in the two checklists
-  A.Macaca_fuscata_fuscata particleset= B.Macaca_fuscata [synonym+canonicalName+synonym]
-  B.Macaca_fuscata_fuscata particleset= A.Macaca_fuscata [synonym+canonicalName+synonym]
+  A.Macaca fuscata fuscata particle-set<= B.Macaca fuscata [synonym+canonicalName+synonym]
+  B.Macaca fuscata fuscata particle-set<= A.Macaca fuscata [synonym+canonicalName+synonym]
 ** Macaca nemestrina names different taxa in the two checklists
-  A.Macaca_nemestrina = B.Macaca [monotypic]
+  A.Macaca nemestrina = B.Macaca [monotypic]
 ** Pongo abelii names different taxa in the two checklists
-  A.Pongo_abelii particleset= B.Pongo_pygmaeus [synonym+canonicalName+synonym]
-  B.Pongo_abelii particleset= A.Pongo_pygmaeus [synonym+canonicalName+synonym]
+  A.Pongo abelii particle-set<= B.Pongo pygmaeus [synonym+canonicalName+synonym]
+  B.Pongo abelii particle-set<= A.Pongo pygmaeus [synonym+canonicalName+synonym]
 ** Nasua nasua rufa names different taxa in the two checklists
-  A.Nasua_nasua_rufa particleset= B.Nasua_nasua [synonym+canonicalName+synonym]
-  B.Nasua_nasua_rufa particleset= A.Nasua_nasua [synonym+canonicalName+synonym]
+  A.Nasua nasua rufa particle-set<= B.Nasua nasua [synonym+canonicalName+synonym]
+  B.Nasua nasua rufa particle-set<= A.Nasua nasua [synonym+canonicalName+synonym]
 ** Meles meles names different taxa in the two checklists
-  A.Meles_meles = B.Meles [monotypic]
+  A.Meles meles = B.Meles [monotypic]
 ** Panthera names different taxa in the two checklists
   B.Panthera = A.Pantherinae [monotypic]
 ** Elephantidae names different taxa in the two checklists
@@ -156,70 +156,70 @@ Number of non-roots in merge: 13265
 ** Sus names different taxa in the two checklists
   A.Sus = B.Suidae [monotypic]
 ** Cervus elaphus names different taxa in the two checklists
-  A.Cervus_elaphus = B.Cervus [monotypic]
+  A.Cervus elaphus = B.Cervus [monotypic]
 ** Cervus canadensis nelsoni names different taxa in the two checklists
-  A.Cervus_canadensis_nelsoni merge B.Cervus_canadensis_canadensis [None]
-  B.Cervus_canadensis_nelsoni merge A.Cervus_canadensis_canadensis [None]
+  A.Cervus canadensis nelsoni lump B.Cervus canadensis canadensis [None]
+  B.Cervus canadensis nelsoni lump A.Cervus canadensis canadensis [None]
 ** Muntiacus muntjak names different taxa in the two checklists
-  A.Muntiacus_muntjak = B.Muntiacus [monotypic]
+  A.Muntiacus muntjak = B.Muntiacus [monotypic]
 ** Giraffa camelopardalis names different taxa in the two checklists
-  A.Giraffa_camelopardalis = B.Giraffa [mutual-cross-mrca]
-  B.Giraffa_camelopardalis = A.Giraffa_camelopardalis [scientificName]
+  A.Giraffa camelopardalis = B.Giraffa [mutual-cross-mrca]
+  B.Giraffa camelopardalis = A.Giraffa camelopardalis [scientificName]
 ** Manidae names different taxa in the two checklists
   A.Manidae = B.Pholidota [None]
   B.Manidae = A.Pholidota [None]
 ** Manis names different taxa in the two checklists
-  A.Manis particleset= B.Manidae [mutual-cross-mrca]
+  A.Manis particle-set<= B.Manidae [mutual-cross-mrca]
   B.Manis = A.Manis [scientificName]
 ** Sciurus names different taxa in the two checklists
   A.Sciurus = B.Sciurini [monotypic]
 ** Mus sp. names different taxa in the two checklists
-  A.Mus_sp. particleset= B.Mus#10088 [synonym+canonicalName+synonym]
-  B.Mus_sp. particleset= A.Mus#10088 [synonym+canonicalName+synonym]
+  A.Mus sp. particle-set<= B.Mus#10088 [synonym+canonicalName+synonym]
+  B.Mus sp. particle-set<= A.Mus#10088 [synonym+canonicalName+synonym]
 ** Mastomys natalensis names different taxa in the two checklists
-  A.Mastomys_natalensis merge B.Mastomys_natalensis [scientificName]
+  A.Mastomys natalensis lump B.Mastomys natalensis [scientificName]
 ** Rattus sp. names different taxa in the two checklists
-  A.Rattus_sp. particleset= B.Rattus [synonym+canonicalName+synonym]
-  B.Rattus_sp. particleset= A.Rattus [synonym+canonicalName+synonym]
+  A.Rattus sp. particle-set<= B.Rattus [synonym+canonicalName+synonym]
+  B.Rattus sp. particle-set<= A.Rattus [synonym+canonicalName+synonym]
 ** Pipistrellus names different taxa in the two checklists
   A.Pipistrellus = B.Vespertilionidae [monotypic]
 ** Elephantulus names different taxa in the two checklists
-  A.Elephantulus = B.Macroscelididae [monotypic]
+  A.Elephantulus particle-set<= B.Macroscelididae [monotypic]
 ** Eptesicus names different taxa in the two checklists
   A.Eptesicus = B.Vespertilionidae [monotypic]
 ** Monachus names different taxa in the two checklists
   A.Monachus = B.Phocidae [monotypic]
 ** Bos indicus x Bos taurus names different taxa in the two checklists
-  A.Bos_indicus_x_Bos_taurus merge B.Bos_indicus_x_Bos_taurus [canonicalName]
+  A.Bos indicus x Bos taurus lump B.Bos indicus x Bos taurus [canonicalName]
 ** Dasycercus cristicauda names different taxa in the two checklists
-  B.Dasycercus_cristicauda merge A.Dasycercus_cristicauda [canonicalName]
+  B.Dasycercus cristicauda lump A.Dasycercus cristicauda [canonicalName]
 ** Planigale tenuirostris names different taxa in the two checklists
-  A.Planigale_tenuirostris merge B.Planigale_gilesi [None]
-  B.Planigale_tenuirostris merge A.Planigale_gilesi [None]
+  A.Planigale tenuirostris lump B.Planigale gilesi [None]
+  B.Planigale tenuirostris lump A.Planigale gilesi [None]
 ** Hemitragus names different taxa in the two checklists
   A.Hemitragus = B.Caprinae [monotypic]
 ** Tupaia belangeri names different taxa in the two checklists
-  A.Tupaia_belangeri merge B.Tupaia_glis [None]
-  B.Tupaia_belangeri merge A.Tupaia_glis [None]
+  A.Tupaia belangeri lump B.Tupaia glis [None]
+  B.Tupaia belangeri lump A.Tupaia glis [None]
 ** Mammuthus primigenius names different taxa in the two checklists
-  A.Mammuthus_primigenius particleset= B.Mammuthus [synonym+canonicalName+synonym]
-  B.Mammuthus_primigenius particleset= A.Mammuthus [synonym+canonicalName+synonym]
+  A.Mammuthus primigenius particle-set<= B.Mammuthus [synonym+canonicalName+synonym]
+  B.Mammuthus primigenius particle-set<= A.Mammuthus [synonym+canonicalName+synonym]
 ** Oryx leucoryx names different taxa in the two checklists
-  A.Oryx_leucoryx merge B.Oryx_leucoryx [canonicalName]
+  A.Oryx leucoryx lump B.Oryx leucoryx [canonicalName]
 ** Saimiri boliviensis boliviensis names different taxa in the two checklists
-  A.Saimiri_boliviensis_boliviensis particleset= B.Saimiri_boliviensis [synonym+canonicalName+synonym]
-  B.Saimiri_boliviensis_boliviensis particleset= A.Saimiri_boliviensis [synonym+canonicalName+synonym]
+  A.Saimiri boliviensis boliviensis particle-set<= B.Saimiri boliviensis [synonym+canonicalName+synonym]
+  B.Saimiri boliviensis boliviensis particle-set<= A.Saimiri boliviensis [synonym+canonicalName+synonym]
 ** Neotoma albigula names different taxa in the two checklists
-  A.Neotoma_albigula = B.Neotoma [monotypic]
+  A.Neotoma albigula = B.Neotoma [monotypic]
 ** Micoureus regina names different taxa in the two checklists
-  B.Micoureus_regina merge A.Micoureus_regina [scientificName]
+  B.Micoureus regina lump A.Micoureus regina [scientificName]
 ** Phodopus campbelli names different taxa in the two checklists
-  A.Phodopus_campbelli merge B.Phodopus_sungorus [None]
-  B.Phodopus_campbelli merge A.Phodopus_sungorus [None]
+  A.Phodopus campbelli lump B.Phodopus sungorus [None]
+  B.Phodopus campbelli lump A.Phodopus sungorus [None]
 ** Rhinolophidae names different taxa in the two checklists
   A.Rhinolophidae = B.Microchiroptera [monotypic]
 ** Isoodon obesulus names different taxa in the two checklists
-  A.Isoodon_obesulus = B.Isoodon [monotypic]
+  A.Isoodon obesulus = B.Isoodon [monotypic]
 ** Lasiurus names different taxa in the two checklists
   A.Lasiurus = B.Vespertilionidae [monotypic]
 ** Allactaga names different taxa in the two checklists
@@ -227,169 +227,169 @@ Number of non-roots in merge: 13265
 ** Myonycteris names different taxa in the two checklists
   A.Myonycteris = B.Myonycterini [monotypic]
 ** Niviventer fulvescens names different taxa in the two checklists
-  A.Niviventer_fulvescens merge B.Niviventer_fulvescens [scientificName]
+  A.Niviventer fulvescens lump B.Niviventer fulvescens [scientificName]
 ** Semnopithecus entellus names different taxa in the two checklists
-  A.Semnopithecus_entellus = B.Semnopithecus [monotypic]
+  A.Semnopithecus entellus = B.Semnopithecus [monotypic]
 ** Nycticebus pygmaeus names different taxa in the two checklists
-  A.Nycticebus_pygmaeus merge B.Nycticebus_pygmaeus [canonicalName]
+  A.Nycticebus pygmaeus lump B.Nycticebus pygmaeus [canonicalName]
 ** unclassified Ateles names different taxa in the two checklists
-  B.unclassified_Ateles = A.Ateles [monotypic]
+  B.unclassified Ateles = A.Ateles [monotypic]
 ** Eospalax fontanierii names different taxa in the two checklists
-  A.Eospalax_fontanierii matches B.Eospalax_fontanierii [canonicalName]
-  B.Eospalax_fontanierii = A.Eospalax [monotypic]
+  A.Eospalax fontanierii matches B.Eospalax fontanierii [canonicalName]
+  B.Eospalax fontanierii = A.Eospalax [monotypic]
 ** Mimon names different taxa in the two checklists
   A.Mimon = B.Phyllostominae [monotypic]
 ** Neacomys minutus names different taxa in the two checklists
-  B.Neacomys_minutus merge A.Neacomys_minutus [canonicalName]
+  B.Neacomys minutus lump A.Neacomys minutus [canonicalName]
 ** unclassified Saccostomus names different taxa in the two checklists
-  B.unclassified_Saccostomus = A.Saccostomus [monotypic]
+  B.unclassified Saccostomus = A.Saccostomus [monotypic]
 ** Microtus gerbei names different taxa in the two checklists
-  A.Microtus_gerbei merge B.Microtus_gerbei [canonicalName]
+  A.Microtus gerbei lump B.Microtus gerbei [canonicalName]
 ** Macaca leonina names different taxa in the two checklists
-  A.Macaca_leonina matches B.Macaca_leonina [canonicalName]
-  B.Macaca_leonina = A.Macaca_nemestrina_leonina [ncbi_id]
+  A.Macaca leonina matches B.Macaca leonina [canonicalName]
+  B.Macaca leonina = A.Macaca nemestrina leonina [ncbi_id]
 ** Bos grunniens x Bos taurus names different taxa in the two checklists
-  A.Bos_grunniens_x_Bos_taurus merge B.Bos_grunniens_x_Bos_taurus [canonicalName]
+  A.Bos grunniens x Bos taurus lump B.Bos grunniens x Bos taurus [canonicalName]
 ** Lorisiformes names different taxa in the two checklists
   A.Lorisiformes = B.Galagidae [monotypic]
 ** Pseudantechinus bilarni names different taxa in the two checklists
-  A.Pseudantechinus_bilarni particleset= B.Murexia_melanurus [synonym+canonicalName+synonym]
-  B.Pseudantechinus_bilarni particleset= A.Murexchinus_melanurus [synonym+canonicalName+synonym]
+  A.Pseudantechinus bilarni particle-set<= B.Murexia melanurus [synonym+canonicalName+synonym]
+  B.Pseudantechinus bilarni particle-set<= A.Murexchinus melanurus [synonym+canonicalName+synonym]
 ** Makalata names different taxa in the two checklists
   A.Makalata = B.Echimyidae [monotypic]
 ** Rattus pyctoris names different taxa in the two checklists
-  A.Rattus_pyctoris = B.Rattus_pyctoris [scientificName]
-  B.Rattus_pyctoris particleset= A.Rattus_rattus [synonym+canonicalName+synonym]
+  A.Rattus pyctoris = B.Rattus pyctoris [scientificName]
+  B.Rattus pyctoris particle-set<= A.Rattus rattus [synonym+canonicalName+synonym]
 ** Rhinolophus sp. HHS-2009a names different taxa in the two checklists
-  A.Rhinolophus_sp._HHS-2009a merge B.Rhinolophus_sp._HHS-2009a [canonicalName]
+  A.Rhinolophus sp. HHS-2009a lump B.Rhinolophus sp. HHS-2009a [canonicalName]
 ** Neodon sikimensis names different taxa in the two checklists
-  A.Neodon_sikimensis matches B.Neodon_sikimensis [scientificName]
-  B.Neodon_sikimensis = A.Microtus_sikimensis [None]
+  A.Neodon sikimensis matches B.Neodon sikimensis [scientificName]
+  B.Neodon sikimensis = A.Microtus sikimensis [None]
 ** Rodentia sp. BOLD:AAA1667 names different taxa in the two checklists
-  A.Rodentia_sp._BOLD:AAA1667 particleset= B.Chiroptera_sp._BOLD:AAA1667 [synonym+canonicalName+synonym]
-  B.Rodentia_sp._BOLD:AAA1667 particleset= A.Chiroptera_sp._BOLD:AAA1667 [synonym+canonicalName+synonym]
+  A.Rodentia sp. BOLD:AAA1667 particle-set<= B.Chiroptera sp. BOLD:AAA1667 [synonym+canonicalName+synonym]
+  B.Rodentia sp. BOLD:AAA1667 particle-set<= A.Chiroptera sp. BOLD:AAA1667 [synonym+canonicalName+synonym]
 ** Macaca siberu names different taxa in the two checklists
-  A.Macaca_siberu matches B.Macaca_siberu [scientificName]
-  B.Macaca_siberu = A.Macaca_nemestrina_siberu [ncbi_id]
+  A.Macaca siberu matches B.Macaca siberu [scientificName]
+  B.Macaca siberu = A.Macaca nemestrina siberu [ncbi_id]
 ** unclassified Ctenomys names different taxa in the two checklists
-  A.unclassified_Ctenomys = B.Ctenomys [monotypic]
+  A.unclassified Ctenomys = B.Ctenomys [monotypic]
 ** Glauconycteris argentata names different taxa in the two checklists
-  A.Glauconycteris_argentata matches B.Glauconycteris_argentata [scientificName]
-  B.Glauconycteris_argentata = A.Chalinolobus_argentatus [None]
+  A.Glauconycteris argentata matches B.Glauconycteris argentata [scientificName]
+  B.Glauconycteris argentata = A.Chalinolobus argentatus [None]
 ** Glauconycteris variegata names different taxa in the two checklists
-  A.Glauconycteris_variegata matches B.Glauconycteris_variegata [scientificName]
-  B.Glauconycteris_variegata = A.Chalinolobus_variegatus [None]
+  A.Glauconycteris variegata matches B.Glauconycteris variegata [scientificName]
+  B.Glauconycteris variegata = A.Chalinolobus variegatus [None]
 ** Carnivora sp. BOLD:AAA9549 names different taxa in the two checklists
-  A.Carnivora_sp._BOLD:AAA9549 particleset= B.Didelphimorphia_sp._BOLD:AAA9549 [synonym+canonicalName+synonym]
-  B.Carnivora_sp._BOLD:AAA9549 particleset= A.Didelphimorphia_sp._BOLD:AAA9549 [synonym+canonicalName+synonym]
+  A.Carnivora sp. BOLD:AAA9549 particle-set<= B.Didelphimorphia sp. BOLD:AAA9549 [synonym+canonicalName+synonym]
+  B.Carnivora sp. BOLD:AAA9549 particle-set<= A.Didelphimorphia sp. BOLD:AAA9549 [synonym+canonicalName+synonym]
 ** Chiroptera sp. BOLD:AAJ3874 names different taxa in the two checklists
-  A.Chiroptera_sp._BOLD:AAJ3874 particleset= B.Rodentia_sp._BOLD:AAJ3874 [synonym+canonicalName+synonym]
-  B.Chiroptera_sp._BOLD:AAJ3874 particleset= A.Rodentia_sp._BOLD:AAJ3874 [synonym+canonicalName+synonym]
+  A.Chiroptera sp. BOLD:AAJ3874 particle-set<= B.Rodentia sp. BOLD:AAJ3874 [synonym+canonicalName+synonym]
+  B.Chiroptera sp. BOLD:AAJ3874 particle-set<= A.Rodentia sp. BOLD:AAJ3874 [synonym+canonicalName+synonym]
 ** Reithrodontomys sp. 1 AVB-2011 names different taxa in the two checklists
-  A.Reithrodontomys_sp._1_AVB-2011 merge B.Reithrodontomys_sp._1_AVB-2011 [canonicalName]
+  A.Reithrodontomys sp. 1 AVB-2011 lump B.Reithrodontomys sp. 1 AVB-2011 [canonicalName]
 ** Reithrodontomys sp. 2 AVB-2011 names different taxa in the two checklists
-  A.Reithrodontomys_sp._2_AVB-2011 merge B.Reithrodontomys_sp._2_AVB-2011 [canonicalName]
+  A.Reithrodontomys sp. 2 AVB-2011 lump B.Reithrodontomys sp. 2 AVB-2011 [canonicalName]
 ** Niviventer sp. BOLD:AAB2209 names different taxa in the two checklists
-  A.Niviventer_sp._BOLD:AAB2209 particleset= B.Rodentia_sp._BOLD:AAB2209 [synonym+canonicalName+synonym]
-  B.Niviventer_sp._BOLD:AAB2209 particleset= A.Rodentia_sp._BOLD:AAB2209 [synonym+canonicalName+synonym]
+  A.Niviventer sp. BOLD:AAB2209 particle-set<= B.Rodentia sp. BOLD:AAB2209 [synonym+canonicalName+synonym]
+  B.Niviventer sp. BOLD:AAB2209 particle-set<= A.Rodentia sp. BOLD:AAB2209 [synonym+canonicalName+synonym]
 ** Niviventer sp. BOLD:AAA8157 names different taxa in the two checklists
-  A.Niviventer_sp._BOLD:AAA8157 particleset= B.Rodentia_sp._BOLD:AAA8157 [synonym+canonicalName+synonym]
-  B.Niviventer_sp._BOLD:AAA8157 particleset= A.Rodentia_sp._BOLD:AAA8157 [synonym+canonicalName+synonym]
+  A.Niviventer sp. BOLD:AAA8157 particle-set<= B.Rodentia sp. BOLD:AAA8157 [synonym+canonicalName+synonym]
+  B.Niviventer sp. BOLD:AAA8157 particle-set<= A.Rodentia sp. BOLD:AAA8157 [synonym+canonicalName+synonym]
 ** Niviventer cf. confucianus BOLD:AAA2718 names different taxa in the two checklists
-  A.Niviventer_cf._confucianus_BOLD:AAA2718 particleset= B.Niviventer_sp._BOLD:AAA2718 [synonym+canonicalName+synonym]
-  B.Niviventer_cf._confucianus_BOLD:AAA2718 particleset= A.Niviventer_sp._BOLD:AAA2718 [synonym+canonicalName+synonym]
+  A.Niviventer cf. confucianus BOLD:AAA2718 particle-set<= B.Niviventer sp. BOLD:AAA2718 [synonym+canonicalName+synonym]
+  B.Niviventer cf. confucianus BOLD:AAA2718 particle-set<= A.Niviventer sp. BOLD:AAA2718 [synonym+canonicalName+synonym]
 ** Rattus sp. BOLD:AAB2209 names different taxa in the two checklists
-  A.Rattus_sp._BOLD:AAB2209 particleset= B.Rodentia_sp._BOLD:AAB2209 [synonym+canonicalName+synonym]
-  B.Rattus_sp._BOLD:AAB2209 particleset= A.Rodentia_sp._BOLD:AAB2209 [synonym+canonicalName+synonym]
+  A.Rattus sp. BOLD:AAB2209 particle-set<= B.Rodentia sp. BOLD:AAB2209 [synonym+canonicalName+synonym]
+  B.Rattus sp. BOLD:AAB2209 particle-set<= A.Rodentia sp. BOLD:AAB2209 [synonym+canonicalName+synonym]
 ** Rattus sp. BOLD:AAH3526 names different taxa in the two checklists
-  A.Rattus_sp._BOLD:AAH3526 particleset= B.Rodentia_sp._BOLD:AAH3526 [synonym+canonicalName+synonym]
-  B.Rattus_sp._BOLD:AAH3526 particleset= A.Rodentia_sp._BOLD:AAH3526 [synonym+canonicalName+synonym]
+  A.Rattus sp. BOLD:AAH3526 particle-set<= B.Rodentia sp. BOLD:AAH3526 [synonym+canonicalName+synonym]
+  B.Rattus sp. BOLD:AAH3526 particle-set<= A.Rodentia sp. BOLD:AAH3526 [synonym+canonicalName+synonym]
 ** Rattus sp. BOLD:AAB6757 names different taxa in the two checklists
-  A.Rattus_sp._BOLD:AAB6757 particleset= B.Rodentia_sp._BOLD:AAB6757 [synonym+canonicalName+synonym]
-  B.Rattus_sp._BOLD:AAB6757 particleset= A.Rodentia_sp._BOLD:AAB6757 [synonym+canonicalName+synonym]
+  A.Rattus sp. BOLD:AAB6757 particle-set<= B.Rodentia sp. BOLD:AAB6757 [synonym+canonicalName+synonym]
+  B.Rattus sp. BOLD:AAB6757 particle-set<= A.Rodentia sp. BOLD:AAB6757 [synonym+canonicalName+synonym]
 ** Rattus sp. BOLD:AAE2315 names different taxa in the two checklists
-  A.Rattus_sp._BOLD:AAE2315 particleset= B.Niviventer_sp._BOLD:AAE2315 [synonym+canonicalName+synonym]
-  B.Rattus_sp._BOLD:AAE2315 particleset= A.Niviventer_sp._BOLD:AAE2315 [synonym+canonicalName+synonym]
+  A.Rattus sp. BOLD:AAE2315 particle-set<= B.Niviventer sp. BOLD:AAE2315 [synonym+canonicalName+synonym]
+  B.Rattus sp. BOLD:AAE2315 particle-set<= A.Niviventer sp. BOLD:AAE2315 [synonym+canonicalName+synonym]
 ** Oryzomys sp. BOLD:AAA1671 names different taxa in the two checklists
-  A.Oryzomys_sp._BOLD:AAA1671 particleset= B.Rodentia_sp._BOLD:AAA1671 [synonym+canonicalName+synonym]
-  B.Oryzomys_sp._BOLD:AAA1671 particleset= A.Rodentia_sp._BOLD:AAA1671 [synonym+canonicalName+synonym]
+  A.Oryzomys sp. BOLD:AAA1671 particle-set<= B.Rodentia sp. BOLD:AAA1671 [synonym+canonicalName+synonym]
+  B.Oryzomys sp. BOLD:AAA1671 particle-set<= A.Rodentia sp. BOLD:AAA1671 [synonym+canonicalName+synonym]
 ** Microtus cf. arvalis BOLD:AAA5168 names different taxa in the two checklists
-  A.Microtus_cf._arvalis_BOLD:AAA5168 particleset= B.Rodentia_sp._BOLD:AAA5168 [synonym+canonicalName+synonym]
-  B.Microtus_cf._arvalis_BOLD:AAA5168 particleset= A.Rodentia_sp._BOLD:AAA5168 [synonym+canonicalName+synonym]
+  A.Microtus cf. arvalis BOLD:AAA5168 particle-set<= B.Rodentia sp. BOLD:AAA5168 [synonym+canonicalName+synonym]
+  B.Microtus cf. arvalis BOLD:AAA5168 particle-set<= A.Rodentia sp. BOLD:AAA5168 [synonym+canonicalName+synonym]
 ** Pipistrellus cf. tenuis BOLD:AAB2554 names different taxa in the two checklists
-  A.Pipistrellus_cf._tenuis_BOLD:AAB2554 particleset= B.Chiroptera_sp._BOLD:AAB2554 [synonym+canonicalName+synonym]
-  B.Pipistrellus_cf._tenuis_BOLD:AAB2554 particleset= A.Chiroptera_sp._BOLD:AAB2554 [synonym+canonicalName+synonym]
+  A.Pipistrellus cf. tenuis BOLD:AAB2554 particle-set<= B.Chiroptera sp. BOLD:AAB2554 [synonym+canonicalName+synonym]
+  B.Pipistrellus cf. tenuis BOLD:AAB2554 particle-set<= A.Chiroptera sp. BOLD:AAB2554 [synonym+canonicalName+synonym]
 ** Myotis cf. ater BOLD:AAA8748 names different taxa in the two checklists
-  A.Myotis_cf._ater_BOLD:AAA8748 particleset= B.Chiroptera_sp._BOLD:AAA8748 [synonym+canonicalName+synonym]
-  B.Myotis_cf._ater_BOLD:AAA8748 particleset= A.Chiroptera_sp._BOLD:AAA8748 [synonym+canonicalName+synonym]
+  A.Myotis cf. ater BOLD:AAA8748 particle-set<= B.Chiroptera sp. BOLD:AAA8748 [synonym+canonicalName+synonym]
+  B.Myotis cf. ater BOLD:AAA8748 particle-set<= A.Chiroptera sp. BOLD:AAA8748 [synonym+canonicalName+synonym]
 ** Rhinolophus cf. chaseni BOLD:AAB4878 names different taxa in the two checklists
-  A.Rhinolophus_cf._chaseni_BOLD:AAB4878 particleset= B.Chiroptera_sp._BOLD:AAB4878 [synonym+canonicalName+synonym]
-  B.Rhinolophus_cf._chaseni_BOLD:AAB4878 particleset= A.Chiroptera_sp._BOLD:AAB4878 [synonym+canonicalName+synonym]
+  A.Rhinolophus cf. chaseni BOLD:AAB4878 particle-set<= B.Chiroptera sp. BOLD:AAB4878 [synonym+canonicalName+synonym]
+  B.Rhinolophus cf. chaseni BOLD:AAB4878 particle-set<= A.Chiroptera sp. BOLD:AAB4878 [synonym+canonicalName+synonym]
 ** Rhinolophus cf. pusillus BOLD:AAB9127 names different taxa in the two checklists
-  A.Rhinolophus_cf._pusillus_BOLD:AAB9127 particleset= B.Chiroptera_sp._BOLD:AAB9127 [synonym+canonicalName+synonym]
-  B.Rhinolophus_cf._pusillus_BOLD:AAB9127 particleset= A.Chiroptera_sp._BOLD:AAB9127 [synonym+canonicalName+synonym]
+  A.Rhinolophus cf. pusillus BOLD:AAB9127 particle-set<= B.Chiroptera sp. BOLD:AAB9127 [synonym+canonicalName+synonym]
+  B.Rhinolophus cf. pusillus BOLD:AAB9127 particle-set<= A.Chiroptera sp. BOLD:AAB9127 [synonym+canonicalName+synonym]
 ** Murina cf. cyclotis BOLD:AAC4219 names different taxa in the two checklists
-  A.Murina_cf._cyclotis_BOLD:AAC4219 particleset= B.Chiroptera_sp._BOLD:AAC4219 [synonym+canonicalName+synonym]
-  B.Murina_cf._cyclotis_BOLD:AAC4219 particleset= A.Chiroptera_sp._BOLD:AAC4219 [synonym+canonicalName+synonym]
+  A.Murina cf. cyclotis BOLD:AAC4219 particle-set<= B.Chiroptera sp. BOLD:AAC4219 [synonym+canonicalName+synonym]
+  B.Murina cf. cyclotis BOLD:AAC4219 particle-set<= A.Chiroptera sp. BOLD:AAC4219 [synonym+canonicalName+synonym]
 ** Myotis cf. muricola BOLD:AAA8748 names different taxa in the two checklists
-  A.Myotis_cf._muricola_BOLD:AAA8748 particleset= B.Chiroptera_sp._BOLD:AAA8748 [synonym+canonicalName+synonym]
-  B.Myotis_cf._muricola_BOLD:AAA8748 particleset= A.Chiroptera_sp._BOLD:AAA8748 [synonym+canonicalName+synonym]
+  A.Myotis cf. muricola BOLD:AAA8748 particle-set<= B.Chiroptera sp. BOLD:AAA8748 [synonym+canonicalName+synonym]
+  B.Myotis cf. muricola BOLD:AAA8748 particle-set<= A.Chiroptera sp. BOLD:AAA8748 [synonym+canonicalName+synonym]
 ** Myotis cf. muricola BOLD:AAA8747 names different taxa in the two checklists
-  A.Myotis_cf._muricola_BOLD:AAA8747 particleset= B.Chiroptera_sp._BOLD:AAA8747 [synonym+canonicalName+synonym]
-  B.Myotis_cf._muricola_BOLD:AAA8747 particleset= A.Chiroptera_sp._BOLD:AAA8747 [synonym+canonicalName+synonym]
+  A.Myotis cf. muricola BOLD:AAA8747 particle-set<= B.Chiroptera sp. BOLD:AAA8747 [synonym+canonicalName+synonym]
+  B.Myotis cf. muricola BOLD:AAA8747 particle-set<= A.Chiroptera sp. BOLD:AAA8747 [synonym+canonicalName+synonym]
 ** Lagomorpha sp. BOLD:AAV6889 names different taxa in the two checklists
-  A.Lagomorpha_sp._BOLD:AAV6889 particleset= B.Carnivora_sp._BOLD:AAV6889 [synonym+canonicalName+synonym]
-  B.Lagomorpha_sp._BOLD:AAV6889 particleset= A.Carnivora_sp._BOLD:AAV6889 [synonym+canonicalName+synonym]
+  A.Lagomorpha sp. BOLD:AAV6889 particle-set<= B.Carnivora sp. BOLD:AAV6889 [synonym+canonicalName+synonym]
+  B.Lagomorpha sp. BOLD:AAV6889 particle-set<= A.Carnivora sp. BOLD:AAV6889 [synonym+canonicalName+synonym]
 ** Rodentia sp. BOLD:AAA3869 names different taxa in the two checklists
-  A.Rodentia_sp._BOLD:AAA3869 particleset= B.Carnivora_sp._BOLD:AAA3869 [synonym+canonicalName+synonym]
-  B.Rodentia_sp._BOLD:AAA3869 particleset= A.Carnivora_sp._BOLD:AAA3869 [synonym+canonicalName+synonym]
+  A.Rodentia sp. BOLD:AAA3869 particle-set<= B.Carnivora sp. BOLD:AAA3869 [synonym+canonicalName+synonym]
+  B.Rodentia sp. BOLD:AAA3869 particle-set<= A.Carnivora sp. BOLD:AAA3869 [synonym+canonicalName+synonym]
 ** Artibeus sp. BOLD:AAA2159 names different taxa in the two checklists
-  A.Artibeus_sp._BOLD:AAA2159 particleset= B.Chiroptera_sp._BOLD:AAA2159 [synonym+canonicalName+synonym]
-  B.Artibeus_sp._BOLD:AAA2159 particleset= A.Chiroptera_sp._BOLD:AAA2159 [synonym+canonicalName+synonym]
+  A.Artibeus sp. BOLD:AAA2159 particle-set<= B.Chiroptera sp. BOLD:AAA2159 [synonym+canonicalName+synonym]
+  B.Artibeus sp. BOLD:AAA2159 particle-set<= A.Chiroptera sp. BOLD:AAA2159 [synonym+canonicalName+synonym]
 ** Artibeus sp. BOLD:AAA2160 names different taxa in the two checklists
-  A.Artibeus_sp._BOLD:AAA2160 particleset= B.Chiroptera_sp._BOLD:AAA2160 [synonym+canonicalName+synonym]
-  B.Artibeus_sp._BOLD:AAA2160 particleset= A.Chiroptera_sp._BOLD:AAA2160 [synonym+canonicalName+synonym]
+  A.Artibeus sp. BOLD:AAA2160 particle-set<= B.Chiroptera sp. BOLD:AAA2160 [synonym+canonicalName+synonym]
+  B.Artibeus sp. BOLD:AAA2160 particle-set<= A.Chiroptera sp. BOLD:AAA2160 [synonym+canonicalName+synonym]
 ** Artibeus sp. BOLD:AAA2332 names different taxa in the two checklists
-  A.Artibeus_sp._BOLD:AAA2332 particleset= B.Chiroptera_sp._BOLD:AAA2332 [synonym+canonicalName+synonym]
-  B.Artibeus_sp._BOLD:AAA2332 particleset= A.Chiroptera_sp._BOLD:AAA2332 [synonym+canonicalName+synonym]
+  A.Artibeus sp. BOLD:AAA2332 particle-set<= B.Chiroptera sp. BOLD:AAA2332 [synonym+canonicalName+synonym]
+  B.Artibeus sp. BOLD:AAA2332 particle-set<= A.Chiroptera sp. BOLD:AAA2332 [synonym+canonicalName+synonym]
 ** Nectomys sp. BOLD:AAC2628 names different taxa in the two checklists
-  A.Nectomys_sp._BOLD:AAC2628 particleset= B.Rodentia_sp._BOLD:AAC2628 [synonym+canonicalName+synonym]
-  B.Nectomys_sp._BOLD:AAC2628 particleset= A.Rodentia_sp._BOLD:AAC2628 [synonym+canonicalName+synonym]
+  A.Nectomys sp. BOLD:AAC2628 particle-set<= B.Rodentia sp. BOLD:AAC2628 [synonym+canonicalName+synonym]
+  B.Nectomys sp. BOLD:AAC2628 particle-set<= A.Rodentia sp. BOLD:AAC2628 [synonym+canonicalName+synonym]
 ** Nectomys sp. BOLD:AAM5477 names different taxa in the two checklists
-  A.Nectomys_sp._BOLD:AAM5477 particleset= B.Rodentia_sp._BOLD:AAM5477 [synonym+canonicalName+synonym]
-  B.Nectomys_sp._BOLD:AAM5477 particleset= A.Rodentia_sp._BOLD:AAM5477 [synonym+canonicalName+synonym]
+  A.Nectomys sp. BOLD:AAM5477 particle-set<= B.Rodentia sp. BOLD:AAM5477 [synonym+canonicalName+synonym]
+  B.Nectomys sp. BOLD:AAM5477 particle-set<= A.Rodentia sp. BOLD:AAM5477 [synonym+canonicalName+synonym]
 ** Oryzomys sp. BOLD:AAA2984 names different taxa in the two checklists
-  A.Oryzomys_sp._BOLD:AAA2984 particleset= B.Rodentia_sp._BOLD:AAA2984 [synonym+canonicalName+synonym]
-  B.Oryzomys_sp._BOLD:AAA2984 particleset= A.Rodentia_sp._BOLD:AAA2984 [synonym+canonicalName+synonym]
+  A.Oryzomys sp. BOLD:AAA2984 particle-set<= B.Rodentia sp. BOLD:AAA2984 [synonym+canonicalName+synonym]
+  B.Oryzomys sp. BOLD:AAA2984 particle-set<= A.Rodentia sp. BOLD:AAA2984 [synonym+canonicalName+synonym]
 ** Proechimys sp. BOLD:AAA1748 names different taxa in the two checklists
-  A.Proechimys_sp._BOLD:AAA1748 particleset= B.Rodentia_sp._BOLD:AAA1748 [synonym+canonicalName+synonym]
-  B.Proechimys_sp._BOLD:AAA1748 particleset= A.Rodentia_sp._BOLD:AAA1748 [synonym+canonicalName+synonym]
+  A.Proechimys sp. BOLD:AAA1748 particle-set<= B.Rodentia sp. BOLD:AAA1748 [synonym+canonicalName+synonym]
+  B.Proechimys sp. BOLD:AAA1748 particle-set<= A.Rodentia sp. BOLD:AAA1748 [synonym+canonicalName+synonym]
 ** Proechimys sp. BOLD:AAA3831 names different taxa in the two checklists
-  A.Proechimys_sp._BOLD:AAA3831 particleset= B.Rodentia_sp._BOLD:AAA3831 [synonym+canonicalName+synonym]
-  B.Proechimys_sp._BOLD:AAA3831 particleset= A.Rodentia_sp._BOLD:AAA3831 [synonym+canonicalName+synonym]
+  A.Proechimys sp. BOLD:AAA3831 particle-set<= B.Rodentia sp. BOLD:AAA3831 [synonym+canonicalName+synonym]
+  B.Proechimys sp. BOLD:AAA3831 particle-set<= A.Rodentia sp. BOLD:AAA3831 [synonym+canonicalName+synonym]
 ** Peromyscus sp. BOLD:AAA3869 names different taxa in the two checklists
-  A.Peromyscus_sp._BOLD:AAA3869 particleset= B.Carnivora_sp._BOLD:AAA3869 [synonym+canonicalName+synonym]
-  B.Peromyscus_sp._BOLD:AAA3869 particleset= A.Carnivora_sp._BOLD:AAA3869 [synonym+canonicalName+synonym]
+  A.Peromyscus sp. BOLD:AAA3869 particle-set<= B.Carnivora sp. BOLD:AAA3869 [synonym+canonicalName+synonym]
+  B.Peromyscus sp. BOLD:AAA3869 particle-set<= A.Carnivora sp. BOLD:AAA3869 [synonym+canonicalName+synonym]
 ** Hylomyscus sp. 7 VN-2012 names different taxa in the two checklists
-  A.Hylomyscus_sp._7_VN-2012 merge B.Hylomyscus_sp._10_VN-2012 [None]
-  B.Hylomyscus_sp._7_VN-2012 merge A.Hylomyscus_sp._10_VN-2012 [None]
+  A.Hylomyscus sp. 7 VN-2012 lump B.Hylomyscus sp. 10 VN-2012 [None]
+  B.Hylomyscus sp. 7 VN-2012 lump A.Hylomyscus sp. 10 VN-2012 [None]
 ** Rhinolophus sp. BOLD:AAB4878 names different taxa in the two checklists
-  A.Rhinolophus_sp._BOLD:AAB4878 particleset= B.Chiroptera_sp._BOLD:AAB4878 [synonym+canonicalName+synonym]
-  B.Rhinolophus_sp._BOLD:AAB4878 particleset= A.Chiroptera_sp._BOLD:AAB4878 [synonym+canonicalName+synonym]
+  A.Rhinolophus sp. BOLD:AAB4878 particle-set<= B.Chiroptera sp. BOLD:AAB4878 [synonym+canonicalName+synonym]
+  B.Rhinolophus sp. BOLD:AAB4878 particle-set<= A.Chiroptera sp. BOLD:AAB4878 [synonym+canonicalName+synonym]
 ** Semnopithecus priam names different taxa in the two checklists
-  A.Semnopithecus_priam matches B.Semnopithecus_priam [scientificName]
-  B.Semnopithecus_priam = A.Semnopithecus_entellus_priam [None]
+  A.Semnopithecus priam matches B.Semnopithecus priam [scientificName]
+  B.Semnopithecus priam = A.Semnopithecus entellus priam [None]
 ** unclassified Murinae names different taxa in the two checklists
-  A.unclassified_Murinae = B.Soricomys [mutual-cross-mrca]
-  B.unclassified_Murinae matches A.unclassified_Murinae [canonicalName]
+  A.unclassified Murinae = B.Soricomys [mutual-cross-mrca]
+  B.unclassified Murinae matches A.unclassified Murinae [canonicalName]
 ** Graphiurus kelleni names different taxa in the two checklists
-  A.Graphiurus_kelleni merge B.Graphiurus_kelleni [scientificName]
+  A.Graphiurus kelleni lump B.Graphiurus kelleni [scientificName]
 ** Rhinolophidae sp. BOLD:AAB9127 names different taxa in the two checklists
-  A.Rhinolophidae_sp._BOLD:AAB9127 particleset= B.Chiroptera_sp._BOLD:AAB9127 [synonym+canonicalName+synonym]
-  B.Rhinolophidae_sp._BOLD:AAB9127 particleset= A.Chiroptera_sp._BOLD:AAB9127 [synonym+canonicalName+synonym]
+  A.Rhinolophidae sp. BOLD:AAB9127 particle-set<= B.Chiroptera sp. BOLD:AAB9127 [synonym+canonicalName+synonym]
+  B.Rhinolophidae sp. BOLD:AAB9127 particle-set<= A.Chiroptera sp. BOLD:AAB9127 [synonym+canonicalName+synonym]
 ** Vespertilionidae sp. BOLD:AAH8358 names different taxa in the two checklists
-  A.Vespertilionidae_sp._BOLD:AAH8358 particleset= B.Chiroptera_sp._BOLD:AAH8358 [synonym+canonicalName+synonym]
-  B.Vespertilionidae_sp._BOLD:AAH8358 particleset= A.Chiroptera_sp._BOLD:AAH8358 [synonym+canonicalName+synonym]
+  A.Vespertilionidae sp. BOLD:AAH8358 particle-set<= B.Chiroptera sp. BOLD:AAH8358 [synonym+canonicalName+synonym]
+  B.Vespertilionidae sp. BOLD:AAH8358 particle-set<= A.Chiroptera sp. BOLD:AAH8358 [synonym+canonicalName+synonym]
 ** Vespertilionidae sp. BOLD:AAC0445 names different taxa in the two checklists
-  A.Vespertilionidae_sp._BOLD:AAC0445 particleset= B.Hipposideros_bicolor_'142_KHz' [synonym+canonicalName+synonym]
-  B.Vespertilionidae_sp._BOLD:AAC0445 particleset= A.Hipposideros_bicolor_'142_KHz' [synonym+canonicalName+synonym]
+  A.Vespertilionidae sp. BOLD:AAC0445 particle-set<= B.Hipposideros bicolor '142 KHz' [synonym+canonicalName+synonym]
+  B.Vespertilionidae sp. BOLD:AAC0445 particle-set<= A.Hipposideros bicolor '142 KHz' [synonym+canonicalName+synonym]

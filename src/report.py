@@ -49,6 +49,16 @@ def really_write_report(A, B, al, xmrcas, format, outfile):
     report(A, B, al, roots, parents, outfile)
     report_on_collisions(A, B, al)
 
+def assign_ids(parents, roots, children):
+  id_table = {}
+  def process(node):
+    id_table[node] = len(id_table) + 1
+    for child in children.get(node, []):
+      process(child)
+  for root in roots:
+    process(root)
+  return id_table
+
 canonical_name = cl.field("canonicalName")
 
 def report_on_collisions(A, B, al):
@@ -76,23 +86,25 @@ def report_on_collisions(A, B, al):
 
 def report(A, B, al, roots, parents, outfile):
   writer = csv.writer(outfile)
-  writer.writerow(["indent", "operation", "dom", "dom id", "relation", "cod id", "cod", "unchanged", "changed_props", "reason", "rank"])
+  write_header(writer)
   children = cl.invert_dict(parents)
   all_props = set.intersection(set(A.properties), set(B.properties))
   changed = find_changed_subtrees(roots, children, all_props)
-  def process(mnode, indent):
+  id_table = assign_ids(parents, roots, children)
 
-    ch = None
-    status = changed.get(mnode)
+  def taxon_report(mnode, indent):
+    nodiff = None
+    different = changed.get(mnode)
 
+    id = id_table[mnode]
     (x, y) = mnode
-    childs = children.get(mnode, [])
     re = None
     dif = None
-    reason = None
+    z = None
+    note = None
     if x and y:
       op = "SHARED"
-      re = al.get(x).relation.name  # ~ ≈ or =
+      ar = al.get(x)
       comparison = diff.differences(x, y, all_props)
       if not diff.same(comparison):
         props = diff.unpack(comparison)
@@ -100,68 +112,79 @@ def report(A, B, al, roots, parents, outfile):
       px = cl.get_parent(x)
       qx = al.get(px)
       if qx and qx.cod != cl.get_parent(y):
-        op += (" (moved from %s)" % cl.get_node_id(px))
-      reason = art.reason(al[x])
+        #note = ("moved from %s" % cl.get_node_id(px))
+        note = "moved"
 
-      if not status:
+      if not different:
+        childs = children.get(mnode, [])
         if len(childs) > 0:
-          ch = "subtree="
+          nodiff = "subtree="
         else:
-          ch = "tip"
+          nodiff = "tip"
 
     elif x:
       op = "A ONLY"
       ar = al.get(x)
       if ar:
-        re = ar.relation.name
-        reason = art.reason(ar)
+        z = ar.cod
         # Equivalence, usually, but sometimes not
-        y = ar.cod
 
         if rel.is_variant(ar.relation, rel.eq):
-          op += " (merge)"
+          note = "lump"
         elif rel.is_variant(ar.relation, rel.conflict):
-          op += " (conflict)"
+          note = "conflict"
         elif rel.is_variant(ar.relation, rel.lt):
-          op += " (loss of resolution)"
+          note = "loss of resolution"
     else:                       # y
       op = "B ONLY"
       ar = al.get(y)
       if ar:
-        re = ar.relation.revname
-        reason = art.reason(ar)
-        x = ar.cod
+        z = ar.cod
+        ar = art.reverse(ar)
         if rel.is_variant(ar.relation, rel.eq):
-          op += " (split)"
+          note = "split"
         elif rel.is_variant(ar.relation, rel.conflict):
-          op += " (reorganization)"
+          note = "reorganization"
         elif rel.is_variant(ar.relation, rel.lt):
-          op += " (increased resolution)"
+          note = "increased resolution"
 
-    report_one_articulation(op, ch, dif, x, re, y, reason, writer, indent)
-    jndent = indent + "__"
-    if status:
-      for child in childs:
+    report_one_articulation(id, op, nodiff, dif, x, y, z, ar, note, writer, indent)
+    return different
+
+  def process(mnode, indent):
+    different = taxon_report(mnode, indent)
+    jndent = indent + "—"    # em dash
+    if different:
+      for child in children.get(mnode, []):
         process(child, jndent)
   for root in roots:
     process(root, "")
 
-def report_one_articulation(op, ch, dif, x, re, y, reason, writer, indent):
-  ux = None
-  ix = None
-  uy = None
-  iy = None
-  if x:
-    ux = cl.get_unique(x)
-    ix = cl.get_node_id(x)
-    rank = cl.get_nominal_rank(x)
-  if y:
-    uy = cl.get_unique(y)
-    iy = cl.get_node_id(y)
-    rank = cl.get_nominal_rank(y)
-  writer.writerow([indent, op,
-                   ux, ix, re,
-                   iy, uy, ch, dif, reason, rank])
+def report_one_articulation(id, op, nodiff, dif, x, y, z, ar, note, writer, indent):
+  (ix, ux, rankx) = node_data(x)
+  (iy, uy, ranky) = node_data(y)
+  (iz, uz, _) = node_data(z)
+  rank = rankx or ranky
+  relation = ar.relation.name if ar else None
+  reason = art.reason(ar) if ar else None
+  writer.writerow([indent, id, #op,
+                   rank, 
+                   ix, ux, 
+                   iy, uy, relation, iz, uz,
+                   note, reason, dif, nodiff])
+
+def write_header(writer):
+  writer.writerow(["indent", "taxonID", #"operation",
+                   "rank", 
+                   "A id", "A name",
+                   "B id", "B name", "relation", "other id", "other name",
+                   "note", "reason", "changed_props", "unchanged"])
+
+def node_data(node):
+  if node:
+    return (cl.get_node_id(node), cl.get_unique(node), cl.get_nominal_rank(node))
+  else:
+    return (None, None, None)
 
 # --------------------
 # utilities

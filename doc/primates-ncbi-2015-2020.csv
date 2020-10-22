@@ -1,758 +1,758 @@
-indent,operation,dom,dom id,relation,cod id,cod,unchanged,changed_props,reason,rank
-,SHARED,N15.Primates,9443,=,9443,N20.Primates,,,scientificName,order
-__,SHARED,N15.unclassified_Primates,57118,=,57118,N20.unclassified_Primates,subtree=,number_of_children,canonicalName,
-__,SHARED,N15.Strepsirrhini,376911,=,376911,N20.Strepsirrhini,,,scientificName,suborder
-____,SHARED,N15.Lemuriformes,376915,=,376915,N20.Lemuriformes,,,scientificName,infraorder
-______,SHARED,N15.Lemuridae,9445,=,9445,N20.Lemuridae,,,canonicalName,family
-________,SHARED,N15.Lemur,9446,=,9446,N20.Lemur,,,canonicalName,genus
-__________,SHARED,N15.Lemur_catta,9447,=,9447,N20.Lemur_catta,tip,,canonicalName,species
-__________,B ONLY,,,,2641939,N20.unclassified_Lemur,,,,
-________,SHARED,N15.Varecia,9454,=,9454,N20.Varecia,,,canonicalName,genus
-__________,A ONLY,N15.Varecia_variegata,9455,,,,,,,species
-__________,SHARED,N15.Varecia_rubra,554167,=,554167,N20.Varecia_rubra,tip,,canonicalName,species
-__________,B ONLY,,,,9455,N20.Varecia_variegata,,,,species
-________,SHARED,N15.Eulemur,13513,=,13513,N20.Eulemur,,number_of_children,scientificName,genus
-__________,SHARED,N15.Eulemur_coronatus,13514,=,13514,N20.Eulemur_coronatus,tip,,scientificName,species
-__________,SHARED,N15.Eulemur_fulvus,13515,=,13515,N20.Eulemur_fulvus,subtree=,,canonicalName,species
-__________,A ONLY,N15.Eulemur_macaco,30602,,,,,,,species
-__________,SHARED,N15.Eulemur_mongoz,34828,=,34828,N20.Eulemur_mongoz,tip,,canonicalName,species
-__________,SHARED,N15.Eulemur_rubriventer,34829,=,34829,N20.Eulemur_rubriventer,tip,,canonicalName,species
-__________,SHARED,N15.Eulemur_flavifrons,87288,=,87288,N20.Eulemur_flavifrons,tip,,scientificName,species
-__________,SHARED,N15.Eulemur_sanfordi,122225,=,122225,N20.Eulemur_sanfordi,tip,,scientificName,species
-__________,SHARED,N15.Eulemur_cinereiceps,639525,=,639525,N20.Eulemur_cinereiceps,tip,,scientificName,species
-__________,SHARED,N15.Eulemur_rufus,859983,=,859983,N20.Eulemur_rufus,tip,,scientificName,species
-__________,SHARED,N15.Eulemur_rufifrons,859984,=,859984,N20.Eulemur_rufifrons,tip,,scientificName,species
-__________,SHARED,N15.Eulemur_albifrons,1215604,=,1215604,N20.Eulemur_albifrons,tip,,scientificName,species
-__________,SHARED,N15.Eulemur_albifrons_x_rufifrons,1417231,=,1417231,N20.Eulemur_albifrons_x_rufifrons,tip,,canonicalName,species
-__________,SHARED,N15.Eulemur_albifrons_x_cinereiceps,1417236,=,1417236,N20.Eulemur_albifrons_x_cinereiceps,tip,,canonicalName,species
-__________,SHARED,N15.Eulemur_cinereiceps_x_rufifrons,1417237,=,1417237,N20.Eulemur_cinereiceps_x_rufifrons,tip,,canonicalName,species
-__________,A ONLY (merge),N15.Eulemur_hybrids,1417238,=,13513,N20.Eulemur,,,monotypic,genus
-__________,B ONLY,,,,30602,N20.Eulemur_macaco,,,,species
-________,SHARED,N15.Hapalemur,13556,=,13556,N20.Hapalemur,,,canonicalName,genus
-__________,SHARED,N15.Hapalemur_griseus,13557,=,13557,N20.Hapalemur_griseus,subtree=,,canonicalName,species
-__________,SHARED,N15.Hapalemur_aureus,122222,=,122222,N20.Hapalemur_aureus,tip,,canonicalName,species
-__________,SHARED,N15.Hapalemur_occidentalis,867377,=,867377,N20.Hapalemur_occidentalis,tip,,scientificName,species
-________,A ONLY,N15.Prolemur,1328069,,,,,,,genus
-________,A ONLY,N15.Pachylemur,1513474,,,,,,,genus
-________,B ONLY,,,,1328069,N20.Prolemur,,,,genus
-________,B ONLY,,,,1513474,N20.Pachylemur,,,,genus
-______,SHARED,N15.Indriidae,30599,=,30599,N20.Indriidae,,,canonicalName,family
-________,SHARED,N15.Propithecus,30600,=,30600,N20.Propithecus,,,canonicalName,genus
-__________,SHARED,N15.Propithecus_tattersalli,30601,=,30601,N20.Propithecus_tattersalli,tip,,canonicalName,species
-__________,A ONLY,N15.Propithecus_verreauxi,34825,,,,,,,species
-__________,SHARED,N15.Propithecus_diadema,83281,=,83281,N20.Propithecus_diadema,subtree=,,canonicalName,species
-__________,SHARED,N15.Propithecus_coquereli,379532,=,379532,N20.Propithecus_coquereli,tip,,scientificName,species
-__________,SHARED,N15.Propithecus_deckenii,475618,=,475618,N20.Propithecus_deckenii,subtree=,,canonicalName,species
-__________,SHARED,N15.Propithecus_edwardsi,543559,=,543559,N20.Propithecus_edwardsi,tip,,canonicalName,species
-__________,SHARED,N15.Propithecus_candidus,543560,=,543560,N20.Propithecus_candidus,tip,,canonicalName,species
-__________,SHARED,N15.Propithecus_perrieri,989338,=,989338,N20.Propithecus_perrieri,tip,,scientificName,species
-__________,B ONLY,,,,34825,N20.Propithecus_verreauxi,,,,species
-__________,B ONLY,,,,2677806,N20.unclassified_Propithecus,,,,
-________,A ONLY,N15.Indri,34826,,,,,,,genus
-________,SHARED,N15.Avahi,122245,=,122245,N20.Avahi,,,canonicalName,genus
-__________,SHARED,N15.Avahi_laniger,122246,=,122246,N20.Avahi_laniger,tip,,canonicalName,species
-__________,SHARED,N15.Avahi_occidentalis,132108,=,132108,N20.Avahi_occidentalis,tip,,canonicalName,species
-__________,SHARED,N15.Avahi_unicolor,402239,=,402239,N20.Avahi_unicolor,tip,,canonicalName,species
-__________,SHARED,N15.Avahi_cleesei,402244,=,402244,N20.Avahi_cleesei,tip,,canonicalName,species
-__________,SHARED,N15.Avahi_peyrierasi,1313323,=,1313323,N20.Avahi_peyrierasi,tip,scientificName,canonicalName,species
-________,SHARED,N15.Archaeolemur,523820,=,523820,N20.Archaeolemur,subtree=,,canonicalName,genus
-________,A ONLY,N15.Hadropithecus,523824,,,,,,,genus
-________,B ONLY,,,,34826,N20.Indri,,,,genus
-________,B ONLY,,,,523824,N20.Hadropithecus,,,,genus
-______,SHARED,N15.Lepilemuridae,30614,=,30614,N20.Lepilemuridae,,,canonicalName,family
-________,SHARED,N15.Lepilemur,9452,=,9452,N20.Lepilemur,,number_of_children,canonicalName,genus
-__________,SHARED,N15.Lepilemur_mustelinus,9453,=,9453,N20.Lepilemur_mustelinus,tip,,canonicalName,species
-__________,SHARED,N15.Lepilemur_dorsalis,78583,=,78583,N20.Lepilemur_dorsalis,tip,,canonicalName,species
-__________,SHARED,N15.Lepilemur_septentrionalis,78584,=,78584,N20.Lepilemur_septentrionalis,tip,,canonicalName,species
-__________,SHARED,N15.Lepilemur_ruficaudatus,78866,=,78866,N20.Lepilemur_ruficaudatus,tip,,canonicalName,species
-__________,SHARED,N15.Lepilemur_leucopus,100475,=,100475,N20.Lepilemur_leucopus,tip,,canonicalName,species
-__________,SHARED,N15.Lepilemur_edwardsi,122230,=,122230,N20.Lepilemur_edwardsi,tip,,canonicalName,species
-__________,SHARED,N15.Lepilemur_microdon,185457,=,185457,N20.Lepilemur_microdon,tip,,canonicalName,species
-__________,SHARED,N15.Lepilemur_mitsinjoensis,236287,=,236287,N20.Lepilemur_mitsinjoensis,tip,,canonicalName,species
-__________,SHARED,N15.Lepilemur_seali,236288,=,236288,N20.Lepilemur_seali,tip,,scientificName,species
-__________,SHARED,N15.Lepilemur_sahamalazensis,342398,=,342398,N20.Lepilemur_sahamalazensis,tip,,canonicalName,species
-__________,SHARED,N15.Lepilemur_aeeclis,342399,=,342399,N20.Lepilemur_aeeclis,tip,,canonicalName,species
-__________,SHARED,N15.Lepilemur_ankaranensis,342401,=,342401,N20.Lepilemur_ankaranensis,tip,,canonicalName,species
-__________,SHARED,N15.Lepilemur_mittermeieri,378517,=,378517,N20.Lepilemur_mittermeieri,tip,,canonicalName,species
-__________,SHARED,N15.Lepilemur_manasamody,458171,=,458171,N20.Lepilemur_manasamody,tip,,canonicalName,species
-__________,SHARED,N15.Lepilemur_otto,458173,=,458173,N20.Lepilemur_otto,tip,,canonicalName,species
-__________,SHARED,N15.Lepilemur_jamesi,486960,=,486960,N20.Lepilemur_jamesorum,tip,canonicalName,ncbi_id,species
-__________,SHARED,N15.Lepilemur_hubbardorum,756882,=,756882,N20.Lepilemur_hubbardorum,tip,,scientificName,species
-__________,SHARED,N15.Lepilemur_petteri,886964,=,886964,N20.Lepilemur_petteri,tip,,scientificName,species
-__________,SHARED,N15.Lepilemur_randrianasoloi,886965,=,886965,N20.Lepilemur_randrianasoloi,tip,,scientificName,species
-__________,B ONLY,,,,886957,N20.Lepilemur_ahmansonorum,,,,species
-__________,B ONLY,,,,886958,N20.Lepilemur_betsileo,,,,species
-__________,B ONLY,,,,886959,N20.Lepilemur_fleuretae,,,,species
-__________,B ONLY,,,,886960,N20.Lepilemur_grewcockorum,,,,species
-__________,B ONLY,,,,886961,N20.Lepilemur_hollandorum,,,,species
-__________,B ONLY,,,,886963,N20.Lepilemur_milanoii,,,,species
-__________,B ONLY,,,,886966,N20.Lepilemur_scottorum,,,,species
-__________,B ONLY,,,,886967,N20.Lepilemur_tymerlachsoni,,,,species
-__________,B ONLY,,,,886968,N20.Lepilemur_wrightae,,,,species
-__________,B ONLY (split),N15.Lepilemur,9452,=,2645584,N20.unclassified_Lepilemur,,,monotypic,
-________,SHARED,N15.Megaladapis,126593,=,126593,N20.Megaladapis,,number_of_children,canonicalName,genus
-__________,SHARED,N15.Megaladapis_edwardsi,185953,=,185953,N20.Megaladapis_edwardsi,tip,,canonicalName,species
-__________,B ONLY (split),N15.Megaladapis,126593,=,2620125,N20.unclassified_Megaladapis,,,monotypic,
-______,SHARED,N15.Cheirogaleidae,30615,=,30615,N20.Cheirogaleidae,,,scientificName,family
-________,SHARED,N15.Cheirogaleus,9459,=,9459,N20.Cheirogaleus,,number_of_children,scientificName,genus
-__________,SHARED,N15.Cheirogaleus_medius,9460,=,9460,N20.Cheirogaleus_medius,tip,scientificName,canonicalName,species
-__________,SHARED,N15.Cheirogaleus_major,47177,=,47177,N20.Cheirogaleus_major,tip,scientificName,canonicalName,species
-__________,SHARED,N15.Cheirogaleus_crossleyi,291259,=,291259,N20.Cheirogaleus_crossleyi,tip,scientificName,canonicalName,species
-__________,SHARED,N15.Cheirogaleus_sibreei,752538,=,752538,N20.Cheirogaleus_sibreei,tip,,scientificName,species
-__________,SHARED,N15.Cheirogaleus_minusculus,867375,=,867375,N20.Cheirogaleus_minusculus,tip,,scientificName,species
-__________,SHARED,N15.Cheirogaleus_lavasoensis,1569974,=,1569974,N20.Cheirogaleus_lavasoensis,tip,scientificName,canonicalName,species
-__________,B ONLY,,,,2563322,N20.Cheirogaleus_cf._medius_RW-2019,,,,species
-________,SHARED,N15.Microcebus,13149,=,13149,N20.Microcebus,,number_of_children,scientificName,genus
-__________,SHARED,N15.Microcebus_murinus,30608,=,30608,N20.Microcebus_murinus,tip,,canonicalName,species
-__________,SHARED,N15.Microcebus_ravelobensis,122231,=,122231,N20.Microcebus_ravelobensis,tip,,canonicalName,species
-__________,SHARED,N15.Microcebus_rufus,122232,=,122232,N20.Microcebus_rufus,tip,,canonicalName,species
-__________,SHARED,N15.Microcebus_myoxinus,143283,=,143283,N20.Microcebus_myoxinus,tip,,canonicalName,species
-__________,SHARED,N15.Microcebus_tavaratra,143351,=,143351,N20.Microcebus_tavaratra,tip,,canonicalName,species
-__________,SHARED,N15.Microcebus_berthae,143352,=,143352,N20.Microcebus_berthae,tip,scientificName,canonicalName,species
-__________,SHARED,N15.Microcebus_sambiranensis,143353,=,143353,N20.Microcebus_sambiranensis,tip,,canonicalName,species
-__________,SHARED,N15.Microcebus_griseorufus,143354,=,143354,N20.Microcebus_griseorufus,tip,,canonicalName,species
-__________,SHARED,N15.Microcebus_simmonsi,236272,=,236272,N20.Microcebus_simmonsi,tip,,canonicalName,species
-__________,SHARED,N15.Microcebus_mittermeieri,236274,=,236274,N20.Microcebus_mittermeieri,tip,,canonicalName,species
-__________,SHARED,N15.Microcebus_jollyae,236275,=,236275,N20.Microcebus_jollyae,tip,,canonicalName,species
-__________,SHARED,N15.Microcebus_lehilahytsara,343908,=,343908,N20.Microcebus_lehilahytsara,tip,,canonicalName,species
-__________,SHARED,N15.Microcebus_bongolavensis,412750,=,412750,N20.Microcebus_bongolavensis,tip,,canonicalName,species
-__________,SHARED,N15.Microcebus_danfossi,412751,=,412751,N20.Microcebus_danfossi,tip,,canonicalName,species
-__________,SHARED,N15.Microcebus_lokobensis,412752,=,412752,N20.Microcebus_lokobensis,tip,,canonicalName,species
-__________,SHARED,N15.Microcebus_mamiratra,415757,=,415757,N20.Microcebus_mamiratra,tip,,canonicalName,species
-__________,SHARED,N15.Microcebus_macarthurii,548481,=,548481,N20.Microcebus_macarthurii,tip,,canonicalName,species
-__________,SHARED,N15.Microcebus_arnholdi,864580,=,864580,N20.Microcebus_arnholdi,tip,,scientificName,species
-__________,SHARED,N15.Microcebus_margotmarshae,864581,=,864581,N20.Microcebus_margotmarshae,tip,,scientificName,species
-__________,SHARED,N15.Microcebus_gerpi,1131379,=,1131379,N20.Microcebus_gerpi,tip,,scientificName,species
-__________,SHARED,N15.Microcebus_tanosi,1310123,=,1310123,N20.Microcebus_tanosi,tip,,scientificName,species
-__________,SHARED,N15.Microcebus_marohita,1310124,=,1310124,N20.Microcebus_marohita,tip,,scientificName,species
-__________,B ONLY,,,,2483760,N20.Microcebus_ganzhorni,,,,species
-__________,B ONLY (split),N15.Microcebus,13149,=,2630091,N20.unclassified_Microcebus,,,monotypic,
-____________,SHARED (moved from 13149),N15.Microcebus_sp._EELHDZ_M98,270538,=,270538,N20.Microcebus_sp._EELHDZ_M98,tip,,canonicalName,species
-____________,SHARED (moved from 13149),N15.Microcebus_sp._EELHDZ_TAD23,270540,=,270540,N20.Microcebus_sp._EELHDZ_TAD23,tip,,canonicalName,species
-____________,SHARED (moved from 13149),N15.Microcebus_sp._EELHDZ_VEV33,270674,=,270674,N20.Microcebus_sp._EELHDZ_VEV33,tip,,canonicalName,species
-____________,SHARED (moved from 13149),N15.Microcebus_sp._EELHDZ_VEV35,270675,=,270675,N20.Microcebus_sp._EELHDZ_VEV35,tip,,canonicalName,species
-____________,SHARED (moved from 13149),N15.Microcebus_sp._ANT5.1,388736,=,388736,N20.Microcebus_sp._ANT5.1,tip,,canonicalName,species
-____________,SHARED (moved from 13149),N15.Microcebus_sp._Ambongabe,412758,=,412758,N20.Microcebus_sp._Ambongabe,tip,,canonicalName,species
-____________,SHARED (moved from 13149),N15.Microcebus_sp._Bora,412759,=,412759,N20.Microcebus_sp._Bora,tip,,canonicalName,species
-____________,SHARED (moved from 13149),N15.Microcebus_sp._Mahajamba-Est,412760,=,412760,N20.Microcebus_sp._Mahajamba-Est,tip,,canonicalName,species
-____________,SHARED (moved from 13149),N15.Microcebus_sp._Maroakata,412761,=,412761,N20.Microcebus_sp._Maroakata,tip,,canonicalName,species
-____________,SHARED (moved from 13149),N15.Microcebus_sp._Anjiahely,548482,=,548482,N20.Microcebus_sp._Anjiahely,tip,,canonicalName,species
-____________,SHARED (moved from 13149),N15.Microcebus_sp._DWW-2010a,764313,=,764313,N20.Microcebus_sp._DWW-2010a,tip,,canonicalName,species
-____________,SHARED (moved from 13149),N15.Microcebus_sp._d'Ambre,1310125,=,1310125,N20.Microcebus_sp._d'Ambre,tip,,canonicalName,species
-____________,B ONLY,,,,418100,N20.Microcebus_sp._Antanosy,,,,species
-____________,B ONLY,,,,2508170,N20.Microcebus_sp._3_GT-2019,,,,species
-____________,B ONLY,,,,2683930,N20.Microcebus_sp._south_Manambery,,,,species
-________,SHARED,N15.Mirza,83691,=,83691,N20.Mirza,,,canonicalName,genus
-__________,SHARED,N15.Mirza_coquereli,47180,=,47180,N20.Mirza_coquereli,tip,,canonicalName,species
-__________,SHARED,N15.Mirza_zaza,339999,=,339999,N20.Mirza_zaza,tip,,canonicalName,species
-__________,B ONLY,,,,2628182,N20.unclassified_Mirza,,,,
-________,A ONLY,N15.Allocebus,122247,,,,,,,genus
-________,SHARED,N15.Phaner,261733,=,261733,N20.Phaner,,,canonicalName,genus
-__________,SHARED,N15.Phaner_furcifer,261734,=,261734,N20.Phaner_furcifer,tip,,canonicalName,species
-__________,SHARED,N15.Phaner_pallescens,568393,=,568393,N20.Phaner_pallescens,tip,scientificName,canonicalName,species
-__________,SHARED,N15.Phaner_electromontis,1313324,=,1313324,N20.Phaner_electromontis,tip,scientificName,canonicalName,species
-__________,SHARED,N15.Phaner_parienti,1313325,=,1313325,N20.Phaner_parienti,tip,scientificName,canonicalName,species
-________,B ONLY,,,,122247,N20.Allocebus,,,,genus
-______,SHARED,N15.Paleopropithecidae,1513476,=,1513476,N20.Paleopropithecidae,,,canonicalName,family
-________,SHARED,N15.Palaeopropithecus,322024,=,322024,N20.Palaeopropithecus,,number_of_children,canonicalName,genus
-__________,SHARED,N15.Palaeopropithecus_ingens,1513477,=,1513477,N20.Palaeopropithecus_ingens,tip,,scientificName,species
-__________,SHARED,N15.Palaeopropithecus_maximus,1597978,=,1597978,N20.Palaeopropithecus_maximus,tip,,scientificName,species
-__________,B ONLY (split),N15.Palaeopropithecus,322024,=,2619300,N20.unclassified_Palaeopropithecus,,,monotypic,
-____,A ONLY,N15.Chiromyiformes,376916,,,,,,,infraorder
-______,SHARED,N15.Lorisidae,9461,=,9461,N20.Lorisidae,,,canonicalName,family
-________,SHARED,N15.Loris,9467,=,9467,N20.Loris,,,canonicalName,genus
-__________,A ONLY,N15.Loris_tardigradus,9468,,,,,,,species
-__________,A ONLY,N15.Loris_lydekkerianus,300163,,,,,,,species
-__________,B ONLY,,,,9468,N20.Loris_tardigradus,,,,species
-____________,B ONLY,,,,1738049,N20.Loris_tardigradus_tardigradus,,,,subspecies
-__________,B ONLY,,,,300163,N20.Loris_lydekkerianus,,,,species
-____________,B ONLY,,,,1738050,N20.Loris_lydekkerianus_lydekkerianus,,,,subspecies
-________,SHARED,N15.Nycticebus,9469,=,9469,N20.Nycticebus,,number_of_children,canonicalName,genus
-__________,A ONLY,N15.Nycticebus_coucang,9470,,,,,,,species
-__________,SHARED,N15.Nycticebus_bengalensis,261741,=,261741,N20.Nycticebus_bengalensis,tip,,canonicalName,species
-__________,SHARED,N15.Nycticebus_menagensis,310932,=,310932,N20.Nycticebus_menagensis,tip,,canonicalName,species
-__________,SHARED,N15.Nycticebus_javanicus,310934,=,310934,N20.Nycticebus_javanicus,tip,,canonicalName,species
-__________,B ONLY,,,,9470,N20.Nycticebus_coucang,,,,species
-____________,B ONLY,,,,2020906,N20.Nycticebus_coucang_insularis,,,,subspecies
-__________,B ONLY,,,,101278,N20.Nycticebus_pygmaeus,,,,species
-____________,A ONLY (loss of resolution),N15.Nycticebus_intermedius,101277,merge,101278,N20.Nycticebus_pygmaeus,,,,species
-____________,A ONLY (loss of resolution),N15.Nycticebus_pygmaeus,101278,merge,101278,N20.Nycticebus_pygmaeus,,,canonicalName,species
-__________,B ONLY,,,,2646861,N20.unclassified_Nycticebus,,,,
-________,SHARED,N15.Perodicticus,9471,=,9471,N20.Perodicticus,,,canonicalName,genus
-__________,SHARED,N15.Perodicticus_potto,9472,=,9472,N20.Perodicticus_potto,,,scientificName,species
-____________,SHARED,N15.Perodicticus_potto_edwarsi,9473,=,9473,N20.Perodicticus_potto_edwarsi,tip,,scientificName,subspecies
-____________,SHARED,N15.Perodicticus_potto_ibeanus,261737,=,261737,N20.Perodicticus_potto_ibeanus,tip,,canonicalName,subspecies
-________,SHARED,N15.Arctocebus,261738,=,261738,N20.Arctocebus,,,canonicalName,genus
-__________,SHARED,N15.Arctocebus_calabarensis,261739,=,261739,N20.Arctocebus_calabarensis,tip,,canonicalName,species
-__________,SHARED,N15.Arctocebus_aureus,300161,=,300161,N20.Arctocebus_aureus,tip,,canonicalName,species
-______,A ONLY,N15.Daubentoniidae,30613,,,,,,,family
-________,A ONLY,N15.Daubentonia,13038,,,,,,,genus
-____,B ONLY,,,,376916,N20.Chiromyiformes,,,,infraorder
-______,B ONLY,,,,30613,N20.Daubentoniidae,,,,family
-________,B ONLY,,,,13038,N20.Daubentonia,,,,genus
-____,B ONLY,,,,376917,N20.Lorisiformes,,,,infraorder
-__,SHARED,N15.Haplorrhini,376913,=,376913,N20.Haplorrhini,,,canonicalName,suborder
-____,SHARED,N15.Simiiformes,314293,=,314293,N20.Simiiformes,,,canonicalName,infraorder
-______,SHARED,N15.Platyrrhini,9479,=,9479,N20.Platyrrhini,,,canonicalName,parvorder
-________,SHARED,N15.Cebidae,9498,=,9498,N20.Cebidae,,,canonicalName,family
-__________,SHARED,N15.Callitrichinae,9480,=,9480,N20.Callitrichinae,,number_of_children,canonicalName,subfamily
-____________,A ONLY (merge),N15.Callithrix,9481,=,9480,N20.Callitrichinae,,,monotypic,subfamily
-______________,A ONLY,N15.Callithrix_argentata,9482,,,,,,,species
-________________,SHARED,N15.Callithrix_argentata_argentata,867362,=,867362,N20.Mico_argentatus_argentatus,tip,canonicalName,,subspecies
-____________,A ONLY (merge),N15.Saguinus,9486,=,9480,N20.Callitrichinae,,,monotypic,subfamily
-______________,A ONLY,N15.Saguinus_mystax,9488,,,,,,,species
-______________,A ONLY,N15.Saguinus_nigricollis,9489,,,,,,,species
-________________,SHARED,N15.Saguinus_nigricollis_nigricollis,873070,=,873070,N20.Leontocebus_nigricollis_nigricollis,tip,canonicalName,ncbi_id,subspecies
-______________,A ONLY,N15.Saguinus_imperator,9491,,,,,,,species
-______________,A ONLY,N15.Saguinus_midas,30586,,,,,,,species
-______________,A ONLY,N15.Saguinus_bicolor,37588,,,,,,,species
-______________,A ONLY,N15.Saguinus_labiatus,78454,,,,,,,species
-______________,A ONLY,N15.Saguinus_melanoleucus,873067,,,,,,,species
-____________,SHARED,N15.Callimico,9494,=,9494,N20.Callimico,,,canonicalName,genus
-______________,SHARED,N15.Callimico_goeldii,9495,=,9495,N20.Callimico_goeldii,tip,,canonicalName,species
-______________,B ONLY,,,,2634122,N20.unclassified_Callimico,,,,
-________________,SHARED (moved from 9494),N15.Callimico_sp._MAS-2011,1090914,=,1090914,N20.Callimico_sp._MAS-2011,tip,,canonicalName,species
-________________,B ONLY,,,,1758239,N20.Callimico_sp.,,,,species
-____________,SHARED,N15.Leontopithecus,30587,=,30587,N20.Leontopithecus,subtree=,,canonicalName,genus
-____________,B ONLY,,,,9481,N20.Callithrix#9481,,,,genus
-______________,B ONLY,,,,1965096,N20.Callithrix#1965096,,,,subgenus
-______________,B ONLY,,,,1965109,N20.Cebuella,,,,subgenus
-______________,B ONLY,,,,1965113,N20.Calibella,,,,subgenus
-____________,B ONLY,,,,9486,N20.Saguinus,,,,genus
-______________,SHARED (moved from 9486),N15.Saguinus_oedipus,9490,=,9490,N20.Saguinus_oedipus,tip,,canonicalName,species
-______________,SHARED (moved from 9486),N15.Saguinus_geoffroyi,43778,=,43778,N20.Saguinus_geoffroyi,tip,,canonicalName,species
-______________,SHARED (moved from 9486),N15.Saguinus_leucopus,290597,=,290597,N20.Saguinus_leucopus,tip,,canonicalName,species
-______________,SHARED (moved from 9486),N15.Saguinus_niger,356665,=,356665,N20.Saguinus_niger,tip,,canonicalName,species
-______________,SHARED (moved from 9486),N15.Saguinus_martinsi,356666,=,356666,N20.Saguinus_martinsi,tip,,scientificName,species
-______________,SHARED (moved from 9486),N15.Saguinus_graellsi,873073,=,873073,N20.Saguinus_graellsi,tip,,scientificName,species
-______________,SHARED (moved from 9486),N15.Saguinus_inustus,1079039,=,1079039,N20.Saguinus_inustus,tip,,scientificName,species
-______________,B ONLY,,,,9488,N20.Saguinus_mystax,,,,species
-______________,B ONLY,,,,9491,N20.Saguinus_imperator,,,,species
-______________,B ONLY,,,,30586,N20.Saguinus_midas,,,,species
-______________,B ONLY,,,,37588,N20.Saguinus_bicolor,,,,species
-______________,B ONLY,,,,78454,N20.Saguinus_labiatus,,,,species
-______________,B ONLY,,,,873067,N20.Saguinus_melanoleucus,,,,species
-______________,B ONLY,,,,2586293,N20.Saguinus_geoffroyi_x_Saguinus_leucopus,,,,species
-______________,B ONLY,,,,2586294,N20.Saguinus_oedipus_x_Saguinus_leucopus,,,,species
-______________,B ONLY,,,,2642123,N20.unclassified_Saguinus,,,,
-________________,SHARED (moved from 9486),N15.Saguinus_sp.,100754,=,100754,N20.Saguinus_sp.,tip,,canonicalName,species
-________________,SHARED (moved from 9486),N15.Saguinus_sp._T1030,260575,=,260575,N20.Saguinus_sp._T1030,tip,,canonicalName,species
-________________,B ONLY,,,,1967463,N20.Saguinus_sp._EG-2017,,,,species
-____________,B ONLY,,,,1965102,N20.Mico,,,,genus
-______________,SHARED (moved from 9481),N15.Callithrix_emiliae,48842,=,48842,N20.Mico_emiliae,tip,canonicalName,,species
-______________,SHARED (moved from 9481),N15.Callithrix_humeralifera,52232,=,52232,N20.Mico_humeralifer,tip,canonicalName; scientificName,,species
-______________,SHARED (moved from 9481),N15.Callithrix_mauesi,57377,=,57377,N20.Mico_mauesi,tip,canonicalName,,species
-______________,SHARED (moved from 9481),N15.Callithrix_cf._emiliae,198701,=,198701,N20.Mico_cf._emiliae,tip,canonicalName,,species
-______________,SHARED (moved from 9481),N15.Callithrix_saterei,198702,=,198702,N20.Mico_saterei,tip,canonicalName,,species
-______________,SHARED (moved from 9481),N15.Callithrix_melanura,1090896,=,1090896,N20.Mico_melanurus,tip,canonicalName; scientificName,,species
-______________,SHARED (moved from 9481),N15.Callithrix_rondoni,1127763,=,1127763,N20.Mico_rondoni,tip,canonicalName,,species
-______________,B ONLY,,,,9482,N20.Mico_argentatus,,,,species
-______________,B ONLY,,,,1758231,N20.Mico_chrysoleucus,,,,species
-______________,B ONLY,,,,2592805,N20.Mico_intermedius,,,,species
-______________,B ONLY,,,,2592806,N20.Mico_leucippe,,,,species
-______________,B ONLY,,,,2592807,N20.Mico_marcai,,,,species
-______________,B ONLY,,,,2592808,N20.Mico_munduruku,,,,species
-____________,B ONLY,,,,2681187,N20.Leontocebus,,,,genus
-______________,SHARED (moved from 9486),N15.Saguinus_fuscicollis,9487,=,9487,N20.Leontocebus_fuscicollis,,canonicalName,,species
-________________,SHARED,N15.Saguinus_fuscicollis_fuscicollis,48018,=,48018,N20.Leontocebus_fuscicollis_fuscicollis,tip,canonicalName,ncbi_id,subspecies
-________________,SHARED,N15.Saguinus_fuscicollis_weddelli,343424,=,343424,N20.Leontocebus_fuscicollis_weddelli,tip,canonicalName,,subspecies
-________________,SHARED,N15.Saguinus_fuscicollis_leucogenys,881946,=,881946,N20.Leontocebus_fuscicollis_leucogenys,tip,canonicalName; scientificName,,subspecies
-________________,SHARED,N15.Saguinus_fuscicollis_illigeri,881947,=,881947,N20.Leontocebus_fuscicollis_illigeri,tip,canonicalName; scientificName,,subspecies
-________________,SHARED,N15.Saguinus_fuscicollis_nigrifrons,881949,=,881949,N20.Leontocebus_fuscicollis_nigrifrons,tip,canonicalName; scientificName,,subspecies
-________________,SHARED,N15.Saguinus_fuscicollis_lagonotus,881950,=,881950,N20.Leontocebus_fuscicollis_lagonotus,tip,canonicalName; scientificName,,subspecies
-______________,SHARED (moved from 9486),N15.Saguinus_tripartitus,122388,=,122388,N20.Leontocebus_tripartitus,tip,canonicalName,ncbi_id,species
-______________,SHARED (moved from 9486),N15.Saguinus_cruzlimai,1618156,=,1618156,N20.Leontocebus_cruzlimai,tip,canonicalName,,species
-______________,B ONLY,,,,9489,N20.Leontocebus_nigricollis,,,,species
-__________,SHARED,N15.Cebinae,38070,=,38070,N20.Cebinae,,,canonicalName,subfamily
-____________,SHARED,N15.Cebus,9513,=,9513,N20.Cebus,,number_of_children,canonicalName,genus
-______________,SHARED,N15.Cebus_albifrons,9514,=,9514,N20.Cebus_albifrons,tip,,canonicalName,species
-______________,SHARED,N15.Cebus_capucinus,9516,=,9516,N20.Cebus_capucinus,,number_of_children,canonicalName,species
-________________,B ONLY,,,,1737458,N20.Cebus_capucinus_imitator,,,,subspecies
-______________,SHARED,N15.Cebus_kaapori,37294,=,37294,N20.Cebus_kaapori,tip,,canonicalName,species
-______________,A ONLY,N15.Cebus_olivaceus,37295,,,,,,,species
-______________,B ONLY,,,,37295,N20.Cebus_olivaceus,,,,species
-________________,B ONLY,,,,1985287,N20.Cebus_olivaceus_castaneus,,,,subspecies
-______________,B ONLY,,,,1985288,N20.Cebus_unicolor,,,,species
-______________,B ONLY,,,,1985289,N20.Cebus_versicolor,,,,species
-______________,B ONLY (split),N15.Cebus,9513,=,2618788,N20.unclassified_Cebus,,,monotypic,
-________________,SHARED (moved from 9513),N15.Cebus_sp.,9517,=,9517,N20.Cebus_sp.,tip,,canonicalName,species
-________________,SHARED (moved from 9513),N15.Cebus_sp._MAS-2011,1090916,=,1090916,N20.Cebus_sp._MAS-2011,tip,,canonicalName,species
-________________,B ONLY,,,,1967451,N20.Cebus_sp._1_EG-2017,,,,species
-________________,B ONLY,,,,1967452,N20.Cebus_sp._2_EG-2017,,,,species
-____________,SHARED,N15.Sapajus,1532884,=,1532884,N20.Sapajus,,number_of_children,scientificName,genus
-______________,SHARED,N15.Sapajus_apella,9515,=,9515,N20.Sapajus_apella,subtree=,,canonicalName,species
-______________,SHARED,N15.Sapajus_xanthosternos,174599,=,174599,N20.Sapajus_xanthosternos,tip,,canonicalName,species
-______________,SHARED,N15.Sapajus_cay,649471,=,649471,N20.Sapajus_cay,tip,,canonicalName,species
-______________,A ONLY,N15.Sapajus_nigritus,867366,,,,,,,species
-______________,SHARED,N15.Sapajus_flavius,1112861,=,1112861,N20.Sapajus_flavius,tip,,canonicalName,species
-______________,SHARED,N15.Sapajus_libidinosus,1126382,=,1126382,N20.Sapajus_libidinosus,tip,,canonicalName,species
-______________,B ONLY,,,,867366,N20.Sapajus_nigritus,,,,species
-______________,B ONLY,,,,2619504,N20.unclassified_Sapajus,,,,
-________________,B ONLY,,,,1874197,N20.Sapajus_sp.,,,,species
-________________,B ONLY,,,,2093835,N20.Sapajus_sp._9_FD-2018,,,,species
-________________,B ONLY,,,,2093836,N20.Sapajus_sp._10_FD-2018,,,,species
-________________,B ONLY,,,,2093837,N20.Sapajus_sp._22_FD-2018,,,,species
-________________,B ONLY,,,,2093838,N20.Sapajus_sp._M5_FD-2018,,,,species
-________________,B ONLY,,,,2093839,N20.Sapajus_sp._M12_FD-2018,,,,species
-________________,B ONLY,,,,2093840,N20.Sapajus_sp._M39_FD-2018,,,,species
-__________,A ONLY,N15.unclassified_Cebidae,38071,,,,,,,
-__________,SHARED,N15.Saimiriinae,378850,=,378850,N20.Saimiriinae,,,canonicalName,subfamily
-____________,SHARED,N15.Saimiri,9520,=,9520,N20.Saimiri,,number_of_children,canonicalName,genus
-______________,SHARED,N15.Saimiri_sciureus,9521,=,9521,N20.Saimiri_sciureus,subtree=,,canonicalName,species
-______________,A ONLY,N15.Saimiri_boliviensis,27679,,,,,,,species
-______________,SHARED,N15.Saimiri_ustus,66265,=,66265,N20.Saimiri_ustus,tip,,canonicalName,species
-______________,SHARED,N15.Saimiri_oerstedii,70928,=,70928,N20.Saimiri_oerstedii,subtree=,,canonicalName,species
-______________,SHARED,N15.Saimiri_vanzolinii,1561161,=,1561161,N20.Saimiri_vanzolinii,tip,,scientificName,species
-______________,B ONLY,,,,27679,N20.Saimiri_boliviensis,,,,species
-________________,A ONLY (merge),N15.Saimiri_boliviensis_boliviensis,39432,particleset=,27679,N20.Saimiri_boliviensis,,,synonym+canonicalName+synonym,species
-________________,B ONLY (split),N15.Saimiri_boliviensis,27679,particleset=,39432,N20.Saimiri_boliviensis_boliviensis,,,synonym+canonicalName+synonym,subspecies
-______________,B ONLY (split),N15.Saimiri,9520,=,2635411,N20.unclassified_Saimiri,,,monotypic,
-________________,SHARED (moved from 9520),N15.Saimiri_sp._MAS-2011,1090919,=,1090919,N20.Saimiri_sp._MAS-2011,tip,,canonicalName,species
-________________,SHARED (moved from 9520),N15.Saimiri_sp.,1561164,=,1561164,N20.Saimiri_sp.,tip,,canonicalName,species
-________________,B ONLY,,,,1967464,N20.Saimiri_sp._1_EG-2017,,,,species
-________________,B ONLY,,,,1967465,N20.Saimiri_sp._2_EG-2017,,,,species
-________________,B ONLY,,,,1967466,N20.Saimiri_sp._3_EG-2017,,,,species
-__________,B ONLY,,,,38071,N20.unclassified_Cebidae,,,,
-________,SHARED,N15.Aotidae,376918,=,376918,N20.Aotidae,,,scientificName,family
-__________,SHARED,N15.Aotus,9504,=,9504,N20.Aotus,,number_of_children,scientificName,genus
-____________,SHARED,N15.Aotus_trivirgatus,9505,=,9505,N20.Aotus_trivirgatus,tip,,canonicalName,species
-____________,SHARED,N15.Aotus_azarai,30591,=,30591,N20.Aotus_azarai,subtree=,,canonicalName,species
-____________,SHARED,N15.Aotus_nancymaae,37293,=,37293,N20.Aotus_nancymaae,tip,,canonicalName,species
-____________,SHARED,N15.Aotus_lemurinus,43147,=,43147,N20.Aotus_lemurinus,tip,,scientificName,species
-____________,SHARED,N15.Aotus_nigriceps,57175,=,57175,N20.Aotus_nigriceps,tip,,canonicalName,species
-____________,SHARED,N15.Aotus_vociferans,57176,=,57176,N20.Aotus_vociferans,tip,,canonicalName,species
-____________,SHARED,N15.Aotus_griseimembra,292213,=,292213,N20.Aotus_griseimembra,tip,,scientificName,species
-____________,SHARED,N15.Aotus_brumbacki,361674,=,361674,N20.Aotus_brumbacki,tip,,canonicalName,species
-____________,SHARED,N15.Aotus_zonalis,1263727,=,1263727,N20.Aotus_zonalis,tip,,canonicalName,species
-____________,B ONLY (split),N15.Aotus,9504,=,2688256,N20.unclassified_Aotus_(in:_Chordata),,,monotypic,
-________,SHARED,N15.Pitheciidae,376919,=,376919,N20.Pitheciidae,,number_of_children,canonicalName,family
-__________,SHARED,N15.Pitheciinae,38039,=,38039,N20.Pitheciinae,,,canonicalName,subfamily
-____________,SHARED,N15.Chiropotes,9524,=,9524,N20.Chiropotes,,number_of_children,canonicalName,genus
-______________,SHARED,N15.Chiropotes_satanas,9525,=,9525,N20.Chiropotes_satanas,tip,,canonicalName,species
-______________,SHARED,N15.Chiropotes_albinasus,198627,=,198627,N20.Chiropotes_albinasus,tip,,canonicalName,species
-______________,SHARED,N15.Chiropotes_satanas_x_albinasus,202458,=,202458,N20.Chiropotes_satanas_x_albinasus,tip,,canonicalName,species
-______________,SHARED,N15.Chiropotes_utahickae,280160,=,280160,N20.Chiropotes_utahickae,tip,,scientificName,species
-______________,SHARED,N15.Chiropotes_israelita,280163,=,280163,N20.Chiropotes_israelita,tip,,canonicalName,species
-______________,SHARED,N15.Chiropotes_albinasus_x_satanas,626367,=,626367,N20.Chiropotes_albinasus_x_satanas,tip,,canonicalName,species
-______________,A ONLY,N15.Chiropotes_chiropotes,658221,,,,,,,species
-______________,B ONLY,,,,658221,N20.Chiropotes_chiropotes,,,,species
-______________,B ONLY (split),N15.Chiropotes,9524,=,2649368,N20.unclassified_Chiropotes,,,monotypic,
-________________,SHARED (moved from 9524),N15.Chiropotes_sp._MAS-2011,1090917,=,1090917,N20.Chiropotes_sp._MAS-2011,tip,,canonicalName,species
-________________,SHARED (moved from 9524),N15.Chiropotes_sp._ZFMK_2008.244,1472258,=,1472258,N20.Chiropotes_sp._ZFMK_2008.244,tip,,canonicalName,species
-________________,B ONLY,,,,1758238,N20.Chiropotes_sp.,,,,species
-________________,B ONLY,,,,2704455,N20.Chiropotes_sp._CTGAM5663,,,,species
-________________,B ONLY,,,,2736752,N20.Chiropotes_sp._CTGAM5363,,,,species
-____________,SHARED,N15.Cacajao,30595,=,30595,N20.Cacajao,,number_of_children,canonicalName,genus
-______________,SHARED,N15.Cacajao_calvus,30596,=,30596,N20.Cacajao_calvus,subtree=,,canonicalName,species
-______________,SHARED,N15.Cacajao_melanocephalus,70825,=,70825,N20.Cacajao_melanocephalus,tip,,canonicalName,species
-______________,SHARED,N15.Cacajao_rubicundus,70927,=,70927,N20.Cacajao_rubicundus,tip,,canonicalName,species
-______________,SHARED,N15.Cacajao_ayresi,535896,=,535896,N20.Cacajao_ayresi,tip,,canonicalName,species
-______________,SHARED,N15.Cacajao_hosomi,535897,=,535897,N20.Cacajao_hosomi,tip,,canonicalName,species
-______________,B ONLY,,,,2704456,N20.unclassified_Cacajao,,,,
-________________,B ONLY,,,,2704457,N20.Cacajao_sp._CTGAM5666,,,,species
-____________,SHARED,N15.Pithecia,30597,=,30597,N20.Pithecia,,number_of_children,canonicalName,genus
-______________,SHARED,N15.Pithecia_irrorata,30598,=,30598,N20.Pithecia_irrorata,tip,,canonicalName,species
-______________,A ONLY,N15.Pithecia_pithecia,43777,,,,,,,species
-______________,SHARED,N15.Pithecia_monachus,595220,=,595220,N20.Pithecia_monachus,tip,,canonicalName,species
-______________,B ONLY,,,,43777,N20.Pithecia_pithecia,,,,species
-______________,B ONLY,,,,2646430,N20.unclassified_Pithecia,,,,
-________________,B ONLY,,,,1758237,N20.Pithecia_sp.,,,,species
-________________,B ONLY,,,,2704458,N20.Pithecia_sp._UFPA_Pit22,,,,species
-__________,SHARED,N15.Callicebinae,38069,=,38069,N20.Callicebinae,,number_of_children,canonicalName,subfamily
-____________,A ONLY (merge),N15.Callicebus,9522,=,38069,N20.Callicebinae,,,mutual-cross-mrca,subfamily
-______________,A ONLY,N15.Callicebus_donacophilus,230833,,,,,,,species
-________________,SHARED,N15.Callicebus_donacophilus_donacophilus,285954,=,285954,N20.Plecturocebus_donacophilus_donacophilus,tip,canonicalName,,subspecies
-____________,B ONLY (split),N15.Callicebus,9522,=,9522,N20.Callicebus,,,canonicalName,genus
-______________,SHARED (moved from 9522),N15.Callicebus_personatus,70814,=,70814,N20.Callicebus_personatus,subtree=,,canonicalName,species
-______________,SHARED (moved from 9522),N15.Callicebus_coimbrai,867333,=,867333,N20.Callicebus_coimbrai,tip,,scientificName,species
-______________,SHARED (moved from 9522),N15.Callicebus_nigrifrons,867334,=,867334,N20.Callicebus_nigrifrons,tip,,scientificName,species
-______________,B ONLY,,,,1290433,N20.Callicebus_dubius,,,,species
-______________,B ONLY,,,,1861701,N20.Callicebus_caquetensis,,,,species
-______________,B ONLY,,,,1861702,N20.Callicebus_ornatus,,,,species
-______________,B ONLY,,,,1861703,N20.Callicebus_discolor,,,,species
-______________,B ONLY (split),N15.Callicebus,9522,=,2627897,N20.unclassified_Callicebus,,,monotypic,
-________________,SHARED (moved from 9522),N15.Callicebus_sp.,116962,=,116962,N20.Callicebus_sp.,tip,,canonicalName,species
-________________,SHARED (moved from 9522),N15.Callicebus_sp._MAS-2011,1090915,=,1090915,N20.Callicebus_sp._MAS-2011,tip,,canonicalName,species
-________________,B ONLY,,,,1861704,N20.Callicebus_sp._1_MH-2016,,,,species
-________________,B ONLY,,,,1861705,N20.Callicebus_sp._2_MH-2016,,,,species
-____________,B ONLY (split),N15.Callicebus,9522,=,1812035,N20.Plecturocebus,,,monotypic,genus
-______________,SHARED (moved from 9522),N15.Callicebus_moloch,9523,=,9523,N20.Plecturocebus_moloch,tip,canonicalName,,species
-______________,SHARED (moved from 9522),N15.Callicebus_hoffmannsi,78255,=,78255,N20.Plecturocebus_hoffmannsi,tip,canonicalName,,species
-______________,SHARED (moved from 9522),N15.Callicebus_cupreus,202457,=,202457,N20.Plecturocebus_cupreus,tip,canonicalName,,species
-______________,SHARED (moved from 9522),N15.Callicebus_brunneus,221704,=,1812042,N20.Plecturocebus_brunneus,tip,ncbi_id; canonicalName,,species
-______________,SHARED (moved from 9522),N15.Callicebus_caligatus,867332,=,867332,N20.Plecturocebus_caligatus,tip,canonicalName,,species
-______________,B ONLY,,,,230833,N20.Plecturocebus_donacophilus,,,,species
-______________,B ONLY,,,,1812036,N20.Plecturocebus_bernhardi,,,,species
-______________,B ONLY,,,,1812037,N20.Plecturocebus_cinerascens,,,,species
-______________,B ONLY,,,,1812038,N20.Plecturocebus_miltoni,,,,species
-______________,B ONLY,,,,2487713,N20.Plecturocebus_vieirai,,,,species
-______________,B ONLY,,,,2488670,N20.Plecturocebus_grovesi,,,,species
-____________,B ONLY (split),N15.Callicebus,9522,=,1812102,N20.Cheracebus,,,monotypic,genus
-______________,SHARED (moved from 9522),N15.Callicebus_torquatus,30592,=,30592,N20.Cheracebus_torquatus,tip,canonicalName,,species
-______________,SHARED (moved from 9522),N15.Callicebus_lugens,210166,=,210166,N20.Cheracebus_lugens,tip,canonicalName,,species
-______________,SHARED (moved from 9522),N15.Callicebus_purinus,1560619,=,1560619,N20.Cheracebus_purinus,tip,canonicalName,,species
-______________,B ONLY,,,,1812110,N20.Cheracebus_regulus,,,,species
-______________,B ONLY,,,,2487712,N20.Cheracebus_lucifer,,,,species
-__________,B ONLY,,,,2490929,N20.Xenothricinae,,,,subfamily
-____________,B ONLY,,,,2490930,N20.Xenothrix,,,,genus
-______________,B ONLY,,,,2490931,N20.Xenothrix_mcgregori,,,,species
-________,SHARED,N15.Atelidae,378855,=,378855,N20.Atelidae,,,canonicalName,family
-__________,SHARED,N15.Alouattinae,38066,=,38066,N20.Alouattinae,,,canonicalName,subfamily
-____________,SHARED,N15.Alouatta,9499,=,9499,N20.Alouatta,,number_of_children,canonicalName,genus
-______________,SHARED,N15.Alouatta_caraya,9502,=,9502,N20.Alouatta_caraya,tip,,canonicalName,species
-______________,SHARED,N15.Alouatta_seniculus_macconnelli,198115,=,198115,N20.Alouatta_macconnelli,tip,taxonRank; canonicalName,,species
-______________,A ONLY (merge),N15.Alouatta_seniculus,9503,=,9499,N20.Alouatta,,,monotypic,genus
-______________,SHARED,N15.Alouatta_palliata,30589,=,30589,N20.Alouatta_palliata,subtree=,,canonicalName,species
-______________,A ONLY,N15.Alouatta_belzebul,30590,,,,,,,species
-______________,SHARED,N15.Alouatta_sara,121123,=,121123,N20.Alouatta_sara,tip,,canonicalName,species
-______________,SHARED,N15.Alouatta_stramineus,163110,=,163110,N20.Alouatta_stramineus,tip,,canonicalName,species
-______________,SHARED,N15.Alouatta_pigra,182253,=,182253,N20.Alouatta_pigra,tip,,canonicalName,species
-______________,A ONLY,N15.Alouatta_guariba,182256,,,,,,,species
-______________,B ONLY,,,,9503,N20.Alouatta_seniculus,,,,species
-______________,B ONLY,,,,30590,N20.Alouatta_belzebul,,,,species
-______________,B ONLY,,,,182256,N20.Alouatta_guariba,,,,species
-______________,B ONLY,,,,2487933,N20.Alouatta_palliata_x_Alouatta_pigra,,,,species
-__________,SHARED,N15.Atelinae,38068,=,38068,N20.Atelinae,,,canonicalName,subfamily
-____________,SHARED,N15.Ateles,9506,=,9506,N20.Ateles,,number_of_children,scientificName,genus
-______________,SHARED,N15.Ateles_belzebuth,9507,=,9507,N20.Ateles_belzebuth,subtree=,,canonicalName,species
-______________,SHARED,N15.Ateles_fusciceps,9508,=,9508,N20.Ateles_fusciceps,subtree=,,canonicalName,species
-______________,SHARED,N15.Ateles_geoffroyi,9509,=,9509,N20.Ateles_geoffroyi,subtree=,,scientificName,species
-______________,SHARED,N15.Ateles_paniscus,9510,=,9510,N20.Ateles_paniscus,tip,,canonicalName,species
-______________,SHARED,N15.Ateles_paniscus_x_Ateles_fusciceps,36234,=,36234,N20.Ateles_paniscus_x_Ateles_fusciceps,tip,,canonicalName,species
-______________,A ONLY,N15.unclassified_Ateles,120432,,,,,,,
-______________,A ONLY,N15.Ateles_hybridus,129801,,,,,,,species
-______________,SHARED,N15.Ateles_marginatus,1529884,=,1529884,N20.Ateles_marginatus,tip,scientificName,canonicalName,species
-______________,B ONLY (split),N15.Ateles,9506,=,120432,N20.unclassified_Ateles,,,monotypic,
-________________,SHARED (moved from 9506),N15.Ateles_sp.,9511,=,9511,N20.Ateles_sp.,tip,,canonicalName,species
-________________,B ONLY,,,,1967450,N20.Ateles_sp._EG-2017,,,,species
-______________,B ONLY,,,,129801,N20.Ateles_hybridus,,,,species
-____________,SHARED,N15.Lagothrix,9518,=,9518,N20.Lagothrix,,number_of_children,scientificName,genus
-______________,SHARED,N15.Lagothrix_lagotricha,9519,=,9519,N20.Lagothrix_lagotricha,tip,,scientificName,species
-______________,SHARED,N15.Lagothrix_lugens,767355,=,767355,N20.Lagothrix_lugens,tip,,scientificName,species
-______________,SHARED,N15.Lagothrix_poeppigii,767356,=,767356,N20.Lagothrix_poeppigii,tip,,scientificName,species
-______________,SHARED,N15.Lagothrix_cana,767357,=,767357,N20.Lagothrix_cana,tip,,scientificName,species
-______________,B ONLY,,,,2565305,N20.Lagothrix_flavicauda,,,,species
-______________,B ONLY,,,,2565306,N20.Lagothrix_tschudii,,,,species
-______________,B ONLY,,,,2645779,N20.unclassified_Lagothrix,,,,
-________________,SHARED (moved from 9518),N15.Lagothrix_sp._CCS-2009a,638937,=,638937,N20.Lagothrix_sp._CCS-2009a,tip,,canonicalName,species
-________________,B ONLY,,,,1967456,N20.Lagothrix_sp._EG-2017,,,,species
-____________,SHARED,N15.Brachyteles,30593,=,30593,N20.Brachyteles,subtree=,,canonicalName,genus
-______,SHARED,N15.Catarrhini,9526,=,9526,N20.Catarrhini,,,canonicalName,parvorder
-________,SHARED,N15.Cercopithecoidea,314294,=,314294,N20.Cercopithecoidea,,,canonicalName,superfamily
-__________,SHARED,N15.Cercopithecidae,9527,particleset=,9527,N20.Cercopithecidae,,,mutual-cross-mrca,family
-____________,SHARED,N15.Cercopithecinae,9528,=,9528,N20.Cercopithecinae,,number_of_children,canonicalName,subfamily
-______________,SHARED,N15.Cercocebus,9529,=,9529,N20.Cercocebus,,,scientificName,genus
-________________,A ONLY,N15.Cercocebus_torquatus,9530,,,,,,,species
-________________,SHARED,N15.Cercocebus_atys,9531,=,9531,N20.Cercocebus_atys,subtree=,,scientificName,species
-________________,SHARED,N15.Cercocebus_galeritus,9532,=,9532,N20.Cercocebus_galeritus,tip,,canonicalName,species
-________________,SHARED,N15.Cercocebus_chrysogaster,75569,=,75569,N20.Cercocebus_chrysogaster,tip,,scientificName,species
-________________,SHARED,N15.Cercocebus_agilis,255237,=,255237,N20.Cercocebus_agilis,tip,,canonicalName,species
-________________,B ONLY,,,,9530,N20.Cercocebus_torquatus,,,,species
-______________,A ONLY (merge),N15.Cercopithecus,9533,=,9528,N20.Cercopithecinae,,,monotypic,subfamily
-________________,A ONLY,N15.Cercopithecus_hamlyni,9536,,,,,,,species
-________________,A ONLY,N15.Cercopithecus_campbelli,303588,,,,,,,species
-______________,A ONLY,N15.Erythrocebus,9537,,,,,,,genus
-______________,SHARED,N15.Macaca,9539,=,9539,N20.Macaca,,number_of_children,canonicalName,genus
-________________,SHARED,N15.Macaca_arctoides,9540,=,9540,N20.Macaca_arctoides,tip,,canonicalName,species
-________________,SHARED,N15.Macaca_fascicularis,9541,=,9541,N20.Macaca_fascicularis,,number_of_children,canonicalName,species
-__________________,SHARED,N15.Macaca_fascicularis_philippinensis,90386,=,90386,N20.Macaca_fascicularis_philippinensis,tip,,canonicalName,subspecies
-__________________,SHARED,N15.Macaca_fascicularis_fascicularis,1215360,=,1215360,N20.Macaca_fascicularis_fascicularis,tip,,canonicalName,subspecies
-__________________,B ONLY,,,,1747270,N20.Macaca_fascicularis_aureus,,,,subspecies
-________________,A ONLY,N15.Macaca_fuscata,9542,,,,,,,species
-________________,A ONLY,N15.Macaca_mulatta,9544,,,,,,,species
-________________,SHARED,N15.Macaca_nemestrina_leonina,90387,=,90387,N20.Macaca_leonina,,taxonRank; canonicalName,,species
-__________________,A ONLY (merge),N15.Macaca_leonina,285350,matches,90387,N20.Macaca_leonina,,,canonicalName,species
-________________,SHARED,N15.Macaca_nemestrina_siberu,244255,=,244255,N20.Macaca_siberu,,taxonRank; canonicalName,,species
-__________________,A ONLY (merge),N15.Macaca_siberu,867378,matches,244255,N20.Macaca_siberu,,,scientificName,species
-________________,A ONLY (merge),N15.Macaca_nemestrina,9545,=,9539,N20.Macaca,,,monotypic,genus
-________________,SHARED,N15.Macaca_sylvanus,9546,=,9546,N20.Macaca_sylvanus,tip,,canonicalName,species
-________________,A ONLY,N15.Macaca_radiata,9548,,,,,,,species
-________________,A ONLY,N15.Macaca_assamensis,9551,,,,,,,species
-________________,SHARED,N15.Macaca_sinica,9552,=,9552,N20.Macaca_sinica,tip,,canonicalName,species
-________________,SHARED,N15.Macaca_speciosa,9553,=,9553,N20.Macaca_speciosa,tip,,canonicalName,species
-________________,SHARED,N15.Macaca_tonkeana,40843,=,40843,N20.Macaca_tonkeana,tip,,canonicalName,species
-________________,SHARED,N15.Macaca_nigra,54600,=,54600,N20.Macaca_nigra,tip,,canonicalName,species
-________________,SHARED,N15.Macaca_silenus,54601,=,54601,N20.Macaca_silenus,tip,,canonicalName,species
-________________,A ONLY,N15.Macaca_thibetana,54602,,,,,,,species
-________________,SHARED,N15.Macaca_cyclopis,78449,=,78449,N20.Macaca_cyclopis,tip,,canonicalName,species
-________________,SHARED,N15.Macaca_brunnescens,90381,=,90381,N20.Macaca_brunnescens,tip,,canonicalName,species
-________________,SHARED,N15.Macaca_hecki,90382,=,90382,N20.Macaca_hecki,tip,,scientificName,species
-________________,SHARED,N15.Macaca_maura,90383,=,90383,N20.Macaca_maura,tip,,canonicalName,species
-________________,SHARED,N15.Macaca_nigrescens,90384,=,90384,N20.Macaca_nigrescens,tip,,canonicalName,species
-________________,SHARED,N15.Macaca_ochreata,90385,=,90385,N20.Macaca_ochreata,tip,,scientificName,species
-________________,SHARED,N15.Macaca_maura_x_tonkeana,168259,=,168259,N20.Macaca_maura_x_tonkeana,tip,,canonicalName,species
-________________,SHARED,N15.Macaca_hecki_x_tonkeana,171293,=,171293,N20.Macaca_hecki_x_tonkeana,tip,,canonicalName,species
-________________,SHARED,N15.Macaca_pagensis,230653,=,230653,N20.Macaca_pagensis,tip,,canonicalName,species
-________________,SHARED,N15.Macaca_balantak,281404,=,281404,N20.Macaca_balantak,tip,,canonicalName,species
-________________,SHARED,N15.Macaca_balantak_x_tonkeana,281405,=,281405,N20.Macaca_balantak_x_tonkeana,tip,,canonicalName,species
-________________,SHARED,N15.Macaca_munzala,402888,=,402888,N20.Macaca_munzala,tip,,canonicalName,species
-________________,B ONLY,,,,9542,N20.Macaca_fuscata,,,,species
-__________________,A ONLY (merge),N15.Japanese_monkeys,36513,particleset=,9542,N20.Macaca_fuscata,,,canonicalName+synonym,species
-__________________,A ONLY (merge),N15.Macaca_fuscata_fuscata,9543,particleset=,9542,N20.Macaca_fuscata,,,synonym+canonicalName+synonym,species
-__________________,B ONLY (split),N15.Macaca_fuscata,9542,particleset=,9543,N20.Macaca_fuscata_fuscata,,,synonym+canonicalName+synonym,subspecies
-________________,B ONLY,,,,9544,N20.Macaca_mulatta,,,,species
-__________________,B ONLY,,,,1654737,N20.Macaca_mulatta_brevicaudus,,,,subspecies
-__________________,B ONLY,,,,2008792,N20.Macaca_mulatta_vestita,,,,subspecies
-________________,B ONLY,,,,9545,N20.Macaca_nemestrina,,,,species
-________________,B ONLY,,,,9548,N20.Macaca_radiata,,,,species
-________________,B ONLY,,,,9551,N20.Macaca_assamensis,,,,species
-________________,B ONLY,,,,54602,N20.Macaca_thibetana,,,,species
-________________,B ONLY,,,,1885588,N20.Macaca_leucogenys,,,,species
-________________,B ONLY,,,,2623225,N20.unclassified_Macaca,,,,
-______________,SHARED,N15.Papio,9554,=,9554,N20.Papio,,number_of_children,scientificName,genus
-________________,A ONLY,N15.Papio_anubis,9555,,,,,,,species
-________________,SHARED,N15.Papio_cynocephalus,9556,=,9556,N20.Papio_cynocephalus,subtree=,,mutual-cross-mrca,species
-________________,A ONLY,N15.Papio_hamadryas,9557,,,,,,,species
-________________,A ONLY,N15.Papio_ursinus,36229,,,,,,,species
-________________,SHARED,N15.Papio_papio,100937,=,100937,N20.Papio_papio,tip,,scientificName,species
-________________,SHARED,N15.Papio_kindae,208091,=,208091,N20.Papio_kindae,tip,,canonicalName,species
-________________,SHARED,N15.Papio_cynocephalus_x_Papio_anubis,208510,=,208510,N20.Papio_cynocephalus_x_Papio_anubis,tip,,canonicalName,species
-________________,SHARED,N15.Papio_anubis_x_hamadryas,1560552,=,1560552,N20.Papio_anubis_x_hamadryas,tip,,canonicalName,species
-________________,B ONLY,,,,9555,N20.Papio_anubis,,,,species
-________________,B ONLY,,,,9557,N20.Papio_hamadryas,,,,species
-________________,B ONLY,,,,36229,N20.Papio_ursinus,,,,species
-__________________,B ONLY,,,,208090,N20.Papio_ursinus_griseipes,,,,subspecies
-________________,B ONLY,,,,1945556,N20.Papio_anubis_x_Papio_cynocephalus,,,,species
-________________,B ONLY,,,,1945557,N20.Papio_anubis_x_Papio_ursinus,,,,species
-________________,B ONLY,,,,1945558,N20.Papio_kindae_x_Papio_cynocephalus,,,,species
-________________,B ONLY,,,,1945559,N20.Papio_kindae_x_Papio_ursinus_griseipes,,,,species
-________________,B ONLY (split),N15.Papio,9554,=,2632072,N20.unclassified_Papio,,,monotypic,
-______________,A ONLY,N15.Theropithecus,9564,,,,,,,genus
-______________,SHARED,N15.Mandrillus,9567,=,9567,N20.Mandrillus,subtree=,,canonicalName,genus
-______________,SHARED,N15.Miopithecus,36230,=,36230,N20.Miopithecus,,,canonicalName,genus
-________________,A ONLY,N15.Miopithecus_talapoin,36231,,,,,,,species
-________________,SHARED,N15.Miopithecus_ogouensis,100488,=,100488,N20.Miopithecus_ogouensis,tip,,scientificName,species
-________________,B ONLY,,,,36231,N20.Miopithecus_talapoin,,,,species
-______________,A ONLY,N15.Allenopithecus,54134,,,,,,,genus
-______________,SHARED,N15.Lophocebus,75565,=,75565,N20.Lophocebus,,,canonicalName,genus
-________________,SHARED,N15.Lophocebus_aterrimus,75566,=,75566,N20.Lophocebus_aterrimus,tip,,scientificName,species
-________________,A ONLY,N15.Lophocebus_albigena,75567,,,,,,,species
-________________,B ONLY,,,,75567,N20.Lophocebus_albigena,,,,species
-______________,A ONLY,N15.Rungwecebus,371038,,,,,,,genus
-______________,SHARED,N15.Chlorocebus,392815,=,392815,N20.Chlorocebus,,,canonicalName,genus
-________________,SHARED,N15.Chlorocebus_aethiops,9534,=,9534,N20.Chlorocebus_aethiops,subtree=,,canonicalName,species
-________________,SHARED,N15.Chlorocebus_pygerythrus,60710,=,60710,N20.Chlorocebus_pygerythrus,,number_of_children,scientificName,species
-__________________,SHARED,N15.Chlorocebus_pygerythrus_pygerythrus,460674,=,460674,N20.Chlorocebus_pygerythrus_pygerythrus,tip,,canonicalName,subspecies
-__________________,SHARED,N15.Chlorocebus_pygerythrus_hilgerti,508712,=,508712,N20.Chlorocebus_pygerythrus_hilgerti,tip,,canonicalName,subspecies
-__________________,B ONLY,,,,2269071,N20.Chlorocebus_pygerythrus_x_Chlorocebus_aethiops,,,,subspecies
-________________,SHARED,N15.Chlorocebus_sabaeus,60711,=,60711,N20.Chlorocebus_sabaeus,tip,,scientificName,species
-________________,A ONLY,N15.Chlorocebus_tantalus,60712,,,,,,,species
-________________,SHARED,N15.Chlorocebus_cynosuros,460675,=,460675,N20.Chlorocebus_cynosuros,tip,,scientificName,species
-________________,SHARED,N15.Chlorocebus_djamdjamensis,1284215,=,1284215,N20.Chlorocebus_djamdjamensis,tip,,scientificName,species
-________________,SHARED,N15.Chlorocebus_aethiops_x_djamdjamensis,1476079,=,1476079,N20.Chlorocebus_aethiops_x_djamdjamensis,tip,,canonicalName,species
-________________,B ONLY,,,,60712,N20.Chlorocebus_tantalus,,,,species
-________________,B ONLY,,,,1903316,N20.Chlorocebus_aethiops_x_Chlorocebus_pygerythrus,,,,species
-________________,B ONLY (split),N15.Chlorocebus,392815,=,2685534,N20.unclassified_Chlorocebus,,,monotypic,
-__________________,SHARED (moved from 392815),N15.Chlorocebus_sp._MAS-2011,1090918,=,1090918,N20.Chlorocebus_sp._MAS-2011,tip,,canonicalName,species
-__________________,SHARED (moved from 392815),N15.Chlorocebus_sp._TH-2013,1284216,=,1284216,N20.Chlorocebus_sp._TH-2013,tip,,canonicalName,species
-__________________,B ONLY,,,,2282232,N20.Chlorocebus_sp._LDS-2018,,,,species
-______________,B ONLY,,,,9533,N20.Cercopithecus,,,,genus
-________________,SHARED (moved from 9533),N15.Cercopithecus_cephus,9535,=,9535,N20.Cercopithecus_cephus,subtree=,,scientificName,species
-________________,SHARED (moved from 9533),N15.Cercopithecus_ascanius,36223,=,36223,N20.Cercopithecus_ascanius,subtree=,,scientificName,species
-________________,SHARED (moved from 9533),N15.Cercopithecus_diana,36224,=,36224,N20.Cercopithecus_diana,tip,,scientificName,species
-________________,SHARED (moved from 9533),N15.Cercopithecus_mitis,36225,=,36225,N20.Cercopithecus_mitis,subtree=,,scientificName,species
-________________,SHARED (moved from 9533),N15.Cercopithecus_mona,36226,=,36226,N20.Cercopithecus_mona,subtree=,,canonicalName,species
-________________,SHARED (moved from 9533),N15.Cercopithecus_neglectus,36227,=,36227,N20.Cercopithecus_neglectus,tip,,canonicalName,species
-________________,SHARED (moved from 9533),N15.Cercopithecus_nictitans,36228,=,36228,N20.Cercopithecus_nictitans,subtree=,,scientificName,species
-________________,SHARED (moved from 9533),N15.Cercopithecus_petaurista,100487,=,100487,N20.Cercopithecus_petaurista,subtree=,,canonicalName,species
-________________,SHARED (moved from 9533),N15.Cercopithecus_pogonias,102108,=,102108,N20.Cercopithecus_pogonias,subtree=,,canonicalName,species
-________________,SHARED (moved from 9533),N15.Cercopithecus_erythrogaster,161496,=,161496,N20.Cercopithecus_erythrogaster,subtree=,,scientificName,species
-________________,SHARED (moved from 9533),N15.Cercopithecus_erythrotis,167130,=,167130,N20.Cercopithecus_erythrotis,subtree=,,scientificName,species
-________________,SHARED (moved from 9533),N15.Cercopithecus_wolfi,263448,=,263448,N20.Cercopithecus_wolfi,subtree=,scientificName,canonicalName,species
-________________,SHARED (moved from 9533),N15.Cercopithecus_albogularis,867370,=,867370,N20.Cercopithecus_albogularis,subtree=,,scientificName,species
-________________,SHARED (moved from 9533),N15.Cercopithecus_dryas,1137048,=,1137048,N20.Cercopithecus_dryas,tip,scientificName,canonicalName,species
-________________,SHARED (moved from 9533),N15.Cercopithecus_roloway,1137049,=,1137049,N20.Cercopithecus_roloway,tip,,scientificName,species
-________________,SHARED (moved from 9533),N15.Cercopithecus_doggetti,1137474,=,1137474,N20.Cercopithecus_doggetti,tip,,scientificName,species
-________________,SHARED (moved from 9533),N15.Cercopithecus_kandti,1137481,=,1137481,N20.Cercopithecus_kandti,tip,,scientificName,species
-________________,SHARED (moved from 9533),N15.Cercopithecus_denti,1137511,=,1137511,N20.Cercopithecus_denti,tip,,scientificName,species
-________________,SHARED (moved from 9533),N15.Cercopithecus_lomamiensis,1191211,=,1191211,N20.Cercopithecus_lomamiensis,tip,scientificName,canonicalName,species
-________________,B ONLY,,,,9536,N20.Cercopithecus_hamlyni,,,,species
-________________,B ONLY,,,,303588,N20.Cercopithecus_campbelli,,,,species
-________________,B ONLY,,,,1579530,N20.Cercopithecus_sclateri,,,,species
-________________,B ONLY,,,,2618071,N20.unclassified_Cercopithecus,,,,
-______________,B ONLY,,,,9537,N20.Erythrocebus,,,,genus
-______________,B ONLY,,,,9564,N20.Theropithecus,,,,genus
-______________,B ONLY,,,,54134,N20.Allenopithecus,,,,genus
-______________,B ONLY,,,,371038,N20.Rungwecebus,,,,genus
-______________,B ONLY,,,,2059839,N20.Allochrocebus,,,,genus
-________________,SHARED (moved from 9533),N15.Cercopithecus_lhoesti,100224,=,100224,N20.Allochrocebus_lhoesti,tip,canonicalName,,species
-________________,SHARED (moved from 9533),N15.Cercopithecus_preussi,147649,=,147649,N20.Allochrocebus_preussi,,canonicalName; scientificName,,species
-__________________,SHARED,N15.Cercopithecus_preussi_insularis,1137512,=,1137512,N20.Allochrocebus_preussi_insularis,tip,canonicalName,,subspecies
-__________________,SHARED,N15.Cercopithecus_preussi_preussi,1137513,=,1137513,N20.Allochrocebus_preussi_preussi,tip,canonicalName,,subspecies
-________________,SHARED (moved from 9533),N15.Cercopithecus_solatus,147650,=,147650,N20.Allochrocebus_solatus,tip,canonicalName; scientificName,,species
-____________,SHARED,N15.Colobinae,9569,=,9569,N20.Colobinae,,,canonicalName,subfamily
-______________,SHARED,N15.Colobus,9570,=,9570,N20.Colobus,,number_of_children,canonicalName,genus
-________________,SHARED,N15.Colobus_polykomos,9572,=,9572,N20.Colobus_polykomos,tip,,canonicalName,species
-________________,SHARED,N15.Colobus_guereza,33548,=,33548,N20.Colobus_guereza,subtree=,scientificName,canonicalName,species
-________________,A ONLY,N15.Colobus_angolensis,54131,,,,,,,species
-________________,SHARED,N15.Colobus_vellerosus,378195,=,378195,N20.Colobus_vellerosus,tip,,canonicalName,species
-________________,SHARED,N15.Colobus_vellerosus_x_angolensis,378196,=,378196,N20.Colobus_vellerosus_x_angolensis,tip,,canonicalName,species
-________________,A ONLY,N15.Colobus_satanas,517012,,,,,,,species
-________________,B ONLY,,,,54131,N20.Colobus_angolensis,,,,species
-________________,B ONLY,,,,517012,N20.Colobus_satanas,,,,species
-________________,B ONLY (split),N15.Colobus,9570,=,2618863,N20.unclassified_Colobus,,,monotypic,
-______________,SHARED,N15.Presbytis,9573,=,9573,N20.Presbytis,,,canonicalName,genus
-________________,SHARED,N15.Presbytis_senex,66055,=,66055,N20.Presbytis_senex,tip,,canonicalName,species
-________________,SHARED,N15.Presbytis_melalophos,78451,=,78451,N20.Presbytis_melalophos,,,scientificName,species
-__________________,SHARED,N15.Presbytis_melalophos_mitrata,272115,=,272115,N20.Presbytis_melalophos_mitrata,tip,,canonicalName,subspecies
-__________________,SHARED,N15.Presbytis_melalophos_bicolor,1046095,=,1046095,N20.Presbytis_melalophos_bicolor,tip,,scientificName,subspecies
-__________________,SHARED,N15.Presbytis_melalophos_melalophos,1046096,=,1046096,N20.Presbytis_melalophos_melalophos,tip,,canonicalName,subspecies
-__________________,SHARED,N15.Presbytis_melalophos_sumatranus,1046097,=,1046097,N20.Presbytis_melalophos_sumatranus,tip,,scientificName,subspecies
-________________,SHARED,N15.Presbytis_comata,78452,=,78452,N20.Presbytis_comata,subtree=,,canonicalName,species
-________________,SHARED,N15.Presbytis_femoralis,78453,=,78453,N20.Presbytis_femoralis,,number_of_children,canonicalName,species
-__________________,B ONLY,,,,1840579,N20.Presbytis_femoralis_femoralis,,,,subspecies
-________________,SHARED,N15.Presbytis_chrysomelas,1046090,=,1046090,N20.Presbytis_chrysomelas,tip,,scientificName,species
-________________,SHARED,N15.Presbytis_frontata,1046092,=,1046092,N20.Presbytis_frontata,tip,,scientificName,species
-________________,A ONLY,N15.Presbytis_hosei,1046093,,,,,,,species
-________________,SHARED,N15.Presbytis_potenziani,1046098,=,1046098,N20.Presbytis_potenziani,subtree=,,scientificName,species
-________________,A ONLY,N15.Presbytis_rubicunda,1046101,,,,,,,species
-________________,SHARED,N15.Presbytis_thomasi,1046103,=,1046103,N20.Presbytis_thomasi,tip,,scientificName,species
-________________,B ONLY,,,,1046093,N20.Presbytis_hosei,,,,species
-________________,B ONLY,,,,1046101,N20.Presbytis_rubicunda,,,,species
-______________,A ONLY,N15.Nasalis,43779,,,,,,,genus
-______________,SHARED,N15.Pygathrix,54132,=,54132,N20.Pygathrix,,,canonicalName,genus
-________________,A ONLY,N15.Pygathrix_nemaeus,54133,,,,,,,species
-________________,SHARED,N15.Pygathrix_nigripes,310352,=,310352,N20.Pygathrix_nigripes,tip,,canonicalName,species
-________________,SHARED,N15.Pygathrix_cinerea,693712,=,693712,N20.Pygathrix_cinerea,tip,,canonicalName,species
-________________,SHARED,N15.Pygathrix_cinerea_1_RL-2012,1194332,=,1194332,N20.Pygathrix_cinerea_1_RL-2012,tip,,canonicalName,species
-________________,SHARED,N15.Pygathrix_cinerea_2_RL-2012,1194333,=,1194333,N20.Pygathrix_cinerea_2_RL-2012,tip,,canonicalName,species
-________________,B ONLY,,,,54133,N20.Pygathrix_nemaeus,,,,species
-______________,SHARED,N15.Trachypithecus,54136,=,54136,N20.Trachypithecus,,number_of_children,scientificName,genus
-________________,A ONLY,N15.Trachypithecus_vetulus,54137,,,,,,,species
-________________,A ONLY,N15.Trachypithecus_francoisi,54180,,,,,,,species
-________________,SHARED,N15.Trachypithecus_obscurus,54181,=,54181,N20.Trachypithecus_obscurus,tip,,scientificName,species
-________________,SHARED,N15.Trachypithecus_phayrei,61618,=,61618,N20.Trachypithecus_phayrei,subtree=,,scientificName,species
-________________,SHARED,N15.Trachypithecus_johnii,66063,=,66063,N20.Trachypithecus_johnii,tip,,scientificName,species
-________________,SHARED,N15.Trachypithecus_cristatus,122765,=,122765,N20.Trachypithecus_cristatus,tip,,scientificName,species
-________________,SHARED,N15.Trachypithecus_geei,164650,=,164650,N20.Trachypithecus_geei,tip,,canonicalName,species
-________________,SHARED,N15.Trachypithecus_pileatus,164651,=,164651,N20.Trachypithecus_pileatus,tip,,canonicalName,species
-________________,SHARED,N15.Trachypithecus_auratus,222416,=,222416,N20.Trachypithecus_auratus,subtree=,,canonicalName,species
-________________,SHARED,N15.Trachypithecus_germaini,271260,=,271260,N20.Trachypithecus_germaini,tip,,canonicalName,species
-________________,SHARED,N15.Trachypithecus_barbei,271261,=,271261,N20.Trachypithecus_barbei,tip,,canonicalName,species
-________________,SHARED,N15.Trachypithecus_delacouri,465717,=,465717,N20.Trachypithecus_delacouri,tip,,canonicalName,species
-________________,SHARED,N15.Trachypithecus_laotum,465718,=,465718,N20.Trachypithecus_laotum,tip,,canonicalName,species
-________________,SHARED,N15.Trachypithecus_poliocephalus,465719,=,465719,N20.Trachypithecus_poliocephalus,subtree=,,canonicalName,species
-________________,SHARED,N15.Trachypithecus_francoisi_x_poliocephalus,744437,=,744437,N20.Trachypithecus_francoisi_x_poliocephalus,tip,,canonicalName,species
-________________,SHARED,N15.Trachypithecus_hatinhensis,867383,=,867383,N20.Trachypithecus_hatinhensis,tip,,scientificName,species
-________________,SHARED,N15.Trachypithecus_shortridgei,1042121,=,1042121,N20.Trachypithecus_shortridgei,tip,,scientificName,species
-________________,B ONLY,,,,54137,N20.Trachypithecus_vetulus,,,,species
-________________,B ONLY,,,,54180,N20.Trachypithecus_francoisi,,,,species
-________________,B ONLY,,,,1966384,N20.Trachypithecus_mauritius,,,,species
-________________,B ONLY,,,,2623509,N20.unclassified_Trachypithecus,,,,
-______________,SHARED,N15.Semnopithecus,88028,=,88028,N20.Semnopithecus,,number_of_children,canonicalName,genus
-________________,SHARED,N15.Semnopithecus_entellus_priam,272117,=,1208733,N20.Semnopithecus_priam,,taxonRank; ncbi_id; canonicalName,,species
-__________________,A ONLY (merge),N15.Semnopithecus_priam,1208733,matches,1208733,N20.Semnopithecus_priam,,,scientificName,species
-________________,A ONLY (merge),N15.Semnopithecus_entellus,88029,=,88028,N20.Semnopithecus,,,monotypic,genus
-________________,SHARED,N15.Semnopithecus_hector,867382,=,867382,N20.Semnopithecus_hector,tip,,scientificName,species
-________________,SHARED,N15.Semnopithecus_hypoleucos,1208734,=,1208734,N20.Semnopithecus_hypoleucos,tip,,scientificName,species
-________________,B ONLY,,,,88029,N20.Semnopithecus_entellus,,,,species
-________________,B ONLY,,,,2632571,N20.unclassified_Semnopithecus,,,,
-__________________,B ONLY,,,,1778600,N20.Semnopithecus_sp.,,,,species
-______________,A ONLY,N15.Procolobus,164647,,,,,,,genus
-________________,SHARED,N15.Procolobus_verus,373033,=,373033,N20.Procolobus_verus,tip,,canonicalName,species
-______________,SHARED,N15.Rhinopithecus,542827,=,542827,N20.Rhinopithecus,,number_of_children,canonicalName,genus
-________________,SHARED,N15.Rhinopithecus_bieti,61621,=,61621,N20.Rhinopithecus_bieti,tip,,canonicalName,species
-________________,SHARED,N15.Rhinopithecus_roxellana,61622,=,61622,N20.Rhinopithecus_roxellana,tip,,scientificName,species
-________________,SHARED,N15.Rhinopithecus_avunculus,66062,=,66062,N20.Rhinopithecus_avunculus,tip,scientificName,canonicalName,species
-________________,SHARED,N15.Rhinopithecus_brelichi,224329,=,224329,N20.Rhinopithecus_brelichi,tip,,canonicalName,species
-________________,SHARED,N15.Rhinopithecus_bieti_1_RL-2012,1194334,=,1194334,N20.Rhinopithecus_bieti_1_RL-2012,tip,,canonicalName,species
-________________,SHARED,N15.Rhinopithecus_bieti_2_RL-2012,1194335,=,1194335,N20.Rhinopithecus_bieti_2_RL-2012,tip,,canonicalName,species
-________________,SHARED,N15.Rhinopithecus_strykeri,1194336,=,1194336,N20.Rhinopithecus_strykeri,tip,,scientificName,species
-________________,B ONLY,,,,2644350,N20.unclassified_Rhinopithecus,,,,
-__________________,B ONLY,,,,1859147,N20.Rhinopithecus_sp.,,,,species
-______________,SHARED,N15.Piliocolobus,591932,=,591932,N20.Piliocolobus,,,canonicalName,genus
-________________,SHARED,N15.Piliocolobus_badius,164648,=,164648,N20.Piliocolobus_badius,subtree=,,canonicalName,species
-________________,SHARED,N15.Piliocolobus_gordonorum,591933,=,591933,N20.Piliocolobus_gordonorum,tip,,canonicalName,species
-________________,SHARED,N15.Piliocolobus_rufomitratus,591934,=,591934,N20.Piliocolobus_rufomitratus,tip,,canonicalName,species
-________________,SHARED,N15.Piliocolobus_tholloni,591935,=,591935,N20.Piliocolobus_tholloni,tip,,canonicalName,species
-________________,SHARED,N15.Piliocolobus_tephrosceles,591936,=,591936,N20.Piliocolobus_tephrosceles,tip,,canonicalName,species
-________________,SHARED,N15.Piliocolobus_kirkii,591937,=,591937,N20.Piliocolobus_kirkii,tip,,canonicalName,species
-________________,SHARED,N15.Piliocolobus_foai,591938,=,591938,N20.Piliocolobus_foai,tip,,canonicalName,species
-________________,SHARED,N15.Piliocolobus_pennantii,591944,=,591944,N20.Piliocolobus_pennantii,tip,,canonicalName,species
-________________,SHARED,N15.Piliocolobus_preussi,591945,=,591945,N20.Piliocolobus_preussi,tip,,canonicalName,species
-______________,A ONLY,N15.Simias,1203020,,,,,,,genus
-______________,B ONLY,,,,43779,N20.Nasalis,,,,genus
-______________,B ONLY,,,,164647,N20.Procolobus,,,,genus
-______________,B ONLY,,,,1203020,N20.Simias,,,,genus
-____________,SHARED,N15.Cercopithecidae_gen._sp.,9576,=,9576,N20.Cercopithecidae_gen._sp.,tip,,canonicalName,species
-________,SHARED,N15.Hominoidea,314295,=,314295,N20.Hominoidea,,,canonicalName,superfamily
-__________,SHARED,N15.Hylobatidae,9577,=,9577,N20.Hylobatidae,,,canonicalName,family
-____________,SHARED,N15.Hylobates,9578,=,9578,N20.Hylobates,,number_of_children,canonicalName,genus
-______________,SHARED,N15.Hylobates_agilis,9579,=,9579,N20.Hylobates_agilis,subtree=,,canonicalName,species
-______________,SHARED,N15.Hylobates_lar,9580,=,9580,N20.Hylobates_lar,subtree=,,canonicalName,species
-______________,SHARED,N15.Hylobates_klossii,9587,=,9587,N20.Hylobates_klossii,tip,,canonicalName,species
-______________,SHARED,N15.Hylobates_muelleri,9588,=,9588,N20.Hylobates_muelleri,subtree=,,scientificName,species
-______________,SHARED,N15.Hylobates_pileatus,9589,=,9589,N20.Hylobates_pileatus,tip,,canonicalName,species
-______________,SHARED,N15.Hylobates_moloch,81572,=,81572,N20.Hylobates_moloch,tip,,canonicalName,species
-______________,SHARED,N15.Hylobates_alibarbis,716691,=,716691,N20.Hylobates_albibarbis,tip,canonicalName; scientificName,ncbi_id,species
-______________,B ONLY (split),N15.Hylobates,9578,=,2647113,N20.unclassified_Hylobates,,,monotypic,
-________________,SHARED (moved from 9578),N15.Hylobates_sp.,9581,=,9581,N20.Hylobates_sp.,tip,,canonicalName,species
-________________,SHARED (moved from 9578),N15.Hylobates_sp._TIB-201,150249,=,150249,N20.Hylobates_sp._TIB-201,tip,,canonicalName,species
-________________,SHARED (moved from 9578),N15.Hylobates_sp._IGL-2004,280856,=,280856,N20.Hylobates_sp._IGL-2004,tip,,canonicalName,species
-________________,SHARED (moved from 9578),N15.Hylobates_sp._AMA-2004,288892,=,288892,N20.Hylobates_sp._AMA-2004,tip,,canonicalName,species
-________________,SHARED (moved from 9578),N15.Hylobates_sp._ECACC_MLA144,419588,=,419588,N20.Hylobates_sp._ECACC_MLA144,tip,,canonicalName,species
-________________,SHARED (moved from 9578),N15.Hylobates_sp._PS-2007,425245,=,425245,N20.Hylobates_sp._PS-2007,tip,,canonicalName,species
-________________,B ONLY,,,,2023128,N20.Hylobates_sp._OH-2017,,,,species
-____________,SHARED,N15.Nomascus,325165,=,325165,N20.Nomascus,,number_of_children,canonicalName,genus
-______________,SHARED,N15.Nomascus_siki,9586,=,9586,N20.Nomascus_siki,tip,,canonicalName,species
-______________,SHARED,N15.Nomascus_concolor,29089,=,29089,N20.Nomascus_concolor,subtree=,,canonicalName,species
-______________,SHARED,N15.Nomascus_gabriellae,61852,=,61852,N20.Nomascus_gabriellae,tip,,canonicalName,species
-______________,SHARED,N15.Nomascus_leucogenys,61853,=,61853,N20.Nomascus_leucogenys,tip,,canonicalName,species
-______________,SHARED,N15.Nomascus_nasutus,327374,=,327374,N20.Nomascus_nasutus,tip,,canonicalName,species
-______________,SHARED,N15.Nomascus_hainanus,693984,=,693984,N20.Nomascus_hainanus,tip,,canonicalName,species
-______________,B ONLY,,,,1616038,N20.Nomascus_annamensis,,,,species
-______________,B ONLY,,,,2170372,N20.Nomascus_gabriellae_x_Nomascus_siki,,,,species
-______________,B ONLY,,,,2170373,N20.Nomascus_leucogenys_x_Nomascus_siki,,,,species
-______________,B ONLY,,,,2170374,N20.Nomascus_cf._leucogenys_SSH-2018,,,,species
-____________,A ONLY,N15.Symphalangus,325166,,,,,,,genus
-______________,A ONLY,N15.Symphalangus_syndactylus,9590,,,,,,,species
-____________,SHARED,N15.Hoolock,325167,=,325167,N20.Hoolock,,number_of_children,scientificName,genus
-______________,SHARED,N15.Hoolock_hoolock,61851,=,61851,N20.Hoolock_hoolock,tip,,canonicalName,species
-______________,SHARED,N15.Hoolock_leuconedys,593543,=,593543,N20.Hoolock_leuconedys,tip,,scientificName,species
-______________,B ONLY,,,,1934190,N20.Hoolock_tianxing,,,,species
-______________,B ONLY,,,,1934191,N20.Hoolock_leuconedys_x_Hoolock_tianxing,,,,species
-____________,B ONLY,,,,325166,N20.Symphalangus,,,,genus
-______________,B ONLY,,,,9590,N20.Symphalangus_syndactylus,,,,species
-__________,SHARED,N15.Hominidae,9604,=,9604,N20.Hominidae,,,scientificName,family
-____________,SHARED,N15.Homininae,207598,=,207598,N20.Homininae,,,canonicalName,subfamily
-______________,SHARED,N15.Gorilla,9592,=,9592,N20.Gorilla,subtree=,,scientificName,genus
-______________,SHARED,N15.Pan,9596,=,9596,N20.Pan,,,canonicalName,genus
-________________,SHARED,N15.Pan_paniscus,9597,=,9597,N20.Pan_paniscus,tip,,canonicalName,species
-________________,SHARED,N15.Pan_troglodytes,9598,=,9598,N20.Pan_troglodytes,subtree=,,canonicalName,species
-______________,SHARED,N15.Homo,9605,=,9605,N20.Homo,,number_of_children,scientificName,genus
-________________,SHARED,N15.Homo_sapiens,9606,=,9606,N20.Homo_sapiens,,,scientificName,species
-__________________,SHARED,N15.Homo_sapiens_neanderthalensis,63221,=,63221,N20.Homo_sapiens_neanderthalensis,tip,,canonicalName,subspecies
-__________________,SHARED,N15.Homo_sapiens_ssp._Denisova,741158,=,741158,N20.Homo_sapiens_subsp._'Denisova',tip,canonicalName,,subspecies
-________________,SHARED,N15.Homo_heidelbergensis,1425170,=,1425170,N20.Homo_heidelbergensis,tip,,scientificName,species
-________________,B ONLY,,,,2665952,N20.environmental_samples,,,,
-__________________,B ONLY,,,,2665953,N20.Homo_sapiens_environmental_sample,,,,species
-____________,SHARED,N15.Ponginae,607660,=,607660,N20.Ponginae,,,canonicalName,subfamily
-______________,SHARED,N15.Pongo,9599,=,9599,N20.Pongo,,number_of_children,canonicalName,genus
-________________,A ONLY,N15.Pongo_pygmaeus,9600,,,,,,,species
-________________,SHARED,N15.Pongo_abelii_x_pygmaeus,502961,=,502961,N20.Pongo_abelii_x_pygmaeus,tip,,canonicalName,species
-________________,B ONLY,,,,9600,N20.Pongo_pygmaeus,,,,species
-__________________,A ONLY (merge),N15.Pongo_abelii,9601,particleset=,9600,N20.Pongo_pygmaeus,,,synonym+canonicalName+synonym,species
-________________,B ONLY (split),N15.Pongo_pygmaeus,9600,particleset=,9601,N20.Pongo_abelii,,,synonym+canonicalName+synonym,species
-________________,B ONLY,,,,2051901,N20.Pongo_tapanuliensis,,,,species
-________________,B ONLY,,,,2624844,N20.unclassified_Pongo,,,,
-____,SHARED,N15.Tarsiiformes,376912,=,376912,N20.Tarsiiformes,,,canonicalName,infraorder
-______,SHARED,N15.Tarsiidae,9475,=,9475,N20.Tarsiidae,,number_of_children,canonicalName,family
-________,A ONLY (merge),N15.Tarsius,9476,particleset=,9475,N20.Tarsiidae,,,mutual-cross-mrca,family
-________,B ONLY (split),N15.Tarsius,9476,=,9476,N20.Tarsius,,,scientificName,genus
-__________,SHARED (moved from 9476),N15.Tarsius_dentatus,449501,=,449501,N20.Tarsius_dentatus,tip,,canonicalName,species
-__________,SHARED (moved from 9476),N15.Tarsius_lariang,630277,=,630277,N20.Tarsius_lariang,tip,,canonicalName,species
-__________,SHARED (moved from 9476),N15.Tarsius_dentatus_x_lariang,642591,=,642591,N20.Tarsius_dentatus_x_lariang,tip,,canonicalName,species
-__________,SHARED (moved from 9476),N15.Tarsius_tarsier,662464,=,662464,N20.Tarsius_tarsier,tip,,canonicalName,species
-__________,SHARED (moved from 9476),N15.Tarsius_sangirensis,905053,=,905053,N20.Tarsius_sangirensis,tip,,scientificName,species
-__________,SHARED (moved from 9476),N15.Tarsius_wallacei,981131,=,981131,N20.Tarsius_wallacei,tip,,scientificName,species
-__________,B ONLY,,,,1748400,N20.Tarsius_fuscus,,,,species
-__________,B ONLY (split),N15.Tarsius,9476,=,2624233,N20.unclassified_Tarsius,,,monotypic,
-____________,SHARED (moved from 9476),N15.Tarsius_sp.,30612,=,30612,N20.Tarsius_sp.,tip,,canonicalName,species
-____________,SHARED (moved from 9476),N15.Tarsius_sp._FFA-2009a,662655,=,662655,N20.Tarsius_sp._FFA-2009a,tip,,canonicalName,species
-____________,B ONLY,,,,1748402,N20.Tarsius_sp._CD-2015,,,,species
-________,B ONLY,,,,1868481,N20.Carlito,,,,genus
-__________,SHARED (moved from 9476),N15.Tarsius_syrichta,9478,=,1868482,N20.Carlito_syrichta,tip,ncbi_id; canonicalName,,species
-________,B ONLY,,,,1971489,N20.Cephalopachus,,,,genus
-__________,SHARED (moved from 9476),N15.Tarsius_bancanus,9477,=,9477,N20.Cephalopachus_bancanus,,number_of_children; canonicalName; scientificName,,species
-____________,B ONLY,,,,1971490,N20.Cephalopachus_bancanus_bancanus,,,,subspecies
-____________,B ONLY,,,,2567999,N20.Cephalopachus_bancanus_borneanus,,,,subspecies
+indent,taxonID,rank,A id,A name,B id,B name,relation,other id,other name,note,reason,changed_props,unchanged
+,1,order,9443,A.Primates,9443,B.Primates,=,,,,scientificName,,
+—,2,,57118,A.unclassified Primates,57118,B.unclassified Primates,=,,,,canonicalName,number_of_children,subtree=
+—,13,suborder,376911,A.Strepsirrhini,376911,B.Strepsirrhini,=,,,,scientificName,,
+——,14,infraorder,376915,A.Lemuriformes,376915,B.Lemuriformes,=,,,,scientificName,,
+———,15,family,9445,A.Lemuridae,9445,B.Lemuridae,=,,,,canonicalName,,
+————,16,genus,9446,A.Lemur,9446,B.Lemur,=,,,,canonicalName,,
+—————,17,species,9447,A.Lemur catta,9447,B.Lemur catta,=,,,,canonicalName,,tip
+—————,18,,,,2641939,B.unclassified Lemur,,,,,,,
+————,20,genus,9454,A.Varecia,9454,B.Varecia,=,,,,canonicalName,,
+—————,21,species,9455,A.Varecia variegata,,,,,,,,,
+—————,23,species,554167,A.Varecia rubra,554167,B.Varecia rubra,=,,,,canonicalName,,tip
+—————,24,species,,,9455,B.Varecia variegata,,,,,,,
+————,25,genus,13513,A.Eulemur,13513,B.Eulemur,=,,,,scientificName,number_of_children,
+—————,26,species,13514,A.Eulemur coronatus,13514,B.Eulemur coronatus,=,,,,scientificName,,tip
+—————,27,species,13515,A.Eulemur fulvus,13515,B.Eulemur fulvus,=,,,,canonicalName,,subtree=
+—————,32,species,30602,A.Eulemur macaco,,,,,,,,,
+—————,34,species,34828,A.Eulemur mongoz,34828,B.Eulemur mongoz,=,,,,canonicalName,,tip
+—————,35,species,34829,A.Eulemur rubriventer,34829,B.Eulemur rubriventer,=,,,,canonicalName,,tip
+—————,36,species,87288,A.Eulemur flavifrons,87288,B.Eulemur flavifrons,=,,,,scientificName,,tip
+—————,37,species,122225,A.Eulemur sanfordi,122225,B.Eulemur sanfordi,=,,,,scientificName,,tip
+—————,38,species,639525,A.Eulemur cinereiceps,639525,B.Eulemur cinereiceps,=,,,,scientificName,,tip
+—————,39,species,859983,A.Eulemur rufus,859983,B.Eulemur rufus,=,,,,scientificName,,tip
+—————,40,species,859984,A.Eulemur rufifrons,859984,B.Eulemur rufifrons,=,,,,scientificName,,tip
+—————,41,species,1215604,A.Eulemur albifrons,1215604,B.Eulemur albifrons,=,,,,scientificName,,tip
+—————,42,species,1417231,A.Eulemur albifrons x rufifrons,1417231,B.Eulemur albifrons x rufifrons,=,,,,canonicalName,,tip
+—————,43,species,1417236,A.Eulemur albifrons x cinereiceps,1417236,B.Eulemur albifrons x cinereiceps,=,,,,canonicalName,,tip
+—————,44,species,1417237,A.Eulemur cinereiceps x rufifrons,1417237,B.Eulemur cinereiceps x rufifrons,=,,,,canonicalName,,tip
+—————,45,,1417238,A.Eulemur hybrids,,,=,13513,B.Eulemur,lump,monotypic,,
+—————,46,species,,,30602,B.Eulemur macaco,,,,,,,
+————,47,genus,13556,A.Hapalemur,13556,B.Hapalemur,=,,,,canonicalName,,
+—————,48,species,13557,A.Hapalemur griseus,13557,B.Hapalemur griseus,=,,,,canonicalName,,subtree=
+—————,54,species,122222,A.Hapalemur aureus,122222,B.Hapalemur aureus,=,,,,canonicalName,,tip
+—————,55,species,867377,A.Hapalemur occidentalis,867377,B.Hapalemur occidentalis,=,,,,scientificName,,tip
+————,56,genus,1328069,A.Prolemur,,,,,,,,,
+————,58,genus,1513474,A.Pachylemur,,,,,,,,,
+————,60,genus,,,1328069,B.Prolemur,,,,,,,
+————,61,genus,,,1513474,B.Pachylemur,,,,,,,
+———,62,family,30599,A.Indriidae,30599,B.Indriidae,=,,,,canonicalName,,
+————,63,genus,30600,A.Propithecus,30600,B.Propithecus,=,,,,canonicalName,,
+—————,64,species,30601,A.Propithecus tattersalli,30601,B.Propithecus tattersalli,=,,,,canonicalName,,tip
+—————,65,species,34825,A.Propithecus verreauxi,,,,,,,,,
+—————,67,species,83281,A.Propithecus diadema,83281,B.Propithecus diadema,=,,,,canonicalName,,subtree=
+—————,70,species,379532,A.Propithecus coquereli,379532,B.Propithecus coquereli,=,,,,scientificName,,tip
+—————,71,species,475618,A.Propithecus deckenii,475618,B.Propithecus deckenii,=,,,,canonicalName,,subtree=
+—————,74,species,543559,A.Propithecus edwardsi,543559,B.Propithecus edwardsi,=,,,,canonicalName,,tip
+—————,75,species,543560,A.Propithecus candidus,543560,B.Propithecus candidus,=,,,,canonicalName,,tip
+—————,76,species,989338,A.Propithecus perrieri,989338,B.Propithecus perrieri,=,,,,scientificName,,tip
+—————,77,species,,,34825,B.Propithecus verreauxi,,,,,,,
+—————,78,,,,2677806,B.unclassified Propithecus,,,,,,,
+————,80,genus,34826,A.Indri,,,,,,,,,
+————,82,genus,122245,A.Avahi,122245,B.Avahi,=,,,,canonicalName,,
+—————,83,species,122246,A.Avahi laniger,122246,B.Avahi laniger,=,,,,canonicalName,,tip
+—————,84,species,132108,A.Avahi occidentalis,132108,B.Avahi occidentalis,=,,,,canonicalName,,tip
+—————,85,species,402239,A.Avahi unicolor,402239,B.Avahi unicolor,=,,,,canonicalName,,tip
+—————,86,species,402244,A.Avahi cleesei,402244,B.Avahi cleesei,=,,,,canonicalName,,tip
+—————,87,species,1313323,A.Avahi peyrierasi,1313323,B.Avahi peyrierasi,=,,,,canonicalName,scientificName,tip
+————,88,genus,523820,A.Archaeolemur,523820,B.Archaeolemur,=,,,,canonicalName,,subtree=
+————,91,genus,523824,A.Hadropithecus,,,,,,,,,
+————,93,genus,,,34826,B.Indri,,,,,,,
+————,94,genus,,,523824,B.Hadropithecus,,,,,,,
+———,95,family,30614,A.Lepilemuridae,30614,B.Lepilemuridae,=,,,,canonicalName,,
+————,96,genus,9452,A.Lepilemur,9452,B.Lepilemur,=,,,,canonicalName,number_of_children,
+—————,97,species,9453,A.Lepilemur mustelinus,9453,B.Lepilemur mustelinus,=,,,,canonicalName,,tip
+—————,98,species,78583,A.Lepilemur dorsalis,78583,B.Lepilemur dorsalis,=,,,,canonicalName,,tip
+—————,99,species,78584,A.Lepilemur septentrionalis,78584,B.Lepilemur septentrionalis,=,,,,canonicalName,,tip
+—————,100,species,78866,A.Lepilemur ruficaudatus,78866,B.Lepilemur ruficaudatus,=,,,,canonicalName,,tip
+—————,101,species,100475,A.Lepilemur leucopus,100475,B.Lepilemur leucopus,=,,,,canonicalName,,tip
+—————,102,species,122230,A.Lepilemur edwardsi,122230,B.Lepilemur edwardsi,=,,,,canonicalName,,tip
+—————,103,species,185457,A.Lepilemur microdon,185457,B.Lepilemur microdon,=,,,,canonicalName,,tip
+—————,104,species,236287,A.Lepilemur mitsinjoensis,236287,B.Lepilemur mitsinjoensis,=,,,,canonicalName,,tip
+—————,105,species,236288,A.Lepilemur seali,236288,B.Lepilemur seali,=,,,,scientificName,,tip
+—————,106,species,342398,A.Lepilemur sahamalazensis,342398,B.Lepilemur sahamalazensis,=,,,,canonicalName,,tip
+—————,107,species,342399,A.Lepilemur aeeclis,342399,B.Lepilemur aeeclis,=,,,,canonicalName,,tip
+—————,108,species,342401,A.Lepilemur ankaranensis,342401,B.Lepilemur ankaranensis,=,,,,canonicalName,,tip
+—————,109,species,378517,A.Lepilemur mittermeieri,378517,B.Lepilemur mittermeieri,=,,,,canonicalName,,tip
+—————,110,species,458171,A.Lepilemur manasamody,458171,B.Lepilemur manasamody,=,,,,canonicalName,,tip
+—————,111,species,458173,A.Lepilemur otto,458173,B.Lepilemur otto,=,,,,canonicalName,,tip
+—————,112,species,486960,A.Lepilemur jamesi,486960,B.Lepilemur jamesorum,=,,,,ncbi_id,canonicalName,tip
+—————,113,species,756882,A.Lepilemur hubbardorum,756882,B.Lepilemur hubbardorum,=,,,,scientificName,,tip
+—————,114,species,886964,A.Lepilemur petteri,886964,B.Lepilemur petteri,=,,,,scientificName,,tip
+—————,115,species,886965,A.Lepilemur randrianasoloi,886965,B.Lepilemur randrianasoloi,=,,,,scientificName,,tip
+—————,116,species,,,886957,B.Lepilemur ahmansonorum,,,,,,,
+—————,117,species,,,886958,B.Lepilemur betsileo,,,,,,,
+—————,118,species,,,886959,B.Lepilemur fleuretae,,,,,,,
+—————,119,species,,,886960,B.Lepilemur grewcockorum,,,,,,,
+—————,120,species,,,886961,B.Lepilemur hollandorum,,,,,,,
+—————,121,species,,,886963,B.Lepilemur milanoii,,,,,,,
+—————,122,species,,,886966,B.Lepilemur scottorum,,,,,,,
+—————,123,species,,,886967,B.Lepilemur tymerlachsoni,,,,,,,
+—————,124,species,,,886968,B.Lepilemur wrightae,,,,,,,
+—————,125,,,,2645584,B.unclassified Lepilemur,particle-set<=,9452,A.Lepilemur,split,monotypic,,
+————,130,genus,126593,A.Megaladapis,126593,B.Megaladapis,=,,,,canonicalName,number_of_children,
+—————,131,species,185953,A.Megaladapis edwardsi,185953,B.Megaladapis edwardsi,=,,,,canonicalName,,tip
+—————,132,,,,2620125,B.unclassified Megaladapis,particle-set<=,126593,A.Megaladapis,split,monotypic,,
+———,138,family,30615,A.Cheirogaleidae,30615,B.Cheirogaleidae,=,,,,scientificName,,
+————,139,genus,9459,A.Cheirogaleus,9459,B.Cheirogaleus,=,,,,scientificName,number_of_children,
+—————,140,species,9460,A.Cheirogaleus medius,9460,B.Cheirogaleus medius,=,,,,canonicalName,scientificName,tip
+—————,141,species,47177,A.Cheirogaleus major,47177,B.Cheirogaleus major,=,,,,canonicalName,scientificName,tip
+—————,142,species,291259,A.Cheirogaleus crossleyi,291259,B.Cheirogaleus crossleyi,=,,,,canonicalName,scientificName,tip
+—————,143,species,752538,A.Cheirogaleus sibreei,752538,B.Cheirogaleus sibreei,=,,,,scientificName,,tip
+—————,144,species,867375,A.Cheirogaleus minusculus,867375,B.Cheirogaleus minusculus,=,,,,scientificName,,tip
+—————,145,species,1569974,A.Cheirogaleus lavasoensis,1569974,B.Cheirogaleus lavasoensis,=,,,,canonicalName,scientificName,tip
+—————,146,species,,,2563322,B.Cheirogaleus cf. medius RW-2019,,,,,,,
+————,147,genus,13149,A.Microcebus,13149,B.Microcebus,=,,,,scientificName,number_of_children,
+—————,148,species,30608,A.Microcebus murinus,30608,B.Microcebus murinus,=,,,,canonicalName,,tip
+—————,149,species,122231,A.Microcebus ravelobensis,122231,B.Microcebus ravelobensis,=,,,,canonicalName,,tip
+—————,150,species,122232,A.Microcebus rufus,122232,B.Microcebus rufus,=,,,,canonicalName,,tip
+—————,151,species,143283,A.Microcebus myoxinus,143283,B.Microcebus myoxinus,=,,,,canonicalName,,tip
+—————,152,species,143351,A.Microcebus tavaratra,143351,B.Microcebus tavaratra,=,,,,canonicalName,,tip
+—————,153,species,143352,A.Microcebus berthae,143352,B.Microcebus berthae,=,,,,canonicalName,scientificName,tip
+—————,154,species,143353,A.Microcebus sambiranensis,143353,B.Microcebus sambiranensis,=,,,,canonicalName,,tip
+—————,155,species,143354,A.Microcebus griseorufus,143354,B.Microcebus griseorufus,=,,,,canonicalName,,tip
+—————,156,species,236272,A.Microcebus simmonsi,236272,B.Microcebus simmonsi,=,,,,canonicalName,,tip
+—————,157,species,236274,A.Microcebus mittermeieri,236274,B.Microcebus mittermeieri,=,,,,canonicalName,,tip
+—————,158,species,236275,A.Microcebus jollyae,236275,B.Microcebus jollyae,=,,,,canonicalName,,tip
+—————,159,species,343908,A.Microcebus lehilahytsara,343908,B.Microcebus lehilahytsara,=,,,,canonicalName,,tip
+—————,160,species,412750,A.Microcebus bongolavensis,412750,B.Microcebus bongolavensis,=,,,,canonicalName,,tip
+—————,161,species,412751,A.Microcebus danfossi,412751,B.Microcebus danfossi,=,,,,canonicalName,,tip
+—————,162,species,412752,A.Microcebus lokobensis,412752,B.Microcebus lokobensis,=,,,,canonicalName,,tip
+—————,163,species,415757,A.Microcebus mamiratra,415757,B.Microcebus mamiratra,=,,,,canonicalName,,tip
+—————,164,species,548481,A.Microcebus macarthurii,548481,B.Microcebus macarthurii,=,,,,canonicalName,,tip
+—————,165,species,864580,A.Microcebus arnholdi,864580,B.Microcebus arnholdi,=,,,,scientificName,,tip
+—————,166,species,864581,A.Microcebus margotmarshae,864581,B.Microcebus margotmarshae,=,,,,scientificName,,tip
+—————,167,species,1131379,A.Microcebus gerpi,1131379,B.Microcebus gerpi,=,,,,scientificName,,tip
+—————,168,species,1310123,A.Microcebus tanosi,1310123,B.Microcebus tanosi,=,,,,scientificName,,tip
+—————,169,species,1310124,A.Microcebus marohita,1310124,B.Microcebus marohita,=,,,,scientificName,,tip
+—————,170,species,,,2483760,B.Microcebus ganzhorni,,,,,,,
+—————,171,,,,2630091,B.unclassified Microcebus,particle-set<=,13149,A.Microcebus,split,monotypic,,
+——————,172,species,270538,A.Microcebus sp. EELHDZ M98,270538,B.Microcebus sp. EELHDZ M98,=,,,moved,canonicalName,,tip
+——————,173,species,270540,A.Microcebus sp. EELHDZ TAD23,270540,B.Microcebus sp. EELHDZ TAD23,=,,,moved,canonicalName,,tip
+——————,174,species,270674,A.Microcebus sp. EELHDZ VEV33,270674,B.Microcebus sp. EELHDZ VEV33,=,,,moved,canonicalName,,tip
+——————,175,species,270675,A.Microcebus sp. EELHDZ VEV35,270675,B.Microcebus sp. EELHDZ VEV35,=,,,moved,canonicalName,,tip
+——————,176,species,388736,A.Microcebus sp. ANT5.1,388736,B.Microcebus sp. ANT5.1,=,,,moved,canonicalName,,tip
+——————,177,species,412758,A.Microcebus sp. Ambongabe,412758,B.Microcebus sp. Ambongabe,=,,,moved,canonicalName,,tip
+——————,178,species,412759,A.Microcebus sp. Bora,412759,B.Microcebus sp. Bora,=,,,moved,canonicalName,,tip
+——————,179,species,412760,A.Microcebus sp. Mahajamba-Est,412760,B.Microcebus sp. Mahajamba-Est,=,,,moved,canonicalName,,tip
+——————,180,species,412761,A.Microcebus sp. Maroakata,412761,B.Microcebus sp. Maroakata,=,,,moved,canonicalName,,tip
+——————,181,species,548482,A.Microcebus sp. Anjiahely,548482,B.Microcebus sp. Anjiahely,=,,,moved,canonicalName,,tip
+——————,182,species,764313,A.Microcebus sp. DWW-2010a,764313,B.Microcebus sp. DWW-2010a,=,,,moved,canonicalName,,tip
+——————,183,species,1310125,A.Microcebus sp. d'Ambre,1310125,B.Microcebus sp. d'Ambre,=,,,moved,canonicalName,,tip
+——————,184,species,,,418100,B.Microcebus sp. Antanosy,,,,,,,
+——————,185,species,,,2508170,B.Microcebus sp. 3 GT-2019,,,,,,,
+——————,186,species,,,2683930,B.Microcebus sp. south Manambery,,,,,,,
+————,187,genus,83691,A.Mirza,83691,B.Mirza,=,,,,canonicalName,,
+—————,188,species,47180,A.Mirza coquereli,47180,B.Mirza coquereli,=,,,,canonicalName,,tip
+—————,189,species,339999,A.Mirza zaza,339999,B.Mirza zaza,=,,,,canonicalName,,tip
+—————,190,,,,2628182,B.unclassified Mirza,,,,,,,
+————,192,genus,122247,A.Allocebus,,,,,,,,,
+————,194,genus,261733,A.Phaner,261733,B.Phaner,=,,,,canonicalName,,
+—————,195,species,261734,A.Phaner furcifer,261734,B.Phaner furcifer,=,,,,canonicalName,,tip
+—————,196,species,568393,A.Phaner pallescens,568393,B.Phaner pallescens,=,,,,canonicalName,scientificName,tip
+—————,197,species,1313324,A.Phaner electromontis,1313324,B.Phaner electromontis,=,,,,canonicalName,scientificName,tip
+—————,198,species,1313325,A.Phaner parienti,1313325,B.Phaner parienti,=,,,,canonicalName,scientificName,tip
+————,199,genus,,,122247,B.Allocebus,,,,,,,
+———,200,family,1513476,A.Paleopropithecidae,1513476,B.Paleopropithecidae,=,,,,canonicalName,,
+————,201,genus,322024,A.Palaeopropithecus,322024,B.Palaeopropithecus,=,,,,canonicalName,number_of_children,
+—————,202,species,1513477,A.Palaeopropithecus ingens,1513477,B.Palaeopropithecus ingens,=,,,,scientificName,,tip
+—————,203,species,1597978,A.Palaeopropithecus maximus,1597978,B.Palaeopropithecus maximus,=,,,,scientificName,,tip
+—————,204,,,,2619300,B.unclassified Palaeopropithecus,particle-set<=,322024,A.Palaeopropithecus,split,monotypic,,
+——,208,infraorder,376916,A.Chiromyiformes,,,,,,,,,
+———,209,family,9461,A.Lorisidae,9461,B.Lorisidae,=,,,,canonicalName,,
+————,210,genus,9467,A.Loris,9467,B.Loris,=,,,,canonicalName,,
+—————,211,species,9468,A.Loris tardigradus,,,,,,,,,
+—————,213,species,300163,A.Loris lydekkerianus,,,,,,,,,
+—————,215,species,,,9468,B.Loris tardigradus,,,,,,,
+——————,216,subspecies,,,1738049,B.Loris tardigradus tardigradus,,,,,,,
+—————,217,species,,,300163,B.Loris lydekkerianus,,,,,,,
+——————,218,subspecies,,,1738050,B.Loris lydekkerianus lydekkerianus,,,,,,,
+————,219,genus,9469,A.Nycticebus,9469,B.Nycticebus,=,,,,canonicalName,number_of_children,
+—————,220,species,9470,A.Nycticebus coucang,,,,,,,,,
+—————,222,species,261741,A.Nycticebus bengalensis,261741,B.Nycticebus bengalensis,=,,,,canonicalName,,tip
+—————,223,species,310932,A.Nycticebus menagensis,310932,B.Nycticebus menagensis,=,,,,canonicalName,,tip
+—————,224,species,310934,A.Nycticebus javanicus,310934,B.Nycticebus javanicus,=,,,,canonicalName,,tip
+—————,225,species,,,9470,B.Nycticebus coucang,,,,,,,
+——————,226,subspecies,,,2020906,B.Nycticebus coucang insularis,,,,,,,
+—————,227,species,,,101278,B.Nycticebus pygmaeus,,,,,,,
+——————,228,species,101277,A.Nycticebus intermedius,,,lump,101278,B.Nycticebus pygmaeus,loss of resolution,,,
+——————,229,species,101278,A.Nycticebus pygmaeus,,,lump,101278,B.Nycticebus pygmaeus,loss of resolution,canonicalName,,
+—————,230,,,,2646861,B.unclassified Nycticebus,,,,,,,
+————,232,genus,9471,A.Perodicticus,9471,B.Perodicticus,=,,,,canonicalName,,
+—————,233,species,9472,A.Perodicticus potto,9472,B.Perodicticus potto,=,,,,scientificName,,
+——————,234,subspecies,9473,A.Perodicticus potto edwarsi,9473,B.Perodicticus potto edwarsi,=,,,,scientificName,,tip
+——————,235,subspecies,261737,A.Perodicticus potto ibeanus,261737,B.Perodicticus potto ibeanus,=,,,,canonicalName,,tip
+————,236,genus,261738,A.Arctocebus,261738,B.Arctocebus,=,,,,canonicalName,,
+—————,237,species,261739,A.Arctocebus calabarensis,261739,B.Arctocebus calabarensis,=,,,,canonicalName,,tip
+—————,238,species,300161,A.Arctocebus aureus,300161,B.Arctocebus aureus,=,,,,canonicalName,,tip
+———,239,family,30613,A.Daubentoniidae,,,,,,,,,
+————,240,genus,13038,A.Daubentonia,,,,,,,,,
+——,242,infraorder,,,376916,B.Chiromyiformes,,,,,,,
+———,243,family,,,30613,B.Daubentoniidae,,,,,,,
+————,244,genus,,,13038,B.Daubentonia,,,,,,,
+——,245,infraorder,,,376917,B.Lorisiformes,,,,,,,
+—,246,suborder,376913,A.Haplorrhini,376913,B.Haplorrhini,=,,,,canonicalName,,
+——,247,infraorder,314293,A.Simiiformes,314293,B.Simiiformes,=,,,,canonicalName,,
+———,248,parvorder,9479,A.Platyrrhini,9479,B.Platyrrhini,=,,,,canonicalName,,
+————,249,family,9498,A.Cebidae,9498,B.Cebidae,=,,,,canonicalName,,
+—————,250,subfamily,9480,A.Callitrichinae,9480,B.Callitrichinae,=,,,,canonicalName,number_of_children,
+——————,251,genus,9481,A.Callithrix,,,=,9480,B.Callitrichinae,lump,monotypic,,
+———————,252,species,9482,A.Callithrix argentata,,,,,,,,,
+————————,253,subspecies,867362,A.Callithrix argentata argentata,867362,B.Mico argentatus argentatus,=,,,,,canonicalName,tip
+——————,254,genus,9486,A.Saguinus,,,=,9480,B.Callitrichinae,lump,monotypic,,
+———————,255,species,9488,A.Saguinus mystax,,,,,,,,,
+———————,257,species,9489,A.Saguinus nigricollis,,,,,,,,,
+————————,258,subspecies,873070,A.Saguinus nigricollis nigricollis,873070,B.Leontocebus nigricollis nigricollis,=,,,,ncbi_id,canonicalName,tip
+———————,259,species,9491,A.Saguinus imperator,,,,,,,,,
+———————,261,species,30586,A.Saguinus midas,,,,,,,,,
+———————,263,species,37588,A.Saguinus bicolor,,,,,,,,,
+———————,265,species,78454,A.Saguinus labiatus,,,,,,,,,
+———————,267,species,873067,A.Saguinus melanoleucus,,,,,,,,,
+——————,269,genus,9494,A.Callimico,9494,B.Callimico,=,,,,canonicalName,,
+———————,270,species,9495,A.Callimico goeldii,9495,B.Callimico goeldii,=,,,,canonicalName,,tip
+———————,271,,,,2634122,B.unclassified Callimico,,,,,,,
+————————,272,species,1090914,A.Callimico sp. MAS-2011,1090914,B.Callimico sp. MAS-2011,=,,,moved,canonicalName,,tip
+————————,273,species,,,1758239,B.Callimico sp.,,,,,,,
+——————,274,genus,30587,A.Leontopithecus,30587,B.Leontopithecus,=,,,,canonicalName,,subtree=
+——————,278,genus,,,9481,B.Callithrix#9481,,,,,,,
+———————,279,subgenus,,,1965096,B.Callithrix#1965096,,,,,,,
+———————,289,subgenus,,,1965109,B.Cebuella,,,,,,,
+———————,291,subgenus,,,1965113,B.Calibella,,,,,,,
+——————,293,genus,,,9486,B.Saguinus,,,,,,,
+———————,294,species,9490,A.Saguinus oedipus,9490,B.Saguinus oedipus,=,,,moved,canonicalName,,tip
+———————,295,species,43778,A.Saguinus geoffroyi,43778,B.Saguinus geoffroyi,=,,,moved,canonicalName,,tip
+———————,296,species,290597,A.Saguinus leucopus,290597,B.Saguinus leucopus,=,,,moved,canonicalName,,tip
+———————,297,species,356665,A.Saguinus niger,356665,B.Saguinus niger,=,,,moved,canonicalName,,tip
+———————,298,species,356666,A.Saguinus martinsi,356666,B.Saguinus martinsi,=,,,moved,scientificName,,tip
+———————,299,species,873073,A.Saguinus graellsi,873073,B.Saguinus graellsi,=,,,moved,scientificName,,tip
+———————,300,species,1079039,A.Saguinus inustus,1079039,B.Saguinus inustus,=,,,moved,scientificName,,tip
+———————,301,species,,,9488,B.Saguinus mystax,,,,,,,
+———————,302,species,,,9491,B.Saguinus imperator,,,,,,,
+———————,303,species,,,30586,B.Saguinus midas,,,,,,,
+———————,304,species,,,37588,B.Saguinus bicolor,,,,,,,
+———————,305,species,,,78454,B.Saguinus labiatus,,,,,,,
+———————,306,species,,,873067,B.Saguinus melanoleucus,,,,,,,
+———————,307,species,,,2586293,B.Saguinus geoffroyi x Saguinus leucopus,,,,,,,
+———————,308,species,,,2586294,B.Saguinus oedipus x Saguinus leucopus,,,,,,,
+———————,309,,,,2642123,B.unclassified Saguinus,,,,,,,
+————————,310,species,100754,A.Saguinus sp.,100754,B.Saguinus sp.,=,,,moved,canonicalName,,tip
+————————,311,species,260575,A.Saguinus sp. T1030,260575,B.Saguinus sp. T1030,=,,,moved,canonicalName,,tip
+————————,312,species,,,1967463,B.Saguinus sp. EG-2017,,,,,,,
+——————,313,genus,,,1965102,B.Mico,,,,,,,
+———————,314,species,48842,A.Callithrix emiliae,48842,B.Mico emiliae,=,,,moved,,canonicalName,tip
+———————,315,species,52232,A.Callithrix humeralifera,52232,B.Mico humeralifer,=,,,moved,,canonicalName; scientificName,tip
+———————,316,species,57377,A.Callithrix mauesi,57377,B.Mico mauesi,=,,,moved,,canonicalName,tip
+———————,317,species,198701,A.Callithrix cf. emiliae,198701,B.Mico cf. emiliae,=,,,moved,,canonicalName,tip
+———————,318,species,198702,A.Callithrix saterei,198702,B.Mico saterei,=,,,moved,,canonicalName,tip
+———————,319,species,1090896,A.Callithrix melanura,1090896,B.Mico melanurus,=,,,moved,,canonicalName; scientificName,tip
+———————,320,species,1127763,A.Callithrix rondoni,1127763,B.Mico rondoni,=,,,moved,,canonicalName,tip
+———————,321,species,,,9482,B.Mico argentatus,,,,,,,
+———————,322,species,,,1758231,B.Mico chrysoleucus,,,,,,,
+———————,323,species,,,2592805,B.Mico intermedius,,,,,,,
+———————,324,species,,,2592806,B.Mico leucippe,,,,,,,
+———————,325,species,,,2592807,B.Mico marcai,,,,,,,
+———————,326,species,,,2592808,B.Mico munduruku,,,,,,,
+——————,327,genus,,,2681187,B.Leontocebus,,,,,,,
+———————,328,species,9487,A.Saguinus fuscicollis,9487,B.Leontocebus fuscicollis,=,,,moved,,canonicalName,
+————————,329,subspecies,48018,A.Saguinus fuscicollis fuscicollis,48018,B.Leontocebus fuscicollis fuscicollis,=,,,,ncbi_id,canonicalName,tip
+————————,330,subspecies,343424,A.Saguinus fuscicollis weddelli,343424,B.Leontocebus fuscicollis weddelli,=,,,,,canonicalName,tip
+————————,331,subspecies,881946,A.Saguinus fuscicollis leucogenys,881946,B.Leontocebus fuscicollis leucogenys,=,,,,,canonicalName; scientificName,tip
+————————,332,subspecies,881947,A.Saguinus fuscicollis illigeri,881947,B.Leontocebus fuscicollis illigeri,=,,,,,canonicalName; scientificName,tip
+————————,333,subspecies,881949,A.Saguinus fuscicollis nigrifrons,881949,B.Leontocebus fuscicollis nigrifrons,=,,,,,canonicalName; scientificName,tip
+————————,334,subspecies,881950,A.Saguinus fuscicollis lagonotus,881950,B.Leontocebus fuscicollis lagonotus,=,,,,,canonicalName; scientificName,tip
+———————,335,species,122388,A.Saguinus tripartitus,122388,B.Leontocebus tripartitus,=,,,moved,ncbi_id,canonicalName,tip
+———————,336,species,1618156,A.Saguinus cruzlimai,1618156,B.Leontocebus cruzlimai,=,,,moved,,canonicalName,tip
+———————,337,species,,,9489,B.Leontocebus nigricollis,,,,,,,
+—————,338,subfamily,38070,A.Cebinae,38070,B.Cebinae,=,,,,canonicalName,,
+——————,339,genus,9513,A.Cebus,9513,B.Cebus,=,,,,canonicalName,number_of_children,
+———————,340,species,9514,A.Cebus albifrons,9514,B.Cebus albifrons,=,,,,canonicalName,,tip
+———————,341,species,9516,A.Cebus capucinus,9516,B.Cebus capucinus,=,,,,canonicalName,number_of_children,
+————————,342,subspecies,,,1737458,B.Cebus capucinus imitator,,,,,,,
+———————,343,species,37294,A.Cebus kaapori,37294,B.Cebus kaapori,=,,,,canonicalName,,tip
+———————,344,species,37295,A.Cebus olivaceus,,,,,,,,,
+———————,346,species,,,37295,B.Cebus olivaceus,,,,,,,
+————————,347,subspecies,,,1985287,B.Cebus olivaceus castaneus,,,,,,,
+———————,348,species,,,1985288,B.Cebus unicolor,,,,,,,
+———————,349,species,,,1985289,B.Cebus versicolor,,,,,,,
+———————,350,,,,2618788,B.unclassified Cebus,particle-set<=,9513,A.Cebus,split,monotypic,,
+————————,351,species,9517,A.Cebus sp.,9517,B.Cebus sp.,=,,,moved,canonicalName,,tip
+————————,352,species,1090916,A.Cebus sp. MAS-2011,1090916,B.Cebus sp. MAS-2011,=,,,moved,canonicalName,,tip
+————————,353,species,,,1967451,B.Cebus sp. 1 EG-2017,,,,,,,
+————————,354,species,,,1967452,B.Cebus sp. 2 EG-2017,,,,,,,
+——————,355,genus,1532884,A.Sapajus,1532884,B.Sapajus,=,,,,scientificName,number_of_children,
+———————,356,species,9515,A.Sapajus apella,9515,B.Sapajus apella,=,,,,canonicalName,,subtree=
+———————,359,species,174599,A.Sapajus xanthosternos,174599,B.Sapajus xanthosternos,=,,,,canonicalName,,tip
+———————,360,species,649471,A.Sapajus cay,649471,B.Sapajus cay,=,,,,canonicalName,,tip
+———————,361,species,867366,A.Sapajus nigritus,,,,,,,,,
+———————,363,species,1112861,A.Sapajus flavius,1112861,B.Sapajus flavius,=,,,,canonicalName,,tip
+———————,364,species,1126382,A.Sapajus libidinosus,1126382,B.Sapajus libidinosus,=,,,,canonicalName,,tip
+———————,365,species,,,867366,B.Sapajus nigritus,,,,,,,
+———————,366,,,,2619504,B.unclassified Sapajus,,,,,,,
+————————,367,species,,,1874197,B.Sapajus sp.,,,,,,,
+————————,368,species,,,2093835,B.Sapajus sp. 9 FD-2018,,,,,,,
+————————,369,species,,,2093836,B.Sapajus sp. 10 FD-2018,,,,,,,
+————————,370,species,,,2093837,B.Sapajus sp. 22 FD-2018,,,,,,,
+————————,371,species,,,2093838,B.Sapajus sp. M5 FD-2018,,,,,,,
+————————,372,species,,,2093839,B.Sapajus sp. M12 FD-2018,,,,,,,
+————————,373,species,,,2093840,B.Sapajus sp. M39 FD-2018,,,,,,,
+—————,374,,38071,A.unclassified Cebidae,,,,,,,,,
+—————,376,subfamily,378850,A.Saimiriinae,378850,B.Saimiriinae,=,,,,canonicalName,,
+——————,377,genus,9520,A.Saimiri,9520,B.Saimiri,=,,,,canonicalName,number_of_children,
+———————,378,species,9521,A.Saimiri sciureus,9521,B.Saimiri sciureus,=,,,,canonicalName,,subtree=
+———————,384,species,27679,A.Saimiri boliviensis,,,,,,,,,
+———————,386,species,66265,A.Saimiri ustus,66265,B.Saimiri ustus,=,,,,canonicalName,,tip
+———————,387,species,70928,A.Saimiri oerstedii,70928,B.Saimiri oerstedii,=,,,,canonicalName,,subtree=
+———————,390,species,1561161,A.Saimiri vanzolinii,1561161,B.Saimiri vanzolinii,=,,,,scientificName,,tip
+———————,391,species,,,27679,B.Saimiri boliviensis,,,,,,,
+————————,392,subspecies,39432,A.Saimiri boliviensis boliviensis,,,particle-set<=,27679,B.Saimiri boliviensis,lump,synonym+canonicalName+synonym,,
+————————,393,subspecies,,,39432,B.Saimiri boliviensis boliviensis,particle-set<=,27679,A.Saimiri boliviensis,split,synonym+canonicalName+synonym,,
+———————,394,,,,2635411,B.unclassified Saimiri,particle-set<=,9520,A.Saimiri,split,monotypic,,
+————————,395,species,1090919,A.Saimiri sp. MAS-2011,1090919,B.Saimiri sp. MAS-2011,=,,,moved,canonicalName,,tip
+————————,396,species,1561164,A.Saimiri sp.,1561164,B.Saimiri sp.,=,,,moved,canonicalName,,tip
+————————,397,species,,,1967464,B.Saimiri sp. 1 EG-2017,,,,,,,
+————————,398,species,,,1967465,B.Saimiri sp. 2 EG-2017,,,,,,,
+————————,399,species,,,1967466,B.Saimiri sp. 3 EG-2017,,,,,,,
+—————,400,,,,38071,B.unclassified Cebidae,,,,,,,
+————,401,family,376918,A.Aotidae,376918,B.Aotidae,=,,,,scientificName,,
+—————,402,genus,9504,A.Aotus,9504,B.Aotus,=,,,,scientificName,number_of_children,
+——————,403,species,9505,A.Aotus trivirgatus,9505,B.Aotus trivirgatus,=,,,,canonicalName,,tip
+——————,404,species,30591,A.Aotus azarai,30591,B.Aotus azarai,=,,,,canonicalName,,subtree=
+——————,408,species,37293,A.Aotus nancymaae,37293,B.Aotus nancymaae,=,,,,canonicalName,,tip
+——————,409,species,43147,A.Aotus lemurinus,43147,B.Aotus lemurinus,=,,,,scientificName,,tip
+——————,410,species,57175,A.Aotus nigriceps,57175,B.Aotus nigriceps,=,,,,canonicalName,,tip
+——————,411,species,57176,A.Aotus vociferans,57176,B.Aotus vociferans,=,,,,canonicalName,,tip
+——————,412,species,292213,A.Aotus griseimembra,292213,B.Aotus griseimembra,=,,,,scientificName,,tip
+——————,413,species,361674,A.Aotus brumbacki,361674,B.Aotus brumbacki,=,,,,canonicalName,,tip
+——————,414,species,1263727,A.Aotus zonalis,1263727,B.Aotus zonalis,=,,,,canonicalName,,tip
+——————,415,,,,2688256,B.unclassified Aotus (in: Chordata),particle-set<=,9504,A.Aotus,split,monotypic,,
+————,424,family,376919,A.Pitheciidae,376919,B.Pitheciidae,=,,,,canonicalName,number_of_children,
+—————,425,subfamily,38039,A.Pitheciinae,38039,B.Pitheciinae,=,,,,canonicalName,,
+——————,426,genus,9524,A.Chiropotes,9524,B.Chiropotes,=,,,,canonicalName,number_of_children,
+———————,427,species,9525,A.Chiropotes satanas,9525,B.Chiropotes satanas,=,,,,canonicalName,,tip
+———————,428,species,198627,A.Chiropotes albinasus,198627,B.Chiropotes albinasus,=,,,,canonicalName,,tip
+———————,429,species,202458,A.Chiropotes satanas x albinasus,202458,B.Chiropotes satanas x albinasus,=,,,,canonicalName,,tip
+———————,430,species,280160,A.Chiropotes utahickae,280160,B.Chiropotes utahickae,=,,,,scientificName,,tip
+———————,431,species,280163,A.Chiropotes israelita,280163,B.Chiropotes israelita,=,,,,canonicalName,,tip
+———————,432,species,626367,A.Chiropotes albinasus x satanas,626367,B.Chiropotes albinasus x satanas,=,,,,canonicalName,,tip
+———————,433,species,658221,A.Chiropotes chiropotes,,,,,,,,,
+———————,435,species,,,658221,B.Chiropotes chiropotes,,,,,,,
+———————,436,,,,2649368,B.unclassified Chiropotes,particle-set<=,9524,A.Chiropotes,split,monotypic,,
+————————,437,species,1090917,A.Chiropotes sp. MAS-2011,1090917,B.Chiropotes sp. MAS-2011,=,,,moved,canonicalName,,tip
+————————,438,species,1472258,A.Chiropotes sp. ZFMK_2008.244,1472258,B.Chiropotes sp. ZFMK_2008.244,=,,,moved,canonicalName,,tip
+————————,439,species,,,1758238,B.Chiropotes sp.,,,,,,,
+————————,440,species,,,2704455,B.Chiropotes sp. CTGAM5663,,,,,,,
+————————,441,species,,,2736752,B.Chiropotes sp. CTGAM5363,,,,,,,
+——————,442,genus,30595,A.Cacajao,30595,B.Cacajao,=,,,,canonicalName,number_of_children,
+———————,443,species,30596,A.Cacajao calvus,30596,B.Cacajao calvus,=,,,,canonicalName,,subtree=
+———————,448,species,70825,A.Cacajao melanocephalus,70825,B.Cacajao melanocephalus,=,,,,canonicalName,,tip
+———————,449,species,70927,A.Cacajao rubicundus,70927,B.Cacajao rubicundus,=,,,,canonicalName,,tip
+———————,450,species,535896,A.Cacajao ayresi,535896,B.Cacajao ayresi,=,,,,canonicalName,,tip
+———————,451,species,535897,A.Cacajao hosomi,535897,B.Cacajao hosomi,=,,,,canonicalName,,tip
+———————,452,,,,2704456,B.unclassified Cacajao,,,,,,,
+————————,453,species,,,2704457,B.Cacajao sp. CTGAM5666,,,,,,,
+——————,454,genus,30597,A.Pithecia,30597,B.Pithecia,=,,,,canonicalName,number_of_children,
+———————,455,species,30598,A.Pithecia irrorata,30598,B.Pithecia irrorata,=,,,,canonicalName,,tip
+———————,456,species,43777,A.Pithecia pithecia,,,,,,,,,
+———————,458,species,595220,A.Pithecia monachus,595220,B.Pithecia monachus,=,,,,canonicalName,,tip
+———————,459,species,,,43777,B.Pithecia pithecia,,,,,,,
+———————,460,,,,2646430,B.unclassified Pithecia,,,,,,,
+————————,461,species,,,1758237,B.Pithecia sp.,,,,,,,
+————————,462,species,,,2704458,B.Pithecia sp. UFPA Pit22,,,,,,,
+—————,463,subfamily,38069,A.Callicebinae,38069,B.Callicebinae,=,,,,canonicalName,number_of_children,
+——————,464,genus,9522,A.Callicebus,,,=,38069,B.Callicebinae,lump,mutual-cross-mrca,,
+———————,465,species,230833,A.Callicebus donacophilus,,,,,,,,,
+————————,466,subspecies,285954,A.Callicebus donacophilus donacophilus,285954,B.Plecturocebus donacophilus donacophilus,=,,,,,canonicalName,tip
+——————,467,genus,,,9522,B.Callicebus,particle-set<=,9522,A.Callicebus,split,canonicalName,,
+———————,468,species,70814,A.Callicebus personatus,70814,B.Callicebus personatus,=,,,moved,canonicalName,,subtree=
+———————,471,species,867333,A.Callicebus coimbrai,867333,B.Callicebus coimbrai,=,,,moved,scientificName,,tip
+———————,472,species,867334,A.Callicebus nigrifrons,867334,B.Callicebus nigrifrons,=,,,moved,scientificName,,tip
+———————,473,species,,,1290433,B.Callicebus dubius,,,,,,,
+———————,474,species,,,1861701,B.Callicebus caquetensis,,,,,,,
+———————,475,species,,,1861702,B.Callicebus ornatus,,,,,,,
+———————,476,species,,,1861703,B.Callicebus discolor,,,,,,,
+———————,477,,,,2627897,B.unclassified Callicebus,particle-set<=,9522,A.Callicebus,split,monotypic,,
+————————,478,species,116962,A.Callicebus sp.,116962,B.Callicebus sp.,=,,,moved,canonicalName,,tip
+————————,479,species,1090915,A.Callicebus sp. MAS-2011,1090915,B.Callicebus sp. MAS-2011,=,,,moved,canonicalName,,tip
+————————,480,species,,,1861704,B.Callicebus sp. 1 MH-2016,,,,,,,
+————————,481,species,,,1861705,B.Callicebus sp. 2 MH-2016,,,,,,,
+——————,482,genus,,,1812035,B.Plecturocebus,particle-set<=,9522,A.Callicebus,split,monotypic,,
+———————,483,species,9523,A.Callicebus moloch,9523,B.Plecturocebus moloch,=,,,moved,,canonicalName,tip
+———————,484,species,78255,A.Callicebus hoffmannsi,78255,B.Plecturocebus hoffmannsi,=,,,moved,,canonicalName,tip
+———————,485,species,202457,A.Callicebus cupreus,202457,B.Plecturocebus cupreus,=,,,moved,,canonicalName,tip
+———————,486,species,221704,A.Callicebus brunneus,1812042,B.Plecturocebus brunneus,=,,,moved,,ncbi_id; canonicalName,tip
+———————,487,species,867332,A.Callicebus caligatus,867332,B.Plecturocebus caligatus,=,,,moved,,canonicalName,tip
+———————,488,species,,,230833,B.Plecturocebus donacophilus,,,,,,,
+———————,489,species,,,1812036,B.Plecturocebus bernhardi,,,,,,,
+———————,490,species,,,1812037,B.Plecturocebus cinerascens,,,,,,,
+———————,491,species,,,1812038,B.Plecturocebus miltoni,,,,,,,
+———————,492,species,,,2487713,B.Plecturocebus vieirai,,,,,,,
+———————,493,species,,,2488670,B.Plecturocebus grovesi,,,,,,,
+——————,494,genus,,,1812102,B.Cheracebus,particle-set<=,9522,A.Callicebus,split,monotypic,,
+———————,495,species,30592,A.Callicebus torquatus,30592,B.Cheracebus torquatus,=,,,moved,,canonicalName,tip
+———————,496,species,210166,A.Callicebus lugens,210166,B.Cheracebus lugens,=,,,moved,,canonicalName,tip
+———————,497,species,1560619,A.Callicebus purinus,1560619,B.Cheracebus purinus,=,,,moved,,canonicalName,tip
+———————,498,species,,,1812110,B.Cheracebus regulus,,,,,,,
+———————,499,species,,,2487712,B.Cheracebus lucifer,,,,,,,
+—————,500,subfamily,,,2490929,B.Xenothricinae,,,,,,,
+——————,501,genus,,,2490930,B.Xenothrix,,,,,,,
+———————,502,species,,,2490931,B.Xenothrix mcgregori,,,,,,,
+————,503,family,378855,A.Atelidae,378855,B.Atelidae,=,,,,canonicalName,,
+—————,504,subfamily,38066,A.Alouattinae,38066,B.Alouattinae,=,,,,canonicalName,,
+——————,505,genus,9499,A.Alouatta,9499,B.Alouatta,=,,,,canonicalName,number_of_children,
+———————,506,species,9502,A.Alouatta caraya,9502,B.Alouatta caraya,=,,,,canonicalName,,tip
+———————,507,subspecies,198115,A.Alouatta seniculus macconnelli,198115,B.Alouatta macconnelli,=,,,,,taxonRank; canonicalName,tip
+———————,508,species,9503,A.Alouatta seniculus,,,particle-set<=,9499,B.Alouatta,lump,monotypic,,
+———————,509,species,30589,A.Alouatta palliata,30589,B.Alouatta palliata,=,,,,canonicalName,,subtree=
+———————,515,species,30590,A.Alouatta belzebul,,,,,,,,,
+———————,517,species,121123,A.Alouatta sara,121123,B.Alouatta sara,=,,,,canonicalName,,tip
+———————,518,species,163110,A.Alouatta stramineus,163110,B.Alouatta stramineus,=,,,,canonicalName,,tip
+———————,519,species,182253,A.Alouatta pigra,182253,B.Alouatta pigra,=,,,,canonicalName,,tip
+———————,520,species,182256,A.Alouatta guariba,,,,,,,,,
+———————,522,species,,,9503,B.Alouatta seniculus,,,,,,,
+———————,524,species,,,30590,B.Alouatta belzebul,,,,,,,
+———————,525,species,,,182256,B.Alouatta guariba,,,,,,,
+———————,526,species,,,2487933,B.Alouatta palliata x Alouatta pigra,,,,,,,
+—————,527,subfamily,38068,A.Atelinae,38068,B.Atelinae,=,,,,canonicalName,,
+——————,528,genus,9506,A.Ateles,9506,B.Ateles,=,,,,scientificName,number_of_children,
+———————,529,species,9507,A.Ateles belzebuth,9507,B.Ateles belzebuth,=,,,,canonicalName,,subtree=
+———————,532,species,9508,A.Ateles fusciceps,9508,B.Ateles fusciceps,=,,,,canonicalName,,subtree=
+———————,535,species,9509,A.Ateles geoffroyi,9509,B.Ateles geoffroyi,=,,,,scientificName,,subtree=
+———————,542,species,9510,A.Ateles paniscus,9510,B.Ateles paniscus,=,,,,canonicalName,,tip
+———————,543,species,36234,A.Ateles paniscus x Ateles fusciceps,36234,B.Ateles paniscus x Ateles fusciceps,=,,,,canonicalName,,tip
+———————,544,,120432,A.unclassified Ateles,,,,,,,,,
+———————,557,species,129801,A.Ateles hybridus,,,,,,,,,
+———————,559,species,1529884,A.Ateles marginatus,1529884,B.Ateles marginatus,=,,,,canonicalName,scientificName,tip
+———————,560,,,,120432,B.unclassified Ateles,particle-set<=,9506,A.Ateles,split,monotypic,,
+————————,561,species,9511,A.Ateles sp.,9511,B.Ateles sp.,=,,,moved,canonicalName,,tip
+————————,562,species,,,1967450,B.Ateles sp. EG-2017,,,,,,,
+———————,563,species,,,129801,B.Ateles hybridus,,,,,,,
+——————,564,genus,9518,A.Lagothrix,9518,B.Lagothrix,=,,,,scientificName,number_of_children,
+———————,565,species,9519,A.Lagothrix lagotricha,9519,B.Lagothrix lagotricha,=,,,,scientificName,,tip
+———————,566,species,767355,A.Lagothrix lugens,767355,B.Lagothrix lugens,=,,,,scientificName,,tip
+———————,567,species,767356,A.Lagothrix poeppigii,767356,B.Lagothrix poeppigii,=,,,,scientificName,,tip
+———————,568,species,767357,A.Lagothrix cana,767357,B.Lagothrix cana,=,,,,scientificName,,tip
+———————,569,species,,,2565305,B.Lagothrix flavicauda,,,,,,,
+———————,570,species,,,2565306,B.Lagothrix tschudii,,,,,,,
+———————,571,,,,2645779,B.unclassified Lagothrix,,,,,,,
+————————,572,species,638937,A.Lagothrix sp. CCS-2009a,638937,B.Lagothrix sp. CCS-2009a,=,,,moved,canonicalName,,tip
+————————,573,species,,,1967456,B.Lagothrix sp. EG-2017,,,,,,,
+——————,574,genus,30593,A.Brachyteles,30593,B.Brachyteles,=,,,,canonicalName,,subtree=
+———,577,parvorder,9526,A.Catarrhini,9526,B.Catarrhini,=,,,,canonicalName,,
+————,578,superfamily,314294,A.Cercopithecoidea,314294,B.Cercopithecoidea,=,,,,canonicalName,,
+—————,579,family,9527,A.Cercopithecidae,9527,B.Cercopithecidae,particle-set<=,,,,mutual-cross-mrca,,
+——————,580,subfamily,9528,A.Cercopithecinae,9528,B.Cercopithecinae,=,,,,canonicalName,number_of_children,
+———————,581,genus,9529,A.Cercocebus,9529,B.Cercocebus,=,,,,scientificName,,
+————————,582,species,9530,A.Cercocebus torquatus,,,,,,,,,
+————————,584,species,9531,A.Cercocebus atys,9531,B.Cercocebus atys,=,,,,scientificName,,subtree=
+————————,587,species,9532,A.Cercocebus galeritus,9532,B.Cercocebus galeritus,=,,,,canonicalName,,tip
+————————,588,species,75569,A.Cercocebus chrysogaster,75569,B.Cercocebus chrysogaster,=,,,,scientificName,,tip
+————————,589,species,255237,A.Cercocebus agilis,255237,B.Cercocebus agilis,=,,,,canonicalName,,tip
+————————,590,species,,,9530,B.Cercocebus torquatus,,,,,,,
+———————,591,genus,9533,A.Cercopithecus,,,=,9528,B.Cercopithecinae,lump,monotypic,,
+————————,592,species,9536,A.Cercopithecus hamlyni,,,,,,,,,
+————————,594,species,303588,A.Cercopithecus campbelli,,,,,,,,,
+———————,596,genus,9537,A.Erythrocebus,,,,,,,,,
+———————,598,genus,9539,A.Macaca,9539,B.Macaca,=,,,,canonicalName,number_of_children,
+————————,599,species,9540,A.Macaca arctoides,9540,B.Macaca arctoides,=,,,,canonicalName,,tip
+————————,600,species,9541,A.Macaca fascicularis,9541,B.Macaca fascicularis,=,,,,canonicalName,number_of_children,
+—————————,601,subspecies,90386,A.Macaca fascicularis philippinensis,90386,B.Macaca fascicularis philippinensis,=,,,,canonicalName,,tip
+—————————,602,subspecies,1215360,A.Macaca fascicularis fascicularis,1215360,B.Macaca fascicularis fascicularis,=,,,,canonicalName,,tip
+—————————,603,subspecies,,,1747270,B.Macaca fascicularis aureus,,,,,,,
+————————,604,species,9542,A.Macaca fuscata,,,,,,,,,
+————————,606,species,9544,A.Macaca mulatta,,,,,,,,,
+————————,608,subspecies,90387,A.Macaca nemestrina leonina,90387,B.Macaca leonina,=,,,,,taxonRank; canonicalName,
+—————————,609,species,285350,A.Macaca leonina,,,matches,90387,B.Macaca leonina,lump,canonicalName,,
+————————,610,subspecies,244255,A.Macaca nemestrina siberu,244255,B.Macaca siberu,=,,,,,taxonRank; canonicalName,
+—————————,611,species,867378,A.Macaca siberu,,,matches,244255,B.Macaca siberu,lump,scientificName,,
+————————,612,species,9545,A.Macaca nemestrina,,,=,9539,B.Macaca,lump,monotypic,,
+————————,613,species,9546,A.Macaca sylvanus,9546,B.Macaca sylvanus,=,,,,canonicalName,,tip
+————————,614,species,9548,A.Macaca radiata,,,,,,,,,
+————————,616,species,9551,A.Macaca assamensis,,,,,,,,,
+————————,618,species,9552,A.Macaca sinica,9552,B.Macaca sinica,=,,,,canonicalName,,tip
+————————,619,species,9553,A.Macaca speciosa,9553,B.Macaca speciosa,=,,,,canonicalName,,tip
+————————,620,species,40843,A.Macaca tonkeana,40843,B.Macaca tonkeana,=,,,,canonicalName,,tip
+————————,621,species,54600,A.Macaca nigra,54600,B.Macaca nigra,=,,,,canonicalName,,tip
+————————,622,species,54601,A.Macaca silenus,54601,B.Macaca silenus,=,,,,canonicalName,,tip
+————————,623,species,54602,A.Macaca thibetana,,,,,,,,,
+————————,625,species,78449,A.Macaca cyclopis,78449,B.Macaca cyclopis,=,,,,canonicalName,,tip
+————————,626,species,90381,A.Macaca brunnescens,90381,B.Macaca brunnescens,=,,,,canonicalName,,tip
+————————,627,species,90382,A.Macaca hecki,90382,B.Macaca hecki,=,,,,scientificName,,tip
+————————,628,species,90383,A.Macaca maura,90383,B.Macaca maura,=,,,,canonicalName,,tip
+————————,629,species,90384,A.Macaca nigrescens,90384,B.Macaca nigrescens,=,,,,canonicalName,,tip
+————————,630,species,90385,A.Macaca ochreata,90385,B.Macaca ochreata,=,,,,scientificName,,tip
+————————,631,species,168259,A.Macaca maura x tonkeana,168259,B.Macaca maura x tonkeana,=,,,,canonicalName,,tip
+————————,632,species,171293,A.Macaca hecki x tonkeana,171293,B.Macaca hecki x tonkeana,=,,,,canonicalName,,tip
+————————,633,species,230653,A.Macaca pagensis,230653,B.Macaca pagensis,=,,,,canonicalName,,tip
+————————,634,species,281404,A.Macaca balantak,281404,B.Macaca balantak,=,,,,canonicalName,,tip
+————————,635,species,281405,A.Macaca balantak x tonkeana,281405,B.Macaca balantak x tonkeana,=,,,,canonicalName,,tip
+————————,636,species,402888,A.Macaca munzala,402888,B.Macaca munzala,=,,,,canonicalName,,tip
+————————,637,species,,,9542,B.Macaca fuscata,,,,,,,
+—————————,638,species,36513,A.Japanese monkeys,,,particle-set<=,9542,B.Macaca fuscata,lump,canonicalName+synonym,,
+—————————,639,subspecies,9543,A.Macaca fuscata fuscata,,,particle-set<=,9542,B.Macaca fuscata,lump,synonym+canonicalName+synonym,,
+—————————,640,subspecies,,,9543,B.Macaca fuscata fuscata,particle-set<=,9542,A.Macaca fuscata,split,synonym+canonicalName+synonym,,
+————————,641,species,,,9544,B.Macaca mulatta,,,,,,,
+—————————,642,subspecies,,,1654737,B.Macaca mulatta brevicaudus,,,,,,,
+—————————,643,subspecies,,,2008792,B.Macaca mulatta vestita,,,,,,,
+————————,644,species,,,9545,B.Macaca nemestrina,,,,,,,
+————————,646,species,,,9548,B.Macaca radiata,,,,,,,
+————————,647,species,,,9551,B.Macaca assamensis,,,,,,,
+————————,648,species,,,54602,B.Macaca thibetana,,,,,,,
+————————,649,species,,,1885588,B.Macaca leucogenys,,,,,,,
+————————,650,,,,2623225,B.unclassified Macaca,,,,,,,
+———————,652,genus,9554,A.Papio,9554,B.Papio,=,,,,scientificName,number_of_children,
+————————,653,species,9555,A.Papio anubis,,,,,,,,,
+————————,655,species,9556,A.Papio cynocephalus,9556,B.Papio cynocephalus,=,,,,mutual-cross-mrca,,subtree=
+————————,658,species,9557,A.Papio hamadryas,,,,,,,,,
+————————,660,species,36229,A.Papio ursinus,,,,,,,,,
+————————,662,species,100937,A.Papio papio,100937,B.Papio papio,=,,,,scientificName,,tip
+————————,663,species,208091,A.Papio kindae,208091,B.Papio kindae,=,,,,canonicalName,,tip
+————————,664,species,208510,A.Papio cynocephalus x Papio anubis,208510,B.Papio cynocephalus x Papio anubis,=,,,,canonicalName,,tip
+————————,665,species,1560552,A.Papio anubis x hamadryas,1560552,B.Papio anubis x hamadryas,=,,,,canonicalName,,tip
+————————,666,species,,,9555,B.Papio anubis,,,,,,,
+————————,667,species,,,9557,B.Papio hamadryas,,,,,,,
+————————,668,species,,,36229,B.Papio ursinus,,,,,,,
+—————————,669,subspecies,,,208090,B.Papio ursinus griseipes,,,,,,,
+————————,670,species,,,1945556,B.Papio anubis x Papio cynocephalus,,,,,,,
+————————,671,species,,,1945557,B.Papio anubis x Papio ursinus,,,,,,,
+————————,672,species,,,1945558,B.Papio kindae x Papio cynocephalus,,,,,,,
+————————,673,species,,,1945559,B.Papio kindae x Papio ursinus griseipes,,,,,,,
+————————,674,,,,2632072,B.unclassified Papio,particle-set<=,9554,A.Papio,split,monotypic,,
+———————,678,genus,9564,A.Theropithecus,,,,,,,,,
+———————,680,genus,9567,A.Mandrillus,9567,B.Mandrillus,=,,,,canonicalName,,subtree=
+———————,683,genus,36230,A.Miopithecus,36230,B.Miopithecus,=,,,,canonicalName,,
+————————,684,species,36231,A.Miopithecus talapoin,,,,,,,,,
+————————,686,species,100488,A.Miopithecus ogouensis,100488,B.Miopithecus ogouensis,=,,,,scientificName,,tip
+————————,687,species,,,36231,B.Miopithecus talapoin,,,,,,,
+———————,688,genus,54134,A.Allenopithecus,,,,,,,,,
+———————,690,genus,75565,A.Lophocebus,75565,B.Lophocebus,=,,,,canonicalName,,
+————————,691,species,75566,A.Lophocebus aterrimus,75566,B.Lophocebus aterrimus,=,,,,scientificName,,tip
+————————,692,species,75567,A.Lophocebus albigena,,,,,,,,,
+————————,694,species,,,75567,B.Lophocebus albigena,,,,,,,
+———————,695,genus,371038,A.Rungwecebus,,,,,,,,,
+———————,697,genus,392815,A.Chlorocebus,392815,B.Chlorocebus,=,,,,canonicalName,,
+————————,698,species,9534,A.Chlorocebus aethiops,9534,B.Chlorocebus aethiops,=,,,,canonicalName,,subtree=
+————————,701,species,60710,A.Chlorocebus pygerythrus,60710,B.Chlorocebus pygerythrus,=,,,,scientificName,number_of_children,
+—————————,702,subspecies,460674,A.Chlorocebus pygerythrus pygerythrus,460674,B.Chlorocebus pygerythrus pygerythrus,=,,,,canonicalName,,tip
+—————————,703,subspecies,508712,A.Chlorocebus pygerythrus hilgerti,508712,B.Chlorocebus pygerythrus hilgerti,=,,,,canonicalName,,tip
+—————————,704,subspecies,,,2269071,B.Chlorocebus pygerythrus x Chlorocebus aethiops,,,,,,,
+————————,705,species,60711,A.Chlorocebus sabaeus,60711,B.Chlorocebus sabaeus,=,,,,scientificName,,tip
+————————,706,species,60712,A.Chlorocebus tantalus,,,,,,,,,
+————————,708,species,460675,A.Chlorocebus cynosuros,460675,B.Chlorocebus cynosuros,=,,,,scientificName,,tip
+————————,709,species,1284215,A.Chlorocebus djamdjamensis,1284215,B.Chlorocebus djamdjamensis,=,,,,scientificName,,tip
+————————,710,species,1476079,A.Chlorocebus aethiops x djamdjamensis,1476079,B.Chlorocebus aethiops x djamdjamensis,=,,,,canonicalName,,tip
+————————,711,species,,,60712,B.Chlorocebus tantalus,,,,,,,
+————————,712,species,,,1903316,B.Chlorocebus aethiops x Chlorocebus pygerythrus,,,,,,,
+————————,713,,,,2685534,B.unclassified Chlorocebus,particle-set<=,392815,A.Chlorocebus,split,monotypic,,
+—————————,714,species,1090918,A.Chlorocebus sp. MAS-2011,1090918,B.Chlorocebus sp. MAS-2011,=,,,moved,canonicalName,,tip
+—————————,715,species,1284216,A.Chlorocebus sp. TH-2013,1284216,B.Chlorocebus sp. TH-2013,=,,,moved,canonicalName,,tip
+—————————,716,species,,,2282232,B.Chlorocebus sp. LDS-2018,,,,,,,
+———————,717,genus,,,9533,B.Cercopithecus,,,,,,,
+————————,718,species,9535,A.Cercopithecus cephus,9535,B.Cercopithecus cephus,=,,,moved,scientificName,,subtree=
+————————,722,species,36223,A.Cercopithecus ascanius,36223,B.Cercopithecus ascanius,=,,,moved,scientificName,,subtree=
+————————,727,species,36224,A.Cercopithecus diana,36224,B.Cercopithecus diana,=,,,moved,scientificName,,tip
+————————,728,species,36225,A.Cercopithecus mitis,36225,B.Cercopithecus mitis,=,,,moved,scientificName,,subtree=
+————————,734,species,36226,A.Cercopithecus mona,36226,B.Cercopithecus mona,=,,,moved,canonicalName,,subtree=
+————————,737,species,36227,A.Cercopithecus neglectus,36227,B.Cercopithecus neglectus,=,,,moved,canonicalName,,tip
+————————,738,species,36228,A.Cercopithecus nictitans,36228,B.Cercopithecus nictitans,=,,,moved,scientificName,,subtree=
+————————,741,species,100487,A.Cercopithecus petaurista,100487,B.Cercopithecus petaurista,=,,,moved,canonicalName,,subtree=
+————————,744,species,102108,A.Cercopithecus pogonias,102108,B.Cercopithecus pogonias,=,,,moved,canonicalName,,subtree=
+————————,749,species,161496,A.Cercopithecus erythrogaster,161496,B.Cercopithecus erythrogaster,=,,,moved,scientificName,,subtree=
+————————,752,species,167130,A.Cercopithecus erythrotis,167130,B.Cercopithecus erythrotis,=,,,moved,scientificName,,subtree=
+————————,755,species,263448,A.Cercopithecus wolfi,263448,B.Cercopithecus wolfi,=,,,moved,canonicalName,scientificName,subtree=
+————————,759,species,867370,A.Cercopithecus albogularis,867370,B.Cercopithecus albogularis,=,,,moved,scientificName,,subtree=
+————————,767,species,1137048,A.Cercopithecus dryas,1137048,B.Cercopithecus dryas,=,,,moved,canonicalName,scientificName,tip
+————————,768,species,1137049,A.Cercopithecus roloway,1137049,B.Cercopithecus roloway,=,,,moved,scientificName,,tip
+————————,769,species,1137474,A.Cercopithecus doggetti,1137474,B.Cercopithecus doggetti,=,,,moved,scientificName,,tip
+————————,770,species,1137481,A.Cercopithecus kandti,1137481,B.Cercopithecus kandti,=,,,moved,scientificName,,tip
+————————,771,species,1137511,A.Cercopithecus denti,1137511,B.Cercopithecus denti,=,,,moved,scientificName,,tip
+————————,772,species,1191211,A.Cercopithecus lomamiensis,1191211,B.Cercopithecus lomamiensis,=,,,moved,canonicalName,scientificName,tip
+————————,773,species,,,9536,B.Cercopithecus hamlyni,,,,,,,
+————————,774,species,,,303588,B.Cercopithecus campbelli,,,,,,,
+————————,775,species,,,1579530,B.Cercopithecus sclateri,,,,,,,
+————————,776,,,,2618071,B.unclassified Cercopithecus,,,,,,,
+———————,778,genus,,,9537,B.Erythrocebus,,,,,,,
+———————,779,genus,,,9564,B.Theropithecus,,,,,,,
+———————,780,genus,,,54134,B.Allenopithecus,,,,,,,
+———————,781,genus,,,371038,B.Rungwecebus,,,,,,,
+———————,782,genus,,,2059839,B.Allochrocebus,,,,,,,
+————————,783,species,100224,A.Cercopithecus lhoesti,100224,B.Allochrocebus lhoesti,=,,,moved,,canonicalName,tip
+————————,784,species,147649,A.Cercopithecus preussi,147649,B.Allochrocebus preussi,=,,,moved,,canonicalName; scientificName,
+—————————,785,subspecies,1137512,A.Cercopithecus preussi insularis,1137512,B.Allochrocebus preussi insularis,=,,,,,canonicalName,tip
+—————————,786,subspecies,1137513,A.Cercopithecus preussi preussi,1137513,B.Allochrocebus preussi preussi,=,,,,,canonicalName,tip
+————————,787,species,147650,A.Cercopithecus solatus,147650,B.Allochrocebus solatus,=,,,moved,,canonicalName; scientificName,tip
+——————,788,subfamily,9569,A.Colobinae,9569,B.Colobinae,=,,,,canonicalName,,
+———————,789,genus,9570,A.Colobus,9570,B.Colobus,=,,,,canonicalName,number_of_children,
+————————,790,species,9572,A.Colobus polykomos,9572,B.Colobus polykomos,=,,,,canonicalName,,tip
+————————,791,species,33548,A.Colobus guereza,33548,B.Colobus guereza,=,,,,canonicalName,scientificName,subtree=
+————————,796,species,54131,A.Colobus angolensis,,,,,,,,,
+————————,798,species,378195,A.Colobus vellerosus,378195,B.Colobus vellerosus,=,,,,canonicalName,,tip
+————————,799,species,378196,A.Colobus vellerosus x angolensis,378196,B.Colobus vellerosus x angolensis,=,,,,canonicalName,,tip
+————————,800,species,517012,A.Colobus satanas,,,,,,,,,
+————————,802,species,,,54131,B.Colobus angolensis,,,,,,,
+————————,803,species,,,517012,B.Colobus satanas,,,,,,,
+————————,804,,,,2618863,B.unclassified Colobus,particle-set<=,9570,A.Colobus,split,monotypic,,
+———————,808,genus,9573,A.Presbytis,9573,B.Presbytis,=,,,,canonicalName,,
+————————,809,species,66055,A.Presbytis senex,66055,B.Presbytis senex,=,,,,canonicalName,,tip
+————————,810,species,78451,A.Presbytis melalophos,78451,B.Presbytis melalophos,=,,,,scientificName,,
+—————————,811,subspecies,272115,A.Presbytis melalophos mitrata,272115,B.Presbytis melalophos mitrata,=,,,,canonicalName,,tip
+—————————,812,subspecies,1046095,A.Presbytis melalophos bicolor,1046095,B.Presbytis melalophos bicolor,=,,,,scientificName,,tip
+—————————,813,subspecies,1046096,A.Presbytis melalophos melalophos,1046096,B.Presbytis melalophos melalophos,=,,,,canonicalName,,tip
+—————————,814,subspecies,1046097,A.Presbytis melalophos sumatranus,1046097,B.Presbytis melalophos sumatranus,=,,,,scientificName,,tip
+————————,815,species,78452,A.Presbytis comata,78452,B.Presbytis comata,=,,,,canonicalName,,subtree=
+————————,818,species,78453,A.Presbytis femoralis,78453,B.Presbytis femoralis,=,,,,canonicalName,number_of_children,
+—————————,819,subspecies,,,1840579,B.Presbytis femoralis femoralis,,,,,,,
+————————,820,species,1046090,A.Presbytis chrysomelas,1046090,B.Presbytis chrysomelas,=,,,,scientificName,,tip
+————————,821,species,1046092,A.Presbytis frontata,1046092,B.Presbytis frontata,=,,,,scientificName,,tip
+————————,822,species,1046093,A.Presbytis hosei,,,,,,,,,
+————————,824,species,1046098,A.Presbytis potenziani,1046098,B.Presbytis potenziani,=,,,,scientificName,,subtree=
+————————,827,species,1046101,A.Presbytis rubicunda,,,,,,,,,
+————————,829,species,1046103,A.Presbytis thomasi,1046103,B.Presbytis thomasi,=,,,,scientificName,,tip
+————————,830,species,,,1046093,B.Presbytis hosei,,,,,,,
+————————,831,species,,,1046101,B.Presbytis rubicunda,,,,,,,
+———————,832,genus,43779,A.Nasalis,,,,,,,,,
+———————,834,genus,54132,A.Pygathrix,54132,B.Pygathrix,=,,,,canonicalName,,
+————————,835,species,54133,A.Pygathrix nemaeus,,,,,,,,,
+————————,837,species,310352,A.Pygathrix nigripes,310352,B.Pygathrix nigripes,=,,,,canonicalName,,tip
+————————,838,species,693712,A.Pygathrix cinerea,693712,B.Pygathrix cinerea,=,,,,canonicalName,,tip
+————————,839,species,1194332,A.Pygathrix cinerea 1 RL-2012,1194332,B.Pygathrix cinerea 1 RL-2012,=,,,,canonicalName,,tip
+————————,840,species,1194333,A.Pygathrix cinerea 2 RL-2012,1194333,B.Pygathrix cinerea 2 RL-2012,=,,,,canonicalName,,tip
+————————,841,species,,,54133,B.Pygathrix nemaeus,,,,,,,
+———————,842,genus,54136,A.Trachypithecus,54136,B.Trachypithecus,=,,,,scientificName,number_of_children,
+————————,843,species,54137,A.Trachypithecus vetulus,,,,,,,,,
+————————,845,species,54180,A.Trachypithecus francoisi,,,,,,,,,
+————————,847,species,54181,A.Trachypithecus obscurus,54181,B.Trachypithecus obscurus,=,,,,scientificName,,tip
+————————,848,species,61618,A.Trachypithecus phayrei,61618,B.Trachypithecus phayrei,=,,,,scientificName,,subtree=
+————————,853,species,66063,A.Trachypithecus johnii,66063,B.Trachypithecus johnii,=,,,,scientificName,,tip
+————————,854,species,122765,A.Trachypithecus cristatus,122765,B.Trachypithecus cristatus,=,,,,scientificName,,tip
+————————,855,species,164650,A.Trachypithecus geei,164650,B.Trachypithecus geei,=,,,,canonicalName,,tip
+————————,856,species,164651,A.Trachypithecus pileatus,164651,B.Trachypithecus pileatus,=,,,,canonicalName,,tip
+————————,857,species,222416,A.Trachypithecus auratus,222416,B.Trachypithecus auratus,=,,,,canonicalName,,subtree=
+————————,861,species,271260,A.Trachypithecus germaini,271260,B.Trachypithecus germaini,=,,,,canonicalName,,tip
+————————,862,species,271261,A.Trachypithecus barbei,271261,B.Trachypithecus barbei,=,,,,canonicalName,,tip
+————————,863,species,465717,A.Trachypithecus delacouri,465717,B.Trachypithecus delacouri,=,,,,canonicalName,,tip
+————————,864,species,465718,A.Trachypithecus laotum,465718,B.Trachypithecus laotum,=,,,,canonicalName,,tip
+————————,865,species,465719,A.Trachypithecus poliocephalus,465719,B.Trachypithecus poliocephalus,=,,,,canonicalName,,subtree=
+————————,868,species,744437,A.Trachypithecus francoisi x poliocephalus,744437,B.Trachypithecus francoisi x poliocephalus,=,,,,canonicalName,,tip
+————————,869,species,867383,A.Trachypithecus hatinhensis,867383,B.Trachypithecus hatinhensis,=,,,,scientificName,,tip
+————————,870,species,1042121,A.Trachypithecus shortridgei,1042121,B.Trachypithecus shortridgei,=,,,,scientificName,,tip
+————————,871,species,,,54137,B.Trachypithecus vetulus,,,,,,,
+————————,872,species,,,54180,B.Trachypithecus francoisi,,,,,,,
+————————,873,species,,,1966384,B.Trachypithecus mauritius,,,,,,,
+————————,874,,,,2623509,B.unclassified Trachypithecus,,,,,,,
+———————,876,genus,88028,A.Semnopithecus,88028,B.Semnopithecus,=,,,,canonicalName,number_of_children,
+————————,877,subspecies,272117,A.Semnopithecus entellus priam,1208733,B.Semnopithecus priam,=,,,,,taxonRank; ncbi_id; canonicalName,
+—————————,878,species,1208733,A.Semnopithecus priam,,,matches,1208733,B.Semnopithecus priam,lump,scientificName,,
+————————,879,species,88029,A.Semnopithecus entellus,,,=,88028,B.Semnopithecus,lump,monotypic,,
+————————,880,species,867382,A.Semnopithecus hector,867382,B.Semnopithecus hector,=,,,,scientificName,,tip
+————————,881,species,1208734,A.Semnopithecus hypoleucos,1208734,B.Semnopithecus hypoleucos,=,,,,scientificName,,tip
+————————,882,species,,,88029,B.Semnopithecus entellus,,,,,,,
+————————,884,,,,2632571,B.unclassified Semnopithecus,,,,,,,
+—————————,885,species,,,1778600,B.Semnopithecus sp.,,,,,,,
+———————,886,genus,164647,A.Procolobus,,,,,,,,,
+————————,887,species,373033,A.Procolobus verus,373033,B.Procolobus verus,=,,,,canonicalName,,tip
+———————,888,genus,542827,A.Rhinopithecus,542827,B.Rhinopithecus,=,,,,canonicalName,number_of_children,
+————————,889,species,61621,A.Rhinopithecus bieti,61621,B.Rhinopithecus bieti,=,,,,canonicalName,,tip
+————————,890,species,61622,A.Rhinopithecus roxellana,61622,B.Rhinopithecus roxellana,=,,,,scientificName,,tip
+————————,891,species,66062,A.Rhinopithecus avunculus,66062,B.Rhinopithecus avunculus,=,,,,canonicalName,scientificName,tip
+————————,892,species,224329,A.Rhinopithecus brelichi,224329,B.Rhinopithecus brelichi,=,,,,canonicalName,,tip
+————————,893,species,1194334,A.Rhinopithecus bieti 1 RL-2012,1194334,B.Rhinopithecus bieti 1 RL-2012,=,,,,canonicalName,,tip
+————————,894,species,1194335,A.Rhinopithecus bieti 2 RL-2012,1194335,B.Rhinopithecus bieti 2 RL-2012,=,,,,canonicalName,,tip
+————————,895,species,1194336,A.Rhinopithecus strykeri,1194336,B.Rhinopithecus strykeri,=,,,,scientificName,,tip
+————————,896,,,,2644350,B.unclassified Rhinopithecus,,,,,,,
+—————————,897,species,,,1859147,B.Rhinopithecus sp.,,,,,,,
+———————,898,genus,591932,A.Piliocolobus,591932,B.Piliocolobus,=,,,,canonicalName,,
+————————,899,species,164648,A.Piliocolobus badius,164648,B.Piliocolobus badius,=,,,,canonicalName,,subtree=
+————————,902,species,591933,A.Piliocolobus gordonorum,591933,B.Piliocolobus gordonorum,=,,,,canonicalName,,tip
+————————,903,species,591934,A.Piliocolobus rufomitratus,591934,B.Piliocolobus rufomitratus,=,,,,canonicalName,,tip
+————————,904,species,591935,A.Piliocolobus tholloni,591935,B.Piliocolobus tholloni,=,,,,canonicalName,,tip
+————————,905,species,591936,A.Piliocolobus tephrosceles,591936,B.Piliocolobus tephrosceles,=,,,,canonicalName,,tip
+————————,906,species,591937,A.Piliocolobus kirkii,591937,B.Piliocolobus kirkii,=,,,,canonicalName,,tip
+————————,907,species,591938,A.Piliocolobus foai,591938,B.Piliocolobus foai,=,,,,canonicalName,,tip
+————————,908,species,591944,A.Piliocolobus pennantii,591944,B.Piliocolobus pennantii,=,,,,canonicalName,,tip
+————————,909,species,591945,A.Piliocolobus preussi,591945,B.Piliocolobus preussi,=,,,,canonicalName,,tip
+———————,910,genus,1203020,A.Simias,,,,,,,,,
+———————,912,genus,,,43779,B.Nasalis,,,,,,,
+———————,913,genus,,,164647,B.Procolobus,,,,,,,
+———————,914,genus,,,1203020,B.Simias,,,,,,,
+——————,915,species,9576,A.Cercopithecidae gen. sp.,9576,B.Cercopithecidae gen. sp.,=,,,,canonicalName,,tip
+————,916,superfamily,314295,A.Hominoidea,314295,B.Hominoidea,=,,,,canonicalName,,
+—————,917,family,9577,A.Hylobatidae,9577,B.Hylobatidae,=,,,,canonicalName,,
+——————,918,genus,9578,A.Hylobates,9578,B.Hylobates,=,,,,canonicalName,number_of_children,
+———————,919,species,9579,A.Hylobates agilis,9579,B.Hylobates agilis,=,,,,canonicalName,,subtree=
+———————,922,species,9580,A.Hylobates lar,9580,B.Hylobates lar,=,,,,canonicalName,,subtree=
+———————,927,species,9587,A.Hylobates klossii,9587,B.Hylobates klossii,=,,,,canonicalName,,tip
+———————,928,species,9588,A.Hylobates muelleri,9588,B.Hylobates muelleri,=,,,,scientificName,,subtree=
+———————,932,species,9589,A.Hylobates pileatus,9589,B.Hylobates pileatus,=,,,,canonicalName,,tip
+———————,933,species,81572,A.Hylobates moloch,81572,B.Hylobates moloch,=,,,,canonicalName,,tip
+———————,934,species,716691,A.Hylobates alibarbis,716691,B.Hylobates albibarbis,=,,,,ncbi_id,canonicalName; scientificName,tip
+———————,935,,,,2647113,B.unclassified Hylobates,particle-set<=,9578,A.Hylobates,split,monotypic,,
+————————,936,species,9581,A.Hylobates sp.,9581,B.Hylobates sp.,=,,,moved,canonicalName,,tip
+————————,937,species,150249,A.Hylobates sp. TIB-201,150249,B.Hylobates sp. TIB-201,=,,,moved,canonicalName,,tip
+————————,938,species,280856,A.Hylobates sp. IGL-2004,280856,B.Hylobates sp. IGL-2004,=,,,moved,canonicalName,,tip
+————————,939,species,288892,A.Hylobates sp. AMA-2004,288892,B.Hylobates sp. AMA-2004,=,,,moved,canonicalName,,tip
+————————,940,species,419588,A.Hylobates sp. ECACC MLA144,419588,B.Hylobates sp. ECACC MLA144,=,,,moved,canonicalName,,tip
+————————,941,species,425245,A.Hylobates sp. PS-2007,425245,B.Hylobates sp. PS-2007,=,,,moved,canonicalName,,tip
+————————,942,species,,,2023128,B.Hylobates sp. OH-2017,,,,,,,
+——————,943,genus,325165,A.Nomascus,325165,B.Nomascus,=,,,,canonicalName,number_of_children,
+———————,944,species,9586,A.Nomascus siki,9586,B.Nomascus siki,=,,,,canonicalName,,tip
+———————,945,species,29089,A.Nomascus concolor,29089,B.Nomascus concolor,=,,,,canonicalName,,subtree=
+———————,950,species,61852,A.Nomascus gabriellae,61852,B.Nomascus gabriellae,=,,,,canonicalName,,tip
+———————,951,species,61853,A.Nomascus leucogenys,61853,B.Nomascus leucogenys,=,,,,canonicalName,,tip
+———————,952,species,327374,A.Nomascus nasutus,327374,B.Nomascus nasutus,=,,,,canonicalName,,tip
+———————,953,species,693984,A.Nomascus hainanus,693984,B.Nomascus hainanus,=,,,,canonicalName,,tip
+———————,954,species,,,1616038,B.Nomascus annamensis,,,,,,,
+———————,955,species,,,2170372,B.Nomascus gabriellae x Nomascus siki,,,,,,,
+———————,956,species,,,2170373,B.Nomascus leucogenys x Nomascus siki,,,,,,,
+———————,957,species,,,2170374,B.Nomascus cf. leucogenys SSH-2018,,,,,,,
+——————,958,genus,325166,A.Symphalangus,,,,,,,,,
+———————,959,species,9590,A.Symphalangus syndactylus,,,,,,,,,
+——————,961,genus,325167,A.Hoolock,325167,B.Hoolock,=,,,,scientificName,number_of_children,
+———————,962,species,61851,A.Hoolock hoolock,61851,B.Hoolock hoolock,=,,,,canonicalName,,tip
+———————,963,species,593543,A.Hoolock leuconedys,593543,B.Hoolock leuconedys,=,,,,scientificName,,tip
+———————,964,species,,,1934190,B.Hoolock tianxing,,,,,,,
+———————,965,species,,,1934191,B.Hoolock leuconedys x Hoolock tianxing,,,,,,,
+——————,966,genus,,,325166,B.Symphalangus,,,,,,,
+———————,967,species,,,9590,B.Symphalangus syndactylus,,,,,,,
+—————,968,family,9604,A.Hominidae,9604,B.Hominidae,=,,,,scientificName,,
+——————,969,subfamily,207598,A.Homininae,207598,B.Homininae,=,,,,canonicalName,,
+———————,970,genus,9592,A.Gorilla,9592,B.Gorilla,=,,,,scientificName,,subtree=
+———————,978,genus,9596,A.Pan,9596,B.Pan,=,,,,canonicalName,,
+————————,979,species,9597,A.Pan paniscus,9597,B.Pan paniscus,=,,,,canonicalName,,tip
+————————,980,species,9598,A.Pan troglodytes,9598,B.Pan troglodytes,=,,,,canonicalName,,subtree=
+———————,987,genus,9605,A.Homo,9605,B.Homo,=,,,,scientificName,number_of_children,
+————————,988,species,9606,A.Homo sapiens,9606,B.Homo sapiens,=,,,,scientificName,,
+—————————,989,subspecies,63221,A.Homo sapiens neanderthalensis,63221,B.Homo sapiens neanderthalensis,=,,,,canonicalName,,tip
+—————————,990,subspecies,741158,A.Homo sapiens ssp. Denisova,741158,B.Homo sapiens subsp. 'Denisova',=,,,,,canonicalName,tip
+————————,991,species,1425170,A.Homo heidelbergensis,1425170,B.Homo heidelbergensis,=,,,,scientificName,,tip
+————————,992,,,,2665952,B.environmental samples,,,,,,,
+—————————,993,species,,,2665953,B.Homo sapiens environmental sample,,,,,,,
+——————,994,subfamily,607660,A.Ponginae,607660,B.Ponginae,=,,,,canonicalName,,
+———————,995,genus,9599,A.Pongo,9599,B.Pongo,=,,,,canonicalName,number_of_children,
+————————,996,species,9600,A.Pongo pygmaeus,,,,,,,,,
+————————,998,species,502961,A.Pongo abelii x pygmaeus,502961,B.Pongo abelii x pygmaeus,=,,,,canonicalName,,tip
+————————,999,species,,,9600,B.Pongo pygmaeus,,,,,,,
+—————————,1000,species,9601,A.Pongo abelii,,,particle-set<=,9600,B.Pongo pygmaeus,lump,synonym+canonicalName+synonym,,
+————————,1001,species,,,9601,B.Pongo abelii,particle-set<=,9600,A.Pongo pygmaeus,split,synonym+canonicalName+synonym,,
+————————,1002,species,,,2051901,B.Pongo tapanuliensis,,,,,,,
+————————,1003,,,,2624844,B.unclassified Pongo,,,,,,,
+——,1005,infraorder,376912,A.Tarsiiformes,376912,B.Tarsiiformes,=,,,,canonicalName,,
+———,1006,family,9475,A.Tarsiidae,9475,B.Tarsiidae,=,,,,canonicalName,number_of_children,
+————,1007,genus,9476,A.Tarsius,,,particle-set<=,9475,B.Tarsiidae,lump,mutual-cross-mrca,,
+————,1008,genus,,,9476,B.Tarsius,particle-set<=,9476,A.Tarsius,split,scientificName,,
+—————,1009,species,449501,A.Tarsius dentatus,449501,B.Tarsius dentatus,=,,,moved,canonicalName,,tip
+—————,1010,species,630277,A.Tarsius lariang,630277,B.Tarsius lariang,=,,,moved,canonicalName,,tip
+—————,1011,species,642591,A.Tarsius dentatus x lariang,642591,B.Tarsius dentatus x lariang,=,,,moved,canonicalName,,tip
+—————,1012,species,662464,A.Tarsius tarsier,662464,B.Tarsius tarsier,=,,,moved,canonicalName,,tip
+—————,1013,species,905053,A.Tarsius sangirensis,905053,B.Tarsius sangirensis,=,,,moved,scientificName,,tip
+—————,1014,species,981131,A.Tarsius wallacei,981131,B.Tarsius wallacei,=,,,moved,scientificName,,tip
+—————,1015,species,,,1748400,B.Tarsius fuscus,,,,,,,
+—————,1016,,,,2624233,B.unclassified Tarsius,particle-set<=,9476,A.Tarsius,split,monotypic,,
+——————,1017,species,30612,A.Tarsius sp.,30612,B.Tarsius sp.,=,,,moved,canonicalName,,tip
+——————,1018,species,662655,A.Tarsius sp. FFA-2009a,662655,B.Tarsius sp. FFA-2009a,=,,,moved,canonicalName,,tip
+——————,1019,species,,,1748402,B.Tarsius sp. CD-2015,,,,,,,
+————,1020,genus,,,1868481,B.Carlito,,,,,,,
+—————,1021,species,9478,A.Tarsius syrichta,1868482,B.Carlito syrichta,=,,,moved,,ncbi_id; canonicalName,tip
+————,1022,genus,,,1971489,B.Cephalopachus,,,,,,,
+—————,1023,species,9477,A.Tarsius bancanus,9477,B.Cephalopachus bancanus,=,,,moved,,number_of_children; canonicalName; scientificName,
+——————,1024,subspecies,,,1971490,B.Cephalopachus bancanus bancanus,,,,,,,
+——————,1025,subspecies,,,2567999,B.Cephalopachus bancanus borneanus,,,,,,,

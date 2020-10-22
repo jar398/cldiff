@@ -258,9 +258,9 @@ def badness(ar):
          # Low-bit changes are better than high-bit changes
          # Additions don't matter
          change,
-         drop,
          # Using synonym is bad, using two is worse
          len(ar.factors) if ar.factors else 1,
+         drop,
          # Added fields are benign
          # Dropped fields are so-so
          # What is this about?

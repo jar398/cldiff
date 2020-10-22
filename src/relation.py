@@ -16,10 +16,10 @@ for (ba, ab, name, revname) in \
     [(0,   0,   '!',  '!'),
      (0.5, 0.5, '><', '><'),
      (1,   0.5, '<',  '>'),
-     (1,   0.5, 'merge', 'split'),
+     (1,   0.5, 'lump', 'split'),
      (1,   1,   '=',  '='),
      (1,   1,   'matches',  'matched'),     # intensional (by name, id)
-     (1,   1,   'particleset=',  'particleset=')]:  # extensional (by particle set)
+     (1,   1,   'particle-set<=',  'particle-set>=')]:  # extensional (by particle set)
   re  = Relation(ba, ab, name, revname)
   relations_by_params[(ba, ab)] = re
   relations_by_name[name] = re
@@ -39,8 +39,8 @@ lt          = relations_by_name['<']
 gt          = relations_by_name['>']
 eq          = relations_by_name['=']
 intensional = relations_by_name['matches']
-extensional = relations_by_name['particleset=']
-merge       = relations_by_name['merge']
+extensional = relations_by_name['particle-set<=']
+merge       = relations_by_name['lump']
 
 def is_variant(re, other):
   return (re.b_given_a == other.b_given_a and

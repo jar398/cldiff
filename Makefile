@@ -60,15 +60,16 @@ $(C)/primates.csv: src/subset_dwc.py $(C)/dump/Taxon.tsv
 p: $(C)/primates.csv
 
 $(WORK)/primates-ncbi-2015-2020.csv: $(SOURCES) $(N15)/primates.csv $(N20)/primates.csv
-	python3 src/report.py $(N15)/primates.csv --low-tag=N15 \
-	                      $(N20)/primates.csv --high-tag=N20\
+	python3 src/report.py $(N15)/primates.csv \
+	                      $(N20)/primates.csv \
 	  --out $@.new 
 	mv $@.new $@
 	mv $@.new.log $@.log
+#  --low-tag=N15 --high-tag=N20
 
 $(WORK)/primates-ncbi-2015-2020.ex: $(SOURCES) $(N15)/primates.csv $(N20)/primates.csv
-	python3 src/report.py $(N15)/primates.csv --low-tag=N15 \
-	                      $(N20)/primates.csv --high-tag=N20\
+	python3 src/report.py $(N15)/primates.csv \
+	                      $(N20)/primates.csv \
 	  --out $@.new --format eulerx
 	mv $@.new $@
 	mv $@.new.log $@.log

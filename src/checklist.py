@@ -155,7 +155,7 @@ def get_nominal_rank(tnu):
   if is_container(tnu): return None
   return get_value(tnu, taxon_rank)
 
-# Unique name of the sort Nico likes
+# Unique name of the sort Euler/X likes
 
 def get_spaceless(tnu):
   if tnu == None: return "none"
@@ -173,7 +173,8 @@ def get_spaceless(tnu):
   if not is_accepted(tnu):
     name = "?" + name
 
-  name = name.replace(" ", "_")
+  # Not sure about this??
+  # name = name.replace(" ", "_")
   return name
 
 def get_unique(tnu):
