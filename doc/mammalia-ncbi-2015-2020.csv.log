@@ -1,6 +1,9 @@
 
 Logging to work/mammalia-ncbi-2015-2020.csv.new.log
+Validated 9640 accepted, 8493 synonym
+Validated 12203 accepted, 9679 synonym
 Node counts: 18133 21882
+# Best: B.Alouatta macconnelli particle-set<= A.Alouatta seniculus macconnelli
 ** Multiple least-bad matches. Need to find tie-breakers.
    B.environmental samples#1002241 -> ['A.environmental samples#328690', 'A.environmental samples#1002248', 'A.environmental samples#1002256']
 ** Multiple least-bad matches. Need to find tie-breakers.
@@ -46,6 +49,7 @@ Node counts: 18133 21882
 ** Multiple least-bad matches. Need to find tie-breakers.
    A.environmental samples#1092586 -> ['B.environmental samples#328690', 'B.environmental samples#1002248', 'B.environmental samples#1002256', 'B.environmental samples#2665948', 'B.environmental samples#2682739']
 19244 best matches
+# B.Alouatta macconnelli is a tipward match, keeping: B.Alouatta macconnelli particle-set<= A.Alouatta seniculus macconnelli
 # Split/lump B.Micoureus regina ∨ B.Marmosa germana -> A.Micoureus regina -> B.Micoureus
 # Split/lump B.Dasycercus cristicauda ∨ B.Dasycercus blythi -> A.Dasycercus cristicauda -> B.Dasycercus
 # Split/lump B.Neacomys minutus ∨ B.Microryzomys altissimus -> A.Neacomys minutus -> B.Neacomys
@@ -61,6 +65,8 @@ Node counts: 18133 21882
 # Split/lump A.Microtus gerbei ∨ A.Microtus pyrenaicus -> B.Microtus gerbei -> A.Microtus
 # Split/lump A.Reithrodontomys sp. ROM114291 ∨ A.Reithrodontomys sp. ROM116805 ∨ A.Reithrodontomys sp. 1 AVB-2011 -> B.Reithrodontomys sp. 1 AVB-2011 -> A.Reithrodontomys
 # Split/lump A.Reithrodontomys sp. ROM116835 ∨ A.Reithrodontomys sp. 2 AVB-2011 -> B.Reithrodontomys sp. 2 AVB-2011 -> A.Reithrodontomys
+# Mutually matched: B.Alouatta macconnelli particle-set<= A.Alouatta seniculus macconnelli
+# B.Alouatta macconnelli is a tipward match, keeping: B.Alouatta macconnelli particle-set<= A.Alouatta seniculus macconnelli
 ** No return match: B.Stenonycteris matches A.Stenonycteris -> none
 ** No return match: B.Myotis nattereri matches A.Myotis nattereri -> none
 ** No return match: B.Plecotus teneriffae matches A.Plecotus teneriffae -> none
@@ -78,6 +84,7 @@ Node counts: 18133 21882
 ** No return match: A.Eospalax fontanierii matches B.Eospalax fontanierii -> none
 ** No return match: A.Akodon andinus particle-set<= B.Abrothrix andinus -> none
 # Number of particles: 7402
+# Cross-mrca(B.Alouatta macconnelli) = A.Alouatta seniculus macconnelli
 # Number of cross-mrcas: 19510
 ** A.Megaerops (x) conflicts with B.Pteropodinae (y) because:
    B.Ptenochirus (c) is a child of y,
@@ -231,6 +238,7 @@ Node counts: 18133 21882
    A.Chiromyiformes (c) is a child of y,
    A.Lorisidae (d) and A.Daubentoniidae (e) are descendants of c,
    and d < x while e ! x
+# EM: particle. B.Alouatta macconnelli particle-set<= A.Alouatta seniculus macconnelli
 ** B.Hystricomorpha (x) conflicts with A.Rodentia (y) because:
    A.Sciurognathi (c) is a child of y,
    A.Ctenodactylidae (d) and A.Pedetidae (e) are descendants of c,
@@ -293,6 +301,11 @@ Node counts: 18133 21882
 ** Intensional and extensional matches differ:
    A.Nycticebus pygmaeus lump B.Nycticebus pygmaeus
    A.Nycticebus pygmaeus = B.Nycticebus pygmaeus
+# Chain(B.Alouatta macconnelli) - articulation is B.Alouatta macconnelli particle-set<= A.Alouatta seniculus macconnelli
+# Chain - setting anchor: B.Alouatta macconnelli
+# Chain B.Alouatta macconnelli - no back-articulation from A.Alouatta seniculus: A.Alouatta seniculus < B.Alouatta
+# Chain B.Alouatta macconnelli = [A.Alouatta seniculus macconnelli]
+# Extensional + intensional match: B.Alouatta macconnelli particle-set<= A.Alouatta seniculus macconnelli
 ** Multiple matches (monotypic): A.Tarsius -> B.Tarsiidae, B.Tarsiiformes
 ** Multiple matches (monotypic): A.environmental samples#1002241 -> B.Leporidae environmental sample, B.environmental samples#1002241
 ** Intensional and extensional matches differ:
@@ -329,6 +342,11 @@ Node counts: 18133 21882
 ** Multiple matches (monotypic): B.environmental samples#1002250 -> A.Procyon environmental sample, A.environmental samples#1002250
 ** Multiple matches (monotypic): B.environmental samples#1002245 -> A.Lutra environmental sample, A.environmental samples#1002245
 ** Multiple matches (monotypic): B.Chiromyiformes -> A.Daubentonia madagascariensis, A.Daubentonia, A.Daubentoniidae
+# Chain(B.Alouatta macconnelli) - articulation is B.Alouatta macconnelli particle-set<= A.Alouatta seniculus macconnelli
+# Chain - setting anchor: B.Alouatta macconnelli
+# Chain B.Alouatta macconnelli - no back-articulation from A.Alouatta seniculus: A.Alouatta seniculus < B.Alouatta
+# Chain B.Alouatta macconnelli = [A.Alouatta seniculus macconnelli]
+# Extensional + intensional match: B.Alouatta macconnelli particle-set<= A.Alouatta seniculus macconnelli
 ** Multiple matches (monotypic): B.environmental samples#1002241 -> A.Leporidae environmental sample, A.environmental samples#1002241
 ** Multiple matches (monotypic): B.unclassified Vandeleuria -> A.Vandeleuria sp. KCR-2008, A.Vandeleuria
 ** Intensional and extensional matches differ:

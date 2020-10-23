@@ -1,9 +1,16 @@
 
 Logging to work/primates-ncbi-2015-2020.csv.new.log
+Validated 834 accepted, 1001 synonym
+Validated 978 accepted, 1119 synonym
 Node counts: 1835 2097
+# Best: B.Alouatta macconnelli particle-set<= A.Alouatta seniculus macconnelli
 1664 best matches
+# B.Alouatta macconnelli is a tipward match, keeping: B.Alouatta macconnelli particle-set<= A.Alouatta seniculus macconnelli
 # Split/lump A.Nycticebus intermedius ∨ A.Nycticebus pygmaeus -> B.Nycticebus pygmaeus -> A.Nycticebus
+# Mutually matched: B.Alouatta macconnelli particle-set<= A.Alouatta seniculus macconnelli
+# B.Alouatta macconnelli is a tipward match, keeping: B.Alouatta macconnelli particle-set<= A.Alouatta seniculus macconnelli
 # Number of particles: 611
+# Cross-mrca(B.Alouatta macconnelli) = A.Alouatta seniculus macconnelli
 # Number of cross-mrcas: 1693
 ** A.Chiromyiformes (x) conflicts with B.Strepsirrhini (y) because:
    B.Lorisiformes (c) is a child of y,
@@ -21,12 +28,23 @@ Node counts: 1835 2097
    A.Chiromyiformes (c) is a child of y,
    A.Lorisidae (d) and A.Daubentoniidae (e) are descendants of c,
    and d < x while e ! x
+# EM: particle. B.Alouatta macconnelli particle-set<= A.Alouatta seniculus macconnelli
 # Number of extensional relationships: 1693
 ** Intensional and extensional matches differ:
    A.Nycticebus pygmaeus lump B.Nycticebus pygmaeus
    A.Nycticebus pygmaeus = B.Nycticebus pygmaeus
+# Chain(B.Alouatta macconnelli) - articulation is B.Alouatta macconnelli particle-set<= A.Alouatta seniculus macconnelli
+# Chain - setting anchor: B.Alouatta macconnelli
+# Chain B.Alouatta macconnelli - no back-articulation from A.Alouatta seniculus: A.Alouatta seniculus < B.Alouatta
+# Chain B.Alouatta macconnelli = [A.Alouatta seniculus macconnelli]
+# Extensional + intensional match: B.Alouatta macconnelli particle-set<= A.Alouatta seniculus macconnelli
 ** Multiple matches (monotypic): A.Tarsius -> B.Tarsiidae, B.Tarsiiformes
 ** Multiple matches (monotypic): B.Chiromyiformes -> A.Daubentonia madagascariensis, A.Daubentonia, A.Daubentoniidae
+# Chain(B.Alouatta macconnelli) - articulation is B.Alouatta macconnelli particle-set<= A.Alouatta seniculus macconnelli
+# Chain - setting anchor: B.Alouatta macconnelli
+# Chain B.Alouatta macconnelli - no back-articulation from A.Alouatta seniculus: A.Alouatta seniculus < B.Alouatta
+# Chain B.Alouatta macconnelli = [A.Alouatta seniculus macconnelli]
+# Extensional + intensional match: B.Alouatta macconnelli particle-set<= A.Alouatta seniculus macconnelli
 # Number of articulations in alignment: 1698
 Preparing work/primates-ncbi-2015-2020.csv.new
 Number of roots in merge: 1

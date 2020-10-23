@@ -1,5 +1,6 @@
 
 Logging to work/primates-ncbi-gbif.csv.new.log
+Validated 978 accepted, 1119 synonym
 No such property: datasetID
 No such property: originalNameUsageID
 No such property: genericName
@@ -10,19 +11,41 @@ No such property: kingdom
 No such property: phylum
 No such property: class
 No such property: order
-Node counts: 2097 5073
-1398 best matches
-# Split/lump B.Pachylemur#5428934 ∨ B.Pachylemur#7237035 -> A.Pachylemur -> B.Lemuridae
-# Split/lump B.Alouatta macconnelli#7913455 ∨ B.Alouatta macconnelli#4267232 -> A.Alouatta macconnelli -> B.Alouatta
+Validated 2420 accepted, 2221 synonym
+Node counts: 2097 4641
+# Best: B.Alouatta macconnelli matches A.Alouatta macconnelli
+# ** Child B.Ateles ornatus has same rank as parent B.Ateles geoffroyi
+# ** Child B.Ateles vellerosus#8963075 has same rank as parent B.Ateles geoffroyi
+# ** Child B.Hylobates entelloides has same rank as parent B.Hylobates lar
+# ** Child B.Pithecus brahma has same rank as parent B.Trachypithecus pileatus
+# ** Child B.Pithecus shanicus has same rank as parent B.Trachypithecus phayrei
+# ** Child B.Semnopithecus cruciger has same rank as parent B.Presbytis chrysomelas
+# ** Child B.Simia variegata#9230299 has same rank as parent B.Mandrillus leucophaeus
+# ** Child B.Simia variegata#10665557 has same rank as parent B.Papio cynocephalus
+# ** Child B.Anthropopithecus ellioti has same rank as parent B.Pan troglodytes
+# ** Child B.Galago talboti has same rank as parent B.Euoticus pallidus
+# Best: A.Alouatta macconnelli matches B.Alouatta macconnelli
+1390 best matches
+# B.Alouatta macconnelli is a tipward match, keeping: B.Alouatta macconnelli matches A.Alouatta macconnelli
+# A.Alouatta macconnelli is a tipward match, keeping: A.Alouatta macconnelli matches B.Alouatta macconnelli
+# Split/lump B.Eulemur coronatus ∨ B.Lemur coronatus -> A.Eulemur coronatus -> B.Eulemur#2436417
+# Split/lump B.Eulemur mongoz ∨ B.Lemur mongoz -> A.Eulemur mongoz -> B.Eulemur#2436417
+# Split/lump B.Eulemur rubriventer ∨ B.Lemur rubriventer -> A.Eulemur rubriventer -> B.Eulemur#2436417
+# Split/lump B.Eulemur macaco ∨ B.Lemur macaco -> A.Eulemur macaco -> B.Eulemur#2436417
 # Split/lump B.Alouatta nigerrima ∨ B.Alouatta belzebul -> A.Alouatta belzebul -> B.Alouatta
 # Split/lump B.Chiropotes sagulatus ∨ B.Chiropotes chiropotes -> A.Chiropotes chiropotes -> B.Chiropotes
-# Split/lump B.Pongo tapanuliensis#9311132 ∨ B.Pongo tapanuliensis#9529876 -> A.Pongo tapanuliensis -> B.Pongo#5219531
+# Split/lump B.Procolobus verus ∨ B.Colobus verus -> A.Procolobus verus -> B.Procolobus
+# Split/lump B.Callimico goeldii ∨ B.Midas goeldii -> A.Callimico goeldii -> B.Callimico
 # Split/lump A.Ateles fusciceps robustus ∨ A.Ateles fusciceps rufiventris -> B.Ateles fusciceps rufiventris -> A.Ateles fusciceps
 # Split/lump A.Ateles geoffroyi panamensis ∨ A.Ateles geoffroyi ornatus -> B.Ateles geoffroyi ornatus -> A.Ateles geoffroyi
 # Split/lump A.Ateles geoffroyi vellerosus ∨ A.Ateles geoffroyi yucatanensis -> B.Ateles geoffroyi vellerosus -> A.Ateles geoffroyi
 # Split/lump A.Cercopithecus pogonias grayi ∨ A.Cercopithecus pogonias schwarzianus -> B.Cercopithecus pogonias grayi -> A.Cercopithecus pogonias
 # Split/lump A.Nomascus concolor jingdongensis ∨ A.Nomascus concolor furvogaster ∨ A.Nomascus concolor concolor -> B.Nomascus concolor concolor -> A.Nomascus concolor
 # Split/lump A.Pan troglodytes troglodytes ∨ A.Pan troglodytes vellerosus -> B.Pan troglodytes troglodytes -> A.Pan troglodytes
+# Mutually matched: B.Alouatta macconnelli matches A.Alouatta macconnelli
+# Mutually matched: A.Alouatta macconnelli matches B.Alouatta macconnelli
+# B.Alouatta macconnelli is a tipward match, keeping: B.Alouatta macconnelli matches A.Alouatta macconnelli
+# A.Alouatta macconnelli is a tipward match, keeping: A.Alouatta macconnelli matches B.Alouatta macconnelli
 ** No return match: B.Galagonidae particle-set<= A.Galagidae -> none
 ** No return match: B.Callithricidae particle-set<= A.Callitrichinae -> none
 ** No return match: B.Eulemur fulvus matches A.Eulemur fulvus -> none
@@ -34,17 +57,20 @@ Node counts: 2097 5073
 ** No return match: B.Presbytis potenziani matches A.Presbytis potenziani -> none
 ** No return match: B.Cercocebus atys matches A.Cercocebus atys -> none
 ** No return match: B.Cercopithecus mitis albogularis particle-set<= A.Cercopithecus albogularis -> none
-** No return match: B.Macaca fuscata#9767149 matches A.Macaca fuscata -> none
-** No return match: B.Propithecus deckenii#7528726 matches A.Propithecus deckenii -> none
+** No return match: B.Cercocebus albigena particle-set<= A.Lophocebus albigena -> none
+** No return match: B.Troglodytes gorilla particle-set<= A.Gorilla gorilla -> none
+** No return match: B.Propithecus deckenii matches A.Propithecus deckenii -> none
 ** No return match: B.Perodicticus potto matches A.Perodicticus potto -> none
 ** No return match: B.Saimiri sciureus matches A.Saimiri sciureus -> none
-** No return match: B.Cercopithecus#3239575 matches A.Cercopithecus -> none
 ** No return match: B.Paleopropithecidae matches A.Paleopropithecidae -> none
-** No return match: B.Presbytis#7237060 matches A.Presbytis -> none
 ** No return match: A.Otolemur crassicaudatus matches B.Otolemur crassicaudatus -> none
-** No return match: A.Lagothrix lagotricha particle-set<= B.Lagothrix lagothricha -> none
-# Number of particles: 481
-# Number of cross-mrcas: 1337
+# Number of particles: 478
+# Cross-mrca(B.Alouatta macconnelli) = A.Alouatta macconnelli
+# Cross-mrca(A.Alouatta macconnelli) = B.Alouatta macconnelli
+# ** No return cross-MRCA for B.Semnopithecus -> A.Colobinae -> ...
+# ** No return cross-MRCA for B.Cercopithecidae -> A.Cercopithecidae -> ...
+# ** No return cross-MRCA for B.Primates -> A.Primates -> ...
+# Number of cross-mrcas: 1319
 ** A.Lepilemuridae (x) conflicts with B.Primates (y) because:
    B.Lemuridae (c) is a child of y,
    B.Megaladapis (d) and B.Hapalemur (e) are descendants of c,
@@ -69,10 +95,6 @@ Node counts: 2097 5073
    B.Mico (c) is a child of y,
    B.Mico humilis (d) and B.Mico argentatus (e) are descendants of c,
    and d < x while e ! x
-** A.Cebidae (x) conflicts with B.Primates (y) because:
-   B.Cebidae (c) is a child of y,
-   B.Saimiri (d) and B.Cercopithecus#3239575 (e) are descendants of c,
-   and d < x while e ! x
 ** A.Callicebus (x) conflicts with B.Pitheciidae (y) because:
    B.Plecturocebus (c) is a child of y,
    B.Plecturocebus discolor (d) and B.Plecturocebus cinerascens (e) are descendants of c,
@@ -81,10 +103,7 @@ Node counts: 2097 5073
    B.Atelidae (c) is a child of y,
    B.Xenothrix (d) and B.Brachyteles (e) are descendants of c,
    and d < x while e ! x
-** A.Platyrrhini (x) conflicts with B.Primates (y) because:
-   B.Cebidae (c) is a child of y,
-   B.Saimiri (d) and B.Cercopithecus#3239575 (e) are descendants of c,
-   and d < x while e ! x
+# EM: particle. A.Alouatta macconnelli matches B.Alouatta macconnelli
 ** A.Trachypithecus phayrei (x) conflicts with B.Trachypithecus (y) because:
    B.Trachypithecus phayrei (c) is a child of y,
    B.Trachypithecus phayrei shanicus (d) and B.Trachypithecus phayrei phayrei (e) are descendants of c,
@@ -93,30 +112,25 @@ Node counts: 2097 5073
    B.Semnopithecus (c) is a child of y,
    B.Semnopithecus vetulus (d) and B.Semnopithecus entellus (e) are descendants of c,
    and d < x while e ! x
-** A.Catarrhini (x) conflicts with B.Primates (y) because:
-   B.Cebidae (c) is a child of y,
-   B.Cercopithecus#3239575 (d) and B.Saimiri (e) are descendants of c,
-   and d < x while e ! x
 ** B.Lemuridae (x) conflicts with A.Lemuriformes (y) because:
    A.Lepilemuridae (c) is a child of y,
    A.Megaladapis (d) and A.Lepilemur (e) are descendants of c,
    and d < x while e ! x
+# EM: particle. B.Alouatta macconnelli matches A.Alouatta macconnelli
 ** B.Atelidae (x) conflicts with A.Platyrrhini (y) because:
    A.Pitheciidae (c) is a child of y,
    A.Xenothricinae (d) and A.Callicebinae (e) are descendants of c,
    and d < x while e ! x
 ** B.Plecturocebus (x) conflicts with A.Callicebinae (y) because:
    A.Callicebus (c) is a child of y,
-   A.Callicebus discolor (d) and A.Callicebus coimbrai (e) are descendants of c,
+   A.Callicebus discolor (d) and A.Callicebus nigrifrons (e) are descendants of c,
    and d < x while e ! x
 ** B.Trachypithecus phayrei (x) conflicts with A.Trachypithecus (y) because:
    A.Trachypithecus phayrei (c) is a child of y,
    A.Trachypithecus phayrei shanicus (d) and A.Trachypithecus phayrei crepuscula (e) are descendants of c,
    and d < x while e ! x
-** B.Semnopithecus (x) conflicts with A.Colobinae (y) because:
-   A.Trachypithecus (c) is a child of y,
-   A.Trachypithecus vetulus (d) and A.Trachypithecus francoisi (e) are descendants of c,
-   and d < x while e ! x
+B.Semnopithecus <= A.Colobinae <= nowhere
+B.Cercopithecidae <= A.Cercopithecidae <= nowhere
 ** B.Mico (x) conflicts with A.Callitrichinae (y) because:
    A.Callithrix#9481 (c) is a child of y,
    A.Calibella (d) and A.Cebuella (e) are descendants of c,
@@ -129,43 +143,67 @@ Node counts: 2097 5073
    A.Loris tardigradus (c) is a child of y,
    A.Loris tardigradus tardigradus (d) and A.Loris tardigradus nordicus (e) are descendants of c,
    and d < x while e ! x
-** B.Cebidae (x) conflicts with A.Simiiformes (y) because:
-   A.Platyrrhini (c) is a child of y,
-   A.Cebinae (d) and A.Callitrichinae (e) are descendants of c,
-   and d < x while e ! x
 ** B.Paragalago (x) conflicts with A.Galagidae (y) because:
    A.Galago (c) is a child of y,
    A.Galago granti (d) and A.Galago gabonensis (e) are descendants of c,
    and d < x while e ! x
-# Number of extensional relationships: 1337
+B.Primates <= A.Primates <= nowhere
+# Number of extensional relationships: 1316
 ** Multiple matches (monotypic): A.Paleopropithecidae -> B.Palaeopropithecus ingens, B.Palaeopropithecus, B.Palaeopropithecidae
 ** Multiple matches (monotypic): A.Chiromyiformes -> B.Daubentonia madagascariensis, B.Daubentonia, B.Daubentoniidae
 ** Multiple matches (monotypic): A.Xenothricinae -> B.Xenothrix mcgregori, B.Xenothrix
 ** Multiple matches (monotypic): A.Alouatta guariba -> B.Alouatta guariba clamitans, B.Alouatta guariba
+# Chain(A.Alouatta macconnelli) - articulation is A.Alouatta macconnelli matches B.Alouatta macconnelli
+# Chain - setting anchor: A.Alouatta macconnelli
+# Chain - end: A.Alouatta
+# Chain A.Alouatta macconnelli = [B.Alouatta macconnelli]
+# Extensional + intensional match: A.Alouatta macconnelli matches B.Alouatta macconnelli
+# Chain(B.Alouatta macconnelli) - articulation is B.Alouatta macconnelli matches A.Alouatta macconnelli
+# Chain - setting anchor: B.Alouatta macconnelli
+# Chain - end: B.Alouatta
+# Chain B.Alouatta macconnelli = [A.Alouatta macconnelli]
+# Extensional + intensional match: B.Alouatta macconnelli matches A.Alouatta macconnelli
 ** Intensional and extensional matches differ:
    A.Ateles fusciceps robustus lump B.Ateles fusciceps rufiventris
    A.Ateles fusciceps robustus = B.Ateles fusciceps rufiventris
 ** Intensional and extensional matches differ:
+   A.Ateles geoffroyi panamensis lump B.Ateles geoffroyi ornatus
+   A.Ateles geoffroyi panamensis = B.Ateles geoffroyi ornatus
+** Intensional and extensional matches differ:
    A.Ateles geoffroyi vellerosus lump B.Ateles geoffroyi vellerosus
    A.Ateles geoffroyi vellerosus = B.Ateles geoffroyi vellerosus
 ** Intensional and extensional matches differ:
-   A.Ateles geoffroyi ornatus lump B.Ateles geoffroyi ornatus
-   A.Ateles geoffroyi ornatus = B.Ateles geoffroyi ornatus
-** Intensional and extensional matches differ:
    A.Cercopithecus pogonias grayi lump B.Cercopithecus pogonias grayi
    A.Cercopithecus pogonias grayi = B.Cercopithecus pogonias grayi
+** Multiple matches (monotypic): A.Lophocebus albigena -> B.Lophocebus albigena albigena, B.Lophocebus albigena
 ** Intensional and extensional matches differ:
-   A.Nomascus concolor jingdongensis lump B.Nomascus concolor concolor
-   A.Nomascus concolor jingdongensis = B.Nomascus concolor concolor
+   A.Nomascus concolor furvogaster lump B.Nomascus concolor concolor
+   A.Nomascus concolor furvogaster = B.Nomascus concolor concolor
 ** Intensional and extensional matches differ:
    A.Pan troglodytes troglodytes lump B.Pan troglodytes troglodytes
    A.Pan troglodytes troglodytes = B.Pan troglodytes troglodytes
 ** Intensional and extensional matches differ:
-   B.Pachylemur#5428934 lump A.Pachylemur
-   B.Pachylemur#5428934 = A.Pachylemur
+   B.Eulemur coronatus lump A.Eulemur coronatus
+   B.Eulemur coronatus = A.Eulemur coronatus
 ** Intensional and extensional matches differ:
-   B.Alouatta macconnelli#7913455 lump A.Alouatta macconnelli
-   B.Alouatta macconnelli#7913455 = A.Alouatta macconnelli
+   B.Eulemur mongoz lump A.Eulemur mongoz
+   B.Eulemur mongoz = A.Eulemur mongoz
+** Intensional and extensional matches differ:
+   B.Eulemur rubriventer lump A.Eulemur rubriventer
+   B.Eulemur rubriventer = A.Eulemur rubriventer
+** Intensional and extensional matches differ:
+   B.Eulemur macaco lump A.Eulemur macaco
+   B.Eulemur macaco = A.Eulemur macaco
+# Chain(B.Alouatta macconnelli) - articulation is B.Alouatta macconnelli matches A.Alouatta macconnelli
+# Chain - setting anchor: B.Alouatta macconnelli
+# Chain - end: B.Alouatta
+# Chain B.Alouatta macconnelli = [A.Alouatta macconnelli]
+# Extensional + intensional match: B.Alouatta macconnelli matches A.Alouatta macconnelli
+# Chain(A.Alouatta macconnelli) - articulation is A.Alouatta macconnelli matches B.Alouatta macconnelli
+# Chain - setting anchor: A.Alouatta macconnelli
+# Chain - end: A.Alouatta
+# Chain A.Alouatta macconnelli = [B.Alouatta macconnelli]
+# Extensional + intensional match: A.Alouatta macconnelli matches B.Alouatta macconnelli
 ** Multiple returns (monotypic): A.Alouatta guariba -> B.Alouatta guariba clamitans, B.Alouatta guariba
 ** Intensional and extensional matches differ:
    B.Alouatta nigerrima lump A.Alouatta belzebul
@@ -174,15 +212,21 @@ Node counts: 2097 5073
    B.Chiropotes chiropotes lump A.Chiropotes chiropotes
    B.Chiropotes chiropotes = A.Chiropotes chiropotes
 ** Intensional and extensional matches differ:
-   B.Pongo tapanuliensis#9311132 lump A.Pongo tapanuliensis
-   B.Pongo tapanuliensis#9311132 = A.Pongo tapanuliensis
+   B.Procolobus verus lump A.Procolobus verus
+   B.Procolobus verus = A.Procolobus verus
+** Multiple returns (monotypic): A.Lophocebus albigena -> B.Lophocebus albigena albigena, B.Lophocebus albigena
+** Multiple returns (monotypic): A.Lophocebus albigena -> B.Lophocebus albigena albigena, B.Lophocebus albigena
+** Intensional and extensional matches differ:
+   B.Callimico goeldii lump A.Callimico goeldii
+   B.Callimico goeldii = A.Callimico goeldii
 ** Multiple returns (monotypic): A.Paleopropithecidae -> B.Palaeopropithecus ingens, B.Palaeopropithecus, B.Palaeopropithecidae
 ** Multiple matches (monotypic): B.Palaeopropithecidae -> A.Palaeopropithecus ingens, A.Palaeopropithecus, A.Paleopropithecidae
-# Number of articulations in alignment: 1424
+# Number of articulations in alignment: 1406
 Preparing work/primates-ncbi-gbif.csv.new
-Number of roots in merge: 1
-Number of non-roots in merge: 3061
-# Changed status: 2041, changed: 545
+# Merged parent(A.Alouatta macconnelli) = (A.Alouatta, B.Alouatta)
+Number of roots in merge: 23
+Number of non-roots in merge: 2763
+# Changed status: 2424, changed: 688
 ** Lemuridae names different taxa in the two checklists
   A.Lemuridae < B.Lemuridae [B.Megaladapis is not in it]
   B.Lemuridae >< A.Lemuriformes [A.Megaladapis is in; its sibling A.Lepilemur is not]
@@ -201,9 +245,12 @@ Number of non-roots in merge: 3061
 ** Leontocebus fuscicollis names different taxa in the two checklists
   A.Leontocebus fuscicollis < B.Leontocebus#5428933 [B.Leontocebus tripartitus is not in it]
   B.Leontocebus fuscicollis = A.Leontocebus fuscicollis fuscicollis [monotypic]
+** Callimico goeldii names different taxa in the two checklists
+  A.Callimico goeldii = B.Callimico goeldii [canonicalName]
+  B.Callimico goeldii lump A.Callimico goeldii [canonicalName]
 ** Cebidae names different taxa in the two checklists
-  A.Cebidae >< B.Primates [B.Saimiri is in; its sibling B.Cercopithecus#3239575 is not]
-  B.Cebidae >< A.Simiiformes [A.Cebinae is in; its sibling A.Callitrichinae is not]
+  A.Cebidae < B.Primates [B.Palaeopropithecidae is not in it]
+  B.Cebidae < A.Cebidae [A.Callitrichinae is not in it]
 ** Ateles belzebuth names different taxa in the two checklists
   A.Ateles belzebuth = B.Ateles chamek [monotypic]
   B.Ateles belzebuth = A.Ateles belzebuth [canonicalName]
@@ -225,6 +272,9 @@ Number of non-roots in merge: 3061
 ** Hylobates muelleri names different taxa in the two checklists
   A.Hylobates muelleri < B.Hylobates [B.Hylobates albibarbis is not in it]
   B.Hylobates muelleri matches A.Hylobates muelleri [scientificName]
+** Eulemur coronatus names different taxa in the two checklists
+  A.Eulemur coronatus = B.Eulemur coronatus [scientificName]
+  B.Eulemur coronatus lump A.Eulemur coronatus [scientificName]
 ** Eulemur fulvus names different taxa in the two checklists
   A.Eulemur fulvus = B.Eulemur collaris#9812996 [monotypic]
   B.Eulemur fulvus = A.Eulemur fulvus [canonicalName]
@@ -234,12 +284,18 @@ Number of non-roots in merge: 3061
 ** Alouatta belzebul names different taxa in the two checklists
   A.Alouatta belzebul = B.Alouatta nigerrima [None]
   B.Alouatta belzebul lump A.Alouatta belzebul [canonicalName]
-** Indriidae names different taxa in the two checklists
-  A.Indriidae < B.Primates [B.Presbytis#7237060 is not in it]
-  B.Indriidae < A.Indriidae [A.Hadropithecus is not in it]
+** Eulemur macaco names different taxa in the two checklists
+  A.Eulemur macaco = B.Eulemur macaco [scientificName]
+  B.Eulemur macaco lump A.Eulemur macaco [scientificName]
 ** Lepilemuridae names different taxa in the two checklists
   A.Lepilemuridae >< B.Primates [B.Megaladapis is in; its sibling B.Hapalemur is not]
   B.Lepilemuridae = A.Lepilemur [monotypic]
+** Eulemur mongoz names different taxa in the two checklists
+  A.Eulemur mongoz = B.Eulemur mongoz [canonicalName]
+  B.Eulemur mongoz lump A.Eulemur mongoz [canonicalName]
+** Eulemur rubriventer names different taxa in the two checklists
+  A.Eulemur rubriventer = B.Eulemur rubriventer [canonicalName]
+  B.Eulemur rubriventer lump A.Eulemur rubriventer [canonicalName]
 ** Cercopithecus mitis names different taxa in the two checklists
   A.Cercopithecus mitis < B.Cercopithecus mitis [B.Cercopithecus mitis albogularis is not in it]
   B.Cercopithecus mitis < A.Cercopithecus [A.Cercopithecus sclateri is not in it]
@@ -259,14 +315,16 @@ Number of non-roots in merge: 3061
   A.Hoolock hoolock = B.Hoolock hoolock hoolock [None]
   B.Hoolock hoolock = A.Hoolock hoolock [canonicalName]
 ** Callicebus personatus names different taxa in the two checklists
-  A.Callicebus personatus = B.Callicebus nigrifrons [monotypic]
+  A.Callicebus personatus = B.Callicebus personatus nigrifrons [monotypic]
   B.Callicebus personatus = A.Callicebus personatus [canonicalName]
+** Lophocebus albigena names different taxa in the two checklists
+  A.Lophocebus albigena particle-set<= B.Lophocebus albigena albigena [monotypic]
+  B.Lophocebus albigena = A.Lophocebus albigena [canonicalName]
 ** Presbytis melalophos names different taxa in the two checklists
-  A.Presbytis melalophos < B.Presbytis#3239596 [B.Presbytis hosei is not in it]
+  A.Presbytis melalophos < B.Presbytis [B.Presbytis hosei is not in it]
   B.Presbytis melalophos = A.Presbytis melalophos melalophos [monotypic]
 ** Semnopithecus names different taxa in the two checklists
   A.Semnopithecus < B.Semnopithecus [B.Semnopithecus johnii is not in it]
-  B.Semnopithecus >< A.Colobinae [A.Trachypithecus vetulus is in; its sibling A.Trachypithecus francoisi is not]
 ** Galagoides names different taxa in the two checklists
   A.Galagoides >< B.Galagidae [B.Paragalago rondoensis is in; its sibling B.Paragalago cocos is not]
   B.Galagoides < A.Galagoides [A.Galagoides rondoensis is not in it]
@@ -294,21 +352,24 @@ Number of non-roots in merge: 3061
 ** Loris lydekkerianus malabaricus names different taxa in the two checklists
   A.Loris lydekkerianus malabaricus = B.Loris tardigradus malabaricus [None]
   B.Loris lydekkerianus malabaricus matches A.Loris lydekkerianus malabaricus [canonicalName]
+** Procolobus verus names different taxa in the two checklists
+  A.Procolobus verus = B.Procolobus verus [canonicalName]
+  B.Procolobus verus lump A.Procolobus verus [canonicalName]
 ** Pitheciidae names different taxa in the two checklists
   A.Pitheciidae >< B.Primates [B.Xenothrix is in; its sibling B.Brachyteles is not]
   B.Pitheciidae < A.Pitheciidae [A.Xenothricinae is not in it]
 ** Atelidae names different taxa in the two checklists
   A.Atelidae < B.Atelidae [B.Xenothrix is not in it]
   B.Atelidae >< A.Platyrrhini [A.Xenothricinae is in; its sibling A.Callicebinae is not]
+** Propithecus deckenii names different taxa in the two checklists
+  A.Propithecus deckenii = B.Propithecus coronatus [monotypic]
+  B.Propithecus deckenii = A.Propithecus deckenii [scientificName]
 ** Chiropotes chiropotes names different taxa in the two checklists
   A.Chiropotes chiropotes = B.Chiropotes chiropotes [scientificName]
   B.Chiropotes chiropotes lump A.Chiropotes chiropotes [scientificName]
 ** Nomascus concolor concolor names different taxa in the two checklists
   A.Nomascus concolor concolor lump B.Nomascus concolor concolor [canonicalName]
-  B.Nomascus concolor concolor = A.Nomascus concolor jingdongensis [None]
-** Callicebus nigrifrons names different taxa in the two checklists
-  A.Callicebus nigrifrons matches B.Callicebus nigrifrons [scientificName]
-  B.Callicebus nigrifrons = A.Callicebus personatus nigrifrons [None]
+  B.Nomascus concolor concolor = A.Nomascus concolor furvogaster [None]
 ** Presbytis potenziani names different taxa in the two checklists
   A.Presbytis potenziani = B.Presbytis siberu [monotypic]
   B.Presbytis potenziani = A.Presbytis potenziani [canonicalName]
@@ -317,7 +378,7 @@ Number of non-roots in merge: 3061
   B.Allochrocebus preussi preussi particle-set<= A.Allochrocebus preussi [synonym+canonicalName+synonym]
 ** Ateles geoffroyi ornatus names different taxa in the two checklists
   A.Ateles geoffroyi ornatus lump B.Ateles geoffroyi ornatus [canonicalName]
-  B.Ateles geoffroyi ornatus = A.Ateles geoffroyi ornatus [canonicalName]
+  B.Ateles geoffroyi ornatus = A.Ateles geoffroyi panamensis [None]
 ** Ateles fusciceps rufiventris names different taxa in the two checklists
   A.Ateles fusciceps rufiventris lump B.Ateles fusciceps rufiventris [scientificName]
   B.Ateles fusciceps rufiventris = A.Ateles fusciceps robustus [None]
@@ -326,7 +387,7 @@ Number of non-roots in merge: 3061
   B.Paleopropithecidae = A.Paleopropithecidae [canonicalName]
 ** Plecturocebus names different taxa in the two checklists
   A.Plecturocebus < B.Plecturocebus [B.Plecturocebus discolor is not in it]
-  B.Plecturocebus >< A.Callicebinae [A.Callicebus discolor is in; its sibling A.Callicebus coimbrai is not]
+  B.Plecturocebus >< A.Callicebinae [A.Callicebus discolor is in; its sibling A.Callicebus nigrifrons is not]
 ** Carlito syrichta names different taxa in the two checklists
   A.Carlito syrichta particle-set<= B.Carlito syrichta syrichta [synonym+canonicalName+synonym]
   B.Carlito syrichta matches A.Carlito syrichta [canonicalName]
