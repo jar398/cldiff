@@ -1,5 +1,11 @@
 # Checklist difference
 
+<b>This is a work in progress.  The code is messy, incomplete, and
+buggy because I'm still figuring out how to do this properly.
+Although it runs and gives reasonable answers sometimes, proceed at
+your own risk and with low expectations.</b>
+
+
 The inputs are two checklists in TSV or CSV format (extension .tsv or
 .csv).  The output is an ad hoc report file.
 

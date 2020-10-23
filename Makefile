@@ -56,7 +56,8 @@ $(N20)/primates.csv: src/subset_dwc.py $(N20)/converted.csv
 	python3 src/subset_dwc.py $(N20)/converted.csv 9443 --out $@
 
 $(C)/primates.csv: src/subset_dwc.py $(C)/dump/Taxon.tsv
-	python3 src/subset_dwc.py $(C)/dump/Taxon.tsv 798 --out $@
+	python3 src/subset_dwc.py $(C)/dump/Taxon.tsv 798 --out $@.new
+	mv $@.new $@
 p: $(C)/primates.csv
 
 $(WORK)/primates-ncbi-2015-2020.csv: $(SOURCES) $(N15)/primates.csv $(N20)/primates.csv

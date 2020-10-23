@@ -11,13 +11,14 @@ debug = False
 import sys, os, csv, argparse
 
 def main(checklist, tax_path, root_id, outpath):
-  topo = read_topology(tax_path)
-  print ("Nodes with children:", len(topo))
-  all = closure(topo, root_id)
-  print ("Nodes in subset:", len(all))
-  write_subset(checklist, root_id, all, outpath)
+  (topo, synonyms) = read_topology(tax_path)
+  print ("Nodes with children: %s" % len(topo))
+  print ("Nodes with synonyms: %s" % len(synonyms))
+  all = closure(topo, synonyms, root_id)
+  print ("Nodes in subset: %s" % len(all))
+  write_subset(checklist, root_id, all, topo, outpath)
 
-def write_subset(checklist, root_id, all, outpath):
+def write_subset(checklist, root_id, all, topo, outpath):
 
   (delimiter, quotechar, mode) = csv_parameters(checklist)
   with open(checklist, "r") as infile:
@@ -34,80 +35,102 @@ def write_subset(checklist, root_id, all, outpath):
       writer = csv.writer(outfile, delimiter=delimiter, quotechar=quotechar, quoting=mode)
       writer.writerow(head)
       for row in reader:
-        if accepted(row, tid_column, sid_column, aid_column):
-          # Accepted record
-          if row[tid_column] in all:
-            row[aid_column] = ''  # Clobber distracting accepted id
-            writer.writerow(row)
-        else:
-          # Synonym record?
-          if row[aid_column] in all:
-            row[pid_column] = ''    # Clobber distracting parent id
-            if sid_column and row[sid_column] == "accepted":
-              print("** Corrupt taxonomic status for %s" % row[tid_column])
+        if row[sid_column] != "doubtful":
+          row = clean(row, tid_column, pid_column, aid_column, sid_column, topo)
+          tid = row[tid_column]
+          if tid in all:
             writer.writerow(row)
 
 # Transitive closure of accepted records
 
-def closure(topo, root_id):
+def closure(topo, synonyms, root_id):
   all = {}
   empty = []
   def descend(id):
     if id in all:
-      print("** Node has multiple parents: %s" % (id))
+      pass
     else:
       all[id] = True
       for child in topo.get(id, empty):
         descend(child)
+      for syn in synonyms.get(id, empty):
+        descend(syn)
   descend(root_id)
   return all
 
 def read_topology(tax_path):
   children = {}
+  synonyms = {}
   (delimiter, quotechar, mode) = csv_parameters(tax_path)
   with open(tax_path, "r") as infile:
     reader = csv.reader(infile, delimiter=delimiter, quotechar=quotechar, quoting=mode)
     head = next(reader)
-    print("Header row:", head)
+
     tid_column = head.index("taxonID") 
     pid_column = head.index("parentNameUsageID")
     aid_column = head.index("acceptedNameUsageID")
-    sid_column = head.index("taxonomicStatus")
 
     if tid_column == None:      # usually 0
       print("** No taxonID column found")
-      return -1
-    if aid_column == None:      # usually 0
+    if pid_column == None:
+      print("** No taxonID column found")
+    if aid_column == None:
       print("** No acceptedNameUsageID column found")
-      return -1
 
+    counter = 0
     for row in reader:
-      if accepted(row, tid_column, sid_column, aid_column):
-        tid = row[tid_column]
-        parent_id = row[pid_column]
-        if parent_id != '':
-          childs = children.get(parent_id, None)
-          if childs:
-            childs.append(tid)
-          else:
-            children[parent_id] = [tid]
-  return children
+      counter += 1
+      tid = row[tid_column]
+      parent_id = row[pid_column]
+      accepted_id = row[aid_column]
 
-def accepted(row, tid_column, sid_column, aid_column):
+      if parent_id != '':
+        childs = children.get(parent_id, None)
+        if childs:
+          childs.append(tid)
+        else:
+          children[parent_id] = [tid]
+      if accepted_id != '':
+        syns = synonyms.get(accepted_id, None)
+        if syns:
+          syns.append(tid)
+        else:
+          synonyms[accepted_id] = [tid]
+    print("Nodes: %s" % counter)
+
+  return (children, synonyms)
+
+def clean(row, tid_column, pid_column, aid_column, sid_column, topo):
   tid = row[tid_column]
-  if tid == '':
-    return False
-  if sid_column:
-    if row[sid_column] == 'synonym':
-      return False
-  if aid_column:
-    aid = row[aid_column]
-    if aid == '' or aid == tid:
-      return True
-  return False
+  parent_id = row[pid_column]
+  accepted_id = row[aid_column]
+  status = row[sid_column]
+
+  # Clean up this record
+  if parent_id == tid:
+    row[pid_column] = ''
+    parent_id = ''
+  if accepted_id == tid:
+    row[aid_column] = ''
+    accepted_id = ''
+
+  if parent_id != '' and accepted_id != '':
+    # if it has children, it has to be accepted
+    if status == "synonym" and not topo.get(tid):
+      row[pid_column] = ''
+      parent_id = ''
+    else:
+      row[aid_column] = ''
+      accepted_id = ''
+  elif parent_id != '' and accepted_id == '':
+    if status == "synonym":
+      print("** Taxonomic status is synonym, but no accepted node: %s" % tid)
+      row[status] = "error"
+
+  return row
 
 def csv_parameters(path):
-  if path.endswith(".csv"):
+  if ".csv" in path:
     return (",", '"', csv.QUOTE_MINIMAL)
   else:
     return ("\t", "\a", csv.QUOTE_NONE)

@@ -72,7 +72,7 @@ class Table:
     return self.indexes[prop.uid]
 
 def csv_parameters(path):
-  if path.endswith(".csv"):
+  if ".csv" in path:
     return (",", '"', csv.QUOTE_MINIMAL)
   else:
     return ("\t", "\a", csv.QUOTE_NONE)

@@ -11,58 +11,7 @@ No such property: phylum
 No such property: class
 No such property: order
 Node counts: 2097 5073
-# Best: none
-# Best: none
-# Best: none
-# Best: B.Galagoides demidoff matches A.Galagoides demidoff
-# Best: B.Galagoides thomasi matches A.Galagoides thomasi
-# Best: B.Galagoides matches A.Galagoides
-# Best: none
-# Best: none
-# Best: none
-# Best: none
-# Best: B.Galagoides demidoff murinus matches A.Galagoides demidoff murinus
-# Best: none
-# Best: none
-# Best: none
-# Best: none
-# Best: A.Galagoides matches B.Galagoides
-# Best: A.Galagoides demidoff matches B.Galagoides demidoff
-# Best: A.Galagoides zanzibaricus particle-set<= B.Paragalago zanzibaricus
-# Best: A.Galagoides orinus particle-set<= B.Paragalago orinus
-# Best: A.Galagoides thomasi matches B.Galagoides thomasi
-# Best: A.Galagoides cocos particle-set<= B.Paragalago cocos
-# Best: A.Galagoides zanzibaricus udzungwensis particle-set<= B.Paragalago zanzibaricus udzungwensis
-# Best: A.Galagoides rondoensis particle-set<= B.Paragalago rondoensis
-# Best: A.Galagoides demidoff murinus matches B.Galagoides demidoff murinus
-# Best: A.Galagoides zanzibaricus zanzibaricus particle-set<= B.Paragalago zanzibaricus zanzibaricus
-1400 best matches
-# B.Galagoides kumbirensis is unmatched
-# B.Galagoides demidoffi demidoffi is unmatched
-# B.Galagoides demidoffi phasma is unmatched
-# B.Galagoides demidoffi is unmatched
-# B.Galagoides udzungwensis is unmatched
-# B.Galagoides demidoff demidoff is unmatched
-# B.Galagoides demidoff phasma is unmatched
-# B.Galagoides demidoff poensis is unmatched
-# B.Galagoides demidoff thomasi is unmatched
-# B.Galagoides demidoff murinus is a tipward match, keeping: B.Galagoides demidoff murinus matches A.Galagoides demidoff murinus
-# B.Galagoides demidoff medius is unmatched
-# B.Galagoides demidoff anomurus is unmatched
-# B.Galagoides demidoff: descendant matches, not keeping: B.Galagoides demidoff murinus matches A.Galagoides demidoff murinus
-# B.Galagoides thomasi is a tipward match, keeping: B.Galagoides thomasi matches A.Galagoides thomasi
-# B.Galagoides: descendant matches, not keeping: B.Galagoides thomasi matches A.Galagoides thomasi
-# A.Galagoides demidoff murinus is a tipward match, keeping: A.Galagoides demidoff murinus matches B.Galagoides demidoff murinus
-# A.Galagoides demidoff: descendant matches, not keeping: A.Galagoides demidoff murinus matches B.Galagoides demidoff murinus
-# A.Galagoides zanzibaricus udzungwensis is a tipward match, keeping: A.Galagoides zanzibaricus udzungwensis particle-set<= B.Paragalago zanzibaricus udzungwensis
-# A.Galagoides zanzibaricus zanzibaricus is a tipward match, keeping: A.Galagoides zanzibaricus zanzibaricus particle-set<= B.Paragalago zanzibaricus zanzibaricus
-# A.Galagoides zanzibaricus: descendant matches, not keeping: A.Galagoides zanzibaricus zanzibaricus particle-set<= B.Paragalago zanzibaricus zanzibaricus
-# A.Galagoides orinus is a tipward match, keeping: A.Galagoides orinus particle-set<= B.Paragalago orinus
-# A.Galagoides thomasi is a tipward match, keeping: A.Galagoides thomasi matches B.Galagoides thomasi
-# A.Galagoides cocos is a tipward match, keeping: A.Galagoides cocos particle-set<= B.Paragalago cocos
-# A.Galagoides rondoensis is a tipward match, keeping: A.Galagoides rondoensis particle-set<= B.Paragalago rondoensis
-# A.Galagoides: descendant matches, not keeping: A.Galagoides rondoensis particle-set<= B.Paragalago rondoensis
-# Split/lump B.Eulemur collaris#9812996 ∨ B.Lemur collaris -> A.Eulemur fulvus collaris -> B.Eulemur#2436417
+1398 best matches
 # Split/lump B.Pachylemur#5428934 ∨ B.Pachylemur#7237035 -> A.Pachylemur -> B.Lemuridae
 # Split/lump B.Alouatta macconnelli#7913455 ∨ B.Alouatta macconnelli#4267232 -> A.Alouatta macconnelli -> B.Alouatta
 # Split/lump B.Alouatta nigerrima ∨ B.Alouatta belzebul -> A.Alouatta belzebul -> B.Alouatta
@@ -74,45 +23,6 @@ Node counts: 2097 5073
 # Split/lump A.Cercopithecus pogonias grayi ∨ A.Cercopithecus pogonias schwarzianus -> B.Cercopithecus pogonias grayi -> A.Cercopithecus pogonias
 # Split/lump A.Nomascus concolor jingdongensis ∨ A.Nomascus concolor furvogaster ∨ A.Nomascus concolor concolor -> B.Nomascus concolor concolor -> A.Nomascus concolor
 # Split/lump A.Pan troglodytes troglodytes ∨ A.Pan troglodytes vellerosus -> B.Pan troglodytes troglodytes -> A.Pan troglodytes
-# Mutually matched: B.Galagoides demidoff matches A.Galagoides demidoff
-# Mutually matched: B.Galagoides thomasi matches A.Galagoides thomasi
-# Mutually matched: B.Galagoides matches A.Galagoides
-# Mutually matched: B.Galagoides demidoff murinus matches A.Galagoides demidoff murinus
-# Mutually matched: A.Galagoides matches B.Galagoides
-# Mutually matched: A.Galagoides demidoff matches B.Galagoides demidoff
-# Mutually matched: A.Galagoides zanzibaricus particle-set<= B.Paragalago zanzibaricus
-# No return: A.Galagoides orinus particle-set<= B.Paragalago orinus
-# Mutually matched: A.Galagoides thomasi matches B.Galagoides thomasi
-# Not mutual: A.Galagoides cocos particle-set<= B.Paragalago cocos, B.Paragalago cocos matches A.Paragalago cocos
-# Mutually matched: A.Galagoides zanzibaricus udzungwensis particle-set<= B.Paragalago zanzibaricus udzungwensis
-# Mutually matched: A.Galagoides rondoensis particle-set<= B.Paragalago rondoensis
-# Mutually matched: A.Galagoides demidoff murinus matches B.Galagoides demidoff murinus
-# Mutually matched: A.Galagoides zanzibaricus zanzibaricus particle-set<= B.Paragalago zanzibaricus zanzibaricus
-# B.Galagoides kumbirensis is unmatched
-# B.Galagoides demidoffi demidoffi is unmatched
-# B.Galagoides demidoffi phasma is unmatched
-# B.Galagoides demidoffi is unmatched
-# B.Galagoides udzungwensis is unmatched
-# B.Galagoides demidoff demidoff is unmatched
-# B.Galagoides demidoff phasma is unmatched
-# B.Galagoides demidoff poensis is unmatched
-# B.Galagoides demidoff thomasi is unmatched
-# B.Galagoides demidoff murinus is a tipward match, keeping: B.Galagoides demidoff murinus matches A.Galagoides demidoff murinus
-# B.Galagoides demidoff medius is unmatched
-# B.Galagoides demidoff anomurus is unmatched
-# B.Galagoides demidoff: descendant matches, not keeping: B.Galagoides demidoff murinus matches A.Galagoides demidoff murinus
-# B.Galagoides thomasi is a tipward match, keeping: B.Galagoides thomasi matches A.Galagoides thomasi
-# B.Galagoides: descendant matches, not keeping: B.Galagoides thomasi matches A.Galagoides thomasi
-# A.Galagoides demidoff murinus is a tipward match, keeping: A.Galagoides demidoff murinus matches B.Galagoides demidoff murinus
-# A.Galagoides demidoff: descendant matches, not keeping: A.Galagoides demidoff murinus matches B.Galagoides demidoff murinus
-# A.Galagoides zanzibaricus udzungwensis is a tipward match, keeping: A.Galagoides zanzibaricus udzungwensis particle-set<= B.Paragalago zanzibaricus udzungwensis
-# A.Galagoides zanzibaricus zanzibaricus is a tipward match, keeping: A.Galagoides zanzibaricus zanzibaricus particle-set<= B.Paragalago zanzibaricus zanzibaricus
-# A.Galagoides zanzibaricus: descendant matches, not keeping: A.Galagoides zanzibaricus zanzibaricus particle-set<= B.Paragalago zanzibaricus zanzibaricus
-# A.Galagoides orinus is unmatched
-# A.Galagoides thomasi is a tipward match, keeping: A.Galagoides thomasi matches B.Galagoides thomasi
-# A.Galagoides cocos is unmatched
-# A.Galagoides rondoensis is a tipward match, keeping: A.Galagoides rondoensis particle-set<= B.Paragalago rondoensis
-# A.Galagoides: descendant matches, not keeping: A.Galagoides rondoensis particle-set<= B.Paragalago rondoensis
 ** No return match: B.Galagonidae particle-set<= A.Galagidae -> none
 ** No return match: B.Callithricidae particle-set<= A.Callitrichinae -> none
 ** No return match: B.Eulemur fulvus matches A.Eulemur fulvus -> none
@@ -134,18 +44,6 @@ Node counts: 2097 5073
 ** No return match: A.Otolemur crassicaudatus matches B.Otolemur crassicaudatus -> none
 ** No return match: A.Lagothrix lagotricha particle-set<= B.Lagothrix lagothricha -> none
 # Number of particles: 481
-# Cross-mrca(B.Galagoides demidoff murinus) = A.Galagoides demidoff murinus
-# Cross-mrca(B.Galagoides demidoff) = A.Galagoides demidoff murinus
-# Cross-mrca(B.Galagoides thomasi) = A.Galagoides thomasi
-# Cross-mrca(B.Galagoides) = A.Galagoides
-# Cross-mrca(A.Galagoides demidoff murinus) = B.Galagoides demidoff murinus
-# Cross-mrca(A.Galagoides demidoff) = B.Galagoides demidoff murinus
-# Cross-mrca(A.Galagoides zanzibaricus udzungwensis) = B.Paragalago zanzibaricus udzungwensis
-# Cross-mrca(A.Galagoides zanzibaricus zanzibaricus) = B.Paragalago zanzibaricus zanzibaricus
-# Cross-mrca(A.Galagoides zanzibaricus) = B.Paragalago zanzibaricus
-# Cross-mrca(A.Galagoides thomasi) = B.Galagoides thomasi
-# Cross-mrca(A.Galagoides rondoensis) = B.Paragalago rondoensis
-# Cross-mrca(A.Galagoides) = B.Galagidae
 # Number of cross-mrcas: 1337
 ** A.Lepilemuridae (x) conflicts with B.Primates (y) because:
    B.Lemuridae (c) is a child of y,
@@ -163,20 +61,10 @@ Node counts: 2097 5073
    B.Paragalago (c) is a child of y,
    B.Paragalago granti (d) and B.Paragalago zanzibaricus (e) are descendants of c,
    and d < x while e ! x
-# EM: particle. A.Galagoides demidoff murinus matches B.Galagoides demidoff murinus
-# Extensional articulation A.Galagoides demidoff particle-set<= B.Galagoides demidoff murinus
-# EM: particle. A.Galagoides zanzibaricus udzungwensis particle-set<= B.Paragalago zanzibaricus udzungwensis
-# EM: particle. A.Galagoides zanzibaricus zanzibaricus particle-set<= B.Paragalago zanzibaricus zanzibaricus
-# Extensional articulation A.Galagoides zanzibaricus particle-set<= B.Paragalago zanzibaricus
-# EM: A.Galagoides orinus is descendant of particle.
-# EM: particle. A.Galagoides thomasi matches B.Galagoides thomasi
-# EM: A.Galagoides cocos is descendant of particle.
-# EM: particle. A.Galagoides rondoensis particle-set<= B.Paragalago rondoensis
 ** A.Galagoides (x) conflicts with B.Galagidae (y) because:
    B.Paragalago (c) is a child of y,
    B.Paragalago rondoensis (d) and B.Paragalago cocos (e) are descendants of c,
    and d < x while e ! x
-# Extensional articulation A.Galagoides >< B.Galagidae
 ** A.Callithrix#9481 (x) conflicts with B.Callitrichidae (y) because:
    B.Mico (c) is a child of y,
    B.Mico humilis (d) and B.Mico argentatus (e) are descendants of c,
@@ -245,158 +133,56 @@ Node counts: 2097 5073
    A.Platyrrhini (c) is a child of y,
    A.Cebinae (d) and A.Callitrichinae (e) are descendants of c,
    and d < x while e ! x
-# EM: B.Galagoides kumbirensis is descendant of particle.
-# EM: B.Galagoides demidoffi demidoffi is descendant of particle.
-# EM: B.Galagoides demidoffi phasma is descendant of particle.
-# EM: B.Galagoides demidoffi is descendant of particle.
-# EM: B.Galagoides udzungwensis is descendant of particle.
-# EM: B.Galagoides demidoff demidoff is descendant of particle.
-# EM: B.Galagoides demidoff phasma is descendant of particle.
-# EM: B.Galagoides demidoff poensis is descendant of particle.
-# EM: B.Galagoides demidoff thomasi is descendant of particle.
-# EM: particle. B.Galagoides demidoff murinus matches A.Galagoides demidoff murinus
-# EM: B.Galagoides demidoff medius is descendant of particle.
-# EM: B.Galagoides demidoff anomurus is descendant of particle.
-# Extensional articulation B.Galagoides demidoff particle-set<= A.Galagoides demidoff murinus
-# EM: particle. B.Galagoides thomasi matches A.Galagoides thomasi
-# Extensional articulation B.Galagoides < A.Galagoides
 ** B.Paragalago (x) conflicts with A.Galagidae (y) because:
    A.Galago (c) is a child of y,
    A.Galago granti (d) and A.Galago gabonensis (e) are descendants of c,
    and d < x while e ! x
 # Number of extensional relationships: 1337
-** Multiple matches: A.Paleopropithecidae -> B.Palaeopropithecus ingens, B.Palaeopropithecus, B.Palaeopropithecidae
-** Multiple matches: A.Chiromyiformes -> B.Daubentonia madagascariensis, B.Daubentonia, B.Daubentoniidae
-# Chain(A.Galagoides demidoff murinus) - articulation is A.Galagoides demidoff murinus matches B.Galagoides demidoff murinus
-# Chain - setting anchor: A.Galagoides demidoff murinus
-# Chain A.Galagoides demidoff murinus - no back-articulation from B.Galagoides: B.Galagoides < A.Galagoides
-# Chain A.Galagoides demidoff murinus = [B.Galagoides demidoff murinus <- B.Galagoides demidoff]
-# Extensional + intensional match: A.Galagoides demidoff murinus matches B.Galagoides demidoff murinus
-# Chain(B.Galagoides demidoff murinus) - articulation is B.Galagoides demidoff murinus matches A.Galagoides demidoff murinus
-# Chain - setting anchor: B.Galagoides demidoff murinus
-# Chain B.Galagoides demidoff murinus - no back-articulation from A.Galagoides: A.Galagoides >< B.Galagidae
-# Chain B.Galagoides demidoff murinus = [A.Galagoides demidoff murinus <- A.Galagoides demidoff]
-# Extensional + intensional match: B.Galagoides demidoff murinus matches A.Galagoides demidoff murinus
-# Matching extensionally: A.Galagoides demidoff murinus = B.Galagoides demidoff murinus
-# Chain(A.Galagoides demidoff) - articulation is A.Galagoides demidoff particle-set<= B.Galagoides demidoff murinus
-# Chain - setting anchor: A.Galagoides demidoff murinus
-# Chain A.Galagoides demidoff - no back-articulation from B.Galagoides: B.Galagoides < A.Galagoides
-# Chain A.Galagoides demidoff = [B.Galagoides demidoff murinus <- B.Galagoides demidoff]
-# Extensional + intensional match: A.Galagoides demidoff matches B.Galagoides demidoff
-# Chain(B.Galagoides demidoff) - articulation is B.Galagoides demidoff particle-set<= A.Galagoides demidoff murinus
-# Chain - setting anchor: B.Galagoides demidoff murinus
-# Chain B.Galagoides demidoff - no back-articulation from A.Galagoides: A.Galagoides >< B.Galagidae
-# Chain B.Galagoides demidoff = [A.Galagoides demidoff murinus <- A.Galagoides demidoff]
-# Extensional + intensional match: B.Galagoides demidoff matches A.Galagoides demidoff
-# Matching extensionally: A.Galagoides demidoff = B.Galagoides demidoff
-# Chain(A.Galagoides zanzibaricus udzungwensis) - articulation is A.Galagoides zanzibaricus udzungwensis particle-set<= B.Paragalago zanzibaricus udzungwensis
-# Chain - setting anchor: A.Galagoides zanzibaricus udzungwensis
-# Chain - end: A.Galagoides zanzibaricus
-# Chain A.Galagoides zanzibaricus udzungwensis = [B.Paragalago zanzibaricus udzungwensis]
-# Extensional + intensional match: A.Galagoides zanzibaricus udzungwensis particle-set<= B.Paragalago zanzibaricus udzungwensis
-# Matching extensionally: A.Galagoides zanzibaricus udzungwensis = B.Paragalago zanzibaricus udzungwensis
-# Chain(A.Galagoides zanzibaricus zanzibaricus) - articulation is A.Galagoides zanzibaricus zanzibaricus particle-set<= B.Paragalago zanzibaricus zanzibaricus
-# Chain - setting anchor: A.Galagoides zanzibaricus zanzibaricus
-# Chain - end: A.Galagoides zanzibaricus
-# Chain A.Galagoides zanzibaricus zanzibaricus = [B.Paragalago zanzibaricus zanzibaricus]
-# Extensional + intensional match: A.Galagoides zanzibaricus zanzibaricus particle-set<= B.Paragalago zanzibaricus zanzibaricus
-# Matching extensionally: A.Galagoides zanzibaricus zanzibaricus = B.Paragalago zanzibaricus zanzibaricus
-# Chain(A.Galagoides zanzibaricus) - articulation is A.Galagoides zanzibaricus particle-set<= B.Paragalago zanzibaricus
-# Chain - setting anchor: A.Galagoides zanzibaricus
-# Chain A.Galagoides zanzibaricus - no back-articulation from B.Paragalago: B.Paragalago >< A.Galagidae
-# Chain A.Galagoides zanzibaricus = [B.Paragalago zanzibaricus]
-# Extensional + intensional match: A.Galagoides zanzibaricus particle-set<= B.Paragalago zanzibaricus
-# Matching extensionally: A.Galagoides zanzibaricus = B.Paragalago zanzibaricus
-# Chain(A.Galagoides thomasi) - articulation is A.Galagoides thomasi matches B.Galagoides thomasi
-# Chain - setting anchor: A.Galagoides thomasi
-# Chain A.Galagoides thomasi - no back-articulation from B.Galagoides: B.Galagoides < A.Galagoides
-# Chain A.Galagoides thomasi = [B.Galagoides thomasi]
-# Extensional + intensional match: A.Galagoides thomasi matches B.Galagoides thomasi
-# Chain(B.Galagoides thomasi) - articulation is B.Galagoides thomasi matches A.Galagoides thomasi
-# Chain - setting anchor: B.Galagoides thomasi
-# Chain B.Galagoides thomasi - no back-articulation from A.Galagoides: A.Galagoides >< B.Galagidae
-# Chain B.Galagoides thomasi = [A.Galagoides thomasi]
-# Extensional + intensional match: B.Galagoides thomasi matches A.Galagoides thomasi
-# Matching extensionally: A.Galagoides thomasi = B.Galagoides thomasi
-# Chain(A.Galagoides rondoensis) - articulation is A.Galagoides rondoensis particle-set<= B.Paragalago rondoensis
-# Chain - setting anchor: A.Galagoides rondoensis
-# Chain A.Galagoides rondoensis - no back-articulation from B.Paragalago: B.Paragalago >< A.Galagidae
-# Chain A.Galagoides rondoensis = [B.Paragalago rondoensis]
-# Extensional + intensional match: A.Galagoides rondoensis particle-set<= B.Paragalago rondoensis
-# Matching extensionally: A.Galagoides rondoensis = B.Paragalago rondoensis
-# Chain(A.Galagoides) - articulation is A.Galagoides >< B.Galagidae
-# Chain A.Galagoides = []
-# No extensionally equal matches to A.Galagoides
-# Non-equal articulation: A.Galagoides >< B.Galagidae
-# Matching extensionally: A.Galagoides >< B.Galagidae
-** Multiple matches: A.Xenothricinae -> B.Xenothrix mcgregori, B.Xenothrix
-** Multiple matches: A.Alouatta guariba -> B.Alouatta guariba clamitans, B.Alouatta guariba
-** Multiple returns: A.Alouatta guariba -> B.Alouatta guariba clamitans, B.Alouatta guariba
-# Chain(B.Galagoides demidoff murinus) - articulation is B.Galagoides demidoff murinus matches A.Galagoides demidoff murinus
-# Chain - setting anchor: B.Galagoides demidoff murinus
-# Chain B.Galagoides demidoff murinus - no back-articulation from A.Galagoides: A.Galagoides >< B.Galagidae
-# Chain B.Galagoides demidoff murinus = [A.Galagoides demidoff murinus <- A.Galagoides demidoff]
-# Extensional + intensional match: B.Galagoides demidoff murinus matches A.Galagoides demidoff murinus
-# Chain(A.Galagoides demidoff murinus) - articulation is A.Galagoides demidoff murinus matches B.Galagoides demidoff murinus
-# Chain - setting anchor: A.Galagoides demidoff murinus
-# Chain A.Galagoides demidoff murinus - no back-articulation from B.Galagoides: B.Galagoides < A.Galagoides
-# Chain A.Galagoides demidoff murinus = [B.Galagoides demidoff murinus <- B.Galagoides demidoff]
-# Extensional + intensional match: A.Galagoides demidoff murinus matches B.Galagoides demidoff murinus
-# Matching extensionally: B.Galagoides demidoff murinus = A.Galagoides demidoff murinus
-# Chain(B.Galagoides demidoff) - articulation is B.Galagoides demidoff particle-set<= A.Galagoides demidoff murinus
-# Chain - setting anchor: B.Galagoides demidoff murinus
-# Chain B.Galagoides demidoff - no back-articulation from A.Galagoides: A.Galagoides >< B.Galagidae
-# Chain B.Galagoides demidoff = [A.Galagoides demidoff murinus <- A.Galagoides demidoff]
-# Extensional + intensional match: B.Galagoides demidoff matches A.Galagoides demidoff
-# Chain(A.Galagoides demidoff) - articulation is A.Galagoides demidoff particle-set<= B.Galagoides demidoff murinus
-# Chain - setting anchor: A.Galagoides demidoff murinus
-# Chain A.Galagoides demidoff - no back-articulation from B.Galagoides: B.Galagoides < A.Galagoides
-# Chain A.Galagoides demidoff = [B.Galagoides demidoff murinus <- B.Galagoides demidoff]
-# Extensional + intensional match: A.Galagoides demidoff matches B.Galagoides demidoff
-# Matching extensionally: B.Galagoides demidoff = A.Galagoides demidoff
-# Chain(B.Galagoides thomasi) - articulation is B.Galagoides thomasi matches A.Galagoides thomasi
-# Chain - setting anchor: B.Galagoides thomasi
-# Chain B.Galagoides thomasi - no back-articulation from A.Galagoides: A.Galagoides >< B.Galagidae
-# Chain B.Galagoides thomasi = [A.Galagoides thomasi]
-# Extensional + intensional match: B.Galagoides thomasi matches A.Galagoides thomasi
-# Chain(A.Galagoides thomasi) - articulation is A.Galagoides thomasi matches B.Galagoides thomasi
-# Chain - setting anchor: A.Galagoides thomasi
-# Chain A.Galagoides thomasi - no back-articulation from B.Galagoides: B.Galagoides < A.Galagoides
-# Chain A.Galagoides thomasi = [B.Galagoides thomasi]
-# Extensional + intensional match: A.Galagoides thomasi matches B.Galagoides thomasi
-# Matching extensionally: B.Galagoides thomasi = A.Galagoides thomasi
-# Chain(B.Galagoides) - articulation is B.Galagoides < A.Galagoides
-# Chain B.Galagoides = []
-# No extensionally equal matches to B.Galagoides
-# Non-equal articulation: B.Galagoides < A.Galagoides
-# Matching extensionally: B.Galagoides < A.Galagoides
-# Chain(A.Galagoides rondoensis) - articulation is A.Galagoides rondoensis particle-set<= B.Paragalago rondoensis
-# Chain - setting anchor: A.Galagoides rondoensis
-# Chain A.Galagoides rondoensis - no back-articulation from B.Paragalago: B.Paragalago >< A.Galagidae
-# Chain A.Galagoides rondoensis = [B.Paragalago rondoensis]
-# Extensional + intensional match: A.Galagoides rondoensis particle-set<= B.Paragalago rondoensis
-# Chain(A.Galagoides zanzibaricus udzungwensis) - articulation is A.Galagoides zanzibaricus udzungwensis particle-set<= B.Paragalago zanzibaricus udzungwensis
-# Chain - setting anchor: A.Galagoides zanzibaricus udzungwensis
-# Chain - end: A.Galagoides zanzibaricus
-# Chain A.Galagoides zanzibaricus udzungwensis = [B.Paragalago zanzibaricus udzungwensis]
-# Extensional + intensional match: A.Galagoides zanzibaricus udzungwensis particle-set<= B.Paragalago zanzibaricus udzungwensis
-# Chain(A.Galagoides zanzibaricus zanzibaricus) - articulation is A.Galagoides zanzibaricus zanzibaricus particle-set<= B.Paragalago zanzibaricus zanzibaricus
-# Chain - setting anchor: A.Galagoides zanzibaricus zanzibaricus
-# Chain - end: A.Galagoides zanzibaricus
-# Chain A.Galagoides zanzibaricus zanzibaricus = [B.Paragalago zanzibaricus zanzibaricus]
-# Extensional + intensional match: A.Galagoides zanzibaricus zanzibaricus particle-set<= B.Paragalago zanzibaricus zanzibaricus
-# Chain(A.Galagoides zanzibaricus) - articulation is A.Galagoides zanzibaricus particle-set<= B.Paragalago zanzibaricus
-# Chain - setting anchor: A.Galagoides zanzibaricus
-# Chain A.Galagoides zanzibaricus - no back-articulation from B.Paragalago: B.Paragalago >< A.Galagidae
-# Chain A.Galagoides zanzibaricus = [B.Paragalago zanzibaricus]
-# Extensional + intensional match: A.Galagoides zanzibaricus particle-set<= B.Paragalago zanzibaricus
-** Multiple returns: A.Paleopropithecidae -> B.Palaeopropithecus ingens, B.Palaeopropithecus, B.Palaeopropithecidae
-** Multiple matches: B.Palaeopropithecidae -> A.Palaeopropithecus ingens, A.Palaeopropithecus, A.Paleopropithecidae
-# Number of articulations in alignment: 1426
+** Multiple matches (monotypic): A.Paleopropithecidae -> B.Palaeopropithecus ingens, B.Palaeopropithecus, B.Palaeopropithecidae
+** Multiple matches (monotypic): A.Chiromyiformes -> B.Daubentonia madagascariensis, B.Daubentonia, B.Daubentoniidae
+** Multiple matches (monotypic): A.Xenothricinae -> B.Xenothrix mcgregori, B.Xenothrix
+** Multiple matches (monotypic): A.Alouatta guariba -> B.Alouatta guariba clamitans, B.Alouatta guariba
+** Intensional and extensional matches differ:
+   A.Ateles fusciceps robustus lump B.Ateles fusciceps rufiventris
+   A.Ateles fusciceps robustus = B.Ateles fusciceps rufiventris
+** Intensional and extensional matches differ:
+   A.Ateles geoffroyi vellerosus lump B.Ateles geoffroyi vellerosus
+   A.Ateles geoffroyi vellerosus = B.Ateles geoffroyi vellerosus
+** Intensional and extensional matches differ:
+   A.Ateles geoffroyi ornatus lump B.Ateles geoffroyi ornatus
+   A.Ateles geoffroyi ornatus = B.Ateles geoffroyi ornatus
+** Intensional and extensional matches differ:
+   A.Cercopithecus pogonias grayi lump B.Cercopithecus pogonias grayi
+   A.Cercopithecus pogonias grayi = B.Cercopithecus pogonias grayi
+** Intensional and extensional matches differ:
+   A.Nomascus concolor jingdongensis lump B.Nomascus concolor concolor
+   A.Nomascus concolor jingdongensis = B.Nomascus concolor concolor
+** Intensional and extensional matches differ:
+   A.Pan troglodytes troglodytes lump B.Pan troglodytes troglodytes
+   A.Pan troglodytes troglodytes = B.Pan troglodytes troglodytes
+** Intensional and extensional matches differ:
+   B.Pachylemur#5428934 lump A.Pachylemur
+   B.Pachylemur#5428934 = A.Pachylemur
+** Intensional and extensional matches differ:
+   B.Alouatta macconnelli#7913455 lump A.Alouatta macconnelli
+   B.Alouatta macconnelli#7913455 = A.Alouatta macconnelli
+** Multiple returns (monotypic): A.Alouatta guariba -> B.Alouatta guariba clamitans, B.Alouatta guariba
+** Intensional and extensional matches differ:
+   B.Alouatta nigerrima lump A.Alouatta belzebul
+   B.Alouatta nigerrima = A.Alouatta belzebul
+** Intensional and extensional matches differ:
+   B.Chiropotes chiropotes lump A.Chiropotes chiropotes
+   B.Chiropotes chiropotes = A.Chiropotes chiropotes
+** Intensional and extensional matches differ:
+   B.Pongo tapanuliensis#9311132 lump A.Pongo tapanuliensis
+   B.Pongo tapanuliensis#9311132 = A.Pongo tapanuliensis
+** Multiple returns (monotypic): A.Paleopropithecidae -> B.Palaeopropithecus ingens, B.Palaeopropithecus, B.Palaeopropithecidae
+** Multiple matches (monotypic): B.Palaeopropithecidae -> A.Palaeopropithecus ingens, A.Palaeopropithecus, A.Paleopropithecidae
+# Number of articulations in alignment: 1424
 Preparing work/primates-ncbi-gbif.csv.new
 Number of roots in merge: 1
-Number of non-roots in merge: 3050
-# Changed status: 2057, changed: 552
+Number of non-roots in merge: 3061
+# Changed status: 2041, changed: 545
 ** Lemuridae names different taxa in the two checklists
   A.Lemuridae < B.Lemuridae [B.Megaladapis is not in it]
   B.Lemuridae >< A.Lemuriformes [A.Megaladapis is in; its sibling A.Lepilemur is not]
@@ -457,6 +243,9 @@ Number of non-roots in merge: 3050
 ** Cercopithecus mitis names different taxa in the two checklists
   A.Cercopithecus mitis < B.Cercopithecus mitis [B.Cercopithecus mitis albogularis is not in it]
   B.Cercopithecus mitis < A.Cercopithecus [A.Cercopithecus sclateri is not in it]
+** Pan troglodytes troglodytes names different taxa in the two checklists
+  A.Pan troglodytes troglodytes lump B.Pan troglodytes troglodytes [canonicalName]
+  B.Pan troglodytes troglodytes = A.Pan troglodytes troglodytes [canonicalName]
 ** Eulemur fulvus collaris names different taxa in the two checklists
   A.Eulemur fulvus collaris = B.Eulemur collaris#9812996 [None]
   B.Eulemur fulvus collaris matches A.Eulemur fulvus collaris [canonicalName]
@@ -484,9 +273,15 @@ Number of non-roots in merge: 3050
 ** Macaca leonina names different taxa in the two checklists
   A.Macaca leonina = B.Macaca nemestrina leonina [None]
   B.Macaca leonina matches A.Macaca leonina [scientificName]
+** Ateles geoffroyi vellerosus names different taxa in the two checklists
+  A.Ateles geoffroyi vellerosus lump B.Ateles geoffroyi vellerosus [canonicalName]
+  B.Ateles geoffroyi vellerosus = A.Ateles geoffroyi vellerosus [canonicalName]
 ** Alouatta guariba names different taxa in the two checklists
   A.Alouatta guariba particle-set<= B.Alouatta guariba clamitans [monotypic]
   B.Alouatta guariba = A.Alouatta guariba [canonicalName]
+** Cercopithecus pogonias grayi names different taxa in the two checklists
+  A.Cercopithecus pogonias grayi lump B.Cercopithecus pogonias grayi [canonicalName]
+  B.Cercopithecus pogonias grayi = A.Cercopithecus pogonias grayi [canonicalName]
 ** Loris tardigradus nordicus names different taxa in the two checklists
   A.Loris tardigradus nordicus = B.Loris lydekkerianus nordicus [None]
   B.Loris tardigradus nordicus matches A.Loris tardigradus nordicus [canonicalName]
@@ -505,6 +300,9 @@ Number of non-roots in merge: 3050
 ** Atelidae names different taxa in the two checklists
   A.Atelidae < B.Atelidae [B.Xenothrix is not in it]
   B.Atelidae >< A.Platyrrhini [A.Xenothricinae is in; its sibling A.Callicebinae is not]
+** Chiropotes chiropotes names different taxa in the two checklists
+  A.Chiropotes chiropotes = B.Chiropotes chiropotes [scientificName]
+  B.Chiropotes chiropotes lump A.Chiropotes chiropotes [scientificName]
 ** Nomascus concolor concolor names different taxa in the two checklists
   A.Nomascus concolor concolor lump B.Nomascus concolor concolor [canonicalName]
   B.Nomascus concolor concolor = A.Nomascus concolor jingdongensis [None]
@@ -517,6 +315,9 @@ Number of non-roots in merge: 3050
 ** Allochrocebus preussi preussi names different taxa in the two checklists
   A.Allochrocebus preussi preussi matches B.Allochrocebus preussi preussi [canonicalName]
   B.Allochrocebus preussi preussi particle-set<= A.Allochrocebus preussi [synonym+canonicalName+synonym]
+** Ateles geoffroyi ornatus names different taxa in the two checklists
+  A.Ateles geoffroyi ornatus lump B.Ateles geoffroyi ornatus [canonicalName]
+  B.Ateles geoffroyi ornatus = A.Ateles geoffroyi ornatus [canonicalName]
 ** Ateles fusciceps rufiventris names different taxa in the two checklists
   A.Ateles fusciceps rufiventris lump B.Ateles fusciceps rufiventris [scientificName]
   B.Ateles fusciceps rufiventris = A.Ateles fusciceps robustus [None]

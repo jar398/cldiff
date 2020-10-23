@@ -13,6 +13,7 @@
 
 import checklist as cl
 import relation as rel
+import dribble
 
 def merge_checklists(A, B, al):
   parents = {}
@@ -25,8 +26,14 @@ def merge_checklists(A, B, al):
       if not merged in parents:
         p = merged_parent(merged, al)
         if p:
+          if dribble.watch(node):
+            (x, y) = p
+            dribble.log("# Merged parent(%s) = (%s, %s)" %
+                        (cl.get_unique(node), cl.get_unique(x), cl.get_unique(y)))
           parents[merged] = p     # Otherwise it's a root
         else:
+          if dribble.watch(node):
+            dribble.log("# No merge(%s)" % cl.get_unique(node))
           if not merged in roots:
             roots.append(merged)
     for root in cl.get_roots(check):
@@ -36,8 +43,6 @@ def merge_checklists(A, B, al):
   return (parents, roots)
 
 # A is low priority
-
-###  THIS IS ALL WRONG.
 
 def merged_parent(merged, al):
   (x, y) = merged    # False if node is inconsistent
@@ -58,21 +63,29 @@ def merged_parent(merged, al):
 
   elif x:
     p = cl.get_parent(x)
-    if p == cl.forest_tnu: return None
     ar = al.get(x)
-    if not ar: return inject_A(p, al)
-    if rel.is_variant(ar.relation, rel.gt): return inject_A(p, al)
-    # if rel.is_variant(ar.relation, rel.conflict): return inject_A(p, al)
-    return inject_B(ar.cod, al)
+    if p != cl.forest_tnu:
+      if not ar:
+        return inject_A(p, al)
+      if rel.is_variant(ar.relation, rel.gt): # Avoid cycles.  Fix this
+        return inject_A(p, al)
+      # if rel.is_variant(ar.relation, rel.conflict): return inject_A(p, al)
+    if ar:
+      return inject_B(ar.cod, al)
+    else:
+      return None
 
   elif y:
     q = cl.get_parent(y)
-    if q == cl.forest_tnu: return None
     ar = al.get(y)
-    if not ar: return inject_B(q, al)
-    if rel.is_variant(ar.relation, rel.gt): return inject_B(q, al)
-    if rel.is_variant(ar.relation, rel.conflict): return inject_B(q, al)
-    return inject_A(ar.cod, al)
+    if q != cl.forest_tnu:
+      if not ar: return inject_B(q, al)
+      if rel.is_variant(ar.relation, rel.gt): return inject_B(q, al)
+      if rel.is_variant(ar.relation, rel.conflict): return inject_B(q, al)
+    if ar:
+      return inject_A(ar.cod, al)
+    else:
+      return None
 
   else:
     assert False

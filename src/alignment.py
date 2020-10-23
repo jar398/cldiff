@@ -42,10 +42,19 @@ def assemble_alignment(draft, best, ext_map):
   for node in ext_map:
     ar1 = draft.get(node)
     ar2 = articulate(node, best, ext_map)
-    if ar1 and ar2 and ar1.cod != ar2.cod:
-      dribble.log("** Intensional and extensional matches differ:\n  %s\n  %s" %
-                  (art.express(ar1), art.express(ar2)))
-    if ar2:
+    if ar1 and ar2:
+      if ar1.cod != ar2.cod:
+        dribble.log("** Intensional and extensional matches differ:\n   %s\n   %s" %
+                    (art.express(ar1), art.express(ar2)))
+        draft[node] = ar2
+      elif rel.is_variant(ar1.relation, ar2.relation):
+        draft[node] = ar2
+      else:
+        dribble.log("** Intensional and extensional matches differ:\n   %s\n   %s" %
+                    (art.express(ar1), art.express(ar2)))
+        # Intensional relationship takes priority (lumping/splitting) ??
+        draft[node] = ar1
+    elif ar2:
       if (dribble.watch(node)):
         dribble.log("# Matching extensionally: %s" %
                     art.express(ar2))
@@ -77,22 +86,20 @@ def articulate(node, best, ext_map):     # B-node to A
     return ar
   elif len(matches) == 1:
     match = matches[0]
+    assert rel.is_variant(match.relation, rel.eq)
     rematches = filtered_matches(match.cod, best, ext_map)
     if len(rematches) == 0:
       dribble.log("** Shouldn't happen: %s" % cl.get_unique(node))
       return None
     elif len(rematches) == 1:
-      if rel.is_variant(match.relation, rel.eq):
-        return art.set_relation(match, rel.eq)
-      else:
-        return match
+      return art.change_relation(match, rel.eq, "unique", "unique")
     else:
-      dribble.log("** Multiple returns: %s -> %s" %
+      dribble.log("** Multiple returns (monotypic): %s -> %s" %
             (cl.get_unique(match.cod),
              (", ".join(map(lambda ar:cl.get_unique(ar.cod), rematches)))))
       return match
   else:
-    dribble.log("** Multiple matches: %s -> %s" %
+    dribble.log("** Multiple matches (monotypic): %s -> %s" %
           (cl.get_unique(node),
              (", ".join(map(lambda ar:cl.get_unique(ar.cod), matches)))))
     return matches[0]
@@ -243,6 +250,7 @@ def extensional_match(node, particles, xmrcas):
         pass
       else:
         (d, e) = cross_compare(node, pchild, xmrcas)
+        # d < node while e ! node
         if d and e:
           how = rel.conflict
           reason = ("%s is in; its sibling %s is not" %

@@ -7,6 +7,7 @@ import rank
 import chaitin
 import property
 import table
+import dribble
 
 # ---------- Fields (columns, properties) in taxon table
 
@@ -64,9 +65,12 @@ class Checklist(table.Table):
   def assign_sequence_numbers(self):
     n = len(self.sequence_numbers)    # dict
     def process(tnu, n):
+      assert tnu > 0
       self.sequence_numbers[tnu] = n
       n = n + 1
-      for inf in get_inferiors(tnu):
+      for inf in get_raw_children(tnu):
+        n = process(inf, n)
+      for inf in get_raw_synonyms(tnu):
         n = process(inf, n)
       return n
     for root in get_roots(self):
@@ -92,6 +96,7 @@ def read_checklist(specifier, prefix, name):
     print (checklist.header())
     assert False
 
+  validate(checklist)
   checklist.assign_sequence_numbers()
 
   return checklist
@@ -189,39 +194,85 @@ def get_roots(checklist):
   roots = []
   for tnu in checklist.get_all_nodes():
     assert tnu > 0
-    if to_accepted(tnu) == tnu and get_parent(tnu) == forest_tnu:
+    if is_accepted(tnu) and get_parent(tnu) == forest_tnu:
       roots.append(tnu)
   return roots
-
-# Superior/inferior
-
-def get_inferiors(tnu):
-  assert table.is_record(tnu)
-  assert tnu != forest_tnu
-  return get_synonyms(tnu) + get_children(tnu)
 
 # ----------
 # Parent/children and accepted/synonyms
 
 def get_parent(tnu):
   assert tnu > 0
-  assert is_accepted(tnu)
-  parent_id = get_value(tnu, parent_node_id)
+  assert is_accepted(tnu)   # fails with gbif
+  parent = get_raw_parent(tnu)
+  if parent:
+    assert is_accepted(parent)
+    return parent
+  else:
+    return forest_tnu
+
+def get_raw_parent(node):
+  parent_id = get_value(node, parent_node_id)
   if parent_id != None:
-    parent = get_record_with_node_id(get_checklist(tnu), parent_id)
-    if parent != None:
-      # The parent of an accepted node has to be accepted
-      assert is_accepted(parent)
-      return parent
-  return forest_tnu
+    return get_record_with_node_id(get_checklist(node), parent_id)
+  return None
 
 def get_children(parent):
-  children = get_nodes_with_value(get_checklist(parent),
-                                  parent_node_id,
-                                  get_node_id(parent))
-  for child in children:
-    assert is_accepted(child)
+  children = get_raw_children(parent)
+  if len(children) > 0:
+    assert is_accepted(parent)
+    for child in children:
+      assert is_accepted(child)
   return children
+
+def get_raw_children(parent):
+  return get_nodes_with_value(get_checklist(parent),
+                              parent_node_id,
+                              get_node_id(parent))
+
+# ----------
+# Accepted/synonyms
+
+# Returns None if this record has no accepted record
+
+def get_accepted(tnu):
+  # tbd: add assertions
+  return get_raw_accepted(tnu)
+
+def get_raw_accepted(tnu):
+  probe = get_value(tnu, accepted_node_id)
+  if probe != None:
+    return get_record_with_node_id(get_checklist(tnu), probe)
+  else:
+    return None
+
+def get_synonyms(tnu):
+  syns = get_raw_synonyms(tnu)
+  if len(syns) > 0:
+    assert is_accepted(tnu)
+    for syn in syns:
+      assert not is_accepted(syn)
+  return syns
+
+def get_raw_synonyms(tnu):
+  return get_nodes_with_value(get_checklist(tnu),
+                              accepted_node_id,
+                              get_node_id(tnu))
+  # return [syn for syn in ...]
+
+def get_taxonomic_status(tnu):
+  return get_value(tnu, taxonomic_status)
+
+def get_nomenclatural_status(tnu):
+  return get_value(tnu, nomenclatural_status)
+
+def is_accepted(tnu):
+  if get_value(tnu, accepted_node_id):
+    assert get_raw_children(tnu) == []
+    assert get_raw_synonyms(tnu) == []
+    return False
+  else:
+    return True
 
 # Get canonical record among a set of equivalent records
 
@@ -235,33 +286,30 @@ def to_accepted(tnu):
   else:
     return tnu
 
-# ----------
-# Accepted/synonyms
-
-# Returns None if this record has no accepted record
-
-def get_accepted(tnu):
-  probe = get_value(tnu, accepted_node_id)
-  if probe != None:
-    a = get_record_with_node_id(get_checklist(tnu), probe)
-    assert is_accepted(a)
-    return a
-  return None
-
-def get_synonyms(tnu):
-  return [syn
-          for syn in get_nodes_with_value(get_checklist(tnu),
-                                             accepted_node_id,
-                                             get_node_id(tnu))]
-
-def get_taxonomic_status(tnu):
-  return get_value(tnu, taxonomic_status)
-
-def get_nomenclatural_status(tnu):
-  return get_value(tnu, nomenclatural_status)
-
-def is_accepted(tnu):
-  return not get_value(tnu, accepted_node_id)
+def validate(checklist):
+  s = 0
+  a = 0
+  for node in checklist.get_all_nodes():
+    accepted = get_raw_accepted(node)
+    if accepted:
+      # It's a synonym.  No parent, children, or synonyms allowed.
+      assert not get_raw_parent(node)
+      assert not get_raw_accepted(accepted)
+      assert len(get_raw_children(node)) == 0
+      assert len(get_raw_synonyms(node)) == 0
+      s += 1
+    else:
+      # It's accepted.  Parent and children must all
+      # also be accepted, and synonyms must not be.
+      parent = get_raw_parent(node)
+      if parent:
+        assert not get_raw_accepted(parent)
+      for child in get_raw_children(node):
+        assert not get_raw_accepted(child)
+      for syn in get_raw_synonyms(node):
+        assert get_raw_accepted(syn)
+      a += 1
+  dribble.log("Validated %s accepted, %s synonym" % (a, s))
 
 # ---------- Hierarchy analyzers
 

@@ -10,7 +10,8 @@ def log(message):
     print(message, file=dribble_file)
 
 #confusing = 'Loris tardigradus'
-confusing = 'Galagoides'
+#confusing = 'Galagoides'
+confusing = 'Alouatta macconnelli'
 
 def watch(node):
   if node != None and node != cl.forest_tnu:

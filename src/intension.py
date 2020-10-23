@@ -95,7 +95,7 @@ def synonyms_locally(node):
 canonical_name = cl.field("canonicalName")
 
 def informative_synonyms(node):
-  if False:
+  if True:
     c = cl.get_checklist(node)
     return [syn
             for syn in cl.get_synonyms(node)
@@ -109,9 +109,11 @@ def informative_synonyms(node):
 def is_informative(syn):
   name = cl.get_value(syn, canonical_name)
   nodes = cl.get_nodes_with_value(cl.get_checklist(syn), canonical_name, name)
-  for node in nodes:
-    if cl.is_accepted(node):
-      return False
+  if len(nodes) > 1:
+    # deal with tangle around Saimiri boliviensis and subspecies
+    return False
+  #if cl.is_accepted(nodes[0]):
+  #  return False
   return True
 
 # A synonym has only one accepted name
