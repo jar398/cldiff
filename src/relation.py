@@ -18,8 +18,7 @@ for (ba, ab, name, revname) in \
      (1,   0.5, '<',  '>'),
      (1,   0.5, 'lump', 'split'),
      (1,   1,   '=',  '='),
-     (1,   1,   'matches',  'matched'),     # intensional (by name, id)
-     (1,   1,   'particle-set<=',  'particle-set>=')]:  # extensional (by particle set)
+     (.9,  .9,   'matches',  'matched-by')]:     # intensional (by name, id)
   re  = Relation(ba, ab, name, revname)
   relations_by_params[(ba, ab)] = re
   relations_by_name[name] = re
@@ -38,9 +37,7 @@ conflict    = relations_by_name['><']
 lt          = relations_by_name['<']
 gt          = relations_by_name['>']
 eq          = relations_by_name['=']
-intensional = relations_by_name['matches']
-extensional = relations_by_name['particle-set<=']
-merge       = relations_by_name['lump']
+matches     = relations_by_name['matches']
 
 def is_variant(re, other):
   return (re.b_given_a == other.b_given_a and
@@ -79,6 +76,7 @@ def compose(r1, r2):
   return re
 
 def composable(r1, r2):
+  if r1 == matches and r2 == matches: return r1
   b_given_a = min(r1.b_given_a, r2.b_given_a)
   a_given_b = min(r1.a_given_b, r2.a_given_b)
   if r1.b_given_a < 1 and r2.a_given_b < 1:

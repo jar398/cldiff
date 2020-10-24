@@ -47,7 +47,7 @@ def assemble_alignment(draft, best, ext_map):
         dribble.log("** Intensional and extensional matches differ:\n   %s\n   %s" %
                     (art.express(ar1), art.express(ar2)))
         draft[node] = ar2
-      elif rel.is_variant(ar1.relation, ar2.relation):
+      elif ar1.relation == ar2.relation:
         draft[node] = ar2
       else:
         dribble.log("** Intensional and extensional matches differ:\n   %s\n   %s" %
@@ -86,13 +86,13 @@ def articulate(node, best, ext_map):     # B-node to A
     return ar
   elif len(matches) == 1:
     match = matches[0]
-    assert rel.is_variant(match.relation, rel.eq)
+    assert match.relation == rel.matches
     rematches = filtered_matches(match.cod, best, ext_map)
     if len(rematches) == 0:
       dribble.log("** Shouldn't happen: %s" % cl.get_unique(node))
       return None
     elif len(rematches) == 1:
-      return art.change_relation(match, rel.eq, "unique", "unique")
+      return art.change_relation(match, rel.eq, "unique_by_particle_set", "unique_by_particle_set")
     else:
       dribble.log("** Multiple returns (monotypic): %s -> %s" %
             (cl.get_unique(match.cod),
@@ -126,7 +126,7 @@ def filtered_matches(node, best, ext_map):
     if bestie and bestie.cod in [e.cod for e in exties]:
       if dribble.watch(node):
         dribble.log("# Extensional + intensional match: %s" % art.express(bestie))
-      return [art.change_relation(bestie, rel.eq, "particleset=", "particleset=")]
+      return [bestie]
     else:
       if dribble.watch(node):
         dribble.log("# No applicable intensional match to %s" % cl.get_unique(node))
@@ -145,7 +145,7 @@ def extensional_chain(x, ext_map):       # B-node to A
                 (cl.get_unique(x), art.express(match)))
   if not match:
     return []
-  if not rel.is_variant(match.relation, rel.eq):
+  if match.relation != rel.matches:
     return []
 
   # match.cod is the start of the chain
@@ -157,8 +157,7 @@ def extensional_chain(x, ext_map):       # B-node to A
   x_anchor = None
   while True:
     back = ext_map.get(y)
-    if (back == None or
-        not rel.is_variant(back.relation, rel.eq)):
+    if (back == None or back.relation != rel.matches):
       if dribble.watch(x):
         dribble.log("# Chain %s - no back-articulation from %s: %s" %
                     (cl.get_unique(x), cl.get_unique(y), art.express(back)))
@@ -177,7 +176,7 @@ def extensional_chain(x, ext_map):       # B-node to A
       else:
         m = art.reverse(back)   # x -> y
     else:
-      m = art.monotypic(x, y, rel.extensional)
+      m = art.monotypic(x, y, rel.matches)
     matches.append(m)
     y = cl.get_parent(y)
   #if len(matches) > 1:
@@ -186,14 +185,14 @@ def extensional_chain(x, ext_map):       # B-node to A
 
 # ---------- Extensionality by particle set
 
-# Extensional relationships only, no particle matches
+# Draft has particle matches
 
-def extensional_match_map(A, B, particles, xmrcas):
+def extensional_match_map(A, B, draft, xmrcas):
   ext = {}
   def process(node):
     for child in cl.get_children(node):
       process(child)
-    ar = extensional_match(node, particles, xmrcas)
+    ar = extensional_match(node, draft, xmrcas)
     if ar:
       ext[node] = ar
   for root in cl.get_roots(A): process(root)
@@ -204,8 +203,8 @@ def extensional_match_map(A, B, particles, xmrcas):
 # This code is derived from 
 #   reference-taxonomy/org/opentreeoflife/conflict/ConflictAnalysis.java
 
-def extensional_match(node, particles, xmrcas):
-  part = particles.get(node)
+def extensional_match(node, draft, xmrcas):
+  part = draft.get(node)
   if part:
     if dribble.watch(node):
       dribble.log("# EM: particle. %s" % art.express(part))
@@ -231,10 +230,10 @@ def extensional_match(node, particles, xmrcas):
     # Can test for unique match by looking at xmrca of parent
 
     # Could be part of a 'monotypic' chain; fix later
-    how = rel.extensional
+    how = rel.matches
     reason = "mutual-cross-mrca"
   elif how == rel.gt:
-    how = rel.extensional
+    how = rel.matches
     reason = "monotypic-inversion"
   elif how == rel.disjoint:
     reason = "particle-set-exclusion"
@@ -357,7 +356,7 @@ def detect_lumps_splits(best):
       x0 = mut.cod
       rent = cl.get_parent(x0)    # parent of x
       for ar in inc:    # ar: x ≈ y
-        if (rel.is_variant(ar.relation, rel.eq) and
+        if (ar.relation == rel.matches and
             # parent of b is same as parent of a?
             cl.get_parent(ar.dom) == rent):
           sibs.append(ar)
@@ -367,9 +366,9 @@ def detect_lumps_splits(best):
         if len(sibs) == 1:
           result[x] = art.set_relation(ar, rel.eq) # x = y
         else:
-          result[x] = art.change_relation(ar, rel.merge, "merge", "split")
+          result[x] = art.change_relation(ar, rel.lt, "merge", "split")
       else:
-        result[x] = ar       # x < y
+        result[x] = ar       # x < y  ???
     if len(sibs) > 1:
       flush.append(y)
       # Report!
@@ -392,6 +391,7 @@ def analyze_cross_mrcas(A, B, particles):
       result = None
       probe = particles.get(node)
       if probe:
+        # Relation can be < = > ><
         assert probe.dom == node
         assert cl.is_accepted(probe.cod)
         result = probe.cod

@@ -114,33 +114,12 @@ def synonymy(synonym, accepted):
   status = (cl.get_nomenclatural_status(synonym) or \
             cl.get_taxonomic_status(synonym) or \
             "synonym")
-  re = synonym_relation(status)
-  return _articulation(synonym, accepted, re,
-                       reason="synonym")
+  return _articulation(synonym, accepted, rel.matches,
+                       reason = status, revreason = status + "-of")
 
-# I don't understand this
+# Some NCBI nomenclatural status values.  This is just a comment.
 
-def synonym_relation(nom_status):
-  re = synonym_relations.get(nom_status)
-  if re: return re
-  dribble.log("Unrecognized nomenclatural status: %s" % nom_status)
-  return rel.intensional
-
-# These relations go from synonym to accepted (the "has x" form)
-# TBD: Put these back into the articulation somehow
-
-synonym_relations = {}
-
-def declare_synonym_relations():
-
-  def b(nstatus, relation = rel.intensional, name = None, revname = None):
-    if False:
-      if name == None: name = "has-" + nstatus.replace(" ", "-")
-      if revname == None: revname = nstatus.replace(" ", "-") + "-of"
-    re = rel.reverse(relation)
-    synonym_relations[nstatus] = re
-    return re
-
+def declare_synonym_relations(b):
   b("homotypic synonym")    # GBIF
   b("authority")
   b("scientific name")        # (actually canonical) exactly one per node
@@ -173,15 +152,10 @@ def declare_synonym_relations():
   b("in-part",  relation=rel.lt, name="included-in", revname="part-of")  # part of a polyphyly
   b("proparte synonym", relation=rel.lt)
 
-declare_synonym_relations()
-
 # ---------- Different kinds of articulation
 
 def intensional(dom, cod, how):
-  return bridge(dom, cod, rel.intensional, how)
-
-def cross_mrca(dom, cod):
-  return bridge(dom, cod, rel.cross_mrca, "cross-mrca")
+  return bridge(dom, cod, rel.matches, how)
 
 def extensional(dom, cod, re, reason):
   return bridge(dom, cod, re, reason)
@@ -229,8 +203,8 @@ def collapse_matches(arts):
   for ar in arts:
     if not previous:
       previous = ar
-    elif conjoinable(previous, ar):
-      previous = conjoin(previous, ar)
+    elif conjoinable(ar, previous):
+      previous = conjoin(ar, previous)
     else:
       matches.append(previous)
       previous = None
