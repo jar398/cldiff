@@ -26,8 +26,11 @@ def main(c1, c1_tag, c2, c2_tag, out, format):
     B = cl.read_checklist(c2, c2_tag + ".", "high-checklist")
     dribble.log ("Node counts: %s %s" % (len(A.get_all_nodes()), len(B.get_all_nodes())))
     # Map each B to a corresponding A
+    dribble.log ("Aligning ...")
     (al, xmrcas) = alignment.align(B, A)
-    # Where to xmrcas come from?
+    dribble.log("  ... finished aligning; %s articulations\n" %
+                len(al))
+    # Where do xmrcas come from?
     write_report(A, B, al, xmrcas, format, out)
     dribble.dribble_file = None
 
@@ -36,7 +39,6 @@ def write_report(A, B, al, xmrcas, format, outpath):
     really_write_report(A, B, al, xmrcas, format, sys.stdout)
   else:
     with open(outpath, "w") as outfile:
-      dribble.log ("Preparing %s" % (outpath,))
       really_write_report(A, B, al, xmrcas, format, outfile)
 
 def really_write_report(A, B, al, xmrcas, format, outfile):
@@ -44,8 +46,8 @@ def really_write_report(A, B, al, xmrcas, format, outfile):
     eulerx.dump_alignment(al, outfile)
   else:
     (parents, roots) = merge.merge_checklists(A, B, al)
-    dribble.log ("Number of roots in merge: %s" % len(roots))
-    dribble.log ("Number of non-roots in merge: %s" % len(parents))
+    dribble.log ("Merged.  %s roots in merge, %s nodes with parents" %
+                 (len(roots), len(parents)))
     report(A, B, al, roots, parents, outfile)
     report_on_collisions(A, B, al)
 
@@ -73,14 +75,16 @@ def report_on_collisions(A, B, al):
         if cl.is_accepted(A_node) and cl.is_accepted(B_node):
           ar1 = al.get(A_node)
           ar2 = al.get(B_node)
-          ar1_bad = ar1 and (not rel.is_variant(ar1.relation, rel.eq) or
-                             ar1.cod != B_node)
-          ar2_bad = ar2 and (not rel.is_variant(ar2.relation, rel.eq) or
-                             ar2.cod != A_node)
+          ar1_bad = (ar1 and
+                     rel.is_variant(ar1.relation, rel.eq) and
+                     ar1.cod != B_node)
+          ar2_bad = (ar2 and
+                     rel.is_variant(ar2.relation, rel.eq) and
+                     ar2.cod != A_node)
           if ar1_bad or ar2_bad:
-            dribble.log("** %s names different taxa in the two checklists" % name)
-            if ar1: dribble.log("  %s [%s]" % (art.express(ar1), art.reason(ar1)))
-            if ar2: dribble.log("  %s [%s]" % (art.express(ar2), art.reason(ar2)))
+            dribble.log("# %s names different taxa in the two checklists" % name)
+            if ar1_bad: dribble.log("  %s [%s]" % (art.express(ar1), art.reason(ar1)))
+            if ar2_bad: dribble.log("  %s [%s]" % (art.express(ar2), art.reason(ar2)))
 
 # Default (simplified) report format
 
@@ -89,12 +93,12 @@ def report(A, B, al, roots, parents, outfile):
   write_header(writer)
   children = cl.invert_dict(parents)
   all_props = set.intersection(set(A.properties), set(B.properties))
-  changed = find_changed_subtrees(roots, children, all_props)
+  any_descendant_differs = find_changed_subtrees(roots, children, all_props)
   id_table = assign_ids(parents, roots, children)
 
   def taxon_report(mnode, indent):
     nodiff = None
-    different = changed.get(mnode)
+    different = mnode in any_descendant_differs
 
     id = id_table[mnode]
     (x, y) = mnode
@@ -120,7 +124,7 @@ def report(A, B, al, roots, parents, outfile):
         if len(childs) > 0:
           nodiff = "subtree="
         else:
-          nodiff = "tip"
+          nodiff = "shared tip"
 
     elif x:
       op = "A ONLY"
@@ -192,7 +196,7 @@ def node_data(node):
 # unchanged
 
 def find_changed_subtrees(roots, children, all_props):
-  status = {}
+  any_descendant_differs = {}
   def process(node):
     node_changed = False
     (x, y) = node
@@ -206,15 +210,15 @@ def find_changed_subtrees(roots, children, all_props):
     for child in children.get(node, []):
       if process(child):
         descendant_changed = True
-    status[node] = descendant_changed       # Cache it
+    if descendant_changed:
+      any_descendant_differs[node] = True
     return descendant_changed or node_changed
   for root in roots:
-    status[root] = process(root)
-  count = 0
-  for key in status:
-    if status[key]: count += 1
-  dribble.log("# Changed status: %s, changed: %s" % (len(status), count))
-  return status
+    c = process(root)
+    if c: any_descendant_differs[root] = c
+  dribble.log("# %s nodes in merge have some change in their descendants" %
+              (len(any_descendant_differs)))
+  return any_descendant_differs
 
 # --------------------
 

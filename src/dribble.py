@@ -11,7 +11,8 @@ def log(message):
 
 #confusing = 'Loris tardigradus'
 #confusing = 'Galagoides'
-confusing = 'Alouatta macconnelli'
+#confusing = 'Alouatta macconnelli'
+confusing = '...'
 
 def watch(node):
   if node != None and node != cl.forest_tnu:

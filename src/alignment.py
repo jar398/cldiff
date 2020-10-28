@@ -1,5 +1,3 @@
-# This is a godawful mess
-
 import sys
 
 import checklist as cl
@@ -13,207 +11,127 @@ from intension import choose_best_match
 # A-record that it matches (preferably but not necessarily an '='
 # articulation).
 
-def align(B, A, captured = {}):
-  intension.clear_cache()
-  best = intension.best_intensional_match_map(B, A, captured)
+def align(B, A):
 
-  # Start to fill in the alignment
-  tipward_best = tipward(best, B, A)
-  draft = detect_lumps_splits(tipward_best)    # change ≈ to =
+  # Precompute all best matches
+  best = intension.best_intensional_match_map(B, A)
+
+  # Turn tipward best matches into = or < articulations as appropriate
+  tipwards = intension.intensional_alignment(tipward(best, A, B))
 
   # Extensional analysis
-  # particles = mutual(tipward_best)
-  particles = tipward(mutual(best), B, A)
-  check_mutuality(particles)
-  dribble.log("# Number of particles: %s" % (len(particles)>>1))
-  cross_mrcas = analyze_cross_mrcas(B, A, particles)
+  cross_mrcas = analyze_cross_mrcas(B, A, tipwards)
   dribble.log("# Number of cross-mrcas: %s" % len(cross_mrcas))
-  extensionals = extensional_match_map(A, B, particles, cross_mrcas)
-  dribble.log("# Number of extensional relationships: %s" % len(extensionals))
+  ext_map = extensional_match_map(A, B, tipwards, cross_mrcas)
+  dribble.log("# Number of extensional relationships: %s" % len(ext_map))
 
   # Add extensional matches to a draft that already has intensional matches
-  the_alignment = assemble_alignment(draft, best, extensionals)
-
-  dribble.log("# Number of articulations in alignment: %s" % len(the_alignment))
-
+  the_alignment = assemble_alignment(tipwards, best, ext_map)
   return (the_alignment, cross_mrcas)
+
+# Side-affects draft
 
 def assemble_alignment(draft, best, ext_map):
   for node in ext_map:
-    ar1 = draft.get(node)
-    ar2 = articulate(node, best, ext_map)
-    if ar1 and ar2:
-      if ar1.cod != ar2.cod:
-        dribble.log("** Intensional and extensional matches differ:\n   %s\n   %s" %
-                    (art.express(ar1), art.express(ar2)))
-        draft[node] = ar2
-      elif ar1.relation == ar2.relation:
-        draft[node] = ar2
-      else:
-        dribble.log("** Intensional and extensional matches differ:\n   %s\n   %s" %
-                    (art.express(ar1), art.express(ar2)))
-        # Intensional relationship takes priority (lumping/splitting) ??
-        draft[node] = ar1
-    elif ar2:
-      if (dribble.watch(node)):
-        dribble.log("# Matching extensionally: %s" %
-                    art.express(ar2))
-      draft[node] = ar2
-    elif ar1:
-      if (dribble.watch(node)):
-        dribble.log("# Matching intensionally: %s" %
-                    art.express(ar1))
-      draft[node] = ar1
-    else:
-      if (dribble.watch(node)):
-        dribble.log("# No match for %s" % cl.get_unique(node))
+    alignment_step(node, best, ext_map, draft)
   return draft
 
-# ---------- Final alignment
-
-# Determine the appropriate relationship to put in the final
-# alignment.  Note that best has all intensional best matches, not
-# just the particles.
-
-def articulate(node, best, ext_map):     # B-node to A
-  matches = filtered_matches(node, best, ext_map)
-
-  # This is awkward
-  if len(matches) == 0:
-    ar = ext_map.get(node)
-    if dribble.watch(node):
-      dribble.log("# Non-equal articulation: %s" % art.express(ar))
-    return ar
-  elif len(matches) == 1:
-    match = matches[0]
-    assert match.relation == rel.matches
-    rematches = filtered_matches(match.cod, best, ext_map)
-    if len(rematches) == 0:
-      dribble.log("** Shouldn't happen: %s" % cl.get_unique(node))
-      return None
-    elif len(rematches) == 1:
-      return art.change_relation(match, rel.eq, "unique_by_particle_set", "unique_by_particle_set")
-    else:
-      dribble.log("** Multiple returns (monotypic): %s -> %s" %
-            (cl.get_unique(match.cod),
-             (", ".join(map(lambda ar:cl.get_unique(ar.cod), rematches)))))
-      return match
-  else:
-    dribble.log("** Multiple matches (monotypic): %s -> %s" %
-          (cl.get_unique(node),
-             (", ".join(map(lambda ar:cl.get_unique(ar.cod), matches)))))
-    return matches[0]
-
-# Find matches that are both extensional and intensional.
-# Returns a list of =-like articulations, perhaps empty.
-
-def filtered_matches(node, best, ext_map):
-  assert node > 0
-  assert cl.is_accepted(node)
-
-  exties = extensional_chain(node, ext_map)    #monotypic chain (lineage)
-  if dribble.watch(node):
-    dribble.log("# Chain %s = [%s]" %
-                (cl.get_unique(node),
-                 " <- ".join(map(lambda ar:cl.get_unique(ar.cod), exties))))
-
-  if len(exties) < 1:
-    if dribble.watch(node):
-      dribble.log("# No extensionally equal matches to %s" % cl.get_unique(node))
-    return exties
-  else:
-    bestie = best.get(node)
-    if bestie and bestie.cod in [e.cod for e in exties]:
-      if dribble.watch(node):
-        dribble.log("# Extensional + intensional match: %s" % art.express(bestie))
-      return [bestie]
-    else:
-      if dribble.watch(node):
-        dribble.log("# No applicable intensional match to %s" % cl.get_unique(node))
-      return exties
-
-# ---------- Find preimage of extensional map (a chain)
-
-# Starting with one match, extend to a set of extensional matches by
-# adding 'monotypic' ancestors.
-# Returns a list of =-like articulations, perhaps empty.
-
-def extensional_chain(x, ext_map):       # B-node to A
-  match = ext_map.get(x)    # Single B/A extensional match
-  if dribble.watch(x):
-    dribble.log("# Chain(%s) - articulation is %s" %
-                (cl.get_unique(x), art.express(match)))
-  if not match:
-    return []
-  if match.relation != rel.matches:
-    return []
-
-  # match.cod is the start of the chain
-  # anchor is a descendant of x
-  y = match.cod
-
-  # Start at anchor's match and go rootward finding all matches to anchor
-  matches = []
-  x_anchor = None
-  while True:
-    back = ext_map.get(y)
-    if (back == None or back.relation != rel.matches):
-      if dribble.watch(x):
-        dribble.log("# Chain %s - no back-articulation from %s: %s" %
-                    (cl.get_unique(x), cl.get_unique(y), art.express(back)))
-      break
-    if x_anchor == None:
-      x_anchor = back.cod
-      if dribble.watch(x):
-        dribble.log("# Chain - setting anchor: %s" % cl.get_unique(x_anchor))
-    elif back.cod != x_anchor:
-      if dribble.watch(x):
-        dribble.log("# Chain - end: %s" % cl.get_unique(back.cod))
-      break
-    if x_anchor == x:
-      if y == match.cod:
-        m = match               # x -> y
+def alignment_step(node, best, ext_map, draft):
+  def luup(x, y):
+    if x == cl.forest_tnu or y == cl.forest_tnu: return
+    assert cl.get_checklist(x) != cl.get_checklist(y)
+    if in_chain(x, y0) and in_chain(y, x0):
+      bar = best.get(x)
+      if bar and find_in_chain(bar.cod, y, x0):
+        if bar.cod == y:
+          art.proclaim(draft, art.change_relation(bar, rel.eq, "extensional"))
+          luup(cl.get_parent(x), cl.get_parent(y))
+        else:
+          art.proclaim(draft, art.extensional(y, x, rel.lt, "presumed 0"))
+          luup(x, cl.get_parent(y))
       else:
-        m = art.reverse(back)   # x -> y
+        bar = best.get(y)
+        if bar and find_in_chain(bar.cod, x, y0):
+          if bar.cod == y:
+            art.proclaim(draft, bar)
+            luup(cl.get_parent(x), cl.get_parent(y))
+          else:
+            art.proclaim(draft, art.extensional(x, y, rel.lt, "presumed 1"))
+            luup(cl.get_parent(x), y)
+        else:
+          # neither x nor y matches by name
+          art.proclaim(draft, art.extensional(x, y, rel.eq, "presumed mutual"))
+          luup(cl.get_parent(x), cl.get_parent(y))
+
+  # See is b is in the chain (matching nodes in lineage)
+  def find_in_chain(b, y, x0):
+    if y == cl.forest_tnu:
+      return False
+    elif in_chain(y, x0):
+      if b == y:
+        return True
+      else:
+        return find_in_chain(b, cl.get_parent(y), x0)
     else:
-      m = art.monotypic(x, y, rel.matches)
-    matches.append(m)
-    y = cl.get_parent(y)
-  #if len(matches) > 1:
-  #  print ("# nontrivial chain for %s" % cl.get_unique(x))
-  return matches
+      return False
+
+  def in_chain(y, x0):
+    if y in draft: return
+    ar = ext_map.get(y)
+    return ar and ar.cod == x0 and ar.relation == rel.matches
+
+  if not draft.get(node):
+    ar = ext_map.get(node)
+    if ar:
+      x0 = ar.dom
+      y0 = ar.cod
+      if in_chain(x0, y0) and in_chain(y0, x0):
+        if x0 < y0:
+          luup(x0, y0)
+        else:
+          pass    # pick it up later (or earlier)
+      else:
+        art.proclaim(draft, ar)
 
 # ---------- Extensionality by particle set
 
-# Draft has particle matches
+# Suppress < transitivity
 
 def extensional_match_map(A, B, draft, xmrcas):
   ext = {}
-  def process(node):
+  def process(node, less):
+    if not draft.get(node):
+      e = extensional_match(node, xmrcas)
+      if e:
+        if e.relation == rel.lt:
+          if less and e.cod == less.cod:
+            print("# Suppressing %s because redundant with\n  %s" %
+                  (art.express(e), art.express(less)))
+            pass
+          else:
+            less = e
+            ext[node] = e
+        else:
+          less = None
+          ext[node] = e
+      else:
+        less = None
     for child in cl.get_children(node):
-      process(child)
-    ar = extensional_match(node, draft, xmrcas)
-    if ar:
-      ext[node] = ar
-  for root in cl.get_roots(A): process(root)
-  for root in cl.get_roots(B): process(root)
+      process(child, less)
+  for root in cl.get_roots(A): process(root, None)
+  for root in cl.get_roots(B): process(root, None)
   return ext
 
 # Guaranteed invertible, except for monotypic node chains
 # This code is derived from 
 #   reference-taxonomy/org/opentreeoflife/conflict/ConflictAnalysis.java
 
-def extensional_match(node, draft, xmrcas):
-  part = draft.get(node)
-  if part:
-    if dribble.watch(node):
-      dribble.log("# EM: particle. %s" % art.express(part))
-    return part
+def extensional_match(node, xmrcas):
   partner = xmrcas.get(node)      # node in other checklist; 'conode'
   if not partner:
     # Descendant of a particle
     if dribble.watch(node):
-      dribble.log("# EM: %s is descendant of particle." % cl.get_unique(node))
+      dribble.log("# EM: %s is not tipward." % cl.get_unique(node))
     return None
   back = xmrcas.get(partner)    # 'bounce'
   if not back:
@@ -254,15 +172,12 @@ def extensional_match(node, draft, xmrcas):
           how = rel.conflict
           reason = ("%s is in; its sibling %s is not" %
                     (cl.get_unique(d), cl.get_unique(e)))
-          dribble.log("** %s (x) conflicts with %s (y) because:\n"
-                      "   %s (c) is a child of y,\n"
-                      "   %s (d) and %s (e) are descendants of c,\n"
-                      "   and d < x while e ! x" %
+          dribble.log("** %s (x) conflicts with %s (y) because\n"
+                      "   %s in x isn't in y (its sibling %s is)" %
                       (cl.get_unique(node),
                        cl.get_unique(partner),
-                       cl.get_unique(pchild),
-                       cl.get_unique(d),
-                       cl.get_unique(e)))
+                       cl.get_unique(e),
+                       cl.get_unique(d)))
           break
         elif e:
           reason = ("%s is not in it" % cl.get_unique(e))
@@ -324,76 +239,16 @@ def cross_compare(node, conode, xmrcas):
           y_seen = y
   return (x_seen, y_seen)
 
-
-# ---- Deal with ad hoc splits and merges among tipward best matches.
-
-def detect_lumps_splits(best):
-  result = {}
-
-  # Suppose `node` x comes from the A checklist, and there is a split
-  # such that x matches multiple nodes y1, y2 in the B checklist.
-
-  # For each A-node x, find all B-nodes y, ... that are contending to
-  # be equivalent to x.
-
-  incoming = {}
-  for node in best:    # y node
-    ar = best[node]     # ar : y -> x
-    if ar.cod in incoming:
-      incoming[ar.cod].append(ar) # x -> (y->x, y2->x)
-    else:
-      incoming[ar.cod] = [ar]     # x -> (y->x)
-
-  # Modify the relation for all approximate-match nodes.
-  flush = []
-  for y in incoming:          # y node
-    # e.g. inc = {a ≈ y, b ≈ y}
-    inc = incoming[y]    # cod = y for all articulations
-    # mut: y ≈ x
-    mut = best.get(y)   # mut : y -> mutual
-    sibs = []
-    if mut:
-      x0 = mut.cod
-      rent = cl.get_parent(x0)    # parent of x
-      for ar in inc:    # ar: x ≈ y
-        if (ar.relation == rel.matches and
-            # parent of b is same as parent of a?
-            cl.get_parent(ar.dom) == rent):
-          sibs.append(ar)
-    for ar in inc:
-      x = ar.dom
-      if ar in sibs:
-        if len(sibs) == 1:
-          result[x] = art.set_relation(ar, rel.eq) # x = y
-        else:
-          result[x] = art.change_relation(ar, rel.lt, "merge", "split")
-      else:
-        result[x] = ar       # x < y  ???
-    if len(sibs) > 1:
-      flush.append(y)
-      # Report!
-      dribble.log("# Split/lump %s -> %s -> %s" %
-                  (" ∨ ".join(map(lambda e:cl.get_unique(e.dom), sibs)),
-                   cl.get_unique(y),
-                   cl.get_unique(rent)))
-
-  for y in flush:
-    del result[y]
-      
-  return result
-
 # ---------- Cross-MRCAs
 
-def analyze_cross_mrcas(A, B, particles):
+def analyze_cross_mrcas(A, B, tipwards):
   cross_mrcas = {}
   def half_analyze_cross_mrcas(checklist, other):
     def subanalyze_cross_mrcas(node, other):
       result = None
-      probe = particles.get(node)
+      probe = tipwards.get(node)
       if probe:
-        # Relation can be < = > ><
-        assert probe.dom == node
-        assert cl.is_accepted(probe.cod)
+        # Could be: = < or >
         result = probe.cod
       else:
         children = cl.get_children(node)
@@ -424,11 +279,11 @@ def analyze_cross_mrcas(A, B, particles):
     if probe:
       assert cl.get_checklist(probe) == cl.get_checklist(node)
     else:
-      dribble.log("# ** No return cross-MRCA for %s -> %s -> ..." %\
+      dribble.log("# No return cross-MRCA for %s -> %s -> ..." %\
                   (cl.get_unique(node), cl.get_unique(cross)))
   return cross_mrcas
 
-# ---------- Particles
+# ---------- Tipwards
 
 # A particle is a mutual =-articulation of tipward accepted nodes
 # deriving from sameness of 'intrinsic' node properties: name, id,
@@ -436,43 +291,7 @@ def analyze_cross_mrcas(A, B, particles):
 
 # This function returns a partial map from nodes to articulations.
 
-def check_mutuality(particles):
-  for node in particles:
-    ar = particles.get(node)
-    if ar:
-      rar = particles.get(ar.cod)
-      if rar:
-        if rar.cod == node:
-          pass
-        else:
-          dribble.log(
-              "** Round trip fail:\n  %s\n  %s\n" %
-              (art.express(ar), art.express(rar)))
-      else:
-        dribble.log("** No return match: %s -> none" %
-                    (art.express(ar)))
-
-# Filter out nodes where the relationship is not mutual
-
-def mutual(am):
-  mut = {}
-  for node in am:
-    debug = dribble.watch(node)
-    ar = am[node]               # articulation
-    back = am.get(ar.cod)
-    if back:
-      if back.cod == node:
-        mut[node] = ar
-        if debug: dribble.log("# Mutually matched: %s" % 
-                              (art.express(ar)))
-      else:
-        if debug: dribble.log("# Not mutual: %s, %s" %
-                              (art.express(ar), art.express(back)))
-    else:
-      if debug: dribble.log("# No return: %s" % art.express(ar))
-  return mut
-
-# Filter out internal nodes (those having a mapped descendant)
+# Filter out internal nodes (those having a matched descendant)
 
 def tipward(amap, A, B):
   tw = {}
@@ -489,7 +308,7 @@ def tipward(amap, A, B):
       return found_match
     elif node in amap:
       ar = amap[node]
-      tw[node] = ar
+      tw[ar.dom] = ar
       if debug: dribble.log("# %s is a tipward match, keeping: %s" %
                             (cl.get_unique(node), art.express(ar)))
       return ar

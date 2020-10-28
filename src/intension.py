@@ -1,5 +1,6 @@
 import checklist as cl
 import articulation as art
+import relation as rel
 import dribble
 
 # Temporary hack for experimenting with poorly formed EOL checklists
@@ -7,24 +8,20 @@ EOL = False
 
 # ---------- 'Intensional' matches to accepted nodes
 
-# The source node ('tnu') may be accepted or a synonym.
+# The source node ('node') may be accepted or a synonym.
 
-def best_intensional_match_map(A, B, captured):
+def best_intensional_match_map(A, B):
   best = {}
-  for node in captured:
-    ar = captured[node]
-    if is_variant(ar.relation, rel.eq):
-      best[ar.dom] = ar
-      best[ar.cod] = art.reverse(ar)
   def process(here, there):
     for node in here.get_all_nodes():
-      if cl.is_accepted(node) and node not in best:
+      if cl.is_accepted(node) and not node in best:
         ar = best_intensional_match(node, there)
         if dribble.watch(node):
           dribble.log("# Best: %s" % art.express(ar))
         if ar:
+          assert ar.dom == node
           assert cl.is_accepted(ar.cod)
-          best[node] = ar
+          art.half_proclaim(best, ar)
   process(A, B)
   process(B, A)
   dribble.log("%s best matches" % len(best))
@@ -33,27 +30,23 @@ def best_intensional_match_map(A, B, captured):
 # Three components: synonym-or-self o direct o synonym-of-or-self
 # from_accepted_articulations o direct_matches o [to_accepted_articulation]
 
-def best_intensional_match(tnu, other):
-  matches = intensional_matches(tnu, other)
+def best_intensional_match(node, other):
+  matches = intensional_matches(node, other)
   return choose_best_match(matches)
 
 # Matches where the target is accepted.  This is going away soon...
 
-def intensional_matches(tnu, other):
-  global intensional_matches_cache
-  probe = intensional_matches_cache.get(tnu)
-  if probe: return probe
-  matches = weak_intensional_matches(tnu, other)
+def intensional_matches(node, other):
+  matches = weak_intensional_matches(node, other)
   matches = art.collapse_matches(matches)
-  intensional_matches_cache[tnu] = matches
   return matches
 
 # Like strong matches, but adds matches via source synonyms
 
-def weak_intensional_matches(tnu, other):
-  matches = strong_intensional_matches(tnu, other)
-  syns = synonyms_locally(tnu)
-  assert not syns or syns[0].dom == tnu
+def weak_intensional_matches(node, other):
+  matches = strong_intensional_matches(node, other)
+  syns = synonyms_locally(node)
+  assert not syns or syns[0].dom == node
   matches = matches + [art.compose(syn, match)
                        for syn in syns
                        for match in strong_intensional_matches(syn.cod, other)
@@ -61,8 +54,8 @@ def weak_intensional_matches(tnu, other):
   assert is_matches(matches)
   return matches
 
-def strong_intensional_matches(tnu, other):
-  matches = art.direct_matches(tnu, other)
+def strong_intensional_matches(node, other):
+  matches = art.direct_matches(node, other)
   assert is_matches(matches)
   matches = [match_to_accepted(match) for match in matches]
   assert is_matches(matches)
@@ -92,11 +85,8 @@ def synonyms_locally(node):
   else:
     return []
 
-canonical_name = cl.field("canonicalName")
-
 def informative_synonyms(node):
-  if True:
-    c = cl.get_checklist(node)
+  if False:
     return [syn
             for syn in cl.get_synonyms(node)
             if is_informative(syn)]
@@ -105,6 +95,8 @@ def informative_synonyms(node):
 
 # Filter out any synonym whose name is an accepted name in the same checklist
 # (did this following a hunch that didn't work out)
+
+#  -- try to eliminate this check!
 
 def is_informative(syn):
   name = cl.get_value(syn, canonical_name)
@@ -115,6 +107,8 @@ def is_informative(syn):
   #if cl.is_accepted(nodes[0]):
   #  return False
   return True
+
+canonical_name = cl.field("canonicalName")
 
 # A synonym has only one accepted name
 
@@ -156,11 +150,76 @@ def skim_best_matches(arts):
         break
     return matches
 
-# Random
+# ---- Find ad hoc splits and merges based on multimatches.
 
-def clear_cache():
-  global intensional_matches_cache
-  intensional_matches_cache = {}
+def intensional_alignment(matches):
+  result = {}
+
+  incoming = index_by_target(matches)
+
+  # Suppose `node` x comes from the A checklist, and there is a split
+  # such that x matches multiple nodes y1, y2 in the B checklist.
+
+  # Modify the relation for all approximate-match nodes.
+  for y in incoming:
+    arts = incoming[y]
+
+    # Canonical.  back.cod will be among the incoming, by construction.
+    back = matches.get(y)    # back : y -> x
+    if not back: continue
+    x0 = back.cod              # Back match y -> x -> y
+
+    revarts = incoming[x0]
+
+    if len(arts) > 1:     # multiple x's
+      if len(revarts) > 1:
+        art.proclaim(result, art.set_relation(back, rel.eq))
+        dribble.log("** Tangle:\n   %s\n   %s" %
+                    ("\n   ".join(map(art.express, arts)),
+                    ("\n   ".join(map(art.express, revarts)))))
+        art.proclaim(result, art.set_relation(back, rel.eq))
+      else:
+
+        # OK.  We're going to just throw away all non-sibling matches.
+        # And if a sibling is curated in some strange way, 
+
+        rent = cl.get_parent(x0)
+        sibs = [ar for ar in arts if cl.get_parent(ar.dom) == rent]
+        # e.g. ar: x2 -> y
+        # Don't even try to do anything with N->M node tangles.
+        if len(sibs) == 1:
+          art.proclaim(result, art.set_relation(back, rel.eq))
+        else:
+          for sib in sibs:
+            ar = art.change_relation(sib, rel.lt, "merge", "split")
+            if sib.dom == x0:
+              art.proclaim(result, ar)    # gt
+            else:
+              art.half_proclaim(result, ar)
+          # Report!
+          dribble.log("# Split/lump %s < %s < %s" %
+                      (" + ".join(map(lambda e:cl.get_unique(e.dom), sibs)),
+                       cl.get_unique(y),
+                       cl.get_unique(rent)))
+
+    elif len(revarts) > 1:   # multiple y's
+      pass
+    else:
+      # n.b. arts[0] is reverse of back
+      art.proclaim(result, art.set_relation(back, rel.eq))
+
+  return result
+
+def index_by_target(al):
+  incoming = {}
+  for node in al:            # y node
+    ar = al[node]      # ar : y -> x
+    y = ar.cod
+    if y in incoming:
+      incoming[y].append(ar) # x -> (y->x, y2->x)
+    else:
+      incoming[y] = [ar]     # x -> (y->x)
+  return incoming
 
 
 # ---------- For debugging
@@ -179,4 +238,5 @@ def is_match(ar):
 def is_matches(matches):
   if len(matches) == 0: return True
   return is_match(matches[0])
+
 

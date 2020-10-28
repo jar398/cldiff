@@ -11,6 +11,7 @@ import relation as rel
 import checklist as cl
 import property
 import diff
+import dribble
 
 # Articulations
 
@@ -102,7 +103,7 @@ def inverses(ar1, ar2):
 def set_relation(ar, re):      # re = rel.eq
   return _articulation(ar.dom, ar.cod, re, ar.reason, ar.revreason)
 
-def change_relation(ar, re, reason, revreason):  # re = rel.gt
+def change_relation(ar, re, reason, revreason = reason):  # re = rel.gt
   return compose(set_relation(ar, re),
                  _articulation(ar.cod, ar.cod, rel.eq, reason, revreason))
 
@@ -242,3 +243,68 @@ def badness(ar):
 
 def sort_matches(arts):
   return sorted(arts, key=badness)
+
+# -----
+
+def proclaim(draft, ar):
+  half_proclaim(draft, ar)
+  if ar.relation != rel.matches:
+    half_proclaim(draft, reverse(ar))
+
+def half_proclaim(draft, ar):
+  p = proclaimable(draft, ar)
+  if p == MEH:
+    if dribble.watch(ar.dom):
+      dribble.log("# Meh: %s" % express(ar))
+    pass
+  elif p:
+    if dribble.watch(ar.dom):
+      dribble.log("# storing")
+    draft[ar.dom] = ar
+  else:
+    print("** Not OK to replace %s\n   with %s" %
+          (express(draft.get(ar.dom)), express(ar)))
+    assert False
+
+  if dribble.watch(ar.dom):
+    dribble.log("# Proclaim %s\n  yields %s" %
+                (express(ar), express(draft.get(ar.dom))))
+
+def proclaimable(draft, ar):
+  if dribble.watch(ar.dom): print("# Proclaimable? %s" % express(ar))
+  before = draft.get(ar.dom)
+  if not before:
+    if dribble.watch(ar.dom): print("# New: %s" % express(ar))
+    return True                 # Improvement
+
+  elif ar.relation == before.relation and ar.cod == before.cod:
+    # Update reason
+    if dribble.watch(ar.dom): print("# Change reason only: %s" % express(ar))
+    return True                 # Improvement
+
+  elif before.relation == rel.matches:
+    if dribble.watch(ar.dom): print("# Upgrade ~: %s" % express(ar))
+    return True                 # Improvement
+
+  elif ar.cod == before.cod:
+    # Relations differ.
+    # Change in RCC5 between two fixed nodes is not allowed.
+    if dribble.watch(ar.dom): print("# Wrong RCC5: %s" % express(ar))
+    return False                # Inconsistent
+
+  # Codomains are different, relations may or may not be different
+
+  elif ar.relation == rel.eq and before.relation == rel.eq:
+    if dribble.watch(ar.dom): print("# UNA: %s" % express(ar))
+    return False                # Inconsistent (unique name assumption)
+  elif before.relation == rel.gt or before.relation == rel.matches:
+    if dribble.watch(ar.dom): print("# Upgrade: %s" % express(ar))
+    return True
+
+  else:
+    if dribble.watch(ar.dom):
+      print("# Meh: before %s,\n  after        %s" %
+            (express(before), express(ar)))
+    return MEH
+
+MEH = 2

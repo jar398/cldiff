@@ -16,9 +16,8 @@ for (ba, ab, name, revname) in \
     [(0,   0,   '!',  '!'),
      (0.5, 0.5, '><', '><'),
      (1,   0.5, '<',  '>'),
-     (1,   0.5, 'lump', 'split'),
      (1,   1,   '=',  '='),
-     (.9,  .9,   'matches',  'matched-by')]:     # intensional (by name, id)
+     (0.9, 0.9, '~', '~')]:     # approximate
   re  = Relation(ba, ab, name, revname)
   relations_by_params[(ba, ab)] = re
   relations_by_name[name] = re
@@ -37,7 +36,7 @@ conflict    = relations_by_name['><']
 lt          = relations_by_name['<']
 gt          = relations_by_name['>']
 eq          = relations_by_name['=']
-matches     = relations_by_name['matches']
+matches     = relations_by_name['~']
 
 def is_variant(re, other):
   return (re.b_given_a == other.b_given_a and

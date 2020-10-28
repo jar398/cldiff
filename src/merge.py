@@ -20,8 +20,6 @@ def merge_checklists(A, B, al):
   roots = []
   def half_compute_parents(check, inject, al):
     def process(node):
-      for child in cl.get_children(node):
-        process(child)
       merged = inject(node, al)
       if not merged in parents:
         p = merged_parent(merged, al)
@@ -36,10 +34,12 @@ def merge_checklists(A, B, al):
             dribble.log("# No merge(%s)" % cl.get_unique(node))
           if not merged in roots:
             roots.append(merged)
+      for child in cl.get_children(node):
+        process(child)
     for root in cl.get_roots(check):
       process(root)
-  half_compute_parents(A, inject_A, al)
   half_compute_parents(B, inject_B, al)
+  half_compute_parents(A, inject_A, al)    # these will not override
   return (parents, roots)
 
 # A is low priority
@@ -47,74 +47,65 @@ def merge_checklists(A, B, al):
 def merged_parent(merged, al):
   (x, y) = merged    # False if node is inconsistent
 
-  if x and y:                   # x ≈ y
-    assert al[x].cod == y
-    p = cl.get_parent(x)    # in A
-    q = cl.get_parent(y)    # in B
-    if p == cl.forest_tnu: return inject_B(q, al)
-    if q == cl.forest_tnu: return inject_A(p, al)
-    ar = al.get(p)
-    if not ar: return inject_B(q, al)
-    if rel.is_variant(ar.relation, rel.gt): return inject_B(q, al)
+  if y:
+    q = cl.get_parent(y)
+    if x:
+      p = cl.get_parent(x)
+    else:
+      p = partner(y, al)    # cannot be =, must be <
 
-    how = cl.how_related(ar.cod, q)
-    if how == rel.lt: return inject_A(p, al)
+    # If p takes us back to q, then parent should be p, else q
+    scan = p
+    while scan:
+      z = partner(scan, al)
+      if z:
+        if z == q:
+          return inject_A(p, al)
+        else:
+          return inject_B(q, al)
+      scan = cl.get_parent(scan)
     return inject_B(q, al)
 
-  elif x:
-    p = cl.get_parent(x)
-    ar = al.get(x)
-    if p != cl.forest_tnu:
-      if not ar:
-        return inject_A(p, al)
-      if rel.is_variant(ar.relation, rel.gt): # Avoid cycles.  Fix this
-        return inject_A(p, al)
-      # if rel.is_variant(ar.relation, rel.conflict): return inject_A(p, al)
-    if ar:
-      return inject_B(ar.cod, al)
-    else:
-      return None
-
-  elif y:
-    q = cl.get_parent(y)
-    ar = al.get(y)
-    if q != cl.forest_tnu:
-      if not ar: return inject_B(q, al)
-      if rel.is_variant(ar.relation, rel.gt): return inject_B(q, al)
-      if rel.is_variant(ar.relation, rel.conflict): return inject_B(q, al)
-    if ar:
-      return inject_A(ar.cod, al)
-    else:
-      return None
-
   else:
-    assert False
+    assert x
+    q = partner(x, al)
+    if q:
+      return inject_B(q, al)
+    else:
+      return inject_A(cl.get_parent(x, al))
 
 # Inject node in low priority checklist into merged checklist
 
 def inject_A(node, al):
   if node == cl.forest_tnu: return None
-  m1 = al.get(node)
-  if m1:
-    if is_eq(m1.relation):
-      m2 = al.get(m1.cod)
-      if m2 and is_eq(m2.relation):
-        if m2.cod == node:
-          return (node, m1.cod)
-  return (node, None)
+  p = eq_partner(node, al)
+  if p:
+    return (node, p)
+  else:
+    return (None, node)
 
 # Inject node in high priority checklist into merged checklist
 
 def inject_B(node, al):
   if node == cl.forest_tnu: return None
-  m1 = al.get(node)
-  if m1:
-    if is_eq(m1.relation):
-      m2 = al.get(m1.cod)
-      if m2 and is_eq(m2.relation):
-        if m2.cod == node:
-          return (m1.cod, node)
-  return (None, node)
+  p = eq_partner(node, al)
+  if p:
+    return (p, node)
+  else:
+    return (None, node)
 
-def is_eq(re):
-  return rel.is_variant(re, rel.eq)
+# Aligned node, if relation is < or =
+
+def partner(x, al):
+  ar = al.get(x)
+  if ar and (ar.relation == rel.eq or ar.relation == rel.lt):
+    return ar.cod
+  else:
+    return cl.forest_tnu
+
+def eq_partner(node, al):
+  ar = al.get(node)
+  if ar and ar.relation == rel.eq:
+    return ar.cod
+  else:
+    return None

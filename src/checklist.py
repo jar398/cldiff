@@ -43,7 +43,9 @@ def get_value(uid, field):
   return table.get_value(uid, field)
 
 def get_checklist(uid):
-  assert uid > 0
+  if uid <= 0:
+    print("** Bad node id %s" % uid)
+    assert False
   return table.get_table(uid)
 
 # ---------- Checklists
@@ -287,29 +289,45 @@ def to_accepted(tnu):
     return tnu
 
 def validate(checklist):
-  s = 0
-  a = 0
+  syn_count = 0
+  acc_count = 0
   for node in checklist.get_all_nodes():
-    accepted = get_raw_accepted(node)
-    if accepted:
+    parent_id = get_value(node, parent_node_id)
+    accepted_id = get_value(node, accepted_node_id)
+    status = get_taxonomic_status(node)
+    if is_synonym_status(status):
       # It's a synonym.  No parent, children, or synonyms allowed.
-      assert not get_raw_parent(node)
-      assert not get_raw_accepted(accepted)
+      assert not parent_id
       assert len(get_raw_children(node)) == 0
       assert len(get_raw_synonyms(node)) == 0
-      s += 1
+      assert accepted_id
+      a = get_raw_accepted(node)
+      if a:
+        assert not is_synonym_status(get_taxonomic_status(a))
+      else:
+        print("** %s (taxonID %s) has accepted id %s, which doesn't resolve" %
+              (get_unique(node), get_node_id(node), accepted_id))
+        assert a
+      syn_count += 1
     else:
       # It's accepted.  Parent and children must all
       # also be accepted, and synonyms must not be.
-      parent = get_raw_parent(node)
-      if parent:
-        assert not get_raw_accepted(parent)
+      assert not accepted_id
+      if parent_id:
+        # N.b. parent of a root is simply an undefined id
+        p = get_raw_parent(node)
+        if p:
+          assert is_accepted(p)
       for child in get_raw_children(node):
-        assert not get_raw_accepted(child)
+        assert is_accepted(child)
       for syn in get_raw_synonyms(node):
-        assert get_raw_accepted(syn)
-      a += 1
-  dribble.log("Validated %s accepted, %s synonym" % (a, s))
+        assert not is_accepted(syn)
+      acc_count += 1
+  dribble.log("# Validated %s accepted nodes, %s synonyms, total %s" %
+              (acc_count, syn_count, len(checklist.get_all_nodes())))
+
+def is_synonym_status(status):
+  return "synonym" in status or status == "misapplied"
 
 # ---------- Hierarchy analyzers
 
