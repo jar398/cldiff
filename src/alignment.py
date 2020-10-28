@@ -172,12 +172,14 @@ def extensional_match(node, xmrcas):
           how = rel.conflict
           reason = ("%s is in; its sibling %s is not" %
                     (cl.get_unique(d), cl.get_unique(e)))
-          dribble.log("** %s (x) conflicts with %s (y) because\n"
-                      "   %s in x isn't in y (its sibling %s is)" %
+          dribble.log("** %s conflicts with %s because\n"
+                      "   %s ! %s\n   (but sibling %s < %s)" %
                       (cl.get_unique(node),
                        cl.get_unique(partner),
                        cl.get_unique(e),
-                       cl.get_unique(d)))
+                       cl.get_unique(node),
+                       cl.get_unique(d),
+                       cl.get_unique(node)))
           break
         elif e:
           reason = ("%s is not in it" % cl.get_unique(e))

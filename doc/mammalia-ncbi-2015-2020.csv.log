@@ -443,100 +443,147 @@ Aligning ...
 # No return cross-MRCA for B.Rattus rattus complex lineage IV -> A.Rattus rattus complex lineage IV -> ...
 # No return cross-MRCA for B.Rattus rattus complex RCVN_357811 -> A.Rattus rattus complex RCVN_357811 -> ...
 # Number of cross-mrcas: 19404
-** A.Megaerops (x) conflicts with B.Pteropodinae (y) because
-   B.Ptenochirus minor in x isn't in y (its sibling B.Ptenochirus wetmorei is)
-** A.Epomophorini-Myonycterini lineage (x) conflicts with B.Pteropodinae (y) because
-   B.Rousettus amplexicaudatus in x isn't in y (its sibling B.Rousettus lanosus is)
-** A.Scotonycteris (x) conflicts with B.Pteropodidae (y) because
-   B.Casinycteris campomaanensis in x isn't in y (its sibling B.Casinycteris ophiodon is)
-** A.Artibeus (x) conflicts with B.Stenodermatinae (y) because
-   B.Dermanura rava in x isn't in y (its sibling B.Dermanura bogotensis is)
-** A.Plecotus (x) conflicts with B.Vespertilionidae (y) because
-   B.Corynorhinus townsendii in x isn't in y (its sibling B.Corynorhinus rafinesquii is)
-** A.Chalinolobus (x) conflicts with B.Vespertilionidae (y) because
-   B.Glauconycteris egeria in x isn't in y (its sibling B.Glauconycteris argentata is)
-** A.Hypsugo (x) conflicts with B.Vespertilionidae (y) because
-   B.Hypsugo petersi in x isn't in y (its sibling B.Hypsugo anchietae is)
-** A.unclassified Equus (x) conflicts with B.Equidae (y) because
-   B.Equus kiang in x isn't in y (its sibling B.unclassified Equus is)
-** A.Herpestes (x) conflicts with B.Herpestidae (y) because
-   B.Herpestes naso in x isn't in y (its sibling B.Herpestes ichneumon is)
-** A.Helogale (x) conflicts with B.Herpestidae (y) because
-   B.Herpestes ichneumon in x isn't in y (its sibling B.Herpestes naso is)
-** A.Canis lupus (x) conflicts with B.Canis (y) because
-   B.Canis lupus lycaon in x isn't in y (its sibling B.Canis lupus hodophilax is)
-** A.Mazama (x) conflicts with B.Odocoileinae (y) because
-   B.Odocoileus virginianus in x isn't in y (its sibling B.Odocoileus pandora is)
-** A.Ovis aries (x) conflicts with B.Ovis (y) because
-   B.Ovis orientalis laristanica in x isn't in y (its sibling B.Ovis orientalis ophion is)
-** A.Chiromyiformes (x) conflicts with B.Strepsirrhini (y) because
-   B.Galagidae in x isn't in y (its sibling B.Lorisidae is)
-** A.Galago (x) conflicts with B.Galagidae (y) because
-   B.Galagoides orinus in x isn't in y (its sibling B.Galagoides thomasi is)
-** A.Sciurognathi (x) conflicts with B.Rodentia (y) because
-   B.Echimyidae in x isn't in y (its sibling B.Ctenodactylidae is)
-** A.Spermophilus (x) conflicts with B.Marmotini (y) because
-   B.Urocitellus beldingi in x isn't in y (its sibling B.Urocitellus elegans is)
-** A.Muroidea (x) conflicts with B.Muroidea (y) because
-   B.Waiomys in x isn't in y (its sibling B.Hyorhinomys is)
-** A.Muridae (x) conflicts with B.Muridae (y) because
-   B.Waiomys in x isn't in y (its sibling B.Hyorhinomys is)
-** A.unclassified Mus (x) conflicts with B.Mus#10088 (y) because
-   B.Mus spicilegus in x isn't in y (its sibling B.Mus abbotti is)
-** A.unclassified Muridae (x) conflicts with B.Muridae (y) because
-   B.Soricomys in x isn't in y (its sibling B.Hyorhinomys is)
-** A.Microtus (x) conflicts with B.Arvicolinae (y) because
-   B.Neodon irene in x isn't in y (its sibling B.Neodon sikimensis is)
-** A.Eothenomys (x) conflicts with B.Arvicolinae (y) because
-   B.Myodes regulus in x isn't in y (its sibling B.Myodes smithii is)
-** A.unclassified Rodentia (x) conflicts with B.Rodentia (y) because
-   B.Hyorhinomys in x isn't in y (its sibling B.Waiomys is)
-** B.Rousettus (x) conflicts with A.Pteropodinae (y) because
-   A.Epomophorini in x isn't in y (its sibling A.Stenonycterini is)
-** B.Ptenochirus (x) conflicts with A.Pteropodinae (y) because
-   A.Megaerops kusnotoi in x isn't in y (its sibling A.Megaerops wetmorei is)
-** B.Casinycteris (x) conflicts with A.Pteropodidae (y) because
-   A.Scotonycteris zenkeri in x isn't in y (its sibling A.Scotonycteris ophiodon is)
-** B.Dermanura (x) conflicts with A.Stenodermatinae (y) because
-   A.Artibeus schwartzi in x isn't in y (its sibling A.Artibeus bogotensis is)
-** B.Hypsugo (x) conflicts with A.Vespertilionidae (y) because
-   A.Hypsugo eisentrauti in x isn't in y (its sibling A.Hypsugo savii is)
-** B.Corynorhinus (x) conflicts with A.Vespertilionidae (y) because
-   A.Plecotus auritus in x isn't in y (its sibling A.Plecotus rafinesquii is)
-** B.Glauconycteris (x) conflicts with A.Vespertilionidae (y) because
-   A.Chalinolobus tuberculatus in x isn't in y (its sibling A.Chalinolobus beatrix is)
-** B.Equus#9789 (x) conflicts with A.Equus#9789 (y) because
-   A.Equus sp. (NWSL) in x isn't in y (its sibling A.Equus sp. LLO-2009a is)
-** B.Herpestes (x) conflicts with A.Herpestidae (y) because
-   A.Herpestes edwardsii in x isn't in y (its sibling A.Herpestes ichneumon is)
-** B.Canis lupus (x) conflicts with A.Canis (y) because
-   A.Canis lupus lupaster in x isn't in y (its sibling A.Canis lupus x Canis lupus familiaris is)
-** B.Odocoileus (x) conflicts with A.Odocoileinae (y) because
-   A.Mazama rufina in x isn't in y (its sibling A.Mazama pandora is)
-** B.Ovis orientalis (x) conflicts with A.Ovis (y) because
-   A.Ovis aries platyura in x isn't in y (its sibling A.Ovis aries ophion is)
-** B.Lorisiformes (x) conflicts with A.Strepsirrhini (y) because
-   A.Daubentoniidae in x isn't in y (its sibling A.Lorisidae is)
-** B.Galagoides (x) conflicts with A.Galagidae (y) because
-   A.Galago granti in x isn't in y (its sibling A.Galago thomasi is)
-** B.Hystricomorpha (x) conflicts with A.Rodentia (y) because
-   A.Pedetidae in x isn't in y (its sibling A.Ctenodactylidae is)
-** B.Urocitellus (x) conflicts with A.Marmotini (y) because
-   A.Spermophilus dauricus in x isn't in y (its sibling A.Spermophilus elegans is)
-** B.Myomorpha (x) conflicts with A.Rodentia (y) because
-   A.Castoridae in x isn't in y (its sibling A.Dipodidae is)
-** B.Muroidea (x) conflicts with A.Rodentia (y) because
-   A.Anomaluridae in x isn't in y (its sibling A.Muroidea is)
-** B.Muridae (x) conflicts with A.Rodentia (y) because
-   A.Spalacidae in x isn't in y (its sibling A.Muridae is)
-** B.Murinae (x) conflicts with A.Rodentia (y) because
-   A.Gerbillinae in x isn't in y (its sibling A.Murinae is)
-** B.Mus#862507 (x) conflicts with A.Mus#10088 (y) because
-   A.Mus sp. Chypre in x isn't in y (its sibling A.Mus gratus is)
-** B.Myodes (x) conflicts with A.Arvicolinae (y) because
-   A.Eothenomys imaizumii in x isn't in y (its sibling A.Eothenomys smithii is)
-** B.Neodon (x) conflicts with A.Arvicolinae (y) because
-   A.Microtus savii in x isn't in y (its sibling A.Microtus sikimensis is)
+** A.Megaerops conflicts with B.Pteropodinae because
+   B.Ptenochirus minor ! A.Megaerops
+   (but sibling B.Ptenochirus wetmorei < A.Megaerops)
+** A.Epomophorini-Myonycterini lineage conflicts with B.Pteropodinae because
+   B.Rousettus amplexicaudatus ! A.Epomophorini-Myonycterini lineage
+   (but sibling B.Rousettus lanosus < A.Epomophorini-Myonycterini lineage)
+** A.Scotonycteris conflicts with B.Pteropodidae because
+   B.Casinycteris campomaanensis ! A.Scotonycteris
+   (but sibling B.Casinycteris ophiodon < A.Scotonycteris)
+** A.Artibeus conflicts with B.Stenodermatinae because
+   B.Dermanura rava ! A.Artibeus
+   (but sibling B.Dermanura bogotensis < A.Artibeus)
+** A.Plecotus conflicts with B.Vespertilionidae because
+   B.Corynorhinus townsendii ! A.Plecotus
+   (but sibling B.Corynorhinus rafinesquii < A.Plecotus)
+** A.Chalinolobus conflicts with B.Vespertilionidae because
+   B.Glauconycteris egeria ! A.Chalinolobus
+   (but sibling B.Glauconycteris argentata < A.Chalinolobus)
+** A.Hypsugo conflicts with B.Vespertilionidae because
+   B.Hypsugo petersi ! A.Hypsugo
+   (but sibling B.Hypsugo anchietae < A.Hypsugo)
+** A.unclassified Equus conflicts with B.Equidae because
+   B.Equus kiang ! A.unclassified Equus
+   (but sibling B.unclassified Equus < A.unclassified Equus)
+** A.Herpestes conflicts with B.Herpestidae because
+   B.Herpestes naso ! A.Herpestes
+   (but sibling B.Herpestes ichneumon < A.Herpestes)
+** A.Helogale conflicts with B.Herpestidae because
+   B.Herpestes ichneumon ! A.Helogale
+   (but sibling B.Herpestes naso < A.Helogale)
+** A.Canis lupus conflicts with B.Canis because
+   B.Canis lupus lycaon ! A.Canis lupus
+   (but sibling B.Canis lupus hodophilax < A.Canis lupus)
+** A.Mazama conflicts with B.Odocoileinae because
+   B.Odocoileus virginianus ! A.Mazama
+   (but sibling B.Odocoileus pandora < A.Mazama)
+** A.Ovis aries conflicts with B.Ovis because
+   B.Ovis orientalis laristanica ! A.Ovis aries
+   (but sibling B.Ovis orientalis ophion < A.Ovis aries)
+** A.Chiromyiformes conflicts with B.Strepsirrhini because
+   B.Galagidae ! A.Chiromyiformes
+   (but sibling B.Lorisidae < A.Chiromyiformes)
+** A.Galago conflicts with B.Galagidae because
+   B.Galagoides orinus ! A.Galago
+   (but sibling B.Galagoides thomasi < A.Galago)
+** A.Sciurognathi conflicts with B.Rodentia because
+   B.Echimyidae ! A.Sciurognathi
+   (but sibling B.Ctenodactylidae < A.Sciurognathi)
+** A.Spermophilus conflicts with B.Marmotini because
+   B.Urocitellus beldingi ! A.Spermophilus
+   (but sibling B.Urocitellus elegans < A.Spermophilus)
+** A.Muroidea conflicts with B.Muroidea because
+   B.Waiomys ! A.Muroidea
+   (but sibling B.Hyorhinomys < A.Muroidea)
+** A.Muridae conflicts with B.Muridae because
+   B.Waiomys ! A.Muridae
+   (but sibling B.Hyorhinomys < A.Muridae)
+** A.unclassified Mus conflicts with B.Mus#10088 because
+   B.Mus spicilegus ! A.unclassified Mus
+   (but sibling B.Mus abbotti < A.unclassified Mus)
+** A.unclassified Muridae conflicts with B.Muridae because
+   B.Soricomys ! A.unclassified Muridae
+   (but sibling B.Hyorhinomys < A.unclassified Muridae)
+** A.Microtus conflicts with B.Arvicolinae because
+   B.Neodon irene ! A.Microtus
+   (but sibling B.Neodon sikimensis < A.Microtus)
+** A.Eothenomys conflicts with B.Arvicolinae because
+   B.Myodes regulus ! A.Eothenomys
+   (but sibling B.Myodes smithii < A.Eothenomys)
+** A.unclassified Rodentia conflicts with B.Rodentia because
+   B.Hyorhinomys ! A.unclassified Rodentia
+   (but sibling B.Waiomys < A.unclassified Rodentia)
+** B.Rousettus conflicts with A.Pteropodinae because
+   A.Epomophorini ! B.Rousettus
+   (but sibling A.Stenonycterini < B.Rousettus)
+** B.Ptenochirus conflicts with A.Pteropodinae because
+   A.Megaerops kusnotoi ! B.Ptenochirus
+   (but sibling A.Megaerops wetmorei < B.Ptenochirus)
+** B.Casinycteris conflicts with A.Pteropodidae because
+   A.Scotonycteris zenkeri ! B.Casinycteris
+   (but sibling A.Scotonycteris ophiodon < B.Casinycteris)
+** B.Dermanura conflicts with A.Stenodermatinae because
+   A.Artibeus schwartzi ! B.Dermanura
+   (but sibling A.Artibeus bogotensis < B.Dermanura)
+** B.Hypsugo conflicts with A.Vespertilionidae because
+   A.Hypsugo eisentrauti ! B.Hypsugo
+   (but sibling A.Hypsugo savii < B.Hypsugo)
+** B.Corynorhinus conflicts with A.Vespertilionidae because
+   A.Plecotus auritus ! B.Corynorhinus
+   (but sibling A.Plecotus rafinesquii < B.Corynorhinus)
+** B.Glauconycteris conflicts with A.Vespertilionidae because
+   A.Chalinolobus tuberculatus ! B.Glauconycteris
+   (but sibling A.Chalinolobus beatrix < B.Glauconycteris)
+** B.Equus#9789 conflicts with A.Equus#9789 because
+   A.Equus sp. (NWSL) ! B.Equus#9789
+   (but sibling A.Equus sp. LLO-2009a < B.Equus#9789)
+** B.Herpestes conflicts with A.Herpestidae because
+   A.Herpestes edwardsii ! B.Herpestes
+   (but sibling A.Herpestes ichneumon < B.Herpestes)
+** B.Canis lupus conflicts with A.Canis because
+   A.Canis lupus lupaster ! B.Canis lupus
+   (but sibling A.Canis lupus x Canis lupus familiaris < B.Canis lupus)
+** B.Odocoileus conflicts with A.Odocoileinae because
+   A.Mazama rufina ! B.Odocoileus
+   (but sibling A.Mazama pandora < B.Odocoileus)
+** B.Ovis orientalis conflicts with A.Ovis because
+   A.Ovis aries platyura ! B.Ovis orientalis
+   (but sibling A.Ovis aries ophion < B.Ovis orientalis)
+** B.Lorisiformes conflicts with A.Strepsirrhini because
+   A.Daubentoniidae ! B.Lorisiformes
+   (but sibling A.Lorisidae < B.Lorisiformes)
+** B.Galagoides conflicts with A.Galagidae because
+   A.Galago granti ! B.Galagoides
+   (but sibling A.Galago thomasi < B.Galagoides)
+** B.Hystricomorpha conflicts with A.Rodentia because
+   A.Pedetidae ! B.Hystricomorpha
+   (but sibling A.Ctenodactylidae < B.Hystricomorpha)
+** B.Urocitellus conflicts with A.Marmotini because
+   A.Spermophilus dauricus ! B.Urocitellus
+   (but sibling A.Spermophilus elegans < B.Urocitellus)
+** B.Myomorpha conflicts with A.Rodentia because
+   A.Castoridae ! B.Myomorpha
+   (but sibling A.Dipodidae < B.Myomorpha)
+** B.Muroidea conflicts with A.Rodentia because
+   A.Anomaluridae ! B.Muroidea
+   (but sibling A.Muroidea < B.Muroidea)
+** B.Muridae conflicts with A.Rodentia because
+   A.Spalacidae ! B.Muridae
+   (but sibling A.Muridae < B.Muridae)
+** B.Murinae conflicts with A.Rodentia because
+   A.Gerbillinae ! B.Murinae
+   (but sibling A.Murinae < B.Murinae)
+** B.Mus#862507 conflicts with A.Mus#10088 because
+   A.Mus sp. Chypre ! B.Mus#862507
+   (but sibling A.Mus gratus < B.Mus#862507)
+** B.Myodes conflicts with A.Arvicolinae because
+   A.Eothenomys imaizumii ! B.Myodes
+   (but sibling A.Eothenomys smithii < B.Myodes)
+** B.Neodon conflicts with A.Arvicolinae because
+   A.Microtus savii ! B.Neodon
+   (but sibling A.Microtus sikimensis < B.Neodon)
 # Number of extensional relationships: 4687
   ... finished aligning; 19398 articulations
 

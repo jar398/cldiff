@@ -35,45 +35,64 @@ Aligning ...
 # No return cross-MRCA for B.Saimiri cassiquiarensis albigena -> A.Saimiri sciureus albigena -> ...
 # No return cross-MRCA for B.Saimiri cassiquiarensis -> A.Saimiri sciureus albigena -> ...
 # Number of cross-mrcas: 1328
-** A.Lepilemuridae (x) conflicts with B.Primates (y) because
-   B.Hapalemur in x isn't in y (its sibling B.Megaladapis is)
-** A.Loris tardigradus (x) conflicts with B.Loris (y) because
-   B.Loris lydekkerianus lydekkerianus in x isn't in y (its sibling B.Loris lydekkerianus nordicus is)
-** A.Loris lydekkerianus (x) conflicts with B.Loris (y) because
-   B.Loris lydekkerianus nordicus in x isn't in y (its sibling B.Loris lydekkerianus lydekkerianus is)
-** A.Galago (x) conflicts with B.Galagidae (y) because
-   B.Paragalago zanzibaricus in x isn't in y (its sibling B.Paragalago granti is)
-** A.Galagoides (x) conflicts with B.Galagidae (y) because
-   B.Paragalago cocos in x isn't in y (its sibling B.Paragalago rondoensis is)
-** A.Callithrix#9481 (x) conflicts with B.Callitrichidae (y) because
-   B.Mico argentatus in x isn't in y (its sibling B.Mico humilis is)
-** A.Pitheciidae (x) conflicts with B.Primates (y) because
-   B.Brachyteles in x isn't in y (its sibling B.Xenothrix is)
-** A.Callicebus (x) conflicts with B.Pitheciidae (y) because
-   B.Plecturocebus cinerascens in x isn't in y (its sibling B.Plecturocebus discolor is)
-** A.Trachypithecus (x) conflicts with B.Cercopithecidae (y) because
-   B.Semnopithecus entellus in x isn't in y (its sibling B.Semnopithecus vetulus is)
-** A.Trachypithecus phayrei (x) conflicts with B.Trachypithecus (y) because
-   B.Trachypithecus phayrei phayrei in x isn't in y (its sibling B.Trachypithecus phayrei shanicus is)
-** B.Lemuridae (x) conflicts with A.Lemuriformes (y) because
-   A.Lepilemur in x isn't in y (its sibling A.Megaladapis is)
-** B.Atelidae (x) conflicts with A.Platyrrhini (y) because
-   A.Callicebinae in x isn't in y (its sibling A.Xenothricinae is)
-** B.Plecturocebus (x) conflicts with A.Callicebinae (y) because
-   A.Callicebus coimbrai in x isn't in y (its sibling A.Callicebus discolor is)
-** B.Trachypithecus phayrei (x) conflicts with A.Trachypithecus (y) because
-   A.Trachypithecus phayrei crepuscula in x isn't in y (its sibling A.Trachypithecus phayrei shanicus is)
-** B.Semnopithecus (x) conflicts with A.Colobinae (y) because
-   A.Trachypithecus francoisi in x isn't in y (its sibling A.Trachypithecus vetulus is)
-** B.Mico (x) conflicts with A.Callitrichinae (y) because
-   A.Cebuella in x isn't in y (its sibling A.Calibella is)
-** B.Loris lydekkerianus (x) conflicts with A.Loris (y) because
-   A.Loris tardigradus tardigradus in x isn't in y (its sibling A.Loris tardigradus nordicus is)
-** B.Loris tardigradus (x) conflicts with A.Loris (y) because
-   A.Loris tardigradus nordicus in x isn't in y (its sibling A.Loris tardigradus tardigradus is)
+** A.Lepilemuridae conflicts with B.Primates because
+   B.Hapalemur ! A.Lepilemuridae
+   (but sibling B.Megaladapis < A.Lepilemuridae)
+** A.Loris tardigradus conflicts with B.Loris because
+   B.Loris lydekkerianus lydekkerianus ! A.Loris tardigradus
+   (but sibling B.Loris lydekkerianus nordicus < A.Loris tardigradus)
+** A.Loris lydekkerianus conflicts with B.Loris because
+   B.Loris lydekkerianus nordicus ! A.Loris lydekkerianus
+   (but sibling B.Loris lydekkerianus lydekkerianus < A.Loris lydekkerianus)
+** A.Galago conflicts with B.Galagidae because
+   B.Paragalago zanzibaricus ! A.Galago
+   (but sibling B.Paragalago granti < A.Galago)
+** A.Galagoides conflicts with B.Galagidae because
+   B.Paragalago cocos ! A.Galagoides
+   (but sibling B.Paragalago rondoensis < A.Galagoides)
+** A.Callithrix#9481 conflicts with B.Callitrichidae because
+   B.Mico argentatus ! A.Callithrix#9481
+   (but sibling B.Mico humilis < A.Callithrix#9481)
+** A.Pitheciidae conflicts with B.Primates because
+   B.Brachyteles ! A.Pitheciidae
+   (but sibling B.Xenothrix < A.Pitheciidae)
+** A.Callicebus conflicts with B.Pitheciidae because
+   B.Plecturocebus cinerascens ! A.Callicebus
+   (but sibling B.Plecturocebus discolor < A.Callicebus)
+** A.Trachypithecus conflicts with B.Cercopithecidae because
+   B.Semnopithecus entellus ! A.Trachypithecus
+   (but sibling B.Semnopithecus vetulus < A.Trachypithecus)
+** A.Trachypithecus phayrei conflicts with B.Trachypithecus because
+   B.Trachypithecus phayrei phayrei ! A.Trachypithecus phayrei
+   (but sibling B.Trachypithecus phayrei shanicus < A.Trachypithecus phayrei)
+** B.Lemuridae conflicts with A.Lemuriformes because
+   A.Lepilemur ! B.Lemuridae
+   (but sibling A.Megaladapis < B.Lemuridae)
+** B.Atelidae conflicts with A.Platyrrhini because
+   A.Callicebinae ! B.Atelidae
+   (but sibling A.Xenothricinae < B.Atelidae)
+** B.Plecturocebus conflicts with A.Callicebinae because
+   A.Callicebus coimbrai ! B.Plecturocebus
+   (but sibling A.Callicebus discolor < B.Plecturocebus)
+** B.Trachypithecus phayrei conflicts with A.Trachypithecus because
+   A.Trachypithecus phayrei crepuscula ! B.Trachypithecus phayrei
+   (but sibling A.Trachypithecus phayrei shanicus < B.Trachypithecus phayrei)
+** B.Semnopithecus conflicts with A.Colobinae because
+   A.Trachypithecus francoisi ! B.Semnopithecus
+   (but sibling A.Trachypithecus vetulus < B.Semnopithecus)
+** B.Mico conflicts with A.Callitrichinae because
+   A.Cebuella ! B.Mico
+   (but sibling A.Calibella < B.Mico)
+** B.Loris lydekkerianus conflicts with A.Loris because
+   A.Loris tardigradus tardigradus ! B.Loris lydekkerianus
+   (but sibling A.Loris tardigradus nordicus < B.Loris lydekkerianus)
+** B.Loris tardigradus conflicts with A.Loris because
+   A.Loris tardigradus nordicus ! B.Loris tardigradus
+   (but sibling A.Loris tardigradus tardigradus < B.Loris tardigradus)
 B.Saimiri cassiquiarensis <= A.Saimiri sciureus albigena <= nowhere
-** B.Paragalago (x) conflicts with A.Galagidae (y) because
-   A.Galago gabonensis in x isn't in y (its sibling A.Galago granti is)
+** B.Paragalago conflicts with A.Galagidae because
+   A.Galago gabonensis ! B.Paragalago
+   (but sibling A.Galago granti < B.Paragalago)
 # Number of extensional relationships: 367
   ... finished aligning; 1324 articulations
 

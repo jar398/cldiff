@@ -9,14 +9,18 @@ Aligning ...
 1663 best matches
 # Split/lump A.Nycticebus intermedius + A.Nycticebus pygmaeus < B.Nycticebus pygmaeus < A.Nycticebus
 # Number of cross-mrcas: 1688
-** A.Chiromyiformes (x) conflicts with B.Strepsirrhini (y) because
-   B.Galagidae in x isn't in y (its sibling B.Lorisidae is)
-** A.Galago (x) conflicts with B.Galagidae (y) because
-   B.Galagoides orinus in x isn't in y (its sibling B.Galagoides thomasi is)
-** B.Lorisiformes (x) conflicts with A.Strepsirrhini (y) because
-   A.Daubentoniidae in x isn't in y (its sibling A.Lorisidae is)
-** B.Galagoides (x) conflicts with A.Galagidae (y) because
-   A.Galago granti in x isn't in y (its sibling A.Galago thomasi is)
+** A.Chiromyiformes conflicts with B.Strepsirrhini because
+   B.Galagidae ! A.Chiromyiformes
+   (but sibling B.Lorisidae < A.Chiromyiformes)
+** A.Galago conflicts with B.Galagidae because
+   B.Galagoides orinus ! A.Galago
+   (but sibling B.Galagoides thomasi < A.Galago)
+** B.Lorisiformes conflicts with A.Strepsirrhini because
+   A.Daubentoniidae ! B.Lorisiformes
+   (but sibling A.Lorisidae < B.Lorisiformes)
+** B.Galagoides conflicts with A.Galagidae because
+   A.Galago granti ! B.Galagoides
+   (but sibling A.Galago thomasi < B.Galagoides)
 # Number of extensional relationships: 467
   ... finished aligning; 1684 articulations
 
