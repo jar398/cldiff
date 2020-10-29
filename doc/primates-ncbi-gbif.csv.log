@@ -98,27 +98,39 @@ B.Saimiri cassiquiarensis <= A.Saimiri sciureus albigena <= nowhere
 
 Merged.  1 roots in merge, 3120 nodes with parents
 # 333 nodes in merge have some change in their descendants
-# Perodicticus names different taxa in the two checklists
+# "Perodicticus" names different taxa in the two checklists
+  A.Perodicticus ~ B.Perodicticus [monotypic-inversion]
   B.Perodicticus = A.Perodicticus potto [presumed mutual]
-# Perodicticus potto names different taxa in the two checklists
+# "Perodicticus potto" names different taxa in the two checklists
   A.Perodicticus potto = B.Perodicticus [presumed mutual]
-# Hoolock hoolock names different taxa in the two checklists
-  A.Hoolock hoolock = B.Hoolock hoolock hoolock [None]
-# Macaca leonina names different taxa in the two checklists
-  A.Macaca leonina = B.Macaca nemestrina leonina [None]
-# Allochrocebus preussi names different taxa in the two checklists
-  A.Allochrocebus preussi = B.Allochrocebus preussi preussi [None]
-# Loris tardigradus nordicus names different taxa in the two checklists
-  A.Loris tardigradus nordicus = B.Loris lydekkerianus nordicus [None]
-# Trachypithecus phayrei phayrei names different taxa in the two checklists
-  B.Trachypithecus phayrei phayrei = A.Trachypithecus barbei [None]
-# Loris lydekkerianus malabaricus names different taxa in the two checklists
-  A.Loris lydekkerianus malabaricus = B.Loris tardigradus malabaricus [None]
-# Callicebus nigrifrons names different taxa in the two checklists
-  B.Callicebus nigrifrons = A.Callicebus personatus nigrifrons [None]
-# Allochrocebus preussi preussi names different taxa in the two checklists
-  B.Allochrocebus preussi preussi = A.Allochrocebus preussi [None]
-# Carlito syrichta names different taxa in the two checklists
-  A.Carlito syrichta = B.Carlito syrichta syrichta [None]
-# Paragalago zanzibaricus names different taxa in the two checklists
-  B.Paragalago zanzibaricus = A.Galagoides zanzibaricus [None]
+  none [-]
+# "Hoolock hoolock" names different taxa in the two checklists
+  A.Hoolock hoolock = B.Hoolock hoolock hoolock [synonym+canonicalName+synonym]
+  B.Hoolock hoolock ~ A.Hoolock hoolock [monotypic-inversion]
+# "Macaca leonina" names different taxa in the two checklists
+  A.Macaca leonina = B.Macaca nemestrina leonina [synonym+canonicalName]
+  none [-]
+# "Allochrocebus preussi" names different taxa in the two checklists
+  A.Allochrocebus preussi = B.Allochrocebus preussi preussi [synonym+canonicalName+synonym]
+  B.Allochrocebus preussi ~ A.Allochrocebus preussi [monotypic-inversion]
+# "Loris tardigradus nordicus" names different taxa in the two checklists
+  A.Loris tardigradus nordicus = B.Loris lydekkerianus nordicus [synonym+canonicalName]
+  none [-]
+# "Trachypithecus phayrei phayrei" names different taxa in the two checklists
+  none [-]
+  B.Trachypithecus phayrei phayrei = A.Trachypithecus barbei [synonym+canonicalName]
+# "Loris lydekkerianus malabaricus" names different taxa in the two checklists
+  A.Loris lydekkerianus malabaricus = B.Loris tardigradus malabaricus [synonym+canonicalName]
+  none [-]
+# "Callicebus nigrifrons" names different taxa in the two checklists
+  none [-]
+  B.Callicebus nigrifrons = A.Callicebus personatus nigrifrons [homotypic synonym+canonicalName]
+# "Allochrocebus preussi preussi" names different taxa in the two checklists
+  none [-]
+  B.Allochrocebus preussi preussi = A.Allochrocebus preussi [synonym+canonicalName+synonym]
+# "Carlito syrichta" names different taxa in the two checklists
+  A.Carlito syrichta = B.Carlito syrichta syrichta [synonym+canonicalName+synonym]
+  B.Carlito syrichta ~ A.Carlito syrichta [monotypic-inversion]
+# "Paragalago zanzibaricus" names different taxa in the two checklists
+  none [-]
+  B.Paragalago zanzibaricus = A.Galagoides zanzibaricus [synonym+canonicalName+synonym]

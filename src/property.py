@@ -33,6 +33,7 @@ def uri_to_property(uri):
   probe = properties_by_uri.get(uri)
   if probe: return probe
   pet_name = uri_to_pet_name(uri)
+  assert pet_name
   uid = len(properties_by_specificity)
   spec = uid
   sel = Property(uid, uri, pet_name, spec)

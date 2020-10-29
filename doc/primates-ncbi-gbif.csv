@@ -194,7 +194,7 @@ indent,taxonID,rank,A id,A name,B id,B name,relation,other id,other name,note,re
 ———,193,species,185953,A.Megaladapis edwardsi,4827198,B.Megaladapis edwardsi,=,,,moved,canonicalName,number_of_children,
 ————,194,unranked,,,10233292,B.BOLD:ADC9912,,,,,,,
 ——,195,genus,,,4266937,B.Prolemur,~,1328070,A.Prolemur simus,,monotypic-inversion,,
-———,196,species,1328070,A.Prolemur simus,4266938,B.Prolemur simus,=,,,moved,,number_of_children; scientificName,
+———,196,species,1328070,A.Prolemur simus,4266938,B.Prolemur simus,=,,,moved,synonym+canonicalName+synonym,number_of_children; scientificName,
 ————,197,unranked,,,10530060,B.BOLD:ADC8759,,,,,,,
 ——,198,genus,,,2436411,B.Lemur,~,9447,A.Lemur catta,,monotypic-inversion,,
 ———,199,species,9447,A.Lemur catta,2436412,B.Lemur catta,=,,,moved,scientificName,number_of_children,
@@ -273,7 +273,7 @@ indent,taxonID,rank,A id,A name,B id,B name,relation,other id,other name,note,re
 ————,272,unranked,,,10084898,B.BOLD:ADR9682,,,,,,,
 ———,273,species,342398,A.Lepilemur sahamalazensis,5786436,B.Lepilemur sahamalazensis,=,,,,canonicalName,number_of_children,
 ————,274,unranked,,,9901645,B.BOLD:ADR8587,,,,,,,
-———,275,species,756882,A.Lepilemur hubbardorum,5786428,B.Lepilemur hubbardi,=,,,,,number_of_children; canonicalName; scientificName,
+———,275,species,756882,A.Lepilemur hubbardorum,5786428,B.Lepilemur hubbardi,=,,,,canonicalName+synonym,number_of_children; canonicalName; scientificName,
 ————,276,unranked,,,10353908,B.BOLD:ADC6545,,,,,,,
 ———,277,species,886958,A.Lepilemur betsileo,5786424,B.Lepilemur betsileo,=,,,,canonicalName,scientificName,shared tip
 ———,278,species,100475,A.Lepilemur leucopus,2436491,B.Lepilemur leucopus,=,,,,canonicalName,,shared tip
@@ -329,7 +329,7 @@ indent,taxonID,rank,A id,A name,B id,B name,relation,other id,other name,note,re
 ———,328,species,,,9494739,B.Plecturocebus aureipalatii,,,,,,,
 ———,329,species,,,9258545,B.Plecturocebus stephennashi,,,,,,,
 ———,330,species,,,9291744,B.Plecturocebus oenanthe,,,,,,,
-———,331,species,1861703,A.Callicebus discolor,9234391,B.Plecturocebus discolor,=,,,moved,,canonicalName; scientificName,shared tip
+———,331,species,1861703,A.Callicebus discolor,9234391,B.Plecturocebus discolor,=,,,moved,canonicalName+synonym,canonicalName; scientificName,shared tip
 ———,332,species,,,9331673,B.Plecturocebus urubambensis,,,,,,,
 ———,333,species,,,9483946,B.Plecturocebus toppini,,,,,,,
 ———,334,species,,,9509736,B.Plecturocebus modestus,,,,,,,
@@ -362,7 +362,7 @@ indent,taxonID,rank,A id,A name,B id,B name,relation,other id,other name,note,re
 ———,361,species,43147,A.Aotus lemurinus,5219591,B.Aotus lemurinus,=,,,,canonicalName,scientificName,shared tip
 ———,362,species,,,5786071,B.Aotus jorgehernandezi,,,,,,,
 ———,363,species,,,5219592,B.Aotus miconax,,,,,,,
-———,364,species,292213,A.Aotus griseimembra,5786069,B.Aotus griseimembra,=,,,,,,shared tip
+———,364,species,292213,A.Aotus griseimembra,5786069,B.Aotus griseimembra,=,,,,synonym+canonicalName+synonym,,shared tip
 ———,365,species,361674,A.Aotus brumbacki,5219593,B.Aotus brumbacki,=,,,,scientificName,,shared tip
 ———,366,species,1263727,A.Aotus zonalis,5786070,B.Aotus zonalis,=,,,,scientificName,,shared tip
 ———,367,species,,,5936372,B.Aotus dindensis,,,,,,,
@@ -371,11 +371,11 @@ indent,taxonID,rank,A id,A name,B id,B name,relation,other id,other name,note,re
 ———,370,species,57176,A.Aotus vociferans,5219597,B.Aotus vociferans,=,,,,canonicalName,,shared tip
 ———,371,species,,,8877212,B.Aotus rufipes,,,,,,,
 ———,372,species,9505,A.Aotus trivirgatus,5219590,B.Aotus trivirgatus,=,,,,canonicalName,,shared tip
-———,373,species,30591,A.Aotus azarai,5707409,B.Aotus azarae,=,,,,,number_of_children; canonicalName,
-————,374,subspecies,120088,A.Aotus azarai azarai,7262068,B.Aotus azarae azarae,=,,,,,canonicalName,shared tip
-————,375,subspecies,280755,A.Aotus azarai boliviensis,5707415,B.Aotus azarae boliviensis,=,,,,,canonicalName,shared tip
+———,373,species,30591,A.Aotus azarai,5707409,B.Aotus azarae,=,,,,synonym+canonicalName,number_of_children; canonicalName,
+————,374,subspecies,120088,A.Aotus azarai azarai,7262068,B.Aotus azarae azarae,=,,,,synonym+canonicalName,canonicalName,shared tip
+————,375,subspecies,280755,A.Aotus azarai boliviensis,5707415,B.Aotus azarae boliviensis,=,,,,synonym+canonicalName,canonicalName,shared tip
 ————,376,unranked,,,10318235,B.BOLD:AAE3188,,,,,,,
-————,377,subspecies,867331,A.Aotus azarai infulatus,5707410,B.Aotus azarae infulatus,=,,,,,canonicalName; scientificName,shared tip
+————,377,subspecies,867331,A.Aotus azarai infulatus,5707410,B.Aotus azarae infulatus,=,,,,synonym+canonicalName+synonym,canonicalName; scientificName,shared tip
 —,378,family,,,3239599,B.Pliopithecidae,,,,,,,
 ——,379,unranked,,,10059820,B.? chirobates,,,,,,,
 ——,380,unranked,,,10624551,B.? antiquus,,,,,,,
@@ -712,14 +712,14 @@ indent,taxonID,rank,A id,A name,B id,B name,relation,other id,other name,note,re
 ———,711,species,,,4827382,B.Cebuella pygmaea,~,9493,A.Callithrix pygmaea,,monotypic-inversion,,
 ————,712,subspecies,,,5786449,B.Cebuella pygmaea niveiventris,,,,,,,
 ————,713,unranked,,,10210487,B.BOLD:ADC9053,,,,,,,
-————,714,species,9493,A.Callithrix pygmaea,7342633,B.Cebuella pygmaea pygmaea,=,,,moved,,taxonRank; canonicalName; scientificName,shared tip
+————,714,species,9493,A.Callithrix pygmaea,7342633,B.Cebuella pygmaea pygmaea,=,,,moved,scientificName+synonym,taxonRank; canonicalName; scientificName,shared tip
 ——,715,genus,,,7826251,B.Mico,>,1965102,A.Mico,,B.Mico humilis is not in it,,
 ———,716,species,,,9048529,B.Mico melanoleucas,,,,,,,
-———,717,species,666519,A.Callithrix humilis,5786452,B.Mico humilis,=,,,moved,,canonicalName; scientificName,shared tip
+———,717,species,666519,A.Callithrix humilis,5786452,B.Mico humilis,=,,,moved,synonym+canonicalName+synonym,canonicalName; scientificName,shared tip
 ———,718,species,,,5786453,B.Mico acariensis,,,,,,,
 ———,719,species,,,5786461,B.Mico nigriceps,,,,,,,
 ——,720,genus,,,2436463,B.Callimico,~,9495,A.Callimico goeldii,,monotypic-inversion,,
-———,721,species,9495,A.Callimico goeldii,2436464,B.Callimico goeldii,=,,,moved,,number_of_children,
+———,721,species,9495,A.Callimico goeldii,2436464,B.Callimico goeldii,=,,,moved,synonym+canonicalName+homotypic synonym,number_of_children,
 ————,722,unranked,,,9926898,B.BOLD:AAI6954,,,,,,,
 ——,723,genus,,,4827213,B.Micodon,,,,,,,
 ———,724,species,,,8495970,B.Micodon kiotensis,,,,,,,
@@ -986,7 +986,7 @@ indent,taxonID,rank,A id,A name,B id,B name,relation,other id,other name,note,re
 ———,985,species,1561161,A.Saimiri vanzolinii,2436660,B.Saimiri vanzolinii,=,,,,scientificName,,shared tip
 ———,986,unranked,,,10606888,B.BOLD:ABZ2528,,,,,,,
 ———,987,species,,,8689513,B.Neosaimiri annectens,,,,,,,
-———,988,subspecies,198114,A.Saimiri sciureus collinsi,8524789,B.Saimiri collinsi,=,,,moved,,taxonRank; canonicalName; scientificName,shared tip
+———,988,subspecies,198114,A.Saimiri sciureus collinsi,8524789,B.Saimiri collinsi,=,,,moved,synonym+canonicalName,taxonRank; canonicalName; scientificName,shared tip
 ———,989,species,27679,A.Saimiri boliviensis,2436663,B.Saimiri boliviensis,=,,,,canonicalName,scientificName,
 ————,990,subspecies,495297,A.Saimiri boliviensis peruviensis,4266901,B.Saimiri boliviensis peruviensis,=,,,,scientificName,,shared tip
 ————,991,subspecies,39432,A.Saimiri boliviensis boliviensis,4266897,B.Saimiri boliviensis boliviensis,=,,,,canonicalName,,shared tip
@@ -997,14 +997,14 @@ indent,taxonID,rank,A id,A name,B id,B name,relation,other id,other name,note,re
 ————,996,subspecies,867380,A.Saimiri oerstedii oerstedii,4266898,B.Saimiri oerstedii oerstedii,=,,,,canonicalName,,shared tip
 ———,997,species,66265,A.Saimiri ustus,8885431,B.Saimiri ustus,=,,,,canonicalName,,shared tip
 ———,998,species,,,8990359,B.Saimiri madierae,,,,,,,
-———,999,subspecies,495300,A.Saimiri sciureus macrodon,7888324,B.Saimiri macrodon,=,,,moved,,taxonRank; canonicalName,shared tip
+———,999,subspecies,495300,A.Saimiri sciureus macrodon,7888324,B.Saimiri macrodon,=,,,moved,canonicalName+synonym,taxonRank; canonicalName,shared tip
 ———,1000,species,9521,A.Saimiri sciureus,2436661,B.Saimiri sciureus,=,,,,canonicalName,number_of_children,
 ————,1001,subspecies,,,8989014,B.Saimiri sciurea sciurea,,,,,,,
 ————,1002,unranked,,,9966838,B.BOLD:ADQ7174,,,,,,,
 ————,1003,unranked,,,10321420,B.BOLD:AAC9009,,,,,,,
 ————,1004,subspecies,,,8730861,B.Saimiri sciurea petrina,,,,,,,
 ———,1005,species,,,7576788,B.Saimiri cassiquiarensis,,,,,,,
-————,1006,subspecies,495298,A.Saimiri sciureus albigena,9190676,B.Saimiri cassiquiarensis albigena,=,,,moved,,canonicalName,shared tip
+————,1006,subspecies,495298,A.Saimiri sciureus albigena,9190676,B.Saimiri cassiquiarensis albigena,=,,,moved,canonicalName+synonym,canonicalName,shared tip
 ————,1007,subspecies,,,9012225,B.Saimiri cassiquiarensis cassiquiarensis,,,,,,,
 ——,1008,genus,,,4827399,B.Carlocebus,,,,,,,
 ———,1009,species,,,8504313,B.Carlocebus intermedius,,,,,,,
@@ -1026,12 +1026,12 @@ indent,taxonID,rank,A id,A name,B id,B name,relation,other id,other name,note,re
 ———,1025,species,261736,A.Euoticus elegantulus,2436514,B.Euoticus elegantulus,=,,,moved,canonicalName,,shared tip
 ——,1026,genus,,,9553756,B.Paragalago,><,40297,A.Galagidae,reorganization,A.Galago granti is in; its sibling A.Galago gabonensis is not,,
 ———,1027,species,2604442,A.Paragalago cocos,9423182,B.Paragalago cocos,=,,,moved,scientificName,,shared tip
-———,1028,species,1738047,A.Galagoides rondoensis,9378402,B.Paragalago rondoensis,=,,,moved,,canonicalName,shared tip
-———,1029,species,111174,A.Galagoides zanzibaricus,9246350,B.Paragalago zanzibaricus,=,,,moved,,canonicalName,
-————,1030,subspecies,1738046,A.Galagoides zanzibaricus udzungwensis,9333853,B.Paragalago zanzibaricus udzungwensis,=,,,,,canonicalName; scientificName,shared tip
-————,1031,subspecies,1738053,A.Galagoides zanzibaricus zanzibaricus,9525279,B.Paragalago zanzibaricus zanzibaricus,=,,,,,canonicalName,shared tip
+———,1028,species,1738047,A.Galagoides rondoensis,9378402,B.Paragalago rondoensis,=,,,moved,canonicalName+synonym,canonicalName,shared tip
+———,1029,species,111174,A.Galagoides zanzibaricus,9246350,B.Paragalago zanzibaricus,=,,,moved,synonym+canonicalName+synonym,canonicalName,
+————,1030,subspecies,1738046,A.Galagoides zanzibaricus udzungwensis,9333853,B.Paragalago zanzibaricus udzungwensis,=,,,,canonicalName+synonym,canonicalName; scientificName,shared tip
+————,1031,subspecies,1738053,A.Galagoides zanzibaricus zanzibaricus,9525279,B.Paragalago zanzibaricus zanzibaricus,=,,,,canonicalName+synonym,canonicalName,shared tip
 ———,1032,species,,,9263123,B.Paragalago orinus,,,,,,,
-———,1033,species,261732,A.Galago granti,9496982,B.Paragalago granti,=,,,moved,,canonicalName,shared tip
+———,1033,species,261732,A.Galago granti,9496982,B.Paragalago granti,=,,,moved,synonym+canonicalName+synonym,canonicalName,shared tip
 —,1034,family,,,3239591,B.Notharctidae,,,,,,,
 ——,1035,unranked,,,9572943,B.? affinis,,,,,,,
 ——,1036,unranked,,,9277759,B.? frugivorus,,,,,,,

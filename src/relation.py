@@ -38,10 +38,6 @@ gt          = relations_by_name['>']
 eq          = relations_by_name['=']
 matches     = relations_by_name['~']
 
-def is_variant(re, other):
-  return (re.b_given_a == other.b_given_a and
-          re.a_given_b == other.a_given_b)
-
 # Reverse relation
 
 def reverse(re):

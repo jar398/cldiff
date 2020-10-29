@@ -32,6 +32,8 @@ def _articulation(dom, cod, re,
   dif = diff.all_diffs
   if cl.is_accepted(dom) and cl.is_accepted(cod):
     dif = diff.differences(dom, cod)
+  assert reason or factors
+  if reason and revreason == None: revreason = reason + " of"
   ar = Articulation(dom, cod, re, factors, reason, revreason, dif)
   return ar
 
@@ -53,6 +55,7 @@ def compose(p, q):
   return _articulation(p.dom,
                        q.cod,
                        rel.compose(p.relation, q.relation),
+                       reason = None,
                        factors = (p.factors or [p]) + (q.factors or [q]))
 
 def reason(p):
@@ -101,9 +104,10 @@ def inverses(ar1, ar2):
 # Foo.  Phase out
 
 def set_relation(ar, re):      # re = rel.eq
-  return _articulation(ar.dom, ar.cod, re, ar.reason, ar.revreason)
+  return _articulation(ar.dom, ar.cod, re, ar.reason, ar.revreason, ar.factors)
 
 def change_relation(ar, re, reason, revreason = reason):  # re = rel.gt
+  assert reason
   return compose(set_relation(ar, re),
                  _articulation(ar.cod, ar.cod, rel.eq, reason, revreason))
 
@@ -166,6 +170,7 @@ def monotypic(dom, cod, re):
 
 def bridge(dom, cod, re, reason):
   assert cl.get_checklist(dom) != cl.get_checklist(cod)
+  assert reason
   return _articulation(dom, cod, re, reason=reason)
 
 # Intensional matches by name (no synonym following)

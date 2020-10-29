@@ -87,7 +87,8 @@ def read_topology(tax_path):
       parent_id = row[pid_column]
       accepted_id = row[aid_column]
       status = row[sid_column]
-      is_syn = is_synonym_status(status)
+      is_syn = ((accepted_id and not parent_id) or
+                is_synonym_status(status))
       get_topo_record(tid, topo)[2] = is_syn
       if is_syn:
         if accepted_id != '':
@@ -127,7 +128,13 @@ def clean(row, tid_column, pid_column, aid_column, sid_column, topo):
   record = topo.get(tid)
   if record:
     (children, synonyms, is_syn) = record
-    assert is_syn == is_synonym_status(status)
+    if is_syn != is_synonym_status(status):
+      if is_syn == None:
+        is_syn = is_synonym_status(status)
+        record[2] = is_syn
+      else:
+        print("** %s: Synonym = %s but status = %s" %
+              (tid, is_syn, status))
   else:
     children = []
     synonyms = []
@@ -181,7 +188,18 @@ def clean(row, tid_column, pid_column, aid_column, sid_column, topo):
   return row
 
 def is_synonym_status(status):
-  return ("synonym" in status) or (status == "misapplied")
+  # return status != "accepted"  ??
+  if (("synonym" in status) or
+      status in unaccepted_statuses):
+    return True
+  elif status == "accepted" or status == "valid":
+    return False
+  else:
+    print("** Unrecognized taxonomic status %s" % status)
+    return False
+
+# These are found the hard way.  So far gleaned from GBIF and EOL.
+unaccepted_statuses = ["misapplied", "misspelling", "invalid", "not accepted"]
 
 def csv_parameters(path):
   if ".csv" in path:

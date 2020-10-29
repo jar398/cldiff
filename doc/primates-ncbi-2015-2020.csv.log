@@ -26,17 +26,24 @@ Aligning ...
 
 Merged.  1 roots in merge, 1072 nodes with parents
 # 131 nodes in merge have some change in their descendants
-# Tarsiidae names different taxa in the two checklists
+# "Tarsiidae" names different taxa in the two checklists
+  A.Tarsiidae ~ B.Tarsiidae [monotypic-inversion]
   B.Tarsiidae = A.Tarsius [presumed mutual]
-# Tarsius names different taxa in the two checklists
+# "Tarsius" names different taxa in the two checklists
   A.Tarsius = B.Tarsiidae [presumed mutual]
-# Callicebus names different taxa in the two checklists
+  B.Tarsius < A.Tarsius [A.Tarsius syrichta is not in it]
+# "Callicebus" names different taxa in the two checklists
   A.Callicebus = B.Callicebinae [presumed mutual]
-# Callicebinae names different taxa in the two checklists
+  B.Callicebus < A.Callicebus [A.Callicebus purinus is not in it]
+# "Callicebinae" names different taxa in the two checklists
+  A.Callicebinae ~ B.Callicebinae [monotypic-inversion]
   B.Callicebinae = A.Callicebus [presumed mutual]
-# Macaca leonina names different taxa in the two checklists
-  B.Macaca leonina = A.Macaca nemestrina leonina [None]
-# Macaca siberu names different taxa in the two checklists
-  B.Macaca siberu = A.Macaca nemestrina siberu [None]
-# Semnopithecus priam names different taxa in the two checklists
-  B.Semnopithecus priam = A.Semnopithecus entellus priam [None]
+# "Macaca leonina" names different taxa in the two checklists
+  none [-]
+  B.Macaca leonina = A.Macaca nemestrina leonina [synonym+canonicalName]
+# "Macaca siberu" names different taxa in the two checklists
+  none [-]
+  B.Macaca siberu = A.Macaca nemestrina siberu [synonym+canonicalName]
+# "Semnopithecus priam" names different taxa in the two checklists
+  none [-]
+  B.Semnopithecus priam = A.Semnopithecus entellus priam [merged id+ncbi_id]

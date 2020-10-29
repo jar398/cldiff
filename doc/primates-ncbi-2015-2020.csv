@@ -1,72 +1,72 @@
 indent,taxonID,rank,A id,A name,B id,B name,relation,other id,other name,note,reason,changed_props,unchanged
-,1,order,9443,A.Primates,9443,B.Primates,=,,,,,,
+,1,order,9443,A.Primates,9443,B.Primates,=,,,,blast name+canonicalName+blast name,,
 —,2,,57118,A.unclassified Primates,57118,B.unclassified Primates,=,,,,canonicalName,number_of_children,subtree=
-—,13,suborder,376911,A.Strepsirrhini,376911,B.Strepsirrhini,=,,,,,,
+—,13,suborder,376911,A.Strepsirrhini,376911,B.Strepsirrhini,=,,,,merged id+canonicalName+merged id,,
 ——,14,infraorder,376915,A.Lemuriformes,376915,B.Lemuriformes,=,,,,scientificName,,
-———,15,family,9445,A.Lemuridae,9445,B.Lemuridae,=,,,,,,
+———,15,family,9445,A.Lemuridae,9445,B.Lemuridae,=,,,,genbank common name+canonicalName+genbank common name,,
 ————,16,genus,9446,A.Lemur,9446,B.Lemur,=,,,,canonicalName,,
-—————,17,species,9447,A.Lemur catta,9447,B.Lemur catta,=,,,,,,shared tip
+—————,17,species,9447,A.Lemur catta,9447,B.Lemur catta,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
 —————,18,,,,2641939,B.unclassified Lemur,~,69491,A.Lemur sp.,,monotypic-inversion,,
 ————,20,genus,9454,A.Varecia,9454,B.Varecia,=,,,,canonicalName,,
 —————,21,species,,,9455,B.Varecia variegata,~,87289,A.Varecia variegata variegata,,monotypic-inversion,,
-—————,23,species,554167,A.Varecia rubra,554167,B.Varecia rubra,=,,,,,,shared tip
-————,24,genus,13513,A.Eulemur,13513,B.Eulemur,=,,,,,number_of_children,
-—————,25,species,13514,A.Eulemur coronatus,13514,B.Eulemur coronatus,=,,,,,,shared tip
-—————,26,species,13515,A.Eulemur fulvus,13515,B.Eulemur fulvus,=,,,,,,subtree=
+—————,23,species,554167,A.Varecia rubra,554167,B.Varecia rubra,=,,,,synonym+canonicalName+synonym,,shared tip
+————,24,genus,13513,A.Eulemur,13513,B.Eulemur,=,,,,synonym+canonicalName+synonym,number_of_children,
+—————,25,species,13514,A.Eulemur coronatus,13514,B.Eulemur coronatus,=,,,,synonym+canonicalName+synonym,,shared tip
+—————,26,species,13515,A.Eulemur fulvus,13515,B.Eulemur fulvus,=,,,,genbank common name+canonicalName+genbank common name,,subtree=
 —————,31,species,,,30602,B.Eulemur macaco,~,30603,A.Eulemur macaco macaco,,monotypic-inversion,,
-—————,33,species,34828,A.Eulemur mongoz,34828,B.Eulemur mongoz,=,,,,,,shared tip
-—————,34,species,34829,A.Eulemur rubriventer,34829,B.Eulemur rubriventer,=,,,,,,shared tip
-—————,35,species,87288,A.Eulemur flavifrons,87288,B.Eulemur flavifrons,=,,,,,,shared tip
-—————,36,species,122225,A.Eulemur sanfordi,122225,B.Eulemur sanfordi,=,,,,,,shared tip
-—————,37,species,639525,A.Eulemur cinereiceps,639525,B.Eulemur cinereiceps,=,,,,,,shared tip
-—————,38,species,859983,A.Eulemur rufus,859983,B.Eulemur rufus,=,,,,,,shared tip
-—————,39,species,859984,A.Eulemur rufifrons,859984,B.Eulemur rufifrons,=,,,,,,shared tip
-—————,40,species,1215604,A.Eulemur albifrons,1215604,B.Eulemur albifrons,=,,,,,,shared tip
+—————,33,species,34828,A.Eulemur mongoz,34828,B.Eulemur mongoz,=,,,,synonym+canonicalName+synonym,,shared tip
+—————,34,species,34829,A.Eulemur rubriventer,34829,B.Eulemur rubriventer,=,,,,synonym+canonicalName+synonym,,shared tip
+—————,35,species,87288,A.Eulemur flavifrons,87288,B.Eulemur flavifrons,=,,,,synonym+canonicalName+synonym,,shared tip
+—————,36,species,122225,A.Eulemur sanfordi,122225,B.Eulemur sanfordi,=,,,,synonym+canonicalName+synonym,,shared tip
+—————,37,species,639525,A.Eulemur cinereiceps,639525,B.Eulemur cinereiceps,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
+—————,38,species,859983,A.Eulemur rufus,859983,B.Eulemur rufus,=,,,,merged id+canonicalName+merged id,,shared tip
+—————,39,species,859984,A.Eulemur rufifrons,859984,B.Eulemur rufifrons,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
+—————,40,species,1215604,A.Eulemur albifrons,1215604,B.Eulemur albifrons,=,,,,merged id+canonicalName+merged id,,shared tip
 ————,41,genus,13556,A.Hapalemur,13556,B.Hapalemur,=,,,,canonicalName,,
-—————,42,species,13557,A.Hapalemur griseus,13557,B.Hapalemur griseus,=,,,,,,subtree=
-—————,48,species,122222,A.Hapalemur aureus,122222,B.Hapalemur aureus,=,,,,,,shared tip
-—————,49,species,867377,A.Hapalemur occidentalis,867377,B.Hapalemur occidentalis,=,,,,,,shared tip
+—————,42,species,13557,A.Hapalemur griseus,13557,B.Hapalemur griseus,=,,,,genbank common name+canonicalName+genbank common name,,subtree=
+—————,48,species,122222,A.Hapalemur aureus,122222,B.Hapalemur aureus,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
+—————,49,species,867377,A.Hapalemur occidentalis,867377,B.Hapalemur occidentalis,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
 ————,50,genus,,,1328069,B.Prolemur,~,1328070,A.Prolemur simus,,monotypic-inversion,,
 ————,52,genus,,,1513474,B.Pachylemur,~,1513475,A.Pachylemur jullyi,,monotypic-inversion,,
-———,54,family,30599,A.Indriidae,30599,B.Indriidae,=,,,,,,
-————,55,genus,30600,A.Propithecus,30600,B.Propithecus,=,,,,,,
-—————,56,species,30601,A.Propithecus tattersalli,30601,B.Propithecus tattersalli,=,,,,,,shared tip
+———,54,family,30599,A.Indriidae,30599,B.Indriidae,=,,,,synonym+canonicalName+synonym,,
+————,55,genus,30600,A.Propithecus,30600,B.Propithecus,=,,,,genbank common name+canonicalName+genbank common name,,
+—————,56,species,30601,A.Propithecus tattersalli,30601,B.Propithecus tattersalli,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
 —————,57,species,,,34825,B.Propithecus verreauxi,~,122229,A.Propithecus verreauxi verreauxi,,monotypic-inversion,,
-—————,59,species,83281,A.Propithecus diadema,83281,B.Propithecus diadema,=,,,,,,subtree=
-—————,62,species,379532,A.Propithecus coquereli,379532,B.Propithecus coquereli,=,,,,,,shared tip
-—————,63,species,475618,A.Propithecus deckenii,475618,B.Propithecus deckenii,=,,,,,,subtree=
-—————,66,species,543559,A.Propithecus edwardsi,543559,B.Propithecus edwardsi,=,,,,,,shared tip
-—————,67,species,543560,A.Propithecus candidus,543560,B.Propithecus candidus,=,,,,,,shared tip
-—————,68,species,989338,A.Propithecus perrieri,989338,B.Propithecus perrieri,=,,,,,,shared tip
+—————,59,species,83281,A.Propithecus diadema,83281,B.Propithecus diadema,=,,,,genbank common name+canonicalName+genbank common name,,subtree=
+—————,62,species,379532,A.Propithecus coquereli,379532,B.Propithecus coquereli,=,,,,merged id+canonicalName+merged id,,shared tip
+—————,63,species,475618,A.Propithecus deckenii,475618,B.Propithecus deckenii,=,,,,genbank common name+canonicalName+genbank common name,,subtree=
+—————,66,species,543559,A.Propithecus edwardsi,543559,B.Propithecus edwardsi,=,,,,merged id+canonicalName+merged id,,shared tip
+—————,67,species,543560,A.Propithecus candidus,543560,B.Propithecus candidus,=,,,,merged id+canonicalName+merged id,,shared tip
+—————,68,species,989338,A.Propithecus perrieri,989338,B.Propithecus perrieri,=,,,,merged id+canonicalName+merged id,,shared tip
 —————,69,,,,2677806,B.unclassified Propithecus,~,39582,A.Propithecus sp.,,monotypic-inversion,,
 ————,71,genus,,,34826,B.Indri,~,34827,A.Indri indri,,monotypic-inversion,,
 ————,73,genus,122245,A.Avahi,122245,B.Avahi,=,,,,canonicalName,,
-—————,74,species,122246,A.Avahi laniger,122246,B.Avahi laniger,=,,,,,,shared tip
+—————,74,species,122246,A.Avahi laniger,122246,B.Avahi laniger,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
 —————,75,species,132108,A.Avahi occidentalis,132108,B.Avahi occidentalis,=,,,,canonicalName,,shared tip
-—————,76,species,402239,A.Avahi unicolor,402239,B.Avahi unicolor,=,,,,,,shared tip
+—————,76,species,402239,A.Avahi unicolor,402239,B.Avahi unicolor,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
 —————,77,species,402244,A.Avahi cleesei,402244,B.Avahi cleesei,=,,,,canonicalName,,shared tip
 —————,78,species,1313323,A.Avahi peyrierasi,1313323,B.Avahi peyrierasi,=,,,,canonicalName,scientificName,shared tip
 ————,79,genus,523820,A.Archaeolemur,523820,B.Archaeolemur,=,,,,canonicalName,,subtree=
 ————,82,genus,,,523824,B.Hadropithecus,~,523825,A.Hadropithecus stenognathus,,monotypic-inversion,,
-———,84,family,30614,A.Lepilemuridae,30614,B.Lepilemuridae,=,,,,,,
+———,84,family,30614,A.Lepilemuridae,30614,B.Lepilemuridae,=,,,,synonym+canonicalName+synonym,,
 ————,85,genus,9452,A.Lepilemur,9452,B.Lepilemur,=,,,,canonicalName,number_of_children,
-—————,86,species,9453,A.Lepilemur mustelinus,9453,B.Lepilemur mustelinus,=,,,,,,shared tip
-—————,87,species,78583,A.Lepilemur dorsalis,78583,B.Lepilemur dorsalis,=,,,,,,shared tip
-—————,88,species,78584,A.Lepilemur septentrionalis,78584,B.Lepilemur septentrionalis,=,,,,,,shared tip
-—————,89,species,78866,A.Lepilemur ruficaudatus,78866,B.Lepilemur ruficaudatus,=,,,,,,shared tip
-—————,90,species,100475,A.Lepilemur leucopus,100475,B.Lepilemur leucopus,=,,,,,,shared tip
-—————,91,species,122230,A.Lepilemur edwardsi,122230,B.Lepilemur edwardsi,=,,,,,,shared tip
+—————,86,species,9453,A.Lepilemur mustelinus,9453,B.Lepilemur mustelinus,=,,,,common name+canonicalName+common name,,shared tip
+—————,87,species,78583,A.Lepilemur dorsalis,78583,B.Lepilemur dorsalis,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
+—————,88,species,78584,A.Lepilemur septentrionalis,78584,B.Lepilemur septentrionalis,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
+—————,89,species,78866,A.Lepilemur ruficaudatus,78866,B.Lepilemur ruficaudatus,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
+—————,90,species,100475,A.Lepilemur leucopus,100475,B.Lepilemur leucopus,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
+—————,91,species,122230,A.Lepilemur edwardsi,122230,B.Lepilemur edwardsi,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
 —————,92,species,185457,A.Lepilemur microdon,185457,B.Lepilemur microdon,=,,,,canonicalName,,shared tip
 —————,93,species,236287,A.Lepilemur mitsinjoensis,236287,B.Lepilemur mitsinjoensis,=,,,,canonicalName,,shared tip
 —————,94,species,236288,A.Lepilemur seali,236288,B.Lepilemur seali,=,,,,scientificName,,shared tip
 —————,95,species,342398,A.Lepilemur sahamalazensis,342398,B.Lepilemur sahamalazensis,=,,,,canonicalName,,shared tip
 —————,96,species,342399,A.Lepilemur aeeclis,342399,B.Lepilemur aeeclis,=,,,,canonicalName,,shared tip
-—————,97,species,342401,A.Lepilemur ankaranensis,342401,B.Lepilemur ankaranensis,=,,,,,,shared tip
+—————,97,species,342401,A.Lepilemur ankaranensis,342401,B.Lepilemur ankaranensis,=,,,,synonym+canonicalName+synonym,,shared tip
 —————,98,species,378517,A.Lepilemur mittermeieri,378517,B.Lepilemur mittermeieri,=,,,,canonicalName,,shared tip
 —————,99,species,458171,A.Lepilemur manasamody,458171,B.Lepilemur manasamody,=,,,,canonicalName,,shared tip
 —————,100,species,458173,A.Lepilemur otto,458173,B.Lepilemur otto,=,,,,canonicalName,,shared tip
-—————,101,species,486960,A.Lepilemur jamesi,486960,B.Lepilemur jamesorum,=,,,,,canonicalName,shared tip
-—————,102,species,756882,A.Lepilemur hubbardorum,756882,B.Lepilemur hubbardorum,=,,,,,,shared tip
+—————,101,species,486960,A.Lepilemur jamesi,486960,B.Lepilemur jamesorum,=,,,,genbank common name+canonicalName+genbank common name,canonicalName,shared tip
+—————,102,species,756882,A.Lepilemur hubbardorum,756882,B.Lepilemur hubbardorum,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
 —————,103,species,,,886957,B.Lepilemur ahmansonorum,,,,,,,
 —————,104,species,,,886958,B.Lepilemur betsileo,,,,,,,
 —————,105,species,,,886959,B.Lepilemur fleuretae,,,,,,,
@@ -74,7 +74,7 @@ indent,taxonID,rank,A id,A name,B id,B name,relation,other id,other name,note,re
 —————,107,species,,,886961,B.Lepilemur hollandorum,,,,,,,
 —————,108,species,,,886963,B.Lepilemur milanoii,,,,,,,
 —————,109,species,886964,A.Lepilemur petteri,886964,B.Lepilemur petteri,=,,,,scientificName,,shared tip
-—————,110,species,886965,A.Lepilemur randrianasoloi,886965,B.Lepilemur randrianasoloi,=,,,,,,shared tip
+—————,110,species,886965,A.Lepilemur randrianasoloi,886965,B.Lepilemur randrianasoloi,=,,,,merged id+canonicalName+merged id,,shared tip
 —————,111,species,,,886966,B.Lepilemur scottorum,,,,,,,
 —————,112,species,,,886967,B.Lepilemur tymerlachsoni,,,,,,,
 —————,113,species,,,886968,B.Lepilemur wrightae,,,,,,,
@@ -82,38 +82,38 @@ indent,taxonID,rank,A id,A name,B id,B name,relation,other id,other name,note,re
 ————,119,genus,126593,A.Megaladapis,126593,B.Megaladapis,=,,,,canonicalName,number_of_children,
 —————,120,species,185953,A.Megaladapis edwardsi,185953,B.Megaladapis edwardsi,=,,,,canonicalName,,shared tip
 —————,121,,,,2620125,B.unclassified Megaladapis,<,126593,A.Megaladapis,increased resolution,A.Megaladapis edwardsi is not in it,,
-———,127,family,30615,A.Cheirogaleidae,30615,B.Cheirogaleidae,=,,,,,,
+———,127,family,30615,A.Cheirogaleidae,30615,B.Cheirogaleidae,=,,,,genbank common name+canonicalName+genbank common name,,
 ————,128,genus,9459,A.Cheirogaleus,9459,B.Cheirogaleus,=,,,,scientificName,number_of_children,
-—————,129,species,9460,A.Cheirogaleus medius,9460,B.Cheirogaleus medius,=,,,,,scientificName,shared tip
-—————,130,species,47177,A.Cheirogaleus major,47177,B.Cheirogaleus major,=,,,,,scientificName,shared tip
-—————,131,species,291259,A.Cheirogaleus crossleyi,291259,B.Cheirogaleus crossleyi,=,,,,,scientificName,shared tip
-—————,132,species,752538,A.Cheirogaleus sibreei,752538,B.Cheirogaleus sibreei,=,,,,,,shared tip
-—————,133,species,867375,A.Cheirogaleus minusculus,867375,B.Cheirogaleus minusculus,=,,,,,,shared tip
-—————,134,species,1569974,A.Cheirogaleus lavasoensis,1569974,B.Cheirogaleus lavasoensis,=,,,,,scientificName,shared tip
+—————,129,species,9460,A.Cheirogaleus medius,9460,B.Cheirogaleus medius,=,,,,genbank common name+canonicalName+genbank common name,scientificName,shared tip
+—————,130,species,47177,A.Cheirogaleus major,47177,B.Cheirogaleus major,=,,,,genbank common name+canonicalName+genbank common name,scientificName,shared tip
+—————,131,species,291259,A.Cheirogaleus crossleyi,291259,B.Cheirogaleus crossleyi,=,,,,genbank common name+canonicalName+genbank common name,scientificName,shared tip
+—————,132,species,752538,A.Cheirogaleus sibreei,752538,B.Cheirogaleus sibreei,=,,,,merged id+canonicalName+merged id,,shared tip
+—————,133,species,867375,A.Cheirogaleus minusculus,867375,B.Cheirogaleus minusculus,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
+—————,134,species,1569974,A.Cheirogaleus lavasoensis,1569974,B.Cheirogaleus lavasoensis,=,,,,genbank common name+canonicalName+genbank common name,scientificName,shared tip
 —————,135,species,,,2563322,B.Cheirogaleus cf. medius RW-2019,,,,,,,
 ————,136,genus,13149,A.Microcebus,13149,B.Microcebus,=,,,,scientificName,number_of_children,
-—————,137,species,30608,A.Microcebus murinus,30608,B.Microcebus murinus,=,,,,,,shared tip
+—————,137,species,30608,A.Microcebus murinus,30608,B.Microcebus murinus,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
 —————,138,species,122231,A.Microcebus ravelobensis,122231,B.Microcebus ravelobensis,=,,,,canonicalName,,shared tip
-—————,139,species,122232,A.Microcebus rufus,122232,B.Microcebus rufus,=,,,,,,shared tip
+—————,139,species,122232,A.Microcebus rufus,122232,B.Microcebus rufus,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
 —————,140,species,143283,A.Microcebus myoxinus,143283,B.Microcebus myoxinus,=,,,,canonicalName,,shared tip
 —————,141,species,143351,A.Microcebus tavaratra,143351,B.Microcebus tavaratra,=,,,,canonicalName,,shared tip
-—————,142,species,143352,A.Microcebus berthae,143352,B.Microcebus berthae,=,,,,,scientificName,shared tip
+—————,142,species,143352,A.Microcebus berthae,143352,B.Microcebus berthae,=,,,,genbank common name+canonicalName+genbank common name,scientificName,shared tip
 —————,143,species,143353,A.Microcebus sambiranensis,143353,B.Microcebus sambiranensis,=,,,,canonicalName,,shared tip
 —————,144,species,143354,A.Microcebus griseorufus,143354,B.Microcebus griseorufus,=,,,,canonicalName,,shared tip
-—————,145,species,236272,A.Microcebus simmonsi,236272,B.Microcebus simmonsi,=,,,,,,shared tip
-—————,146,species,236274,A.Microcebus mittermeieri,236274,B.Microcebus mittermeieri,=,,,,,,shared tip
-—————,147,species,236275,A.Microcebus jollyae,236275,B.Microcebus jollyae,=,,,,,,shared tip
-—————,148,species,343908,A.Microcebus lehilahytsara,343908,B.Microcebus lehilahytsara,=,,,,,,shared tip
+—————,145,species,236272,A.Microcebus simmonsi,236272,B.Microcebus simmonsi,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
+—————,146,species,236274,A.Microcebus mittermeieri,236274,B.Microcebus mittermeieri,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
+—————,147,species,236275,A.Microcebus jollyae,236275,B.Microcebus jollyae,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
+—————,148,species,343908,A.Microcebus lehilahytsara,343908,B.Microcebus lehilahytsara,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
 —————,149,species,412750,A.Microcebus bongolavensis,412750,B.Microcebus bongolavensis,=,,,,canonicalName,,shared tip
 —————,150,species,412751,A.Microcebus danfossi,412751,B.Microcebus danfossi,=,,,,canonicalName,,shared tip
 —————,151,species,412752,A.Microcebus lokobensis,412752,B.Microcebus lokobensis,=,,,,canonicalName,,shared tip
-—————,152,species,415757,A.Microcebus mamiratra,415757,B.Microcebus mamiratra,=,,,,,,shared tip
+—————,152,species,415757,A.Microcebus mamiratra,415757,B.Microcebus mamiratra,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
 —————,153,species,548481,A.Microcebus macarthurii,548481,B.Microcebus macarthurii,=,,,,canonicalName,,shared tip
-—————,154,species,864580,A.Microcebus arnholdi,864580,B.Microcebus arnholdi,=,,,,,,shared tip
-—————,155,species,864581,A.Microcebus margotmarshae,864581,B.Microcebus margotmarshae,=,,,,,,shared tip
-—————,156,species,1131379,A.Microcebus gerpi,1131379,B.Microcebus gerpi,=,,,,,,shared tip
-—————,157,species,1310123,A.Microcebus tanosi,1310123,B.Microcebus tanosi,=,,,,,,shared tip
-—————,158,species,1310124,A.Microcebus marohita,1310124,B.Microcebus marohita,=,,,,,,shared tip
+—————,154,species,864580,A.Microcebus arnholdi,864580,B.Microcebus arnholdi,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
+—————,155,species,864581,A.Microcebus margotmarshae,864581,B.Microcebus margotmarshae,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
+—————,156,species,1131379,A.Microcebus gerpi,1131379,B.Microcebus gerpi,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
+—————,157,species,1310123,A.Microcebus tanosi,1310123,B.Microcebus tanosi,=,,,,type material+canonicalName+type material,,shared tip
+—————,158,species,1310124,A.Microcebus marohita,1310124,B.Microcebus marohita,=,,,,type material+canonicalName+type material,,shared tip
 —————,159,species,,,2483760,B.Microcebus ganzhorni,,,,,,,
 —————,160,,,,2630091,B.unclassified Microcebus,<,13149,A.Microcebus,increased resolution,A.Microcebus marohita is not in it,,
 ——————,161,species,270538,A.Microcebus sp. EELHDZ M98,270538,B.Microcebus sp. EELHDZ M98,=,,,moved,canonicalName,,shared tip
@@ -132,85 +132,85 @@ indent,taxonID,rank,A id,A name,B id,B name,relation,other id,other name,note,re
 ——————,174,species,,,2508170,B.Microcebus sp. 3 GT-2019,,,,,,,
 ——————,175,species,,,2683930,B.Microcebus sp. south Manambery,,,,,,,
 ————,176,genus,83691,A.Mirza,83691,B.Mirza,=,,,,canonicalName,,
-—————,177,species,47180,A.Mirza coquereli,47180,B.Mirza coquereli,=,,,,,,shared tip
+—————,177,species,47180,A.Mirza coquereli,47180,B.Mirza coquereli,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
 —————,178,species,339999,A.Mirza zaza,339999,B.Mirza zaza,=,,,,canonicalName,,shared tip
 —————,179,,,,2628182,B.unclassified Mirza,~,415977,A.Mirza sp. 001y03,,monotypic-inversion,,
 ————,181,genus,,,122247,B.Allocebus,~,122248,A.Allocebus trichotis,,monotypic-inversion,,
 ————,183,genus,261733,A.Phaner,261733,B.Phaner,=,,,,canonicalName,,
-—————,184,species,261734,A.Phaner furcifer,261734,B.Phaner furcifer,=,,,,,,shared tip
-—————,185,species,568393,A.Phaner pallescens,568393,B.Phaner pallescens,=,,,,,scientificName,shared tip
+—————,184,species,261734,A.Phaner furcifer,261734,B.Phaner furcifer,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
+—————,185,species,568393,A.Phaner pallescens,568393,B.Phaner pallescens,=,,,,synonym+canonicalName+synonym,scientificName,shared tip
 —————,186,species,1313324,A.Phaner electromontis,1313324,B.Phaner electromontis,=,,,,canonicalName,scientificName,shared tip
 —————,187,species,1313325,A.Phaner parienti,1313325,B.Phaner parienti,=,,,,canonicalName,scientificName,shared tip
 ———,188,family,,,1513476,B.Paleopropithecidae,~,322024,A.Palaeopropithecus,,monotypic-inversion,,
 ————,189,genus,322024,A.Palaeopropithecus,322024,B.Palaeopropithecus,=,,,moved,canonicalName,number_of_children,
-—————,190,species,1513477,A.Palaeopropithecus ingens,1513477,B.Palaeopropithecus ingens,=,,,,,,shared tip
-—————,191,species,1597978,A.Palaeopropithecus maximus,1597978,B.Palaeopropithecus maximus,=,,,,,,shared tip
+—————,190,species,1513477,A.Palaeopropithecus ingens,1513477,B.Palaeopropithecus ingens,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
+—————,191,species,1597978,A.Palaeopropithecus maximus,1597978,B.Palaeopropithecus maximus,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
 —————,192,,,,2619300,B.unclassified Palaeopropithecus,<,322024,A.Palaeopropithecus,increased resolution,A.Palaeopropithecus maximus is not in it,,
 ——,196,infraorder,,,376916,B.Chiromyiformes,~,31869,A.Daubentonia madagascariensis,,monotypic-inversion,,
 ———,197,family,,,30613,B.Daubentoniidae,~,31869,A.Daubentonia madagascariensis,,monotypic-inversion,,
 ————,198,genus,,,13038,B.Daubentonia,~,31869,A.Daubentonia madagascariensis,,monotypic-inversion,,
 ——,200,infraorder,,,376917,B.Lorisiformes,><,376911,A.Strepsirrhini,reorganization,A.Lorisidae is in; its sibling A.Daubentoniidae is not,,
-———,201,family,9461,A.Lorisidae,9461,B.Lorisidae,=,,,moved,,,
+———,201,family,9461,A.Lorisidae,9461,B.Lorisidae,=,,,moved,genbank common name+canonicalName+genbank common name,,
 ————,202,genus,9467,A.Loris,9467,B.Loris,=,,,,canonicalName,,
 —————,203,species,,,9468,B.Loris tardigradus,~,261740,A.Loris tardigradus nordicus,,monotypic-inversion,,
-——————,204,subspecies,261740,A.Loris tardigradus nordicus,261740,B.Loris tardigradus nordicus,=,,,moved,,,shared tip
+——————,204,subspecies,261740,A.Loris tardigradus nordicus,261740,B.Loris tardigradus nordicus,=,,,moved,synonym+canonicalName+synonym,,shared tip
 ——————,205,subspecies,,,1738049,B.Loris tardigradus tardigradus,,,,,,,
 —————,206,species,,,300163,B.Loris lydekkerianus,~,300166,A.Loris lydekkerianus malabaricus,,monotypic-inversion,,
-——————,207,subspecies,300166,A.Loris lydekkerianus malabaricus,300166,B.Loris lydekkerianus malabaricus,=,,,moved,,,shared tip
+——————,207,subspecies,300166,A.Loris lydekkerianus malabaricus,300166,B.Loris lydekkerianus malabaricus,=,,,moved,synonym+canonicalName+synonym,,shared tip
 ——————,208,subspecies,,,1738050,B.Loris lydekkerianus lydekkerianus,,,,,,,
 ————,209,genus,9469,A.Nycticebus,9469,B.Nycticebus,=,,,,canonicalName,number_of_children,
 —————,210,species,,,9470,B.Nycticebus coucang,~,310933,A.Nycticebus coucang coucang,,monotypic-inversion,,
 ——————,211,subspecies,310933,A.Nycticebus coucang coucang,310933,B.Nycticebus coucang coucang,=,,,moved,canonicalName,,shared tip
 ——————,212,subspecies,,,2020906,B.Nycticebus coucang insularis,,,,,,,
-—————,213,species,,,101278,B.Nycticebus pygmaeus,>,101278,A.Nycticebus pygmaeus,,,,
-——————,214,species,,,101277,A.Nycticebus intermedius,<,101278,B.Nycticebus pygmaeus,increased resolution,,,
-——————,215,species,,,101278,A.Nycticebus pygmaeus,<,101278,B.Nycticebus pygmaeus,increased resolution,,,
+—————,213,species,,,101278,B.Nycticebus pygmaeus,>,101278,A.Nycticebus pygmaeus,,genbank common name+canonicalName+genbank common name,,
+——————,214,species,,,101277,A.Nycticebus intermedius,<,101278,B.Nycticebus pygmaeus,increased resolution,ncbi_id+merged id,,
+——————,215,species,,,101278,A.Nycticebus pygmaeus,<,101278,B.Nycticebus pygmaeus,increased resolution,genbank common name+canonicalName+genbank common name,,
 —————,216,species,261741,A.Nycticebus bengalensis,261741,B.Nycticebus bengalensis,=,,,,canonicalName,,shared tip
-—————,217,species,310932,A.Nycticebus menagensis,310932,B.Nycticebus menagensis,=,,,,,,shared tip
-—————,218,species,310934,A.Nycticebus javanicus,310934,B.Nycticebus javanicus,=,,,,,,shared tip
+—————,217,species,310932,A.Nycticebus menagensis,310932,B.Nycticebus menagensis,=,,,,synonym+canonicalName+synonym,,shared tip
+—————,218,species,310934,A.Nycticebus javanicus,310934,B.Nycticebus javanicus,=,,,,synonym+canonicalName+synonym,,shared tip
 —————,219,,,,2646861,B.unclassified Nycticebus,~,108082,A.Nycticebus sp.,,monotypic-inversion,,
 ————,221,genus,,,9471,B.Perodicticus,~,9472,A.Perodicticus potto,,monotypic-inversion,,
-—————,222,species,9472,A.Perodicticus potto,9472,B.Perodicticus potto,=,,,moved,,,
-——————,223,subspecies,9473,A.Perodicticus potto edwarsi,9473,B.Perodicticus potto edwarsi,=,,,,,,shared tip
+—————,222,species,9472,A.Perodicticus potto,9472,B.Perodicticus potto,=,,,moved,genbank common name+canonicalName+genbank common name,,
+——————,223,subspecies,9473,A.Perodicticus potto edwarsi,9473,B.Perodicticus potto edwarsi,=,,,,synonym+canonicalName+synonym,,shared tip
 ——————,224,subspecies,261737,A.Perodicticus potto ibeanus,261737,B.Perodicticus potto ibeanus,=,,,,canonicalName,,shared tip
 ————,225,genus,261738,A.Arctocebus,261738,B.Arctocebus,=,,,,canonicalName,,
-—————,226,species,261739,A.Arctocebus calabarensis,261739,B.Arctocebus calabarensis,=,,,,,,shared tip
-—————,227,species,300161,A.Arctocebus aureus,300161,B.Arctocebus aureus,=,,,,,,shared tip
-———,228,family,40297,A.Galagidae,40297,B.Galagidae,=,,,moved,,number_of_children,
-————,229,genus,30610,A.Otolemur,30610,B.Otolemur,=,,,,,,
-—————,230,species,9463,A.Otolemur crassicaudatus,9463,B.Otolemur crassicaudatus,=,,,,,,shared tip
+—————,226,species,261739,A.Arctocebus calabarensis,261739,B.Arctocebus calabarensis,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
+—————,227,species,300161,A.Arctocebus aureus,300161,B.Arctocebus aureus,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
+———,228,family,40297,A.Galagidae,40297,B.Galagidae,=,,,moved,synonym+canonicalName+synonym,number_of_children,
+————,229,genus,30610,A.Otolemur,30610,B.Otolemur,=,,,,genbank common name+canonicalName+genbank common name,,
+—————,230,species,9463,A.Otolemur crassicaudatus,9463,B.Otolemur crassicaudatus,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
 —————,231,species,,,30611,B.Otolemur garnettii,~,477174,A.Otolemur garnettii garnettii,,monotypic-inversion,,
-—————,233,species,337212,A.Otolemur monteiri,337212,B.Otolemur monteiri,=,,,,,,subtree=
+—————,233,species,337212,A.Otolemur monteiri,337212,B.Otolemur monteiri,=,,,,genbank common name+canonicalName+genbank common name,,subtree=
 ————,236,genus,,,89671,B.Galagoides,>,89671,A.Galagoides,,B.Galagoides thomasi is not in it,,
-—————,237,species,867376,A.Galago thomasi,867376,B.Galagoides thomasi,=,,,moved,,canonicalName,shared tip
+—————,237,species,867376,A.Galago thomasi,867376,B.Galagoides thomasi,=,,,moved,genbank common name+canonicalName+genbank common name,canonicalName,shared tip
 —————,238,species,,,1738047,B.Galagoides rondoensis,,,,,,,
 —————,239,genus,,,89671,A.Galagoides,<,89671,B.Galagoides,increased resolution,B.Galagoides thomasi is not in it,,
-——————,240,species,89672,A.Galagoides demidoff,89672,B.Galagoides demidoff,=,,,,,number_of_children,
+——————,240,species,89672,A.Galagoides demidoff,89672,B.Galagoides demidoff,=,,,,merged id+canonicalName+merged id,number_of_children,
 ———————,241,subspecies,,,1738051,B.Galagoides demidoff murinus,,,,,,,
-——————,242,species,111174,A.Galagoides zanzibaricus,111174,B.Galagoides zanzibaricus,=,,,,,number_of_children,
+——————,242,species,111174,A.Galagoides zanzibaricus,111174,B.Galagoides zanzibaricus,=,,,,synonym+canonicalName+synonym,number_of_children,
 ———————,243,subspecies,,,1738046,B.Galagoides zanzibaricus udzungwensis,,,,,,,
 ———————,244,subspecies,,,1738053,B.Galagoides zanzibaricus zanzibaricus,,,,,,,
 ——————,245,species,337210,A.Galagoides orinus,337210,B.Galagoides orinus,=,,,,canonicalName,,shared tip
-——————,246,species,1487601,A.Galagoides cocos,1487601,B.Galagoides cocos,=,,,,,,shared tip
+——————,246,species,1487601,A.Galagoides cocos,1487601,B.Galagoides cocos,=,,,,synonym+canonicalName+synonym,,shared tip
 ————,247,genus,,,261735,B.Euoticus,~,261736,A.Euoticus elegantulus,,monotypic-inversion,,
 ————,249,genus,,,2604441,B.Paragalago,,,,,,,
 —————,250,species,,,2604442,B.Paragalago cocos,,,,,,,
 —————,251,species,,,2604443,B.Paragalago zanzibaricus,,,,,,,
 —,252,suborder,376913,A.Haplorrhini,376913,B.Haplorrhini,=,,,,canonicalName,,
-——,253,infraorder,314293,A.Simiiformes,314293,B.Simiiformes,=,,,,,,
-———,254,parvorder,9479,A.Platyrrhini,9479,B.Platyrrhini,=,,,,,,
+——,253,infraorder,314293,A.Simiiformes,314293,B.Simiiformes,=,,,,synonym+canonicalName+synonym,,
+———,254,parvorder,9479,A.Platyrrhini,9479,B.Platyrrhini,=,,,,common name+canonicalName+common name,,
 ————,255,family,9498,A.Cebidae,9498,B.Cebidae,=,,,,canonicalName,,
-—————,256,subfamily,9480,A.Callitrichinae,9480,B.Callitrichinae,=,,,,,number_of_children,
+—————,256,subfamily,9480,A.Callitrichinae,9480,B.Callitrichinae,=,,,,genbank common name+canonicalName+genbank common name,number_of_children,
 ——————,257,genus,9494,A.Callimico,9494,B.Callimico,=,,,,canonicalName,,
-———————,258,species,9495,A.Callimico goeldii,9495,B.Callimico goeldii,=,,,,,,shared tip
+———————,258,species,9495,A.Callimico goeldii,9495,B.Callimico goeldii,=,,,,merged id+canonicalName+merged id,,shared tip
 ———————,259,,,,2634122,B.unclassified Callimico,~,1090914,A.Callimico sp. MAS-2011,,monotypic-inversion,,
 ————————,260,species,1090914,A.Callimico sp. MAS-2011,1090914,B.Callimico sp. MAS-2011,=,,,moved,canonicalName,,shared tip
 ————————,261,species,,,1758239,B.Callimico sp.,,,,,,,
 ——————,262,genus,30587,A.Leontopithecus,30587,B.Leontopithecus,=,,,,canonicalName,,subtree=
 —————,266,subfamily,38070,A.Cebinae,38070,B.Cebinae,=,,,,canonicalName,,
-——————,267,genus,9513,A.Cebus,9513,B.Cebus,=,,,,,number_of_children,
-———————,268,species,9514,A.Cebus albifrons,9514,B.Cebus albifrons,=,,,,,,shared tip
-———————,269,species,9516,A.Cebus capucinus,9516,B.Cebus capucinus,=,,,,,number_of_children,
+——————,267,genus,9513,A.Cebus,9513,B.Cebus,=,,,,genbank common name+canonicalName+genbank common name,number_of_children,
+———————,268,species,9514,A.Cebus albifrons,9514,B.Cebus albifrons,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
+———————,269,species,9516,A.Cebus capucinus,9516,B.Cebus capucinus,=,,,,common name+canonicalName+common name,number_of_children,
 ————————,270,subspecies,,,1737458,B.Cebus capucinus imitator,,,,,,,
 ———————,271,species,37294,A.Cebus kaapori,37294,B.Cebus kaapori,=,,,,canonicalName,,shared tip
 ———————,272,species,,,37295,B.Cebus olivaceus,~,1090893,A.Cebus olivaceus nigrivittatus,,monotypic-inversion,,
@@ -224,12 +224,12 @@ indent,taxonID,rank,A id,A name,B id,B name,relation,other id,other name,note,re
 ————————,280,species,,,1967451,B.Cebus sp. 1 EG-2017,,,,,,,
 ————————,281,species,,,1967452,B.Cebus sp. 2 EG-2017,,,,,,,
 ——————,282,genus,1532884,A.Sapajus,1532884,B.Sapajus,=,,,,scientificName,number_of_children,
-———————,283,species,9515,A.Sapajus apella,9515,B.Sapajus apella,=,,,,,,subtree=
-———————,286,species,174599,A.Sapajus xanthosternos,174599,B.Sapajus xanthosternos,=,,,,,,shared tip
-———————,287,species,649471,A.Sapajus cay,649471,B.Sapajus cay,=,,,,,,shared tip
+———————,283,species,9515,A.Sapajus apella,9515,B.Sapajus apella,=,,,,common name+canonicalName+common name,,subtree=
+———————,286,species,174599,A.Sapajus xanthosternos,174599,B.Sapajus xanthosternos,=,,,,synonym+canonicalName+synonym,,shared tip
+———————,287,species,649471,A.Sapajus cay,649471,B.Sapajus cay,=,,,,merged id+canonicalName+merged id,,shared tip
 ———————,288,species,,,867366,B.Sapajus nigritus,~,867367,A.Sapajus nigritus robustus,,monotypic-inversion,,
-———————,290,species,1112861,A.Sapajus flavius,1112861,B.Sapajus flavius,=,,,,,,shared tip
-———————,291,species,1126382,A.Sapajus libidinosus,1126382,B.Sapajus libidinosus,=,,,,,,shared tip
+———————,290,species,1112861,A.Sapajus flavius,1112861,B.Sapajus flavius,=,,,,common name+canonicalName+common name,,shared tip
+———————,291,species,1126382,A.Sapajus libidinosus,1126382,B.Sapajus libidinosus,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
 ———————,292,,,,2619504,B.unclassified Sapajus,,,,,,,
 ————————,293,species,,,1874197,B.Sapajus sp.,,,,,,,
 ————————,294,species,,,2093835,B.Sapajus sp. 9 FD-2018,,,,,,,
@@ -241,13 +241,13 @@ indent,taxonID,rank,A id,A name,B id,B name,relation,other id,other name,note,re
 —————,300,,,,38071,B.unclassified Cebidae,~,168015,A.Aotinae gen. sp.,,monotypic-inversion,,
 —————,302,subfamily,,,378850,B.Saimiriinae,~,9520,A.Saimiri,,monotypic-inversion,,
 ——————,303,genus,9520,A.Saimiri,9520,B.Saimiri,=,,,moved,canonicalName,number_of_children,
-———————,304,species,9521,A.Saimiri sciureus,9521,B.Saimiri sciureus,=,,,,,,subtree=
+———————,304,species,9521,A.Saimiri sciureus,9521,B.Saimiri sciureus,=,,,,common name+canonicalName+common name,,subtree=
 ———————,310,species,,,27679,B.Saimiri boliviensis,~,495297,A.Saimiri boliviensis peruviensis,,monotypic-inversion,,
 ————————,311,subspecies,,,39432,B.Saimiri boliviensis boliviensis,,,,,,,
-————————,312,subspecies,495297,A.Saimiri boliviensis peruviensis,495297,B.Saimiri boliviensis peruviensis,=,,,moved,,,shared tip
-———————,313,species,66265,A.Saimiri ustus,66265,B.Saimiri ustus,=,,,,,,shared tip
-———————,314,species,70928,A.Saimiri oerstedii,70928,B.Saimiri oerstedii,=,,,,,,subtree=
-———————,317,species,1561161,A.Saimiri vanzolinii,1561161,B.Saimiri vanzolinii,=,,,,,,shared tip
+————————,312,subspecies,495297,A.Saimiri boliviensis peruviensis,495297,B.Saimiri boliviensis peruviensis,=,,,moved,synonym+canonicalName+synonym,,shared tip
+———————,313,species,66265,A.Saimiri ustus,66265,B.Saimiri ustus,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
+———————,314,species,70928,A.Saimiri oerstedii,70928,B.Saimiri oerstedii,=,,,,genbank common name+canonicalName+genbank common name,,subtree=
+———————,317,species,1561161,A.Saimiri vanzolinii,1561161,B.Saimiri vanzolinii,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
 ———————,318,,,,2635411,B.unclassified Saimiri,<,9520,A.Saimiri,increased resolution,A.Saimiri vanzolinii is not in it,,
 ————————,319,species,1090919,A.Saimiri sp. MAS-2011,1090919,B.Saimiri sp. MAS-2011,=,,,moved,canonicalName,,shared tip
 ————————,320,species,1561164,A.Saimiri sp.,1561164,B.Saimiri sp.,=,,,moved,canonicalName,,shared tip
@@ -255,24 +255,24 @@ indent,taxonID,rank,A id,A name,B id,B name,relation,other id,other name,note,re
 ————————,322,species,,,1967465,B.Saimiri sp. 2 EG-2017,,,,,,,
 ————————,323,species,,,1967466,B.Saimiri sp. 3 EG-2017,,,,,,,
 ————,324,family,,,376918,B.Aotidae,~,9504,A.Aotus,,monotypic-inversion,,
-—————,325,genus,9504,A.Aotus,9504,B.Aotus,=,,,moved,,number_of_children,
-——————,326,species,9505,A.Aotus trivirgatus,9505,B.Aotus trivirgatus,=,,,,,,shared tip
-——————,327,species,30591,A.Aotus azarai,30591,B.Aotus azarai,=,,,,,,subtree=
-——————,331,species,37293,A.Aotus nancymaae,37293,B.Aotus nancymaae,=,,,,,,shared tip
-——————,332,species,43147,A.Aotus lemurinus,43147,B.Aotus lemurinus,=,,,,,,shared tip
-——————,333,species,57175,A.Aotus nigriceps,57175,B.Aotus nigriceps,=,,,,,,shared tip
-——————,334,species,57176,A.Aotus vociferans,57176,B.Aotus vociferans,=,,,,,,shared tip
-——————,335,species,292213,A.Aotus griseimembra,292213,B.Aotus griseimembra,=,,,,,,shared tip
+—————,325,genus,9504,A.Aotus,9504,B.Aotus,=,,,moved,genbank common name+canonicalName+genbank common name,number_of_children,
+——————,326,species,9505,A.Aotus trivirgatus,9505,B.Aotus trivirgatus,=,,,,common name+canonicalName+common name,,shared tip
+——————,327,species,30591,A.Aotus azarai,30591,B.Aotus azarai,=,,,,common name+canonicalName+common name,,subtree=
+——————,331,species,37293,A.Aotus nancymaae,37293,B.Aotus nancymaae,=,,,,synonym+canonicalName+synonym,,shared tip
+——————,332,species,43147,A.Aotus lemurinus,43147,B.Aotus lemurinus,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
+——————,333,species,57175,A.Aotus nigriceps,57175,B.Aotus nigriceps,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
+——————,334,species,57176,A.Aotus vociferans,57176,B.Aotus vociferans,=,,,,common name+canonicalName+common name,,shared tip
+——————,335,species,292213,A.Aotus griseimembra,292213,B.Aotus griseimembra,=,,,,synonym+canonicalName+synonym,,shared tip
 ——————,336,species,361674,A.Aotus brumbacki,361674,B.Aotus brumbacki,=,,,,canonicalName,,shared tip
-——————,337,species,1263727,A.Aotus zonalis,1263727,B.Aotus zonalis,=,,,,,,shared tip
+——————,337,species,1263727,A.Aotus zonalis,1263727,B.Aotus zonalis,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
 ——————,338,,,,2688256,B.unclassified Aotus (in: Chordata),<,9504,A.Aotus,increased resolution,A.Aotus zonalis is not in it,,
 ————,347,family,376919,A.Pitheciidae,376919,B.Pitheciidae,=,,,,canonicalName,number_of_children,
 —————,348,subfamily,38039,A.Pitheciinae,38039,B.Pitheciinae,=,,,,canonicalName,,
 ——————,349,genus,9524,A.Chiropotes,9524,B.Chiropotes,=,,,,canonicalName,number_of_children,
-———————,350,species,9525,A.Chiropotes satanas,9525,B.Chiropotes satanas,=,,,,,,shared tip
+———————,350,species,9525,A.Chiropotes satanas,9525,B.Chiropotes satanas,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
 ———————,351,species,198627,A.Chiropotes albinasus,198627,B.Chiropotes albinasus,=,,,,canonicalName,,shared tip
 ———————,352,species,202458,A.Chiropotes satanas x albinasus,202458,B.Chiropotes satanas x albinasus,=,,,,canonicalName,,shared tip
-———————,353,species,280160,A.Chiropotes utahickae,280160,B.Chiropotes utahickae,=,,,,,,shared tip
+———————,353,species,280160,A.Chiropotes utahickae,280160,B.Chiropotes utahickae,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
 ———————,354,species,280163,A.Chiropotes israelita,280163,B.Chiropotes israelita,=,,,,canonicalName,,shared tip
 ———————,355,species,626367,A.Chiropotes albinasus x satanas,626367,B.Chiropotes albinasus x satanas,=,,,,canonicalName,,shared tip
 ———————,356,species,,,658221,B.Chiropotes chiropotes,~,1560631,A.Chiropotes chiropotes sagulata,,monotypic-inversion,,
@@ -283,17 +283,17 @@ indent,taxonID,rank,A id,A name,B id,B name,relation,other id,other name,note,re
 ————————,362,species,,,2704455,B.Chiropotes sp. CTGAM5663,,,,,,,
 ————————,363,species,,,2736752,B.Chiropotes sp. CTGAM5363,,,,,,,
 ——————,364,genus,30595,A.Cacajao,30595,B.Cacajao,=,,,,canonicalName,number_of_children,
-———————,365,species,30596,A.Cacajao calvus,30596,B.Cacajao calvus,=,,,,,,subtree=
-———————,370,species,70825,A.Cacajao melanocephalus,70825,B.Cacajao melanocephalus,=,,,,,,shared tip
+———————,365,species,30596,A.Cacajao calvus,30596,B.Cacajao calvus,=,,,,genbank common name+canonicalName+genbank common name,,subtree=
+———————,370,species,70825,A.Cacajao melanocephalus,70825,B.Cacajao melanocephalus,=,,,,common name+canonicalName+common name,,shared tip
 ———————,371,species,70927,A.Cacajao rubicundus,70927,B.Cacajao rubicundus,=,,,,canonicalName,,shared tip
-———————,372,species,535896,A.Cacajao ayresi,535896,B.Cacajao ayresi,=,,,,,,shared tip
-———————,373,species,535897,A.Cacajao hosomi,535897,B.Cacajao hosomi,=,,,,,,shared tip
+———————,372,species,535896,A.Cacajao ayresi,535896,B.Cacajao ayresi,=,,,,synonym+canonicalName+includes,,shared tip
+———————,373,species,535897,A.Cacajao hosomi,535897,B.Cacajao hosomi,=,,,,synonym+canonicalName+synonym,,shared tip
 ———————,374,,,,2704456,B.unclassified Cacajao,,,,,,,
 ————————,375,species,,,2704457,B.Cacajao sp. CTGAM5666,,,,,,,
-——————,376,genus,30597,A.Pithecia,30597,B.Pithecia,=,,,,,number_of_children,
-———————,377,species,30598,A.Pithecia irrorata,30598,B.Pithecia irrorata,=,,,,,,shared tip
+——————,376,genus,30597,A.Pithecia,30597,B.Pithecia,=,,,,genbank common name+canonicalName+genbank common name,number_of_children,
+———————,377,species,30598,A.Pithecia irrorata,30598,B.Pithecia irrorata,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
 ———————,378,species,,,43777,B.Pithecia pithecia,~,285955,A.Pithecia pithecia pithecia,,monotypic-inversion,,
-———————,380,species,595220,A.Pithecia monachus,595220,B.Pithecia monachus,=,,,,,,shared tip
+———————,380,species,595220,A.Pithecia monachus,595220,B.Pithecia monachus,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
 ———————,381,,,,2646430,B.unclassified Pithecia,,,,,,,
 ————————,382,species,,,1758237,B.Pithecia sp.,,,,,,,
 ————————,383,species,,,2704458,B.Pithecia sp. UFPA Pit22,,,,,,,
@@ -302,34 +302,34 @@ indent,taxonID,rank,A id,A name,B id,B name,relation,other id,other name,note,re
 ———————,386,species,,,2490931,B.Xenothrix mcgregori,,,,,,,
 ————,387,family,378855,A.Atelidae,378855,B.Atelidae,=,,,,canonicalName,,
 —————,388,subfamily,,,38066,B.Alouattinae,~,9499,A.Alouatta,,monotypic-inversion,,
-——————,389,genus,9499,A.Alouatta,9499,B.Alouatta,=,,,moved,,number_of_children,
-———————,390,species,9502,A.Alouatta caraya,9502,B.Alouatta caraya,=,,,,,,shared tip
+——————,389,genus,9499,A.Alouatta,9499,B.Alouatta,=,,,moved,genbank common name+canonicalName+genbank common name,number_of_children,
+———————,390,species,9502,A.Alouatta caraya,9502,B.Alouatta caraya,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
 ———————,391,species,,,9503,B.Alouatta seniculus,~,182254,A.Alouatta seniculus seniculus,,monotypic-inversion,,
-———————,393,species,30589,A.Alouatta palliata,30589,B.Alouatta palliata,=,,,,,,subtree=
+———————,393,species,30589,A.Alouatta palliata,30589,B.Alouatta palliata,=,,,,genbank common name+canonicalName+genbank common name,,subtree=
 ———————,399,species,,,30590,B.Alouatta belzebul,~,182257,A.Alouatta belzebul belzebul,,monotypic-inversion,,
-———————,401,species,121123,A.Alouatta sara,121123,B.Alouatta sara,=,,,,,,shared tip
+———————,401,species,121123,A.Alouatta sara,121123,B.Alouatta sara,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
 ———————,402,species,163110,A.Alouatta stramineus,163110,B.Alouatta stramineus,=,,,,canonicalName,,shared tip
 ———————,403,species,182253,A.Alouatta pigra,182253,B.Alouatta pigra,=,,,,canonicalName,,shared tip
 ———————,404,species,,,182256,B.Alouatta guariba,~,183328,A.Alouatta guariba clamitans,,monotypic-inversion,,
 ———————,406,species,,,2487933,B.Alouatta palliata x Alouatta pigra,,,,,,,
 —————,407,subfamily,38068,A.Atelinae,38068,B.Atelinae,=,,,,canonicalName,,
 ——————,408,genus,9506,A.Ateles,9506,B.Ateles,=,,,,scientificName,number_of_children,
-———————,409,species,9507,A.Ateles belzebuth,9507,B.Ateles belzebuth,=,,,,,,subtree=
-———————,412,species,9508,A.Ateles fusciceps,9508,B.Ateles fusciceps,=,,,,,,subtree=
-———————,415,species,9509,A.Ateles geoffroyi,9509,B.Ateles geoffroyi,=,,,,,,subtree=
-———————,422,species,9510,A.Ateles paniscus,9510,B.Ateles paniscus,=,,,,,,shared tip
-———————,423,species,36234,A.Ateles paniscus x Ateles fusciceps,36234,B.Ateles paniscus x Ateles fusciceps,=,,,,,,shared tip
+———————,409,species,9507,A.Ateles belzebuth,9507,B.Ateles belzebuth,=,,,,common name+canonicalName+common name,,subtree=
+———————,412,species,9508,A.Ateles fusciceps,9508,B.Ateles fusciceps,=,,,,genbank common name+canonicalName+genbank common name,,subtree=
+———————,415,species,9509,A.Ateles geoffroyi,9509,B.Ateles geoffroyi,=,,,,common name+canonicalName+common name,,subtree=
+———————,422,species,9510,A.Ateles paniscus,9510,B.Ateles paniscus,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
+———————,423,species,36234,A.Ateles paniscus x Ateles fusciceps,36234,B.Ateles paniscus x Ateles fusciceps,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
 ———————,424,,,,120432,B.unclassified Ateles,>,120432,A.unclassified Ateles,,B.Ateles sp. is not in it,,
-————————,425,species,9511,A.Ateles sp.,9511,B.Ateles sp.,=,,,moved,,,shared tip
+————————,425,species,9511,A.Ateles sp.,9511,B.Ateles sp.,=,,,moved,genbank common name+canonicalName+genbank common name,,shared tip
 ————————,426,species,,,1967450,B.Ateles sp. EG-2017,,,,,,,
 ————————,427,,,,120432,A.unclassified Ateles,<,120432,B.unclassified Ateles,increased resolution,B.Ateles sp. is not in it,,
 ———————,440,species,,,129801,B.Ateles hybridus,~,1230481,A.Ateles hybridus hybridus,,monotypic-inversion,,
-———————,442,species,1529884,A.Ateles marginatus,1529884,B.Ateles marginatus,=,,,,,scientificName,shared tip
-——————,443,genus,9518,A.Lagothrix,9518,B.Lagothrix,=,,,,,number_of_children,
-———————,444,species,9519,A.Lagothrix lagotricha,9519,B.Lagothrix lagotricha,=,,,,,,shared tip
-———————,445,species,767355,A.Lagothrix lugens,767355,B.Lagothrix lugens,=,,,,,,shared tip
-———————,446,species,767356,A.Lagothrix poeppigii,767356,B.Lagothrix poeppigii,=,,,,,,shared tip
-———————,447,species,767357,A.Lagothrix cana,767357,B.Lagothrix cana,=,,,,,,shared tip
+———————,442,species,1529884,A.Ateles marginatus,1529884,B.Ateles marginatus,=,,,,genbank common name+canonicalName+genbank common name,scientificName,shared tip
+——————,443,genus,9518,A.Lagothrix,9518,B.Lagothrix,=,,,,genbank common name+canonicalName+genbank common name,number_of_children,
+———————,444,species,9519,A.Lagothrix lagotricha,9519,B.Lagothrix lagotricha,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
+———————,445,species,767355,A.Lagothrix lugens,767355,B.Lagothrix lugens,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
+———————,446,species,767356,A.Lagothrix poeppigii,767356,B.Lagothrix poeppigii,=,,,,synonym+canonicalName+synonym,,shared tip
+———————,447,species,767357,A.Lagothrix cana,767357,B.Lagothrix cana,=,,,,synonym+canonicalName+synonym,,shared tip
 ———————,448,species,,,2565305,B.Lagothrix flavicauda,,,,,,,
 ———————,449,species,,,2565306,B.Lagothrix tschudii,,,,,,,
 ———————,450,,,,2645779,B.unclassified Lagothrix,~,638937,A.Lagothrix sp. CCS-2009a,,monotypic-inversion,,
@@ -342,14 +342,14 @@ indent,taxonID,rank,A id,A name,B id,B name,relation,other id,other name,note,re
 ——————,459,subfamily,9528,A.Cercopithecinae,9528,B.Cercopithecinae,=,,,,canonicalName,number_of_children,
 ———————,460,genus,9529,A.Cercocebus,9529,B.Cercocebus,=,,,,scientificName,,
 ————————,461,species,,,9530,B.Cercocebus torquatus,~,81944,A.Cercocebus torquatus torquatus,,monotypic-inversion,,
-————————,463,species,9531,A.Cercocebus atys,9531,B.Cercocebus atys,=,,,,,,subtree=
-————————,466,species,9532,A.Cercocebus galeritus,9532,B.Cercocebus galeritus,=,,,,,,shared tip
-————————,467,species,75569,A.Cercocebus chrysogaster,75569,B.Cercocebus chrysogaster,=,,,,,,shared tip
-————————,468,species,255237,A.Cercocebus agilis,255237,B.Cercocebus agilis,=,,,,,,shared tip
+————————,463,species,9531,A.Cercocebus atys,9531,B.Cercocebus atys,=,,,,synonym+canonicalName+synonym,,subtree=
+————————,466,species,9532,A.Cercocebus galeritus,9532,B.Cercocebus galeritus,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
+————————,467,species,75569,A.Cercocebus chrysogaster,75569,B.Cercocebus chrysogaster,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
+————————,468,species,255237,A.Cercocebus agilis,255237,B.Cercocebus agilis,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
 ———————,469,genus,,,9537,B.Erythrocebus,~,9538,A.Erythrocebus patas,,monotypic-inversion,,
-———————,471,genus,9539,A.Macaca,9539,B.Macaca,=,,,,,number_of_children,
-————————,472,species,9540,A.Macaca arctoides,9540,B.Macaca arctoides,=,,,,,,shared tip
-————————,473,species,9541,A.Macaca fascicularis,9541,B.Macaca fascicularis,=,,,,,number_of_children,
+———————,471,genus,9539,A.Macaca,9539,B.Macaca,=,,,,common name+canonicalName+common name,number_of_children,
+————————,472,species,9540,A.Macaca arctoides,9540,B.Macaca arctoides,=,,,,common name+canonicalName+common name,,shared tip
+————————,473,species,9541,A.Macaca fascicularis,9541,B.Macaca fascicularis,=,,,,common name+canonicalName+common name,number_of_children,
 —————————,474,subspecies,90386,A.Macaca fascicularis philippinensis,90386,B.Macaca fascicularis philippinensis,=,,,,canonicalName,,shared tip
 —————————,475,subspecies,1215360,A.Macaca fascicularis fascicularis,1215360,B.Macaca fascicularis fascicularis,=,,,,canonicalName,,shared tip
 —————————,476,subspecies,,,1747270,B.Macaca fascicularis aureus,,,,,,,
@@ -357,79 +357,79 @@ indent,taxonID,rank,A id,A name,B id,B name,relation,other id,other name,note,re
 —————————,478,subspecies,,,9543,B.Macaca fuscata fuscata,,,,,,,
 —————————,479,subspecies,179089,A.Macaca fuscata yakui,179089,B.Macaca fuscata yakui,=,,,moved,canonicalName,,shared tip
 ————————,480,species,,,9544,B.Macaca mulatta,~,1449913,A.Macaca mulatta lasiotus,,monotypic-inversion,,
-—————————,481,subspecies,1449913,A.Macaca mulatta lasiotus,1449913,B.Macaca mulatta lasiotus,=,,,moved,,,shared tip
+—————————,481,subspecies,1449913,A.Macaca mulatta lasiotus,1449913,B.Macaca mulatta lasiotus,=,,,moved,synonym+canonicalName+synonym,,shared tip
 —————————,482,subspecies,,,1654737,B.Macaca mulatta brevicaudus,,,,,,,
 —————————,483,subspecies,,,2008792,B.Macaca mulatta vestita,,,,,,,
 ————————,484,species,,,9545,B.Macaca nemestrina,~,90388,A.Macaca nemestrina nemestrina,,monotypic-inversion,,
-————————,486,species,9546,A.Macaca sylvanus,9546,B.Macaca sylvanus,=,,,,,,shared tip
+————————,486,species,9546,A.Macaca sylvanus,9546,B.Macaca sylvanus,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
 ————————,487,species,,,9548,B.Macaca radiata,~,439030,A.Macaca radiata radiata,,monotypic-inversion,,
 ————————,489,species,,,9551,B.Macaca assamensis,~,1411634,A.Macaca assamensis assamensis,,monotypic-inversion,,
-————————,491,species,9552,A.Macaca sinica,9552,B.Macaca sinica,=,,,,,,shared tip
-————————,492,species,9553,A.Macaca speciosa,9553,B.Macaca speciosa,=,,,,,,shared tip
-————————,493,species,40843,A.Macaca tonkeana,40843,B.Macaca tonkeana,=,,,,,,shared tip
-————————,494,species,54600,A.Macaca nigra,54600,B.Macaca nigra,=,,,,,,shared tip
-————————,495,species,54601,A.Macaca silenus,54601,B.Macaca silenus,=,,,,,,shared tip
+————————,491,species,9552,A.Macaca sinica,9552,B.Macaca sinica,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
+————————,492,species,9553,A.Macaca speciosa,9553,B.Macaca speciosa,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
+————————,493,species,40843,A.Macaca tonkeana,40843,B.Macaca tonkeana,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
+————————,494,species,54600,A.Macaca nigra,54600,B.Macaca nigra,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
+————————,495,species,54601,A.Macaca silenus,54601,B.Macaca silenus,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
 ————————,496,species,,,54602,B.Macaca thibetana,~,257877,A.Macaca thibetana thibetana,,monotypic-inversion,,
-————————,498,species,78449,A.Macaca cyclopis,78449,B.Macaca cyclopis,=,,,,,,shared tip
+————————,498,species,78449,A.Macaca cyclopis,78449,B.Macaca cyclopis,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
 ————————,499,species,90381,A.Macaca brunnescens,90381,B.Macaca brunnescens,=,,,,canonicalName,,shared tip
-————————,500,species,90382,A.Macaca hecki,90382,B.Macaca hecki,=,,,,,,shared tip
-————————,501,species,90383,A.Macaca maura,90383,B.Macaca maura,=,,,,,,shared tip
+————————,500,species,90382,A.Macaca hecki,90382,B.Macaca hecki,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
+————————,501,species,90383,A.Macaca maura,90383,B.Macaca maura,=,,,,synonym+canonicalName+synonym,,shared tip
 ————————,502,species,90384,A.Macaca nigrescens,90384,B.Macaca nigrescens,=,,,,canonicalName,,shared tip
-————————,503,species,90385,A.Macaca ochreata,90385,B.Macaca ochreata,=,,,,,,shared tip
+————————,503,species,90385,A.Macaca ochreata,90385,B.Macaca ochreata,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
 ————————,504,species,168259,A.Macaca maura x tonkeana,168259,B.Macaca maura x tonkeana,=,,,,canonicalName,,shared tip
 ————————,505,species,171293,A.Macaca hecki x tonkeana,171293,B.Macaca hecki x tonkeana,=,,,,canonicalName,,shared tip
-————————,506,species,230653,A.Macaca pagensis,230653,B.Macaca pagensis,=,,,,,,shared tip
+————————,506,species,230653,A.Macaca pagensis,230653,B.Macaca pagensis,=,,,,merged id+canonicalName+merged id,,shared tip
 ————————,507,species,281404,A.Macaca balantak,281404,B.Macaca balantak,=,,,,canonicalName,,shared tip
 ————————,508,species,281405,A.Macaca balantak x tonkeana,281405,B.Macaca balantak x tonkeana,=,,,,canonicalName,,shared tip
-————————,509,species,402888,A.Macaca munzala,402888,B.Macaca munzala,=,,,,,,shared tip
+————————,509,species,402888,A.Macaca munzala,402888,B.Macaca munzala,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
 ————————,510,species,,,1885588,B.Macaca leucogenys,,,,,,,
 ————————,511,,,,2623225,B.unclassified Macaca,~,9549,A.Macaca sp.,,monotypic-inversion,,
-———————,513,genus,9554,A.Papio,9554,B.Papio,=,,,,,number_of_children,
+———————,513,genus,9554,A.Papio,9554,B.Papio,=,,,,genbank common name+canonicalName+genbank common name,number_of_children,
 ————————,514,species,,,9555,B.Papio anubis,~,211508,A.Papio anubis anubis,,monotypic-inversion,,
 ————————,516,species,9556,A.Papio cynocephalus,9556,B.Papio cynocephalus,=,,,,presumed mutual,,subtree=
 ————————,519,species,,,9557,B.Papio hamadryas,~,9562,A.Papio hamadryas hamadryas,,monotypic-inversion,,
 ————————,521,species,,,36229,B.Papio ursinus,~,208089,A.Papio ursinus ursinus,,monotypic-inversion,,
 —————————,522,subspecies,208089,A.Papio ursinus ursinus,208089,B.Papio ursinus ursinus,=,,,moved,canonicalName,,shared tip
 —————————,523,subspecies,,,208090,B.Papio ursinus griseipes,,,,,,,
-————————,524,species,100937,A.Papio papio,100937,B.Papio papio,=,,,,,,shared tip
-————————,525,species,208091,A.Papio kindae,208091,B.Papio kindae,=,,,,,,shared tip
+————————,524,species,100937,A.Papio papio,100937,B.Papio papio,=,,,,common name+canonicalName+common name,,shared tip
+————————,525,species,208091,A.Papio kindae,208091,B.Papio kindae,=,,,,authority+canonicalName+authority,,shared tip
 ————————,526,species,208510,A.Papio cynocephalus x Papio anubis,208510,B.Papio cynocephalus x Papio anubis,=,,,,canonicalName,,shared tip
-————————,527,species,1560552,A.Papio anubis x hamadryas,1560552,B.Papio anubis x hamadryas,=,,,,,,shared tip
+————————,527,species,1560552,A.Papio anubis x hamadryas,1560552,B.Papio anubis x hamadryas,=,,,,synonym+canonicalName+synonym,,shared tip
 ————————,528,species,,,1945556,B.Papio anubis x Papio cynocephalus,,,,,,,
 ————————,529,species,,,1945557,B.Papio anubis x Papio ursinus,,,,,,,
 ————————,530,species,,,1945558,B.Papio kindae x Papio cynocephalus,,,,,,,
 ————————,531,species,,,1945559,B.Papio kindae x Papio ursinus griseipes,,,,,,,
 ————————,532,,,,2632072,B.unclassified Papio,<,9554,A.Papio,increased resolution,A.Papio anubis x hamadryas is not in it,,
 ———————,536,genus,,,9564,B.Theropithecus,~,9565,A.Theropithecus gelada,,monotypic-inversion,,
-———————,538,genus,9567,A.Mandrillus,9567,B.Mandrillus,=,,,,,,subtree=
+———————,538,genus,9567,A.Mandrillus,9567,B.Mandrillus,=,,,,genbank common name+canonicalName+genbank common name,,subtree=
 ———————,541,genus,36230,A.Miopithecus,36230,B.Miopithecus,=,,,,canonicalName,,
 ————————,542,species,,,36231,B.Miopithecus talapoin,~,560240,A.Miopithecus talapoin talapoin,,monotypic-inversion,,
-————————,544,species,100488,A.Miopithecus ogouensis,100488,B.Miopithecus ogouensis,=,,,,,,shared tip
+————————,544,species,100488,A.Miopithecus ogouensis,100488,B.Miopithecus ogouensis,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
 ———————,545,genus,,,54134,B.Allenopithecus,~,54135,A.Allenopithecus nigroviridis,,monotypic-inversion,,
 ———————,547,genus,75565,A.Lophocebus,75565,B.Lophocebus,=,,,,canonicalName,,
-————————,548,species,75566,A.Lophocebus aterrimus,75566,B.Lophocebus aterrimus,=,,,,,,shared tip
+————————,548,species,75566,A.Lophocebus aterrimus,75566,B.Lophocebus aterrimus,=,,,,merged id+canonicalName+merged id,,shared tip
 ————————,549,species,,,75567,B.Lophocebus albigena,~,75568,A.Lophocebus albigena albigena,,monotypic-inversion,,
 ———————,551,genus,,,371038,B.Rungwecebus,~,371039,A.Rungwecebus kipunji,,monotypic-inversion,,
 ———————,553,genus,392815,A.Chlorocebus,392815,B.Chlorocebus,=,,,,canonicalName,,
-————————,554,species,9534,A.Chlorocebus aethiops,9534,B.Chlorocebus aethiops,=,,,,,,subtree=
-————————,557,species,60710,A.Chlorocebus pygerythrus,60710,B.Chlorocebus pygerythrus,=,,,,,number_of_children,
+————————,554,species,9534,A.Chlorocebus aethiops,9534,B.Chlorocebus aethiops,=,,,,genbank common name+canonicalName+genbank common name,,subtree=
+————————,557,species,60710,A.Chlorocebus pygerythrus,60710,B.Chlorocebus pygerythrus,=,,,,common name+canonicalName+common name,number_of_children,
 —————————,558,subspecies,460674,A.Chlorocebus pygerythrus pygerythrus,460674,B.Chlorocebus pygerythrus pygerythrus,=,,,,canonicalName,,shared tip
 —————————,559,subspecies,508712,A.Chlorocebus pygerythrus hilgerti,508712,B.Chlorocebus pygerythrus hilgerti,=,,,,canonicalName,,shared tip
 —————————,560,subspecies,,,2269071,B.Chlorocebus pygerythrus x Chlorocebus aethiops,,,,,,,
-————————,561,species,60711,A.Chlorocebus sabaeus,60711,B.Chlorocebus sabaeus,=,,,,,,shared tip
+————————,561,species,60711,A.Chlorocebus sabaeus,60711,B.Chlorocebus sabaeus,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
 ————————,562,species,,,60712,B.Chlorocebus tantalus,~,508710,A.Chlorocebus tantalus budgetti,,monotypic-inversion,,
-————————,564,species,460675,A.Chlorocebus cynosuros,460675,B.Chlorocebus cynosuros,=,,,,,,shared tip
-————————,565,species,1284215,A.Chlorocebus djamdjamensis,1284215,B.Chlorocebus djamdjamensis,=,,,,,,shared tip
-————————,566,species,1476079,A.Chlorocebus aethiops x djamdjamensis,1476079,B.Chlorocebus aethiops x djamdjamensis,=,,,,,,shared tip
+————————,564,species,460675,A.Chlorocebus cynosuros,460675,B.Chlorocebus cynosuros,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
+————————,565,species,1284215,A.Chlorocebus djamdjamensis,1284215,B.Chlorocebus djamdjamensis,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
+————————,566,species,1476079,A.Chlorocebus aethiops x djamdjamensis,1476079,B.Chlorocebus aethiops x djamdjamensis,=,,,,synonym+canonicalName+synonym,,shared tip
 ————————,567,species,,,1903316,B.Chlorocebus aethiops x Chlorocebus pygerythrus,,,,,,,
 ————————,568,,,,2685534,B.unclassified Chlorocebus,<,392815,A.Chlorocebus,increased resolution,A.Chlorocebus aethiops x djamdjamensis is not in it,,
 —————————,569,species,1090918,A.Chlorocebus sp. MAS-2011,1090918,B.Chlorocebus sp. MAS-2011,=,,,moved,canonicalName,,shared tip
 —————————,570,species,1284216,A.Chlorocebus sp. TH-2013,1284216,B.Chlorocebus sp. TH-2013,=,,,moved,canonicalName,,shared tip
 —————————,571,species,,,2282232,B.Chlorocebus sp. LDS-2018,,,,,,,
 ——————,572,subfamily,9569,A.Colobinae,9569,B.Colobinae,=,,,,canonicalName,,
-———————,573,genus,9570,A.Colobus,9570,B.Colobus,=,,,,,number_of_children,
-————————,574,species,9572,A.Colobus polykomos,9572,B.Colobus polykomos,=,,,,,,shared tip
-————————,575,species,33548,A.Colobus guereza,33548,B.Colobus guereza,=,,,,,scientificName,subtree=
+———————,573,genus,9570,A.Colobus,9570,B.Colobus,=,,,,genbank common name+canonicalName+genbank common name,number_of_children,
+————————,574,species,9572,A.Colobus polykomos,9572,B.Colobus polykomos,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
+————————,575,species,33548,A.Colobus guereza,33548,B.Colobus guereza,=,,,,genbank common name+canonicalName+genbank common name,scientificName,subtree=
 ————————,580,species,,,54131,B.Colobus angolensis,~,336983,A.Colobus angolensis palliatus,,monotypic-inversion,,
 ————————,582,species,378195,A.Colobus vellerosus,378195,B.Colobus vellerosus,=,,,,canonicalName,,shared tip
 ————————,583,species,378196,A.Colobus vellerosus x angolensis,378196,B.Colobus vellerosus x angolensis,=,,,,canonicalName,,shared tip
@@ -437,89 +437,89 @@ indent,taxonID,rank,A id,A name,B id,B name,relation,other id,other name,note,re
 ————————,586,,,,2618863,B.unclassified Colobus,<,9570,A.Colobus,increased resolution,A.Colobus satanas is not in it,,
 ———————,590,genus,9573,A.Presbytis,9573,B.Presbytis,=,,,,canonicalName,,
 ————————,591,species,66055,A.Presbytis senex,66055,B.Presbytis senex,=,,,,canonicalName,,shared tip
-————————,592,species,78451,A.Presbytis melalophos,78451,B.Presbytis melalophos,=,,,,,,
+————————,592,species,78451,A.Presbytis melalophos,78451,B.Presbytis melalophos,=,,,,genbank common name+canonicalName+genbank common name,,
 —————————,593,subspecies,272115,A.Presbytis melalophos mitrata,272115,B.Presbytis melalophos mitrata,=,,,,canonicalName,,shared tip
 —————————,594,subspecies,1046095,A.Presbytis melalophos bicolor,1046095,B.Presbytis melalophos bicolor,=,,,,scientificName,,shared tip
 —————————,595,subspecies,1046096,A.Presbytis melalophos melalophos,1046096,B.Presbytis melalophos melalophos,=,,,,canonicalName,,shared tip
-—————————,596,subspecies,1046097,A.Presbytis melalophos sumatranus,1046097,B.Presbytis melalophos sumatranus,=,,,,,,shared tip
-————————,597,species,78452,A.Presbytis comata,78452,B.Presbytis comata,=,,,,,,subtree=
-————————,600,species,78453,A.Presbytis femoralis,78453,B.Presbytis femoralis,=,,,,,number_of_children,
+—————————,596,subspecies,1046097,A.Presbytis melalophos sumatranus,1046097,B.Presbytis melalophos sumatranus,=,,,,synonym+canonicalName+synonym,,shared tip
+————————,597,species,78452,A.Presbytis comata,78452,B.Presbytis comata,=,,,,genbank common name+canonicalName+genbank common name,,subtree=
+————————,600,species,78453,A.Presbytis femoralis,78453,B.Presbytis femoralis,=,,,,genbank common name+canonicalName+genbank common name,number_of_children,
 —————————,601,subspecies,,,1840579,B.Presbytis femoralis femoralis,,,,,,,
-————————,602,species,1046090,A.Presbytis chrysomelas,1046090,B.Presbytis chrysomelas,=,,,,,,shared tip
-————————,603,species,1046092,A.Presbytis frontata,1046092,B.Presbytis frontata,=,,,,,,shared tip
+————————,602,species,1046090,A.Presbytis chrysomelas,1046090,B.Presbytis chrysomelas,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
+————————,603,species,1046092,A.Presbytis frontata,1046092,B.Presbytis frontata,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
 ————————,604,species,,,1046093,B.Presbytis hosei,~,1046094,A.Presbytis hosei hosei,,monotypic-inversion,,
-————————,606,species,1046098,A.Presbytis potenziani,1046098,B.Presbytis potenziani,=,,,,,,subtree=
+————————,606,species,1046098,A.Presbytis potenziani,1046098,B.Presbytis potenziani,=,,,,genbank common name+canonicalName+genbank common name,,subtree=
 ————————,609,species,,,1046101,B.Presbytis rubicunda,~,1046102,A.Presbytis rubicunda rubicunda,,monotypic-inversion,,
-————————,611,species,1046103,A.Presbytis thomasi,1046103,B.Presbytis thomasi,=,,,,,,shared tip
+————————,611,species,1046103,A.Presbytis thomasi,1046103,B.Presbytis thomasi,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
 ———————,612,genus,,,43779,B.Nasalis,~,43780,A.Nasalis larvatus,,monotypic-inversion,,
 ———————,614,genus,54132,A.Pygathrix,54132,B.Pygathrix,=,,,,canonicalName,,
 ————————,615,species,,,54133,B.Pygathrix nemaeus,~,303485,A.Pygathrix nemaeus nemaeus,,monotypic-inversion,,
-————————,617,species,310352,A.Pygathrix nigripes,310352,B.Pygathrix nigripes,=,,,,,,shared tip
-————————,618,species,693712,A.Pygathrix cinerea,693712,B.Pygathrix cinerea,=,,,,,,shared tip
+————————,617,species,310352,A.Pygathrix nigripes,310352,B.Pygathrix nigripes,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
+————————,618,species,693712,A.Pygathrix cinerea,693712,B.Pygathrix cinerea,=,,,,merged id+canonicalName+merged id,,shared tip
 ————————,619,species,1194332,A.Pygathrix cinerea 1 RL-2012,1194332,B.Pygathrix cinerea 1 RL-2012,=,,,,canonicalName,,shared tip
 ————————,620,species,1194333,A.Pygathrix cinerea 2 RL-2012,1194333,B.Pygathrix cinerea 2 RL-2012,=,,,,canonicalName,,shared tip
-———————,621,genus,54136,A.Trachypithecus,54136,B.Trachypithecus,=,,,,,number_of_children,
+———————,621,genus,54136,A.Trachypithecus,54136,B.Trachypithecus,=,,,,common name+canonicalName+common name,number_of_children,
 ————————,622,species,,,54137,B.Trachypithecus vetulus,~,614071,A.Trachypithecus vetulus vetulus,,monotypic-inversion,,
 ————————,624,species,,,54180,B.Trachypithecus francoisi,~,272119,A.Trachypithecus francoisi francoisi,,monotypic-inversion,,
-————————,626,species,54181,A.Trachypithecus obscurus,54181,B.Trachypithecus obscurus,=,,,,,,shared tip
-————————,627,species,61618,A.Trachypithecus phayrei,61618,B.Trachypithecus phayrei,=,,,,,,subtree=
-————————,632,species,66063,A.Trachypithecus johnii,66063,B.Trachypithecus johnii,=,,,,,,shared tip
-————————,633,species,122765,A.Trachypithecus cristatus,122765,B.Trachypithecus cristatus,=,,,,,,shared tip
+————————,626,species,54181,A.Trachypithecus obscurus,54181,B.Trachypithecus obscurus,=,,,,common name+canonicalName+common name,,shared tip
+————————,627,species,61618,A.Trachypithecus phayrei,61618,B.Trachypithecus phayrei,=,,,,merged id+canonicalName+merged id,,subtree=
+————————,632,species,66063,A.Trachypithecus johnii,66063,B.Trachypithecus johnii,=,,,,merged id+canonicalName+merged id,,shared tip
+————————,633,species,122765,A.Trachypithecus cristatus,122765,B.Trachypithecus cristatus,=,,,,common name+canonicalName+common name,,shared tip
 ————————,634,species,164650,A.Trachypithecus geei,164650,B.Trachypithecus geei,=,,,,canonicalName,,shared tip
 ————————,635,species,164651,A.Trachypithecus pileatus,164651,B.Trachypithecus pileatus,=,,,,canonicalName,,shared tip
-————————,636,species,222416,A.Trachypithecus auratus,222416,B.Trachypithecus auratus,=,,,,,,subtree=
-————————,640,species,271260,A.Trachypithecus germaini,271260,B.Trachypithecus germaini,=,,,,,,shared tip
+————————,636,species,222416,A.Trachypithecus auratus,222416,B.Trachypithecus auratus,=,,,,genbank common name+canonicalName+genbank common name,,subtree=
+————————,640,species,271260,A.Trachypithecus germaini,271260,B.Trachypithecus germaini,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
 ————————,641,species,271261,A.Trachypithecus barbei,271261,B.Trachypithecus barbei,=,,,,canonicalName,,shared tip
-————————,642,species,465717,A.Trachypithecus delacouri,465717,B.Trachypithecus delacouri,=,,,,,,shared tip
-————————,643,species,465718,A.Trachypithecus laotum,465718,B.Trachypithecus laotum,=,,,,,,shared tip
-————————,644,species,465719,A.Trachypithecus poliocephalus,465719,B.Trachypithecus poliocephalus,=,,,,,,subtree=
+————————,642,species,465717,A.Trachypithecus delacouri,465717,B.Trachypithecus delacouri,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
+————————,643,species,465718,A.Trachypithecus laotum,465718,B.Trachypithecus laotum,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
+————————,644,species,465719,A.Trachypithecus poliocephalus,465719,B.Trachypithecus poliocephalus,=,,,,merged id+canonicalName+merged id,,subtree=
 ————————,647,species,744437,A.Trachypithecus francoisi x poliocephalus,744437,B.Trachypithecus francoisi x poliocephalus,=,,,,canonicalName,,shared tip
-————————,648,species,867383,A.Trachypithecus hatinhensis,867383,B.Trachypithecus hatinhensis,=,,,,,,shared tip
-————————,649,species,1042121,A.Trachypithecus shortridgei,1042121,B.Trachypithecus shortridgei,=,,,,,,shared tip
+————————,648,species,867383,A.Trachypithecus hatinhensis,867383,B.Trachypithecus hatinhensis,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
+————————,649,species,1042121,A.Trachypithecus shortridgei,1042121,B.Trachypithecus shortridgei,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
 ————————,650,species,,,1966384,B.Trachypithecus mauritius,,,,,,,
 ————————,651,,,,2623509,B.unclassified Trachypithecus,~,580599,A.Trachypithecus sp.,,monotypic-inversion,,
 ———————,653,genus,88028,A.Semnopithecus,88028,B.Semnopithecus,=,,,,canonicalName,number_of_children,
 ————————,654,species,,,88029,B.Semnopithecus entellus,~,867381,A.Semnopithecus entellus entellus,,monotypic-inversion,,
-————————,656,species,867382,A.Semnopithecus hector,867382,B.Semnopithecus hector,=,,,,,,shared tip
-————————,657,species,1208734,A.Semnopithecus hypoleucos,1208734,B.Semnopithecus hypoleucos,=,,,,,,shared tip
+————————,656,species,867382,A.Semnopithecus hector,867382,B.Semnopithecus hector,=,,,,merged id+canonicalName+merged id,,shared tip
+————————,657,species,1208734,A.Semnopithecus hypoleucos,1208734,B.Semnopithecus hypoleucos,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
 ————————,658,,,,2632571,B.unclassified Semnopithecus,,,,,,,
 —————————,659,species,,,1778600,B.Semnopithecus sp.,,,,,,,
 ———————,660,genus,,,164647,B.Procolobus,~,373033,A.Procolobus verus,,monotypic-inversion,,
-————————,661,species,373033,A.Procolobus verus,373033,B.Procolobus verus,=,,,moved,,,shared tip
+————————,661,species,373033,A.Procolobus verus,373033,B.Procolobus verus,=,,,moved,genbank common name+canonicalName+genbank common name,,shared tip
 ———————,662,genus,542827,A.Rhinopithecus,542827,B.Rhinopithecus,=,,,,canonicalName,number_of_children,
-————————,663,species,61621,A.Rhinopithecus bieti,61621,B.Rhinopithecus bieti,=,,,,,,shared tip
-————————,664,species,61622,A.Rhinopithecus roxellana,61622,B.Rhinopithecus roxellana,=,,,,,,shared tip
-————————,665,species,66062,A.Rhinopithecus avunculus,66062,B.Rhinopithecus avunculus,=,,,,,scientificName,shared tip
-————————,666,species,224329,A.Rhinopithecus brelichi,224329,B.Rhinopithecus brelichi,=,,,,,,shared tip
+————————,663,species,61621,A.Rhinopithecus bieti,61621,B.Rhinopithecus bieti,=,,,,synonym+canonicalName+synonym,,shared tip
+————————,664,species,61622,A.Rhinopithecus roxellana,61622,B.Rhinopithecus roxellana,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
+————————,665,species,66062,A.Rhinopithecus avunculus,66062,B.Rhinopithecus avunculus,=,,,,genbank common name+canonicalName+genbank common name,scientificName,shared tip
+————————,666,species,224329,A.Rhinopithecus brelichi,224329,B.Rhinopithecus brelichi,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
 ————————,667,species,1194334,A.Rhinopithecus bieti 1 RL-2012,1194334,B.Rhinopithecus bieti 1 RL-2012,=,,,,canonicalName,,shared tip
 ————————,668,species,1194335,A.Rhinopithecus bieti 2 RL-2012,1194335,B.Rhinopithecus bieti 2 RL-2012,=,,,,canonicalName,,shared tip
-————————,669,species,1194336,A.Rhinopithecus strykeri,1194336,B.Rhinopithecus strykeri,=,,,,,,shared tip
+————————,669,species,1194336,A.Rhinopithecus strykeri,1194336,B.Rhinopithecus strykeri,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
 ————————,670,,,,2644350,B.unclassified Rhinopithecus,,,,,,,
 —————————,671,species,,,1859147,B.Rhinopithecus sp.,,,,,,,
 ———————,672,genus,591932,A.Piliocolobus,591932,B.Piliocolobus,=,,,,canonicalName,,
-————————,673,species,164648,A.Piliocolobus badius,164648,B.Piliocolobus badius,=,,,,,,subtree=
-————————,676,species,591933,A.Piliocolobus gordonorum,591933,B.Piliocolobus gordonorum,=,,,,,,shared tip
-————————,677,species,591934,A.Piliocolobus rufomitratus,591934,B.Piliocolobus rufomitratus,=,,,,,,shared tip
-————————,678,species,591935,A.Piliocolobus tholloni,591935,B.Piliocolobus tholloni,=,,,,,,shared tip
-————————,679,species,591936,A.Piliocolobus tephrosceles,591936,B.Piliocolobus tephrosceles,=,,,,,,shared tip
-————————,680,species,591937,A.Piliocolobus kirkii,591937,B.Piliocolobus kirkii,=,,,,,,shared tip
-————————,681,species,591938,A.Piliocolobus foai,591938,B.Piliocolobus foai,=,,,,,,shared tip
-————————,682,species,591944,A.Piliocolobus pennantii,591944,B.Piliocolobus pennantii,=,,,,,,shared tip
-————————,683,species,591945,A.Piliocolobus preussi,591945,B.Piliocolobus preussi,=,,,,,,shared tip
+————————,673,species,164648,A.Piliocolobus badius,164648,B.Piliocolobus badius,=,,,,genbank common name+canonicalName+genbank common name,,subtree=
+————————,676,species,591933,A.Piliocolobus gordonorum,591933,B.Piliocolobus gordonorum,=,,,,merged id+canonicalName+merged id,,shared tip
+————————,677,species,591934,A.Piliocolobus rufomitratus,591934,B.Piliocolobus rufomitratus,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
+————————,678,species,591935,A.Piliocolobus tholloni,591935,B.Piliocolobus tholloni,=,,,,merged id+canonicalName+merged id,,shared tip
+————————,679,species,591936,A.Piliocolobus tephrosceles,591936,B.Piliocolobus tephrosceles,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
+————————,680,species,591937,A.Piliocolobus kirkii,591937,B.Piliocolobus kirkii,=,,,,merged id+canonicalName+merged id,,shared tip
+————————,681,species,591938,A.Piliocolobus foai,591938,B.Piliocolobus foai,=,,,,merged id+canonicalName+merged id,,shared tip
+————————,682,species,591944,A.Piliocolobus pennantii,591944,B.Piliocolobus pennantii,=,,,,merged id+canonicalName+merged id,,shared tip
+————————,683,species,591945,A.Piliocolobus preussi,591945,B.Piliocolobus preussi,=,,,,merged id+canonicalName+merged id,,shared tip
 ———————,684,genus,,,1203020,B.Simias,~,170207,A.Simias concolor,,monotypic-inversion,,
 ——————,686,species,9576,A.Cercopithecidae gen. sp.,9576,B.Cercopithecidae gen. sp.,=,,,,canonicalName,,shared tip
-————,687,superfamily,314295,A.Hominoidea,314295,B.Hominoidea,=,,,,,,
-—————,688,family,9577,A.Hylobatidae,9577,B.Hylobatidae,=,,,,,,
+————,687,superfamily,314295,A.Hominoidea,314295,B.Hominoidea,=,,,,common name+canonicalName+common name,,
+—————,688,family,9577,A.Hylobatidae,9577,B.Hylobatidae,=,,,,genbank common name+canonicalName+genbank common name,,
 ——————,689,genus,9578,A.Hylobates,9578,B.Hylobates,=,,,,canonicalName,number_of_children,
-———————,690,species,9579,A.Hylobates agilis,9579,B.Hylobates agilis,=,,,,,,subtree=
-———————,693,species,9580,A.Hylobates lar,9580,B.Hylobates lar,=,,,,,,subtree=
+———————,690,species,9579,A.Hylobates agilis,9579,B.Hylobates agilis,=,,,,genbank common name+canonicalName+genbank common name,,subtree=
+———————,693,species,9580,A.Hylobates lar,9580,B.Hylobates lar,=,,,,genbank common name+canonicalName+genbank common name,,subtree=
 ———————,698,species,9587,A.Hylobates klossii,9587,B.Hylobates klossii,=,,,,canonicalName,,shared tip
-———————,699,species,9588,A.Hylobates muelleri,9588,B.Hylobates muelleri,=,,,,,,subtree=
-———————,703,species,9589,A.Hylobates pileatus,9589,B.Hylobates pileatus,=,,,,,,shared tip
-———————,704,species,81572,A.Hylobates moloch,81572,B.Hylobates moloch,=,,,,,,shared tip
-———————,705,species,716691,A.Hylobates alibarbis,716691,B.Hylobates albibarbis,=,,,,,canonicalName; scientificName,shared tip
+———————,699,species,9588,A.Hylobates muelleri,9588,B.Hylobates muelleri,=,,,,common name+canonicalName+common name,,subtree=
+———————,703,species,9589,A.Hylobates pileatus,9589,B.Hylobates pileatus,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
+———————,704,species,81572,A.Hylobates moloch,81572,B.Hylobates moloch,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
+———————,705,species,716691,A.Hylobates alibarbis,716691,B.Hylobates albibarbis,=,,,,merged id+canonicalName+merged id,canonicalName; scientificName,shared tip
 ———————,706,,,,2647113,B.unclassified Hylobates,<,9578,A.Hylobates,increased resolution,A.Hylobates alibarbis is not in it,,
-————————,707,species,9581,A.Hylobates sp.,9581,B.Hylobates sp.,=,,,moved,,,shared tip
+————————,707,species,9581,A.Hylobates sp.,9581,B.Hylobates sp.,=,,,moved,genbank common name+canonicalName+genbank common name,,shared tip
 ————————,708,species,150249,A.Hylobates sp. TIB-201,150249,B.Hylobates sp. TIB-201,=,,,moved,canonicalName,,shared tip
 ————————,709,species,280856,A.Hylobates sp. IGL-2004,280856,B.Hylobates sp. IGL-2004,=,,,moved,canonicalName,,shared tip
 ————————,710,species,288892,A.Hylobates sp. AMA-2004,288892,B.Hylobates sp. AMA-2004,=,,,moved,canonicalName,,shared tip
@@ -527,34 +527,34 @@ indent,taxonID,rank,A id,A name,B id,B name,relation,other id,other name,note,re
 ————————,712,species,425245,A.Hylobates sp. PS-2007,425245,B.Hylobates sp. PS-2007,=,,,moved,canonicalName,,shared tip
 ————————,713,species,,,2023128,B.Hylobates sp. OH-2017,,,,,,,
 ——————,714,genus,325165,A.Nomascus,325165,B.Nomascus,=,,,,canonicalName,number_of_children,
-———————,715,species,9586,A.Nomascus siki,9586,B.Nomascus siki,=,,,,,,shared tip
-———————,716,species,29089,A.Nomascus concolor,29089,B.Nomascus concolor,=,,,,,,subtree=
-———————,721,species,61852,A.Nomascus gabriellae,61852,B.Nomascus gabriellae,=,,,,,,shared tip
-———————,722,species,61853,A.Nomascus leucogenys,61853,B.Nomascus leucogenys,=,,,,,,shared tip
+———————,715,species,9586,A.Nomascus siki,9586,B.Nomascus siki,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
+———————,716,species,29089,A.Nomascus concolor,29089,B.Nomascus concolor,=,,,,common name+canonicalName+common name,,subtree=
+———————,721,species,61852,A.Nomascus gabriellae,61852,B.Nomascus gabriellae,=,,,,merged id+canonicalName+merged id,,shared tip
+———————,722,species,61853,A.Nomascus leucogenys,61853,B.Nomascus leucogenys,=,,,,merged id+canonicalName+merged id,,shared tip
 ———————,723,species,327374,A.Nomascus nasutus,327374,B.Nomascus nasutus,=,,,,canonicalName,,shared tip
-———————,724,species,693984,A.Nomascus hainanus,693984,B.Nomascus hainanus,=,,,,,,shared tip
+———————,724,species,693984,A.Nomascus hainanus,693984,B.Nomascus hainanus,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
 ———————,725,species,,,1616038,B.Nomascus annamensis,,,,,,,
 ———————,726,species,,,2170372,B.Nomascus gabriellae x Nomascus siki,,,,,,,
 ———————,727,species,,,2170373,B.Nomascus leucogenys x Nomascus siki,,,,,,,
 ———————,728,species,,,2170374,B.Nomascus cf. leucogenys SSH-2018,,,,,,,
 ——————,729,genus,,,325166,B.Symphalangus,~,405039,A.Symphalangus syndactylus syndactylus,,monotypic-inversion,,
 ———————,730,species,,,9590,B.Symphalangus syndactylus,~,405039,A.Symphalangus syndactylus syndactylus,,monotypic-inversion,,
-——————,732,genus,325167,A.Hoolock,325167,B.Hoolock,=,,,,,number_of_children,
-———————,733,species,61851,A.Hoolock hoolock,61851,B.Hoolock hoolock,=,,,,,,shared tip
-———————,734,species,593543,A.Hoolock leuconedys,593543,B.Hoolock leuconedys,=,,,,,,shared tip
+——————,732,genus,325167,A.Hoolock,325167,B.Hoolock,=,,,,synonym+canonicalName+synonym,number_of_children,
+———————,733,species,61851,A.Hoolock hoolock,61851,B.Hoolock hoolock,=,,,,merged id+canonicalName+merged id,,shared tip
+———————,734,species,593543,A.Hoolock leuconedys,593543,B.Hoolock leuconedys,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
 ———————,735,species,,,1934190,B.Hoolock tianxing,,,,,,,
 ———————,736,species,,,1934191,B.Hoolock leuconedys x Hoolock tianxing,,,,,,,
-—————,737,family,9604,A.Hominidae,9604,B.Hominidae,=,,,,,,
-——————,738,subfamily,207598,A.Homininae,207598,B.Homininae,=,,,,,,
+—————,737,family,9604,A.Hominidae,9604,B.Hominidae,=,,,,synonym+canonicalName+synonym,,
+——————,738,subfamily,207598,A.Homininae,207598,B.Homininae,=,,,,synonym+canonicalName+synonym,,
 ———————,739,genus,9592,A.Gorilla,9592,B.Gorilla,=,,,,scientificName,,subtree=
-———————,747,genus,9596,A.Pan,9596,B.Pan,=,,,,,,
-————————,748,species,9597,A.Pan paniscus,9597,B.Pan paniscus,=,,,,,,shared tip
+———————,747,genus,9596,A.Pan,9596,B.Pan,=,,,,merged id+canonicalName+merged id,,
+————————,748,species,9597,A.Pan paniscus,9597,B.Pan paniscus,=,,,,common name+canonicalName+common name,,shared tip
 ————————,749,species,9598,A.Pan troglodytes,9598,B.Pan troglodytes,=,,,,canonicalName,,subtree=
 ———————,756,genus,9605,A.Homo,9605,B.Homo,=,,,,scientificName,number_of_children,
-————————,757,species,9606,A.Homo sapiens,9606,B.Homo sapiens,=,,,,,,
-—————————,758,subspecies,63221,A.Homo sapiens neanderthalensis,63221,B.Homo sapiens neanderthalensis,=,,,,,,shared tip
-—————————,759,subspecies,741158,A.Homo sapiens ssp. Denisova,741158,B.Homo sapiens subsp. 'Denisova',=,,,,,canonicalName,shared tip
-————————,760,species,1425170,A.Homo heidelbergensis,1425170,B.Homo heidelbergensis,=,,,,,,shared tip
+————————,757,species,9606,A.Homo sapiens,9606,B.Homo sapiens,=,,,,genbank common name+canonicalName+genbank common name,,
+—————————,758,subspecies,63221,A.Homo sapiens neanderthalensis,63221,B.Homo sapiens neanderthalensis,=,,,,common name+canonicalName+common name,,shared tip
+—————————,759,subspecies,741158,A.Homo sapiens ssp. Denisova,741158,B.Homo sapiens subsp. 'Denisova',=,,,,synonym+canonicalName+synonym,canonicalName,shared tip
+————————,760,species,1425170,A.Homo heidelbergensis,1425170,B.Homo heidelbergensis,=,,,,genbank common name+canonicalName+genbank common name,,shared tip
 ————————,761,,,,2665952,B.environmental samples,,,,,,,
 —————————,762,species,,,2665953,B.Homo sapiens environmental sample,,,,,,,
 ——————,763,subfamily,,,607660,B.Ponginae,~,9599,A.Pongo,,monotypic-inversion,,
@@ -567,11 +567,11 @@ indent,taxonID,rank,A id,A name,B id,B name,relation,other id,other name,note,re
 ——,772,infraorder,,,376912,B.Tarsiiformes,~,9476,A.Tarsius,,monotypic-inversion,,
 ———,773,genus,9476,A.Tarsius,9475,B.Tarsiidae,=,,,moved,presumed mutual,number_of_children; taxonRank; ncbi_id; canonicalName,
 ————,774,genus,,,9476,B.Tarsius,<,9476,A.Tarsius,increased resolution,A.Tarsius syrichta is not in it,,
-—————,775,species,449501,A.Tarsius dentatus,449501,B.Tarsius dentatus,=,,,moved,,,shared tip
-—————,776,species,630277,A.Tarsius lariang,630277,B.Tarsius lariang,=,,,moved,,,shared tip
-—————,777,species,642591,A.Tarsius dentatus x lariang,642591,B.Tarsius dentatus x lariang,=,,,moved,,,shared tip
-—————,778,species,662464,A.Tarsius tarsier,662464,B.Tarsius tarsier,=,,,moved,,,shared tip
-—————,779,species,905053,A.Tarsius sangirensis,905053,B.Tarsius sangirensis,=,,,moved,,,shared tip
+—————,775,species,449501,A.Tarsius dentatus,449501,B.Tarsius dentatus,=,,,moved,genbank common name+canonicalName+genbank common name,,shared tip
+—————,776,species,630277,A.Tarsius lariang,630277,B.Tarsius lariang,=,,,moved,genbank common name+canonicalName+genbank common name,,shared tip
+—————,777,species,642591,A.Tarsius dentatus x lariang,642591,B.Tarsius dentatus x lariang,=,,,moved,synonym+canonicalName+synonym,,shared tip
+—————,778,species,662464,A.Tarsius tarsier,662464,B.Tarsius tarsier,=,,,moved,genbank common name+canonicalName+genbank common name,,shared tip
+—————,779,species,905053,A.Tarsius sangirensis,905053,B.Tarsius sangirensis,=,,,moved,genbank common name+canonicalName+genbank common name,,shared tip
 —————,780,species,981131,A.Tarsius wallacei,981131,B.Tarsius wallacei,=,,,moved,scientificName,,shared tip
 —————,781,species,,,1748400,B.Tarsius fuscus,,,,,,,
 —————,782,,,,2624233,B.unclassified Tarsius,,,,,,,
@@ -579,8 +579,8 @@ indent,taxonID,rank,A id,A name,B id,B name,relation,other id,other name,note,re
 ——————,784,species,662655,A.Tarsius sp. FFA-2009a,662655,B.Tarsius sp. FFA-2009a,=,,,moved,canonicalName,,shared tip
 ——————,785,species,,,1748402,B.Tarsius sp. CD-2015,,,,,,,
 ————,786,genus,,,1868481,B.Carlito,~,9478,A.Tarsius syrichta,,monotypic-inversion,,
-—————,787,species,9478,A.Tarsius syrichta,1868482,B.Carlito syrichta,=,,,moved,,ncbi_id; canonicalName,shared tip
+—————,787,species,9478,A.Tarsius syrichta,1868482,B.Carlito syrichta,=,,,moved,genbank common name+canonicalName+genbank common name,ncbi_id; canonicalName,shared tip
 ————,788,genus,,,1971489,B.Cephalopachus,~,9477,A.Tarsius bancanus,,monotypic-inversion,,
-—————,789,species,9477,A.Tarsius bancanus,9477,B.Cephalopachus bancanus,=,,,moved,,number_of_children; canonicalName; scientificName,
+—————,789,species,9477,A.Tarsius bancanus,9477,B.Cephalopachus bancanus,=,,,moved,genbank common name+canonicalName+genbank common name,number_of_children; canonicalName; scientificName,
 ——————,790,subspecies,,,1971490,B.Cephalopachus bancanus bancanus,,,,,,,
 ——————,791,subspecies,,,2567999,B.Cephalopachus bancanus borneanus,,,,,,,

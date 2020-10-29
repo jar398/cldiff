@@ -76,15 +76,15 @@ def report_on_collisions(A, B, al):
           ar1 = al.get(A_node)
           ar2 = al.get(B_node)
           ar1_bad = (ar1 and
-                     rel.is_variant(ar1.relation, rel.eq) and
+                     ar1.relation == rel.eq and
                      ar1.cod != B_node)
           ar2_bad = (ar2 and
-                     rel.is_variant(ar2.relation, rel.eq) and
+                     ar2.relation == rel.eq and
                      ar2.cod != A_node)
           if ar1_bad or ar2_bad:
-            dribble.log("# %s names different taxa in the two checklists" % name)
-            if ar1_bad: dribble.log("  %s [%s]" % (art.express(ar1), art.reason(ar1)))
-            if ar2_bad: dribble.log("  %s [%s]" % (art.express(ar2), art.reason(ar2)))
+            dribble.log("# \"%s\" names different taxa in the two checklists" % name)
+            dribble.log("  %s [%s]" % (art.express(ar1), art.reason(ar1) if ar1 else "-"))
+            dribble.log("  %s [%s]" % (art.express(ar2), art.reason(ar2) if ar2 else "-"))
 
 # Default (simplified) report format
 
@@ -133,22 +133,24 @@ def report(A, B, al, roots, parents, outfile):
         z = ar.cod
         # Equivalence, usually, but sometimes not
 
-        if rel.is_variant(ar.relation, rel.eq):
-          note = "lump"
-        elif rel.is_variant(ar.relation, rel.conflict):
+        if ar.relation == rel.eq:
+          note = "lump"         # ??? is this right?
+        elif ar.relation == rel.conflict:
           note = "conflict"
-        elif rel.is_variant(ar.relation, rel.lt):
+        elif ar.relation == rel.lt:
           note = "loss of resolution"
+        elif ar.relation == rel.matches:
+          note = "near miss"
     else:                       # y
       op = "B ONLY"
       ar = al.get(y)
       if ar:
         z = ar.cod
-        if rel.is_variant(ar.relation, rel.eq):
+        if ar.relation == rel.eq:
           note = "split"
-        elif rel.is_variant(ar.relation, rel.conflict):
+        elif ar.relation == rel.conflict:
           note = "reorganization"
-        elif rel.is_variant(ar.relation, rel.lt):
+        elif ar.relation == rel.lt:
           note = "increased resolution"
 
     report_one_articulation(id, op, nodiff, dif, x, y, z, ar, note, writer, indent)

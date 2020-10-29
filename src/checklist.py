@@ -295,16 +295,15 @@ def validate(checklist):
     parent_id = get_value(node, parent_node_id)
     accepted_id = get_value(node, accepted_node_id)
     status = get_taxonomic_status(node)
-    if is_synonym_status(status):
+    if accepted_id:
+      # assert is_synonym_status(status)  - we actually don't know
       # It's a synonym.  No parent, children, or synonyms allowed.
       assert not parent_id
       assert len(get_raw_children(node)) == 0
       assert len(get_raw_synonyms(node)) == 0
       assert accepted_id
       a = get_raw_accepted(node)
-      if a:
-        assert not is_synonym_status(get_taxonomic_status(a))
-      else:
+      if not a:
         print("** %s (taxonID %s) has accepted id %s, which doesn't resolve" %
               (get_unique(node), get_node_id(node), accepted_id))
         assert a
@@ -468,11 +467,16 @@ def correct_children_mutexes(parent, parent_mutex):
     child_mutex = get_mutex(child)
     if child_mutex <= parent_mutex:
       if child_mutex == parent_mutex:
-        dribble.log("# ** Child %s has same rank as parent %s" % \
-                    (get_unique(child), get_unique(parent)))
+        dribble.log("# ** Child %s (%s) has same rank as parent %s" % \
+                    (get_unique(child),
+                     get_nominal_rank(child),
+                     get_unique(parent)))
       else:
-        dribble.log("# ** Child %s is of higher rank than parent %s" %\
-                    (get_unique(child), get_unique(parent)))
+        dribble.log("# ** Child %s (%s) is of higher rank than parent %s (%s)" %\
+                    (get_unique(child),
+                     get_nominal_rank(child),
+                     get_unique(parent),
+                     get_nominal_rank(parent)))
       if is_container(child):
         new_mutex = parent_mutex + 1 # demote!
         set_mutex(child, new_mutex)

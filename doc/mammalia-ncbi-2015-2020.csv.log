@@ -589,37 +589,54 @@ Aligning ...
 
 Merged.  1 roots in merge, 13335 nodes with parents
 # 1365 nodes in merge have some change in their descendants
-# Tarsiidae names different taxa in the two checklists
+# "Tarsiidae" names different taxa in the two checklists
+  A.Tarsiidae ~ B.Tarsiidae [monotypic-inversion]
   B.Tarsiidae = A.Tarsius [presumed mutual]
-# Tarsius names different taxa in the two checklists
+# "Tarsius" names different taxa in the two checklists
   A.Tarsius = B.Tarsiidae [presumed mutual]
-# Callicebus names different taxa in the two checklists
+  B.Tarsius < A.Tarsius [A.Tarsius syrichta is not in it]
+# "Callicebus" names different taxa in the two checklists
   A.Callicebus = B.Callicebinae [presumed mutual]
-# Giraffa names different taxa in the two checklists
+  B.Callicebus < A.Callicebus [A.Callicebus purinus is not in it]
+# "Giraffa" names different taxa in the two checklists
+  A.Giraffa ~ B.Giraffa [monotypic-inversion]
   B.Giraffa = A.Giraffa camelopardalis [presumed mutual]
-# Giraffa camelopardalis names different taxa in the two checklists
+# "Giraffa camelopardalis" names different taxa in the two checklists
   A.Giraffa camelopardalis = B.Giraffa [presumed mutual]
-# Manidae names different taxa in the two checklists
+  B.Giraffa camelopardalis < A.Giraffa camelopardalis [A.Giraffa camelopardalis tippelskirchi is not in it]
+# "Manidae" names different taxa in the two checklists
+  A.Manidae ~ B.Manidae [monotypic-inversion]
   B.Manidae = A.Manis [presumed mutual]
-# Manis names different taxa in the two checklists
+# "Manis" names different taxa in the two checklists
   A.Manis = B.Manidae [presumed mutual]
-# Rattus rattus names different taxa in the two checklists
-  A.Rattus rattus = B.Rattus pyctoris [None]
-# Callicebinae names different taxa in the two checklists
+  B.Manis < A.Manis [A.Manis gigantea is not in it]
+# "Rattus rattus" names different taxa in the two checklists
+  A.Rattus rattus = B.Rattus pyctoris [synonym+canonicalName+synonym]
+  B.Rattus rattus ! A.Rattus rattus [particle-set-exclusion]
+# "Callicebinae" names different taxa in the two checklists
+  A.Callicebinae ~ B.Callicebinae [monotypic-inversion]
   B.Callicebinae = A.Callicebus [presumed mutual]
-# Macaca leonina names different taxa in the two checklists
-  B.Macaca leonina = A.Macaca nemestrina leonina [None]
-# Rattus pyctoris names different taxa in the two checklists
-  B.Rattus pyctoris = A.Rattus rattus [None]
-# Neodon sikimensis names different taxa in the two checklists
-  B.Neodon sikimensis = A.Microtus sikimensis [None]
-# Macaca siberu names different taxa in the two checklists
-  B.Macaca siberu = A.Macaca nemestrina siberu [None]
-# Glauconycteris argentata names different taxa in the two checklists
-  B.Glauconycteris argentata = A.Chalinolobus argentatus [None]
-# Glauconycteris variegata names different taxa in the two checklists
-  B.Glauconycteris variegata = A.Chalinolobus variegatus [None]
-# Semnopithecus priam names different taxa in the two checklists
-  B.Semnopithecus priam = A.Semnopithecus entellus priam [None]
-# unclassified Murinae names different taxa in the two checklists
+# "Macaca leonina" names different taxa in the two checklists
+  none [-]
+  B.Macaca leonina = A.Macaca nemestrina leonina [synonym+canonicalName]
+# "Rattus pyctoris" names different taxa in the two checklists
+  none [-]
+  B.Rattus pyctoris = A.Rattus rattus [synonym+canonicalName+synonym]
+# "Neodon sikimensis" names different taxa in the two checklists
+  none [-]
+  B.Neodon sikimensis = A.Microtus sikimensis [common name+canonicalName+genbank common name]
+# "Macaca siberu" names different taxa in the two checklists
+  none [-]
+  B.Macaca siberu = A.Macaca nemestrina siberu [synonym+canonicalName]
+# "Glauconycteris argentata" names different taxa in the two checklists
+  none [-]
+  B.Glauconycteris argentata = A.Chalinolobus argentatus [genbank common name+canonicalName+genbank common name]
+# "Glauconycteris variegata" names different taxa in the two checklists
+  none [-]
+  B.Glauconycteris variegata = A.Chalinolobus variegatus [common name+canonicalName+genbank common name]
+# "Semnopithecus priam" names different taxa in the two checklists
+  none [-]
+  B.Semnopithecus priam = A.Semnopithecus entellus priam [merged id+ncbi_id]
+# "unclassified Murinae" names different taxa in the two checklists
   A.unclassified Murinae = B.Soricomys [presumed mutual]
+  none [-]
