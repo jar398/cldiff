@@ -10,7 +10,7 @@ import collections
 import relation as rel
 import checklist as cl
 import property
-import diff
+import changes
 import dribble
 
 # Articulations
@@ -29,9 +29,9 @@ def _articulation(dom, cod, re,
   assert cod > 0
   assert re
   assert re.name
-  dif = diff.all_diffs
+  dif = changes.all_diffs
   if cl.is_accepted(dom) and cl.is_accepted(cod):
-    dif = diff.differences(dom, cod)
+    dif = changes.differences(dom, cod)
   assert reason or factors
   if reason and revreason == None: revreason = reason + " of"
   ar = Articulation(dom, cod, re, factors, reason, revreason, dif)

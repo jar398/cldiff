@@ -10,7 +10,7 @@ import relation as rel
 import articulation as art
 import eulerx
 import alignment
-import diff
+import changes
 import merge
 import dribble
 
@@ -109,9 +109,9 @@ def report(A, B, al, roots, parents, outfile):
     if x and y:
       op = "SHARED"
       ar = al.get(x)
-      comparison = diff.differences(x, y, all_props)
-      if not diff.same(comparison):
-        props = diff.unpack(comparison)
+      comparison = changes.differences(x, y, all_props)
+      if not changes.same(comparison):
+        props = changes.unpack(comparison)
         dif = ("; ".join(map(lambda x:x.pet_name, props)))
       px = cl.get_parent(x)
       qx = al.get(px)
@@ -205,8 +205,8 @@ def find_changed_subtrees(roots, children, all_props):
     if not x or not y:
       node_changed = True
     else:
-      comparison = diff.differences(x, y, all_props)
-      if not diff.same(comparison):
+      comparison = changes.differences(x, y, all_props)
+      if not changes.same(comparison):
         node_changed = True
     descendant_changed = False
     for child in children.get(node, []):
@@ -230,7 +230,7 @@ if __name__ == '__main__':
   parser.add_argument('high', help='higher priority checklist')
   parser.add_argument('--low-tag', default="A")
   parser.add_argument('--high-tag', default="B")
-  parser.add_argument('--out', help='file name for report', default='diff.csv')
+  parser.add_argument('--out', help='file name for report', default='report.csv')
   parser.add_argument('--format', help='report format', default='ad-hoc')
   args = parser.parse_args()
   main(args.low, args.low_tag, args.high, args.high_tag,
