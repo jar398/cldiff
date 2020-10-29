@@ -61,9 +61,9 @@ def emit_dwc(accepteds, synonyms, scinames, authorities, merged, outpath):
                   "synonym", "BOLD id")
       # synonym is a taxonomic status, not a nomenclatural status
       elif kind == "synonym": kind = None
-      node_id = id + "." + str(spin)
+      taxon_id = id + "." + str(spin)
       write_row(writer,
-                node_id, None, None, None,
+                taxon_id, None, None, None,
                 id, None, text,
                 "synonym", kind)
     for (old_id, new_id) in merged:

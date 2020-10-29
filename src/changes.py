@@ -4,7 +4,10 @@ import table
 import property
 import checklist as cl
 
-# Difference report.
+# Difference report, comparing two nodes.
+# The result is a "comparison" which is a triple (drop, change, add)
+# where each element of the triple is an integer mask.
+
 # Each bit position is 1 for a mismatch, 0 for a match.
 # Bit positions correspond to the URIs listed in property.py.
 # The bit mask is a 'badness' measure and can be used to sort
@@ -29,6 +32,12 @@ parentNameUsageID = property.by_name("parentNameUsageID")
 # TBD: filter out taxonID if idspaces are different
 
 def differences(uid1, uid2, props = None):  # mask
+  (add, change, drop) = differences_in_record(uid1, uid2, props = None)
+  if len(cl.get_children(uid1)) != len(cl.get_children(uid2)):
+    change |= 1 << number_of_children.specificity
+  return (add, change, drop)
+
+def differences_in_record(uid1, uid2, props = None):  # mask
   if props == None:
     props = table.get_table(uid2).properties
   drop = 0
@@ -45,8 +54,6 @@ def differences(uid1, uid2, props = None):  # mask
           drop |= 1 << prop.specificity
         else:
           change |= 1 << prop.specificity
-  if len(cl.get_children(uid1)) != len(cl.get_children(uid2)):
-    change |= 1 << number_of_children.specificity
   # TBD: compare parents ??
   return (drop, change, add)
 
@@ -62,10 +69,13 @@ def unpack(comparison):
   if same(comparison):
     return []
   else:
-    props = []
-    for prop in property.properties_by_specificity:
-      spec = prop.specificity
-      (_, change, _) = comparison
-      if (change & (1 << spec)) != 0:
-        props.append(prop)
-    return props
+    (_, change, _) = comparison
+    return unpack1(change)
+
+def unpack1(mask):
+  props = []
+  for prop in property.properties_by_specificity:
+    spec = prop.specificity
+    if (mask & (1 << spec)) != 0:
+      props.append(prop)
+  return props

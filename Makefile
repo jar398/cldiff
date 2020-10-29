@@ -2,9 +2,10 @@ WORK=work
 
 SOURCES=src/report.py src/alignment.py src/articulation.py src/relation.py \
         src/checklist.py src/changes.py src/merge.py src/report.py src/eulerx.py \
-	src/intension.py src/table.py src/dribble.py src/property.py
+	src/intension.py src/table.py src/dribble.py src/property.py src/diff.py
 
 all: $(WORK)/primates-ncbi-2015-2020.csv 
+diff: $(WORK)/primates-ncbi-2015-2020-diff.csv
 
 # N15 (NCBI 2015)
 
@@ -67,6 +68,13 @@ $(WORK)/primates-ncbi-2015-2020.csv: $(SOURCES) $(N15)/primates.csv $(N20)/prima
 	mv $@.new $@
 	mv $@.new.log $@.log
 #  --low-tag=N15 --high-tag=N20
+
+$(WORK)/primates-ncbi-2015-2020-diff.csv: $(SOURCES) $(N15)/primates.csv $(N20)/primates.csv
+	python3 src/report.py $(N15)/primates.csv \
+	                      $(N20)/primates.csv \
+	  --format diff --out $@.new 
+	mv $@.new $@
+	mv $@.new.log $@.log
 
 $(WORK)/primates-ncbi-2015-2020.ex: $(SOURCES) $(N15)/primates.csv $(N20)/primates.csv
 	python3 src/report.py $(N15)/primates.csv \
@@ -165,3 +173,6 @@ mag: $(WORK)/mag-ncbi-2015-2020.csv
 
 clean:
 	rm -rf $(WORK)
+
+tags:
+	etags src/*.py

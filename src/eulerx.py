@@ -38,21 +38,22 @@ def load(s, prefix = ""):
   assert False
   return ch
 
-def dump(ch, out):
-  def process(node):
-    children = cl.get_children(node)
-    if children:
-      if not cl.is_container(node):
-        out.write("(%s" % cl.get_spaceless(node))
+def dump(ch, outpath):
+  with open(outpath, "w") as out:
+    def process(node):
+      children = cl.get_children(node)
+      if children:
+        if not cl.is_container(node):
+          out.write("(%s" % cl.get_spaceless(node))
+          for child in children:
+            out.write(" %s" % cl.get_spaceless(child))
+          out.write(")\n")
         for child in children:
-          out.write(" %s" % cl.get_spaceless(child))
-        out.write(")\n")
-      for child in children:
-        process(child)
-  out.write("taxonomy %s %s\n" % (ch.prefix, ch.name.replace(" ", "_")))
-  for root in cl.get_roots(ch):
-    process(root)
-  out.write("\n")
+          process(child)
+    out.write("taxonomy %s %s\n" % (ch.prefix, ch.name.replace(" ", "_")))
+    for root in cl.get_roots(ch):
+      process(root)
+    out.write("\n")
 
 def dump_alignment(al, out):
   articulations = [ar for ar in al.values()

@@ -21,9 +21,9 @@ def field(label):
 nomenclatural_status = field("nomenclaturalStatus")
 taxonomic_status     = field("taxonomicStatus")    # flush?
 taxon_rank           = field("taxonRank")
-parent_node_id       = field("parentNameUsageID")
-node_id              = field("taxonID")
-accepted_node_id     = field("acceptedNameUsageID")
+parent_taxon_id       = field("parentNameUsageID")
+taxon_id              = field("taxonID")
+accepted_taxon_id     = field("acceptedNameUsageID")
 canonical_name       = field("canonicalName")
 scientific_name      = field("scientificName")
 ncbi_id      = field("ncbi_id")
@@ -94,7 +94,7 @@ def read_checklist(specifier, prefix, name):
     checklist.populate_from_file(specifier)
 
   assert checklist.get_position(canonical_name) != None
-  if checklist.get_position(node_id) == None:
+  if checklist.get_position(taxon_id) == None:
     print (checklist.header())
     assert False
 
@@ -134,16 +134,16 @@ def get_nodes_with_value(checklist, field, value):
 # Get unique (we hope) taxon record possessing a given identifier
 # Can return None
 
-def get_node_id(tnu):
-  return get_value(tnu, node_id)
+def get_taxon_id(tnu):
+  return get_value(tnu, taxon_id)
 
-def get_record_with_node_id(checklist, id):
-  records = checklist.get_index(node_id).get(id, None)
+def get_record_with_taxon_id(checklist, id):
+  records = checklist.get_index(taxon_id).get(id, None)
   if records:
     return records[0]
   else:
     return None
-  return get_value(tnu, node_id)
+  return get_value(tnu, taxon_id)
 
 # ----------------------------------------
 
@@ -156,7 +156,7 @@ def get_name(tnu):
   if name != None: return name
   name = get_value(tnu, scientific_name)
   if name != None: return name  
-  return get_node_id(tnu)
+  return get_taxon_id(tnu)
 
 def get_nominal_rank(tnu):
   if is_container(tnu): return None
@@ -175,7 +175,7 @@ def get_spaceless(tnu):
     get_nodes_with_value(checklist, canonical_name, name)
   if len(tnus_with_this_name) > 1:
     # TBD: what if id is None?  Use id of accepted?
-    name = name + "#" + get_node_id(tnu)
+    name = name + "#" + get_taxon_id(tnu)
 
   if not is_accepted(tnu):
     name = "?" + name
@@ -214,9 +214,9 @@ def get_parent(tnu):
     return forest_tnu
 
 def get_raw_parent(node):
-  parent_id = get_value(node, parent_node_id)
+  parent_id = get_value(node, parent_taxon_id)
   if parent_id != None:
-    return get_record_with_node_id(get_checklist(node), parent_id)
+    return get_record_with_taxon_id(get_checklist(node), parent_id)
   return None
 
 def get_children(parent):
@@ -229,8 +229,8 @@ def get_children(parent):
 
 def get_raw_children(parent):
   return get_nodes_with_value(get_checklist(parent),
-                              parent_node_id,
-                              get_node_id(parent))
+                              parent_taxon_id,
+                              get_taxon_id(parent))
 
 # ----------
 # Accepted/synonyms
@@ -242,9 +242,9 @@ def get_accepted(tnu):
   return get_raw_accepted(tnu)
 
 def get_raw_accepted(tnu):
-  probe = get_value(tnu, accepted_node_id)
+  probe = get_value(tnu, accepted_taxon_id)
   if probe != None:
-    return get_record_with_node_id(get_checklist(tnu), probe)
+    return get_record_with_taxon_id(get_checklist(tnu), probe)
   else:
     return None
 
@@ -258,8 +258,8 @@ def get_synonyms(tnu):
 
 def get_raw_synonyms(tnu):
   return get_nodes_with_value(get_checklist(tnu),
-                              accepted_node_id,
-                              get_node_id(tnu))
+                              accepted_taxon_id,
+                              get_taxon_id(tnu))
   # return [syn for syn in ...]
 
 def get_taxonomic_status(tnu):
@@ -269,7 +269,7 @@ def get_nomenclatural_status(tnu):
   return get_value(tnu, nomenclatural_status)
 
 def is_accepted(tnu):
-  if get_value(tnu, accepted_node_id):
+  if get_value(tnu, accepted_taxon_id):
     assert get_raw_children(tnu) == []
     assert get_raw_synonyms(tnu) == []
     return False
@@ -292,8 +292,8 @@ def validate(checklist):
   syn_count = 0
   acc_count = 0
   for node in checklist.get_all_nodes():
-    parent_id = get_value(node, parent_node_id)
-    accepted_id = get_value(node, accepted_node_id)
+    parent_id = get_value(node, parent_taxon_id)
+    accepted_id = get_value(node, accepted_taxon_id)
     status = get_taxonomic_status(node)
     if accepted_id:
       # assert is_synonym_status(status)  - we actually don't know
@@ -305,7 +305,7 @@ def validate(checklist):
       a = get_raw_accepted(node)
       if not a:
         print("** %s (taxonID %s) has accepted id %s, which doesn't resolve" %
-              (get_unique(node), get_node_id(node), accepted_id))
+              (get_unique(node), get_taxon_id(node), accepted_id))
         assert a
       syn_count += 1
     else:
@@ -513,7 +513,7 @@ def self_test():
   print ("Nodes:", len(checklist.get_all_nodes()))
   print ("Roots:", get_roots(checklist))
   tnus = checklist.get_index(taxon_id)
-  tnu = get_record_with_node_id(checklist, '9455')
+  tnu = get_record_with_taxon_id(checklist, '9455')
   print ("Specimen tnu:", tnu)
   print ("Name:", get_name(tnu))
   synos = get_synonyms(tnu)

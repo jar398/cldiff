@@ -13,6 +13,7 @@ import alignment
 import changes
 import merge
 import dribble
+import diff
 
 # A is lower priority, B is higher
 
@@ -35,20 +36,17 @@ def main(c1, c1_tag, c2, c2_tag, out, format):
     dribble.dribble_file = None
 
 def write_report(A, B, al, xmrcas, format, outpath):
-  if outpath == "-":
-    really_write_report(A, B, al, xmrcas, format, sys.stdout)
+  if format == "eulerx":
+    eulerx.dump_alignment(al, outpath)
+  elif format == "diff":
+    (parents, roots) = merge.merge_checklists(A, B, al)
+    diff.write_diff_set(parents, roots, outpath)
   else:
     with open(outpath, "w") as outfile:
-      really_write_report(A, B, al, xmrcas, format, outfile)
-
-def really_write_report(A, B, al, xmrcas, format, outfile):
-  if format == "eulerx":
-    eulerx.dump_alignment(al, outfile)
-  else:
-    (parents, roots) = merge.merge_checklists(A, B, al)
-    dribble.log ("Merged.  %s roots in merge, %s nodes with parents" %
-                 (len(roots), len(parents)))
-    report(A, B, al, roots, parents, outfile)
+      (parents, roots) = merge.merge_checklists(A, B, al)
+      dribble.log ("Merged.  %s roots in merge, %s nodes with parents" %
+                   (len(roots), len(parents)))
+      report(A, B, al, roots, parents, outfile)
     report_on_collisions(A, B, al)
 
 def assign_ids(parents, roots, children):
@@ -116,7 +114,7 @@ def report(A, B, al, roots, parents, outfile):
       px = cl.get_parent(x)
       qx = al.get(px)
       if qx and qx.cod != cl.get_parent(y):
-        #note = ("moved from %s" % cl.get_node_id(px))
+        #note = ("moved from %s" % cl.get_taxon_id(px))
         note = "moved"
 
       if not different:
@@ -187,7 +185,7 @@ def write_header(writer):
 
 def node_data(node):
   if node:
-    return (cl.get_node_id(node), cl.get_unique(node), cl.get_nominal_rank(node))
+    return (cl.get_taxon_id(node), cl.get_unique(node), cl.get_nominal_rank(node))
   else:
     return (None, None, None)
 
