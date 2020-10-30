@@ -181,11 +181,11 @@ def direct_matches(node, other):
   assert cl.get_checklist(node) != other
   seen = []
   arts = []
-  for prop in [cl.scientific_name,
+  for prop in [cl.ncbi_id,
+               cl.eol_page_id,
+               cl.scientific_name,
                cl.canonical_name,
-               cl.ncbi_id,
-               cl.gbif_id,
-               cl.eol_id]:
+               cl.gbif_id]:
     val = cl.get_value(node, prop)
     if val != None:
       more = cl.get_nodes_with_value(other, prop, val)

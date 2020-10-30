@@ -72,27 +72,19 @@ def merged_parent(merged, al):
     if q:
       return inject_B(q, al)
     else:
-      return inject_A(cl.get_parent(x, al))
+      return inject_A(cl.get_parent(x), al)
 
-# Inject node in low priority checklist into merged checklist
+# Inject node in A (low priority checklist) into merged checklist
 
 def inject_A(node, al):
   if node == cl.forest_tnu: return None
-  p = eq_partner(node, al)
-  if p:
-    return (node, p)
-  else:
-    return (None, node)
+  return (node, eq_partner(node, al))
 
-# Inject node in high priority checklist into merged checklist
+# Inject node in B (high priority checklist) into merged checklist
 
 def inject_B(node, al):
   if node == cl.forest_tnu: return None
-  p = eq_partner(node, al)
-  if p:
-    return (p, node)
-  else:
-    return (None, node)
+  return (eq_partner(node, al), node)
 
 # Aligned node, if relation is < or =
 
@@ -102,6 +94,8 @@ def partner(x, al):
     return ar.cod
   else:
     return cl.forest_tnu
+
+# Aligned node, if relation is =
 
 def eq_partner(node, al):
   ar = al.get(node)

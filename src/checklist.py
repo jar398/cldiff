@@ -28,7 +28,7 @@ canonical_name       = field("canonicalName")
 scientific_name      = field("scientificName")
 ncbi_id      = field("ncbi_id")
 gbif_id      = field("gbif_id")
-eol_id       = field("EOLid")
+eol_page_id  = field("EOLid")
 
 # ---------- Taxon registry and taxa
 

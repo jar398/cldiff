@@ -39,8 +39,11 @@ def write_report(A, B, al, xmrcas, format, outpath):
   if format == "eulerx":
     eulerx.dump_alignment(al, outpath)
   elif format == "diff":
-    (parents, roots) = merge.merge_checklists(A, B, al)
-    diff.write_diff_set(parents, roots, outpath)
+    keyprop = None
+    for prop in [cl.eol_page_id, cl.ncbi_id, cl.gbif_id]:
+      if prop in A.properties:
+        keyprop = prop
+    diff.write_diff_set(A, B, al, keyprop, outpath)
   else:
     with open(outpath, "w") as outfile:
       (parents, roots) = merge.merge_checklists(A, B, al)
@@ -107,7 +110,7 @@ def report(A, B, al, roots, parents, outfile):
     if x and y:
       op = "SHARED"
       ar = al.get(x)
-      comparison = changes.differences(x, y, all_props)
+      comparison = changes.differences(x, y, all_props)    # (drop, change, add)
       if not changes.same(comparison):
         props = changes.unpack(comparison)
         dif = ("; ".join(map(lambda x:x.pet_name, props)))
