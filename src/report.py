@@ -138,7 +138,7 @@ def report(A, B, al, roots, parents, outfile):
           note = "lump"         # ??? is this right?
         elif ar.relation == rel.conflict:
           note = "conflict"
-        elif ar.relation == rel.lt:
+        elif ar.relation == rel.refines:
           note = "loss of resolution"
         elif ar.relation == rel.matches:
           note = "near miss"
@@ -151,7 +151,7 @@ def report(A, B, al, roots, parents, outfile):
           note = "split"
         elif ar.relation == rel.conflict:
           note = "reorganization"
-        elif ar.relation == rel.lt:
+        elif ar.relation == rel.refines:
           note = "increased resolution"
 
     report_one_articulation(id, op, nodiff, dif, x, y, z, ar, note, writer, indent)

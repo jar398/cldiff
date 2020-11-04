@@ -56,7 +56,7 @@ def merged_parent(merged, al):
 
     # If p takes us back to q, then parent should be p, else q
     scan = p
-    while scan:
+    while scan and scan != cl.forest_tnu:
       z = partner(scan, al)
       if z:
         if z == q:
@@ -90,10 +90,10 @@ def inject_B(node, al):
 
 def partner(x, al):
   ar = al.get(x)
-  if ar and (ar.relation == rel.eq or ar.relation == rel.lt):
+  if ar and (ar.relation == rel.eq or ar.relation == rel.refines):
     return ar.cod
   else:
-    return cl.forest_tnu
+    return None
 
 # Aligned node, if relation is =
 

@@ -47,7 +47,7 @@ def alignment_step(node, best, ext_map, draft):
           art.proclaim(draft, art.change_relation(bar, rel.eq, "extensional"))
           luup(cl.get_parent(x), cl.get_parent(y))
         else:
-          art.proclaim(draft, art.extensional(y, x, rel.lt, "presumed 0"))
+          art.proclaim(draft, art.extensional(y, x, rel.refines, "similar<", "similar>"))
           luup(x, cl.get_parent(y))
       else:
         bar = best.get(y)
@@ -56,11 +56,11 @@ def alignment_step(node, best, ext_map, draft):
             art.proclaim(draft, bar)
             luup(cl.get_parent(x), cl.get_parent(y))
           else:
-            art.proclaim(draft, art.extensional(x, y, rel.lt, "presumed 1"))
+            art.proclaim(draft, art.extensional(x, y, rel.refined_by, "similr>", "similr<"))
             luup(cl.get_parent(x), y)
         else:
           # neither x nor y matches by name
-          art.proclaim(draft, art.extensional(x, y, rel.eq, "presumed mutual"))
+          art.proclaim(draft, art.extensional(x, y, rel.eq, "similar="))
           luup(cl.get_parent(x), cl.get_parent(y))
 
   # See is b is in the chain (matching nodes in lineage)
@@ -103,12 +103,13 @@ def extensional_match_map(A, B, draft, xmrcas):
     if not draft.get(node):
       e = extensional_match(node, xmrcas)
       if e:
-        if e.relation == rel.lt:
+        if rel.is_lt_like(e.relation):
           if less and e.cod == less.cod:
             print("# Suppressing %s because redundant with\n  %s" %
                   (art.express(e), art.express(less)))
             pass
           else:
+            # Consider upgrading from rel.lt to rel.refines ??
             less = e
             ext[node] = e
         else:
@@ -126,23 +127,26 @@ def extensional_match_map(A, B, draft, xmrcas):
 # This code is derived from 
 #   reference-taxonomy/org/opentreeoflife/conflict/ConflictAnalysis.java
 
-def extensional_match(node, xmrcas):
-  partner = xmrcas.get(node)      # node in other checklist; 'conode'
-  if not partner:
+def extensional_match(x, xmrcas):
+  c = d = e = None
+  y = xmrcas.get(x)      # node in other checklist; 'conode'
+  if not y:
     # Descendant of a particle
-    if dribble.watch(node):
-      dribble.log("# EM: %s is not tipward." % cl.get_unique(node))
+    if dribble.watch(x):
+      dribble.log("# EM: %s is not tipward." % cl.get_unique(x))
+    # c = y  ?
     return None
-  back = xmrcas.get(partner)    # 'bounce'
-  if not back:
+  y_back = xmrcas.get(y)    # 'bounce'
+  if not y_back:
     # Not sure how this can happen but it does (NCBI vs. GBIF)
-    dribble.log("%s <= %s <= nowhere" % (cl.get_unique(node),
-                                         cl.get_unique(partner)))
-    if dribble.watch(node):
-      dribble.log("# EM: %s killed because aborted round trip." % cl.get_unique(node))
+    dribble.log("%s <= %s <= nowhere" % (cl.get_unique(x),
+                                         cl.get_unique(y)))
+    if dribble.watch(x):
+      dribble.log("# EM: %s killed because aborted round trip." % cl.get_unique(x))
+    # c = y  ?
     return None
-  # node <= partner <= back
-  how = cl.how_related(node, back)    # Alway rcc5
+  # x <= y <= y_back
+  how = cl.how_related(x, y_back)    # Alway rcc5
   if how == rel.eq:
     # Should end up being eq iff name match or unique match
     # Can test for unique match by looking at xmrca of parent
@@ -150,42 +154,65 @@ def extensional_match(node, xmrcas):
     # Could be part of a 'monotypic' chain; fix later
     how = rel.matches
     reason = "mutual-cross-mrca"
+    d = y
   elif how == rel.gt:
     how = rel.matches
     reason = "monotypic-inversion"
+    # c = something
+    d = y
   elif how == rel.disjoint:
+    c = x
+    e = y
     reason = "particle-set-exclusion"
   else:               # must be rel.lt
-    # Assume resolution (node < partner) until conflict is proven
+    # Assume resolution (x < y) until conflict is proven
+    how = rel.refines    # assume potential child until proven otherwise
     reason = "refinement"
-    # Look for an intersection between any partner-child and node
+    # Look for an intersection between any y-child and x
     # x is in A checklist, y is in B checklist
-    for pchild in cl.get_children(partner):
-      pchild_back = xmrcas.get(pchild)
-      if pchild_back == None:
-        # pchild ! node
+    yk = None
+    # Let y1, y2, ... yn be y's children.
+    # We seek a child yk with descendants (d,e) with d<yk and and e!yk,
+    # and a second child yj with c<yj in x (i.e. c and x intersect).
+    for yi in cl.get_children(y):
+      if c and d and e: break
+      yi_back = xmrcas.get(yi)   # back
+      if yi_back == None:
         pass
       else:
-        (d, e) = cross_compare(node, pchild, xmrcas)
-        # d < node while e ! node
-        if d and e:
-          how = rel.conflict
-          reason = ("%s is in; its sibling %s is not" %
-                    (cl.get_unique(d), cl.get_unique(e)))
-          dribble.log("** %s conflicts with %s because\n"
-                      "   %s ! %s\n   (but sibling %s < %s)" %
-                      (cl.get_unique(node),
-                       cl.get_unique(partner),
-                       cl.get_unique(e),
-                       cl.get_unique(node),
-                       cl.get_unique(d),
-                       cl.get_unique(node)))
-          break
-        elif e:
-          reason = ("%s is not in it" % cl.get_unique(e))
+        (di, ei) = cross_compare(x, yi, xmrcas)
+        # yk conflicts with x because:
+        # - c is in x only:        c < x but c ! yk   (where c is some sibling or cousin of yk)
+        # - d is in both x and yk: d < x and d < yk
+        # - e is in yk only:       e < c but e ! yk
+        # d < x while e ! x
+        if di and ei:
+          yk = yi; d = di; e = ei
+        elif di:
+          c = di
 
-  ar = art.extensional(node, partner, how, reason)
-  if dribble.watch(node):
+  # Eight cases here to analyze.
+  # (None, None, None) means we are sub-particle
+  # (c, None, None) and (None, None, e) can't happen
+  # (None, None, e) means ...  can't happen
+  # (c, None, e) means x ! y
+
+  # (None, d, None) means =
+  # (None, d, e) means x < y
+  # (c, d, None) means x > y
+  # (c, d, e) means x >< y
+  if c and d and e:
+    # Proof that x conflicts with something?
+    proof = (">< %s [%s, %s, %s]" % 
+             (cl.get_unique(yk), cl.get_unique(c), cl.get_unique(d), cl.get_unique(e)))
+    dribble.log("** %s conflicts because\n   %s\n   yk [in x, in both, in yk]" %
+                (cl.get_unique(x), proof))
+    return art.extensional(x, y, rel.conflict, reason)
+  elif c and d:
+    reason = ("%s is not in it" % cl.get_unique(c))
+
+  ar = art.extensional(x, y, how, reason)
+  if dribble.watch(x):
     dribble.log("# Extensional articulation %s" % art.express(ar))
   return ar
 

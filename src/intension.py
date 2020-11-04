@@ -191,7 +191,7 @@ def intensional_alignment(matches):
           art.proclaim(result, art.set_relation(back, rel.eq))
         else:
           for sib in sibs:
-            ar = art.change_relation(sib, rel.lt, "merge", "split")
+            ar = art.change_relation(sib, rel.refines, "merge", "split")
             if sib.dom == x0:
               art.proclaim(result, ar)    # gt
             else:

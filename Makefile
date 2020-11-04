@@ -174,5 +174,6 @@ mag: $(WORK)/mag-ncbi-2015-2020.csv
 clean:
 	rm -rf $(WORK)
 
-tags:
+tags: TAGS
+TAGS: $(SOURCES)
 	etags src/*.py

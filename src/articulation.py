@@ -162,16 +162,13 @@ def declare_synonym_relations(b):
 def intensional(dom, cod, how):
   return bridge(dom, cod, rel.matches, how)
 
-def extensional(dom, cod, re, reason):
-  return bridge(dom, cod, re, reason)
+def extensional(dom, cod, re, reason, revreason = None):
+  return bridge(dom, cod, re, reason, revreason)
 
-def monotypic(dom, cod, re):
-  return bridge(dom, cod, re, "monotypic")
-
-def bridge(dom, cod, re, reason):
+def bridge(dom, cod, re, reason, revreason = None):
   assert cl.get_checklist(dom) != cl.get_checklist(cod)
   assert reason
-  return _articulation(dom, cod, re, reason=reason)
+  return _articulation(dom, cod, re, reason=reason, revreason=revreason)
 
 # Intensional matches by name (no synonym following)
 # This ought to be cached I think?
