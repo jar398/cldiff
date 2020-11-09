@@ -37,8 +37,6 @@ def inverses(r1, r2):
 # RCC-5 relations
 
 eq = declare_relation(1,   1,   '=',  '=')
-refines = declare_relation(1,   0.6, '<1', '>1')    # potential child
-refined_by = reverse(refines)
 lt = declare_relation(1,   0.5, '<',  '>')    # not potential child (inconsistency somewhere)
 gt = reverse(lt)
 conflict = declare_relation(0.5, 0.5, '><', '><')

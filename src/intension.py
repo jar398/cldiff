@@ -80,35 +80,10 @@ def match_to_accepted(m):
 
 def synonyms_locally(node):
   if cl.is_accepted(node):
-    hases = [has_accepted_locally(syn) for syn in informative_synonyms(node)]
+    hases = [has_accepted_locally(syn) for syn in cl.get_synonyms(node)]
     return art.collapse_matches([art.reverse(ar) for ar in hases if ar])
   else:
     return []
-
-def informative_synonyms(node):
-  if False:
-    return [syn
-            for syn in cl.get_synonyms(node)
-            if is_informative(syn)]
-  else:
-    return cl.get_synonyms(node)
-
-# Filter out any synonym whose name is an accepted name in the same checklist
-# (did this following a hunch that didn't work out)
-
-#  -- try to eliminate this check!
-
-def is_informative(syn):
-  name = cl.get_value(syn, canonical_name)
-  nodes = cl.get_nodes_with_value(cl.get_checklist(syn), canonical_name, name)
-  if len(nodes) > 1:
-    # deal with tangle around Saimiri boliviensis and subspecies
-    return False
-  #if cl.is_accepted(nodes[0]):
-  #  return False
-  return True
-
-canonical_name = cl.field("canonicalName")
 
 # A synonym has only one accepted name
 
@@ -152,7 +127,9 @@ def skim_best_matches(arts):
 
 # ---- Find ad hoc splits and merges based on multimatches.
 
-def intensional_alignment(matches):
+def intensional_proposal(best, A, B):
+  matches = tipward(best, A, B)
+
   result = {}
 
   incoming = index_by_target(matches)
@@ -161,13 +138,13 @@ def intensional_alignment(matches):
   # such that x matches multiple nodes y1, y2 in the B checklist.
 
   # Modify the relation for all approximate-match nodes.
-  for y in incoming:
+  for y in incoming:            # Many x's, one y
     arts = incoming[y]
 
     # Canonical.  back.cod will be among the incoming, by construction.
-    back = matches.get(y)    # back : y -> x
+    back = matches.get(y)       # back : y -> x
     if not back: continue
-    x0 = back.cod              # Back match y -> x -> y
+    x0 = back.cod               # Back match y -> x -> y
 
     revarts = incoming[x0]
 
@@ -181,7 +158,6 @@ def intensional_alignment(matches):
       else:
 
         # OK.  We're going to just throw away all non-sibling matches.
-        # And if a sibling is curated in some strange way, 
 
         rent = cl.get_parent(x0)
         sibs = [ar for ar in arts if cl.get_parent(ar.dom) == rent]
@@ -191,11 +167,12 @@ def intensional_alignment(matches):
           art.proclaim(result, art.set_relation(back, rel.eq))
         else:
           for sib in sibs:
-            ar = art.change_relation(sib, rel.refines, "merge", "split")
+            ar = art.change_relation(sib, rel.lt, "merge", "split")
             if sib.dom == x0:
               art.proclaim(result, ar)    # gt
             else:
               art.half_proclaim(result, ar)
+          art.half_proclaim(result, art.bridge(y, rent, rel.lt, "split", "merge"))
           # Report!
           dribble.log("# Split/lump %s < %s < %s" %
                       (" + ".join(map(lambda e:cl.get_unique(e.dom), sibs)),
@@ -239,4 +216,40 @@ def is_matches(matches):
   if len(matches) == 0: return True
   return is_match(matches[0])
 
+# ---------- Tipwards
+
+# A particle is a mutual =-articulation of tipward accepted nodes
+# deriving from sameness of 'intrinsic' node properties: name, id,
+# rank, parent, etc.
+
+# This function returns a partial map from nodes to articulations.
+
+# Filter out internal nodes (those having a matched descendant)
+
+def tipward(amap, A, B):
+  tw = {}
+  def filter(node):
+    watch = dribble.watch(node)
+    found_match = None
+    for child in cl.get_children(node):
+      ar = filter(child)
+      if ar:
+        found_match = ar
+    if found_match:    # Some descendant is a particle
+      if watch: dribble.log("# %s: descendant matches, not keeping: %s" %
+                            (cl.get_unique(node), art.express(found_match)))
+      return found_match
+    else:
+      ar = amap.get(node)
+      if ar:
+        tw[node] = ar
+        if watch:
+          dribble.log("# %s is a tipward match, keeping: %s" %
+                      (cl.get_unique(node), art.express(ar)))
+      else:
+        if watch: dribble.log("# %s is unmatched" % cl.get_unique(node))
+      return ar
+  for root in cl.get_roots(A): filter(root)
+  for root in cl.get_roots(B): filter(root)
+  return tw
 

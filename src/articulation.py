@@ -159,11 +159,14 @@ def declare_synonym_relations(b):
 
 # ---------- Different kinds of articulation
 
-def intensional(dom, cod, how):
-  return bridge(dom, cod, rel.matches, how)
+def intensional(dom, cod, reason):
+  return bridge(dom, cod, rel.matches, reason)
 
 def extensional(dom, cod, re, reason, revreason = None):
-  return bridge(dom, cod, re, reason, revreason)
+  ar = bridge(dom, cod, re, reason, revreason)
+  if dribble.watch(dom):
+    dribble.log("# Extensional articulation %s" % art.express(ar))
+  return ar
 
 def bridge(dom, cod, re, reason, revreason = None):
   assert cl.get_checklist(dom) != cl.get_checklist(cod)
@@ -250,7 +253,7 @@ def sort_matches(arts):
 
 def proclaim(draft, ar):
   half_proclaim(draft, ar)
-  if ar.relation != rel.matches:
+  if False and ar.relation != rel.matches:
     half_proclaim(draft, reverse(ar))
 
 def half_proclaim(draft, ar):

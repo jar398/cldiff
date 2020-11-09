@@ -136,12 +136,12 @@ def report(A, B, al, roots, parents, outfile):
 
         if ar.relation == rel.eq:
           note = "lump"         # ??? is this right?
+        elif ar.relation == rel.matches:
+          note = "near miss"
         elif ar.relation == rel.conflict:
           note = "conflict"
         elif ar.relation == rel.refines:
           note = "loss of resolution"
-        elif ar.relation == rel.matches:
-          note = "near miss"
     else:                       # y
       op = "B ONLY"
       ar = al.get(y)
