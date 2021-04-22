@@ -1,7 +1,7 @@
 """
  Makes a subset of a checklist based on one subtree of a taxonmoy.
 
- python3 subset_dwc.py [--taxonomy tax_dwc] source_dwc out_dwc
+ python3 subset_dwc.py [--taxonomy tax_dwc] source_dwc id --out out_dwc
 
  Assumption: every accepted record has a taxonID
 """
@@ -87,7 +87,7 @@ def read_topology(tax_path):
       parent_id = row[pid_column]
       accepted_id = row[aid_column]
       status = row[sid_column]
-      is_syn = ((accepted_id and not parent_id) or
+      is_syn = ((accepted_id and not accepted_id == tid and not parent_id) or
                 is_synonym_status(status))
       get_topo_record(tid, topo)[2] = is_syn
       if is_syn:
