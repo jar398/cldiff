@@ -21,7 +21,7 @@ def best_intensional_match_map(A, B):
         if ar:
           assert ar.dom == node
           assert cl.is_accepted(ar.cod)
-          art.half_proclaim(best, ar)
+          best[node] = ar   # art.proclaim(best, ar)
   process(A, B)
   process(B, A)
   dribble.log("%s best matches" % len(best))
@@ -150,40 +150,38 @@ def intensional_proposal(best, A, B):
 
     if len(arts) > 1:     # multiple x's
       if len(revarts) > 1:
-        art.proclaim(result, art.set_relation(back, rel.eq))
+        art.proclaim_eq(result, art.set_relation(back, rel.eq))
         dribble.log("** Tangle:\n   %s\n   %s" %
                     ("\n   ".join(map(art.express, arts)),
                     ("\n   ".join(map(art.express, revarts)))))
-        art.proclaim(result, art.set_relation(back, rel.eq))
       else:
 
         # OK.  We're going to just throw away all non-sibling matches.
 
-        rent = cl.get_parent(x0)
-        sibs = [ar for ar in arts if cl.get_parent(ar.dom) == rent]
+        x_rent = cl.get_parent(x0)
+        sibs = [ar for ar in arts if cl.get_parent(ar.dom) == x_rent]
         # e.g. ar: x2 -> y
         # Don't even try to do anything with N->M node tangles.
         if len(sibs) == 1:
-          art.proclaim(result, art.set_relation(back, rel.eq))
+          art.proclaim_eq(result, art.set_relation(back, rel.eq))
         else:
           for sib in sibs:
+            # change x2 ~ y to x2 < y
             ar = art.change_relation(sib, rel.lt, "merge", "split")
-            if sib.dom == x0:
-              art.proclaim(result, ar)    # gt
-            else:
-              art.half_proclaim(result, ar)
-          art.half_proclaim(result, art.bridge(y, rent, rel.lt, "split", "merge"))
+            art.proclaim(result, ar)
+          # y < parent(x2)
+          # art.proclaim(result, art.bridge(y, x_rent, rel.lt, "split", "merge"))
           # Report!
           dribble.log("# Split/lump %s < %s < %s" %
                       (" + ".join(map(lambda e:cl.get_unique(e.dom), sibs)),
                        cl.get_unique(y),
-                       cl.get_unique(rent)))
+                       cl.get_unique(x_rent)))
 
     elif len(revarts) > 1:   # multiple y's
       pass
     else:
       # n.b. arts[0] is reverse of back
-      art.proclaim(result, art.set_relation(back, rel.eq))
+      art.proclaim_eq(result, art.set_relation(back, rel.eq))
 
   return result
 

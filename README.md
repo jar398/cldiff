@@ -1,5 +1,9 @@
 # Checklist difference
 
+<b>This project is on hold pending work on a more general and modular
+tabular data toolkit.  Please see the
+[https://github.com/jar389/listtools] repository.</p>
+
 <b>This is a work in progress.  The code is messy, incomplete, and
 buggy because I'm still figuring out how to do this properly.
 Although it runs and gives reasonable answers sometimes, proceed at

@@ -18,6 +18,8 @@ import dribble
 # 'al' is a proposal (alignment)
 
 def merge_checklists(A, B, al):
+  # Retractions.
+  retractions = find_incompatibilities(A, B, al)
   parents = {}
   roots = []
   def half_compute_parents(check, inject, al, retractions):
@@ -33,6 +35,12 @@ def merge_checklists(A, B, al):
             (x, y) = p
             dribble.log("# Merged parent(%s) = (%s, %s)" %
                         (cl.get_unique(node), cl.get_unique(x), cl.get_unique(y)))
+          if merged in p:
+            def w(m):
+              (x,y)=m
+              return ("%s/%s" % (cl.get_unique(x), cl.get_unique(y)))
+            dribble.log("** Setting merged parent twice?\n  %s -> %s then %s" %
+                        (w(merged), w(p), w(parents[merged])))
           parents[merged] = p     # Otherwise it's a root
         else:
           if dribble.watch(node):
@@ -44,8 +52,6 @@ def merge_checklists(A, B, al):
     for root in cl.get_roots(check):
       process(root)
   half_compute_parents(B, inject_B, al, {})
-  # Retractions.
-  retractions = find_incompatibilities(A, B, al)
   half_compute_parents(A, inject_A, al, retractions)    # these will not override
   return (parents, roots)
 

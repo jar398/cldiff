@@ -82,7 +82,7 @@ def report_on_collisions(A, B, al):
           ar2_bad = (ar2 and
                      ar2.relation == rel.eq and
                      ar2.cod != A_node)
-          if ar1_bad or ar2_bad:
+          if ar1_bad and ar2_bad:
             dribble.log("# \"%s\" names different taxa in the two checklists" % name)
             dribble.log("  %s [%s]" % (art.express(ar1), art.reason(ar1) if ar1 else "-"))
             dribble.log("  %s [%s]" % (art.express(ar2), art.reason(ar2) if ar2 else "-"))

@@ -251,12 +251,14 @@ def sort_matches(arts):
 
 # -----
 
-def proclaim(draft, ar):
-  half_proclaim(draft, ar)
-  if False and ar.relation != rel.matches:
-    half_proclaim(draft, reverse(ar))
+def proclaim_eq(draft, ar):
+  assert ar.relation == rel.eq
+  proclaim(draft, ar)
+  proclaim(draft, reverse(ar))
 
-def half_proclaim(draft, ar):
+def proclaim(draft, ar):
+  assert cl.get_checklist(ar.dom) != cl.get_checklist(ar.cod)
+  assert ar.relation != rel.matches
   p = proclaimable(draft, ar)
   if p == MEH:
     if dribble.watch(ar.dom):
@@ -282,27 +284,26 @@ def proclaimable(draft, ar):
     if dribble.watch(ar.dom): print("# New: %s" % express(ar))
     return True                 # Improvement
 
-  elif ar.relation == before.relation and ar.cod == before.cod:
-    # Update reason
-    if dribble.watch(ar.dom): print("# Change reason only: %s" % express(ar))
-    return True                 # Improvement
-
   elif before.relation == rel.matches:
     if dribble.watch(ar.dom): print("# Upgrade ~: %s" % express(ar))
     return True                 # Improvement
 
   elif ar.cod == before.cod:
-    # Relations differ.
-    # Change in RCC5 between two fixed nodes is not allowed.
-    if dribble.watch(ar.dom): print("# Wrong RCC5: %s" % express(ar))
-    return False                # Inconsistent
+    if ar.relation == before.relation:
+      # Update reason
+      if dribble.watch(ar.dom): print("# Change reason only: %s" % express(ar))
+      return True                 # Improvement
+    else:
+      # Relations differ, so this is an incompatible change.
+      if dribble.watch(ar.dom): print("# Wrong RCC5: %s" % express(ar))
+      return False                # Inconsistent
 
   # Codomains are different, relations may or may not be different
 
   elif ar.relation == rel.eq and before.relation == rel.eq:
     if dribble.watch(ar.dom): print("# UNA: %s" % express(ar))
     return False                # Inconsistent (unique name assumption)
-  elif before.relation == rel.gt or before.relation == rel.matches:
+  elif before.relation == rel.gt:
     if dribble.watch(ar.dom): print("# Upgrade: %s" % express(ar))
     return True
 
