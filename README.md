@@ -1,9 +1,13 @@
 # Checklist difference
 
-<b>This is a work in progress.  The code is messy, incomplete, and
-buggy because I'm still figuring out how to do this properly.
-Although it runs and gives reasonable answers sometimes, proceed at
-your own risk and with low expectations.</b>
+Two rewrites in progress.  See the 'alignment' branch, which I have
+abandoned for now, and the [list
+tools](https://github.com/jar398/listtools) repository, which is
+intended to be a code base shared between ASU BioKIC Taxon Concepts
+projects and Encyclopedia of Life.
+
+
+
 
 
 The inputs are two checklists in TSV or CSV format (extension .tsv or
