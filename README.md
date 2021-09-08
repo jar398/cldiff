@@ -1,14 +1,30 @@
-# Checklist difference
+# "Checklist diff"
 
-Two rewrites in progress.  See the 'alignment' branch, which I have
-abandoned for now, and the [list
-tools](https://github.com/jar398/listtools) repository, which is
-intended to be a code base shared between ASU BioKIC Taxon Concepts
-projects and Encyclopedia of Life.
+## NOTE
+
+This repository represents work on a 'checklist diff' (difference,
+inpired by the Unix `diff` command) tool for the ASU BioKIC Taxon
+Concepts project from April to October 2020 and provides a basic level
+of functionality.  A "checklist" here could
+mean either a simple species list or a comprehensive taxonomic
+hierarchy with synonyms.
+
+This code has a number of bugs and it was getting to be difficult to
+work with.  I began a major revision in August 2020, and this is in
+the 'alignment' branch of this repository.  I became frustrated with
+this code and left off this line of work in November 2020.
+
+The latest work along these lines is in the
+[`listtools`](https://github.com/jar398/listtools) repository.  The
+code base is intended to be shared between ASU and the Encyclopedia of
+Life project at NMNH.  Its design is more modular and, I hope, more
+correct than that of its predecessor.  As of 31 August 2021 it
+supports record-level matching without sensitivity to hierarchy.
+Hierarchy sensitivity is in progress (in `align.py`) and is starting to
+work but requires much more testing and tuning.
 
 
-
-
+## November 2020
 
 The inputs are two checklists in TSV or CSV format (extension .tsv or
 .csv).  The output is an ad hoc report file.
