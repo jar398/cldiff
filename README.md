@@ -2,10 +2,12 @@
 
 ## NOTE
 
-This repository represents work on a 'checklist diff' (difference,
+This repository has been retired in favor of the newer 
+[`listtools`](https://github.com/jar398/listtools) repository.
+
+This repository represents work on a "checklist diff" (diff = difference,
 inpired by the Unix `diff` command) tool for the ASU BioKIC Taxon
-Concepts project from April to October 2020 and provides a basic level
-of functionality.  A "checklist" here could
+Concepts project from April to October 2020.  A "checklist" here could
 mean either a simple species list or a comprehensive taxonomic
 hierarchy with synonyms.
 
@@ -16,12 +18,8 @@ this code and left off this line of work in November 2020.
 
 The latest work along these lines is in the
 [`listtools`](https://github.com/jar398/listtools) repository.  The
-code base is intended to be shared between ASU and the Encyclopedia of
-Life project at NMNH.  Its design is more modular and, I hope, more
-correct than that of its predecessor.  As of 31 August 2021 it
-supports record-level matching without sensitivity to hierarchy.
-Hierarchy sensitivity is in progress (in `align.py`) and is starting to
-work but requires much more testing and tuning.
+new code base has a more modular design and, I hope, more
+correct than that of its predecessor.
 
 
 ## November 2020
